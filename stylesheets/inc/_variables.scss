@@ -1,0 +1,34 @@
+
+// Typography
+
+$text_font: "Hoefler Text", "Baskerville Old Face", Garamond, "Times New Roman", serif;
+
+$title_font: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+
+$monospace_font: Menlo, monaco, Consolas, Lucida Console, monospace;
+
+$base_size: 18px;
+
+// Screen widths.
+
+$mobile_width: 380px;
+
+$tablet_width: 768px;
+
+$desktop_width: 1168px;
+
+$wide_width: 1379px;
+
+$side_padding: 20px;
+
+// Layout.
+
+$logo_wrapper_width_tablet: 108px;
+
+$logo_wrapper_width_desktop: 172px;
+
+// Transition timeouts.
+
+$link_transition: 110ms;
+
+$icon_transition: 120ms;

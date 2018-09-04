@@ -1,0 +1,12 @@
+
+// Color Palette
+
+$text_color: #111;
+
+$light_text: lighten( #929292, 1% );
+
+$blue: #0999d4;
+
+$darker_blue: mix( $text_color, $blue, 30% );
+
+$text_color_link_hover: lighten($text_color, 22.5%);

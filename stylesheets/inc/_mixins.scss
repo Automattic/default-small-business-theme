@@ -1,0 +1,53 @@
+
+// Mixins
+
+@mixin media( $res ) {
+	@if tablet == $res {
+		@media only screen and (min-width: $tablet_width) {
+			@content;
+		}
+	}
+	@if desktop == $res {
+		@media only screen and (min-width: $desktop_width) {
+			@content;
+		}
+	}
+	
+	@if wide == $res {
+		@media only screen and (min-width: $wide_width) {
+			@content;
+		}
+	}
+}
+
+@mixin font-smoothing() {
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+@mixin font-size( $size, $unit: em ) {
+	@if ( em == $unit ) {
+		font-size: ( $size / $base_size ) * 1em;
+	}
+	@if ( rem == $unit ) {
+		font-size: ( $size / 16px ) * 1rem;
+	}
+}
+
+@mixin link-transition( $attr: color ) {
+	transition: $attr $link_transition ease-in-out;
+}
+
+@mixin svg-transition() {
+	transition: fill $icon_transition ease-in-out;
+}
+
+@mixin remove-child-margins() {
+	> *:first-child {
+		margin-top: 0;
+	}
+	
+	> *:last-child {
+		margin-bottom: 0;
+	}
+}
