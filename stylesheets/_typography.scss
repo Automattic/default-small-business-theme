@@ -47,7 +47,8 @@ p.has-drop-cap:not(:focus):first-letter { // Drop cap font-size
 }
 
 h1,
-.text--xxl {
+.text--xxl,
+big {
 	@include var(font-size, text_xxl);
 }
 
@@ -79,56 +80,30 @@ small,
 	@include var(font-size, text_xs);
 }
 
-p {
-	margin-bottom: 1.5em;
-}
-
 dfn, cite, em, i {
 	font-style: italic;
 }
 
 blockquote {
-	margin: 0 1.5em;
-}
-
-address {
-	margin: 0 0 1.5em;
+	font-style: italic;
 }
 
 pre {
-	@include font-size( 15px );
-	background: #eee;
-	font-family: $monospace_font;
-	font-size: 0.9375rem;
+	@include var(font-family, monospace_font);
+	@include var(font-size, text_md);
 	line-height: 1.6;
-	margin-bottom: 1.6em;
-	max-width: 100%;
-	overflow: auto;
-	padding: 1.6em;
 }
 
 code, kbd, tt, var {
-	@include font-size( 15px );
-	font-family: $monospace_font;
-	font-size: 0.9375rem;
-}
-
-abbr, acronym {
-	border-bottom: 1px dotted #666;
-	cursor: help;
+	@include var(font-size, text_md);
+	@include var(font-family, monospace_font);
 }
 
 mark, ins {
-	background: #fff9c0;
 	text-decoration: none;
 }
 
-big {
-	font-size: 125%;
-}
-
 a {
-	color: $blue;
 	text-decoration: none;
 
 	&:hover {

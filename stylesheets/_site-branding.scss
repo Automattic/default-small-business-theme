@@ -12,26 +12,14 @@
 }
 
 .site-branding {
-	padding-top: 0.2em;
-	letter-spacing: -0.02em;
 	color: $light_text;
-	line-height: 1.35;
-
-	@include media( tablet ) {
-		line-height: 1.2;
-	}
-
-	@include media( desktop ) {
-		line-height: 1.35;
-	}
 
 	.site-title {
-		@include var(font-family, title_font);
+		@include var(font-family, text_font);
 		@include var(font-size, text_xxl);
 		@include font-smoothing;
 		display: inline;
 		color: $text_color;
-		font-weight: 600;
 
 		/* When there is no description set, make sure navigation appears below title. */
 		+ .main-navigation {
@@ -47,20 +35,6 @@
 				color: $text_color_link_hover;
 			}
 		}
-
-		@include media( tablet ) {
-			@include font-size( 34px );
-			letter-spacing: -0.025em;
-			display: block;
-			margin: 0.25em 0 0.35em 0;
-			font-weight: 700;
-		}
-
-		@include media( desktop ) {
-			@include font-size( 44px );
-			display: inline;
-		}
-
 	}
 
 	.site-description {
@@ -68,28 +42,6 @@
 		@include font-size( 25px );
 		color: $light_text;
 		font-weight: normal;
-
-		@include media( tablet ) {
-			@include font-size( 32px );
-		}
-
-		@include media( desktop ) {
-			@include font-size( 45px );
-			letter-spacing: -0.01em;
-		}
-
-		@include media( wide ) {
-			@include font-size( 42px );
-		}
-
-		.separator {
-			margin: 0 0.1em;
-
-			@include media( desktop ) {
-				margin-left: 0.2em;
-			}
-		}
-
 	}
 
 	.main-navigation {
@@ -131,21 +83,11 @@
 				}
 
 				> a {
-					@include font-size( 23px );
 					@include link-transition;
 					text-decoration: none;
 					font-weight: 700;
 					color: $blue;
 					margin-right: 0.1em;
-
-					@include media( tablet ) {
-						@include font-size( 31px );
-					}
-
-					@include media( desktop ) {
-						@include font-size( 42px );
-					}
-
 				}
 
 				&:last-child > a {
@@ -224,8 +166,8 @@
 }
 
 .site-footer {
+	@include var(font-size, text_md);
 	@include font-smoothing;
-	@include font-size( 15px );
 
 	margin: 4em 0 3em 0;
 	padding: 0;

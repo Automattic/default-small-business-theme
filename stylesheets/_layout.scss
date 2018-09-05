@@ -12,7 +12,7 @@
 	max-width: 425px;
 	margin: 0 auto;
 	width: 100%;
-	
+
 	@include media( tablet ) {
 		display: flex;
 		flex-wrap: nowrap;
@@ -21,12 +21,12 @@
 		max-width: $tablet_width;
 		padding-top: 40px;
 	}
-	
+
 	@include media( desktop ) {
 		max-width: $desktop_width;
 		padding-top: 80px;
 	}
-	
+
 	@include media( wide ) {
 		max-width: $wide_width;
 	}
@@ -34,12 +34,12 @@
 
 #content {
 	box-sizing: content-box;
-	
+
 	@include media( tablet ) {
 		border-right: solid $logo_wrapper_width_tablet transparent; // rgba( red, 0.5);
 		width: calc( 100% - 2*#{$logo_wrapper_width_tablet} );
 	}
-	
+
 	@include media( desktop ) {
 		border-right: solid $logo_wrapper_width_desktop transparent; // rgba( red, 0.5);
 		width: calc( 100% - 2*#{$logo_wrapper_width_desktop} );
@@ -47,15 +47,15 @@
 }
 
 .site-logo {
-	
+
 	@include media( tablet ) {
 		width: $logo_wrapper_width_tablet;
 	}
-	
+
 	@include media( desktop ) {
 		width: $logo_wrapper_width_desktop;
 	}
-	
+
 	.custom-logo-link {
 		display: block;
 		width: 40px;
@@ -64,16 +64,15 @@
 		border: solid 5px black;
 		box-sizing: content-box;
 		overflow: hidden;
-		
+
 		@include media( tablet ) {
 			width: 65px;
 			height: 65px;
 		}
-	
+
 		@include media( desktop ) {
 			width: 90px;
 			height: 90px;
 		}
 	}
-
 }
