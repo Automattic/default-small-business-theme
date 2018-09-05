@@ -16,7 +16,7 @@ body {
 }
 
 a {
-	color: $blue;
+	@include color_var(color, color-primary);
 }
 
 a:visited {

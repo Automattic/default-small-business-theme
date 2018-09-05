@@ -1,12 +1,135 @@
 
 // Color Palette
 
+/*
 $text_color: #111;
-
 $light_text: lighten( #929292, 1% );
-
 $blue: #0999d4;
-
 $darker_blue: mix( $text_color, $blue, 30% );
-
 $text_color_link_hover: lighten($text_color, 22.5%);
+*/
+
+$color_vars: (
+	// main colors
+	color-primary: #008000,
+	color-primary-light: 'color-mod(var(--color-primary) tint(15%))',
+	color-primary-dark: 'color-mod(var(--color-primary) shade(15%))',
+	color-primary-bg: 'color-mod(var(--color-primary) alpha(20%))',
+
+	color-accent: #f5414f,
+	color-accent-light: 'color-mod(var(--color-accent) tint(15%))',
+	color-accent-dark: 'color-mod(var(--color-accent) shade(10%))',
+	color-accent-bg: 'color-mod(var(--color-accent) alpha(20%))',
+
+	// shades - generated using chroma.js - 12 steps
+	black: #1d1d21,
+	gray-10: #2e2e31,
+	gray-6: #7b7a7d,
+	gray-4: #a5a5a6,
+	gray-3: #bbbbbc,
+	gray-2: #d1d0d2,
+	gray-1: #e8e7e8,
+	white: white,
+
+	// feedback
+	color-success: #88c459,
+	color-error: #f5414f,
+	color-warning: #ffd137,
+
+	// typography
+	color-text: var(--gray-10),
+	color-text-heading: var(--black),
+	color-text-subtle: var(--gray-6),
+	color-link: var(--color-primary),
+	color-link-visited: var(--color-primary-dark),
+	color-mark: var(--color-accent-bg),
+	color-blockquote-border: var(--gray-2),
+
+	// border
+	color-border: var(--gray-2),
+
+	// body
+	color-body: var(--white),
+
+	// forms
+	form-element-border: var(--color-border),
+	form-element-border-focus: var(--color-primary),
+	form-element-border-error: var(--color-error),
+	form-element-bg: var(--white),
+	form-text-placeholder: var(--gray-4),
+
+	// buttons
+	btn-primary-bg: var(--color-primary),
+	btn-primary-hover: var(--color-primary-light),
+	btn-primary-active: var(--color-primary-dark),
+	btn-primary-label: var(--white),
+
+	// icons
+	color-icon-primary: var(--gray-4),
+	color-icon-secondary: inherit,
+);
+
+:root {
+    // main colors
+    --color-primary: #{map-get($vars, color-primary)};
+    --color-primary-light: #{map-get($vars, color-primary-light)};
+    --color-primary-dark: #{map-get($vars, color-primary-dark)};
+    --color-primary-bg: #{map-get($vars, color-primary-bg)};
+
+    --color-accent: #{map-get($vars, color-accent)};
+    --color-accent-light: #{map-get($vars, color-accent-dark)};
+    --color-accent-dark: #{map-get($vars, color-accent-light)};
+    --color-accent-bg: #{map-get($vars, color-accent-bg)};
+
+    // shades - generated using chroma.js - 12 steps
+    --black: #{map-get($vars, black)};
+    --gray-10: #{map-get($vars, gray-10)};
+    --gray-6: #{map-get($vars, gray-6)};
+    --gray-4: #{map-get($vars, gray-4)};
+    --gray-3: #{map-get($vars, gray-3)};
+    --gray-2: #{map-get($vars, gray-2)};
+    --gray-1: #{map-get($vars, gray-1)};
+    --white: #{map-get($vars, white)};
+
+    // feedback
+    --color-success: #{map-get($vars, color-success)};
+    --color-error: #{map-get($vars, color-error)};
+    --color-warning: #{map-get($vars, color-warning)};
+
+    // typography
+    --color-text: #{map-get($vars, color-text)};
+    --color-text-heading: #{map-get($vars, color-text-heading)};
+    --color-text-subtle: #{map-get($vars, color-text-subtle)};
+    --color-link: #{map-get($vars, color-link)};
+    --color-link-visited: #{map-get($vars, color-primary-dark)};
+    --color-mark: #{map-get($vars, color-mark)};
+    --color-blockquote-border: #{map-get($vars, color-blockquote-border)};
+
+    // border
+    --color-border: #{map-get($vars, color-border)};
+
+    // body
+    --color-body: #{map-get($vars, color-body)};
+
+    // forms
+    --form-element-border: #{map-get($vars, form-element-border)};
+    --form-element-border-focus: #{map-get($vars, form-element-border-focus)};
+    --form-element-border-error: #{map-get($vars, form-element-border-error)};
+    --form-element-bg: #{map-get($vars, form-element-bg)};
+    --form-text-placeholder: #{map-get($vars, form-text-placeholder)};
+
+    // buttons
+    --btn-primary-bg: #{map-get($vars, btn-primary-bg)};
+    --btn-primary-hover: #{map-get($vars, btn-primary-hover)};
+    --btn-primary-active: #{map-get($vars, btn-primary-active)};
+    --btn-primary-label: #{map-get($vars, btn-primary-label)};
+
+    // icons
+    --color-icon-primary: #{map-get($vars, color-icon-primary)};
+    --color-icon-secondary: #{map-get($vars, color-icon-secondary)};
+}
+
+@mixin color_var($property, $varName) {
+	#{$property}: map-get($color_vars, $varName);
+	#{$property}: var(--#{$varName}, map-get($color_vars, $varName));
+}

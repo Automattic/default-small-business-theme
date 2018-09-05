@@ -18,7 +18,7 @@
 			@include link-transition;
 			color: inherit;
 			&:hover {
-				color: $text_color_link_hover;
+				@include color_var(color, color-accent);
 				text-decoration: none;
 			}
 		}
@@ -37,7 +37,7 @@
 				@include link-transition;
 				&:hover {
 					text-decoration: none;
-					color: $darker_blue;
+					@include color_var(color, color-primary-dark);
 				}
 			}
 		}
@@ -67,7 +67,7 @@
 			color: inherit;
 			&:hover {
 				text-decoration: none;
-				color: $blue;
+				@include color_var(color, color-primary);
 			}
 		}
 
@@ -75,7 +75,7 @@
 			position: relative;
 			display: inline-block;
 			vertical-align: middle;
-			fill: darken($light_text, 8%);
+			@include color_var(fill, color-text-subtle);
 			margin-right: 0.3em;
 			top: -0.1em;
 		}
@@ -118,7 +118,8 @@
 
 		.post-thumbnail-inner {
 			display: block;
-			border: solid 10px $text_color;
+			border: solid 10px inherit;
+			@include color_var(border-color, color-accent);
 			margin-bottom: 1.5em;
 
 			img {
@@ -161,14 +162,14 @@
 			}
 
 			&:before {
-				background: $blue;
+				@include color_var(background-color, color-primary);
 				mix-blend-mode: screen;
 				opacity: 0.1;
 				z-index: 2;
 			}
 
 			&:after {
-				background: $blue;
+				@include color_var(background-color, color-primary);
 				mix-blend-mode: multiply;
 				opacity: 1;
 				z-index: 3;
@@ -200,7 +201,7 @@
 			}
 
 			&:hover {
-				color: $blue;
+				@include color_var(color, color-primary);
 				text-decoration: none;
 			}
 		}
