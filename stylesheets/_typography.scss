@@ -7,15 +7,76 @@ input,
 select,
 optgroup,
 textarea {
-	font-family: $text_font;
+	@include var(font-family, text_font);
+	@include var(font-size, text_base_size);
+	@include var(line-height, body_line_height);
 	color: #111;
 	font-weight: 400;
-	font-size: $base_size;
-	line-height: 1.5;
 }
 
 h1, h2, h3, h4, h5, h6 {
 	clear: both;
+	font-weight: 400;
+	@include var(line-height, heading_line_height);
+}
+
+h2 {
+	@include var(font-family, title_font);
+	font-weight: 200;
+	letter-spacing: .25rem;
+	text-transform: uppercase;
+}
+
+h5 {
+	@include var(font-family, title_font);
+	font-weight: 500;
+	text-transform: uppercase;
+}
+
+h6 {
+	@include var(font-family, title_font);
+	font-weight: 200;
+	letter-spacing: .125rem;
+	text-transform: uppercase;
+}
+
+/* text size */
+.text--xxxl,
+p.has-drop-cap:not(:focus):first-letter { // Drop cap font-size
+	@include var(font-size, text_xxxl);
+}
+
+h1,
+.text--xxl {
+	@include var(font-size, text_xxl);
+}
+
+h2,
+.text--xl,
+.has-larger-font-size {
+	@include var(font-size, text_xl);
+}
+
+h3,
+.text--lg,
+.has-large-font-size {
+	@include var(font-size, text_lg);
+}
+
+h4,
+.text--md,
+.has-regular-font-size {
+	@include var(font-size, text_md);
+}
+
+.text--sm,
+small,
+.has-small-font-size {
+	@include var(font-size, text_sm);
+}
+
+.text--xs {
+	@include var(font-size, text_xs);
 }
 
 p {

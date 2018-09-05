@@ -2,13 +2,13 @@
 /** === Entries === */
 
 .hentry {
-	
+
 	margin-top: 3em;
-	
+
 	&:first-of-type {
 		margin-top: 0;
 	}
-	
+
 	&:before {
 		content: "\020";
 		display: block;
@@ -16,36 +16,36 @@
 		height: 2px;
 		background: lighten($text_color, 50%);
 		margin-bottom: 1.3em;
-		
+
 		@include media( tablet ) {
 			width: 2em;
 		}
-		
+
 		@include media( desktop ) {
 			width: 2.8em;
 		}
 	}
-	
+
 	.entry-title {
-		@include font-size( 26px );
+		@include var(font-family, text_font);
+		@include var(font-size, text_xl);
 		@include font-smoothing;
-		
-		font-family: $title_font;
+
 		font-weight: 600;
 		margin: 0 0 0.7em 0;
 		line-height: 1.35;
-		
+
 		@include media( tablet ) {
 			@include font-size( 36px );
 			margin-bottom: 0.48em;
 			font-weight: 700;
 		}
-		
+
 		@include media( desktop ) {
 			@include font-size( 46px );
 			margin-bottom: 0.58em;
 		}
-		
+
 		a {
 			@include link-transition;
 			color: inherit;
@@ -56,23 +56,26 @@
 		}
 
 	}
-	
+
 	.entry-meta {
-		
+
+		@include var(font-family, title_font);
+		@include var(font-size, text_sm);
+
 		.posted-on {
 			@include font-smoothing;
 			display: block;
 			margin-bottom: 0.2em;
-			
+
 			@include media( tablet ) {
 				margin-bottom: 0.1em;
 			}
-			
+
 			@include media( desktop ) {
 				@include font-size( 24px );
 				margin-bottom: 0.05em;
 			}
-			
+
 			a {
 //				@include link-transition;
 				&:hover {
@@ -81,33 +84,33 @@
 				}
 			}
 		}
-		
+
 	}
-	
+
 	.entry-footer {
-		@include font-size( 12px );
+		@include var(font-family, title_font);
+		@include var(font-size, text_sm);
 		@include font-smoothing;
-		
-		font-family: $title_font;
+
 		font-weight: 500;
 		color: lighten($light_text, 0%);
 		margin-top: 1.5em;
-		
+
 		@include media( tablet ) {
 			@include font-size( 13px );
 		}
-		
+
 		> span {
 			$hmargin: 1.35em;
 			$vmargin: 0.35em;
-			
+
 			display: inline-block;
 			margin: $vmargin $hmargin $vmargin 0;
 			&:last-child {
 				margin-right: 0;
 			}
 		}
-		
+
 		a {
 			@include link-transition;
 			color: inherit;
@@ -116,7 +119,7 @@
 				color: $blue;
 			}
 		}
-		
+
 		.svg-icon {
 			position: relative;
 			display: inline-block;
@@ -125,43 +128,43 @@
 			margin-right: 0.3em;
 			top: -0.1em;
 		}
-		
+
 		.byline {
 			.svg-icon {
 				transform: scale(1.1);
 				top: -0.13em;
 			}
 		}
-		
+
 		.cat-links {
 			.svg-icon {
 				transform: scale(0.9);
 				top: -0.12em;
 			}
 		}
-		
+
 		.comments-link {
 			white-space: nowrap;
 			.svg-icon {
 				transform: scale(0.82);
 			}
 		}
-		
+
 		.edit-link {
 			white-space: nowrap;
 			.svg-icon {
 				transform: scale(0.9);
 			}
 		}
-		
+
 	}
-	
+
 	.post-thumbnail {
-		
+
 		&:focus {
 			outline: none;
 		}
-		
+
 		.post-thumbnail-inner {
 			display: block;
 			border: solid 10px $text_color;
@@ -172,21 +175,21 @@
 				display: block;
 			}
 		}
-		
+
 	}
-	
+
 	.image-filters-enabled & {
-		
+
 		.post-thumbnail {
 			position: relative;
 			display: block;
 
 			.post-thumbnail-inner {
 				position: relative;
-				
+
 				filter: grayscale(100%);
 				z-index: 1;
-				
+
 				&:after {
 					display: block;
 					width: 100%;
@@ -195,7 +198,7 @@
 					z-index: 10;
 				}
 			}
-		
+
 			&:before, &:after {
 				position: absolute;
 				display: block;
@@ -205,34 +208,34 @@
 				content: "\020";
 				display: block;
 			}
-		
+
 			&:before {
 				background: $blue;
 				mix-blend-mode: screen;
 				opacity: 0.1;
 				z-index: 2;
 			}
-		
+
 			&:after {
 				background: $blue;
 				mix-blend-mode: multiply;
 				opacity: 1;
 				z-index: 3;
 			}
-		
+
 		}
-	
+
 	}
-	
+
 	.entry-header, .entry-content, .entry-footer {
 		@include media( wide ) {
 			max-width: $tablet_width;
 		}
 	}
-	
+
 	.entry-content {
 		@include remove-child-margins;
-		
+
 		.more-link {
 			@include link-transition;
 			display: inline;
@@ -242,12 +245,12 @@
 				content: "»";
 				margin-left: 0.5em;
 			}
-			
+
 			&:hover {
 				color: $blue;
 				text-decoration: none;
 			}
 		}
 	}
-	
+
 }

@@ -1,4 +1,3 @@
-@charset "UTF-8";
 /*!
 Theme Name: Default Small Business Theme
 Theme URI: https://github.com/Automattic/default-small-business-theme
@@ -20,6 +19,31 @@ Underscores is distributed under the terms of the GNU GPL v2 or later.
 Normalizing styles have been helped along thanks to the fine work of
 Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 */
+:root {
+  --text_font: Baskerville, Baskerville Old Face, Hoefler Text, Garamond, Times New Roman, serif;
+  --title_font: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+  --monospace_font: Menlo, monaco, Consolas, Lucida Console, monospace;
+  --text_base_size: 22px;
+  --text_scale_ratio: 1.2;
+  --text_xs: calc(1em / (var(--text_scale_ratio) * var(--text_scale_ratio)));
+  --text_sm: calc(1em / var(--text_scale_ratio));
+  --text_md: calc(1em * var(--text_scale_ratio));
+  --text_lg: calc(1em * var(--text_scale_ratio) * var(--text_scale_ratio));
+  --text_xl: calc(1em * var(--text_scale_ratio) * var(--text_scale_ratio) * var(--text_scale_ratio));
+  --text_xxl: calc(1em * var(--text_scale_ratio) * var(--text_scale_ratio) * var(--text_scale_ratio) * var(--text_scale_ratio));
+  --text_xxxl: calc(1em * var(--text_scale_ratio) * var(--text_scale_ratio) * var(--text_scale_ratio) * var(--text_scale_ratio) * var(--text_scale_ratio));
+  --heading_line_height: 1.2;
+  --body_line_height: 1.4;
+  --mobile_width: 380px;
+  --tablet_width: 768px;
+  --desktop_width: 1168px;
+  --wide_width: 1379px;
+  --side_padding: 20px;
+  --logo_wrapper_width_tablet: 108px;
+  --logo_wrapper_width_desktop: 172px;
+  --link_transition: 110ms;
+  --icon_transition: 120ms; }
+
 /*! normalize.css v8.0.0 | MIT License | github.com/necolas/normalize.css */
 html {
   line-height: 1.15;
@@ -171,14 +195,79 @@ input,
 select,
 optgroup,
 textarea {
-  font-family: "Hoefler Text", "Baskerville Old Face", Garamond, "Times New Roman", serif;
+  font-family: "Baskerville, Baskerville Old Face, Hoefler Text, Garamond, Times New Roman, serif";
+  font-family: var(--text_font, "Baskerville, Baskerville Old Face, Hoefler Text, Garamond, Times New Roman, serif");
+  font-size: 22px;
+  font-size: var(--text_base_size, 22px);
+  line-height: 1.4;
+  line-height: var(--body_line_height, 1.4);
   color: #111;
-  font-weight: 400;
-  font-size: 18px;
-  line-height: 1.5; }
+  font-weight: 400; }
 
 h1, h2, h3, h4, h5, h6 {
-  clear: both; }
+  clear: both;
+  font-weight: 400;
+  line-height: 1.2;
+  line-height: var(--heading_line_height, 1.2); }
+
+h2 {
+  font-family: '-apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif';
+  font-family: var(--title_font, '-apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif');
+  font-weight: 200;
+  letter-spacing: .25rem;
+  text-transform: uppercase; }
+
+h5 {
+  font-family: '-apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif';
+  font-family: var(--title_font, '-apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif');
+  font-weight: 500;
+  text-transform: uppercase; }
+
+h6 {
+  font-family: '-apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif';
+  font-family: var(--title_font, '-apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif');
+  font-weight: 200;
+  letter-spacing: .125rem;
+  text-transform: uppercase; }
+
+/* text size */
+.text--xxxl,
+p.has-drop-cap:not(:focus):first-letter {
+  font-size: calc(1em * var(--text_scale_ratio) * var(--text_scale_ratio) * var(--text_scale_ratio) * var(--text_scale_ratio) * var(--text_scale_ratio));
+  font-size: var(--text_xxxl, calc(1em * var(--text_scale_ratio) * var(--text_scale_ratio) * var(--text_scale_ratio) * var(--text_scale_ratio) * var(--text_scale_ratio))); }
+
+h1,
+.text--xxl {
+  font-size: calc(1em * var(--text_scale_ratio) * var(--text_scale_ratio) * var(--text_scale_ratio) * var(--text_scale_ratio));
+  font-size: var(--text_xxl, calc(1em * var(--text_scale_ratio) * var(--text_scale_ratio) * var(--text_scale_ratio) * var(--text_scale_ratio))); }
+
+h2,
+.text--xl,
+.has-larger-font-size {
+  font-size: calc(1em * var(--text_scale_ratio) * var(--text_scale_ratio) * var(--text_scale_ratio));
+  font-size: var(--text_xl, calc(1em * var(--text_scale_ratio) * var(--text_scale_ratio) * var(--text_scale_ratio))); }
+
+h3,
+.text--lg,
+.has-large-font-size {
+  font-size: calc(1em * var(--text_scale_ratio) * var(--text_scale_ratio));
+  font-size: var(--text_lg, calc(1em * var(--text_scale_ratio) * var(--text_scale_ratio))); }
+
+h4,
+.text--md,
+.has-regular-font-size {
+  font-size: calc(1em * var(--text_scale_ratio));
+  font-size: var(--text_md, calc(1em * var(--text_scale_ratio))); }
+
+.text--sm,
+small,
+.has-small-font-size {
+  font-size: calc(1em / var(--text_scale_ratio));
+  font-size: var(--text_sm, calc(1em / var(--text_scale_ratio))); }
+
+.text--xs {
+  font-size: calc(1em / (var(--text_scale_ratio) * var(--text_scale_ratio)));
+  font-size: var(--text_xs, calc(1em / (var(--text_scale_ratio) * var(--text_scale_ratio)))); }
 
 p {
   margin-bottom: 1.5em; }
@@ -225,577 +314,14 @@ a {
   a:hover {
     text-decoration: underline; }
 
-/** === Elements === */
-html {
-  box-sizing: border-box; }
-
-*,
-*:before,
-*:after {
-  box-sizing: inherit; }
-
-body {
-  background: #fff; }
-
-a:hover, a:active {
-  outline: 0; }
-
-hr {
-  background-color: #ccc;
-  border: 0;
-  height: 1px;
-  margin-bottom: 1.5em; }
-
-ul, ol {
-  margin: 0 0 1.5em 3em; }
-
-ul {
-  list-style: disc; }
-
-ol {
-  list-style: decimal; }
-
-li > ul,
-li > ol {
-  margin-bottom: 0;
-  margin-left: 1.5em; }
-
-dt {
-  font-weight: bold; }
-
-dd {
-  margin: 0 1.5em 1.5em; }
-
-img {
-  height: auto;
-  max-width: 100%; }
-
-figure {
-  margin: 1em 0; }
-
-table {
-  margin: 0 0 1.5em;
-  width: 100%; }
-
-/** === Forms === */
-textarea {
-  width: 100%; }
-
-/** === Accessibility === */
-.screen-reader-text {
-  border: 0;
-  clip: rect(1px, 1px, 1px, 1px);
-  clip-path: inset(50%);
-  height: 1px;
-  margin: -1px;
-  overflow: hidden;
-  font-weight: 200;
-  padding: 0;
-  position: absolute !important;
-  width: 1px;
-  word-wrap: normal !important; }
-
-.screen-reader-text:focus {
-  background-color: #f1f1f1;
-  border-radius: 3px;
-  box-shadow: 0 0 4px 2px rgba(0, 0, 0, 0.25);
-  clip: auto !important;
-  clip-path: none;
-  color: #21759b;
-  display: block;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
-  font-size: 14px;
-  font-size: 0.875rem;
-  font-weight: 600;
-  outline: none;
-  height: auto;
-  line-height: 1.2;
-  padding: 15px 23px 14px;
-  text-decoration: none;
-  left: 10px;
-  top: 10px;
-  width: auto;
-  z-index: 100000; }
-
-#content[tabindex="-1"]:focus {
-  outline: 0; }
-
-/** === Site Branding === */
-.site-header {
-  margin-bottom: 3.5em; }
-  @media only screen and (min-width: 768px) {
-    .site-header {
-      margin-bottom: 4.8em; } }
-
-.site-branding {
-  padding-top: 0.2em;
-  letter-spacing: -0.02em;
-  color: #959595;
-  line-height: 1.35; }
-  @media only screen and (min-width: 768px) {
-    .site-branding {
-      line-height: 1.2; } }
-  @media only screen and (min-width: 1168px) {
-    .site-branding {
-      line-height: 1.35; } }
-  .site-branding .site-title {
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    font-size: 1.3888888889em;
-    display: inline;
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
-    color: #111;
-    font-weight: 600;
-    /* When there is no description set, make sure navigation appears below title. */ }
-    .site-branding .site-title + .main-navigation {
-      display: block; }
-    .site-branding .site-title a {
-      transition: color 110ms ease-in-out;
-      text-decoration: none;
-      color: inherit; }
-      .site-branding .site-title a:hover {
-        color: #4a4a4a; }
-    @media only screen and (min-width: 768px) {
-      .site-branding .site-title {
-        font-size: 1.8888888889em;
-        letter-spacing: -0.025em;
-        display: block;
-        margin: 0.25em 0 0.35em 0;
-        font-weight: 700; } }
-    @media only screen and (min-width: 1168px) {
-      .site-branding .site-title {
-        font-size: 2.4444444444em;
-        display: inline; } }
-  .site-branding .site-description {
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    font-size: 1.3888888889em;
-    color: #959595;
-    font-weight: normal; }
-    @media only screen and (min-width: 768px) {
-      .site-branding .site-description {
-        font-size: 1.7777777778em; } }
-    @media only screen and (min-width: 1168px) {
-      .site-branding .site-description {
-        font-size: 2.5em;
-        letter-spacing: -0.01em; } }
-    @media only screen and (min-width: 1379px) {
-      .site-branding .site-description {
-        font-size: 2.3333333333em; } }
-    .site-branding .site-description .separator {
-      margin: 0 0.1em; }
-      @media only screen and (min-width: 1168px) {
-        .site-branding .site-description .separator {
-          margin-left: 0.2em; } }
-  .site-branding .main-navigation {
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    display: inline;
-    margin-left: 0.2em; }
-    .site-branding .main-navigation .menu-main-navigation-container {
-      display: inline; }
-    .site-branding .main-navigation ul.main-menu {
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
-      display: inline;
-      margin: 0;
-      padding: 0; }
-      .site-branding .main-navigation ul.main-menu > li {
-        display: inline; }
-        .site-branding .main-navigation ul.main-menu > li > a {
-          transition: color 110ms ease-in-out; }
-          .site-branding .main-navigation ul.main-menu > li > a:hover {
-            color: #0b709a; }
-          .site-branding .main-navigation ul.main-menu > li > a:after {
-            content: ",";
-            display: inline;
-            margin-left: 0.03em;
-            color: #959595; }
-        .site-branding .main-navigation ul.main-menu > li:last-child > a:after {
-          content: "."; }
-        .site-branding .main-navigation ul.main-menu > li > a {
-          font-size: 1.2777777778em;
-          transition: color 110ms ease-in-out;
-          text-decoration: none;
-          font-weight: 700;
-          color: #0999d4;
-          margin-right: 0.1em; }
-          @media only screen and (min-width: 768px) {
-            .site-branding .main-navigation ul.main-menu > li > a {
-              font-size: 1.7222222222em; } }
-          @media only screen and (min-width: 1168px) {
-            .site-branding .main-navigation ul.main-menu > li > a {
-              font-size: 2.3333333333em; } }
-        .site-branding .main-navigation ul.main-menu > li:last-child > a {
-          margin-right: 0; }
-    .site-branding .main-navigation ul.sub-menu {
-      display: none; }
-
-.social-navigation {
-  margin-top: 0.6em;
-  text-align: center; }
-  @media only screen and (min-width: 768px) {
-    .social-navigation {
-      margin-top: 1em;
-      text-align: left; } }
-  @media only screen and (min-width: 1168px) {
-    .social-navigation {
-      margin-top: 1.3em; } }
-  .social-navigation ul.social-links-menu {
-    display: inline-block;
-    margin: 0;
-    padding: 0; }
-    .social-navigation ul.social-links-menu li {
-      display: inline-block;
-      list-style: none; }
-      @media only screen and (min-width: 1168px) {
-        .social-navigation ul.social-links-menu li:nth-child(n+2) {
-          margin-left: 0.2em; } }
-      .social-navigation ul.social-links-menu li a {
-        display: inline-block;
-        line-height: 1; }
-        .social-navigation ul.social-links-menu li a svg {
-          transition: fill 120ms ease-in-out;
-          display: block;
-          line-height: 1; }
-          .social-navigation ul.social-links-menu li a svg:hover {
-            fill: #0999d4; }
-          @media only screen and (min-width: 768px) {
-            .social-navigation ul.social-links-menu li a svg {
-              width: 35px;
-              height: 35px; } }
-          @media only screen and (min-width: 1168px) {
-            .social-navigation ul.social-links-menu li a svg {
-              width: 46px;
-              height: 46px; } }
-
-.site-footer {
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  font-size: 0.8333333333em;
-  margin: 4em 0 3em 0;
-  padding: 0;
-  color: #959595; }
-  .site-footer a {
-    color: inherit; }
-    .site-footer a:hover {
-      text-decoration: none;
-      color: #0999d4; }
-
-/** === Posts and pages === */
-.sticky {
-  display: block; }
-
-.updated:not(.published) {
-  display: none; }
-
-.page-links {
-  clear: both;
-  margin: 0 0 1.5em; }
-
-/** === Comments === */
-.comment-content a {
-  word-wrap: break-word; }
-
-.bypostauthor {
-  display: block; }
-
-/** === Infinite scroll === */
-.infinite-scroll .posts-navigation,
-.infinite-scroll.neverending .site-footer {
-  display: none; }
-
-.infinity-end.neverending .site-footer {
-  display: block; }
-
-/** === Media === */
-.page-content .wp-smiley,
-.entry-content .wp-smiley,
-.comment-content .wp-smiley {
-  border: none;
-  margin-bottom: 0;
-  margin-top: 0;
-  padding: 0; }
-
-embed,
-iframe,
-object {
-  max-width: 100%; }
-
-.custom-logo-link {
-  display: inline-block; }
-
-/** === Captions === */
-.wp-caption {
-  margin-bottom: 1.5em;
-  max-width: 100%; }
-
-.wp-caption img[class*="wp-image-"] {
-  display: block;
-  margin-left: auto;
-  margin-right: auto; }
-
-.wp-caption .wp-caption-text {
-  margin: 0.8075em 0; }
-
-.wp-caption-text {
-  text-align: center; }
-
-/** === Galleries === */
-.gallery {
-  margin-bottom: 1.5em; }
-
-.gallery-item {
-  display: inline-block;
-  text-align: center;
-  vertical-align: top;
-  width: 100%; }
-
-.gallery-columns-2 .gallery-item {
-  max-width: 50%; }
-
-.gallery-columns-3 .gallery-item {
-  max-width: 33.33%; }
-
-.gallery-columns-4 .gallery-item {
-  max-width: 25%; }
-
-.gallery-columns-5 .gallery-item {
-  max-width: 20%; }
-
-.gallery-columns-6 .gallery-item {
-  max-width: 16.66%; }
-
-.gallery-columns-7 .gallery-item {
-  max-width: 14.28%; }
-
-.gallery-columns-8 .gallery-item {
-  max-width: 12.5%; }
-
-.gallery-columns-9 .gallery-item {
-  max-width: 11.11%; }
-
-.gallery-caption {
-  display: block; }
-
-/** === Layout === */
-#page {
-  width: 100%; }
-
-#page-wrapper {
-  padding-top: 20px;
-  border: solid transparent;
-  border-width: 0 20px;
-  max-width: 425px;
-  margin: 0 auto;
-  width: 100%; }
-  @media only screen and (min-width: 768px) {
-    #page-wrapper {
-      display: flex;
-      flex-wrap: nowrap;
-      justify-content: flex-start;
-      align-items: stretch;
-      max-width: 768px;
-      padding-top: 40px; } }
-  @media only screen and (min-width: 1168px) {
-    #page-wrapper {
-      max-width: 1168px;
-      padding-top: 80px; } }
-  @media only screen and (min-width: 1379px) {
-    #page-wrapper {
-      max-width: 1379px; } }
-
-#content {
-  box-sizing: content-box; }
-  @media only screen and (min-width: 768px) {
-    #content {
-      border-right: solid 108px transparent;
-      width: calc( 100% - 2*108px); } }
-  @media only screen and (min-width: 1168px) {
-    #content {
-      border-right: solid 172px transparent;
-      width: calc( 100% - 2*172px); } }
-
-@media only screen and (min-width: 768px) {
-  .site-logo {
-    width: 108px; } }
-
-@media only screen and (min-width: 1168px) {
-  .site-logo {
-    width: 172px; } }
-
-.site-logo .custom-logo-link {
-  display: block;
-  width: 40px;
-  height: 40px;
-  border-radius: 100%;
-  border: solid 5px black;
-  box-sizing: content-box;
-  overflow: hidden; }
-  @media only screen and (min-width: 768px) {
-    .site-logo .custom-logo-link {
-      width: 65px;
-      height: 65px; } }
-  @media only screen and (min-width: 1168px) {
-    .site-logo .custom-logo-link {
-      width: 90px;
-      height: 90px; } }
-
-/** === Entries === */
-.hentry {
-  margin-top: 3em; }
-  .hentry:first-of-type {
-    margin-top: 0; }
-  .hentry:before {
-    content: "\020";
-    display: block;
-    width: 1.5em;
-    height: 2px;
-    background: #919191;
-    margin-bottom: 1.3em; }
-    @media only screen and (min-width: 768px) {
-      .hentry:before {
-        width: 2em; } }
-    @media only screen and (min-width: 1168px) {
-      .hentry:before {
-        width: 2.8em; } }
-  .hentry .entry-title {
-    font-size: 1.4444444444em;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
-    font-weight: 600;
-    margin: 0 0 0.7em 0;
-    line-height: 1.35; }
-    @media only screen and (min-width: 768px) {
-      .hentry .entry-title {
-        font-size: 2em;
-        margin-bottom: 0.48em;
-        font-weight: 700; } }
-    @media only screen and (min-width: 1168px) {
-      .hentry .entry-title {
-        font-size: 2.5555555556em;
-        margin-bottom: 0.58em; } }
-    .hentry .entry-title a {
-      transition: color 110ms ease-in-out;
-      color: inherit; }
-      .hentry .entry-title a:hover {
-        color: #4a4a4a;
-        text-decoration: none; }
-  .hentry .entry-meta .posted-on {
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    display: block;
-    margin-bottom: 0.2em; }
-    @media only screen and (min-width: 768px) {
-      .hentry .entry-meta .posted-on {
-        margin-bottom: 0.1em; } }
-    @media only screen and (min-width: 1168px) {
-      .hentry .entry-meta .posted-on {
-        font-size: 1.3333333333em;
-        margin-bottom: 0.05em; } }
-    .hentry .entry-meta .posted-on a:hover {
-      text-decoration: none;
-      color: #0b709a; }
-  .hentry .entry-footer {
-    font-size: 0.6666666667em;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
-    font-weight: 500;
-    color: #959595;
-    margin-top: 1.5em; }
-    @media only screen and (min-width: 768px) {
-      .hentry .entry-footer {
-        font-size: 0.7222222222em; } }
-    .hentry .entry-footer > span {
-      display: inline-block;
-      margin: 0.35em 1.35em 0.35em 0; }
-      .hentry .entry-footer > span:last-child {
-        margin-right: 0; }
-    .hentry .entry-footer a {
-      transition: color 110ms ease-in-out;
-      color: inherit; }
-      .hentry .entry-footer a:hover {
-        text-decoration: none;
-        color: #0999d4; }
-    .hentry .entry-footer .svg-icon {
-      position: relative;
-      display: inline-block;
-      vertical-align: middle;
-      fill: gray;
-      margin-right: 0.3em;
-      top: -0.1em; }
-    .hentry .entry-footer .byline .svg-icon {
-      transform: scale(1.1);
-      top: -0.13em; }
-    .hentry .entry-footer .cat-links .svg-icon {
-      transform: scale(0.9);
-      top: -0.12em; }
-    .hentry .entry-footer .comments-link {
-      white-space: nowrap; }
-      .hentry .entry-footer .comments-link .svg-icon {
-        transform: scale(0.82); }
-    .hentry .entry-footer .edit-link {
-      white-space: nowrap; }
-      .hentry .entry-footer .edit-link .svg-icon {
-        transform: scale(0.9); }
-  .hentry .post-thumbnail:focus {
-    outline: none; }
-  .hentry .post-thumbnail .post-thumbnail-inner {
-    display: block;
-    border: solid 10px #111;
-    margin-bottom: 1.5em; }
-    .hentry .post-thumbnail .post-thumbnail-inner img {
-      position: relative;
-      display: block; }
-  .image-filters-enabled .hentry .post-thumbnail {
-    position: relative;
-    display: block; }
-    .image-filters-enabled .hentry .post-thumbnail .post-thumbnail-inner {
-      position: relative;
-      filter: grayscale(100%);
-      z-index: 1; }
-      .image-filters-enabled .hentry .post-thumbnail .post-thumbnail-inner:after {
-        display: block;
-        width: 100%;
-        height: 100%;
-        background: green;
-        z-index: 10; }
-    .image-filters-enabled .hentry .post-thumbnail:before, .image-filters-enabled .hentry .post-thumbnail:after {
-      position: absolute;
-      display: block;
-      width: 100%;
-      height: 100%;
-      top: 0;
-      left: 0;
-      content: "\020";
-      display: block; }
-    .image-filters-enabled .hentry .post-thumbnail:before {
-      background: #0999d4;
-      mix-blend-mode: screen;
-      opacity: 0.1;
-      z-index: 2; }
-    .image-filters-enabled .hentry .post-thumbnail:after {
-      background: #0999d4;
-      mix-blend-mode: multiply;
-      opacity: 1;
-      z-index: 3; }
-  @media only screen and (min-width: 1379px) {
-    .hentry .entry-header, .hentry .entry-content, .hentry .entry-footer {
-      max-width: 768px; } }
-  .hentry .entry-content > *:first-child {
-    margin-top: 0; }
-  .hentry .entry-content > *:last-child {
-    margin-bottom: 0; }
-  .hentry .entry-content .more-link {
-    transition: color 110ms ease-in-out;
-    display: inline;
-    color: inherit; }
-    .hentry .entry-content .more-link:after {
-      content: "»";
-      margin-left: 0.5em; }
-    .hentry .entry-content .more-link:hover {
-      color: #0999d4;
-      text-decoration: none; }
-
-/** === CSS Effects === */
+/*
+@import "stylesheets/elements";
+@import "stylesheets/forms";
+@import "stylesheets/accessibility";
+@import "stylesheets/site-branding";
+@import "stylesheets/wordpress";
+@import "stylesheets/layout";
+@import "stylesheets/entries";
+@import "stylesheets/effects";
+@import "stylesheets/dev";
+*/
