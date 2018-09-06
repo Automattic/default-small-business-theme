@@ -7,9 +7,9 @@ input,
 select,
 optgroup,
 textarea {
-	@include var(font-family, text_font);
-	@include var(font-size, text_base_size);
-	@include var(line-height, body_line_height);
+	@include typo_var(font-family, text_font);
+	@include typo_var(font-size, text_base_size);
+	@include typo_var(line-height, body_line_height);
 	@include color_var(color, gray-10);
 	font-weight: 400;
 }
@@ -17,24 +17,24 @@ textarea {
 h1, h2, h3, h4, h5, h6 {
 	clear: both;
 	font-weight: 400;
-	@include var(line-height, heading_line_height);
+	@include typo_var(line-height, heading_line_height);
 }
 
 h2 {
-	@include var(font-family, title_font);
+	@include typo_var(font-family, title_font);
 	font-weight: 200;
 	letter-spacing: .25rem;
 	text-transform: uppercase;
 }
 
 h5 {
-	@include var(font-family, title_font);
+	@include typo_var(font-family, title_font);
 	font-weight: 500;
 	text-transform: uppercase;
 }
 
 h6 {
-	@include var(font-family, title_font);
+	@include typo_var(font-family, title_font);
 	font-weight: 200;
 	letter-spacing: .125rem;
 	text-transform: uppercase;
@@ -43,41 +43,41 @@ h6 {
 /* text size */
 .text--xxxl,
 p.has-drop-cap:not(:focus):first-letter { // Drop cap font-size
-	@include var(font-size, text_xxxl);
+	@include typo_var(font-size, text_xxxl);
 }
 
 h1,
 .text--xxl,
 big {
-	@include var(font-size, text_xxl);
+	@include typo_var(font-size, text_xxl);
 }
 
 h2,
 .text--xl,
 .has-larger-font-size {
-	@include var(font-size, text_xl);
+	@include typo_var(font-size, text_xl);
 }
 
 h3,
 .text--lg,
 .has-large-font-size {
-	@include var(font-size, text_lg);
+	@include typo_var(font-size, text_lg);
 }
 
 h4,
 .text--md,
 .has-regular-font-size {
-	@include var(font-size, text_md);
+	@include typo_var(font-size, text_md);
 }
 
 .text--sm,
 small,
 .has-small-font-size {
-	@include var(font-size, text_sm);
+	@include typo_var(font-size, text_sm);
 }
 
 .text--xs {
-	@include var(font-size, text_xs);
+	@include typo_var(font-size, text_xs);
 }
 
 dfn, cite, em, i {
@@ -89,14 +89,14 @@ blockquote {
 }
 
 pre {
-	@include var(font-family, monospace_font);
-	@include var(font-size, text_md);
+	@include typo_var(font-family, monospace_font);
+	@include typo_var(font-size, text_md);
 	line-height: 1.6;
 }
 
 code, kbd, tt, var, samp {
-	@include var(font-size, text_md);
-	@include var(font-family, monospace_font);
+	@include typo_var(font-size, text_md);
+	@include typo_var(font-family, monospace_font);
 }
 
 mark, ins {

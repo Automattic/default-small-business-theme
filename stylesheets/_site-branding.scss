@@ -15,8 +15,8 @@
 	@include color_var(color, color-text-subtle);
 
 	.site-title {
-		@include var(font-family, text_font);
-		@include var(font-size, text_xxl);
+		@include typo_var(font-family, text_font);
+		@include typo_var(font-size, text_xxl);
 		@include font-smoothing;
 		@include color_var(color, color-text);
 		display: inline;
@@ -55,7 +55,7 @@
 
 		ul.main-menu {
 
-			@include var(font-family, title_font);
+			@include typo_var(font-family, title_font);
 			display: inline;
 			margin: 0;
 			padding: 0;
@@ -166,7 +166,7 @@
 }
 
 .site-footer {
-	@include var(font-size, text_md);
+	@include typo_var(font-size, text_md);
 	@include font-smoothing;
 
 	margin: 4em 0 3em 0;

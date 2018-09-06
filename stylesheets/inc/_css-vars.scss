@@ -73,7 +73,7 @@ $type_vars: (
 
 }
 
-@mixin var($property, $varName) {
+@mixin typo_var($property, $varName) {
 	#{$property}: map-get($type_vars, $varName);
 	#{$property}: var(--#{$varName}, map-get($type_vars, $varName));
 }

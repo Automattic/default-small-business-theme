@@ -10,8 +10,8 @@
 	}
 
 	.entry-title {
-		@include var(font-family, text_font);
-		@include var(font-size, text_xl);
+		@include typo_var(font-family, text_font);
+		@include typo_var(font-size, text_xl);
 		@include font-smoothing;
 
 		a {
@@ -26,8 +26,8 @@
 
 	.entry-meta {
 
-		@include var(font-family, title_font);
-		@include var(font-size, text_xs);
+		@include typo_var(font-family, title_font);
+		@include typo_var(font-size, text_xs);
 
 		.posted-on {
 			@include font-smoothing;
@@ -45,8 +45,8 @@
 	}
 
 	.entry-footer {
-		@include var(font-family, title_font);
-		@include var(font-size, text_xs);
+		@include typo_var(font-family, title_font);
+		@include typo_var(font-size, text_xs);
 		@include font-smoothing;
 
 		font-weight: 500;
