@@ -14,10 +14,7 @@
 @import "../stylesheets/inc/mixins";
 
 .entry-content > * {
-  margin: 36px auto;
-  max-width: 636px;
-  padding-left: 14px;
-  padding-right: 14px;
+	@include block-space;
 }
 
 .entry-content > .alignwide {
@@ -32,12 +29,16 @@
 .entry-content ul,
 .entry-content ol {
   margin: 1.5em auto;
-  max-width: 636px;
+//  max-width: 636px;
   list-style-position: outside;
 }
 
+.wp-block-audio audio {
+	max-width: 100%;
+}
+
 .wp-block-video video {
-  max-width: 636px;
+//  max-width: 636px;
 }
 
 .wp-block-image img {
@@ -50,22 +51,24 @@
 }
 
 .wp-block-image.alignfull img {
-  width: 100vw;
+	width: 100vw;
+	margin-left: auto;
+	margin-right: auto;
 }
 
 .wp-block-gallery:not(.components-placeholder) {
-  margin: 1.5em auto;
+	margin: 1.5em auto;
 }
 
 .wp-block-cover-text p {
-  padding: 1.5em 14px;
+	padding: 1.5em 14px;
 }
 
 ul.wp-block-latest-posts.alignwide,
 ul.wp-block-latest-posts.alignfull,
 ul.wp-block-latest-posts.is-grid.alignwide,
 ul.wp-block-latest-posts.is-grid.alignwide {
-  padding: 0 14px;
+	padding: 0 14px;
 }
 
 .wp-block-table {
@@ -83,8 +86,7 @@ ul.wp-block-latest-posts.is-grid.alignwide {
 }
 
 .entry-content li {
-  margin-left: 2.5em;
-  margin-bottom: 6px;
+	@include space_var( margin-left, space-sm );
 }
 
 .entry-content ul ul,
@@ -128,21 +130,18 @@ ul.wp-block-latest-posts.is-grid.alignwide {
 }
 
 .wp-block-separator {
-  margin: 3em auto;
-  padding: 0;
+	@include space_var( margin-top, space-md );
+	@include space_var( margin-bottom, space-md );
+	padding: 0;
 }
 
+/*
 @media screen and (min-width: 768px) {
-  .wp-block-cover-text p {
-    padding: 1.5em 0;
-  }
-
-  .entry-content > * {
-    padding-left: 0px;
-    padding-right: 0px;
-  }
-
+	.wp-block-cover-text p {
+		padding: 1.5em 0;
+	}
 }
+*/
 
 /*--------------------------------------------------------------
 # Block Color Palette Colors

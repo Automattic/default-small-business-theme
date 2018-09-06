@@ -3,23 +3,25 @@
 
 .site-header {
 
-	margin-bottom: 3.5em;
-
 	@include media( tablet ) {
-		margin-bottom: 4.8em;
-	}
 
+	}
 }
 
 .site-branding {
+
 	@include color_var(color, color-text-subtle);
+	@include space_var(padding, space-sm);
+	border-bottom: 1px solid gray;
+	@include color_var(border-bottom-color, color-border);
 
 	.site-title {
+
 		@include typo_var(font-family, text_font);
 		@include typo_var(font-size, text_xxl);
 		@include font-smoothing;
 		@include color_var(color, color-text);
-		display: inline;
+		display: block;
 
 		/* When there is no description set, make sure navigation appears below title. */
 		+ .main-navigation {
@@ -28,6 +30,7 @@
 
 		a {
 			@include link-transition;
+			display: block;
 			text-decoration: none;
 			color: inherit;
 
@@ -38,75 +41,17 @@
 	}
 
 	.site-description {
+
 		@include font-smoothing;
-		@include font-size( 25px );
+		@include typo_var(font-size, text_base_size);
 		@include color_var(color, color-text-subtle);
 		font-weight: normal;
-	}
-
-	.main-navigation {
-		@include font-smoothing;
-		display: inline;
-		margin-left: 0.2em;
-
-		.menu-main-navigation-container {
-			display: inline;
-		}
-
-		ul.main-menu {
-
-			@include typo_var(font-family, title_font);
-			display: inline;
-			margin: 0;
-			padding: 0;
-
-			> li {
-				display: inline;
-
-				> a {
-					@include link-transition;
-
-					&:hover {
-						@include color_var(color, color-primary-dark);
-					}
-
-					&:after {
-						content: ",";
-						display: inline;
-						margin-left: 0.03em;
-						@include color_var(color, color-text-subtle);
-					}
-				}
-
-				&:last-child> a:after {
-					content: ".";
-				}
-
-				> a {
-					@include color_var(color, color-primary);
-					@include link-transition;
-					text-decoration: none;
-					font-weight: 700;
-					margin-right: 0.1em;
-				}
-
-				&:last-child > a {
-					margin-right: 0;
-				}
-
-			}
-
-		}
-
-		ul.sub-menu {
-			display: none;
-		}
-
 	}
 
 }
 
 .social-navigation {
+
 	margin-top: 0.6em;
 	text-align: center;
 

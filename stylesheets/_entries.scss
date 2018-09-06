@@ -9,12 +9,21 @@
 		margin-top: 0;
 	}
 
+	.entry-header {
+		@include block-space(space-sm,0);
+	}
+
 	.entry-title {
-		@include typo_var(font-family, text_font);
-		@include typo_var(font-size, text_xl);
+		@include block-space;
 		@include font-smoothing;
+		@include typo_var(font-family, title_font);
+		@include typo_var(font-size, text_xl);
+		font-weight: 200;
+		letter-spacing: .25rem;
+		text-transform: uppercase;
 
 		a {
+			@include color_var(color, color-primary);
 			@include link-transition;
 			color: inherit;
 			&:hover {
@@ -26,19 +35,30 @@
 
 	.entry-meta {
 
+		@include block-space;
 		@include typo_var(font-family, title_font);
 		@include typo_var(font-size, text_xs);
 
+		a {
+			@include link-transition;
+
+			&:hover {
+				text-decoration: none;
+				@include color_var(color, color-primary-dark);
+			}
+		}
+
 		.posted-on {
+			@include typo_var(font-size, text_md);
 			@include font-smoothing;
-			display: block;
+			text-transform: uppercase;
+		}
+
+		.byline {
+			@include font-smoothing;
 
 			a {
-				@include link-transition;
-				&:hover {
-					text-decoration: none;
-					@include color_var(color, color-primary-dark);
-				}
+				font-weight: 600;
 			}
 		}
 
@@ -188,7 +208,6 @@
 	}
 
 	.entry-content {
-		@include remove-child-margins;
 
 		.more-link {
 			@include link-transition;

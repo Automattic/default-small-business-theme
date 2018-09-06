@@ -20,35 +20,6 @@ Underscores is distributed under the terms of the GNU GPL v2 or later.
 Normalizing styles have been helped along thanks to the fine work of
 Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 */
-:root {
-  --text_font: Baskerville, Baskerville Old Face, Hoefler Text, Garamond, Times New Roman, serif;
-  --title_font: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
-  --monospace_font: Menlo, monaco, Consolas, Lucida Console, monospace;
-  --text_base_size: 22px;
-  --text_scale_ratio: 1.2;
-  --text_xs: calc(1em / (var(--text_scale_ratio) * var(--text_scale_ratio)));
-  --text_sm: calc(1em / var(--text_scale_ratio));
-  --text_md: calc(1em * var(--text_scale_ratio));
-  --text_lg: calc(1em * var(--text_scale_ratio) * var(--text_scale_ratio));
-  --text_xl: calc(1em * var(--text_scale_ratio) * var(--text_scale_ratio) * var(--text_scale_ratio));
-  --text_xxl: calc(1em * var(--text_scale_ratio) * var(--text_scale_ratio) * var(--text_scale_ratio) * var(--text_scale_ratio));
-  --text_xxxl: calc(1em * var(--text_scale_ratio) * var(--text_scale_ratio) * var(--text_scale_ratio) * var(--text_scale_ratio) * var(--text_scale_ratio));
-  --heading_line_height: 1.2;
-  --body_line_height: 1.4;
-  /*
-	--mobile_width: ;
-	--tablet_width: ;
-	--desktop_width: ;
-
-	--wide_width: ;
-	--side_padding: ;
-
-	--logo_wrapper_width_tablet: ;
-	--logo_wrapper_width_desktop: ;
-	--link_transition: ;
-	--icon_transition: ;
-*/ }
-
 /*
 // Here's where we use the grid mixins
 
@@ -68,7 +39,7 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 }
 */
 :root {
-  --space-unit: 1em;
+  --space-unit: 1.5rem;
   --space-xxs: calc(0.25 * var(--space-unit));
   --space-xs: calc(0.5 * var(--space-unit));
   --space-sm: calc(0.75 * var(--space-unit));
@@ -232,6 +203,38 @@ template {
 [hidden] {
   display: none; }
 
+:root {
+  --text_base_size: 18px;
+  --text_scale_ratio: 1.2;
+  --text_font: Baskerville, Baskerville Old Face, Hoefler Text, Garamond, Times New Roman, serif;
+  --title_font: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+  --monospace_font: Menlo, monaco, Consolas, Lucida Console, monospace;
+  --text_xs: calc(1em / (var(--text_scale_ratio) * var(--text_scale_ratio)));
+  --text_sm: calc(1em / var(--text_scale_ratio));
+  --text_md: calc(1em * var(--text_scale_ratio));
+  --text_lg: calc(1em * var(--text_scale_ratio) * var(--text_scale_ratio));
+  --text_xl: calc(1em * var(--text_scale_ratio) * var(--text_scale_ratio) * var(--text_scale_ratio));
+  --text_xxl: calc(1em * var(--text_scale_ratio) * var(--text_scale_ratio) * var(--text_scale_ratio) * var(--text_scale_ratio));
+  --text_xxxl: calc(1em * var(--text_scale_ratio) * var(--text_scale_ratio) * var(--text_scale_ratio) * var(--text_scale_ratio) * var(--text_scale_ratio));
+  --heading_line_height: 1.2;
+  --body_line_height: 1.4;
+  /*
+	--mobile_width: ;
+	--tablet_width: ;
+	--desktop_width: ;
+
+	--wide_width: ;
+	--side_padding: ;
+
+	--logo_wrapper_width_tablet: ;
+	--logo_wrapper_width_desktop: ;
+	--link_transition: ;
+	--icon_transition: ;
+*/ }
+  @media only screen and (min-width: 768px) {
+    :root {
+      --text_base_size: 22px; } }
+
 /** === Typography === */
 body,
 button,
@@ -241,8 +244,8 @@ optgroup,
 textarea {
   font-family: "Baskerville, Baskerville Old Face, Hoefler Text, Garamond, Times New Roman, serif";
   font-family: var(--text_font, "Baskerville, Baskerville Old Face, Hoefler Text, Garamond, Times New Roman, serif");
-  font-size: 22px;
-  font-size: var(--text_base_size, 22px);
+  font-size: 18px;
+  font-size: var(--text_base_size, 18px);
   line-height: 1.4;
   line-height: var(--body_line_height, 1.4);
   color: #2e2e31;
@@ -495,15 +498,14 @@ textarea {
   outline: 0; }
 
 /** === Site Branding === */
-.site-header {
-  margin-bottom: 3.5em; }
-  @media only screen and (min-width: 768px) {
-    .site-header {
-      margin-bottom: 4.8em; } }
-
 .site-branding {
   color: var(--gray-6);
-  color: var(--color-text-subtle, var(--gray-6)); }
+  color: var(--color-text-subtle, var(--gray-6));
+  padding: calc(0.75 * var(--space-unit));
+  padding: var(--space-sm, calc(0.75 * var(--space-unit)));
+  border-bottom: 1px solid gray;
+  border-bottom-color: var(--gray-2);
+  border-bottom-color: var(--color-border, var(--gray-2)); }
   .site-branding .site-title {
     font-family: "Baskerville, Baskerville Old Face, Hoefler Text, Garamond, Times New Roman, serif";
     font-family: var(--text_font, "Baskerville, Baskerville Old Face, Hoefler Text, Garamond, Times New Roman, serif");
@@ -513,12 +515,13 @@ textarea {
     -moz-osx-font-smoothing: grayscale;
     color: var(--gray-10);
     color: var(--color-text, var(--gray-10));
-    display: inline;
+    display: block;
     /* When there is no description set, make sure navigation appears below title. */ }
     .site-branding .site-title + .main-navigation {
       display: block; }
     .site-branding .site-title a {
       transition: color 110ms ease-in-out;
+      display: block;
       text-decoration: none;
       color: inherit; }
       .site-branding .site-title a:hover {
@@ -527,49 +530,11 @@ textarea {
   .site-branding .site-description {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    font-size: 1.3888888889em;
+    font-size: 18px;
+    font-size: var(--text_base_size, 18px);
     color: var(--gray-6);
     color: var(--color-text-subtle, var(--gray-6));
     font-weight: normal; }
-  .site-branding .main-navigation {
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    display: inline;
-    margin-left: 0.2em; }
-    .site-branding .main-navigation .menu-main-navigation-container {
-      display: inline; }
-    .site-branding .main-navigation ul.main-menu {
-      font-family: '-apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif';
-      font-family: var(--title_font, '-apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif');
-      display: inline;
-      margin: 0;
-      padding: 0; }
-      .site-branding .main-navigation ul.main-menu > li {
-        display: inline; }
-        .site-branding .main-navigation ul.main-menu > li > a {
-          transition: color 110ms ease-in-out; }
-          .site-branding .main-navigation ul.main-menu > li > a:hover {
-            color: "color-mod(var(--color-primary) shade(15%))";
-            color: var(--color-primary-dark, "color-mod(var(--color-primary) shade(15%))"); }
-          .site-branding .main-navigation ul.main-menu > li > a:after {
-            content: ",";
-            display: inline;
-            margin-left: 0.03em;
-            color: var(--gray-6);
-            color: var(--color-text-subtle, var(--gray-6)); }
-        .site-branding .main-navigation ul.main-menu > li:last-child > a:after {
-          content: "."; }
-        .site-branding .main-navigation ul.main-menu > li > a {
-          color: #008000;
-          color: var(--color-primary, #008000);
-          transition: color 110ms ease-in-out;
-          text-decoration: none;
-          font-weight: 700;
-          margin-right: 0.1em; }
-        .site-branding .main-navigation ul.main-menu > li:last-child > a {
-          margin-right: 0; }
-    .site-branding .main-navigation ul.sub-menu {
-      display: none; }
 
 .social-navigation {
   margin-top: 0.6em;
@@ -625,6 +590,47 @@ textarea {
       text-decoration: none;
       color: #008000;
       color: var(--color-primary, #008000); }
+
+/** === Site Branding === */
+.main-navigation {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  display: none;
+  margin-left: 0.2em; }
+  .main-navigation .menu-main-navigation-container {
+    display: inline; }
+  .main-navigation ul.main-menu {
+    font-family: '-apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif';
+    font-family: var(--title_font, '-apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif');
+    display: inline;
+    margin: 0;
+    padding: 0; }
+    .main-navigation ul.main-menu > li {
+      display: inline; }
+      .main-navigation ul.main-menu > li > a {
+        transition: color 110ms ease-in-out; }
+        .main-navigation ul.main-menu > li > a:hover {
+          color: "color-mod(var(--color-primary) shade(15%))";
+          color: var(--color-primary-dark, "color-mod(var(--color-primary) shade(15%))"); }
+        .main-navigation ul.main-menu > li > a:after {
+          content: ",";
+          display: inline;
+          margin-left: 0.03em;
+          color: var(--gray-6);
+          color: var(--color-text-subtle, var(--gray-6)); }
+      .main-navigation ul.main-menu > li:last-child > a:after {
+        content: "."; }
+      .main-navigation ul.main-menu > li > a {
+        color: #008000;
+        color: var(--color-primary, #008000);
+        transition: color 110ms ease-in-out;
+        text-decoration: none;
+        font-weight: 700;
+        margin-right: 0.1em; }
+      .main-navigation ul.main-menu > li:last-child > a {
+        margin-right: 0; }
+  .main-navigation ul.sub-menu {
+    display: none; }
 
 /** === Posts and pages === */
 .sticky {
@@ -790,14 +796,34 @@ object {
   margin-top: 3em; }
   .hentry:first-of-type {
     margin-top: 0; }
+  .hentry .entry-header {
+    margin-top: calc(0.75 * var(--space-unit));
+    margin-top: var(--space-sm, calc(0.75 * var(--space-unit)));
+    margin-bottom: calc(0.75 * var(--space-unit));
+    margin-bottom: var(--space-sm, calc(0.75 * var(--space-unit)));
+    padding-left: var(--0, );
+    padding-right: var(--0, ); }
   .hentry .entry-title {
-    font-family: "Baskerville, Baskerville Old Face, Hoefler Text, Garamond, Times New Roman, serif";
-    font-family: var(--text_font, "Baskerville, Baskerville Old Face, Hoefler Text, Garamond, Times New Roman, serif");
+    margin-top: calc(0.75 * var(--space-unit));
+    margin-top: var(--space-sm, calc(0.75 * var(--space-unit)));
+    margin-bottom: calc(0.75 * var(--space-unit));
+    margin-bottom: var(--space-sm, calc(0.75 * var(--space-unit)));
+    padding-left: calc(0.75 * var(--space-unit));
+    padding-left: var(--space-sm, calc(0.75 * var(--space-unit)));
+    padding-right: calc(0.75 * var(--space-unit));
+    padding-right: var(--space-sm, calc(0.75 * var(--space-unit)));
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-family: '-apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif';
+    font-family: var(--title_font, '-apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif');
     font-size: calc(1em * var(--text_scale_ratio) * var(--text_scale_ratio) * var(--text_scale_ratio));
     font-size: var(--text_xl, calc(1em * var(--text_scale_ratio) * var(--text_scale_ratio) * var(--text_scale_ratio)));
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale; }
+    font-weight: 200;
+    letter-spacing: .25rem;
+    text-transform: uppercase; }
     .hentry .entry-title a {
+      color: #008000;
+      color: var(--color-primary, #008000);
       transition: color 110ms ease-in-out;
       color: inherit; }
       .hentry .entry-title a:hover {
@@ -805,20 +831,35 @@ object {
         color: var(--color-secondary, #f5414f);
         text-decoration: none; }
   .hentry .entry-meta {
+    margin-top: calc(0.75 * var(--space-unit));
+    margin-top: var(--space-sm, calc(0.75 * var(--space-unit)));
+    margin-bottom: calc(0.75 * var(--space-unit));
+    margin-bottom: var(--space-sm, calc(0.75 * var(--space-unit)));
+    padding-left: calc(0.75 * var(--space-unit));
+    padding-left: var(--space-sm, calc(0.75 * var(--space-unit)));
+    padding-right: calc(0.75 * var(--space-unit));
+    padding-right: var(--space-sm, calc(0.75 * var(--space-unit)));
     font-family: '-apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif';
     font-family: var(--title_font, '-apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif');
     font-size: calc(1em / (var(--text_scale_ratio) * var(--text_scale_ratio)));
     font-size: var(--text_xs, calc(1em / (var(--text_scale_ratio) * var(--text_scale_ratio)))); }
+    .hentry .entry-meta a {
+      transition: color 110ms ease-in-out; }
+      .hentry .entry-meta a:hover {
+        text-decoration: none;
+        color: "color-mod(var(--color-primary) shade(15%))";
+        color: var(--color-primary-dark, "color-mod(var(--color-primary) shade(15%))"); }
     .hentry .entry-meta .posted-on {
+      font-size: calc(1em * var(--text_scale_ratio));
+      font-size: var(--text_md, calc(1em * var(--text_scale_ratio)));
       -webkit-font-smoothing: antialiased;
       -moz-osx-font-smoothing: grayscale;
-      display: block; }
-      .hentry .entry-meta .posted-on a {
-        transition: color 110ms ease-in-out; }
-        .hentry .entry-meta .posted-on a:hover {
-          text-decoration: none;
-          color: "color-mod(var(--color-primary) shade(15%))";
-          color: var(--color-primary-dark, "color-mod(var(--color-primary) shade(15%))"); }
+      text-transform: uppercase; }
+    .hentry .entry-meta .byline {
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale; }
+      .hentry .entry-meta .byline a {
+        font-weight: 600; }
   .hentry .entry-footer {
     font-family: '-apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif';
     font-family: var(--title_font, '-apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif');
@@ -906,10 +947,6 @@ object {
       mix-blend-mode: multiply;
       opacity: 1;
       z-index: 3; }
-  .hentry .entry-content > *:first-child {
-    margin-top: 0; }
-  .hentry .entry-content > *:last-child {
-    margin-bottom: 0; }
   .hentry .entry-content .more-link {
     transition: color 110ms ease-in-out;
     display: inline;

@@ -51,3 +51,10 @@
 		margin-bottom: 0;
 	}
 }
+
+@mixin block-space( $v-space: space-sm, $h-space: space-sm ) {
+	@include space_var( margin-top, $v-space );
+	@include space_var( margin-bottom, $v-space );
+	@include space_var( padding-left, $h-space );
+	@include space_var( padding-right, $h-space );
+}
