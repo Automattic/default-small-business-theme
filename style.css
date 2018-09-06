@@ -922,11 +922,6 @@ object {
       mix-blend-mode: multiply;
       opacity: 1;
       z-index: 3; }
-  @media only screen and (min-width: 1379px) {
-    .hentry .entry-header,
-    .hentry .entry-content,
-    .hentry .entry-footer {
-      max-width: 768px; } }
   .hentry .entry-content > *:first-child {
     margin-top: 0; }
   .hentry .entry-content > *:last-child {
