@@ -93,6 +93,47 @@ $blue: #0999d4;
 $darker_blue: mix( $text_color, $blue, 30% );
 $text_color_link_hover: lighten($text_color, 22.5%);
 */
+:root {
+  --color-primary: #008000;
+  --color-primary-light: color-mod(var(--color-primary) tint(15%));
+  --color-primary-dark: color-mod(var(--color-primary) shade(15%));
+  --color-primary-bg: color-mod(var(--color-primary) alpha(20%));
+  --color-secondary: #f5414f;
+  --color-secondary-light: color-mod(var(--color-secondary) shade(10%));
+  --color-secondary-dark: color-mod(var(--color-secondary) tint(15%));
+  --color-secondary-bg: color-mod(var(--color-secondary) alpha(20%));
+  --black: #1d1d21;
+  --gray-10: #2e2e31;
+  --gray-6: #7b7a7d;
+  --gray-4: #a5a5a6;
+  --gray-3: #bbbbbc;
+  --gray-2: #d1d0d2;
+  --gray-1: #e8e7e8;
+  --white: white;
+  --color-success: #88c459;
+  --color-error: #f5414f;
+  --color-warning: #ffd137;
+  --color-text: var(--gray-10);
+  --color-text-heading: var(--#000000);
+  --color-text-subtle: var(--gray-6);
+  --color-link: var(--color-primary);
+  --color-link-visited: color-mod(var(--color-primary) shade(15%));
+  --color-mark: var(--color-secondary-bg);
+  --color-blockquote-border: var(--gray-2);
+  --color-border: var(--gray-2);
+  --color-body: var(--#ffffff);
+  --form-element-border: var(--color-border);
+  --form-element-border-focus: var(--color-primary);
+  --form-element-border-error: var(--color-error);
+  --form-element-bg: var(--#ffffff);
+  --form-text-placeholder: var(--gray-4);
+  --btn-primary-bg: var(--color-primary);
+  --btn-primary-hover: var(--color-primary-light);
+  --btn-primary-active: var(--color-primary-dark);
+  --btn-primary-label: var(--#ffffff);
+  --color-icon-primary: var(--gray-4);
+  --color-icon-secondary: inherit; }
+
 /*! normalize.css v8.0.0 | MIT License | github.com/necolas/normalize.css */
 html {
   line-height: 1.15;

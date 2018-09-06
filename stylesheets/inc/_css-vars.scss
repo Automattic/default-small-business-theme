@@ -1,4 +1,4 @@
-$vars: (
+$type_vars: (
 
 	// Typography.
 	text_base_size: 22px,
@@ -40,41 +40,41 @@ $vars: (
 );
 
 :root {
-	--text_font: #{map-get($vars, text_font)};
-	--title_font: #{map-get($vars, title_font)};
-	--monospace_font: #{map-get($vars, monospace_font)};
-	--text_base_size: #{map-get($vars, text_base_size)};
-	--text_scale_ratio: #{map-get($vars, text_scale_ratio)};
+	--text_font: #{map-get($type_vars, text_font)};
+	--title_font: #{map-get($type_vars, title_font)};
+	--monospace_font: #{map-get($type_vars, monospace_font)};
+	--text_base_size: #{map-get($type_vars, text_base_size)};
+	--text_scale_ratio: #{map-get($type_vars, text_scale_ratio)};
 
-	--text_xs: #{map-get($vars, text_xs)};
-	--text_sm: #{map-get($vars, text_sm)};
-	--text_md: #{map-get($vars, text_md)};
-	--text_lg: #{map-get($vars, text_lg)};
-	--text_xl: #{map-get($vars, text_xl)};
-	--text_xxl: #{map-get($vars, text_xxl)};
-	--text_xxxl: #{map-get($vars, text_xxxl)};
+	--text_xs: #{map-get($type_vars, text_xs)};
+	--text_sm: #{map-get($type_vars, text_sm)};
+	--text_md: #{map-get($type_vars, text_md)};
+	--text_lg: #{map-get($type_vars, text_lg)};
+	--text_xl: #{map-get($type_vars, text_xl)};
+	--text_xxl: #{map-get($type_vars, text_xxl)};
+	--text_xxxl: #{map-get($type_vars, text_xxxl)};
 
-	--heading_line_height: #{map-get($vars, heading_line_height)};
-	--body_line_height: #{map-get($vars, body_line_height)};
+	--heading_line_height: #{map-get($type_vars, heading_line_height)};
+	--body_line_height: #{map-get($type_vars, body_line_height)};
 
 /*
-	--mobile_width: #{map-get($vars, mobile_width)};
-	--tablet_width: #{map-get($vars, tablet_width)};
-	--desktop_width: #{map-get($vars, desktop_width)};
+	--mobile_width: #{map-get($type_vars, mobile_width)};
+	--tablet_width: #{map-get($type_vars, tablet_width)};
+	--desktop_width: #{map-get($type_vars, desktop_width)};
 
-	--wide_width: #{map-get($vars, wide_width)};
-	--side_padding: #{map-get($vars, side_padding)};
+	--wide_width: #{map-get($type_vars, wide_width)};
+	--side_padding: #{map-get($type_vars, side_padding)};
 
-	--logo_wrapper_width_tablet: #{map-get($vars, logo_wrapper_width_tablet)};
-	--logo_wrapper_width_desktop: #{map-get($vars, logo_wrapper_width_desktop)};
-	--link_transition: #{map-get($vars, link_transition)};
-	--icon_transition: #{map-get($vars, icon_transition)};
+	--logo_wrapper_width_tablet: #{map-get($type_vars, logo_wrapper_width_tablet)};
+	--logo_wrapper_width_desktop: #{map-get($type_vars, logo_wrapper_width_desktop)};
+	--link_transition: #{map-get($type_vars, link_transition)};
+	--icon_transition: #{map-get($type_vars, icon_transition)};
 */
 
 }
 
 @mixin var($property, $varName) {
-	#{$property}: map-get($vars, $varName);
-	#{$property}: var(--#{$varName}, map-get($vars, $varName));
+	#{$property}: map-get($type_vars, $varName);
+	#{$property}: var(--#{$varName}, map-get($type_vars, $varName));
 }
 
