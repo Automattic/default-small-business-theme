@@ -30,7 +30,7 @@ $color_vars: (
 	gray-3: #bbbbbc,
 	gray-2: #d1d0d2,
 	gray-1: #e8e7e8,
-	white: white,
+	white: #ffffff,
 
 	// feedback
 	color-success: #88c459,
@@ -39,7 +39,7 @@ $color_vars: (
 
 	// typography
 	color-text: var(--gray-10),
-	color-text-heading: var(--black),
+	color-text-heading: 'var(--black)',
 	color-text-subtle: var(--gray-6),
 	color-link: var(--color-primary),
 	color-link-visited: var(--color-primary-dark),
@@ -50,20 +50,20 @@ $color_vars: (
 	color-border: var(--gray-2),
 
 	// body
-	color-body: var(--white),
+	color-body: 'var(--white)',
 
 	// forms
 	form-element-border: var(--color-border),
 	form-element-border-focus: var(--color-primary),
 	form-element-border-error: var(--color-error),
-	form-element-bg: var(--white),
+	form-element-bg: 'var(--white)',
 	form-text-placeholder: var(--gray-4),
 
 	// buttons
 	btn-primary-bg: var(--color-primary),
 	btn-primary-hover: var(--color-primary-light),
 	btn-primary-active: var(--color-primary-dark),
-	btn-primary-label: var(--white),
+	btn-primary-label: 'var(--white)',
 
 	// icons
 	color-icon-primary: var(--gray-4),
