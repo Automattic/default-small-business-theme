@@ -32,7 +32,7 @@
 			color: inherit;
 
 			&:hover {
-				@include color_var(color, color-accent);
+				@include color_var(color, color-secondary);
 			}
 		}
 	}

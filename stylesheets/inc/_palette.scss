@@ -10,16 +10,17 @@ $text_color_link_hover: lighten($text_color, 22.5%);
 */
 
 $color_vars: (
+
 	// main colors
 	color-primary: #008000,
 	color-primary-light: 'color-mod(var(--color-primary) tint(15%))',
 	color-primary-dark: 'color-mod(var(--color-primary) shade(15%))',
 	color-primary-bg: 'color-mod(var(--color-primary) alpha(20%))',
 
-	color-accent: #f5414f,
-	color-accent-light: 'color-mod(var(--color-accent) tint(15%))',
-	color-accent-dark: 'color-mod(var(--color-accent) shade(10%))',
-	color-accent-bg: 'color-mod(var(--color-accent) alpha(20%))',
+	color-secondary: #f5414f,
+	color-secondary-light: 'color-mod(var(--color-secondary) tint(15%))',
+	color-secondary-dark: 'color-mod(var(--color-secondary) shade(10%))',
+	color-secondary-bg: 'color-mod(var(--color-secondary) alpha(20%))',
 
 	// shades - generated using chroma.js - 12 steps
 	black: #1d1d21,
@@ -42,7 +43,7 @@ $color_vars: (
 	color-text-subtle: var(--gray-6),
 	color-link: var(--color-primary),
 	color-link-visited: var(--color-primary-dark),
-	color-mark: var(--color-accent-bg),
+	color-mark: var(--color-secondary-bg),
 	color-blockquote-border: var(--gray-2),
 
 	// border
@@ -76,10 +77,10 @@ $color_vars: (
     --color-primary-dark: #{map-get($vars, color-primary-dark)};
     --color-primary-bg: #{map-get($vars, color-primary-bg)};
 
-    --color-accent: #{map-get($vars, color-accent)};
-    --color-accent-light: #{map-get($vars, color-accent-dark)};
-    --color-accent-dark: #{map-get($vars, color-accent-light)};
-    --color-accent-bg: #{map-get($vars, color-accent-bg)};
+    --color-secondary: #{map-get($vars, color-secondary)};
+    --color-secondary-light: #{map-get($vars, color-secondary-dark)};
+    --color-secondary-dark: #{map-get($vars, color-secondary-light)};
+    --color-secondary-bg: #{map-get($vars, color-secondary-bg)};
 
     // shades - generated using chroma.js - 12 steps
     --black: #{map-get($vars, black)};

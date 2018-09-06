@@ -18,7 +18,7 @@
 			@include link-transition;
 			color: inherit;
 			&:hover {
-				@include color_var(color, color-accent);
+				@include color_var(color, color-secondary);
 				text-decoration: none;
 			}
 		}
@@ -119,7 +119,7 @@
 		.post-thumbnail-inner {
 			display: block;
 			border: solid 10px inherit;
-			@include color_var(border-color, color-accent);
+			@include color_var(border-color, color-secondary);
 			margin-bottom: 1.5em;
 
 			img {

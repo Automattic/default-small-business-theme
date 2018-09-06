@@ -461,7 +461,7 @@ textarea {
       color: inherit; }
       .site-branding .site-title a:hover {
         color: #f5414f;
-        color: var(--color-accent, #f5414f); }
+        color: var(--color-secondary, #f5414f); }
   .site-branding .site-description {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
@@ -740,7 +740,7 @@ object {
       color: inherit; }
       .hentry .entry-title a:hover {
         color: #f5414f;
-        color: var(--color-accent, #f5414f);
+        color: var(--color-secondary, #f5414f);
         text-decoration: none; }
   .hentry .entry-meta {
     font-family: '-apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif';
@@ -805,7 +805,7 @@ object {
     display: block;
     border: solid 10px inherit;
     border-color: #f5414f;
-    border-color: var(--color-accent, #f5414f);
+    border-color: var(--color-secondary, #f5414f);
     margin-bottom: 1.5em; }
     .hentry .post-thumbnail .post-thumbnail-inner img {
       position: relative;
