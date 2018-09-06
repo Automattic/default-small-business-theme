@@ -94,7 +94,7 @@ pre {
 	line-height: 1.6;
 }
 
-code, kbd, tt, var {
+code, kbd, tt, var, samp {
 	@include var(font-size, text_md);
 	@include var(font-family, monospace_font);
 }
@@ -104,9 +104,37 @@ mark, ins {
 }
 
 a {
+	background-color: transparent;
 	text-decoration: none;
 
 	&:hover {
 		text-decoration: underline;
 	}
+}
+
+abbr[title] {
+  border-bottom: none;
+  text-decoration: underline;
+  text-decoration: underline dotted;
+}
+
+b,
+strong {
+  font-weight: bolder;
+}
+
+sub,
+sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+
+sub {
+  bottom: -0.25em;
+}
+
+sup {
+  top: -0.5em;
 }

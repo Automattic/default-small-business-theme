@@ -136,58 +136,15 @@ $text_color_link_hover: lighten($text_color, 22.5%);
 
 /*! normalize.css v8.0.0 | MIT License | github.com/necolas/normalize.css */
 html {
-  line-height: 1.15;
   -webkit-text-size-adjust: 100%; }
 
 body {
   margin: 0; }
 
-h1 {
-  font-size: 2em;
-  margin: 0.67em 0; }
-
 hr {
   box-sizing: content-box;
   height: 0;
   overflow: visible; }
-
-pre {
-  font-family: monospace, monospace;
-  font-size: 1em; }
-
-a {
-  background-color: transparent; }
-
-abbr[title] {
-  border-bottom: none;
-  text-decoration: underline;
-  text-decoration: underline dotted; }
-
-b,
-strong {
-  font-weight: bolder; }
-
-code,
-kbd,
-samp {
-  font-family: monospace, monospace;
-  font-size: 1em; }
-
-small {
-  font-size: 80%; }
-
-sub,
-sup {
-  font-size: 75%;
-  line-height: 0;
-  position: relative;
-  vertical-align: baseline; }
-
-sub {
-  bottom: -0.25em; }
-
-sup {
-  top: -0.5em; }
 
 img {
   border-style: none; }
@@ -197,9 +154,6 @@ input,
 optgroup,
 select,
 textarea {
-  font-family: inherit;
-  font-size: 100%;
-  line-height: 1.15;
   margin: 0; }
 
 button,
@@ -373,7 +327,7 @@ pre {
   font-size: var(--text_md, calc(1em * var(--text_scale_ratio)));
   line-height: 1.6; }
 
-code, kbd, tt, var {
+code, kbd, tt, var, samp {
   font-size: calc(1em * var(--text_scale_ratio));
   font-size: var(--text_md, calc(1em * var(--text_scale_ratio)));
   font-family: "Menlo, monaco, Consolas, Lucida Console, monospace";
@@ -383,9 +337,32 @@ mark, ins {
   text-decoration: none; }
 
 a {
+  background-color: transparent;
   text-decoration: none; }
   a:hover {
     text-decoration: underline; }
+
+abbr[title] {
+  border-bottom: none;
+  text-decoration: underline;
+  text-decoration: underline dotted; }
+
+b,
+strong {
+  font-weight: bolder; }
+
+sub,
+sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline; }
+
+sub {
+  bottom: -0.25em; }
+
+sup {
+  top: -0.5em; }
 
 /** === Elements === */
 html {
@@ -397,7 +374,8 @@ html {
   box-sizing: inherit; }
 
 body {
-  background: #fff; }
+  background-color: #ffffff;
+  background-color: var(--white, #ffffff); }
 
 a {
   color: #008000;
@@ -407,20 +385,24 @@ a:hover, a:active {
   outline: 0; }
 
 p {
-  margin-bottom: 1.5em; }
+  margin: 0; }
 
 hr {
-  background-color: #ccc;
+  background-color: #bbbbbc;
+  background-color: var(--gray-3, #bbbbbc);
   border: 0;
   height: 1px;
   margin-bottom: 1.5em; }
 
 abbr, acronym {
-  border-bottom: 1px dotted #666;
+  border-bottom: 1px dotted inherit;
+  border-bottom-color: var(--gray-2);
+  border-bottom-color: var(--color-border, var(--gray-2));
   cursor: help; }
 
 pre {
-  background: #eee;
+  background-color: #e8e7e8;
+  background-color: var(--gray-1, #e8e7e8);
   margin-bottom: 1.6em;
   max-width: 100%;
   overflow: auto;
@@ -464,7 +446,8 @@ address {
   margin: 0 0 1.5em; }
 
 mark, ins {
-  background: #fff9c0; }
+  background-color: #ffd137;
+  background-color: var(--color-warning, #ffd137); }
 
 /** === Forms === */
 textarea {

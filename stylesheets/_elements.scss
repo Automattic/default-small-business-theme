@@ -12,7 +12,7 @@ html {
 }
 
 body {
-	background: #fff;
+	@include color_var(background-color, white);
 }
 
 a {
@@ -36,23 +36,24 @@ a:hover, a:active {
 }
 
 p {
-	margin-bottom: 1.5em;
+	margin: 0;
 }
 
 hr {
-	background-color: #ccc;
+	@include color_var(background-color, gray-3);
 	border: 0;
 	height: 1px;
 	margin-bottom: 1.5em;
 }
 
 abbr, acronym {
-	border-bottom: 1px dotted #666;
+	border-bottom: 1px dotted inherit;
+	@include color_var(border-bottom-color, color-border);
 	cursor: help;
 }
 
 pre {
-	background: #eee;
+	@include color_var(background-color, gray-1);
 	margin-bottom: 1.6em;
 	max-width: 100%;
 	overflow: auto;
@@ -108,5 +109,5 @@ address {
 }
 
 mark, ins {
-	background: #fff9c0;
+	@include color_var(background-color, color-warning);
 }
