@@ -14,15 +14,19 @@
   --text_xxxl: calc(1em * var(--text_scale_ratio) * var(--text_scale_ratio) * var(--text_scale_ratio) * var(--text_scale_ratio) * var(--text_scale_ratio));
   --heading_line_height: 1.2;
   --body_line_height: 1.4;
-  --mobile_width: 380px;
-  --tablet_width: 768px;
-  --desktop_width: 1168px;
-  --wide_width: 1379px;
-  --side_padding: 20px;
-  --logo_wrapper_width_tablet: 108px;
-  --logo_wrapper_width_desktop: 172px;
-  --link_transition: 110ms;
-  --icon_transition: 120ms; }
+  /*
+	--mobile_width: ;
+	--tablet_width: ;
+	--desktop_width: ;
+
+	--wide_width: ;
+	--side_padding: ;
+
+	--logo_wrapper_width_tablet: ;
+	--logo_wrapper_width_desktop: ;
+	--link_transition: ;
+	--icon_transition: ;
+*/ }
 
 /*
 $text_color: #111;
