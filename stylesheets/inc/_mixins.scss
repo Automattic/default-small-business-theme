@@ -12,7 +12,7 @@
 			@content;
 		}
 	}
-	
+
 	@if wide == $res {
 		@media only screen and (min-width: $wide_width) {
 			@content;
@@ -46,7 +46,7 @@
 	> *:first-child {
 		margin-top: 0;
 	}
-	
+
 	> *:last-child {
 		margin-bottom: 0;
 	}

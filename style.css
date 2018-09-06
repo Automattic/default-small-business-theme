@@ -50,6 +50,43 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 */ }
 
 /*
+// Here's where we use the grid mixins
+
+.container {
+
+	@include grid;
+	grid-auto-rows: 120px;
+
+	@media only screen and (min-width: 600px) {
+		@include gridLayout(
+			(7, 2),
+			(5, 1),
+			(5, 1),
+			(12, 1)
+		);
+	}
+}
+*/
+:root {
+  --space-unit: 1em;
+  --space-xxs: calc(0.25 * var(--space-unit));
+  --space-xs: calc(0.5 * var(--space-unit));
+  --space-sm: calc(0.75 * var(--space-unit));
+  --space-md: calc(1.25 * var(--space-unit));
+  --space-lg: calc(2 * var(--space-unit));
+  --space-xl: calc(3.25 * var(--space-unit));
+  --space-xxl: calc(5.25 * var(--space-unit));
+  --component-padding: var(--space-sm); }
+
+/*
+@include media( tablet ) {
+	:root {
+		--space-unit: 1.25em;
+		--component-padding: var(--space-md);
+	}
+}
+*/
+/*
 $text_color: #111;
 $light_text: lighten( #929292, 1% );
 $blue: #0999d4;

@@ -1,0 +1,67 @@
+
+// Grid
+
+// Grid variables
+$gap-horizontal: 20px;
+$gap-vertical: $gap-horizontal;
+$grid-columns: 12;
+
+// Mixins
+@mixin grid {
+	@supports(grid-area: auto) {
+		display: grid;
+		grid-column-gap: $gap-horizontal;
+		grid-row-gap: $gap-vertical;
+	}
+}
+
+@mixin grid-layout( $cols... ) {
+
+	$i: 1;
+	@each $col in $cols {
+		> :nth-of-type(#{$i}) {
+			width: calc( #{round-width(nth($col,1))} - #{$gap-horizontal});
+		}
+		$i: $i + 1;
+	}
+
+	@supports(grid-area: auto) {
+		grid-template-columns: repeat($grid-columns, 1fr);
+
+		$i: 1;
+		@each $col in $cols {
+			> :nth-of-type(#{$i}) {
+				grid-column-end: span nth($col,1);
+				@if length($col) > 1 {
+					grid-row-end: span nth($col,2);
+				}
+			}
+			$i: $i + 1;
+		}
+
+		> :nth-child(n) {
+			width: auto;
+			margin: 0;
+		}
+	}
+}
+
+
+/*
+// Here's where we use the grid mixins
+
+.container {
+
+	@include grid;
+	grid-auto-rows: 120px;
+
+	@media only screen and (min-width: 600px) {
+		@include gridLayout(
+			(7, 2),
+			(5, 1),
+			(5, 1),
+			(12, 1)
+		);
+	}
+}
+*/
