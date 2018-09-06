@@ -10,7 +10,7 @@ textarea {
 	@include var(font-family, text_font);
 	@include var(font-size, text_base_size);
 	@include var(line-height, body_line_height);
-	color: #111;
+	@include color_var(color, gray-10);
 	font-weight: 400;
 }
 

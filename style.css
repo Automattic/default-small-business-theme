@@ -245,7 +245,8 @@ textarea {
   font-size: var(--text_base_size, 22px);
   line-height: 1.4;
   line-height: var(--body_line_height, 1.4);
-  color: #111;
+  color: #2e2e31;
+  color: var(--gray-10, #2e2e31);
   font-weight: 400; }
 
 h1, h2, h3, h4, h5, h6 {
