@@ -3,15 +3,10 @@
 
 .main-navigation {
 
-	@include font-smoothing;
 	display: none;
-	margin-left: 0.2em;
+	@include font-smoothing;
 
-	.menu-main-navigation-container {
-		display: inline;
-	}
-
-	ul.main-menu {
+	> div > ul {
 
 		@include typo_var(font-family, title_font);
 		display: inline;
@@ -19,45 +14,43 @@
 		padding: 0;
 
 		> li {
-			display: inline;
+			display: inline-block;
 
 			> a {
 				@include link-transition;
+				font-weight: 200;
+				letter-spacing: .125em;
+				text-transform: uppercase;
 
 				&:hover {
 					@include color_var(color, color-primary-dark);
 				}
-
-				&:after {
-					content: ",";
-					display: inline;
-					margin-left: 0.03em;
-					@include color_var(color, color-text-subtle);
-				}
-			}
-
-			&:last-child> a:after {
-				content: ".";
 			}
 
 			> a {
 				@include color_var(color, color-primary);
+				@include typo_var(font-size, text_xs);
+				@include space_var(padding, space-xs);
 				@include link-transition;
 				text-decoration: none;
-				font-weight: 700;
-				margin-right: 0.1em;
+				font-weight: 400;
 			}
-
-			&:last-child > a {
-				margin-right: 0;
-			}
-
 		}
-
 	}
 
 	ul.sub-menu {
 		display: none;
 	}
 
+	@include media( tablet ) {
+		@include block-space( space-sm, 0 );
+		display: inherit;
+	}
+}
+
+.menu-toggle {
+
+	@include media( tablet ) {
+		display: none;
+	}
 }

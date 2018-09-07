@@ -10,12 +10,19 @@
 	}
 
 	.entry-header {
-		@include block-space(space-sm,0);
+		@include media( tablet ) {
+			display: flex;
+			justify-content: flex-end;
+			margin-left: auto;
+			margin-right: auto;
+			max-width: $width-column-12;
+		}
 	}
 
 	.entry-title {
-		@include block-space;
+		@include block-space();
 		@include font-smoothing;
+		@include color_var(color, color-primary);
 		@include typo_var(font-family, title_font);
 		@include typo_var(font-size, text_xl);
 		font-weight: 200;
@@ -31,15 +38,22 @@
 				text-decoration: none;
 			}
 		}
+
+		@include media( tablet ) {
+			@include block-space( space-sm, 0 );
+			max-width: calc( #{$width-column-6} );
+		}
 	}
 
 	.entry-meta {
 
 		@include block-space;
+		@include color_var(color, color-text-subtle);
 		@include typo_var(font-family, title_font);
-		@include typo_var(font-size, text_xs);
+		display: flex;
 
 		a {
+			@include color_var(color, color-text-heading);
 			@include link-transition;
 
 			&:hover {
@@ -49,26 +63,30 @@
 		}
 
 		.posted-on {
-			@include typo_var(font-size, text_md);
+			@include typo_var(font-size, text_xs);
 			@include font-smoothing;
 			text-transform: uppercase;
 		}
 
 		.byline {
 			@include font-smoothing;
+			@include typo_var(font-size, text_xs);
 
 			a {
 				font-weight: 600;
 			}
 		}
 
+		@include media( tablet ) {
+			flex-direction: column;
+			max-width: calc( #{$width-column-2} - #{map-get($space_vars, space-sm)} - #{map-get($space_vars, space-sm)} );
+		}
 	}
 
 	.entry-footer {
 		@include typo_var(font-family, title_font);
 		@include typo_var(font-size, text_xs);
 		@include font-smoothing;
-
 		font-weight: 500;
 
 		> span {
@@ -128,6 +146,13 @@
 			}
 		}
 
+		@include media( tablet ) {
+			display: flex;
+			justify-content: flex-end;
+			margin-left: auto;
+			margin-right: auto;
+			max-width: $width-column-12;
+		}
 	}
 
 	.post-thumbnail {
@@ -224,6 +249,11 @@
 				text-decoration: none;
 			}
 		}
-	}
 
+		@include media( tablet ) {
+			margin-left: auto;
+			margin-right: auto;
+			max-width: $width-column-12;
+		}
+	}
 }

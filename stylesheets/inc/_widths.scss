@@ -1,0 +1,21 @@
+
+// Widths (grid-based)
+$width-column: 80px;
+$width-gutter: 25;
+$width-column-count: 12;
+$width-column-1: ( 1 * ( $width-column + $width-gutter ) - $width-gutter );
+$width-column-2: ( 2 * ( $width-column + $width-gutter ) - $width-gutter );
+$width-column-3: ( 3 * ( $width-column + $width-gutter ) - $width-gutter );
+$width-column-4: ( 4 * ( $width-column + $width-gutter ) - $width-gutter );
+$width-column-5: ( 5 * ( $width-column + $width-gutter ) - $width-gutter );
+$width-column-6: ( 6 * ( $width-column + $width-gutter ) - $width-gutter );
+$width-column-7: ( 7 * ( $width-column + $width-gutter ) - $width-gutter );
+$width-column-8: ( 8 * ( $width-column + $width-gutter ) - $width-gutter );
+$width-column-9: ( 9 * ( $width-column + $width-gutter ) - $width-gutter );
+$width-column-10: ( 10 * ( $width-column + $width-gutter ) - $width-gutter );
+$width-column-11: ( 11 * ( $width-column + $width-gutter ) - $width-gutter );
+$width-column-12: ( 12 * ( $width-column + $width-gutter ) - $width-gutter );
+
+@mixin grid_column_width( $columns: 6 ) {
+	width: ( $columns * ( $width-column + $width-gutter ) - $width-gutter );
+}

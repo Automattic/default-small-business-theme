@@ -3,22 +3,28 @@
 
 .site-header {
 
-	@include media( tablet ) {
+	border-bottom: 1px solid gray;
+	@include color_var(border-bottom-color, color-border);
 
+	@include media( tablet ) {
+		border-bottom: none;
+		display: flex;
+		align-items: center;
+		max-width: $width-column-12;
+		margin-left: auto;
+		margin-right: auto;
 	}
 }
 
 .site-branding {
 
 	@include color_var(color, color-text-subtle);
-	@include space_var(padding, space-sm);
-	border-bottom: 1px solid gray;
-	@include color_var(border-bottom-color, color-border);
+	@include block-space( space-sm, 0 );
 
 	.site-title {
 
 		@include typo_var(font-family, text_font);
-		@include typo_var(font-size, text_xxl);
+		@include typo_var(font-size, text_xl);
 		@include font-smoothing;
 		@include color_var(color, color-text);
 		display: block;
@@ -38,6 +44,10 @@
 				@include color_var(color, color-secondary);
 			}
 		}
+
+		@include media( tablet ) {
+		//	max-width: $width-column-12;
+		}
 	}
 
 	.site-description {
@@ -48,6 +58,9 @@
 		font-weight: normal;
 	}
 
+	@include media( tablet ) {
+		min-width: calc( #{$width-column-5} );
+	}
 }
 
 .social-navigation {
@@ -111,13 +124,10 @@
 }
 
 .site-footer {
-	@include typo_var(font-size, text_md);
-	@include font-smoothing;
-
-	margin: 4em 0 3em 0;
-	padding: 0;
-
+	@include typo_var(font-size, text_xs);
+	@include space_var(padding, space-sm);
 	@include color_var(color, color-text-subtle);
+	@include font-smoothing;
 
 	a {
 		color: inherit;
