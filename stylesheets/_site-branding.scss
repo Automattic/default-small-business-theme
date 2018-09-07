@@ -23,8 +23,9 @@
 
 	.site-title {
 
+		@include block-space( 0, space-sm );
 		@include typo_var(font-family, text_font);
-		@include typo_var(font-size, text_xl);
+		@include typo_var(font-size, text_lg);
 		@include font-smoothing;
 		@include color_var(color, color-text);
 		display: block;
@@ -52,6 +53,7 @@
 
 	.site-description {
 
+		@include block-space( 0, space-sm );
 		@include font-smoothing;
 		@include typo_var(font-size, text_base_size);
 		@include color_var(color, color-text-subtle);
@@ -59,7 +61,8 @@
 	}
 
 	@include media( tablet ) {
-		min-width: calc( #{$width-column-5} );
+		max-width: calc( #{$width-column-5} );
+		width: 100%;
 	}
 }
 
@@ -124,9 +127,17 @@
 }
 
 .site-footer {
+	@include color_var(background-color, color-primary);
+}
+
+.site-info {
+
 	@include typo_var(font-size, text_xs);
-	@include space_var(padding, space-sm);
-	@include color_var(color, color-text-subtle);
+	@include typo_var(font-family, title_font);
+	@include space_var(padding, space-lg);
+	@include space_var(padding-left, space-sm);
+	@include space_var(padding-right, space-sm);
+	@include color_var(color, color-bg);
 	@include font-smoothing;
 
 	a {
@@ -135,5 +146,14 @@
 			text-decoration: none;
 			@include color_var(color, color-primary);
 		}
+	}
+
+	@include media( tablet ) {
+		border-bottom: none;
+		display: flex;
+		align-items: center;
+		max-width: $width-column-12;
+		margin-left: auto;
+		margin-right: auto;
 	}
 }

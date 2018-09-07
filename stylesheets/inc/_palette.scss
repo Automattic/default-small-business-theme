@@ -23,14 +23,14 @@ $color_vars: (
 	color-secondary-bg: 'color-mod(var(--color-secondary) alpha(20%))',
 
 	// shades - generated using chroma.js - 12 steps
-	black: #1d1d21,
+	color-emphasis: #{'#1d1d21'}, // black
 	gray-10: #2e2e31,
 	gray-6: #7b7a7d,
 	gray-4: #a5a5a6,
 	gray-3: #bbbbbc,
 	gray-2: #d1d0d2,
 	gray-1: #e8e7e8,
-	white: #ffffff,
+	color-bg: #{'#ffffff'}, // white
 
 	// feedback
 	color-success: #88c459,
@@ -39,7 +39,7 @@ $color_vars: (
 
 	// typography
 	color-text: var(--gray-10),
-	color-text-heading: 'var(--black)',
+	color-text-heading: var(--color-emphasis),
 	color-text-subtle: var(--gray-6),
 	color-link: var(--color-primary),
 	color-link-visited: var(--color-primary-dark),
@@ -50,7 +50,7 @@ $color_vars: (
 	color-border: var(--gray-2),
 
 	// body
-	color-body: 'var(--white)',
+	color-body: var(--white),
 
 	// forms
 	form-element-border: var(--color-border),
@@ -83,14 +83,14 @@ $color_vars: (
     --color-secondary-bg: #{map-get($color_vars, color-secondary-bg)};
 
     // shades - generated using chroma.js - 12 steps
-    --black: #{map-get($color_vars, black)};
+    --color-emphasis: #{map-get($color_vars, color-emphasis)};
     --gray-10: #{map-get($color_vars, gray-10)};
     --gray-6: #{map-get($color_vars, gray-6)};
     --gray-4: #{map-get($color_vars, gray-4)};
     --gray-3: #{map-get($color_vars, gray-3)};
     --gray-2: #{map-get($color_vars, gray-2)};
     --gray-1: #{map-get($color_vars, gray-1)};
-    --white: #{map-get($color_vars, white)};
+    --color-bg: #{map-get($color_vars, white)};
 
     // feedback
     --color-success: #{map-get($color_vars, color-success)};

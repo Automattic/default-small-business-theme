@@ -9,6 +9,10 @@
 		margin-top: 0;
 	}
 
+	.entry-featured-image {
+		text-align: center;
+	}
+
 	.entry-header {
 		@include media( tablet ) {
 			display: flex;
@@ -42,6 +46,7 @@
 		@include media( tablet ) {
 			@include block-space( space-sm, 0 );
 			max-width: calc( #{$width-column-6} );
+			width: 100%;
 		}
 	}
 
@@ -49,6 +54,7 @@
 
 		@include block-space;
 		@include color_var(color, color-text-subtle);
+		@include typo_var(font-size, text_xs);
 		@include typo_var(font-family, title_font);
 		display: flex;
 
@@ -58,19 +64,17 @@
 
 			&:hover {
 				text-decoration: none;
-				@include color_var(color, color-primary-dark);
+				@include color_var(color, color-secondary);
 			}
 		}
 
 		.posted-on {
-			@include typo_var(font-size, text_xs);
 			@include font-smoothing;
 			text-transform: uppercase;
 		}
 
 		.byline {
 			@include font-smoothing;
-			@include typo_var(font-size, text_xs);
 
 			a {
 				font-weight: 600;
@@ -79,33 +83,19 @@
 
 		@include media( tablet ) {
 			flex-direction: column;
-			max-width: calc( #{$width-column-2} - #{map-get($space_vars, space-sm)} - #{map-get($space_vars, space-sm)} );
+			width: calc( #{$width-column-2} - #{map-get($space_vars, space-sm)} - #{map-get($space_vars, space-sm)} );
 		}
 	}
 
 	.entry-footer {
-		@include typo_var(font-family, title_font);
-		@include typo_var(font-size, text_xs);
-		@include font-smoothing;
-		font-weight: 500;
 
-		> span {
-			$hmargin: 1.35em;
-			$vmargin: 0.35em;
-
-			display: inline-block;
-			margin: $vmargin $hmargin $vmargin 0;
-			&:last-child {
-				margin-right: 0;
-			}
-		}
-
-		a {
-			@include link-transition;
-			color: inherit;
-			&:hover {
-				text-decoration: none;
-				@include color_var(color, color-primary);
+		.entry-meta {
+			@include media( tablet ) {
+				flex-direction: row;
+				margin-left: auto;
+				margin-right: $width-column-2;
+				max-width: $width-column-6;
+				width: 100%;
 			}
 		}
 

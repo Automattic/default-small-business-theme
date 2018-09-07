@@ -18,6 +18,10 @@
 
 	@include block-space;
 
+	&:first-of-type {
+		margin-top: 0;
+	}
+
 	@include media( tablet ) {
 		margin-left: auto;
 		margin-right: $width-column-2;

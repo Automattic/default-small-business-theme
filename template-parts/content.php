@@ -10,15 +10,23 @@
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+
+	<figure class="entry-featured-image">
+		<a href="<?php esc_url( get_permalink() ) ?>" rel="bookmark">
+		<?php
+		if ( has_post_thumbnail() ) :
+			the_post_thumbnail();
+		endif;
+		?>
+		</a>
+	</figure>
+
 	<header class="entry-header">
 		<?php
 		if ( is_singular() ) :
 			the_title( '<h1 class="entry-title">', '</h1>' );
 		else :
 			the_title( '<h2 class="entry-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' );
-			if ( has_post_thumbnail() ) :
-				the_post_thumbnail();
-			endif;
 		endif;
 
 		if ( 'post' === get_post_type() ) : ?>
@@ -52,6 +60,9 @@
 	</div><!-- .entry-content -->
 
 	<footer class="entry-footer">
-		<?php smallbusinesstheme_entry_footer(); ?>
+		<div class="entry-meta">
+			<?php smallbusinesstheme_entry_footer(); ?>
+		</div>
 	</footer><!-- .entry-footer -->
+
 </article><!-- #post-<?php the_ID(); ?> -->
