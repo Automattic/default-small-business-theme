@@ -146,8 +146,17 @@ ul.wp-block-latest-posts.is-grid.alignwide {
   right: 0;
 }
 
-.wp-block-quote.is-large {
-  margin: 0 auto 16px;
+.wp-block-quote.is-large,
+.wp-block-quote.is-style-large {
+
+	@include block-space;
+	padding: 0;
+
+	@include media( tablet ) {
+		margin-left: auto;
+		margin-right: $width-column-2;
+		max-width: $width-column-6;
+	}
 }
 
 .wp-block-pullquote>p:first-child {

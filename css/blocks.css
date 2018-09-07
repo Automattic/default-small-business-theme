@@ -188,8 +188,23 @@ ul.wp-block-latest-posts.is-grid.alignwide {
   bottom: 0;
   right: 0; }
 
-.wp-block-quote.is-large {
-  margin: 0 auto 16px; }
+.wp-block-quote.is-large,
+.wp-block-quote.is-style-large {
+  margin-top: calc(0.75 * var(--space-unit));
+  margin-top: var(--space-sm, calc(0.75 * var(--space-unit)));
+  margin-bottom: calc(0.75 * var(--space-unit));
+  margin-bottom: var(--space-sm, calc(0.75 * var(--space-unit)));
+  margin-left: calc(0.75 * var(--space-unit));
+  margin-left: var(--space-sm, calc(0.75 * var(--space-unit)));
+  margin-right: calc(0.75 * var(--space-unit));
+  margin-right: var(--space-sm, calc(0.75 * var(--space-unit)));
+  padding: 0; }
+  @media only screen and (min-width: 768px) {
+    .wp-block-quote.is-large,
+    .wp-block-quote.is-style-large {
+      margin-left: auto;
+      margin-right: 185px;
+      max-width: 605px; } }
 
 .wp-block-pullquote > p:first-child {
   margin-top: 0; }
