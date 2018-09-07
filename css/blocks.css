@@ -1,4 +1,36 @@
 /** === Blocks === */
+:root {
+  --text_base_size: 18px;
+  --text_scale_ratio: 1.2;
+  --text_font: Baskerville, Baskerville Old Face, Hoefler Text, Garamond, Times New Roman, serif;
+  --title_font: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+  --monospace_font: Menlo, monaco, Consolas, Lucida Console, monospace;
+  --text_xs: calc(1em / (var(--text_scale_ratio) * var(--text_scale_ratio)));
+  --text_sm: calc(1em / var(--text_scale_ratio));
+  --text_md: calc(1em * var(--text_scale_ratio));
+  --text_lg: calc(1em * var(--text_scale_ratio) * var(--text_scale_ratio));
+  --text_xl: calc(1em * var(--text_scale_ratio) * var(--text_scale_ratio) * var(--text_scale_ratio));
+  --text_xxl: calc(1em * var(--text_scale_ratio) * var(--text_scale_ratio) * var(--text_scale_ratio) * var(--text_scale_ratio));
+  --text_xxxl: calc(1em * var(--text_scale_ratio) * var(--text_scale_ratio) * var(--text_scale_ratio) * var(--text_scale_ratio) * var(--text_scale_ratio));
+  --heading_line_height: 1.2;
+  --body_line_height: 1.4;
+  /*
+	--mobile_width: ;
+	--tablet_width: ;
+	--desktop_width: ;
+
+	--wide_width: ;
+	--side_padding: ;
+
+	--logo_wrapper_width_tablet: ;
+	--logo_wrapper_width_desktop: ;
+	--link_transition: ;
+	--icon_transition: ;
+*/ }
+  @media only screen and (min-width: 810px) {
+    :root {
+      --text_base_size: 21px; } }
+
 /*
 // Here's where we use the grid mixins
 
@@ -131,10 +163,22 @@ $text_color_link_hover: lighten($text_color, 22.5%);
   margin-right: auto; }
 
 .wp-block-cover-image {
-  /*
-	width: inherit;
-	max-width: 100%;
-*/ }
+  width: inherit; }
+  @media only screen and (min-width: 810px) {
+    .wp-block-cover-image {
+      width: 100%; } }
+
+.wp-block-cover-image .wp-block-cover-image-text, .wp-block-cover-image h2 {
+  font-weight: 400;
+  padding: calc(0.5 * var(--space-unit));
+  padding: var(--space-xs, calc(0.5 * var(--space-unit)));
+  font-family: "Baskerville, Baskerville Old Face, Hoefler Text, Garamond, Times New Roman, serif";
+  font-family: var(--text_font, "Baskerville, Baskerville Old Face, Hoefler Text, Garamond, Times New Roman, serif");
+  line-height: 1.2;
+  line-height: var(--heading_line_height, 1.2);
+  letter-spacing: normal;
+  text-transform: none;
+  margin: 0; }
 
 @media only screen and (min-width: 810px) {
   .wp-block-text-columns {

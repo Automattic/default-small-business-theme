@@ -20,6 +20,38 @@ Underscores is distributed under the terms of the GNU GPL v2 or later.
 Normalizing styles have been helped along thanks to the fine work of
 Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 */
+:root {
+  --text_base_size: 18px;
+  --text_scale_ratio: 1.2;
+  --text_font: Baskerville, Baskerville Old Face, Hoefler Text, Garamond, Times New Roman, serif;
+  --title_font: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+  --monospace_font: Menlo, monaco, Consolas, Lucida Console, monospace;
+  --text_xs: calc(1em / (var(--text_scale_ratio) * var(--text_scale_ratio)));
+  --text_sm: calc(1em / var(--text_scale_ratio));
+  --text_md: calc(1em * var(--text_scale_ratio));
+  --text_lg: calc(1em * var(--text_scale_ratio) * var(--text_scale_ratio));
+  --text_xl: calc(1em * var(--text_scale_ratio) * var(--text_scale_ratio) * var(--text_scale_ratio));
+  --text_xxl: calc(1em * var(--text_scale_ratio) * var(--text_scale_ratio) * var(--text_scale_ratio) * var(--text_scale_ratio));
+  --text_xxxl: calc(1em * var(--text_scale_ratio) * var(--text_scale_ratio) * var(--text_scale_ratio) * var(--text_scale_ratio) * var(--text_scale_ratio));
+  --heading_line_height: 1.2;
+  --body_line_height: 1.4;
+  /*
+	--mobile_width: ;
+	--tablet_width: ;
+	--desktop_width: ;
+
+	--wide_width: ;
+	--side_padding: ;
+
+	--logo_wrapper_width_tablet: ;
+	--logo_wrapper_width_desktop: ;
+	--link_transition: ;
+	--icon_transition: ;
+*/ }
+  @media only screen and (min-width: 810px) {
+    :root {
+      --text_base_size: 21px; } }
+
 /*
 // Here's where we use the grid mixins
 
@@ -201,38 +233,6 @@ template {
 
 [hidden] {
   display: none; }
-
-:root {
-  --text_base_size: 18px;
-  --text_scale_ratio: 1.2;
-  --text_font: Baskerville, Baskerville Old Face, Hoefler Text, Garamond, Times New Roman, serif;
-  --title_font: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
-  --monospace_font: Menlo, monaco, Consolas, Lucida Console, monospace;
-  --text_xs: calc(1em / (var(--text_scale_ratio) * var(--text_scale_ratio)));
-  --text_sm: calc(1em / var(--text_scale_ratio));
-  --text_md: calc(1em * var(--text_scale_ratio));
-  --text_lg: calc(1em * var(--text_scale_ratio) * var(--text_scale_ratio));
-  --text_xl: calc(1em * var(--text_scale_ratio) * var(--text_scale_ratio) * var(--text_scale_ratio));
-  --text_xxl: calc(1em * var(--text_scale_ratio) * var(--text_scale_ratio) * var(--text_scale_ratio) * var(--text_scale_ratio));
-  --text_xxxl: calc(1em * var(--text_scale_ratio) * var(--text_scale_ratio) * var(--text_scale_ratio) * var(--text_scale_ratio) * var(--text_scale_ratio));
-  --heading_line_height: 1.2;
-  --body_line_height: 1.4;
-  /*
-	--mobile_width: ;
-	--tablet_width: ;
-	--desktop_width: ;
-
-	--wide_width: ;
-	--side_padding: ;
-
-	--logo_wrapper_width_tablet: ;
-	--logo_wrapper_width_desktop: ;
-	--link_transition: ;
-	--icon_transition: ;
-*/ }
-  @media only screen and (min-width: 810px) {
-    :root {
-      --text_base_size: 21px; } }
 
 /** === Typography === */
 body,

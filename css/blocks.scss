@@ -74,10 +74,23 @@
 }
 
 .wp-block-cover-image {
-/*
 	width: inherit;
-	max-width: 100%;
-*/
+	@include media( tablet ) {
+		width: 100%;
+	}
+}
+
+.wp-block-cover-image.has-background-dim:before {
+}
+
+.wp-block-cover-image .wp-block-cover-image-text, .wp-block-cover-image h2 {
+	font-weight: 400;
+	@include space_var( padding, space-xs );
+	@include typo_var(font-family, text_font);
+	@include typo_var(line-height, heading_line_height);
+	letter-spacing: normal;
+	text-transform: none;
+	margin: 0;
 }
 
 .wp-block-gallery:not(.components-placeholder) {
