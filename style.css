@@ -533,12 +533,6 @@ textarea {
   margin-left: var(--0, );
   margin-right: var(--0, ); }
   .site-branding .site-title {
-    margin-top: var(--0, );
-    margin-bottom: var(--0, );
-    margin-left: calc(0.75 * var(--space-unit));
-    margin-left: var(--space-sm, calc(0.75 * var(--space-unit)));
-    margin-right: calc(0.75 * var(--space-unit));
-    margin-right: var(--space-sm, calc(0.75 * var(--space-unit)));
     font-family: "Baskerville, Baskerville Old Face, Hoefler Text, Garamond, Times New Roman, serif";
     font-family: var(--text_font, "Baskerville, Baskerville Old Face, Hoefler Text, Garamond, Times New Roman, serif");
     font-size: calc(1em * var(--text_scale_ratio) * var(--text_scale_ratio));
@@ -547,7 +541,6 @@ textarea {
     -moz-osx-font-smoothing: grayscale;
     color: var(--gray-10);
     color: var(--color-text, var(--gray-10));
-    display: block;
     /* When there is no description set, make sure navigation appears below title. */ }
     .site-branding .site-title + .main-navigation {
       display: block; }
@@ -573,10 +566,31 @@ textarea {
     color: var(--gray-6);
     color: var(--color-text-subtle, var(--gray-6));
     font-weight: normal; }
+  .site-branding .custom-logo-link {
+    display: block;
+    line-height: 0; }
+  @media only screen and (max-width: 810px) {
+    .site-branding > * {
+      margin-top: var(--0, );
+      margin-bottom: var(--0, );
+      margin-left: calc(0.75 * var(--space-unit));
+      margin-left: var(--space-sm, calc(0.75 * var(--space-unit)));
+      margin-right: calc(0.75 * var(--space-unit));
+      margin-right: var(--space-sm, calc(0.75 * var(--space-unit))); } }
   @media only screen and (min-width: 810px) {
     .site-branding {
+      display: flex;
+      align-content: stretch;
+      align-items: center;
       max-width: calc( 500px);
-      width: 100%; } }
+      width: 100%; }
+      .site-branding .site-title:not(:first-child) {
+        margin-top: var(--0, );
+        margin-bottom: var(--0, );
+        margin-left: calc(0.75 * var(--space-unit));
+        margin-left: var(--space-sm, calc(0.75 * var(--space-unit)));
+        margin-right: calc(0.75 * var(--space-unit));
+        margin-right: var(--space-sm, calc(0.75 * var(--space-unit))); } }
 
 .social-navigation {
   margin-top: 0.6em;
@@ -709,9 +723,31 @@ textarea {
   clear: both;
   margin: 0 0 1.5em; }
 
-/** === Comments === */
-.comment-content a {
+/** === Comments == */
+@media only screen and (min-width: 810px) {
+  .comments-area {
+    display: flex;
+    justify-content: flex-end;
+    flex-direction: column;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 1235px; } }
+
+.comment-list .comment-content a {
   word-wrap: break-word; }
+
+@media only screen and (min-width: 810px) {
+  .comment-list {
+    margin-top: calc(0.75 * var(--space-unit));
+    margin-top: var(--space-sm, calc(0.75 * var(--space-unit)));
+    margin-bottom: calc(0.75 * var(--space-unit));
+    margin-bottom: var(--space-sm, calc(0.75 * var(--space-unit)));
+    margin-left: var(--0, );
+    margin-right: var(--0, );
+    max-width: calc( 710px);
+    width: 100%;
+    margin-right: 80px;
+    margin-left: auto; } }
 
 .bypostauthor {
   display: block; }

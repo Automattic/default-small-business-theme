@@ -53,3 +53,8 @@ function smallbusinesstheme_customize_preview_js() {
 	wp_enqueue_script( 'smallbusinesstheme-customizer', get_template_directory_uri() . '/js/customizer.js', array( 'customize-preview' ), '20151215', true );
 }
 add_action( 'customize_preview_init', 'smallbusinesstheme_customize_preview_js' );
+
+/**
+ * Logo Resizer Awesomeness - Bringing logo resizing to the Customizer since 2017
+ */
+require get_template_directory() . '/inc/logo-resizer.php';

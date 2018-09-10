@@ -12,7 +12,7 @@
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 
 	<figure class="entry-featured-image">
-		<a href="<?php esc_url( get_permalink() ) ?>" rel="bookmark">
+		<a href="<?php echo esc_url( get_permalink() ) ?>" rel="bookmark">
 		<?php
 		if ( has_post_thumbnail() ) :
 			the_post_thumbnail();

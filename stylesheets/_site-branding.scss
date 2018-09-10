@@ -23,13 +23,10 @@
 
 	.site-title {
 
-		@include block-space( 0, space-sm );
 		@include typo_var(font-family, text_font);
 		@include typo_var(font-size, text_lg);
 		@include font-smoothing;
 		@include color_var(color, color-text);
-		display: block;
-
 		/* When there is no description set, make sure navigation appears below title. */
 		+ .main-navigation {
 			display: block;
@@ -47,7 +44,6 @@
 		}
 
 		@include media( tablet ) {
-		//	max-width: $width-column-12;
 		}
 	}
 
@@ -60,9 +56,27 @@
 		font-weight: normal;
 	}
 
+	.custom-logo-link {
+		display: block;
+		line-height: 0;
+	}
+
+	@include media( mobile ) {
+		& > * {
+			@include block-space( 0, space-sm );
+		}
+	}
+
 	@include media( tablet ) {
+		display: flex;
+		align-content: stretch;
+		align-items: center;
 		max-width: calc( #{$width-column-5} );
 		width: 100%;
+
+		.site-title:not(:first-child) {
+			@include block-space( 0, space-sm );
+		}
 	}
 }
 

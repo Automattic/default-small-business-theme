@@ -68,16 +68,13 @@ if ( ! function_exists( 'smallbusinesstheme_setup' ) ) :
 		// Add theme support for selective refresh for widgets.
 		add_theme_support( 'customize-selective-refresh-widgets' );
 
-		/**
-		 * Add support for core custom logo.
-		 *
-		 * @link https://codex.wordpress.org/Theme_Logo
-		 */
+		// Add theme support for Custom Logo.
 		add_theme_support( 'custom-logo', array(
-			'height'      => 250,
-			'width'       => 250,
+			'width'       => 600,
+			'height'      => 300,
 			'flex-width'  => true,
 			'flex-height' => true,
+			'header-text' => array( 'site-title', 'site-description' ),
 		) );
 
 		// Adding support for core block visual styles.

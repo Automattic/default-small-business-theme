@@ -20,10 +20,35 @@
 	margin: 0 0 1.5em;
 }
 
-/** === Comments === */
+/** === Comments == */
 
-.comment-content a {
-	word-wrap: break-word;
+.comments-area {
+
+	@include media( tablet ) {
+		display: flex;
+		justify-content: flex-end;
+		flex-direction: column;
+		margin-left: auto;
+		margin-right: auto;
+		max-width: $width-column-12;
+	}
+}
+
+.comment-list {
+
+	.comment-content {
+		a {
+			word-wrap: break-word;
+		}
+	}
+
+	@include media( tablet ) {
+		@include block-space( space-sm, 0 );
+		max-width: calc( #{$width-column-7} );
+		width: 100%;
+		margin-right: #{$width-column-1};
+		margin-left: auto;
+	}
 }
 
 .bypostauthor {

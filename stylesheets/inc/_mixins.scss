@@ -3,6 +3,11 @@
 // Mixins
 
 @mixin media( $res ) {
+	@if mobile == $res {
+		@media only screen and (max-width: $tablet_width) {
+			@content;
+		}
+	}
 	@if tablet == $res {
 		@media only screen and (min-width: $tablet_width) {
 			@content;
