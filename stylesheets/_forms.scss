@@ -5,7 +5,7 @@ button,
 input[type="button"],
 input[type="reset"],
 input[type="submit"] {
-
+	@include color_var(background, color-secondary);
 }
 
 button:hover,
@@ -41,7 +41,8 @@ input[type="datetime"],
 input[type="datetime-local"],
 input[type="color"],
 textarea {
-
+	border: 1px solid gray;
+	@include color_var(border-color, form-element-border);
 }
 
 input[type="text"]:focus,
@@ -60,7 +61,8 @@ input[type="datetime"]:focus,
 input[type="datetime-local"]:focus,
 input[type="color"]:focus,
 textarea:focus {
-
+	border: 1px solid gray;
+	@include color_var(border-color, form-element-border-focus);
 }
 
 select {

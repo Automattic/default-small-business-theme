@@ -64,3 +64,12 @@
 	@include space_var( margin-left, $h-space );
 	@include space_var( margin-right, $h-space );
 }
+
+// Rounded Corners
+@mixin rounded($radius: 0.5em) {
+	overflow: hidden;
+	-webkit-border-radius: $radius;
+	-moz-border-radius: $radius;
+	border-radius: $radius;
+}
+
