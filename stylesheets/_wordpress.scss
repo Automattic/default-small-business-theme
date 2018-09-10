@@ -62,6 +62,11 @@
 	list-style: none;
 	@include block-space;
 
+	.comment {
+		list-style: none;
+		@include block-space( space-md, 0 );
+	}
+
 	.comment-content {
 		a {
 			word-wrap: break-word;
@@ -79,12 +84,13 @@
 .comment-body {
 	position: relative;
 	max-width: calc( #{$width-column-6} );
+	min-height: 9rem;
 
 	.reply {
 		@include typo_var(font-family, title_font);
 		@include typo_var(font-size, text_xs);
 		text-transform: uppercase;
-		text-align: right;
+	//	text-align: right;
 	}
 }
 
@@ -110,12 +116,18 @@
 .comment-meta {
 	@include typo_var(font-family, title_font);
 	@include typo_var(font-size, text_xs);
-	left: calc( 100% + #{$width-gutter}px );
 	position: absolute;
-	width: calc( #{$width-column-1} );
+	left: calc( 60px + 1rem );
+	margin-top: -1.4rem;
 
 	a {
 		@include color_var( color, color-text-subtle );
+	}
+
+	@include media( tablet ) {
+		left: calc( 100% + #{$width-gutter}px );
+		margin-top: inherit;
+		width: calc( #{$width-column-1} );
 	}
 }
 

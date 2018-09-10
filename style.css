@@ -759,6 +759,28 @@ textarea {
   .menu-toggle {
     display: none; } }
 
+.post-navigation {
+  border-top: 1px solid green;
+  border-top-color: #008000;
+  border-top-color: var(--color-primary, #008000);
+  border-bottom: 1px solid grey;
+  border-bottom-color: var(--gray-2);
+  border-bottom-color: var(--color-border, var(--gray-2)); }
+  .post-navigation .nav-links {
+    display: flex;
+    align-content: center;
+    justify-content: center; }
+    .post-navigation .nav-links > * {
+      margin-top: calc(0.75 * var(--space-unit));
+      margin-top: var(--space-sm, calc(0.75 * var(--space-unit)));
+      margin-bottom: calc(0.75 * var(--space-unit));
+      margin-bottom: var(--space-sm, calc(0.75 * var(--space-unit)));
+      margin-left: calc(0.75 * var(--space-unit));
+      margin-left: var(--space-sm, calc(0.75 * var(--space-unit)));
+      margin-right: calc(0.75 * var(--space-unit));
+      margin-right: var(--space-sm, calc(0.75 * var(--space-unit)));
+      max-width: calc( 500px); }
+
 /** === Posts and pages === */
 .sticky {
   display: block; }
@@ -820,6 +842,14 @@ textarea {
   margin-left: var(--space-sm, calc(0.75 * var(--space-unit)));
   margin-right: calc(0.75 * var(--space-unit));
   margin-right: var(--space-sm, calc(0.75 * var(--space-unit))); }
+  .comment-list .comment {
+    list-style: none;
+    margin-top: calc(1.25 * var(--space-unit));
+    margin-top: var(--space-md, calc(1.25 * var(--space-unit)));
+    margin-bottom: calc(1.25 * var(--space-unit));
+    margin-bottom: var(--space-md, calc(1.25 * var(--space-unit)));
+    margin-left: var(--0, );
+    margin-right: var(--0, ); }
   .comment-list .comment-content a {
     word-wrap: break-word; }
   @media only screen and (min-width: 810px) {
@@ -836,14 +866,14 @@ textarea {
 
 .comment-body {
   position: relative;
-  max-width: calc( 605px); }
+  max-width: calc( 605px);
+  min-height: 9rem; }
   .comment-body .reply {
     font-family: '-apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif';
     font-family: var(--title_font, '-apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif');
     font-size: calc(1em / (var(--text_scale_ratio) * var(--text_scale_ratio)));
     font-size: var(--text_xs, calc(1em / (var(--text_scale_ratio) * var(--text_scale_ratio))));
-    text-transform: uppercase;
-    text-align: right; }
+    text-transform: uppercase; }
 
 .comment-author {
   margin-bottom: calc(0.25 * var(--space-unit));
@@ -876,12 +906,17 @@ textarea {
   font-family: var(--title_font, '-apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif');
   font-size: calc(1em / (var(--text_scale_ratio) * var(--text_scale_ratio)));
   font-size: var(--text_xs, calc(1em / (var(--text_scale_ratio) * var(--text_scale_ratio))));
-  left: calc( 100% + 25px);
   position: absolute;
-  width: calc( 80px); }
+  left: calc( 60px + 1rem);
+  margin-top: -1.4rem; }
   .comment-meta a {
     color: var(--gray-6);
     color: var(--color-text-subtle, var(--gray-6)); }
+  @media only screen and (min-width: 810px) {
+    .comment-meta {
+      left: calc( 100% + 25px);
+      margin-top: inherit;
+      width: calc( 80px); } }
 
 .avatar {
   overflow: hidden;

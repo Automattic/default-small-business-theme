@@ -54,3 +54,23 @@
 		display: none;
 	}
 }
+
+.post-navigation {
+
+	border-top: 1px solid green;
+	@include color-var( border-top-color, color-primary );
+	border-bottom: 1px solid grey;
+	@include color-var( border-bottom-color, color-border );
+
+	.nav-links {
+
+		display: flex;
+		align-content: center;
+		justify-content: center;
+
+		> * {
+			@include block-space;
+			max-width: calc( #{$width-column-5} );
+		}
+	}
+}
