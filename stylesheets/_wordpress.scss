@@ -27,10 +27,27 @@
 	@include media( tablet ) {
 		display: flex;
 		justify-content: flex-end;
-		flex-direction: column;
+		flex-direction: row;
+		flex-wrap: wrap;
 		margin-left: auto;
 		margin-right: auto;
 		max-width: $width-column-12;
+		width: 100%;
+	}
+}
+
+.comments-title {
+	flex: 0 1 auto;
+	max-width: calc( #{$width-column-4} );
+	width: 100%;
+}
+
+.comment-respond {
+
+	@include media( tablet ) {
+		margin-right: $width-column-1;
+		max-width: calc( #{$width-column-7} );
+		width: 100%;
 	}
 }
 
@@ -44,10 +61,9 @@
 
 	@include media( tablet ) {
 		@include block-space( space-sm, 0 );
+		margin-right: $width-column-1;
 		max-width: calc( #{$width-column-7} );
-		width: 100%;
-		margin-right: #{$width-column-1};
-		margin-left: auto;
+		width: $width-column-7;
 	}
 }
 

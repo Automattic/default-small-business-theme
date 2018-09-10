@@ -728,10 +728,23 @@ textarea {
   .comments-area {
     display: flex;
     justify-content: flex-end;
-    flex-direction: column;
+    flex-direction: row;
+    flex-wrap: wrap;
     margin-left: auto;
     margin-right: auto;
-    max-width: 1235px; } }
+    max-width: 1235px;
+    width: 100%; } }
+
+.comments-title {
+  flex: 0 1 auto;
+  max-width: calc( 395px);
+  width: 100%; }
+
+@media only screen and (min-width: 810px) {
+  .comment-respond {
+    margin-right: 80px;
+    max-width: calc( 710px);
+    width: 100%; } }
 
 .comment-list .comment-content a {
   word-wrap: break-word; }
@@ -744,10 +757,9 @@ textarea {
     margin-bottom: var(--space-sm, calc(0.75 * var(--space-unit)));
     margin-left: var(--0, );
     margin-right: var(--0, );
-    max-width: calc( 710px);
-    width: 100%;
     margin-right: 80px;
-    margin-left: auto; } }
+    max-width: calc( 710px);
+    width: 710px; } }
 
 .bypostauthor {
   display: block; }
