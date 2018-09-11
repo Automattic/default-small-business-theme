@@ -23,14 +23,14 @@ $color_vars: (
 	color-secondary-bg: 'color-mod(var(--color-secondary) alpha(20%))',
 
 	// shades - generated using chroma.js - 12 steps
-	color-emphasis: #{'#1d1d21'}, // black
+	black: #{'#1d1d21'}, // black
 	gray-10: #2e2e31,
 	gray-6: #7b7a7d,
 	gray-4: #a5a5a6,
 	gray-3: #bbbbbc,
 	gray-2: #d1d0d2,
 	gray-1: #e8e7e8,
-	color-bg: #{'#ffffff'}, // white
+	white: #{'#ffffff'}, // white
 
 	// feedback
 	color-success: #88c459,
@@ -39,7 +39,7 @@ $color_vars: (
 
 	// typography
 	color-text: var(--gray-10),
-	color-text-heading: var(--color-emphasis),
+	color-text-heading: 'var(--#{'black'})',
 	color-text-subtle: var(--gray-6),
 	color-link: var(--color-primary),
 	color-link-visited: var(--color-primary-dark),
@@ -50,20 +50,20 @@ $color_vars: (
 	color-border: var(--gray-2),
 
 	// body
-	color-body: var(--white),
+	color-body: 'var(--#{'white'})',
 
 	// forms
 	form-element-border: var(--color-border),
 	form-element-border-focus: var(--color-primary),
 	form-element-border-error: var(--color-error),
-	form-element-bg: 'var(--white)',
+	form-element-bg: 'var(--#{'white'})',
 	form-text-placeholder: var(--gray-4),
 
 	// buttons
 	btn-primary-bg: var(--color-primary),
 	btn-primary-hover: var(--color-primary-light),
 	btn-primary-active: var(--color-primary-dark),
-	btn-primary-label: 'var(--white)',
+	btn-primary-label: 'var(--#{'white'})',
 
 	// icons
 	color-icon-primary: var(--gray-4),
@@ -83,14 +83,14 @@ $color_vars: (
     --color-secondary-bg: #{map-get($color_vars, color-secondary-bg)};
 
     // shades - generated using chroma.js - 12 steps
-    --color-emphasis: #{map-get($color_vars, color-emphasis)};
+    --black: #{map-get($color_vars, black)};
     --gray-10: #{map-get($color_vars, gray-10)};
     --gray-6: #{map-get($color_vars, gray-6)};
     --gray-4: #{map-get($color_vars, gray-4)};
     --gray-3: #{map-get($color_vars, gray-3)};
     --gray-2: #{map-get($color_vars, gray-2)};
     --gray-1: #{map-get($color_vars, gray-1)};
-    --color-bg: #{map-get($color_vars, white)};
+    --white: #{map-get($color_vars, white)};
 
     // feedback
     --color-success: #{map-get($color_vars, color-success)};
@@ -120,10 +120,10 @@ $color_vars: (
     --form-text-placeholder: #{map-get($color_vars, form-text-placeholder)};
 
     // buttons
-    --btn-primary-bg: #{map-get($color_vars, btn-primary-bg)};
-    --btn-primary-hover: #{map-get($color_vars, btn-primary-hover)};
-    --btn-primary-active: #{map-get($color_vars, btn-primary-active)};
-    --btn-primary-label: #{map-get($color_vars, btn-primary-label)};
+    --btn-primary-bg: #{map-get($color_vars, color-primary-bg)};
+    --btn-primary-hover: #{map-get($color_vars, color-primary-light)};
+    --btn-primary-active: #{map-get($color_vars, color-primary-dark)};
+    --btn-primary-label: #{map-get($color_vars, white)};
 
     // icons
     --color-icon-primary: #{map-get($color_vars, color-icon-primary)};
@@ -131,6 +131,6 @@ $color_vars: (
 }
 
 @mixin color_var($property, $varName) {
-	#{$property}: map-get($color_vars, $varName);
+//	#{$property}: map-get($color_vars, $varName);
 	#{$property}: var(--#{$varName}, map-get($color_vars, $varName));
 }

@@ -84,45 +84,42 @@ $text_color_link_hover: lighten($text_color, 22.5%);
   --color-secondary-light: color-mod(var(--color-secondary) shade(10%));
   --color-secondary-dark: color-mod(var(--color-secondary) tint(15%));
   --color-secondary-bg: color-mod(var(--color-secondary) alpha(20%));
-  --color-emphasis: #1d1d21;
+  --black: #1d1d21;
   --gray-10: #2e2e31;
   --gray-6: #7b7a7d;
   --gray-4: #a5a5a6;
   --gray-3: #bbbbbc;
   --gray-2: #d1d0d2;
   --gray-1: #e8e7e8;
+  --white: #ffffff;
   --color-success: #88c459;
   --color-error: #f5414f;
   --color-warning: #ffd137;
   --color-text: var(--gray-10);
-  --color-text-heading: var(--color-emphasis);
+  --color-text-heading: var(--black);
   --color-text-subtle: var(--gray-6);
   --color-link: var(--color-primary);
   --color-link-visited: color-mod(var(--color-primary) shade(15%));
   --color-mark: var(--color-secondary-bg);
   --color-blockquote-border: var(--gray-2);
   --color-border: var(--gray-2);
-  --color-body: var(--#ffffff);
+  --color-body: var(--white);
   --form-element-border: var(--color-border);
   --form-element-border-focus: var(--color-primary);
   --form-element-border-error: var(--color-error);
   --form-element-bg: var(--white);
   --form-text-placeholder: var(--gray-4);
-  --btn-primary-bg: var(--color-primary);
-  --btn-primary-hover: var(--color-primary-light);
-  --btn-primary-active: var(--color-primary-dark);
-  --btn-primary-label: var(--white);
+  --btn-primary-bg: color-mod(var(--color-primary) alpha(20%));
+  --btn-primary-hover: color-mod(var(--color-primary) tint(15%));
+  --btn-primary-active: color-mod(var(--color-primary) shade(15%));
+  --btn-primary-label: #ffffff;
   --color-icon-primary: var(--gray-4);
   --color-icon-secondary: inherit; }
 
 .entry-content > * {
-  margin-top: calc(0.75 * var(--space-unit));
   margin-top: var(--space-sm, calc(0.75 * var(--space-unit)));
-  margin-bottom: calc(0.75 * var(--space-unit));
   margin-bottom: var(--space-sm, calc(0.75 * var(--space-unit)));
-  margin-left: calc(0.75 * var(--space-unit));
   margin-left: var(--space-sm, calc(0.75 * var(--space-unit)));
-  margin-right: calc(0.75 * var(--space-unit));
   margin-right: var(--space-sm, calc(0.75 * var(--space-unit))); }
   .entry-content > *:first-of-type {
     margin-top: 0; }
@@ -170,11 +167,8 @@ $text_color_link_hover: lighten($text_color, 22.5%);
 
 .wp-block-cover-image .wp-block-cover-image-text, .wp-block-cover-image h2 {
   font-weight: 400;
-  padding: calc(0.5 * var(--space-unit));
   padding: var(--space-xs, calc(0.5 * var(--space-unit)));
-  font-family: "Baskerville, Baskerville Old Face, Hoefler Text, Garamond, Times New Roman, serif";
   font-family: var(--text_font, "Baskerville, Baskerville Old Face, Hoefler Text, Garamond, Times New Roman, serif");
-  line-height: 1.2;
   line-height: var(--heading_line_height, 1.2);
   letter-spacing: normal;
   text-transform: none;
@@ -203,7 +197,6 @@ ul.wp-block-latest-posts.is-grid.alignwide {
   padding: .5em; }
 
 .entry-content li {
-  margin-left: calc(0.75 * var(--space-unit));
   margin-left: var(--space-sm, calc(0.75 * var(--space-unit))); }
 
 .entry-content ul ul,
@@ -235,13 +228,9 @@ ul.wp-block-latest-posts.is-grid.alignwide {
 
 .wp-block-quote.is-large,
 .wp-block-quote.is-style-large {
-  margin-top: calc(0.75 * var(--space-unit));
   margin-top: var(--space-sm, calc(0.75 * var(--space-unit)));
-  margin-bottom: calc(0.75 * var(--space-unit));
   margin-bottom: var(--space-sm, calc(0.75 * var(--space-unit)));
-  margin-left: calc(0.75 * var(--space-unit));
   margin-left: var(--space-sm, calc(0.75 * var(--space-unit)));
-  margin-right: calc(0.75 * var(--space-unit));
   margin-right: var(--space-sm, calc(0.75 * var(--space-unit)));
   padding: 0; }
   @media only screen and (min-width: 810px) {
@@ -255,9 +244,7 @@ ul.wp-block-latest-posts.is-grid.alignwide {
   margin-top: 0; }
 
 .wp-block-separator {
-  margin-top: calc(1.25 * var(--space-unit));
   margin-top: var(--space-md, calc(1.25 * var(--space-unit)));
-  margin-bottom: calc(1.25 * var(--space-unit));
   margin-bottom: var(--space-md, calc(1.25 * var(--space-unit)));
   padding: 0; }
 

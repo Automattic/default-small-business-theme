@@ -81,6 +81,10 @@ $type_vars: (
 }
 
 @mixin typo_var($property, $varName) {
-	#{$property}: map-get($type_vars, $varName);
-	#{$property}: var(--#{$varName}, map-get($type_vars, $varName));
+	@if 0 == $varName or inherit == $varName {
+		#{$property}: 0;
+	} @else {
+	//	#{$property}: map-get($type_vars, $varName);
+		#{$property}: var(--#{$varName}, map-get($type_vars, $varName));
+	}
 }

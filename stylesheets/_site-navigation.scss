@@ -62,6 +62,11 @@
 	border-bottom: 1px solid grey;
 	@include color-var( border-bottom-color, color-border );
 
+	&:last-child {
+		@include space_var(margin-bottom, 0);
+		border-bottom: none;
+	}
+
 	.nav-links {
 
 		display: flex;

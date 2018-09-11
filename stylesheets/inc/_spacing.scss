@@ -29,8 +29,12 @@ $space_vars: (
 }
 
 @mixin space_var($property, $varName) {
-	#{$property}: map-get($space_vars, $varName);
-	#{$property}: var(--#{$varName}, map-get($space_vars, $varName));
+	@if 0 == $varName or inherit == $varName {
+		#{$property}: 0;
+	} @else {
+	//	#{$property}: map-get($space_vars, $varName);
+		#{$property}: var(--#{$varName}, map-get($space_vars, $varName));
+	}
 }
 
 // optional - edit space unit and padding of all components at a specific breakpoint
