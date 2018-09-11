@@ -70,6 +70,7 @@
 	.nav-links {
 
 		display: flex;
+		flex-direction: column;
 		align-content: center;
 		justify-content: center;
 
@@ -79,14 +80,24 @@
 			margin: 0;
 		}
 
-		> * {
-			@include block-space( space-lg, space-sm );
-			max-width: calc( #{$width-column-5} );
+		.post-excerpt {
+			@include block-space( space-xs, 0 );
+		}
+
+		& > div {
+			@include block-space();
 		}
 	}
 
 	@include media( tablet ) {
 		@include block-space( space-sm, 0 );
 		display: inherit;
+		.nav-links {
+			flex-direction: column;
+			& > div {
+				@include block-space( space-lg, space-sm );
+				max-width: calc( #{$width-column-5} );
+			}
+		}
 	}
 }

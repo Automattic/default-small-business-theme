@@ -121,7 +121,7 @@ $text_color_link_hover: lighten($text_color, 22.5%);
   margin-bottom: var(--space-sm, calc(0.75 * var(--space-unit)));
   margin-left: var(--space-sm, calc(0.75 * var(--space-unit)));
   margin-right: var(--space-sm, calc(0.75 * var(--space-unit))); }
-  .entry-content > *:first-of-type {
+  .entry-content > *:first-child {
     margin-top: 0; }
   @media only screen and (min-width: 810px) {
     .entry-content > * {
@@ -150,9 +150,15 @@ $text_color_link_hover: lighten($text_color, 22.5%);
 .wp-block-image img {
   display: block; }
 
+.wp-block-image figcaption,
+.wp-block-gallery .blocks-gallery-image figcaption,
+.wp-block-gallery .blocks-gallery-item figcaption {
+  font-size: var(--text_xs, calc(1em / (var(--text_scale_ratio) * var(--text_scale_ratio))));
+  font-family: var(--title_font, '-apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif'); }
+
 .wp-block-image.alignleft,
 .wp-block-image.alignright {
-  width: 100%; }
+  max-width: 100%; }
 
 .wp-block-image.alignfull img {
   width: 100vw;
@@ -164,6 +170,26 @@ $text_color_link_hover: lighten($text_color, 22.5%);
   @media only screen and (min-width: 810px) {
     .wp-block-cover-image {
       width: 100%; } }
+  .wp-block-cover-image.alignleft {
+    margin-right: auto; }
+  .wp-block-cover-image.alignright {
+    margin-left: auto; }
+
+.wp-block-cover-image.alignleft,
+.wp-block-cover-image.alignright,
+.wp-block-embed.alignleft,
+.wp-block-embed.alignright,
+[data-align=left] .wp-block-cover-image,
+[data-align=right] .wp-block-cover-image {
+  max-width: 285px; }
+  @media only screen and (min-width: 810px) {
+    .wp-block-cover-image.alignleft,
+    .wp-block-cover-image.alignright,
+    .wp-block-embed.alignleft,
+    .wp-block-embed.alignright,
+    [data-align=left] .wp-block-cover-image,
+    [data-align=right] .wp-block-cover-image {
+      max-width: 100%; } }
 
 .wp-block-cover-image .wp-block-cover-image-text, .wp-block-cover-image h2 {
   font-weight: 400;
@@ -173,6 +199,12 @@ $text_color_link_hover: lighten($text_color, 22.5%);
   letter-spacing: normal;
   text-transform: none;
   margin: 0; }
+
+.wp-block-gallery.alignleft,
+.wp-block-gallery.alignright,
+[data-align=left] .wp-block-gallery,
+[data-align=right] .wp-block-gallery {
+  max-width: 285px; }
 
 @media only screen and (min-width: 810px) {
   .wp-block-text-columns {
@@ -186,8 +218,12 @@ ul.wp-block-latest-posts.is-grid.alignwide {
   padding: 0 14px; }
 
 .wp-block-table {
+  max-width: 285px;
   display: block;
   overflow-x: auto; }
+  @media only screen and (min-width: 810px) {
+    .wp-block-table {
+      max-width: 100%; } }
 
 .wp-block-table table {
   border-collapse: collapse;

@@ -56,6 +56,7 @@
 		@include typo_var(font-size, text_xs);
 		@include typo_var(font-family, title_font);
 		display: flex;
+		justify-content: space-between;
 
 		a {
 			@include color_var(color, color-text-heading);

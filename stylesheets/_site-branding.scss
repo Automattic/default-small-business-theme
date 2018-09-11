@@ -149,7 +149,7 @@
 	@include space_var(padding, space-lg);
 	@include space_var(padding-left, space-sm);
 	@include space_var(padding-right, space-sm);
-	@include color_var(color, color-bg);
+	@include color_var(color, white);
 
 	a {
 		color: inherit;
