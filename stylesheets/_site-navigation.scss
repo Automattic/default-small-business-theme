@@ -73,4 +73,9 @@
 			max-width: calc( #{$width-column-5} );
 		}
 	}
+
+	@include media( tablet ) {
+		@include block-space( space-sm, 0 );
+		display: inherit;
+	}
 }

@@ -786,6 +786,15 @@ textarea {
       margin-right: calc(0.75 * var(--space-unit));
       margin-right: var(--space-sm, calc(0.75 * var(--space-unit)));
       max-width: calc( 500px); }
+  @media only screen and (min-width: 810px) {
+    .post-navigation {
+      margin-top: calc(0.75 * var(--space-unit));
+      margin-top: var(--space-sm, calc(0.75 * var(--space-unit)));
+      margin-bottom: calc(0.75 * var(--space-unit));
+      margin-bottom: var(--space-sm, calc(0.75 * var(--space-unit)));
+      margin-left: var(--0, );
+      margin-right: var(--0, );
+      display: inherit; } }
 
 /** === Posts and pages === */
 .sticky {
@@ -822,10 +831,8 @@ textarea {
   margin-top: var(--space-sm, calc(0.75 * var(--space-unit)));
   margin-bottom: calc(0.75 * var(--space-unit));
   margin-bottom: var(--space-sm, calc(0.75 * var(--space-unit)));
-  margin-left: calc(0.75 * var(--space-unit));
-  margin-left: var(--space-sm, calc(0.75 * var(--space-unit)));
-  margin-right: calc(0.75 * var(--space-unit));
-  margin-right: var(--space-sm, calc(0.75 * var(--space-unit)));
+  margin-left: var(--0, );
+  margin-right: var(--0, );
   flex: 1 1 auto; }
 
 .comment-respond {

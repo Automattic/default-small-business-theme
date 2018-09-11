@@ -39,7 +39,7 @@
 }
 
 .comments-title {
-	@include block-space;
+	@include block-space( space-sm, 0 );
 	flex: 1 1 auto;
 	//max-width: calc( #{$width-column-4} );
 	//width: 100%;
