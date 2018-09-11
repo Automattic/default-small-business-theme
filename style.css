@@ -776,11 +776,13 @@ textarea {
     display: flex;
     align-content: center;
     justify-content: center; }
+    .post-navigation .nav-links .post-title {
+      margin: 0; }
     .post-navigation .nav-links > * {
-      margin-top: calc(0.75 * var(--space-unit));
-      margin-top: var(--space-sm, calc(0.75 * var(--space-unit)));
-      margin-bottom: calc(0.75 * var(--space-unit));
-      margin-bottom: var(--space-sm, calc(0.75 * var(--space-unit)));
+      margin-top: calc(2 * var(--space-unit));
+      margin-top: var(--space-lg, calc(2 * var(--space-unit)));
+      margin-bottom: calc(2 * var(--space-unit));
+      margin-bottom: var(--space-lg, calc(2 * var(--space-unit)));
       margin-left: calc(0.75 * var(--space-unit));
       margin-left: var(--space-sm, calc(0.75 * var(--space-unit)));
       margin-right: calc(0.75 * var(--space-unit));

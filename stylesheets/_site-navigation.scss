@@ -68,8 +68,12 @@
 		align-content: center;
 		justify-content: center;
 
+		.post-title {
+			margin: 0;
+		}
+
 		> * {
-			@include block-space;
+			@include block-space( space-lg, space-sm );
 			max-width: calc( #{$width-column-5} );
 		}
 	}
