@@ -69,6 +69,8 @@
 		justify-content: center;
 
 		.post-title {
+			@include typo_var( font-size, text_md );
+			font-weight: 300;
 			margin: 0;
 		}
 

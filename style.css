@@ -777,6 +777,9 @@ textarea {
     align-content: center;
     justify-content: center; }
     .post-navigation .nav-links .post-title {
+      font-size: calc(1em * var(--text_scale_ratio));
+      font-size: var(--text_md, calc(1em * var(--text_scale_ratio)));
+      font-weight: 300;
       margin: 0; }
     .post-navigation .nav-links > * {
       margin-top: calc(2 * var(--space-unit));
