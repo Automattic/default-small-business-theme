@@ -3,7 +3,7 @@
 
 .hentry {
 
-	margin-top: 3em;
+	@include block-space( space-lg, 0 );
 
 	&:first-of-type {
 		margin-top: 0;
@@ -25,7 +25,6 @@
 
 	.entry-title {
 		@include block-space();
-		@include font-smoothing;
 		@include color_var(color, color-primary);
 		@include typo_var(font-family, title_font);
 		@include typo_var(font-size, text_xl);
@@ -61,6 +60,7 @@
 		a {
 			@include color_var(color, color-text-heading);
 			@include link-transition;
+			font-weight: 600;
 
 			&:hover {
 				text-decoration: none;
@@ -69,12 +69,14 @@
 		}
 
 		.posted-on {
-			@include font-smoothing;
 			text-transform: uppercase;
+
+			a {
+				font-weight: normal;
+			}
 		}
 
 		.byline {
-			@include font-smoothing;
 
 			a {
 				font-weight: 600;
@@ -90,6 +92,19 @@
 	.entry-footer {
 
 		.entry-meta {
+
+			a:link {
+				@include color_var(color, color-text-subtle);
+			}
+
+			a:hover {
+				@include color_var(color, color-secondary);
+			}
+
+			> span {
+				@include space_var(margin-right, space-sm);
+			}
+
 			@include media( tablet ) {
 				flex-direction: row;
 				margin-left: auto;
@@ -106,34 +121,6 @@
 			@include color_var(fill, color-text-subtle);
 			margin-right: 0.3em;
 			top: -0.1em;
-		}
-
-		.byline {
-			.svg-icon {
-				transform: scale(1.1);
-				top: -0.13em;
-			}
-		}
-
-		.cat-links {
-			.svg-icon {
-				transform: scale(0.9);
-				top: -0.12em;
-			}
-		}
-
-		.comments-link {
-			white-space: nowrap;
-			.svg-icon {
-				transform: scale(0.82);
-			}
-		}
-
-		.edit-link {
-			white-space: nowrap;
-			.svg-icon {
-				transform: scale(0.9);
-			}
 		}
 
 		@include media( tablet ) {

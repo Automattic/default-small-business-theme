@@ -249,13 +249,17 @@ textarea {
   line-height: var(--body_line_height, 1.4);
   color: #2e2e31;
   color: var(--gray-10, #2e2e31);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
   font-weight: 400; }
 
 h1, h2, h3, h4, h5, h6 {
   clear: both;
   font-weight: 400;
   line-height: 1.2;
-  line-height: var(--heading_line_height, 1.2); }
+  line-height: var(--heading_line_height, 1.2);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale; }
 
 h2 {
   font-family: '-apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif';
@@ -328,13 +332,17 @@ pre {
   font-family: var(--monospace_font, "Menlo, monaco, Consolas, Lucida Console, monospace");
   font-size: calc(1em * var(--text_scale_ratio));
   font-size: var(--text_md, calc(1em * var(--text_scale_ratio)));
-  line-height: 1.6; }
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale; }
 
 code, kbd, tt, var, samp {
   font-size: calc(1em * var(--text_scale_ratio));
   font-size: var(--text_md, calc(1em * var(--text_scale_ratio)));
   font-family: "Menlo, monaco, Consolas, Lucida Console, monospace";
-  font-family: var(--monospace_font, "Menlo, monaco, Consolas, Lucida Console, monospace"); }
+  font-family: var(--monospace_font, "Menlo, monaco, Consolas, Lucida Console, monospace");
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale; }
 
 mark, ins {
   text-decoration: none; }
@@ -584,8 +592,6 @@ textarea {
     font-family: var(--text_font, "Baskerville, Baskerville Old Face, Hoefler Text, Garamond, Times New Roman, serif");
     font-size: calc(1em * var(--text_scale_ratio) * var(--text_scale_ratio));
     font-size: var(--text_lg, calc(1em * var(--text_scale_ratio) * var(--text_scale_ratio)));
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
     color: var(--gray-10);
     color: var(--color-text, var(--gray-10));
     /* When there is no description set, make sure navigation appears below title. */ }
@@ -606,8 +612,6 @@ textarea {
     margin-left: var(--space-sm, calc(0.75 * var(--space-unit)));
     margin-right: calc(0.75 * var(--space-unit));
     margin-right: var(--space-sm, calc(0.75 * var(--space-unit)));
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
     font-size: 18px;
     font-size: var(--text_base_size, 18px);
     color: var(--gray-6);
@@ -694,9 +698,7 @@ textarea {
   padding-right: calc(0.75 * var(--space-unit));
   padding-right: var(--space-sm, calc(0.75 * var(--space-unit)));
   color: #ffffff;
-  color: var(--color-bg, #ffffff);
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale; }
+  color: var(--color-bg, #ffffff); }
   .site-info a {
     color: inherit; }
     .site-info a:hover {
@@ -714,9 +716,7 @@ textarea {
 
 /** === Site Branding === */
 .main-navigation {
-  display: none;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale; }
+  display: none; }
   .main-navigation > div > ul {
     font-family: '-apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif';
     font-family: var(--title_font, '-apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif');
@@ -760,6 +760,12 @@ textarea {
     display: none; } }
 
 .post-navigation {
+  margin-top: calc(2 * var(--space-unit));
+  margin-top: var(--space-lg, calc(2 * var(--space-unit)));
+  margin-bottom: calc(2 * var(--space-unit));
+  margin-bottom: var(--space-lg, calc(2 * var(--space-unit)));
+  margin-left: var(--0, );
+  margin-right: var(--0, );
   border-top: 1px solid green;
   border-top-color: #008000;
   border-top-color: var(--color-primary, #008000);
@@ -793,16 +799,23 @@ textarea {
   margin: 0 0 1.5em; }
 
 /** === Comments == */
-@media only screen and (min-width: 810px) {
-  .comments-area {
-    display: flex;
-    justify-content: flex-end;
-    flex-direction: row;
-    flex-wrap: wrap;
-    margin-left: auto;
-    margin-right: auto;
-    max-width: 1235px;
-    width: 100%; } }
+.comments-area {
+  margin-top: calc(2 * var(--space-unit));
+  margin-top: var(--space-lg, calc(2 * var(--space-unit)));
+  margin-bottom: calc(2 * var(--space-unit));
+  margin-bottom: var(--space-lg, calc(2 * var(--space-unit)));
+  margin-left: var(--0, );
+  margin-right: var(--0, ); }
+  @media only screen and (min-width: 810px) {
+    .comments-area {
+      display: flex;
+      justify-content: flex-end;
+      flex-direction: row;
+      flex-wrap: wrap;
+      margin-left: auto;
+      margin-right: auto;
+      max-width: 1235px;
+      width: 100%; } }
 
 .comments-title {
   margin-top: calc(0.75 * var(--space-unit));
@@ -826,8 +839,8 @@ textarea {
   margin-right: var(--space-sm, calc(0.75 * var(--space-unit))); }
   @media only screen and (min-width: 810px) {
     .comment-respond {
-      margin-right: 80px;
-      max-width: calc( 710px);
+      margin-right: 185px;
+      max-width: calc( 605px);
       width: 100%; } }
   .comment-respond h3 {
     margin: 0; }
@@ -852,6 +865,11 @@ textarea {
     margin-right: var(--0, ); }
   .comment-list .comment-content a {
     word-wrap: break-word; }
+  .comment-list .children {
+    margin-left: calc(1.25 * var(--space-unit));
+    margin-left: var(--space-md, calc(1.25 * var(--space-unit))); }
+    .comment-list .children .comment {
+      width: 100%; }
   @media only screen and (min-width: 810px) {
     .comment-list {
       margin-top: calc(0.75 * var(--space-unit));
@@ -860,15 +878,30 @@ textarea {
       margin-bottom: var(--space-sm, calc(0.75 * var(--space-unit)));
       margin-left: var(--0, );
       margin-right: var(--0, );
-      margin-right: 80px;
-      max-width: calc( 710px);
+      margin-right: 185px;
+      max-width: calc( 605px);
       width: 710px; } }
 
 .comment-body {
   position: relative;
   max-width: calc( 605px);
   min-height: 9rem; }
+  .comment-body > * {
+    margin-top: calc(0.75 * var(--space-unit));
+    margin-top: var(--space-sm, calc(0.75 * var(--space-unit)));
+    margin-bottom: calc(0.75 * var(--space-unit));
+    margin-bottom: var(--space-sm, calc(0.75 * var(--space-unit)));
+    margin-left: var(--0, );
+    margin-right: var(--0, ); }
+    .comment-body > *:first-of-type {
+      margin-top: 0; }
   .comment-body .reply {
+    margin-top: calc(0.75 * var(--space-unit));
+    margin-top: var(--space-sm, calc(0.75 * var(--space-unit)));
+    margin-bottom: calc(0.75 * var(--space-unit));
+    margin-bottom: var(--space-sm, calc(0.75 * var(--space-unit)));
+    margin-left: var(--0, );
+    margin-right: var(--0, );
     font-family: '-apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif';
     font-family: var(--title_font, '-apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif');
     font-size: calc(1em / (var(--text_scale_ratio) * var(--text_scale_ratio)));
@@ -893,11 +926,14 @@ textarea {
     padding-bottom: var(--space-sm, calc(0.75 * var(--space-unit)));
     font-family: '-apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif';
     font-family: var(--title_font, '-apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif');
+    font-size: calc(1em / var(--text_scale_ratio));
+    font-size: var(--text_sm, calc(1em / var(--text_scale_ratio)));
     border-top: 1px solid grey;
     border-top-color: var(--gray-2);
     border-top-color: var(--color-border, var(--gray-2));
     font-weight: 500;
     font-style: normal;
+    letter-spacing: .125rem;
     text-transform: uppercase;
     width: 100%; }
 
@@ -1074,7 +1110,12 @@ object {
 
 /** === Entries === */
 .hentry {
-  margin-top: 3em; }
+  margin-top: calc(2 * var(--space-unit));
+  margin-top: var(--space-lg, calc(2 * var(--space-unit)));
+  margin-bottom: calc(2 * var(--space-unit));
+  margin-bottom: var(--space-lg, calc(2 * var(--space-unit)));
+  margin-left: var(--0, );
+  margin-right: var(--0, ); }
   .hentry:first-of-type {
     margin-top: 0; }
   .hentry .entry-featured-image {
@@ -1095,8 +1136,6 @@ object {
     margin-left: var(--space-sm, calc(0.75 * var(--space-unit)));
     margin-right: calc(0.75 * var(--space-unit));
     margin-right: var(--space-sm, calc(0.75 * var(--space-unit)));
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
     color: #008000;
     color: var(--color-primary, #008000);
     font-family: '-apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif';
@@ -1144,24 +1183,31 @@ object {
     .hentry .entry-meta a {
       color: var(--color-emphasis);
       color: var(--color-text-heading, var(--color-emphasis));
-      transition: color 110ms ease-in-out; }
+      transition: color 110ms ease-in-out;
+      font-weight: 600; }
       .hentry .entry-meta a:hover {
         text-decoration: none;
         color: #f5414f;
         color: var(--color-secondary, #f5414f); }
     .hentry .entry-meta .posted-on {
-      -webkit-font-smoothing: antialiased;
-      -moz-osx-font-smoothing: grayscale;
       text-transform: uppercase; }
-    .hentry .entry-meta .byline {
-      -webkit-font-smoothing: antialiased;
-      -moz-osx-font-smoothing: grayscale; }
-      .hentry .entry-meta .byline a {
-        font-weight: 600; }
+      .hentry .entry-meta .posted-on a {
+        font-weight: normal; }
+    .hentry .entry-meta .byline a {
+      font-weight: 600; }
     @media only screen and (min-width: 810px) {
       .hentry .entry-meta {
         flex-direction: column;
         width: calc( 185px - calc(0.75 * var(--space-unit)) - calc(0.75 * var(--space-unit))); } }
+  .hentry .entry-footer .entry-meta a:link {
+    color: var(--gray-6);
+    color: var(--color-text-subtle, var(--gray-6)); }
+  .hentry .entry-footer .entry-meta a:hover {
+    color: #f5414f;
+    color: var(--color-secondary, #f5414f); }
+  .hentry .entry-footer .entry-meta > span {
+    margin-right: calc(0.75 * var(--space-unit));
+    margin-right: var(--space-sm, calc(0.75 * var(--space-unit))); }
   @media only screen and (min-width: 810px) {
     .hentry .entry-footer .entry-meta {
       flex-direction: row;
@@ -1177,20 +1223,6 @@ object {
     fill: var(--color-text-subtle, var(--gray-6));
     margin-right: 0.3em;
     top: -0.1em; }
-  .hentry .entry-footer .byline .svg-icon {
-    transform: scale(1.1);
-    top: -0.13em; }
-  .hentry .entry-footer .cat-links .svg-icon {
-    transform: scale(0.9);
-    top: -0.12em; }
-  .hentry .entry-footer .comments-link {
-    white-space: nowrap; }
-    .hentry .entry-footer .comments-link .svg-icon {
-      transform: scale(0.82); }
-  .hentry .entry-footer .edit-link {
-    white-space: nowrap; }
-    .hentry .entry-footer .edit-link .svg-icon {
-      transform: scale(0.9); }
   @media only screen and (min-width: 810px) {
     .hentry .entry-footer {
       display: flex;

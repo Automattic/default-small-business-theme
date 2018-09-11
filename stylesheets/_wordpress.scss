@@ -24,6 +24,8 @@
 
 .comments-area {
 
+	@include block-space( space-lg, 0 );
+
 	@include media( tablet ) {
 		display: flex;
 		justify-content: flex-end;
@@ -47,8 +49,8 @@
 	@include block-space;
 
 	@include media( tablet ) {
-		margin-right: $width-column-1;
-		max-width: calc( #{$width-column-7} );
+		margin-right: $width-column-2;
+		max-width: calc( #{$width-column-6} );
 		width: 100%;
 	}
 
@@ -73,10 +75,18 @@
 		}
 	}
 
+	.children {
+		@include space_var(margin-left, space-md);
+
+		.comment {
+			width: 100%;
+		}
+	}
+
 	@include media( tablet ) {
 		@include block-space( space-sm, 0 );
-		margin-right: $width-column-1;
-		max-width: calc( #{$width-column-7} );
+		margin-right: $width-column-2;
+		max-width: calc( #{$width-column-6} );
 		width: $width-column-7;
 	}
 }
@@ -86,7 +96,17 @@
 	max-width: calc( #{$width-column-6} );
 	min-height: 9rem;
 
+	> * {
+
+		@include block-space( space-sm, 0 );
+
+		&:first-of-type {
+			margin-top: 0;
+		}
+	}
+
 	.reply {
+		@include block-space( space-sm, 0 );
 		@include typo_var(font-family, title_font);
 		@include typo_var(font-size, text_xs);
 		text-transform: uppercase;
@@ -104,10 +124,12 @@
 		@include space-var( padding-top, space-sm );
 		@include space-var( padding-bottom, space-sm );
 		@include typo_var( font-family, title_font );
+		@include typo_var( font-size, text_sm );
 		border-top: 1px solid grey;
 		@include color-var( border-top-color, color-border );
 		font-weight: 500;
 		font-style: normal;
+		letter-spacing: .125rem;
 		text-transform: uppercase;
 		width: 100%;
 	}

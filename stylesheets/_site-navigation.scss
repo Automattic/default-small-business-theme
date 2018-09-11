@@ -4,7 +4,6 @@
 .main-navigation {
 
 	display: none;
-	@include font-smoothing;
 
 	> div > ul {
 
@@ -57,6 +56,7 @@
 
 .post-navigation {
 
+	@include block-space( space-lg, 0 );
 	border-top: 1px solid green;
 	@include color-var( border-top-color, color-primary );
 	border-bottom: 1px solid grey;

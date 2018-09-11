@@ -11,6 +11,7 @@ textarea {
 	@include typo_var(font-size, text_base_size);
 	@include typo_var(line-height, body_line_height);
 	@include color_var(color, gray-10);
+	@include font-smoothing;
 	font-weight: 400;
 }
 
@@ -18,6 +19,7 @@ h1, h2, h3, h4, h5, h6 {
 	clear: both;
 	font-weight: 400;
 	@include typo_var(line-height, heading_line_height);
+	@include font-smoothing;
 }
 
 h2 {
@@ -92,11 +94,13 @@ pre {
 	@include typo_var(font-family, monospace_font);
 	@include typo_var(font-size, text_md);
 	line-height: 1.6;
+	@include font-smoothing;
 }
 
 code, kbd, tt, var, samp {
 	@include typo_var(font-size, text_md);
 	@include typo_var(font-family, monospace_font);
+	@include font-smoothing;
 }
 
 mark, ins {

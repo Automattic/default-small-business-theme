@@ -25,7 +25,6 @@
 
 		@include typo_var(font-family, text_font);
 		@include typo_var(font-size, text_lg);
-		@include font-smoothing;
 		@include color_var(color, color-text);
 		/* When there is no description set, make sure navigation appears below title. */
 		+ .main-navigation {
@@ -50,7 +49,6 @@
 	.site-description {
 
 		@include block-space( 0, space-sm );
-		@include font-smoothing;
 		@include typo_var(font-size, text_base_size);
 		@include color_var(color, color-text-subtle);
 		font-weight: normal;
@@ -152,7 +150,6 @@
 	@include space_var(padding-left, space-sm);
 	@include space_var(padding-right, space-sm);
 	@include color_var(color, color-bg);
-	@include font-smoothing;
 
 	a {
 		color: inherit;
