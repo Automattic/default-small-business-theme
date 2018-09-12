@@ -71,6 +71,13 @@ $wide_width: calc( 12 * ( 80px + 25px ) - 25px );
 	@include space_var( margin-right, $h-space );
 }
 
+@mixin block-padding( $v-space: space-sm, $h-space: space-sm ) {
+	@include space_var( padding-top, $v-space );
+	@include space_var( padding-bottom, $v-space );
+	@include space_var( padding-left, $h-space );
+	@include space_var( padding-right, $h-space );
+}
+
 // Rounded Corners
 @mixin rounded($radius: 0.5em) {
 	overflow: hidden;

@@ -6,6 +6,7 @@ input[type="button"],
 input[type="reset"],
 input[type="submit"] {
 	@include color_var(background-color, color-primary);
+	@include color_var(color, white);
 	@include space_var(padding, space-xs);
 	@include space_var(padding-left, space-sm);
 	@include space_var(padding-right, space-sm);
@@ -15,7 +16,7 @@ input[type="submit"] {
 	@include rounded( #{map-get($space_vars, space-xxs)} );
 	border: 2px solid green;
 	@include color_var(border-color, color-primary);
-	color: #FFF;
+	box-shadow: 1px 1px 5px 1px rgba(0,0,0,0.33);
 	cursor: pointer;
 	display: inline-block;
 	font-weight: 600;

@@ -26,6 +26,7 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
   --text_font: Baskerville, Baskerville Old Face, Hoefler Text, Garamond, Times New Roman, serif;
   --title_font: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
   --monospace_font: Menlo, monaco, Consolas, Lucida Console, monospace;
+  --text_xxs: calc(1em / (var(--text_scale_ratio) * var(--text_scale_ratio) * var(--text_scale_ratio)));
   --text_xs: calc(1em / (var(--text_scale_ratio) * var(--text_scale_ratio)));
   --text_sm: calc(1em / var(--text_scale_ratio));
   --text_md: calc(1em * var(--text_scale_ratio));
@@ -327,8 +328,31 @@ small,
 dfn, cite, em, i {
   font-style: italic; }
 
-blockquote {
-  font-style: italic; }
+blockquote,
+blockquote.is-large {
+  padding-top: var(--space-sm, calc(0.75 * var(--space-unit)));
+  padding-bottom: var(--space-sm, calc(0.75 * var(--space-unit)));
+  padding-left: 0;
+  padding-right: 0;
+  border-top: 1px solid green; }
+  blockquote p,
+  blockquote.is-large p {
+    padding-top: var(--space-xs, calc(0.5 * var(--space-unit)));
+    padding-bottom: var(--space-xs, calc(0.5 * var(--space-unit)));
+    padding-left: 0;
+    padding-right: 0;
+    font-size: var(--text_lg, calc(1em * var(--text_scale_ratio) * var(--text_scale_ratio)));
+    font-style: normal; }
+  blockquote cite,
+  blockquote.is-large cite {
+    font-family: var(--title_font, '-apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif');
+    font-size: var(--text_xs, calc(1em / (var(--text_scale_ratio) * var(--text_scale_ratio))));
+    color: var(--color-primary, #008000);
+    font-style: normal;
+    font-weight: 500; }
+    blockquote cite:before,
+    blockquote.is-large cite:before {
+      content: "\2014\00a0"; }
 
 pre {
   font-family: var(--monospace_font, "Menlo, monaco, Consolas, Lucida Console, monospace");
@@ -466,6 +490,7 @@ input[type="button"],
 input[type="reset"],
 input[type="submit"] {
   background-color: var(--color-primary, #008000);
+  color: var(--white, #ffffff);
   padding: var(--space-xs, calc(0.5 * var(--space-unit)));
   padding-left: var(--space-sm, calc(0.75 * var(--space-unit)));
   padding-right: var(--space-sm, calc(0.75 * var(--space-unit)));
@@ -478,7 +503,7 @@ input[type="submit"] {
   border-radius: calc(0.25 * var(--space-unit));
   border: 2px solid green;
   border-color: var(--color-primary, #008000);
-  color: #FFF;
+  box-shadow: 1px 1px 5px 1px rgba(0, 0, 0, 0.33);
   cursor: pointer;
   display: inline-block;
   font-weight: 600;

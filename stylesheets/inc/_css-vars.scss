@@ -10,6 +10,7 @@ $type_vars: (
 	monospace_font: "Menlo, monaco, Consolas, Lucida Console, monospace",
 
 	// Type scales.
+	text_xxs: calc(1em / (var(--text_scale_ratio) * var(--text_scale_ratio) * var(--text_scale_ratio))),
 	text_xs: calc(1em / (var(--text_scale_ratio) * var(--text_scale_ratio))),
 	text_sm: calc(1em / var(--text_scale_ratio)),
 	text_md: calc(1em * var(--text_scale_ratio)),
@@ -48,6 +49,7 @@ $type_vars: (
 	--title_font: #{map-get($type_vars, title_font)};
 	--monospace_font: #{map-get($type_vars, monospace_font)};
 
+	--text_xxs: #{map-get($type_vars, text_xxs)};
 	--text_xs: #{map-get($type_vars, text_xs)};
 	--text_sm: #{map-get($type_vars, text_sm)};
 	--text_md: #{map-get($type_vars, text_md)};
