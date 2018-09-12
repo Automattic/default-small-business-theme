@@ -162,18 +162,18 @@ if ( ! function_exists( 'smallbusinesstheme_the_post_navigation' ) ) :
 
 		// Previous/next post navigation.
 		$next_post = get_next_post();
+		$next_post_content = $next_post ? wp_trim_words( get_post_field( 'post_content', $next_post->ID ), '28' ) : '';
 		$previous_post = get_previous_post();
-		$next_post_content = get_post_field( 'post_content', $next_post->ID);
-		$previous_post_content = get_post_field( 'post_content', $previous_post->ID);
+		$previous_post_content = $previous_post ? wp_trim_words( get_post_field( 'post_content', $previous_post->ID ), '28' ) : '';
 
 		the_post_navigation( array(
 			'next_text' => '<span class="screen-reader-text">' . __( 'Next post:', 'smallbusinesstheme' ) . '</span> ' .
 			'<h2 class="post-title">%title</h2>' .
-			'<p class="post-excerpt">' . wp_trim_words( $next_post_content , '28' ) . '</p>' .
+			'<p class="post-excerpt">' . $next_post_content . '</p>' .
 			'<button>' . __( 'Next', 'smallbusinesstheme' ) . '</button>',
 			'prev_text' => '<span class="screen-reader-text">' . __( 'Previous post:', 'smallbusinesstheme' ) . '</span> ' .
 			'<h2 class="post-title">%title</h2>' .
-			'<p class="post-excerpt">' . wp_trim_words( $previous_post_content , '28' ) . '</p>' .
+			'<p class="post-excerpt">' . $previous_post_content . '</p>' .
 			'<button>' . __( 'Previous', 'smallbusinesstheme' ) . '</button>',
 		) );
 	}
