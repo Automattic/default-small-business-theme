@@ -268,10 +268,26 @@ $text_color_link_hover: lighten($text_color, 22.5%);
 [data-align=right] .wp-block-gallery {
   max-width: 285px; }
 
-@media only screen and (min-width: calc( 8 * ( 80px + 25px ) - 25px)) {
-  .wp-block-text-columns {
-    margin-right: var(--width-column-1, calc( 1 * ( var(--width-column) + var(--width-gutter) ) - var(--width-gutter)));
-    max-width: var(--width-column-7, calc( 7 * ( var(--width-column) + var(--width-gutter) ) - var(--width-gutter))); } }
+.wp-block-text-columns,
+.wp-block-columns {
+  justify-content: space-between; }
+  .wp-block-text-columns .wp-block-column,
+  .wp-block-columns .wp-block-column {
+    flex: 0 1 auto; }
+  .wp-block-text-columns.has-2-columns .wp-block-column,
+  .wp-block-columns.has-2-columns .wp-block-column {
+    width: calc( 50% - ( 25px .5 )); }
+  .wp-block-text-columns.has-3-columns .wp-block-column,
+  .wp-block-columns.has-3-columns .wp-block-column {
+    width: calc( 33% - ( 25px .33 )); }
+  .wp-block-text-columns.has-4-columns .wp-block-column,
+  .wp-block-columns.has-4-columns .wp-block-column {
+    width: calc( 25% - ( 25px .25 )); }
+  @media only screen and (min-width: calc( 8 * ( 80px + 25px ) - 25px)) {
+    .wp-block-text-columns,
+    .wp-block-columns {
+      margin-right: var(--width-column-1, calc( 1 * ( var(--width-column) + var(--width-gutter) ) - var(--width-gutter)));
+      max-width: var(--width-column-7, calc( 7 * ( var(--width-column) + var(--width-gutter) ) - var(--width-gutter))); } }
 
 ul.wp-block-latest-posts.alignwide,
 ul.wp-block-latest-posts.alignfull,
@@ -280,12 +296,12 @@ ul.wp-block-latest-posts.is-grid.alignwide {
   padding: 0 14px; }
 
 .wp-block-table {
-  max-width: 285px;
   display: block;
   overflow-x: auto; }
-  @media only screen and (min-width: calc( 8 * ( 80px + 25px ) - 25px)) {
-    .wp-block-table {
-      max-width: 100%; } }
+  .wp-block-table tr:nth-child(even) {
+    background-color: var(--gray-1, #e8e7e8); }
+  .wp-block-table thead tr:nth-child(odd) {
+    background-color: var(--color-primary, #008000); }
 
 .wp-block-table table {
   border-collapse: collapse;
