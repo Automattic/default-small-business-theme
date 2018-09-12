@@ -27,7 +27,7 @@
 	--link_transition: ;
 	--icon_transition: ;
 */ }
-  @media only screen and (min-width: 810px) {
+  @media only screen and (min-width: calc( 8 * ( 80px + 25px ) - 25px)) {
     :root {
       --text_base_size: 21px; } }
 
@@ -140,13 +140,13 @@ $text_color_link_hover: lighten($text_color, 22.5%);
   margin-right: var(--space-sm, calc(0.75 * var(--space-unit))); }
   .entry-content > *:first-child {
     margin-top: 0; }
-  @media only screen and (min-width: 810px) {
+  @media only screen and (min-width: calc( 8 * ( 80px + 25px ) - 25px)) {
     .entry-content > * {
       max-width: var(--width-column-6, calc( 6 * ( var(--width-column) + var(--width-gutter) ) - var(--width-gutter)));
       margin-right: var(--width-column-2, calc( 2 * ( var(--width-column) + var(--width-gutter) ) - var(--width-gutter)));
       margin-left: auto; } }
 
-@media only screen and (min-width: 810px) {
+@media only screen and (min-width: calc( 8 * ( 80px + 25px ) - 25px)) {
   .entry-content > .alignwide {
     max-width: var(--width-column-10, calc( 10 * ( var(--width-column) + var(--width-gutter) ) - var(--width-gutter)));
     margin-left: auto;
@@ -184,7 +184,7 @@ $text_color_link_hover: lighten($text_color, 22.5%);
 
 .wp-block-cover-image {
   width: inherit; }
-  @media only screen and (min-width: 810px) {
+  @media only screen and (min-width: calc( 8 * ( 80px + 25px ) - 25px)) {
     .wp-block-cover-image {
       width: 100%; } }
   .wp-block-cover-image.alignleft {
@@ -199,7 +199,7 @@ $text_color_link_hover: lighten($text_color, 22.5%);
 [data-align=left] .wp-block-cover-image,
 [data-align=right] .wp-block-cover-image {
   max-width: 285px; }
-  @media only screen and (min-width: 810px) {
+  @media only screen and (min-width: calc( 8 * ( 80px + 25px ) - 25px)) {
     .wp-block-cover-image.alignleft,
     .wp-block-cover-image.alignright,
     .wp-block-embed.alignleft,
@@ -223,7 +223,7 @@ $text_color_link_hover: lighten($text_color, 22.5%);
 [data-align=right] .wp-block-gallery {
   max-width: 285px; }
 
-@media only screen and (min-width: 810px) {
+@media only screen and (min-width: calc( 8 * ( 80px + 25px ) - 25px)) {
   .wp-block-text-columns {
     margin-right: var(--width-column-1, calc( 1 * ( var(--width-column) + var(--width-gutter) ) - var(--width-gutter)));
     max-width: var(--width-column-7, calc( 7 * ( var(--width-column) + var(--width-gutter) ) - var(--width-gutter))); } }
@@ -238,7 +238,7 @@ ul.wp-block-latest-posts.is-grid.alignwide {
   max-width: 285px;
   display: block;
   overflow-x: auto; }
-  @media only screen and (min-width: 810px) {
+  @media only screen and (min-width: calc( 8 * ( 80px + 25px ) - 25px)) {
     .wp-block-table {
       max-width: 100%; } }
 
@@ -286,7 +286,7 @@ ul.wp-block-latest-posts.is-grid.alignwide {
   margin-left: var(--space-sm, calc(0.75 * var(--space-unit)));
   margin-right: var(--space-sm, calc(0.75 * var(--space-unit)));
   padding: 0; }
-  @media only screen and (min-width: 810px) {
+  @media only screen and (min-width: calc( 8 * ( 80px + 25px ) - 25px)) {
     .wp-block-quote.is-large,
     .wp-block-quote.is-style-large {
       max-width: var(--width-column-6, calc( 6 * ( var(--width-column) + var(--width-gutter) ) - var(--width-gutter)));

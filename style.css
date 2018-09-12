@@ -48,7 +48,7 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 	--link_transition: ;
 	--icon_transition: ;
 */ }
-  @media only screen and (min-width: 810px) {
+  @media only screen and (min-width: calc( 8 * ( 80px + 25px ) - 25px)) {
     :root {
       --text_base_size: 21px; } }
 
@@ -551,7 +551,7 @@ textarea {
 .site-header {
   border-bottom: 1px solid gray;
   border-bottom-color: var(--color-border, var(--gray-2)); }
-  @media only screen and (min-width: 810px) {
+  @media only screen and (min-width: calc( 10 * ( 80px + 25px ) - 25px)) {
     .site-header {
       max-width: var(--width-column-12, calc( 12 * ( var(--width-column) + var(--width-gutter) ) - var(--width-gutter)));
       border-bottom: none;
@@ -566,6 +566,18 @@ textarea {
   margin-bottom: var(--space-sm, calc(0.75 * var(--space-unit)));
   margin-left: 0;
   margin-right: 0; }
+  .site-branding > * {
+    margin-top: 0;
+    margin-bottom: 0;
+    margin-left: var(--space-sm, calc(0.75 * var(--space-unit)));
+    margin-right: var(--space-sm, calc(0.75 * var(--space-unit))); }
+  @media only screen and (min-width: calc( 8 * ( 80px + 25px ) - 25px)) {
+    .site-branding {
+      max-width: var(--width-column-5, calc( 5 * ( var(--width-column) + var(--width-gutter) ) - var(--width-gutter)));
+      display: flex;
+      align-content: stretch;
+      align-items: center;
+      width: 100%; } }
   .site-branding .site-title {
     font-family: var(--text_font, "Baskerville, Baskerville Old Face, Hoefler Text, Garamond, Times New Roman, serif");
     font-size: var(--text_lg, calc(1em * var(--text_scale_ratio) * var(--text_scale_ratio)));
@@ -580,6 +592,17 @@ textarea {
       color: inherit; }
       .site-branding .site-title a:hover {
         color: var(--color-secondary, #f5414f); }
+    @media only screen and (min-width: calc( 8 * ( 80px + 25px ) - 25px)) {
+      .site-branding .site-title {
+        margin-top: 0;
+        margin-bottom: 0;
+        margin-left: 0;
+        margin-right: 0; }
+        .site-branding .site-title:first-child {
+          margin-top: 0;
+          margin-bottom: 0;
+          margin-left: var(--space-sm, calc(0.75 * var(--space-unit)));
+          margin-right: var(--space-sm, calc(0.75 * var(--space-unit))); } }
   .site-branding .site-description {
     margin-top: 0;
     margin-bottom: 0;
@@ -591,33 +614,15 @@ textarea {
   .site-branding .custom-logo-link {
     display: block;
     line-height: 0; }
-  @media only screen and (max-width: 810px) {
-    .site-branding > * {
-      margin-top: 0;
-      margin-bottom: 0;
-      margin-left: var(--space-sm, calc(0.75 * var(--space-unit)));
-      margin-right: var(--space-sm, calc(0.75 * var(--space-unit))); } }
-  @media only screen and (min-width: 810px) {
-    .site-branding {
-      max-width: var(--width-column-5, calc( 5 * ( var(--width-column) + var(--width-gutter) ) - var(--width-gutter)));
-      display: flex;
-      align-content: stretch;
-      align-items: center;
-      width: 100%; }
-      .site-branding .site-title:not(:first-child) {
-        margin-top: 0;
-        margin-bottom: 0;
-        margin-left: var(--space-sm, calc(0.75 * var(--space-unit)));
-        margin-right: var(--space-sm, calc(0.75 * var(--space-unit))); } }
 
 .social-navigation {
   margin-top: 0.6em;
   text-align: center; }
-  @media only screen and (min-width: 810px) {
+  @media only screen and (min-width: calc( 8 * ( 80px + 25px ) - 25px)) {
     .social-navigation {
       margin-top: 1em;
       text-align: left; } }
-  @media only screen and (min-width: 1168px) {
+  @media only screen and (min-width: calc( 10 * ( 80px + 25px ) - 25px)) {
     .social-navigation {
       margin-top: 1.3em; } }
   .social-navigation ul.social-links-menu {
@@ -627,7 +632,7 @@ textarea {
     .social-navigation ul.social-links-menu li {
       display: inline-block;
       list-style: none; }
-      @media only screen and (min-width: 1168px) {
+      @media only screen and (min-width: calc( 10 * ( 80px + 25px ) - 25px)) {
         .social-navigation ul.social-links-menu li:nth-child(n+2) {
           margin-left: 0.2em; } }
       .social-navigation ul.social-links-menu li a {
@@ -639,11 +644,11 @@ textarea {
           line-height: 1; }
           .social-navigation ul.social-links-menu li a svg:hover {
             fill: var(--color-primary, #008000); }
-          @media only screen and (min-width: 810px) {
+          @media only screen and (min-width: calc( 8 * ( 80px + 25px ) - 25px)) {
             .social-navigation ul.social-links-menu li a svg {
               width: 35px;
               height: 35px; } }
-          @media only screen and (min-width: 1168px) {
+          @media only screen and (min-width: calc( 10 * ( 80px + 25px ) - 25px)) {
             .social-navigation ul.social-links-menu li a svg {
               width: 46px;
               height: 46px; } }
@@ -663,7 +668,7 @@ textarea {
     .site-info a:hover {
       text-decoration: none;
       color: var(--color-primary, #008000); }
-  @media only screen and (min-width: 810px) {
+  @media only screen and (min-width: calc( 10 * ( 80px + 25px ) - 25px)) {
     .site-info {
       max-width: var(--width-column-12, calc( 12 * ( var(--width-column) + var(--width-gutter) ) - var(--width-gutter)));
       border-bottom: none;
@@ -698,7 +703,7 @@ textarea {
         font-weight: 400; }
   .main-navigation ul.sub-menu {
     display: none; }
-  @media only screen and (min-width: 810px) {
+  @media only screen and (min-width: calc( 8 * ( 80px + 25px ) - 25px)) {
     .main-navigation {
       margin-top: var(--space-sm, calc(0.75 * var(--space-unit)));
       margin-bottom: var(--space-sm, calc(0.75 * var(--space-unit)));
@@ -706,7 +711,7 @@ textarea {
       margin-right: 0;
       display: inherit; } }
 
-@media only screen and (min-width: 810px) {
+@media only screen and (min-width: calc( 8 * ( 80px + 25px ) - 25px)) {
   .menu-toggle {
     display: none; } }
 
@@ -739,7 +744,7 @@ textarea {
       margin-bottom: var(--space-sm, calc(0.75 * var(--space-unit)));
       margin-left: var(--space-sm, calc(0.75 * var(--space-unit)));
       margin-right: var(--space-sm, calc(0.75 * var(--space-unit))); }
-  @media only screen and (min-width: 810px) {
+  @media only screen and (min-width: calc( 8 * ( 80px + 25px ) - 25px)) {
     .post-navigation {
       margin-top: var(--space-sm, calc(0.75 * var(--space-unit)));
       margin-bottom: var(--space-sm, calc(0.75 * var(--space-unit)));
@@ -774,7 +779,7 @@ textarea {
   margin-bottom: var(--space-lg, calc(2 * var(--space-unit)));
   margin-left: 0;
   margin-right: 0; }
-  @media only screen and (min-width: 810px) {
+  @media only screen and (min-width: calc( 8 * ( 80px + 25px ) - 25px)) {
     .comments-area {
       max-width: var(--width-column-12, calc( 12 * ( var(--width-column) + var(--width-gutter) ) - var(--width-gutter)));
       display: flex;
@@ -797,7 +802,7 @@ textarea {
   margin-bottom: var(--space-sm, calc(0.75 * var(--space-unit)));
   margin-left: var(--space-sm, calc(0.75 * var(--space-unit)));
   margin-right: var(--space-sm, calc(0.75 * var(--space-unit))); }
-  @media only screen and (min-width: 810px) {
+  @media only screen and (min-width: calc( 8 * ( 80px + 25px ) - 25px)) {
     .comment-respond {
       max-width: var(--width-column-6, calc( 6 * ( var(--width-column) + var(--width-gutter) ) - var(--width-gutter)));
       margin-right: var(--width-column-2, calc( 2 * ( var(--width-column) + var(--width-gutter) ) - var(--width-gutter)));
@@ -823,7 +828,7 @@ textarea {
     margin-left: var(--space-md, calc(1.25 * var(--space-unit))); }
     .comment-list .children .comment {
       width: 100%; }
-  @media only screen and (min-width: 810px) {
+  @media only screen and (min-width: calc( 8 * ( 80px + 25px ) - 25px)) {
     .comment-list {
       max-width: var(--width-column-7, calc( 7 * ( var(--width-column) + var(--width-gutter) ) - var(--width-gutter)));
       margin-right: var(--width-column-2, calc( 2 * ( var(--width-column) + var(--width-gutter) ) - var(--width-gutter)));
@@ -881,7 +886,7 @@ textarea {
   margin-top: -1.4rem; }
   .comment-meta a {
     color: var(--color-text-subtle, var(--gray-6)); }
-  @media only screen and (min-width: 810px) {
+  @media only screen and (min-width: calc( 8 * ( 80px + 25px ) - 25px)) {
     .comment-meta {
       width: var(--width-column-1, calc( 1 * ( var(--width-column) + var(--width-gutter) ) - var(--width-gutter)));
       left: calc( 100% + 25px);
@@ -988,21 +993,21 @@ object {
   max-width: 425px;
   margin: 0 auto;
   width: 100%; }
-  @media only screen and (min-width: 810px) {
+  @media only screen and (min-width: calc( 8 * ( 80px + 25px ) - 25px)) {
     #page-wrapper {
       display: flex;
       flex-wrap: nowrap;
       justify-content: flex-start;
       align-items: stretch;
-      max-width: 810px;
+      max-width: calc( 8 * ( 80px + 25px ) - 25px);
       padding-top: 40px; } }
-  @media only screen and (min-width: 1168px) {
+  @media only screen and (min-width: calc( 10 * ( 80px + 25px ) - 25px)) {
     #page-wrapper {
-      max-width: 1168px;
+      max-width: calc( 10 * ( 80px + 25px ) - 25px);
       padding-top: 80px; } }
-  @media only screen and (min-width: 1379px) {
+  @media only screen and (min-width: calc( 12 * ( 80px + 25px ) - 25px)) {
     #page-wrapper {
-      max-width: 1379px; } }
+      max-width: calc( 12 * ( 80px + 25px ) - 25px); } }
 
 #content {
   box-sizing: content-box; }
@@ -1026,7 +1031,7 @@ object {
     margin-top: 0; }
   .hentry .entry-featured-image {
     text-align: center; }
-  @media only screen and (min-width: 810px) {
+  @media only screen and (min-width: calc( 8 * ( 80px + 25px ) - 25px)) {
     .hentry .entry-header {
       max-width: var(--width-column-12, calc( 12 * ( var(--width-column) + var(--width-gutter) ) - var(--width-gutter)));
       display: flex;
@@ -1051,7 +1056,7 @@ object {
       .hentry .entry-title a:hover {
         color: var(--color-secondary, #f5414f);
         text-decoration: none; }
-    @media only screen and (min-width: 810px) {
+    @media only screen and (min-width: calc( 8 * ( 80px + 25px ) - 25px)) {
       .hentry .entry-title {
         margin-top: var(--space-sm, calc(0.75 * var(--space-unit)));
         margin-bottom: var(--space-sm, calc(0.75 * var(--space-unit)));
@@ -1081,7 +1086,7 @@ object {
         font-weight: normal; }
     .hentry .entry-meta .byline a {
       font-weight: 600; }
-    @media only screen and (min-width: 810px) {
+    @media only screen and (min-width: calc( 8 * ( 80px + 25px ) - 25px)) {
       .hentry .entry-meta {
         width: calc( var(--width-column-2 ) - ( calc(0.75 * var(--space-unit)) * 2 ));
         flex-direction: column; } }
@@ -1093,7 +1098,7 @@ object {
       color: var(--color-secondary, #f5414f); }
     .hentry .entry-footer .entry-meta > span {
       margin-right: var(--space-sm, calc(0.75 * var(--space-unit))); }
-    @media only screen and (min-width: 810px) {
+    @media only screen and (min-width: calc( 8 * ( 80px + 25px ) - 25px)) {
       .hentry .entry-footer .entry-meta {
         max-width: var(--width-column-6, calc( 6 * ( var(--width-column) + var(--width-gutter) ) - var(--width-gutter)));
         margin-right: var(--width-column-2, calc( 2 * ( var(--width-column) + var(--width-gutter) ) - var(--width-gutter)));
@@ -1107,7 +1112,7 @@ object {
     fill: var(--color-text-subtle, var(--gray-6));
     margin-right: 0.3em;
     top: -0.1em; }
-  @media only screen and (min-width: 810px) {
+  @media only screen and (min-width: calc( 8 * ( 80px + 25px ) - 25px)) {
     .hentry .entry-footer {
       max-width: var(--width-column-12, calc( 12 * ( var(--width-column) + var(--width-gutter) ) - var(--width-gutter)));
       display: flex;
@@ -1166,7 +1171,7 @@ object {
     .hentry .entry-content .more-link:hover {
       color: var(--color-primary, #008000);
       text-decoration: none; }
-  @media only screen and (min-width: 810px) {
+  @media only screen and (min-width: calc( 8 * ( 80px + 25px ) - 25px)) {
     .hentry .entry-content {
       max-width: var(--width-column-12, calc( 12 * ( var(--width-column) + var(--width-gutter) ) - var(--width-gutter)));
       margin-left: auto;

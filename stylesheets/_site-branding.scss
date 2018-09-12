@@ -6,7 +6,7 @@
 	border-bottom: 1px solid gray;
 	@include color_var(border-bottom-color, color-border);
 
-	@include media( tablet ) {
+	@include media( desktop ) {
 		@include width_var(max-width, width-column-12);
 		border-bottom: none;
 		display: flex;
@@ -21,8 +21,19 @@
 	@include color_var(color, color-text-subtle);
 	@include block-space( space-sm, 0 );
 
-	.site-title {
+	& > * {
+		@include block-space( 0, space-sm );
+	}
 
+	@include media( tablet ) {
+		@include width_var(max-width, width-column-5);
+		display: flex;
+		align-content: stretch;
+		align-items: center;
+		width: 100%;
+	}
+
+	.site-title {
 		@include typo_var(font-family, text_font);
 		@include typo_var(font-size, text_lg);
 		@include color_var(color, color-text);
@@ -43,11 +54,14 @@
 		}
 
 		@include media( tablet ) {
+			@include block-space( 0, 0 );
+			&:first-child {
+				@include block-space( 0, space-sm );
+			}
 		}
 	}
 
 	.site-description {
-
 		@include block-space( 0, space-sm );
 		@include typo_var(font-size, text_base_size);
 		@include color_var(color, color-text-subtle);
@@ -57,24 +71,6 @@
 	.custom-logo-link {
 		display: block;
 		line-height: 0;
-	}
-
-	@include media( mobile ) {
-		& > * {
-			@include block-space( 0, space-sm );
-		}
-	}
-
-	@include media( tablet ) {
-		@include width_var(max-width, width-column-5);
-		display: flex;
-		align-content: stretch;
-		align-items: center;
-		width: 100%;
-
-		.site-title:not(:first-child) {
-			@include block-space( 0, space-sm );
-		}
 	}
 }
 
@@ -159,7 +155,7 @@
 		}
 	}
 
-	@include media( tablet ) {
+	@include media( desktop ) {
 		@include width_var(max-width, width-column-12);
 		border-bottom: none;
 		display: flex;
