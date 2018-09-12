@@ -175,6 +175,7 @@ $text_color_link_hover: lighten($text_color, 22.5%);
   border-radius: calc(0.25 * var(--space-unit));
   border: 3px solid green;
   border-color: var(--color-primary, #008000);
+  box-shadow: 1px 1px 5px 1px rgba(0, 0, 0, 0.33);
   color: #FFF;
   cursor: pointer;
   display: inline-block;

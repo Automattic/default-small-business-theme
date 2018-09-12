@@ -61,6 +61,7 @@
 	@include rounded( #{map-get($space_vars, space-xxs)} );
 	border: 3px solid green;
 	@include color_var(border-color, color-primary);
+	box-shadow: 1px 1px 5px 1px rgba(0,0,0,0.33);
 	color: #FFF;
 	cursor: pointer;
 	display: inline-block;
