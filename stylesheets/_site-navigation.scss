@@ -97,7 +97,7 @@
 
 			& > div {
 				@include block-space( space-lg, space-sm );
-				max-width: calc( #{$width-column-5} );
+				@include width_var( max-width, width-column-5 );
 			}
 		}
 	}

@@ -31,6 +31,23 @@
     :root {
       --text_base_size: 21px; } }
 
+:root {
+  --width-column: 80px;
+  --width-gutter: 25;
+  --width-column-count: 12;
+  --width-column-1: calc( 1 * ( var(--width-column) + var(--width-gutter) ) - var(--width-gutter));
+  --width-column-2: calc( 2 * ( var(--width-column) + var(--width-gutter) ) - var(--width-gutter));
+  --width-column-3: calc( 3 * ( var(--width-column) + var(--width-gutter) ) - var(--width-gutter));
+  --width-column-4: calc( 4 * ( var(--width-column) + var(--width-gutter) ) - var(--width-gutter));
+  --width-column-5: calc( 5 * ( var(--width-column) + var(--width-gutter) ) - var(--width-gutter));
+  --width-column-6: calc( 6 * ( var(--width-column) + var(--width-gutter) ) - var(--width-gutter));
+  --width-column-7: calc( 7 * ( var(--width-column) + var(--width-gutter) ) - var(--width-gutter));
+  --width-column-8: calc( 8 * ( var(--width-column) + var(--width-gutter) ) - var(--width-gutter));
+  --width-column-9: calc( 9 * ( var(--width-column) + var(--width-gutter) ) - var(--width-gutter));
+  --width-column-10: calc( 10 * ( var(--width-column) + var(--width-gutter) ) - var(--width-gutter));
+  --width-column-11: calc( 11 * ( var(--width-column) + var(--width-gutter) ) - var(--width-gutter));
+  --width-column-12: calc( 12 * ( var(--width-column) + var(--width-gutter) ) - var(--width-gutter)); }
+
 /*
 // Here's where we use the grid mixins
 
@@ -125,15 +142,15 @@ $text_color_link_hover: lighten($text_color, 22.5%);
     margin-top: 0; }
   @media only screen and (min-width: 810px) {
     .entry-content > * {
-      margin-left: auto;
-      margin-right: 185px;
-      max-width: 605px; } }
+      max-width: var(--width-column-6, calc( 6 * ( var(--width-column) + var(--width-gutter) ) - var(--width-gutter)));
+      margin-right: var(--width-column-2, calc( 2 * ( var(--width-column) + var(--width-gutter) ) - var(--width-gutter)));
+      margin-left: auto; } }
 
 @media only screen and (min-width: 810px) {
   .entry-content > .alignwide {
+    max-width: var(--width-column-10, calc( 10 * ( var(--width-column) + var(--width-gutter) ) - var(--width-gutter)));
     margin-left: auto;
-    margin-right: auto;
-    max-width: 1025px; } }
+    margin-right: auto; } }
 
 .entry-content > .alignfull {
   margin-left: 0;
@@ -208,8 +225,8 @@ $text_color_link_hover: lighten($text_color, 22.5%);
 
 @media only screen and (min-width: 810px) {
   .wp-block-text-columns {
-    max-width: 710px;
-    margin-right: 80px; } }
+    margin-right: var(--width-column-1, calc( 1 * ( var(--width-column) + var(--width-gutter) ) - var(--width-gutter)));
+    max-width: var(--width-column-7, calc( 7 * ( var(--width-column) + var(--width-gutter) ) - var(--width-gutter))); } }
 
 ul.wp-block-latest-posts.alignwide,
 ul.wp-block-latest-posts.alignfull,
@@ -272,9 +289,9 @@ ul.wp-block-latest-posts.is-grid.alignwide {
   @media only screen and (min-width: 810px) {
     .wp-block-quote.is-large,
     .wp-block-quote.is-style-large {
-      margin-left: auto;
-      margin-right: 185px;
-      max-width: 605px; } }
+      max-width: var(--width-column-6, calc( 6 * ( var(--width-column) + var(--width-gutter) ) - var(--width-gutter)));
+      margin-right: var(--width-column-2, calc( 2 * ( var(--width-column) + var(--width-gutter) ) - var(--width-gutter)));
+      margin-left: auto; } }
 
 .wp-block-pullquote > p:first-child {
   margin-top: 0; }

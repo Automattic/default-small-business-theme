@@ -7,10 +7,10 @@
 	@include color_var(border-bottom-color, color-border);
 
 	@include media( tablet ) {
+		@include width_var(max-width, width-column-12);
 		border-bottom: none;
 		display: flex;
 		align-items: center;
-		max-width: $width-column-12;
 		margin-left: auto;
 		margin-right: auto;
 	}
@@ -66,10 +66,10 @@
 	}
 
 	@include media( tablet ) {
+		@include width_var(max-width, width-column-5);
 		display: flex;
 		align-content: stretch;
 		align-items: center;
-		max-width: calc( #{$width-column-5} );
 		width: 100%;
 
 		.site-title:not(:first-child) {
@@ -160,10 +160,10 @@
 	}
 
 	@include media( tablet ) {
+		@include width_var(max-width, width-column-12);
 		border-bottom: none;
 		display: flex;
 		align-items: center;
-		max-width: $width-column-12;
 		margin-left: auto;
 		margin-right: auto;
 	}

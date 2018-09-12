@@ -52,6 +52,23 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
     :root {
       --text_base_size: 21px; } }
 
+:root {
+  --width-column: 80px;
+  --width-gutter: 25;
+  --width-column-count: 12;
+  --width-column-1: calc( 1 * ( var(--width-column) + var(--width-gutter) ) - var(--width-gutter));
+  --width-column-2: calc( 2 * ( var(--width-column) + var(--width-gutter) ) - var(--width-gutter));
+  --width-column-3: calc( 3 * ( var(--width-column) + var(--width-gutter) ) - var(--width-gutter));
+  --width-column-4: calc( 4 * ( var(--width-column) + var(--width-gutter) ) - var(--width-gutter));
+  --width-column-5: calc( 5 * ( var(--width-column) + var(--width-gutter) ) - var(--width-gutter));
+  --width-column-6: calc( 6 * ( var(--width-column) + var(--width-gutter) ) - var(--width-gutter));
+  --width-column-7: calc( 7 * ( var(--width-column) + var(--width-gutter) ) - var(--width-gutter));
+  --width-column-8: calc( 8 * ( var(--width-column) + var(--width-gutter) ) - var(--width-gutter));
+  --width-column-9: calc( 9 * ( var(--width-column) + var(--width-gutter) ) - var(--width-gutter));
+  --width-column-10: calc( 10 * ( var(--width-column) + var(--width-gutter) ) - var(--width-gutter));
+  --width-column-11: calc( 11 * ( var(--width-column) + var(--width-gutter) ) - var(--width-gutter));
+  --width-column-12: calc( 12 * ( var(--width-column) + var(--width-gutter) ) - var(--width-gutter)); }
+
 /*
 // Here's where we use the grid mixins
 
@@ -536,10 +553,10 @@ textarea {
   border-bottom-color: var(--color-border, var(--gray-2)); }
   @media only screen and (min-width: 810px) {
     .site-header {
+      max-width: var(--width-column-12, calc( 12 * ( var(--width-column) + var(--width-gutter) ) - var(--width-gutter)));
       border-bottom: none;
       display: flex;
       align-items: center;
-      max-width: 1235px;
       margin-left: auto;
       margin-right: auto; } }
 
@@ -582,10 +599,10 @@ textarea {
       margin-right: var(--space-sm, calc(0.75 * var(--space-unit))); } }
   @media only screen and (min-width: 810px) {
     .site-branding {
+      max-width: var(--width-column-5, calc( 5 * ( var(--width-column) + var(--width-gutter) ) - var(--width-gutter)));
       display: flex;
       align-content: stretch;
       align-items: center;
-      max-width: calc( 500px);
       width: 100%; }
       .site-branding .site-title:not(:first-child) {
         margin-top: 0;
@@ -648,10 +665,10 @@ textarea {
       color: var(--color-primary, #008000); }
   @media only screen and (min-width: 810px) {
     .site-info {
+      max-width: var(--width-column-12, calc( 12 * ( var(--width-column) + var(--width-gutter) ) - var(--width-gutter)));
       border-bottom: none;
       display: flex;
       align-items: center;
-      max-width: 1235px;
       margin-left: auto;
       margin-right: auto; } }
 
@@ -738,7 +755,7 @@ textarea {
           margin-bottom: var(--space-lg, calc(2 * var(--space-unit)));
           margin-left: var(--space-sm, calc(0.75 * var(--space-unit)));
           margin-right: var(--space-sm, calc(0.75 * var(--space-unit)));
-          max-width: calc( 500px); } }
+          max-width: var(--width-column-5, calc( 5 * ( var(--width-column) + var(--width-gutter) ) - var(--width-gutter))); } }
 
 /** === Posts and pages === */
 .sticky {
@@ -759,13 +776,13 @@ textarea {
   margin-right: 0; }
   @media only screen and (min-width: 810px) {
     .comments-area {
+      max-width: var(--width-column-12, calc( 12 * ( var(--width-column) + var(--width-gutter) ) - var(--width-gutter)));
       display: flex;
       justify-content: flex-end;
       flex-direction: row;
       flex-wrap: wrap;
       margin-left: auto;
       margin-right: auto;
-      max-width: 1235px;
       width: 100%; } }
 
 .comments-title {
@@ -782,8 +799,8 @@ textarea {
   margin-right: var(--space-sm, calc(0.75 * var(--space-unit))); }
   @media only screen and (min-width: 810px) {
     .comment-respond {
-      margin-right: 185px;
-      max-width: calc( 605px);
+      max-width: var(--width-column-6, calc( 6 * ( var(--width-column) + var(--width-gutter) ) - var(--width-gutter)));
+      margin-right: var(--width-column-2, calc( 2 * ( var(--width-column) + var(--width-gutter) ) - var(--width-gutter)));
       width: 100%; } }
   .comment-respond h3 {
     margin: 0; }
@@ -808,17 +825,16 @@ textarea {
       width: 100%; }
   @media only screen and (min-width: 810px) {
     .comment-list {
+      max-width: var(--width-column-7, calc( 7 * ( var(--width-column) + var(--width-gutter) ) - var(--width-gutter)));
+      margin-right: var(--width-column-2, calc( 2 * ( var(--width-column) + var(--width-gutter) ) - var(--width-gutter)));
       margin-top: var(--space-sm, calc(0.75 * var(--space-unit)));
       margin-bottom: var(--space-sm, calc(0.75 * var(--space-unit)));
       margin-left: 0;
-      margin-right: 0;
-      margin-right: 185px;
-      max-width: calc( 605px);
-      width: 710px; } }
+      margin-right: 0; } }
 
 .comment-body {
+  max-width: var(--width-column-6, calc( 6 * ( var(--width-column) + var(--width-gutter) ) - var(--width-gutter)));
   position: relative;
-  max-width: calc( 605px);
   min-height: 9rem; }
   .comment-body > * {
     margin-top: var(--space-sm, calc(0.75 * var(--space-unit)));
@@ -867,9 +883,9 @@ textarea {
     color: var(--color-text-subtle, var(--gray-6)); }
   @media only screen and (min-width: 810px) {
     .comment-meta {
-      left: calc( 100% + 25px);
-      margin-top: inherit;
-      width: calc( 80px); } }
+      width: var(--width-column-1, calc( 1 * ( var(--width-column) + var(--width-gutter) ) - var(--width-gutter)));
+      left: calc( 100% + 25);
+      margin-top: inherit; } }
 
 .avatar {
   overflow: hidden;
@@ -969,7 +985,6 @@ object {
 #page-wrapper {
   padding-top: 20px;
   border: solid transparent;
-  border-width: 0 20px;
   max-width: 425px;
   margin: 0 auto;
   width: 100%; }
@@ -991,22 +1006,6 @@ object {
 
 #content {
   box-sizing: content-box; }
-  @media only screen and (min-width: 810px) {
-    #content {
-      border-right: solid 108px transparent;
-      width: calc( 100% - 2*108px); } }
-  @media only screen and (min-width: 1168px) {
-    #content {
-      border-right: solid 172px transparent;
-      width: calc( 100% - 2*172px); } }
-
-@media only screen and (min-width: 810px) {
-  .site-logo {
-    width: 108px; } }
-
-@media only screen and (min-width: 1168px) {
-  .site-logo {
-    width: 172px; } }
 
 .site-logo .custom-logo-link {
   display: block;
@@ -1016,14 +1015,6 @@ object {
   border: solid 5px black;
   box-sizing: content-box;
   overflow: hidden; }
-  @media only screen and (min-width: 810px) {
-    .site-logo .custom-logo-link {
-      width: 65px;
-      height: 65px; } }
-  @media only screen and (min-width: 1168px) {
-    .site-logo .custom-logo-link {
-      width: 90px;
-      height: 90px; } }
 
 /** === Entries === */
 .hentry {
@@ -1037,11 +1028,11 @@ object {
     text-align: center; }
   @media only screen and (min-width: 810px) {
     .hentry .entry-header {
+      max-width: var(--width-column-12, calc( 12 * ( var(--width-column) + var(--width-gutter) ) - var(--width-gutter)));
       display: flex;
       justify-content: flex-end;
       margin-left: auto;
-      margin-right: auto;
-      max-width: 1235px; } }
+      margin-right: auto; } }
   .hentry .entry-title {
     margin-top: var(--space-sm, calc(0.75 * var(--space-unit)));
     margin-bottom: var(--space-sm, calc(0.75 * var(--space-unit)));
@@ -1066,7 +1057,7 @@ object {
         margin-bottom: var(--space-sm, calc(0.75 * var(--space-unit)));
         margin-left: 0;
         margin-right: 0;
-        max-width: calc( 605px);
+        max-width: var(--width-column-6, calc( 6 * ( var(--width-column) + var(--width-gutter) ) - var(--width-gutter)));
         width: 100%; } }
   .hentry .entry-meta {
     margin-top: var(--space-sm, calc(0.75 * var(--space-unit)));
@@ -1092,8 +1083,8 @@ object {
       font-weight: 600; }
     @media only screen and (min-width: 810px) {
       .hentry .entry-meta {
-        flex-direction: column;
-        width: calc( 185px - calc(0.75 * var(--space-unit)) - calc(0.75 * var(--space-unit))); } }
+        width: calc( var(--width-column-2 - ( calc(0.75 * var(--space-unit)) * 2 ) ));
+        flex-direction: column; } }
   .hentry .entry-footer .entry-meta {
     justify-content: space-between; }
     .hentry .entry-footer .entry-meta a:link {
@@ -1104,10 +1095,10 @@ object {
       margin-right: var(--space-sm, calc(0.75 * var(--space-unit))); }
     @media only screen and (min-width: 810px) {
       .hentry .entry-footer .entry-meta {
+        max-width: var(--width-column-6, calc( 6 * ( var(--width-column) + var(--width-gutter) ) - var(--width-gutter)));
+        margin-right: var(--width-column-2, calc( 2 * ( var(--width-column) + var(--width-gutter) ) - var(--width-gutter)));
         flex-direction: row;
         margin-left: auto;
-        margin-right: 185px;
-        max-width: 605px;
         width: 100%; } }
   .hentry .entry-footer .svg-icon {
     position: relative;
@@ -1118,11 +1109,11 @@ object {
     top: -0.1em; }
   @media only screen and (min-width: 810px) {
     .hentry .entry-footer {
+      max-width: var(--width-column-12, calc( 12 * ( var(--width-column) + var(--width-gutter) ) - var(--width-gutter)));
       display: flex;
       justify-content: flex-end;
       margin-left: auto;
-      margin-right: auto;
-      max-width: 1235px; } }
+      margin-right: auto; } }
   .hentry .post-thumbnail:focus {
     outline: none; }
   .hentry .post-thumbnail .post-thumbnail-inner {
@@ -1177,8 +1168,8 @@ object {
       text-decoration: none; }
   @media only screen and (min-width: 810px) {
     .hentry .entry-content {
+      max-width: var(--width-column-12, calc( 12 * ( var(--width-column) + var(--width-gutter) ) - var(--width-gutter)));
       margin-left: auto;
-      margin-right: auto;
-      max-width: 1235px; } }
+      margin-right: auto; } }
 
 /** === CSS Effects === */
