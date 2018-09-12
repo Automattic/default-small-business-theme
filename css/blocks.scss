@@ -50,6 +50,38 @@
 	list-style-position: outside;
 }
 
+.wp-block-button .wp-block-button__link{
+	@include color_var(background-color, color-primary);
+	@include space_var(padding, space-xs);
+	@include space_var(padding-left, space-sm);
+	@include space_var(padding-right, space-sm);
+	@include typo_var(font-family, title_font);
+	@include typo_var(font-size, text_sm);
+	@include typo_var(line-height, body_line_height);
+	@include rounded( #{map-get($space_vars, space-xxs)} );
+	border: 3px solid green;
+	@include color_var(border-color, color-primary);
+	color: #FFF;
+	cursor: pointer;
+	display: inline-block;
+	font-weight: 600;
+	text-decoration: none;
+	text-transform: uppercase;
+}
+
+.wp-block-button .wp-block-button__link:hover {
+	@include color_var(border-color, color-primary);
+	@include color_var(background-color, white);
+	@include color_var(color, color-primary);
+}
+
+.wp-block-button .wp-block-button__link:active,
+.wp-block-button .wp-block-button__link:focus {
+	@include color_var(border-color, color-text-subtle);
+	@include color_var(background-color, white);
+	@include color_var(color, color-text-subtle);
+}
+
 .wp-block-audio audio {
 	max-width: 100%;
 }

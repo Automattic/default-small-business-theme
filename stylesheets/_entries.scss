@@ -56,6 +56,7 @@
 		@include typo_var(font-size, text_xs);
 		@include typo_var(font-family, title_font);
 		display: flex;
+		justify-content: space-between;
 
 		a {
 			@include color_var(color, color-text-heading);
@@ -86,6 +87,8 @@
 		@include media( tablet ) {
 			@include grid_column_width_margins(2);
 			flex-direction: column;
+			justify-content: inherit;
+
 		}
 	}
 
@@ -105,6 +108,10 @@
 
 			> span {
 				@include space_var(margin-right, space-sm);
+
+				&:last-child {
+					margin-right: 0;
+				}
 			}
 
 			@include media( tablet ) {
@@ -201,14 +208,6 @@
 
 		}
 
-	}
-
-	.entry-header,
-	.entry-content,
-	.entry-footer {
-		@include media( wide ) {
-
-		}
 	}
 
 	.entry-content {

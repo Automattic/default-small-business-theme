@@ -5,14 +5,31 @@ button,
 input[type="button"],
 input[type="reset"],
 input[type="submit"] {
-	@include color_var(background, color-secondary);
+	@include color_var(background-color, color-primary);
+	@include space_var(padding, space-xs);
+	@include space_var(padding-left, space-sm);
+	@include space_var(padding-right, space-sm);
+	@include typo_var(font-family, title_font);
+	@include typo_var(font-size, text_sm);
+	@include typo_var(line-height, body_line_height);
+	@include rounded( #{map-get($space_vars, space-xxs)} );
+	border: 2px solid green;
+	@include color_var(border-color, color-primary);
+	color: #FFF;
+	cursor: pointer;
+	display: inline-block;
+	font-weight: 600;
+	text-decoration: none;
+	text-transform: uppercase;
 }
 
 button:hover,
 input[type="button"]:hover,
 input[type="reset"]:hover,
 input[type="submit"]:hover {
-
+	@include color_var(border-color, color-primary);
+	@include color_var(background-color, white);
+	@include color_var(color, color-primary);
 }
 
 button:active, button:focus,
@@ -22,7 +39,9 @@ input[type="reset"]:active,
 input[type="reset"]:focus,
 input[type="submit"]:active,
 input[type="submit"]:focus {
-
+	@include color_var(border-color, color-text-subtle);
+	@include color_var(background-color, white);
+	@include color_var(color, color-text-subtle);
 }
 
 input[type="text"],

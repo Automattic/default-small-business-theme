@@ -465,7 +465,44 @@ button,
 input[type="button"],
 input[type="reset"],
 input[type="submit"] {
-  background: var(--color-secondary, #f5414f); }
+  background-color: var(--color-primary, #008000);
+  padding: var(--space-xs, calc(0.5 * var(--space-unit)));
+  padding-left: var(--space-sm, calc(0.75 * var(--space-unit)));
+  padding-right: var(--space-sm, calc(0.75 * var(--space-unit)));
+  font-family: var(--title_font, '-apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif');
+  font-size: var(--text_sm, calc(1em / var(--text_scale_ratio)));
+  line-height: var(--body_line_height, 1.4);
+  overflow: hidden;
+  -webkit-border-radius: calc(0.25 * var(--space-unit));
+  -moz-border-radius: calc(0.25 * var(--space-unit));
+  border-radius: calc(0.25 * var(--space-unit));
+  border: 2px solid green;
+  border-color: var(--color-primary, #008000);
+  color: #FFF;
+  cursor: pointer;
+  display: inline-block;
+  font-weight: 600;
+  text-decoration: none;
+  text-transform: uppercase; }
+
+button:hover,
+input[type="button"]:hover,
+input[type="reset"]:hover,
+input[type="submit"]:hover {
+  border-color: var(--color-primary, #008000);
+  background-color: var(--white, #ffffff);
+  color: var(--color-primary, #008000); }
+
+button:active, button:focus,
+input[type="button"]:active,
+input[type="button"]:focus,
+input[type="reset"]:active,
+input[type="reset"]:focus,
+input[type="submit"]:active,
+input[type="submit"]:focus {
+  border-color: var(--color-text-subtle, var(--gray-6));
+  background-color: var(--white, #ffffff);
+  color: var(--color-text-subtle, var(--gray-6)); }
 
 input[type="text"],
 input[type="email"],
@@ -795,7 +832,8 @@ textarea {
   margin-bottom: var(--space-sm, calc(0.75 * var(--space-unit)));
   margin-left: 0;
   margin-right: 0;
-  flex: 1 1 auto; }
+  flex: 1 1 auto;
+  max-width: var(--width-column-4, calc( 4 * ( var(--width-column) + var(--width-gutter) ) - var(--width-gutter))); }
 
 .comment-respond {
   margin-top: var(--space-sm, calc(0.75 * var(--space-unit)));
@@ -831,11 +869,11 @@ textarea {
   @media only screen and (min-width: calc( 8 * ( 80px + 25px ) - 25px)) {
     .comment-list {
       max-width: var(--width-column-7, calc( 7 * ( var(--width-column) + var(--width-gutter) ) - var(--width-gutter)));
-      margin-right: var(--width-column-2, calc( 2 * ( var(--width-column) + var(--width-gutter) ) - var(--width-gutter)));
       margin-top: var(--space-sm, calc(0.75 * var(--space-unit)));
       margin-bottom: var(--space-sm, calc(0.75 * var(--space-unit)));
       margin-left: 0;
-      margin-right: 0; } }
+      margin-right: 0;
+      margin-right: var(--width-column-2, calc( 2 * ( var(--width-column) + var(--width-gutter) ) - var(--width-gutter))); } }
 
 .comment-body {
   max-width: var(--width-column-6, calc( 6 * ( var(--width-column) + var(--width-gutter) ) - var(--width-gutter)));
@@ -856,16 +894,16 @@ textarea {
     font-family: var(--title_font, '-apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif');
     font-size: var(--text_xs, calc(1em / (var(--text_scale_ratio) * var(--text_scale_ratio))));
     text-transform: uppercase; }
+  @media only screen and (min-width: calc( 8 * ( 80px + 25px ) - 25px)) {
+    .comment-body > *:not(.comment-author):not(.comment-meta) {
+      margin-left: var(--width-column-1, calc( 1 * ( var(--width-column) + var(--width-gutter) ) - var(--width-gutter))); } }
 
 .comment-author {
   margin-bottom: var(--space-xxs, calc(0.25 * var(--space-unit)));
   display: flex;
   align-items: center; }
   .comment-author cite {
-    margin-top: 0;
-    margin-bottom: 0;
     margin-left: var(--space-sm, calc(0.75 * var(--space-unit)));
-    margin-right: var(--space-sm, calc(0.75 * var(--space-unit)));
     padding-top: var(--space-sm, calc(0.75 * var(--space-unit)));
     padding-bottom: var(--space-sm, calc(0.75 * var(--space-unit)));
     font-family: var(--title_font, '-apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif');
@@ -1072,7 +1110,8 @@ object {
     color: var(--color-text-subtle, var(--gray-6));
     font-size: var(--text_xs, calc(1em / (var(--text_scale_ratio) * var(--text_scale_ratio))));
     font-family: var(--title_font, '-apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif');
-    display: flex; }
+    display: flex;
+    justify-content: space-between; }
     .hentry .entry-meta a {
       color: var(--color-text-heading, "var(--black)");
       transition: color 110ms ease-in-out;
@@ -1089,7 +1128,8 @@ object {
     @media only screen and (min-width: calc( 8 * ( 80px + 25px ) - 25px)) {
       .hentry .entry-meta {
         width: calc( var(--width-column-2 ) - ( calc(0.75 * var(--space-unit)) * 2 ));
-        flex-direction: column; } }
+        flex-direction: column;
+        justify-content: inherit; } }
   .hentry .entry-footer .entry-meta {
     justify-content: space-between; }
     .hentry .entry-footer .entry-meta a:link {
@@ -1098,6 +1138,8 @@ object {
       color: var(--color-secondary, #f5414f); }
     .hentry .entry-footer .entry-meta > span {
       margin-right: var(--space-sm, calc(0.75 * var(--space-unit))); }
+      .hentry .entry-footer .entry-meta > span:last-child {
+        margin-right: 0; }
     @media only screen and (min-width: calc( 8 * ( 80px + 25px ) - 25px)) {
       .hentry .entry-footer .entry-meta {
         max-width: var(--width-column-6, calc( 6 * ( var(--width-column) + var(--width-gutter) ) - var(--width-gutter)));

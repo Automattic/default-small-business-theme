@@ -161,6 +161,38 @@ $text_color_link_hover: lighten($text_color, 22.5%);
 .entry-content ol {
   list-style-position: outside; }
 
+.wp-block-button .wp-block-button__link {
+  background-color: var(--color-primary, #008000);
+  padding: var(--space-xs, calc(0.5 * var(--space-unit)));
+  padding-left: var(--space-sm, calc(0.75 * var(--space-unit)));
+  padding-right: var(--space-sm, calc(0.75 * var(--space-unit)));
+  font-family: var(--title_font, '-apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif');
+  font-size: var(--text_sm, calc(1em / var(--text_scale_ratio)));
+  line-height: var(--body_line_height, 1.4);
+  overflow: hidden;
+  -webkit-border-radius: calc(0.25 * var(--space-unit));
+  -moz-border-radius: calc(0.25 * var(--space-unit));
+  border-radius: calc(0.25 * var(--space-unit));
+  border: 3px solid green;
+  border-color: var(--color-primary, #008000);
+  color: #FFF;
+  cursor: pointer;
+  display: inline-block;
+  font-weight: 600;
+  text-decoration: none;
+  text-transform: uppercase; }
+
+.wp-block-button .wp-block-button__link:hover {
+  border-color: var(--color-primary, #008000);
+  background-color: var(--white, #ffffff);
+  color: var(--color-primary, #008000); }
+
+.wp-block-button .wp-block-button__link:active,
+.wp-block-button .wp-block-button__link:focus {
+  border-color: var(--color-text-subtle, var(--gray-6));
+  background-color: var(--white, #ffffff);
+  color: var(--color-text-subtle, var(--gray-6)); }
+
 .wp-block-audio audio {
   max-width: 100%; }
 

@@ -41,7 +41,7 @@
 .comments-title {
 	@include block-space( space-sm, 0 );
 	flex: 1 1 auto;
-	//@include width_var(max-width, width-column-4);
+	@include width_var(max-width, width-column-4);
 	//width: 100%;
 }
 
@@ -85,8 +85,8 @@
 
 	@include media( tablet ) {
 		@include width_var(max-width, width-column-7);
-		@include width_var(margin-right, width-column-2);
 		@include block-space( space-sm, 0 );
+		@include width_var(margin-right, width-column-2);
 	}
 }
 
@@ -96,9 +96,7 @@
 	min-height: 9rem;
 
 	> * {
-
 		@include block-space( space-sm, 0 );
-
 		&:first-of-type {
 			margin-top: 0;
 		}
@@ -109,7 +107,12 @@
 		@include typo_var(font-family, title_font);
 		@include typo_var(font-size, text_xs);
 		text-transform: uppercase;
-	//	text-align: right;
+	}
+
+	@include media( tablet ) {
+		& > *:not(.comment-author):not(.comment-meta) {
+			@include width_var(margin-left, width-column-1);
+		}
 	}
 }
 
@@ -119,7 +122,7 @@
 	align-items: center;
 
 	cite {
-		@include block-space( 0, space-sm );
+		@include space-var( margin-left, space-sm );
 		@include space-var( padding-top, space-sm );
 		@include space-var( padding-bottom, space-sm );
 		@include typo_var( font-family, title_font );
