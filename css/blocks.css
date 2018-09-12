@@ -33,7 +33,7 @@
 
 :root {
   --width-column: 80px;
-  --width-gutter: 25;
+  --width-gutter: 25px;
   --width-column-count: 12;
   --width-column-1: calc( 1 * ( var(--width-column) + var(--width-gutter) ) - var(--width-gutter));
   --width-column-2: calc( 2 * ( var(--width-column) + var(--width-gutter) ) - var(--width-gutter));

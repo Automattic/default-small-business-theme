@@ -4,7 +4,7 @@
 $width_vars: (
 
 	width-column: 80px,
-	width-gutter: 25,
+	width-gutter: 25px,
 	width-column-count: 12,
 
 	width-column-1: calc( 1 * ( var(--width-column) + var(--width-gutter) ) - var(--width-gutter) ),
@@ -61,5 +61,5 @@ $width_vars: (
 
 @mixin grid_column_width_margins( $columns: 6 ) {
 	//	width: calc( #{$width-column-2} - #{map-get($space_vars, space-sm)} - #{map-get($space_vars, space-sm)} );
-	width: calc( var(--width-column-#{$columns} - ( #{map-get($space_vars, space-sm)} * 2 ) );
+	width: calc( var(--width-column-#{$columns} ) - ( #{map-get($space_vars, space-sm)} * 2 ) );
 }

@@ -54,7 +54,7 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 
 :root {
   --width-column: 80px;
-  --width-gutter: 25;
+  --width-gutter: 25px;
   --width-column-count: 12;
   --width-column-1: calc( 1 * ( var(--width-column) + var(--width-gutter) ) - var(--width-gutter));
   --width-column-2: calc( 2 * ( var(--width-column) + var(--width-gutter) ) - var(--width-gutter));
@@ -884,7 +884,7 @@ textarea {
   @media only screen and (min-width: 810px) {
     .comment-meta {
       width: var(--width-column-1, calc( 1 * ( var(--width-column) + var(--width-gutter) ) - var(--width-gutter)));
-      left: calc( 100% + 25);
+      left: calc( 100% + 25px);
       margin-top: inherit; } }
 
 .avatar {
@@ -1083,7 +1083,7 @@ object {
       font-weight: 600; }
     @media only screen and (min-width: 810px) {
       .hentry .entry-meta {
-        width: calc( var(--width-column-2 - ( calc(0.75 * var(--space-unit)) * 2 ) ));
+        width: calc( var(--width-column-2 ) - ( calc(0.75 * var(--space-unit)) * 2 ));
         flex-direction: column; } }
   .hentry .entry-footer .entry-meta {
     justify-content: space-between; }
