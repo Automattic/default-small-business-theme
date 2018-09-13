@@ -69,13 +69,6 @@ ol {
 	padding: 0;
 }
 
-ul ul,
-ol ol,
-ul ol,
-ol ul {
-	@include space_var( margin-left, space-sm );
-}
-
 ul {
 	list-style: none;
 	list-style-position: inside;
@@ -122,8 +115,16 @@ ol li {
 	}
 }
 
-li > ul,
-li > ol {
+li > ol,
+li > ul {
+	margin-left: 0;
+	margin-bottom: 0;
+}
+
+li > ol ol,
+li > ul ul,
+li > ol ul,
+li > ul ol {
 	margin-bottom: 0;
 	@include space_var( margin-left, space-md );
 }
@@ -153,8 +154,20 @@ table {
 	width: 100%;
 }
 
-blockquote {
-	margin: 0 1.5em;
+blockquote,
+blockquote.is-large {
+	@include block-padding( space-sm, 0 );
+	margin-left: 0;
+	margin-right: 0;
+	border-top: 1px solid green;
+
+	p {
+		@include block-padding( space-xs, 0 );
+	}
+
+	cite {
+		@include color_var(color, color-primary);
+	}
 }
 
 address {

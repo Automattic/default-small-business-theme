@@ -88,11 +88,8 @@ dfn, cite, em, i {
 
 blockquote,
 blockquote.is-large {
-	@include block-padding( space-sm, 0 );
-	border-top: 1px solid green;
 
 	p {
-		@include block-padding( space-xs, 0 );
 		@include typo_var(font-size, text_lg);
 		font-style: normal;
 	}
@@ -100,7 +97,6 @@ blockquote.is-large {
 	cite {
 		@include typo_var(font-family, title_font);
 		@include typo_var(font-size, text_xs);
-		@include color_var(color, color-primary);
 		font-style: normal;
 		font-weight: 500;
 
