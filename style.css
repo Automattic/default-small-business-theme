@@ -848,10 +848,16 @@ textarea {
       font-weight: 300;
       margin: 0; }
     .post-navigation .nav-links .post-excerpt {
+      color: var(--color-text, var(--gray-10));
       margin-top: var(--space-xs, calc(0.5 * var(--space-unit)));
       margin-bottom: var(--space-xs, calc(0.5 * var(--space-unit)));
       margin-left: 0;
       margin-right: 0; }
+    .post-navigation .nav-links a:hover {
+      text-decoration: none; }
+      .post-navigation .nav-links a:hover .post-excerpt {
+        color: var(--color-text, var(--gray-10));
+        text-decoration: none; }
     .post-navigation .nav-links > div {
       margin-top: var(--space-sm, calc(0.75 * var(--space-unit)));
       margin-bottom: var(--space-sm, calc(0.75 * var(--space-unit)));

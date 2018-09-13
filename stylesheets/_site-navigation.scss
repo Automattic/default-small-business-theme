@@ -85,7 +85,16 @@
 		}
 
 		.post-excerpt {
+			@include color_var( color, color-text );
 			@include block-space( space-xs, 0 );
+		}
+
+		a:hover {
+			text-decoration: none;
+			.post-excerpt {
+				@include color_var( color, color-text );
+				text-decoration: none;
+			}
 		}
 
 		& > div {
