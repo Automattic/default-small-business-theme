@@ -339,9 +339,6 @@ blockquote.is-large cite {
   font-size: var(--text_xs, calc(1em / (var(--text_scale_ratio) * var(--text_scale_ratio))));
   font-style: normal;
   font-weight: 500; }
-  blockquote cite:before,
-  blockquote.is-large cite:before {
-    content: "\2014\00a0"; }
 
 pre {
   font-family: var(--monospace_font, "Menlo, monaco, Consolas, Lucida Console, monospace");

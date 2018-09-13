@@ -99,10 +99,6 @@ blockquote.is-large {
 		@include typo_var(font-size, text_xs);
 		font-style: normal;
 		font-weight: 500;
-
-		&:before {
-			content: "\2014\00a0";
-		}
 	}
 }
 
