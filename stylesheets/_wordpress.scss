@@ -64,6 +64,15 @@
 	list-style: none;
 	@include block-space;
 
+	li {
+		padding-left: inherit;
+
+		&:before {
+			content: "";
+			display: none;
+		}
+	}
+
 	.comment {
 		list-style: none;
 		@include block-space( space-md, 0 );
@@ -91,7 +100,8 @@
 }
 
 .comment-body {
-	@include width_var(max-width, width-column-6);
+
+	@include width_var(max-width, width-column-7);
 	position: relative;
 	min-height: 9rem;
 
@@ -111,7 +121,8 @@
 
 	@include media( tablet ) {
 		& > *:not(.comment-author):not(.comment-meta) {
-			@include width_var(margin-left, width-column-1);
+			margin-left: calc( #{map-get($width_vars, width-column)} + #{map-get($width_vars, width-gutter)} );
+		//	@include width_var(margin-left, width-column-1);
 		}
 	}
 }
@@ -121,8 +132,11 @@
 	display: flex;
 	align-items: center;
 
+	.avatar {
+		@include space-var( margin-right, space-sm );
+	}
+
 	cite {
-		@include space-var( margin-left, space-sm );
 		@include space-var( padding-top, space-sm );
 		@include space-var( padding-bottom, space-sm );
 		@include typo_var( font-family, title_font );
@@ -134,6 +148,16 @@
 		letter-spacing: .125rem;
 		text-transform: uppercase;
 		width: 100%;
+
+	}
+
+	@include media( tablet ) {
+		justify-content: flex-end;
+
+		.avatar {
+			margin-left: 20px;
+			@include width-var( margin-right, width-gutter );
+		}
 	}
 }
 

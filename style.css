@@ -933,6 +933,11 @@ textarea {
   margin-bottom: var(--space-sm, calc(0.75 * var(--space-unit)));
   margin-left: var(--space-sm, calc(0.75 * var(--space-unit)));
   margin-right: var(--space-sm, calc(0.75 * var(--space-unit))); }
+  .comment-list li {
+    padding-left: inherit; }
+    .comment-list li:before {
+      content: "";
+      display: none; }
   .comment-list .comment {
     list-style: none;
     margin-top: var(--space-md, calc(1.25 * var(--space-unit)));
@@ -955,7 +960,7 @@ textarea {
       margin-right: var(--width-column-2, calc( 2 * ( var(--width-column) + var(--width-gutter) ) - var(--width-gutter))); } }
 
 .comment-body {
-  max-width: var(--width-column-6, calc( 6 * ( var(--width-column) + var(--width-gutter) ) - var(--width-gutter)));
+  max-width: var(--width-column-7, calc( 7 * ( var(--width-column) + var(--width-gutter) ) - var(--width-gutter)));
   position: relative;
   min-height: 9rem; }
   .comment-body > * {
@@ -975,14 +980,15 @@ textarea {
     text-transform: uppercase; }
   @media only screen and (min-width: calc( 8 * ( 80px + 25px ) - 25px)) {
     .comment-body > *:not(.comment-author):not(.comment-meta) {
-      margin-left: var(--width-column-1, calc( 1 * ( var(--width-column) + var(--width-gutter) ) - var(--width-gutter))); } }
+      margin-left: calc( 80px + 25px); } }
 
 .comment-author {
   margin-bottom: var(--space-xxs, calc(0.25 * var(--space-unit)));
   display: flex;
   align-items: center; }
+  .comment-author .avatar {
+    margin-right: var(--space-sm, calc(0.75 * var(--space-unit))); }
   .comment-author cite {
-    margin-left: var(--space-sm, calc(0.75 * var(--space-unit)));
     padding-top: var(--space-sm, calc(0.75 * var(--space-unit)));
     padding-bottom: var(--space-sm, calc(0.75 * var(--space-unit)));
     font-family: var(--title_font, '-apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif');
@@ -994,6 +1000,12 @@ textarea {
     letter-spacing: .125rem;
     text-transform: uppercase;
     width: 100%; }
+  @media only screen and (min-width: calc( 8 * ( 80px + 25px ) - 25px)) {
+    .comment-author {
+      justify-content: flex-end; }
+      .comment-author .avatar {
+        margin-left: 20px;
+        margin-right: var(--width-gutter, 25px); } }
 
 .comment-meta {
   font-family: var(--title_font, '-apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif');
