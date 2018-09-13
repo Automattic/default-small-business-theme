@@ -46,6 +46,13 @@
 			@include block-space( space-sm, 0 );
 			@include width_var(max-width, width-column-6);
 			width: 100%;
+
+			// Single Page
+			&:first-child:last-child {
+				@include width_var(max-width, width-column-6);
+				@include width_var(margin-right, width-column-2);
+			 	margin-left: auto;
+			}
 		}
 	}
 
@@ -211,6 +218,10 @@
 	}
 
 	.entry-content {
+
+		span[id^=more] {
+			display: block;
+		}
 
 		.more-link {
 			@include link-transition;

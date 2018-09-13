@@ -60,7 +60,8 @@ pre {
 	@include space_var( padding, space-sm );
 }
 
-ul, ol {
+ul,
+ol {
 	margin-top: 0;
 	margin-right: 0;
 	@include space_var( margin-bottom, space-xs );
@@ -68,18 +69,53 @@ ul, ol {
 	padding: 0;
 }
 
+ul ul,
+ol ol,
+ul ol,
+ol ul {
+	@include space_var( margin-left, space-sm );
+}
+
 ul {
-	list-style: disc;
+	list-style: none;
+	list-style-position: inside;
+}
+
+ul li {
+
+	&:before {
+		content: "\25CF\00a0";
+		@include color_var(color, color-primary);
+		@include space_var( margin-right, space-xxs );
+		@include typo_var(font-size, text_xs);
+	}
+
+	li:before {
+		content: "\2B58\00a0";
+	}
 }
 
 ol {
-	list-style: decimal;
+	list-style: none;
+	counter-reset: sans-counter;
+}
+
+ol li {
+	counter-increment: sans-counter;
+
+	&:before {
+		content: counter(sans-counter, decimal-leading-zero) "\00a0";
+		@include color_var(color, color-primary);
+		@include typo_var(font-family, title_font);
+		@include typo_var(font-size, text_xs);
+		@include space_var( margin-right, space-xxs );
+	}
 }
 
 li > ul,
 li > ol {
 	margin-bottom: 0;
-	@include space_var( margin-left, space-xs );
+	@include space_var( margin-left, space-md );
 }
 
 dt {

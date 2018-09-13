@@ -112,7 +112,7 @@ blockquote.is-large {
 
 pre {
 	@include typo_var(font-family, monospace_font);
-	@include typo_var(font-size, text_md);
+	@include typo_var(font-size, text_sm);
 	line-height: 1.6;
 	@include font-smoothing;
 }
