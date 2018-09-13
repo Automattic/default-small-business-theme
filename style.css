@@ -775,7 +775,11 @@ textarea {
     margin: 0;
     padding: 0; }
     .main-navigation > div > ul > li {
-      display: inline-block; }
+      display: inline-block;
+      list-style: none; }
+      .main-navigation > div > ul > li:before {
+        content: "";
+        display: none; }
       .main-navigation > div > ul > li > a {
         transition: color 110ms ease-in-out;
         font-weight: 200;
