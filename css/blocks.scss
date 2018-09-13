@@ -17,6 +17,7 @@
 .entry-content > * {
 
 	@include block-space;
+	max-width: calc( 100% - ( #{map-get($space_vars, space-sm)} * 2 ) );
 
 	&:first-child {
 		margin-top: 0;
@@ -176,20 +177,46 @@
 	}
 
 	&.has-2-columns .wp-block-column {
-		width: calc( 50% - ( #{map-get($width_vars, width-gutter)} .5 ) );
+		width: calc( 50% - ( #{map-get($width_vars, width-gutter)} * .5 ) );
 	}
 
 	&.has-3-columns .wp-block-column {
-		width: calc( 33% - ( #{map-get($width_vars, width-gutter)} .33 ) );
+		width: calc( 33% - ( #{map-get($width_vars, width-gutter)} * .33 ) );
 	}
 
 	&.has-4-columns .wp-block-column {
-		width: calc( 25% - ( #{map-get($width_vars, width-gutter)} .25 ) );
+		width: calc( 25% - ( #{map-get($width_vars, width-gutter)} * .25 ) );
 	}
 
 	@include media( tablet ) {
 		@include width_var(margin-right, width-column-1);
 		@include width_var(max-width, width-column-7);
+	}
+}
+
+ul.wp-block-latest-posts {
+	li {
+		@include typo_var(font-size, text_md);
+
+		&:before {
+			@include typo_var(font-size, text_xxs);
+			line-height: 2.4em;
+		}
+	}
+
+	&.is-grid {
+		justify-content: space-between;
+
+		li {
+			@include space_var( margin-right, 0 );
+			@include space_var( margin-bottom, space-sm );
+		}
+	}
+
+	@include media( tablet ) {
+		&.columns-2 li {
+			width: calc( 50% - ( #{map-get($width_vars, width-gutter)} * .5) );
+		}
 	}
 }
 
@@ -211,16 +238,17 @@ ul.wp-block-latest-posts.is-grid.alignwide {
 	thead tr:nth-child(odd) {
 		@include color_var(background-color, color-primary-bg);
 	}
-
-	@include media( tablet ) {
-
-	}
 }
 
 .wp-block-table table,
 table.wp-block-table {
+
 	border-collapse: collapse;
-	width: 100%
+	max-width: calc( 100% - ( #{map-get($space_vars, space-sm)} * 2 ) );
+
+	@include media( tablet ) {
+		@include width_var(max-width, width-column-6);
+	}
 }
 
 .wp-block-table td, .wp-block-table th {

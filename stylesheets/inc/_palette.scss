@@ -18,9 +18,9 @@ $color_vars: (
 	color-primary-bg: tint( #008000, 80% ), // 'color-mod( var(--color-primary) alpha('20%') )',
 
 	color-secondary: #f5414f,
-	color-secondary-light: 'color-mod( var(--color-secondary) tint('15%') )',
-	color-secondary-dark: 'color-mod( var(--color-secondary) shade('10%') )',
-	color-secondary-bg: 'color-mod( var(--color-secondary) alpha('20%') )',
+	color-secondary-light: tint( #f5414f, 20% ), // 'color-mod( var(--color-secondary) tint('15%') )',
+	color-secondary-dark: shade( #f5414f, 20% ), // 'color-mod( var(--color-secondary) shade('10%') )',
+	color-secondary-bg: tint( #f5414f, 80% ), // 'color-mod( var(--color-secondary) alpha('20%') )',
 
 	// shades - generated using chroma.js - 12 steps
 	black: #{'#1d1d21'}, // black

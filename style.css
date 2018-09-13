@@ -120,9 +120,9 @@ $text_color_link_hover: lighten($text_color, 22.5%);
   --color-primary-dark: #006600;
   --color-primary-bg: #cce6cc;
   --color-secondary: #f5414f;
-  --color-secondary-light: color-mod( var(--color-secondary) shade( 10% ) );
-  --color-secondary-dark: color-mod( var(--color-secondary) tint( 15% ) );
-  --color-secondary-bg: color-mod( var(--color-secondary) alpha( 20% ) );
+  --color-secondary-light: #c4343f;
+  --color-secondary-dark: #f76772;
+  --color-secondary-bg: #fdd9dc;
   --black: #1d1d21;
   --gray-10: #2e2e31;
   --gray-6: #7b7a7d;
@@ -455,27 +455,35 @@ ul {
   list-style: none;
   list-style-position: inside; }
 
-ul li:before {
-  content: "\25CF\00a0";
-  color: var(--color-primary, #008000);
-  margin-right: var(--space-xxs, calc(0.25 * var(--space-unit)));
-  font-size: var(--text_xs, calc(1em / (var(--text_scale_ratio) * var(--text_scale_ratio)))); }
-
-ul li li:before {
-  content: "\2B58\00a0"; }
+ul li {
+  position: relative;
+  padding-left: var(--space-sm, calc(0.75 * var(--space-unit))); }
+  ul li:before {
+    content: "\25CF\00a0";
+    left: 0;
+    position: absolute;
+    color: var(--color-primary, #008000);
+    line-height: var(--space-md, calc(1.25 * var(--space-unit)));
+    font-size: var(--text_xs, calc(1em / (var(--text_scale_ratio) * var(--text_scale_ratio)))); }
+  ul li li:before {
+    content: "\2B58\00a0"; }
 
 ol {
   list-style: none;
   counter-reset: sans-counter; }
 
 ol li {
-  counter-increment: sans-counter; }
+  counter-increment: sans-counter;
+  position: relative;
+  padding-left: var(--space-md, calc(1.25 * var(--space-unit))); }
   ol li:before {
     content: counter(sans-counter, decimal-leading-zero) " ";
+    left: 0;
+    position: absolute;
     color: var(--color-primary, #008000);
     font-family: var(--title_font, '-apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif');
     font-size: var(--text_xs, calc(1em / (var(--text_scale_ratio) * var(--text_scale_ratio))));
-    margin-right: var(--space-xxs, calc(0.25 * var(--space-unit))); }
+    line-height: var(--space-md, calc(1.25 * var(--space-unit))); }
 
 li > ul,
 li > ol {

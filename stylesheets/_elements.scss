@@ -83,10 +83,15 @@ ul {
 
 ul li {
 
+	position: relative;
+	@include space_var( padding-left, space-sm );
+
 	&:before {
 		content: "\25CF\00a0";
+		left: 0;
+		position: absolute;
 		@include color_var(color, color-primary);
-		@include space_var( margin-right, space-xxs );
+		@include space_var( line-height, space-md );
 		@include typo_var(font-size, text_xs);
 	}
 
@@ -101,14 +106,19 @@ ol {
 }
 
 ol li {
+
 	counter-increment: sans-counter;
+	position: relative;
+	@include space_var( padding-left, space-md );
 
 	&:before {
 		content: counter(sans-counter, decimal-leading-zero) "\00a0";
+		left: 0;
+		position: absolute;
 		@include color_var(color, color-primary);
 		@include typo_var(font-family, title_font);
 		@include typo_var(font-size, text_xs);
-		@include space_var( margin-right, space-xxs );
+		@include space_var( line-height, space-md );
 	}
 }
 
