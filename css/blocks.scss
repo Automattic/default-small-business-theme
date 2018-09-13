@@ -355,7 +355,8 @@ table.wp-block-table {
 
 // !Embeds
 
-.wp-block-embed > * {
+.wp-block-embed > *,
+.wp-block-embed > .jetpack-video-wrapper > * {
 	display: block;
 	margin-left: auto;
 	margin-right: auto;
@@ -385,6 +386,8 @@ table.wp-block-table {
 .wp-block-quote.is-style-large {
 
 	@include block-padding( space-sm, 0 );
+	@include space_var( margin-top, space-lg );
+	@include space_var( margin-bottom, space-lg );
 	@include space_var( margin-left, space-sm );
 	@include space_var( margin-right, space-sm );
 	border-top: 1px solid green;
@@ -398,7 +401,7 @@ table.wp-block-table {
 	cite {
 		@include typo_var(font-family, title_font);
 		@include typo_var(font-size, text_xs);
-		@include color_var(color, color-primary);
+		@include color_var(color, color-text-subtle);
 		font-style: normal;
 		font-weight: 500;
 	}
@@ -417,10 +420,14 @@ table.wp-block-table {
 	text-align: inherit;
 	padding: 0;
 
+	& > p {
+		@include typo_var(font-size, text_lg);
+		font-style: normal;
+	}
+
 	blockquote,
 	& > p,
 	& > cite {
-
 		@include space_var(padding-left, space-sm);
 		@include space_var(padding-right, space-sm);
 	}

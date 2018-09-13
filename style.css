@@ -325,7 +325,7 @@ small,
 .text--xs {
   font-size: var(--text_xs, calc(1em / (var(--text_scale_ratio) * var(--text_scale_ratio)))); }
 
-dfn, cite, em, i {
+dfn, em, i {
   font-style: italic; }
 
 blockquote p,
@@ -519,7 +519,7 @@ blockquote.is-large {
     padding-right: 0; }
   blockquote cite,
   blockquote.is-large cite {
-    color: var(--color-primary, #008000); }
+    color: var(--color-text-subtle, var(--gray-6)); }
 
 address {
   margin: 0 0 1.5em; }

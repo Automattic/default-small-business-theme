@@ -396,7 +396,8 @@ table.wp-block-table {
 .wp-block-table td, .wp-block-table th {
   padding: .5em; }
 
-.wp-block-embed > * {
+.wp-block-embed > *,
+.wp-block-embed > .jetpack-video-wrapper > * {
   display: block;
   margin-left: auto;
   margin-right: auto; }
@@ -423,6 +424,8 @@ table.wp-block-table {
   padding-bottom: var(--space-sm, calc(0.75 * var(--space-unit)));
   padding-left: 0;
   padding-right: 0;
+  margin-top: var(--space-lg, calc(2 * var(--space-unit)));
+  margin-bottom: var(--space-lg, calc(2 * var(--space-unit)));
   margin-left: var(--space-sm, calc(0.75 * var(--space-unit)));
   margin-right: var(--space-sm, calc(0.75 * var(--space-unit)));
   border-top: 1px solid green; }
@@ -440,7 +443,7 @@ table.wp-block-table {
   .wp-block-quote.is-style-large cite {
     font-family: var(--title_font, '-apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif');
     font-size: var(--text_xs, calc(1em / (var(--text_scale_ratio) * var(--text_scale_ratio))));
-    color: var(--color-primary, #008000);
+    color: var(--color-text-subtle, var(--gray-6));
     font-style: normal;
     font-weight: 500; }
   @media only screen and (min-width: calc( 8 * ( 80px + 25px ) - 25px)) {
@@ -456,6 +459,9 @@ table.wp-block-table {
   margin-bottom: var(--space-lg, calc(2 * var(--space-unit)));
   text-align: inherit;
   padding: 0; }
+  .wp-block-pullquote > p {
+    font-size: var(--text_lg, calc(1em * var(--text_scale_ratio) * var(--text_scale_ratio)));
+    font-style: normal; }
   .wp-block-pullquote blockquote,
   .wp-block-pullquote > p,
   .wp-block-pullquote > cite {

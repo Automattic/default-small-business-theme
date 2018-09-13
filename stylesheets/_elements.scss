@@ -175,7 +175,7 @@ blockquote.is-large {
 	}
 
 	cite {
-		@include color_var(color, color-primary);
+		@include color_var(color, color-text-subtle);
 	}
 }
 
