@@ -201,25 +201,26 @@ ul.wp-block-latest-posts.is-grid.alignwide {
 }
 
 .wp-block-table {
-	display: block;
-	overflow-x: auto;
-}
 
-.wp-block-table table {
-	border-collapse: collapse;
-	width: 100%
+	overflow-x: auto;
 
 	tr:nth-child(even) {
 		@include color_var(background-color, gray-1);
 	}
 
 	thead tr:nth-child(odd) {
-		@include color_var(background-color, color-primary);
+		@include color_var(background-color, color-primary-bg);
 	}
 
 	@include media( tablet ) {
 
 	}
+}
+
+.wp-block-table table,
+table.wp-block-table {
+	border-collapse: collapse;
+	width: 100%
 }
 
 .wp-block-table td, .wp-block-table th {
@@ -275,8 +276,11 @@ ul.wp-block-latest-posts.is-grid.alignwide {
 	}
 }
 
-.wp-block-pullquote > p:first-child {
-  margin-top: 0;
+.wp-block-pullquote{
+	padding: 0;
+	& > p:first-child {
+		margin-top: 0;
+	}
 }
 
 .wp-block-separator {

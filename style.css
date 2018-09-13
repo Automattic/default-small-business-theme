@@ -116,13 +116,13 @@ $text_color_link_hover: lighten($text_color, 22.5%);
 */
 :root {
   --color-primary: #008000;
-  --color-primary-light: color-mod(var(--color-primary) tint(15%));
-  --color-primary-dark: color-mod(var(--color-primary) shade(15%));
-  --color-primary-bg: color-mod(var(--color-primary) alpha(20%));
+  --color-primary-light: #339933;
+  --color-primary-dark: #006600;
+  --color-primary-bg: #cce6cc;
   --color-secondary: #f5414f;
-  --color-secondary-light: color-mod(var(--color-secondary) shade(10%));
-  --color-secondary-dark: color-mod(var(--color-secondary) tint(15%));
-  --color-secondary-bg: color-mod(var(--color-secondary) alpha(20%));
+  --color-secondary-light: color-mod( var(--color-secondary) shade( 10% ) );
+  --color-secondary-dark: color-mod( var(--color-secondary) tint( 15% ) );
+  --color-secondary-bg: color-mod( var(--color-secondary) alpha( 20% ) );
   --black: #1d1d21;
   --gray-10: #2e2e31;
   --gray-6: #7b7a7d;
@@ -138,7 +138,7 @@ $text_color_link_hover: lighten($text_color, 22.5%);
   --color-text-heading: var(--black);
   --color-text-subtle: var(--gray-6);
   --color-link: var(--color-primary);
-  --color-link-visited: color-mod(var(--color-primary) shade(15%));
+  --color-link-visited: #006600;
   --color-mark: var(--color-secondary-bg);
   --color-blockquote-border: var(--gray-2);
   --color-border: var(--gray-2);
@@ -148,9 +148,9 @@ $text_color_link_hover: lighten($text_color, 22.5%);
   --form-element-border-error: var(--color-error);
   --form-element-bg: var(--white);
   --form-text-placeholder: var(--gray-4);
-  --btn-primary-bg: color-mod(var(--color-primary) alpha(20%));
-  --btn-primary-hover: color-mod(var(--color-primary) tint(15%));
-  --btn-primary-active: color-mod(var(--color-primary) shade(15%));
+  --btn-primary-bg: #cce6cc;
+  --btn-primary-hover: #339933;
+  --btn-primary-active: #006600;
   --btn-primary-label: #ffffff;
   --color-icon-primary: var(--gray-4);
   --color-icon-secondary: inherit; }
@@ -786,7 +786,7 @@ textarea {
         letter-spacing: .125em;
         text-transform: uppercase; }
         .main-navigation > div > ul > li > a:hover {
-          color: var(--color-primary-dark, "color-mod(var(--color-primary) shade(15%))"); }
+          color: var(--color-primary-dark, #006600); }
       .main-navigation > div > ul > li > a {
         color: var(--color-primary, #008000);
         font-size: var(--text_xs, calc(1em / (var(--text_scale_ratio) * var(--text_scale_ratio))));

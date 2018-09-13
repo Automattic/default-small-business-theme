@@ -13,14 +13,14 @@ $color_vars: (
 
 	// main colors
 	color-primary: #008000,
-	color-primary-light: 'color-mod(var(--color-primary) tint(15%))',
-	color-primary-dark: 'color-mod(var(--color-primary) shade(15%))',
-	color-primary-bg: 'color-mod(var(--color-primary) alpha(20%))',
+	color-primary-light: tint( #008000, 20% ), // 'color-mod( var(--color-primary) tint('15%') )',
+	color-primary-dark: shade( #008000, 20% ), // 'color-mod( var(--color-primary) shade('15%') )',
+	color-primary-bg: tint( #008000, 80% ), // 'color-mod( var(--color-primary) alpha('20%') )',
 
 	color-secondary: #f5414f,
-	color-secondary-light: 'color-mod(var(--color-secondary) tint(15%))',
-	color-secondary-dark: 'color-mod(var(--color-secondary) shade(10%))',
-	color-secondary-bg: 'color-mod(var(--color-secondary) alpha(20%))',
+	color-secondary-light: 'color-mod( var(--color-secondary) tint('15%') )',
+	color-secondary-dark: 'color-mod( var(--color-secondary) shade('10%') )',
+	color-secondary-bg: 'color-mod( var(--color-secondary) alpha('20%') )',
 
 	// shades - generated using chroma.js - 12 steps
 	black: #{'#1d1d21'}, // black
