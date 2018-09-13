@@ -438,28 +438,32 @@ ul {
   list-style: none;
   list-style-position: inside; }
 
-ul li {
+ul > li {
   position: relative;
   padding-left: var(--space-sm, calc(0.75 * var(--space-unit))); }
-  ul li:before {
+  ul > li:before {
     content: "\25CF\00a0";
     left: 0;
     position: absolute;
     color: var(--color-primary, #008000);
     line-height: var(--space-md, calc(1.25 * var(--space-unit)));
     font-size: var(--text_xs, calc(1em / (var(--text_scale_ratio) * var(--text_scale_ratio)))); }
-  ul li li:before {
+  ul > li li:before {
     content: "\2B58\00a0"; }
 
 ol {
   list-style: none;
   counter-reset: sans-counter; }
 
-ol li {
+ol > li {
   counter-increment: sans-counter;
   position: relative;
   padding-left: var(--space-md, calc(1.25 * var(--space-unit))); }
-  ol li:before {
+  ol > li ol li {
+    padding-left: var(--space-md, calc(1.25 * var(--space-unit))); }
+  ol > li ul li {
+    padding-left: var(--space-sm, calc(0.75 * var(--space-unit))); }
+  ol > li:before {
     content: counter(sans-counter, decimal-leading-zero) " ";
     left: 0;
     position: absolute;
@@ -477,8 +481,7 @@ li > ol ol,
 li > ul ul,
 li > ol ul,
 li > ul ol {
-  margin-bottom: 0;
-  margin-left: var(--space-md, calc(1.25 * var(--space-unit))); }
+  margin-bottom: 0; }
 
 dt {
   font-weight: bold; }
@@ -1142,6 +1145,7 @@ object {
   @media only screen and (min-width: calc( 8 * ( 80px + 25px ) - 25px)) {
     .hentry .entry-header {
       max-width: var(--width-column-12, calc( 12 * ( var(--width-column) + var(--width-gutter) ) - var(--width-gutter)));
+      align-items: flex-start;
       display: flex;
       justify-content: flex-end;
       margin-left: auto;

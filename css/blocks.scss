@@ -42,7 +42,7 @@
 		@include width_var(margin-right, width-column-1);
 	}
 
-	@include media( desktop ) {
+	@include media( wide ) {
 		@include width_var(margin-right, width-column-2);
 	}
 }
@@ -55,11 +55,13 @@
 
 .entry-content > .alignleft {
 	float: left;
+	max-width: 285px;
 
 	@include media( tablet ) {
 		@include width_var( margin-left, width-column-4 );
 		@include space_var( margin-right, space-sm );
 		margin-left: calc( 100vw - ( #{map-get($width_vars, width-column-8)} - #{map-get($width_vars, width-gutter)} ) );
+		max-width: #{map-get($width_vars, width-column-3)};
 	}
 
 	@include media( wide ) {
@@ -69,8 +71,11 @@
 
 .entry-content > .alignright {
 	float: right;
+	max-width: 285px;
+
 	@include media( tablet ) {
 		@include space_var( margin-left, space-sm );
+		max-width: #{map-get($width_vars, width-column-3)};
 	}
 }
 
@@ -115,6 +120,15 @@
 	width: 100%;
 }
 
+.wp-block-audio.alignleft audio,
+.wp-block-audio.alignright audio {
+	width: 285px;
+
+	@include media( tablet ) {
+		width: #{map-get($width_vars, width-column-3)};
+	}
+}
+
 // !Video
 
 .wp-block-video video {
@@ -125,22 +139,6 @@
 
 .wp-block-image img {
 	display: block;
-}
-
-.wp-block-audio figcaption,
-.wp-block-image figcaption,
-.wp-block-gallery .blocks-gallery-image figcaption,
-.wp-block-gallery .blocks-gallery-item figcaption {
-	@include typo_var(font-size, text_xs);
-	@include typo_var(font-family, title_font);
-	text-align: left;
-}
-
-.wp-block-audio.alignfull figcaption,
-.wp-block-image.alignfull figcaption,
-.wp-block-gallery.alignfull .blocks-gallery-image figcaption,
-.wp-block-gallery.alignfull .blocks-gallery-item figcaption {
-	@include block-space( space-xs, space-sm );
 }
 
 .wp-block-image.alignleft,
@@ -173,10 +171,6 @@
 	}
 }
 
-.wp-block-cover-image.alignleft,
-.wp-block-cover-image.alignright,
-.wp-block-embed.alignleft,
-.wp-block-embed.alignright,
 [data-align=left] .wp-block-cover-image,
 [data-align=right] .wp-block-cover-image {
 
@@ -203,14 +197,67 @@
 
 // !Gallery
 
-.wp-block-gallery.alignleft,
-.wp-block-gallery.alignright,
+.wp-block-gallery {
+
+	list-style: none;
+
+	.blocks-gallery-item,
+	.blocks-gallery-image {
+		margin: 0;
+		padding-left: 0;
+
+		&:before {
+			content: "";
+			display: none;
+		}
+
+		figure {
+			display: flex;
+			flex-direction: column;
+		}
+
+		figcaption {
+			position: relative;
+			padding: 0;
+			max-height: inherit;
+			background: transparent;
+		}
+	}
+}
+
 [data-align=left] .wp-block-gallery,
 [data-align=right] .wp-block-gallery {
 	max-width: 285px;
+
+	@include media( tablet ) {
+		max-width: #{map-get($width_vars, width-column-3)};
+	}
 }
 
 .wp-block-gallery:not(.components-placeholder) {
+}
+
+// !Block Captions
+
+.wp-block-audio figcaption,
+.wp-block-video figcaption,
+.wp-block-image figcaption,
+.wp-block-gallery .blocks-gallery-image figcaption,
+.wp-block-gallery .blocks-gallery-item figcaption {
+	@include color_var(color, color-text-subtle);
+	@include block-padding( space-xxs, 0 );
+	@include typo_var(font-size, text_xs);
+	@include typo_var(font-family, title_font);
+	text-align: left;
+	margin: 0;
+}
+
+.wp-block-audio.alignfull figcaption,
+.wp-block-video.alignfull figcaption,
+.wp-block-image.alignfull figcaption,
+.wp-block-gallery.alignfull .blocks-gallery-image figcaption,
+.wp-block-gallery.alignfull .blocks-gallery-item figcaption {
+	@include block-padding( space-xs, space-sm );
 }
 
 // !Columns
@@ -308,6 +355,12 @@ table.wp-block-table {
 
 // !Embeds
 
+.wp-block-embed > * {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+
 .wp-block-embed.type-video > .wp-block-embed__wrapper {
   position: relative;
   width: 100%;
@@ -363,13 +416,27 @@ table.wp-block-table {
 
 .wp-block-pullquote {
 
+	@include space_var(margin-top, space-lg);
+	@include space_var(margin-bottom, space-lg);
 	text-align: inherit;
 	padding: 0;
 
-	&.alignwide {
+	blockquote,
+	& > p,
+	& > cite {
 
-		@include media( tablet ) {
-			blockquote {
+		@include space_var(padding-left, space-sm);
+		@include space_var(padding-right, space-sm);
+	}
+
+	&.alignwide,
+	&.alignfull {
+
+		blockquote,
+		& > p,
+		& > cite {
+
+			@include media( tablet ) {
 				@include width_var(padding-left, width-column-1);
 				@include width_var(padding-right, width-column-1);
 			}
@@ -379,7 +446,7 @@ table.wp-block-table {
 	&.alignleft,
 	&.alignright {
 		margin-top: 0;
-		margin-bottom: 0;
+		@include space_var(margin-bottom, space-sm);
 
 		blockquote {
 			margin-top: 0;

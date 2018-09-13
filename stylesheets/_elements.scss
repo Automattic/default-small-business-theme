@@ -74,7 +74,7 @@ ul {
 	list-style-position: inside;
 }
 
-ul li {
+ul > li {
 
 	position: relative;
 	@include space_var( padding-left, space-sm );
@@ -98,11 +98,19 @@ ol {
 	counter-reset: sans-counter;
 }
 
-ol li {
+ol > li {
 
 	counter-increment: sans-counter;
 	position: relative;
 	@include space_var( padding-left, space-md );
+
+	ol li {
+		@include space_var( padding-left, space-md );
+	}
+
+	ul li {
+		@include space_var( padding-left, space-sm );
+	}
 
 	&:before {
 		content: counter(sans-counter, decimal-leading-zero) "\00a0";
@@ -126,7 +134,6 @@ li > ul ul,
 li > ol ul,
 li > ul ol {
 	margin-bottom: 0;
-	@include space_var( margin-left, space-md );
 }
 
 dt {

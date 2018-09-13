@@ -16,6 +16,7 @@
 	.entry-header {
 		@include media( tablet ) {
 			@include width_var(max-width, width-column-12);
+			align-items: flex-start;
 			display: flex;
 			justify-content: flex-end;
 			margin-left: auto;
