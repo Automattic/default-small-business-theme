@@ -402,7 +402,8 @@ body {
 a {
   color: var(--color-primary, #008000); }
 
-a:hover, a:active {
+a:hover,
+a:active {
   outline: 0; }
 
 p {
@@ -414,7 +415,8 @@ hr {
   height: 1px;
   margin-bottom: 1.5em; }
 
-abbr, acronym {
+abbr,
+acronym {
   border-bottom: 1px dotted inherit;
   border-bottom-color: var(--color-border, var(--gray-2));
   cursor: help; }
@@ -525,7 +527,8 @@ blockquote.is-large {
 address {
   margin: 0 0 1.5em; }
 
-mark, ins {
+mark,
+ins {
   background-color: var(--color-warning, #ffd137); }
 
 /** === Forms === */
@@ -542,9 +545,9 @@ input[type="submit"] {
   font-size: var(--text_sm, calc(1em / var(--text_scale_ratio)));
   line-height: var(--body_line_height, 1.4);
   overflow: hidden;
-  -webkit-border-radius: calc(0.25 * var(--space-unit));
-  -moz-border-radius: calc(0.25 * var(--space-unit));
-  border-radius: calc(0.25 * var(--space-unit));
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
   border: 2px solid green;
   border-color: var(--color-primary, #008000);
   box-shadow: 1px 1px 5px 1px rgba(0, 0, 0, 0.33);

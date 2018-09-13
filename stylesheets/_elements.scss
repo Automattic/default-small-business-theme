@@ -31,7 +31,8 @@ a:focus {
 
 }
 
-a:hover, a:active {
+a:hover,
+a:active {
 	outline: 0;
 }
 
@@ -46,7 +47,8 @@ hr {
 	margin-bottom: 1.5em;
 }
 
-abbr, acronym {
+abbr,
+acronym {
 	border-bottom: 1px dotted inherit;
 	@include color_var(border-bottom-color, color-border);
 	cursor: help;
@@ -181,6 +183,7 @@ address {
 	margin: 0 0 1.5em;
 }
 
-mark, ins {
+mark,
+ins {
 	@include color_var(background-color, color-warning);
 }
