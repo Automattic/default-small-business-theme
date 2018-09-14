@@ -1,0 +1,113 @@
+/*
+ * CSS4 Variables with Fallbacks Using Sass
+ * src: https://codepen.io/jakealbaugh/post/css4-variables-with-fallbacks-using-sass
+ */
+:root {
+  --space-unit: 1.5rem;
+  --space-xxs: calc(0.25 * var(--block-space-unit));
+  --space-xs: calc(0.5 * var(--block-space-unit));
+  --space-sm: calc(0.75 * var(--block-space-unit));
+  --space-md: calc(1.25 * var(--block-space-unit));
+  --space-lg: calc(2 * var(--block-space-unit));
+  --space-xl: calc(3.25 * var(--block-space-unit));
+  --space-xxl: calc(5.25 * var(--block-space-unit));
+  --space-base: var(--block-space-sm);
+  --grid-column: 80px;
+  --grid-gutter: 25px;
+  --grid-column-count: 12;
+  --grid-column-1: calc( 1 * ( var(--grid-column) + var(--grid-gutter) ) - var(--grid-gutter));
+  --grid-column-2: calc( 2 * ( var(--grid-column) + var(--grid-gutter) ) - var(--grid-gutter));
+  --grid-column-3: calc( 3 * ( var(--grid-column) + var(--grid-gutter) ) - var(--grid-gutter));
+  --grid-column-4: calc( 4 * ( var(--grid-column) + var(--grid-gutter) ) - var(--grid-gutter));
+  --grid-column-5: calc( 5 * ( var(--grid-column) + var(--grid-gutter) ) - var(--grid-gutter));
+  --grid-column-6: calc( 6 * ( var(--grid-column) + var(--grid-gutter) ) - var(--grid-gutter));
+  --grid-column-7: calc( 7 * ( var(--grid-column) + var(--grid-gutter) ) - var(--grid-gutter));
+  --grid-column-8: calc( 8 * ( var(--grid-column) + var(--grid-gutter) ) - var(--grid-gutter));
+  --grid-column-9: calc( 9 * ( var(--grid-column) + var(--grid-gutter) ) - var(--grid-gutter));
+  --grid-column-10: calc( 10 * ( var(--grid-column) + var(--grid-gutter) ) - var(--grid-gutter));
+  --grid-column-11: calc( 11 * ( var(--grid-column) + var(--grid-gutter) ) - var(--grid-gutter));
+  --grid-column-12: calc( 12 * ( var(--grid-column) + var(--grid-gutter) ) - var(--grid-gutter));
+  --font-family-body: Baskerville, Baskerville Old Face, Hoefler Text, Garamond, Times New Roman, serif;
+  --font-family-heading: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+  --font-family-code: Menlo, monaco, Consolas, Lucida Console, monospace;
+  --font-size-base: 18px;
+  --font-size-ratio: 1.2;
+  --font-size-body: 18px;
+  --font-size-xxs: calc(1em / (var(--font-size-ratio) * var(--font-size-ratio) * var(--font-size-ratio)));
+  --font-size-xs: calc(1em / (var(--font-size-ratio) * var(--font-size-ratio)));
+  --font-size-sm: calc(1em / var(--font-size-ratio));
+  --font-size-md: calc(1em * var(--text_scale_ratio));
+  --font-size-lg: calc(1em * var(--text_scale_ratio) * var(--text_scale_ratio));
+  --font-size-xl: calc(1em * var(--text_scale_ratio) * var(--text_scale_ratio) * var(--text_scale_ratio));
+  --font-size-xxl: calc(1em * var(--text_scale_ratio) * var(--text_scale_ratio) * var(--text_scale_ratio) * var(--text_scale_ratio));
+  --font-size-xxxl: calc(1em * var(--text_scale_ratio) * var(--text_scale_ratio) * var(--text_scale_ratio) * var(--text_scale_ratio) * var(--text_scale_ratio));
+  --font-leading-body: 1.4;
+  --font-leading-heading: 1.2;
+  --color-primary-base: #008000;
+  --color-primary-light: tint(#008000, 20%);
+  --color-primary-dark: shade(#008000, 20%);
+  --color-primary-bg: tint(#008000, 80%);
+  --color-secondary-base: #f5414f;
+  --color-secondary-light: tint(#f5414f, 20%);
+  --color-secondary-dark: shade(#f5414f, 20%);
+  --color-secondary-bg: tint(#f5414f, 80%);
+  --color-shade-black: #1d1d21;
+  --color-shade-gray-10: #2e2e31;
+  --color-shade-gray-6: #7b7a7d;
+  --color-shade-gray-4: #a5a5a6;
+  --color-shade-gray-3: #bbbbbc;
+  --color-shade-gray-2: #d1d0d2;
+  --color-shade-gray-1: #e8e7e8;
+  --color-shade-white: #ffffff;
+  --color-feedback-success: #88c459;
+  --color-feedback-error: #f5414f;
+  --color-feedback-warning: #ffd137;
+  --color-text-base: var(--color-shade-gray-10);
+  --color-text-text-heading: var(--color-shade-black);
+  --color-text-text-subtle: var(--color-shade-gray-6);
+  --color-link-base: var(--color-primary);
+  --color-link-hover: var(--color-primary-dark);
+  --color-border-base: var(--color-shade-gray-2);
+  --color-border-form: var(--color-border-base);
+  --color-border-form-focus: var(--color-primary);
+  --color-border-form-error: var(--color-error);
+  --color-border-form-bg: var(--color-white);
+  --color-border-form-placeholder: var(--color-shade-gray-4);
+  --color-body-background: var(--color-shade-white);
+  --color-button-primary-bg: var(--color-primary-bg);
+  --color-button-primary-hover: var(--color-primary-light);
+  --color-button-primary-active: var(--color-primary-dark);
+  --color-button-primary-label: var(--color-white);
+  --color-button-secondary-bg: var(--color-secondary-bg);
+  --color-button-secondary-hover: var(--color-secondary-light);
+  --color-button-secondary-active: var(--color-secondary-dark);
+  --color-button-secondary-label: var(--color-white); }
+
+body {
+  font-size: 18px;
+  font-size: var(--font-size-body);
+  font-family: Baskerville, Baskerville Old Face, Hoefler Text, Garamond, Times New Roman, serif;
+  font-family: var(--font-family-body);
+  line-height: 1.4;
+  line-height: var(--font-leading-body);
+  background-color: var(--color-background);
+  color: red;
+  color: var(--color-text); }
+
+h1, h2, h3, h4 {
+  line-height: 1.2;
+  line-height: var(--font-leading-heading);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+  font-family: var(--font-family-heading); }
+
+h1 {
+  font-size: var(--font-size-h1); }
+
+h2 {
+  font-size: var(--font-size-h2); }
+
+h3 {
+  font-size: var(--font-size-h3); }
+
+h4 {
+  font-size: var(--font-size-h4); }

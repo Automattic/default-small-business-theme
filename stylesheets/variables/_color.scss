@@ -1,0 +1,79 @@
+
+// Color Palette
+
+$color: (
+
+	primary: (
+		base: #008000,
+		light: tint( #008000, 20% ), // 'color-mod( var(--color-primary) tint('15%') )',
+		dark: shade( #008000, 20% ), // 'color-mod( var(--color-primary) shade('15%') )',
+		bg: tint( #008000, 80% ), // 'color-mod( var(--color-primary) alpha('20%') )',
+	),
+
+	secondary: (
+		base: #f5414f,
+		light: tint( #f5414f, 20% ), // 'color-mod( var(--color-primary) tint('15%') )',
+		dark: shade( #f5414f, 20% ), // 'color-mod( var(--color-primary) shade('10%') )',
+		bg: tint( #f5414f, 80% ), // 'color-mod( var(--color-primary) alpha('20%') )',
+	),
+
+	// shades - generated using chroma.js - 12 steps
+	shade: (
+		black: #1d1d21, // black
+		gray-10: #2e2e31,
+		gray-6: #7b7a7d,
+		gray-4: #a5a5a6,
+		gray-3: #bbbbbc,
+		gray-2: #d1d0d2,
+		gray-1: #e8e7e8,
+		white: #ffffff, // white
+	),
+
+	// feedback
+	feedback: (
+		success: #88c459,
+		error: #f5414f,
+		warning: #ffd137,
+	),
+
+	// text
+	text: (
+		base: var(--color-shade-gray-10),
+		text-heading: var(--color-shade-black),
+		text-subtle: var(--color-shade-gray-6),
+	),
+
+	// link
+	link: (
+		base: var(--color-primary),
+		hover: var(--color-primary-dark),
+	),
+
+	// border
+	border: (
+		base: var(--color-shade-gray-2),
+		form: var(--color-border-base),
+		form-focus: var(--color-primary),
+		form-error: var(--color-error),
+		form-bg: var(--color-white),
+		form-placeholder: var(--color-shade-gray-4),
+	),
+
+	// body
+	body: (
+		background: var(--color-shade-white),
+	),
+
+	// buttons
+	button: (
+		primary-bg: var(--color-primary-bg),
+		primary-hover: var(--color-primary-light),
+		primary-active: var(--color-primary-dark),
+		primary-label: var(--color-white),
+		secondary-bg: var(--color-secondary-bg),
+		secondary-hover: var(--color-secondary-light),
+		secondary-active: var(--color-secondary-dark),
+		secondary-label: var(--color-white),
+	),
+
+);

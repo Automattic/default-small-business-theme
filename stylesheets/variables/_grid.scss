@@ -1,0 +1,23 @@
+
+// Widths (grid-based)
+
+$grid: (
+
+	column: 80px,
+	gutter: 25px,
+	column-count: 12,
+
+	column-1: calc( 1 * ( var(--grid-column) + var(--grid-gutter) ) - var(--grid-gutter) ),
+	column-2: calc( 2 * ( var(--grid-column) + var(--grid-gutter) ) - var(--grid-gutter) ),
+	column-3: calc( 3 * ( var(--grid-column) + var(--grid-gutter) ) - var(--grid-gutter) ),
+	column-4: calc( 4 * ( var(--grid-column) + var(--grid-gutter) ) - var(--grid-gutter) ),
+	column-5: calc( 5 * ( var(--grid-column) + var(--grid-gutter) ) - var(--grid-gutter) ),
+	column-6: calc( 6 * ( var(--grid-column) + var(--grid-gutter) ) - var(--grid-gutter) ),
+	column-7: calc( 7 * ( var(--grid-column) + var(--grid-gutter) ) - var(--grid-gutter) ),
+	column-8: calc( 8 * ( var(--grid-column) + var(--grid-gutter) ) - var(--grid-gutter) ),
+	column-9: calc( 9 * ( var(--grid-column) + var(--grid-gutter) ) - var(--grid-gutter) ),
+	column-10: calc( 10 * ( var(--grid-column) + var(--grid-gutter) ) - var(--grid-gutter) ),
+	column-11: calc( 11 * ( var(--grid-column) + var(--grid-gutter) ) - var(--grid-gutter) ),
+	column-12: calc( 12 * ( var(--grid-column) + var(--grid-gutter) ) - var(--grid-gutter) ),
+
+);

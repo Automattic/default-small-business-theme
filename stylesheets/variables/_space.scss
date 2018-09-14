@@ -1,0 +1,19 @@
+
+// Spacing
+
+$space: (
+
+	unit: 1.5rem,
+
+	xxs:  calc(0.25 * var(--block-space-unit)),
+	xs:   calc(0.5 * var(--block-space-unit)),
+	sm:   calc(0.75 * var(--block-space-unit)),
+	md:   calc(1.25 * var(--block-space-unit)),
+	lg:   calc(2 * var(--block-space-unit)),
+	xl:   calc(3.25 * var(--block-space-unit)),
+	xxl:  calc(5.25 * var(--block-space-unit)),
+
+ 	// components padding
+	base: var(--block-space-sm),
+
+);
