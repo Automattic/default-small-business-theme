@@ -71,63 +71,64 @@ $color_vars: (
 );
 
 :root {
-    // main colors
-    --color-primary: #{map-get($color_vars, color-primary)};
-    --color-primary-light: #{map-get($color_vars, color-primary-light)};
-    --color-primary-dark: #{map-get($color_vars, color-primary-dark)};
-    --color-primary-bg: #{map-get($color_vars, color-primary-bg)};
 
-    --color-secondary: #{map-get($color_vars, color-secondary)};
-    --color-secondary-light: #{map-get($color_vars, color-secondary-dark)};
-    --color-secondary-dark: #{map-get($color_vars, color-secondary-light)};
-    --color-secondary-bg: #{map-get($color_vars, color-secondary-bg)};
+	// main colors
+	--color-primary: #{map-get($color_vars, color-primary)};
+	--color-primary-light: #{map-get($color_vars, color-primary-light)};
+	--color-primary-dark: #{map-get($color_vars, color-primary-dark)};
+	--color-primary-bg: #{map-get($color_vars, color-primary-bg)};
 
-    // shades - generated using chroma.js - 12 steps
-    --black: #{map-get($color_vars, black)};
-    --gray-10: #{map-get($color_vars, gray-10)};
-    --gray-6: #{map-get($color_vars, gray-6)};
-    --gray-4: #{map-get($color_vars, gray-4)};
-    --gray-3: #{map-get($color_vars, gray-3)};
-    --gray-2: #{map-get($color_vars, gray-2)};
-    --gray-1: #{map-get($color_vars, gray-1)};
-    --white: #{map-get($color_vars, white)};
+	--color-secondary: #{map-get($color_vars, color-secondary)};
+	--color-secondary-light: #{map-get($color_vars, color-secondary-dark)};
+	--color-secondary-dark: #{map-get($color_vars, color-secondary-light)};
+	--color-secondary-bg: #{map-get($color_vars, color-secondary-bg)};
 
-    // feedback
-    --color-success: #{map-get($color_vars, color-success)};
-    --color-error: #{map-get($color_vars, color-error)};
-    --color-warning: #{map-get($color_vars, color-warning)};
+	// shades - generated using chroma.js - 12 steps
+	--black: #{map-get($color_vars, black)};
+	--gray-10: #{map-get($color_vars, gray-10)};
+	--gray-6: #{map-get($color_vars, gray-6)};
+	--gray-4: #{map-get($color_vars, gray-4)};
+	--gray-3: #{map-get($color_vars, gray-3)};
+	--gray-2: #{map-get($color_vars, gray-2)};
+	--gray-1: #{map-get($color_vars, gray-1)};
+	--white: #{map-get($color_vars, white)};
 
-    // typography
-    --color-text: #{map-get($color_vars, color-text)};
-    --color-text-heading: #{map-get($color_vars, color-text-heading)};
-    --color-text-subtle: #{map-get($color_vars, color-text-subtle)};
-    --color-link: #{map-get($color_vars, color-link)};
-    --color-link-visited: #{map-get($color_vars, color-primary-dark)};
-    --color-mark: #{map-get($color_vars, color-mark)};
-    --color-blockquote-border: #{map-get($color_vars, color-blockquote-border)};
+	// feedback
+	--color-success: #{map-get($color_vars, color-success)};
+	--color-error: #{map-get($color_vars, color-error)};
+	--color-warning: #{map-get($color_vars, color-warning)};
 
-    // border
-    --color-border: #{map-get($color_vars, color-border)};
+	// typography
+	--color-text: #{map-get($color_vars, color-text)};
+	--color-text-heading: #{map-get($color_vars, color-text-heading)};
+	--color-text-subtle: #{map-get($color_vars, color-text-subtle)};
+	--color-link: #{map-get($color_vars, color-link)};
+	--color-link-visited: #{map-get($color_vars, color-primary-dark)};
+	--color-mark: #{map-get($color_vars, color-mark)};
+	--color-blockquote-border: #{map-get($color_vars, color-blockquote-border)};
 
-    // body
-    --color-body: #{map-get($color_vars, color-body)};
+	// border
+	--color-border: #{map-get($color_vars, color-border)};
 
-    // forms
-    --form-element-border: #{map-get($color_vars, form-element-border)};
-    --form-element-border-focus: #{map-get($color_vars, form-element-border-focus)};
-    --form-element-border-error: #{map-get($color_vars, form-element-border-error)};
-    --form-element-bg: #{map-get($color_vars, form-element-bg)};
-    --form-text-placeholder: #{map-get($color_vars, form-text-placeholder)};
+	// body
+	--color-body: #{map-get($color_vars, color-body)};
 
-    // buttons
-    --btn-primary-bg: #{map-get($color_vars, color-primary-bg)};
-    --btn-primary-hover: #{map-get($color_vars, color-primary-light)};
-    --btn-primary-active: #{map-get($color_vars, color-primary-dark)};
-    --btn-primary-label: #{map-get($color_vars, white)};
+	// forms
+	--form-element-border: #{map-get($color_vars, form-element-border)};
+	--form-element-border-focus: #{map-get($color_vars, form-element-border-focus)};
+	--form-element-border-error: #{map-get($color_vars, form-element-border-error)};
+	--form-element-bg: #{map-get($color_vars, form-element-bg)};
+	--form-text-placeholder: #{map-get($color_vars, form-text-placeholder)};
 
-    // icons
-    --color-icon-primary: #{map-get($color_vars, color-icon-primary)};
-    --color-icon-secondary: #{map-get($color_vars, color-icon-secondary)};
+	// buttons
+	--btn-primary-bg: #{map-get($color_vars, color-primary-bg)};
+	--btn-primary-hover: #{map-get($color_vars, color-primary-light)};
+	--btn-primary-active: #{map-get($color_vars, color-primary-dark)};
+	--btn-primary-label: #{map-get($color_vars, white)};
+
+	// icons
+	--color-icon-primary: #{map-get($color_vars, color-icon-primary)};
+	--color-icon-secondary: #{map-get($color_vars, color-icon-secondary)};
 }
 
 @mixin color_var($property, $varName) {

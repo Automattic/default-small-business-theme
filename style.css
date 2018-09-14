@@ -35,20 +35,7 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
   --text_xxl: calc(1em * var(--text_scale_ratio) * var(--text_scale_ratio) * var(--text_scale_ratio) * var(--text_scale_ratio));
   --text_xxxl: calc(1em * var(--text_scale_ratio) * var(--text_scale_ratio) * var(--text_scale_ratio) * var(--text_scale_ratio) * var(--text_scale_ratio));
   --heading_line_height: 1.2;
-  --body_line_height: 1.4;
-  /*
-	--mobile_width: ;
-	--tablet_width: ;
-	--desktop_width: ;
-
-	--wide_width: ;
-	--side_padding: ;
-
-	--logo_wrapper_width_tablet: ;
-	--logo_wrapper_width_desktop: ;
-	--link_transition: ;
-	--icon_transition: ;
-*/ }
+  --body_line_height: 1.4; }
   @media only screen and (min-width: calc( 8 * ( 80px + 25px ) - 25px)) {
     :root {
       --text_base_size: 21px; } }
