@@ -1378,7 +1378,7 @@ object {
       font-weight: 600; }
     @media only screen and (min-width: calc( 8 * ( 80px + 25px ) - 25px)) {
       .hentry .entry-meta {
-        width: calc( var(--width-column-2 ) - ( calc(0.75 * var(--space-unit)) * 2 ));
+        width: calc( var(--grid-column-2 ) - ( calc(0.75 * var(--space-unit)) * 2 ));
         flex-direction: column;
         justify-content: inherit; } }
   .hentry .entry-footer .entry-meta {

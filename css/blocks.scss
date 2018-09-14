@@ -478,7 +478,7 @@ table.wp-block-table {
 
 		&:before {
 			content: "\00b7 \00b7 \00b7 \00b7 \00b7";
-			@include globalvar( color, gray-4 );
+			@include globalvar( color, shade-gray-4 );
 			@include globalvar(font-family, body);
 			@include globalvar(font-size, lg);
 			letter-spacing: 1em;
