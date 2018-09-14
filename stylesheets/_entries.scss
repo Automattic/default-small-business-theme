@@ -3,7 +3,7 @@
 
 .hentry {
 
-	@include block-space( space-lg, 0 );
+	@include block-space( lg, 0 );
 
 	&:first-of-type {
 		margin-top: 0;
@@ -15,7 +15,7 @@
 
 	.entry-header {
 		@include media( tablet ) {
-			@include width_var(max-width, width-column-12);
+			@include globalvar(max-width, column-12);
 			align-items: flex-start;
 			display: flex;
 			justify-content: flex-end;
@@ -26,32 +26,32 @@
 
 	.entry-title {
 		@include block-space();
-		@include color_var(color, color-primary);
-		@include typo_var(font-family, title_font);
-		@include typo_var(font-size, text_xl);
+		@include globalvar(color, primary-base);
+		@include globalvar(font-family, heading);
+		@include globalvar(font-size, xl);
 		font-weight: 200;
 		letter-spacing: .25rem;
 		text-transform: uppercase;
 
 		a {
-			@include color_var(color, color-primary);
+			@include globalvar(color, primary-base);
 			@include link-transition;
 			color: inherit;
 			&:hover {
-				@include color_var(color, color-secondary);
+				@include globalvar(color, secondary-base);
 				text-decoration: none;
 			}
 		}
 
 		@include media( tablet ) {
-			@include block-space( space-sm, 0 );
-			@include width_var(max-width, width-column-6);
+			@include block-space( sm, 0 );
+			@include globalvar(max-width, column-6);
 			width: 100%;
 
 			// Single Page
 			&:first-child:last-child {
-				@include width_var(max-width, width-column-6);
-				@include width_var(margin-right, width-column-2);
+				@include globalvar(max-width, column-6);
+				@include globalvar(margin-right, column-2);
 			 	margin-left: auto;
 			}
 		}
@@ -60,20 +60,20 @@
 	.entry-meta {
 
 		@include block-space;
-		@include color_var(color, color-text-subtle);
-		@include typo_var(font-size, text_xs);
-		@include typo_var(font-family, title_font);
+		@include globalvar(color, words-subtle);
+		@include globalvar(font-size, xs);
+		@include globalvar(font-family, heading);
 		display: flex;
 		justify-content: space-between;
 
 		a {
-			@include color_var(color, color-text-heading);
+			@include globalvar(color, words-heading);
 			@include link-transition;
 			font-weight: 600;
 
 			&:hover {
 				text-decoration: none;
-				@include color_var(color, color-secondary);
+				@include globalvar(color, secondary-primary);
 			}
 		}
 
@@ -107,15 +107,15 @@
 			justify-content: space-between;
 
 			a:link {
-				@include color_var(color, color-text-subtle);
+				@include globalvar(color, words-subtle);
 			}
 
 			a:hover {
-				@include color_var(color, color-secondary);
+				@include globalvar(color, secondary-base);
 			}
 
 			> span {
-				@include space_var(margin-right, space-sm);
+				@include globalvar(margin-right, sm);
 
 				&:last-child {
 					margin-right: 0;
@@ -123,8 +123,8 @@
 			}
 
 			@include media( tablet ) {
-				@include width_var( max-width, width-column-6 );
-				@include width_var( margin-right, width-column-2 );
+				@include globalvar( max-width, column-6 );
+				@include globalvar( margin-right, column-2 );
 				flex-direction: row;
 				margin-left: auto;
 				width: 100%;
@@ -135,13 +135,13 @@
 			position: relative;
 			display: inline-block;
 			vertical-align: middle;
-			@include color_var(fill, color-text-subtle);
+			@include globalvar(fill, words-subtle);
 			margin-right: 0.3em;
 			top: -0.1em;
 		}
 
 		@include media( tablet ) {
-			@include width_var( max-width, width-column-12 );
+			@include globalvar( max-width, column-12);
 			display: flex;
 			justify-content: flex-end;
 			margin-left: auto;
@@ -158,7 +158,7 @@
 		.post-thumbnail-inner {
 			display: block;
 			border: solid 10px inherit;
-			@include color_var(border-color, color-secondary);
+			@include globalvar(border-color, secondary-base);
 			margin-bottom: 1.5em;
 
 			img {
@@ -201,14 +201,14 @@
 			}
 
 			&:before {
-				@include color_var(background-color, color-primary);
+				@include globalvar(background-color, primary-base);
 				mix-blend-mode: screen;
 				opacity: 0.1;
 				z-index: 2;
 			}
 
 			&:after {
-				@include color_var(background-color, color-primary);
+				@include globalvar(background-color, primary-base);
 				mix-blend-mode: multiply;
 				opacity: 1;
 				z-index: 3;
@@ -235,13 +235,13 @@
 			}
 
 			&:hover {
-				@include color_var(color, color-primary);
+				@include globalvar(color, primary-base);
 				text-decoration: none;
 			}
 		}
 
 		@include media( tablet ) {
-			@include width_var( max-width, width-column-12 );
+			@include globalvar( max-width, column-12);
 			margin-left: auto;
 			margin-right: auto;
 		}

@@ -36,11 +36,11 @@ $color: (
 		warning: #ffd137,
 	),
 
-	// text
-	text: (
+	// text keyword doesn’t work
+	words: (
 		base: var(--color-shade-gray-10),
-		text-heading: var(--color-shade-black),
-		text-subtle: var(--color-shade-gray-6),
+		heading: var(--color-shade-black),
+		subtle: var(--color-shade-gray-6),
 	),
 
 	// link

@@ -4,30 +4,29 @@
 // External.
 @import "bourbon";
 
+// Root CSS variables.
+@import "../stylesheets/variables/root";
+
 // Includes.
-@import "../stylesheets/inc/css-vars";
-@import "../stylesheets/inc/variables";
-@import "../stylesheets/inc/widths";
-@import "../stylesheets/inc/grid";
-@import "../stylesheets/inc/spacing";
-@import "../stylesheets/inc/palette";
-@import "../stylesheets/inc/functions";
 @import "../stylesheets/inc/mixins";
+@import "../stylesheets/inc/variables";
+@import "../stylesheets/inc/grid";
+@import "../stylesheets/inc/functions";
 
 // !Block sizing & positioning
 
 .entry-content > * {
 
 	@include block-space;
-	max-width: calc( 100% - ( #{map-get($space_vars, space-sm)} * 2 ) );
+	max-width: calc( 100% - ( #{map-get($space, space-sm)} * 2 ) );
 
 	&:first-child {
 		margin-top: 0;
 	}
 
 	@include media( tablet ) {
-		@include width_var(max-width, width-column-6);
-		@include width_var(margin-right, width-column-2);
+		@include globalvar(max-width, column-6);
+		@include globalvar(margin-right, column-2);
 		margin-left: auto;
 	}
 }
@@ -38,12 +37,12 @@
 	margin-right: auto;
 
 	@include media( tablet ) {
-		@include width_var(max-width, width-column-8);
-		@include width_var(margin-right, width-column-1);
+		@include globalvar(max-width, width-column-8);
+		@include globalvar(margin-right, width-column-1);
 	}
 
 	@include media( wide ) {
-		@include width_var(margin-right, width-column-2);
+		@include globalvar(margin-right, column-2);
 	}
 }
 
@@ -58,14 +57,14 @@
 	max-width: 285px;
 
 	@include media( tablet ) {
-		@include width_var( margin-left, width-column-4 );
-		@include space_var( margin-right, space-sm );
-		margin-left: calc( 100vw - ( #{map-get($width_vars, width-column-8)} - #{map-get($width_vars, width-gutter)} ) );
-		max-width: #{map-get($width_vars, width-column-3)};
+		@include globalvar( margin-left, width-column-4 );
+		@include globalvar( margin-right, sm);
+		margin-left: calc( 100vw - ( #{map-get($grid, width-column-8)} - #{map-get($grid, width-gutter)} ) );
+		max-width: #{map-get($grid, width-column-3)};
 	}
 
 	@include media( wide ) {
-		margin-left: calc( #{map-get($width_vars, width-column-12)} - ( #{map-get($width_vars, width-column-8)} - #{map-get($width_vars, width-gutter)} ) );
+		margin-left: calc( #{map-get($grid, width-column-12)} - ( #{map-get($grid, width-column-8)} - #{map-get($grid, width-gutter)} ) );
 	}
 }
 
@@ -74,25 +73,25 @@
 	max-width: 285px;
 
 	@include media( tablet ) {
-		@include space_var( margin-left, space-sm );
-		max-width: #{map-get($width_vars, width-column-3)};
+		@include globalvar( margin-left, sm);
+		max-width: #{map-get($grid, width-column-3)};
 	}
 }
 
 // !Buttons
 
 .wp-block-button .wp-block-button__link{
-	@include color_var(background-color, color-primary);
-	@include color_var(color, white);
-	@include space_var(padding, space-xs);
-	@include space_var(padding-left, space-sm);
-	@include space_var(padding-right, space-sm);
-	@include typo_var(font-family, title_font);
-	@include typo_var(font-size, text_sm);
-	@include typo_var(line-height, body_line_height);
+	@include globalvar(background-color, primary-base);
+	@include globalvar(color, shade-white);
+	@include globalvar(padding, space-xs);
+	@include globalvar(padding-left, sm);
+	@include globalvar(padding-right, sm);
+	@include globalvar(font-family, heading);
+	@include globalvar(font-size, sm);
+	@include globalvar(line-height, body);
 	@include rounded( 3px );
 	border: 2px solid green;
-	@include color_var(border-color, color-primary);
+	@include globalvar(border-color, primary-base);
 	box-shadow: 1px 1px 5px 1px rgba(0,0,0,0.33);
 	cursor: pointer;
 	display: inline-block;
@@ -102,16 +101,16 @@
 }
 
 .wp-block-button .wp-block-button__link:hover {
-	@include color_var(border-color, color-primary);
-	@include color_var(background-color, white);
-	@include color_var(color, color-primary);
+	@include globalvar(border-color, primary-base);
+	@include globalvar(background-color, shade-white);
+	@include globalvar(color, primary-base);
 }
 
 .wp-block-button .wp-block-button__link:active,
 .wp-block-button .wp-block-button__link:focus {
-	@include color_var(border-color, color-text-subtle);
-	@include color_var(background-color, white);
-	@include color_var(color, color-text-subtle);
+	@include globalvar(border-color, words-subtle);
+	@include globalvar(background-color, shade-white);
+	@include globalvar(color, words-subtle);
 }
 
 // !Audio
@@ -125,7 +124,7 @@
 	width: 285px;
 
 	@include media( tablet ) {
-		width: #{map-get($width_vars, width-column-3)};
+		width: #{map-get($grid, width-column-3)};
 	}
 }
 
@@ -162,12 +161,12 @@
 	}
 
 	&.alignleft {
-		@include space_var( margin-top, 0 );
-		@include space_var( margin-right, space-sm );
+		@include globalvar( margin-top, 0 );
+		@include globalvar( margin-right, sm);
 	}
 	&.alignright {
-		@include space_var( margin-top, 0 );
-		@include space_var( margin-left, space-sm );
+		@include globalvar( margin-top, 0 );
+		@include globalvar( margin-left, sm);
 	}
 }
 
@@ -177,7 +176,7 @@
 	max-width: 285px;
 
 	@include media( tablet ) {
-		max-width: #{map-get($width_vars, width-column-3)};
+		max-width: #{map-get($grid, width-column-3)};
 	}
 }
 
@@ -187,9 +186,9 @@
 .wp-block-cover-image .wp-block-cover-image-text,
 .wp-block-cover-image h2 {
 	font-weight: 400;
-	@include space_var( padding, space-xs );
-	@include typo_var(font-family, text_font);
-	@include typo_var(line-height, heading_line_height);
+	@include globalvar( padding, space-xs );
+	@include globalvar(font-family, body);
+	@include globalvar(line-height, heading);
 	letter-spacing: normal;
 	text-transform: none;
 	margin: 0;
@@ -230,7 +229,7 @@
 	max-width: 285px;
 
 	@include media( tablet ) {
-		max-width: #{map-get($width_vars, width-column-3)};
+		max-width: #{map-get($grid, width-column-3)};
 	}
 }
 
@@ -244,10 +243,10 @@
 .wp-block-image figcaption,
 .wp-block-gallery .blocks-gallery-image figcaption,
 .wp-block-gallery .blocks-gallery-item figcaption {
-	@include color_var(color, color-text-subtle);
+	@include globalvar(color, words-subtle);
 	@include block-padding( space-xxs, 0 );
-	@include typo_var(font-size, text_xs);
-	@include typo_var(font-family, title_font);
+	@include globalvar(font-size, xs);
+	@include globalvar(font-family, heading);
 	text-align: left;
 	margin: 0;
 }
@@ -257,7 +256,7 @@
 .wp-block-image.alignfull figcaption,
 .wp-block-gallery.alignfull .blocks-gallery-image figcaption,
 .wp-block-gallery.alignfull .blocks-gallery-item figcaption {
-	@include block-padding( space-xs, space-sm );
+	@include block-padding( space-xs, sm);
 }
 
 // !Columns
@@ -271,20 +270,20 @@
 	}
 
 	&.has-2-columns .wp-block-column {
-		width: calc( 50% - ( #{map-get($width_vars, width-gutter)} * .5 ) );
+		width: calc( 50% - ( #{map-get($grid, width-gutter)} * .5 ) );
 	}
 
 	&.has-3-columns .wp-block-column {
-		width: calc( 33% - ( #{map-get($width_vars, width-gutter)} * .33 ) );
+		width: calc( 33% - ( #{map-get($grid, width-gutter)} * .33 ) );
 	}
 
 	&.has-4-columns .wp-block-column {
-		width: calc( 25% - ( #{map-get($width_vars, width-gutter)} * .25 ) );
+		width: calc( 25% - ( #{map-get($grid, width-gutter)} * .25 ) );
 	}
 
 	@include media( tablet ) {
-		@include width_var(margin-right, width-column-1);
-		@include width_var(max-width, width-column-7);
+		@include globalvar(margin-right, width-column-1);
+		@include globalvar(max-width, width-column-7);
 	}
 }
 
@@ -295,10 +294,10 @@ ul.wp-block-archives,
 ul.wp-block-latest-posts {
 
 	li {
-		@include typo_var(font-size, text_md);
+		@include globalvar(font-size, md);
 
 		&:before {
-			@include typo_var(font-size, text_xxs);
+			@include globalvar(font-size, xxs);
 			line-height: 2.4em;
 		}
 	}
@@ -311,14 +310,14 @@ ul.wp-block-latest-posts {
 		justify-content: space-between;
 
 		li {
-			@include space_var( margin-right, 0 );
-			@include space_var( margin-bottom, space-sm );
+			@include globalvar( margin-right, 0 );
+			@include globalvar( margin-bottom, sm);
 		}
 	}
 
 	@include media( tablet ) {
 		&.columns-2 li {
-			width: calc( 50% - ( #{map-get($width_vars, width-gutter)} * .5) );
+			width: calc( 50% - ( #{map-get($grid, width-gutter)} * .5) );
 		}
 	}
 }
@@ -330,11 +329,11 @@ ul.wp-block-latest-posts {
 	overflow-x: auto;
 
 	tr:nth-child(even) {
-		@include color_var(background-color, gray-1);
+		@include globalvar(background-color, gray-1);
 	}
 
 	thead tr:nth-child(odd) {
-		@include color_var(background-color, color-primary-bg);
+		@include globalvar(background-color, color-primary-bg);
 	}
 }
 
@@ -342,10 +341,10 @@ ul.wp-block-latest-posts {
 table.wp-block-table {
 
 	border-collapse: collapse;
-	max-width: calc( 100% - ( #{map-get($space_vars, space-sm)} * 2 ) );
+	max-width: calc( 100% - ( #{map-get($space, space-sm)} * 2 ) );
 
 	@include media( tablet ) {
-		@include width_var(max-width, width-column-6);
+		@include globalvar(max-width, column-6);
 	}
 }
 
@@ -386,50 +385,50 @@ table.wp-block-table {
 .wp-block-quote.is-style-large {
 
 	@include block-padding( space-sm, 0 );
-	@include space_var( margin-top, space-lg );
-	@include space_var( margin-bottom, space-lg );
-	@include space_var( margin-left, space-sm );
-	@include space_var( margin-right, space-sm );
+	@include globalvar( margin-top, space-lg );
+	@include globalvar( margin-bottom, space-lg );
+	@include globalvar( margin-left, sm);
+	@include globalvar( margin-right, sm);
 	border-top: 1px solid green;
 
 	p {
 		@include block-padding( space-xs, 0 );
-		@include typo_var(font-size, text_lg);
+		@include globalvar(font-size, lg);
 		font-style: normal;
 	}
 
 	cite {
-		@include typo_var(font-family, title_font);
-		@include typo_var(font-size, text_xs);
-		@include color_var(color, color-text-subtle);
+		@include globalvar(font-family, heading);
+		@include globalvar(font-size, xs);
+		@include globalvar(color, words-subtle);
 		font-style: normal;
 		font-weight: 500;
 	}
 
 	@include media( tablet ) {
-		@include width_var(max-width, width-column-6);
-		@include width_var(margin-right, width-column-2);
+		@include globalvar(max-width, column-6);
+		@include globalvar(margin-right, column-2);
 		margin-left: auto;
 	}
 }
 
 .wp-block-pullquote {
 
-	@include space_var(margin-top, space-lg);
-	@include space_var(margin-bottom, space-lg);
+	@include globalvar(margin-top, space-lg);
+	@include globalvar(margin-bottom, space-lg);
 	text-align: inherit;
 	padding: 0;
 
 	& > p {
-		@include typo_var(font-size, text_lg);
+		@include globalvar(font-size, lg);
 		font-style: normal;
 	}
 
 	blockquote,
 	& > p,
 	& > cite {
-		@include space_var(padding-left, space-sm);
-		@include space_var(padding-right, space-sm);
+		@include globalvar(padding-left, sm);
+		@include globalvar(padding-right, sm);
 	}
 
 	&.alignwide,
@@ -440,8 +439,8 @@ table.wp-block-table {
 		& > cite {
 
 			@include media( tablet ) {
-				@include width_var(padding-left, width-column-1);
-				@include width_var(padding-right, width-column-1);
+				@include globalvar(padding-left, width-column-1);
+				@include globalvar(padding-right, width-column-1);
 			}
 		}
 	}
@@ -449,13 +448,13 @@ table.wp-block-table {
 	&.alignleft,
 	&.alignright {
 		margin-top: 0;
-		@include space_var(margin-bottom, space-sm);
+		@include globalvar(margin-bottom, sm);
 
 		blockquote {
 			margin-top: 0;
 			margin-bottom: 0;
 			p {
-				@include typo_var(font-size, text_md);
+				@include globalvar(font-size, md);
 				padding-top: 0;
 			}
 		}
@@ -469,19 +468,19 @@ table.wp-block-table {
 // !Separators
 
 .wp-block-separator {
-	@include space_var( margin-top, space-md );
-	@include space_var( margin-bottom, space-md );
+	@include globalvar( margin-top, space-md );
+	@include globalvar( margin-bottom, space-md );
 	padding: 0;
 
 	&.is-style-dots {
 
-		@include color_var( background-color, white );
+		@include globalvar( background-color, white );
 
 		&:before {
 			content: "\00b7 \00b7 \00b7 \00b7 \00b7";
-			@include color_var( color, gray-4 );
-			@include typo_var(font-family, text_font);
-			@include typo_var(font-size, text_lg);
+			@include globalvar( color, gray-4 );
+			@include globalvar(font-family, body);
+			@include globalvar(font-size, lg);
 			letter-spacing: 1em;
 			padding-left: 1em;
 		}
@@ -489,7 +488,7 @@ table.wp-block-table {
 
 	@include media( tablet ) {
 		&.is-style-dots {
-			@include width_var(max-width, width-column-6);
+			@include globalvar(max-width, column-6);
 		}
 	}
 }

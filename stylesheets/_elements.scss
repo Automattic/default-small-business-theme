@@ -12,11 +12,11 @@ html {
 }
 
 body {
-	@include color_var(background-color, white);
+	@include globalvar(background-color, shade-white);
 }
 
 a {
-	@include color_var(color, color-primary);
+	@include globalvar(color, primary-base);
 }
 
 a:visited {
@@ -41,7 +41,7 @@ p {
 }
 
 hr {
-	@include color_var(background-color, gray-3);
+	@include globalvar( background-color, gray-3 );
 	border: 0;
 	height: 1px;
 	margin-bottom: 1.5em;
@@ -50,24 +50,24 @@ hr {
 abbr,
 acronym {
 	border-bottom: 1px dotted inherit;
-	@include color_var(border-bottom-color, color-border);
+	@include globalvar( border-bottom-color, border-base);
 	cursor: help;
 }
 
 pre {
-	@include color_var(background-color, gray-1);
-	@include space_var( margin-bottom, space-sm );
+	@include globalvar( background-color, gray-1);
+	@include globalvar( margin-bottom, sm );
 	max-width: 100%;
 	overflow: auto;
-	@include space_var( padding, space-sm );
+	@include globalvar( padding, sm );
 }
 
 ul,
 ol {
 	margin-top: 0;
 	margin-right: 0;
-	@include space_var( margin-bottom, space-xs );
-	@include space_var( margin-left, space-xs );
+	@include globalvar( margin-bottom, xs );
+	@include globalvar( margin-left, xs );
 	padding: 0;
 }
 
@@ -79,15 +79,15 @@ ul {
 ul > li {
 
 	position: relative;
-	@include space_var( padding-left, space-sm );
+	@include globalvar( padding-left, sm );
 
 	&:before {
 		content: "\25CF\00a0";
 		left: 0;
 		position: absolute;
-		@include color_var(color, color-primary);
-		@include space_var( line-height, space-md );
-		@include typo_var(font-size, text_xs);
+		@include globalvar(color, primary-base);
+		@include globalvar( line-height, md );
+		@include globalvar(font-size, xs);
 	}
 
 	li:before {
@@ -104,24 +104,24 @@ ol > li {
 
 	counter-increment: sans-counter;
 	position: relative;
-	@include space_var( padding-left, space-md );
+	@include globalvar( padding-left, md );
 
 	ol li {
-		@include space_var( padding-left, space-md );
+		@include globalvar( padding-left, md );
 	}
 
 	ul li {
-		@include space_var( padding-left, space-sm );
+		@include globalvar( padding-left, sm );
 	}
 
 	&:before {
 		content: counter(sans-counter, decimal-leading-zero) "\00a0";
 		left: 0;
 		position: absolute;
-		@include color_var(color, color-primary);
-		@include typo_var(font-family, title_font);
-		@include typo_var(font-size, text_xs);
-		@include space_var( line-height, space-md );
+		@include globalvar(color, primary-base);
+		@include globalvar(font-family, heading);
+		@include globalvar(font-size, xs);
+		@include globalvar( line-height, md );
 	}
 }
 
@@ -145,8 +145,8 @@ dt {
 dd {
 	margin-top: 0;
 	margin-right: 0;
-	@include space_var( margin-bottom, space-xs );
-	@include space_var( margin-left, space-xs );
+	@include globalvar( margin-bottom, xs );
+	@include globalvar( margin-left, xs );
 }
 
 img {
@@ -175,7 +175,7 @@ blockquote.is-large {
 	}
 
 	cite {
-		@include color_var(color, color-text-subtle);
+		@include globalvar(color, words-subtle);
 	}
 }
 
@@ -185,5 +185,5 @@ address {
 
 mark,
 ins {
-	@include color_var(background-color, color-warning);
+	@include globalvar( background-color, feedback-warning );
 }

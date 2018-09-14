@@ -4,10 +4,10 @@
 .site-header {
 
 	border-bottom: 1px solid gray;
-	@include color_var(border-bottom-color, color-border);
+	@include globalvar(border-bottom-color, border-base);
 
 	@include media( desktop ) {
-		@include width_var(max-width, width-column-12);
+		@include globalvar(max-width, column-12);
 		border-bottom: none;
 		display: flex;
 		align-items: center;
@@ -18,15 +18,15 @@
 
 .site-branding {
 
-	@include color_var(color, color-text-subtle);
-	@include block-space( space-sm, 0 );
+	@include globalvar(color, words-subtle);
+	@include block-space( sm, 0 );
 
 	& > * {
-		@include block-space( 0, space-sm );
+		@include block-space( 0, sm );
 	}
 
 	@include media( tablet ) {
-		@include width_var(max-width, width-column-5);
+		@include globalvar(max-width, column-5);
 		display: flex;
 		align-content: stretch;
 		align-items: center;
@@ -34,9 +34,9 @@
 	}
 
 	.site-title {
-		@include typo_var(font-family, text_font);
-		@include typo_var(font-size, text_lg);
-		@include color_var(color, color-text);
+		@include globalvar(font-family, body);
+		@include globalvar(font-size, lg);
+		@include globalvar(color, words-base);
 		/* When there is no description set, make sure navigation appears below title. */
 		+ .main-navigation {
 			display: block;
@@ -49,22 +49,22 @@
 			color: inherit;
 
 			&:hover {
-				@include color_var(color, color-secondary);
+				@include globalvar(color, secondary-base);
 			}
 		}
 
 		@include media( tablet ) {
 			@include block-space( 0, 0 );
 			&:first-child {
-				@include block-space( 0, space-sm );
+				@include block-space( 0, sm );
 			}
 		}
 	}
 
 	.site-description {
-		@include block-space( 0, space-sm );
-		@include typo_var(font-size, text_base_size);
-		@include color_var(color, color-text-subtle);
+		@include block-space( 0, sm );
+		@include globalvar(font-size, base);
+		@include globalvar(color, words-subtle);
 		font-weight: normal;
 	}
 
@@ -114,7 +114,7 @@
 					line-height: 1;
 
 					&:hover {
-						@include color_var(fill, color-primary);
+						@include globalvar(fill, primary-base);
 					}
 
 					@include media( tablet ) {
@@ -135,28 +135,28 @@
 }
 
 .site-footer {
-	@include color_var(background-color, color-primary);
+	@include globalvar(background-color, primary-base);
 }
 
 .site-info {
 
-	@include typo_var(font-size, text_xs);
-	@include typo_var(font-family, title_font);
-	@include space_var(padding, space-lg);
-	@include space_var(padding-left, space-sm);
-	@include space_var(padding-right, space-sm);
-	@include color_var(color, white);
+	@include globalvar(font-size, xs);
+	@include globalvar(font-family, headings);
+	@include globalvar(padding, lg);
+	@include globalvar(padding-left, sm);
+	@include globalvar(padding-right, sm);
+	@include globalvar(color, shade-white);
 
 	a {
 		color: inherit;
 		&:hover {
 			text-decoration: none;
-			@include color_var(color, color-primary);
+			@include globalvar(color, primary-base);
 		}
 	}
 
 	@include media( desktop ) {
-		@include width_var(max-width, width-column-12);
+		@include globalvar(max-width, column-12);
 		border-bottom: none;
 		display: flex;
 		align-items: center;

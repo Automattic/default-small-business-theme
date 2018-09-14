@@ -16,11 +16,11 @@ $font: (
     xxs: calc(1em / (var(--font-size-ratio) * var(--font-size-ratio) * var(--font-size-ratio))),
     xs: calc(1em / (var(--font-size-ratio) * var(--font-size-ratio))),
     sm: calc(1em / var(--font-size-ratio)),
-    md: calc(1em * var(--text_scale_ratio)),
-    lg: calc(1em * var(--text_scale_ratio) * var(--text_scale_ratio)),
-    xl: calc(1em * var(--text_scale_ratio) * var(--text_scale_ratio) * var(--text_scale_ratio)),
-    xxl: calc(1em * var(--text_scale_ratio) * var(--text_scale_ratio) * var(--text_scale_ratio) * var(--text_scale_ratio)),
-    xxxl: calc(1em * var(--text_scale_ratio) * var(--text_scale_ratio) * var(--text_scale_ratio) * var(--text_scale_ratio) * var(--text_scale_ratio)),
+    md: calc(1em * var(--font-size-ratio)),
+    lg: calc(1em * var(--font-size-ratio) * var(--font-size-ratio)),
+    xl: calc(1em * var(--font-size-ratio) * var(--font-size-ratio) * var(--font-size-ratio)),
+    xxl: calc(1em * var(--font-size-ratio) * var(--font-size-ratio) * var(--font-size-ratio) * var(--font-size-ratio)),
+    xxxl: calc(1em * var(--font-size-ratio) * var(--font-size-ratio) * var(--font-size-ratio) * var(--font-size-ratio) * var(--font-size-ratio)),
   ),
 
   leading: (

@@ -19,22 +19,30 @@ $var-maps: (
 // which property uses which var map
 // you would edit this for each property you want to use variables for
 $props: (
-  background-color: color,
-  color:            color, // (color, (primary, secondary, shade)),
-  font-family:      (font, family),
-  font-size:        (font, size),
-  line-height:      (font, leading),
-  margin:           space,
-  margin-top:       space,
-  margin-right:     space,
-  margin-bottom:    space,
-  margin-left:      space,
-  padding:          space,
-  padding-top:      space,
-  padding-right:    space,
-  padding-bottom:   space,
-  padding-left:     space,
-  width:            grid
+  font-family:         (font, family),
+  font-size:           (font, size),
+  line-height:         (font, leading),
+  background-color:    color,
+  color:               color, // (color, (primary, secondary, shade)),
+  border-color:        color,
+  border-top-color:    color,
+  border-right-color:  color,
+  border-bottom-color: color,
+  border-left-color:   color,
+  fill:                color,
+  margin:              space,
+  margin-top:          space,
+  margin-right:        space,
+  margin-bottom:       space,
+  margin-left:         space,
+  padding:             space,
+  padding-top:         space,
+  padding-right:       space,
+  padding-bottom:      space,
+  padding-left:        space,
+  width:               grid,
+  max-width:           grid,
+  min-width:           grid,
 );
 
 // the variable mixin takes a property and variable name
@@ -107,6 +115,7 @@ $props: (
 
 // using it is magical
 
+/*
 body {
   @include globalvar(font-size, body);
   @include globalvar(font-family, body);
@@ -129,3 +138,4 @@ h1 { @include globalvar(font-size, h1); }
 h2 { @include globalvar(font-size, h2); }
 h3 { @include globalvar(font-size, h3); }
 h4 { @include globalvar(font-size, h4); }
+*/

@@ -24,10 +24,10 @@
 
 .comments-area {
 
-	@include block-space( space-lg, 0 );
+	@include block-space( lg, 0 );
 
 	@include media( tablet ) {
-		@include width_var(max-width, width-column-12);
+		@include globalvar(max-width, column-12);
 		display: flex;
 		justify-content: flex-end;
 		flex-direction: row;
@@ -39,9 +39,9 @@
 }
 
 .comments-title {
-	@include block-space( space-sm, 0 );
+	@include block-space( sm, 0 );
 	flex: 1 1 auto;
-	@include width_var(max-width, width-column-4);
+	@include globalvar(max-width, column-4);
 	//width: 100%;
 }
 
@@ -49,8 +49,8 @@
 	@include block-space;
 
 	@include media( tablet ) {
-		@include width_var(max-width, width-column-6);
-		@include width_var(margin-right, width-column-2);
+		@include globalvar(max-width, column-6);
+		@include globalvar(margin-right, column-2);
 		width: 100%;
 	}
 
@@ -75,7 +75,7 @@
 
 	.comment {
 		list-style: none;
-		@include block-space( space-md, 0 );
+		@include block-space( md, 0 );
 	}
 
 	.comment-content {
@@ -85,7 +85,7 @@
 	}
 
 	.children {
-		@include space_var(margin-left, space-md);
+		@include globalvar(margin-left, md);
 
 		.comment {
 			width: 100%;
@@ -93,56 +93,56 @@
 	}
 
 	@include media( tablet ) {
-		@include width_var(max-width, width-column-7);
-		@include block-space( space-sm, 0 );
-		@include width_var(margin-right, width-column-2);
+		@include globalvar(max-width, column-7);
+		@include block-space( sm, 0 );
+		@include globalvar(margin-right, column-2);
 	}
 }
 
 .comment-body {
 
-	@include width_var(max-width, width-column-7);
+	@include globalvar(max-width, column-7);
 	position: relative;
 	min-height: 9rem;
 
 	> * {
-		@include block-space( space-sm, 0 );
+		@include block-space( sm, 0 );
 		&:first-of-type {
 			margin-top: 0;
 		}
 	}
 
 	.reply {
-		@include block-space( space-sm, 0 );
-		@include typo_var(font-family, title_font);
-		@include typo_var(font-size, text_xs);
+		@include block-space( sm, 0 );
+		@include globalvar(font-family, heading);
+		@include globalvar(font-size, xs);
 		text-transform: uppercase;
 	}
 
 	@include media( tablet ) {
 		& > *:not(.comment-author):not(.comment-meta) {
-			margin-left: calc( #{map-get($width_vars, width-column)} + #{map-get($width_vars, width-gutter)} );
-		//	@include width_var(margin-left, width-column-1);
+			margin-left: calc( #{map-get($grid, column)} + #{map-get($grid, gutter)} );
+		//	@include globalvar(margin-left, width-column-1);
 		}
 	}
 }
 
 .comment-author {
-	@include space_var(margin-bottom, space-xxs);
+	@include globalvar(margin-bottom, xxs);
 	display: flex;
 	align-items: center;
 
 	.avatar {
-		@include space-var( margin-right, space-sm );
+		@include globalvar( margin-right, sm);
 	}
 
 	cite {
-		@include space-var( padding-top, space-sm );
-		@include space-var( padding-bottom, space-sm );
-		@include typo_var( font-family, title_font );
-		@include typo_var( font-size, text_sm );
+		@include globalvar( padding-top, sm);
+		@include globalvar( padding-bottom, sm);
+		@include globalvar( font-family, heading);
+		@include globalvar( font-size, sm);
 		border-top: 1px solid grey;
-		@include color-var( border-top-color, color-border );
+		@include globalvar( border-top-color, border-base);
 		font-weight: 500;
 		font-style: normal;
 		letter-spacing: .125rem;
@@ -156,25 +156,25 @@
 
 		.avatar {
 			margin-left: 20px;
-			@include width-var( margin-right, width-gutter );
+			@include globalvar( margin-right, gutter );
 		}
 	}
 }
 
 .comment-meta {
-	@include typo_var(font-family, title_font);
-	@include typo_var(font-size, text_xs);
+	@include globalvar(font-family, heading);
+	@include globalvar(font-size, xs);
 	position: absolute;
 	left: calc( 60px + 1rem );
 	margin-top: -1.4rem;
 
 	a {
-		@include color_var( color, color-text-subtle );
+		@include globalvar( color, words-subtle );
 	}
 
 	@include media( tablet ) {
-		@include width_var(width, width-column-1);
-		left: calc( 100% + #{map-get($width_vars, width-gutter)} );
+		@include globalvar(width, column-1);
+		left: calc( 100% + #{map-get($grid, gutter)} );
 		margin-top: inherit;
 	}
 }

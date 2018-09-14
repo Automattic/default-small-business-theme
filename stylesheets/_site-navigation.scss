@@ -7,7 +7,7 @@
 
 	> div > ul {
 
-		@include typo_var(font-family, title_font);
+		@include globalvar(font-family, heading);
 		display: inline;
 		margin: 0;
 		padding: 0;
@@ -28,14 +28,14 @@
 				text-transform: uppercase;
 
 				&:hover {
-					@include color_var(color, color-primary-dark);
+					@include globalvar(color, primary-dark);
 				}
 			}
 
 			> a {
-				@include color_var(color, color-primary);
-				@include typo_var(font-size, text_xs);
-				@include space_var(padding, space-xs);
+				@include globalvar(color, primary-base);
+				@include globalvar(font-size, xs);
+				@include globalvar(padding, space-xs);
 				@include link-transition;
 				text-decoration: none;
 				font-weight: 400;
@@ -48,7 +48,7 @@
 	}
 
 	@include media( tablet ) {
-		@include block-space( space-sm, 0 );
+		@include block-space( sm, 0 );
 		display: inherit;
 	}
 }
@@ -62,14 +62,14 @@
 
 .post-navigation {
 
-	@include block-space( space-lg, 0 );
+	@include block-space( lg, 0 );
 	border-top: 1px solid green;
-	@include color-var( border-top-color, color-primary );
+	@include globalvar( border-top-color, primary-base );
 	border-bottom: 1px solid grey;
-	@include color-var( border-bottom-color, color-border );
+	@include globalvar( border-bottom-color, border-base);
 
 	&:last-child {
-		@include space_var(margin-bottom, 0);
+		@include globalvar(margin-bottom, 0);
 		border-bottom: none;
 	}
 
@@ -79,20 +79,20 @@
 		flex-direction: column;
 
 		.post-title {
-			@include typo_var( font-size, text_md );
+			@include globalvar( font-size, md);
 			font-weight: 300;
 			margin: 0;
 		}
 
 		.post-excerpt {
-			@include color_var( color, color-text );
-			@include block-space( space-xs, 0 );
+			@include globalvar( color, words-base );
+			@include block-space( xs, 0 );
 		}
 
 		a:hover {
 			text-decoration: none;
 			.post-excerpt {
-				@include color_var( color, color-text );
+				@include globalvar( color, words-base );
 				text-decoration: none;
 			}
 		}
@@ -103,7 +103,7 @@
 	}
 
 	@include media( tablet ) {
-		@include block-space( space-sm, 0 );
+		@include block-space( sm, 0 );
 		display: inherit;
 		.nav-links {
 			flex-direction: row;
@@ -111,8 +111,8 @@
 			align-content: center;
 
 			& > div {
-				@include block-space( space-lg, space-sm );
-				@include width_var( max-width, width-column-5 );
+				@include block-space( lg, sm );
+				@include globalvar( max-width, column-5);
 			}
 		}
 	}

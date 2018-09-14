@@ -5,15 +5,33 @@ $space: (
 
 	unit: 1.5rem,
 
-	xxs:  calc(0.25 * var(--block-space-unit)),
-	xs:   calc(0.5 * var(--block-space-unit)),
-	sm:   calc(0.75 * var(--block-space-unit)),
-	md:   calc(1.25 * var(--block-space-unit)),
-	lg:   calc(2 * var(--block-space-unit)),
-	xl:   calc(3.25 * var(--block-space-unit)),
-	xxl:  calc(5.25 * var(--block-space-unit)),
+	xxs:  calc(0.25 * var(--space-unit)),
+	xs:   calc(0.5 * var(--space-unit)),
+	sm:   calc(0.75 * var(--space-unit)),
+	md:   calc(1.25 * var(--space-unit)),
+	lg:   calc(2 * var(--space-unit)),
+	xl:   calc(3.25 * var(--space-unit)),
+	xxl:  calc(5.25 * var(--space-unit)),
 
  	// components padding
-	base: var(--block-space-sm),
+	base: var(--space-sm),
+
+	// columns (needs to sync with: grid.scss)
+	column: 80px,
+	gutter: 25px,
+	column-count: 12,
+
+	column-1: calc( 1 * ( var(--grid-column) + var(--grid-gutter) ) - var(--grid-gutter) ),
+	column-2: calc( 2 * ( var(--grid-column) + var(--grid-gutter) ) - var(--grid-gutter) ),
+	column-3: calc( 3 * ( var(--grid-column) + var(--grid-gutter) ) - var(--grid-gutter) ),
+	column-4: calc( 4 * ( var(--grid-column) + var(--grid-gutter) ) - var(--grid-gutter) ),
+	column-5: calc( 5 * ( var(--grid-column) + var(--grid-gutter) ) - var(--grid-gutter) ),
+	column-6: calc( 6 * ( var(--grid-column) + var(--grid-gutter) ) - var(--grid-gutter) ),
+	column-7: calc( 7 * ( var(--grid-column) + var(--grid-gutter) ) - var(--grid-gutter) ),
+	column-8: calc( 8 * ( var(--grid-column) + var(--grid-gutter) ) - var(--grid-gutter) ),
+	column-9: calc( 9 * ( var(--grid-column) + var(--grid-gutter) ) - var(--grid-gutter) ),
+	column-10: calc( 10 * ( var(--grid-column) + var(--grid-gutter) ) - var(--grid-gutter) ),
+	column-11: calc( 11 * ( var(--grid-column) + var(--grid-gutter) ) - var(--grid-gutter) ),
+	column-12: calc( 12 * ( var(--grid-column) + var(--grid-gutter) ) - var(--grid-gutter) ),
 
 );

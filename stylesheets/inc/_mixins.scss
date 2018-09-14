@@ -64,18 +64,27 @@ $wide_width: calc( 12 * ( 80px + 25px ) - 25px );
 	}
 }
 
-@mixin block-space( $v-space: space-sm, $h-space: space-sm ) {
-	@include space_var( margin-top, $v-space );
-	@include space_var( margin-bottom, $v-space );
-	@include space_var( margin-left, $h-space );
-	@include space_var( margin-right, $h-space );
+@mixin block-space( $v-space: sm, $h-space: sm ) {
+	@include globalvar( margin-top, $v-space );
+	@include globalvar( margin-bottom, $v-space );
+	@include globalvar( margin-left, $h-space );
+	@include globalvar( margin-right, $h-space );
 }
 
-@mixin block-padding( $v-space: space-sm, $h-space: space-sm ) {
-	@include space_var( padding-top, $v-space );
-	@include space_var( padding-bottom, $v-space );
-	@include space_var( padding-left, $h-space );
-	@include space_var( padding-right, $h-space );
+@mixin block-padding( $v-space: sm, $h-space: sm ) {
+	@include globalvar( padding-top, $v-space );
+	@include globalvar( padding-bottom, $v-space );
+	@include globalvar( padding-left, $h-space );
+	@include globalvar( padding-right, $h-space );
+}
+
+@mixin grid_column_width( $columns: 6 ) {
+	width: ( $columns * ( #{map-get($grid, width-column)} + #{map-get($grid, width-gutter)} ) - #{map-get($grid, width-gutter)} );
+}
+
+@mixin grid_column_width_margins( $columns: 6 ) {
+	//	width: calc( #{$width-column-2} - #{map-get($space_vars, space-sm)} - #{map-get($space_vars, space-sm)} );
+	width: calc( var(--width-column-#{$columns} ) - ( #{map-get($space, space-sm)} * 2 ) );
 }
 
 // Rounded Corners
