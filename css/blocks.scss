@@ -18,7 +18,7 @@
 .entry-content > * {
 
 	@include block-space;
-	max-width: calc( 100% - ( #{map-get($space, space-sm)} * 2 ) );
+	max-width: calc( 100% - ( #{map-get($space, sm)} * 2 ) );
 
 	&:first-child {
 		margin-top: 0;
@@ -37,8 +37,8 @@
 	margin-right: auto;
 
 	@include media( tablet ) {
-		@include globalvar(max-width, width-column-8);
-		@include globalvar(margin-right, width-column-1);
+		@include globalvar(max-width, column-8);
+		@include globalvar(margin-right, column-1);
 	}
 
 	@include media( wide ) {
@@ -57,14 +57,14 @@
 	max-width: 285px;
 
 	@include media( tablet ) {
-		@include globalvar( margin-left, width-column-4 );
+		@include globalvar( margin-left, column-4 );
 		@include globalvar( margin-right, sm);
-		margin-left: calc( 100vw - ( #{map-get($grid, width-column-8)} - #{map-get($grid, width-gutter)} ) );
-		max-width: #{map-get($grid, width-column-3)};
+		margin-left: calc( 100vw - ( #{map-get($grid, column-8)} - #{map-get($grid, gutter)} ) );
+		max-width: #{map-get($grid, column-3)};
 	}
 
 	@include media( wide ) {
-		margin-left: calc( #{map-get($grid, width-column-12)} - ( #{map-get($grid, width-column-8)} - #{map-get($grid, width-gutter)} ) );
+		margin-left: calc( #{map-get($grid, column-12)} - ( #{map-get($grid, column-8)} - #{map-get($grid, gutter)} ) );
 	}
 }
 
@@ -74,7 +74,7 @@
 
 	@include media( tablet ) {
 		@include globalvar( margin-left, sm);
-		max-width: #{map-get($grid, width-column-3)};
+		max-width: #{map-get($grid, column-3)};
 	}
 }
 
@@ -83,7 +83,7 @@
 .wp-block-button .wp-block-button__link{
 	@include globalvar(background-color, primary-base);
 	@include globalvar(color, shade-white);
-	@include globalvar(padding, space-xs);
+	@include globalvar(padding, xs);
 	@include globalvar(padding-left, sm);
 	@include globalvar(padding-right, sm);
 	@include globalvar(font-family, heading);
@@ -124,7 +124,7 @@
 	width: 285px;
 
 	@include media( tablet ) {
-		width: #{map-get($grid, width-column-3)};
+		width: #{map-get($grid, column-3)};
 	}
 }
 
@@ -176,7 +176,7 @@
 	max-width: 285px;
 
 	@include media( tablet ) {
-		max-width: #{map-get($grid, width-column-3)};
+		max-width: #{map-get($grid, column-3)};
 	}
 }
 
@@ -186,7 +186,7 @@
 .wp-block-cover-image .wp-block-cover-image-text,
 .wp-block-cover-image h2 {
 	font-weight: 400;
-	@include globalvar( padding, space-xs );
+	@include globalvar( padding, xs );
 	@include globalvar(font-family, body);
 	@include globalvar(line-height, heading);
 	letter-spacing: normal;
@@ -229,7 +229,7 @@
 	max-width: 285px;
 
 	@include media( tablet ) {
-		max-width: #{map-get($grid, width-column-3)};
+		max-width: #{map-get($grid, column-3)};
 	}
 }
 
@@ -244,7 +244,7 @@
 .wp-block-gallery .blocks-gallery-image figcaption,
 .wp-block-gallery .blocks-gallery-item figcaption {
 	@include globalvar(color, words-subtle);
-	@include block-padding( space-xxs, 0 );
+	@include block-padding( xxs, 0 );
 	@include globalvar(font-size, xs);
 	@include globalvar(font-family, heading);
 	text-align: left;
@@ -256,7 +256,7 @@
 .wp-block-image.alignfull figcaption,
 .wp-block-gallery.alignfull .blocks-gallery-image figcaption,
 .wp-block-gallery.alignfull .blocks-gallery-item figcaption {
-	@include block-padding( space-xs, sm);
+	@include block-padding( xs, sm);
 }
 
 // !Columns
@@ -270,20 +270,20 @@
 	}
 
 	&.has-2-columns .wp-block-column {
-		width: calc( 50% - ( #{map-get($grid, width-gutter)} * .5 ) );
+		width: calc( 50% - ( #{map-get($grid, gutter)} * .5 ) );
 	}
 
 	&.has-3-columns .wp-block-column {
-		width: calc( 33% - ( #{map-get($grid, width-gutter)} * .33 ) );
+		width: calc( 33% - ( #{map-get($grid, gutter)} * .33 ) );
 	}
 
 	&.has-4-columns .wp-block-column {
-		width: calc( 25% - ( #{map-get($grid, width-gutter)} * .25 ) );
+		width: calc( 25% - ( #{map-get($grid, gutter)} * .25 ) );
 	}
 
 	@include media( tablet ) {
-		@include globalvar(margin-right, width-column-1);
-		@include globalvar(max-width, width-column-7);
+		@include globalvar(margin-right, column-1);
+		@include globalvar(max-width, column-7);
 	}
 }
 
@@ -329,11 +329,11 @@ ul.wp-block-latest-posts {
 	overflow-x: auto;
 
 	tr:nth-child(even) {
-		@include globalvar(background-color, gray-1);
+		@include globalvar(background-color, shade-gray-1);
 	}
 
 	thead tr:nth-child(odd) {
-		@include globalvar(background-color, color-primary-bg);
+		@include globalvar(background-color, primary-bg);
 	}
 }
 
@@ -341,7 +341,7 @@ ul.wp-block-latest-posts {
 table.wp-block-table {
 
 	border-collapse: collapse;
-	max-width: calc( 100% - ( #{map-get($space, space-sm)} * 2 ) );
+	max-width: calc( 100% - ( #{map-get($space, sm)} * 2 ) );
 
 	@include media( tablet ) {
 		@include globalvar(max-width, column-6);
@@ -384,15 +384,15 @@ table.wp-block-table {
 .wp-block-quote.is-large,
 .wp-block-quote.is-style-large {
 
-	@include block-padding( space-sm, 0 );
-	@include globalvar( margin-top, space-lg );
-	@include globalvar( margin-bottom, space-lg );
+	@include block-padding( sm, 0 );
+	@include globalvar( margin-top, lg );
+	@include globalvar( margin-bottom, lg );
 	@include globalvar( margin-left, sm);
 	@include globalvar( margin-right, sm);
 	border-top: 1px solid green;
 
 	p {
-		@include block-padding( space-xs, 0 );
+		@include block-padding( xs, 0 );
 		@include globalvar(font-size, lg);
 		font-style: normal;
 	}
@@ -414,8 +414,8 @@ table.wp-block-table {
 
 .wp-block-pullquote {
 
-	@include globalvar(margin-top, space-lg);
-	@include globalvar(margin-bottom, space-lg);
+	@include globalvar(margin-top, lg);
+	@include globalvar(margin-bottom, lg);
 	text-align: inherit;
 	padding: 0;
 
@@ -439,8 +439,8 @@ table.wp-block-table {
 		& > cite {
 
 			@include media( tablet ) {
-				@include globalvar(padding-left, width-column-1);
-				@include globalvar(padding-right, width-column-1);
+				@include globalvar(padding-left, column-1);
+				@include globalvar(padding-right, column-1);
 			}
 		}
 	}
@@ -468,8 +468,8 @@ table.wp-block-table {
 // !Separators
 
 .wp-block-separator {
-	@include globalvar( margin-top, space-md );
-	@include globalvar( margin-bottom, space-md );
+	@include globalvar( margin-top, md );
+	@include globalvar( margin-bottom, md );
 	padding: 0;
 
 	&.is-style-dots {

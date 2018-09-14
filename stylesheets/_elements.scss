@@ -41,7 +41,7 @@ p {
 }
 
 hr {
-	@include globalvar( background-color, gray-3 );
+	@include globalvar( background-color, shade-gray-3 );
 	border: 0;
 	height: 1px;
 	margin-bottom: 1.5em;
@@ -55,7 +55,7 @@ acronym {
 }
 
 pre {
-	@include globalvar( background-color, gray-1);
+	@include globalvar( background-color, shade-gray-1);
 	@include globalvar( margin-bottom, sm );
 	max-width: 100%;
 	overflow: auto;
@@ -165,13 +165,13 @@ table {
 
 blockquote,
 blockquote.is-large {
-	@include block-padding( space-sm, 0 );
+	@include block-padding( sm, 0 );
 	margin-left: 0;
 	margin-right: 0;
 	border-top: 1px solid green;
 
 	p {
-		@include block-padding( space-xs, 0 );
+		@include block-padding( xs, 0 );
 	}
 
 	cite {

@@ -140,7 +140,7 @@
 
 .site-info {
 
-	@include globalvar(font-size, xs);
+	@include globalvar(font-size, sm);
 	@include globalvar(font-family, headings);
 	@include globalvar(padding, lg);
 	@include globalvar(padding-left, sm);

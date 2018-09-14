@@ -439,7 +439,7 @@ p {
   margin: 0; }
 
 hr {
-  background-color: var(--color-gray-3);
+  background-color: var(--color-shade-gray-3);
   border: 0;
   height: 1px;
   margin-bottom: 1.5em; }
@@ -451,7 +451,7 @@ acronym {
   cursor: help; }
 
 pre {
-  background-color: var(--color-gray-1);
+  background-color: var(--color-shade-gray-1);
   margin-bottom: calc(0.75 * var(--space-unit));
   margin-bottom: var(--space-sm);
   max-width: 100%;
@@ -549,8 +549,10 @@ table {
 
 blockquote,
 blockquote.is-large {
-  padding-top: var(--space-space-sm);
-  padding-bottom: var(--space-space-sm);
+  padding-top: calc(0.75 * var(--space-unit));
+  padding-top: var(--space-sm);
+  padding-bottom: calc(0.75 * var(--space-unit));
+  padding-bottom: var(--space-sm);
   padding-left: var(--space-0);
   padding-right: var(--space-0);
   margin-left: 0;
@@ -558,8 +560,10 @@ blockquote.is-large {
   border-top: 1px solid green; }
   blockquote p,
   blockquote.is-large p {
-    padding-top: var(--space-space-xs);
-    padding-bottom: var(--space-space-xs);
+    padding-top: calc(0.5 * var(--space-unit));
+    padding-top: var(--space-xs);
+    padding-bottom: calc(0.5 * var(--space-unit));
+    padding-bottom: var(--space-xs);
     padding-left: var(--space-0);
     padding-right: var(--space-0); }
   blockquote cite,
@@ -828,8 +832,8 @@ textarea {
   background-color: var(--color-primary-base); }
 
 .site-info {
-  font-size: calc(1em / (var(--font-size-ratio) * var(--font-size-ratio)));
-  font-size: var(--font-size-xs);
+  font-size: calc(1em / var(--font-size-ratio));
+  font-size: var(--font-size-sm);
   font-family: var(--font-family-headings);
   padding: calc(2 * var(--space-unit));
   padding: var(--space-lg);
@@ -879,7 +883,8 @@ textarea {
         color: var(--color-primary-base);
         font-size: calc(1em / (var(--font-size-ratio) * var(--font-size-ratio)));
         font-size: var(--font-size-xs);
-        padding: var(--space-space-xs);
+        padding: calc(0.5 * var(--space-unit));
+        padding: var(--space-xs);
         transition: color 110ms ease-in-out;
         text-decoration: none;
         font-weight: 400; }
@@ -1373,7 +1378,7 @@ object {
       font-weight: 600; }
     @media only screen and (min-width: calc( 8 * ( 80px + 25px ) - 25px)) {
       .hentry .entry-meta {
-        width: calc( var(--width-column-2 ) - (  * 2 ));
+        width: calc( var(--width-column-2 ) - ( calc(0.75 * var(--space-unit)) * 2 ));
         flex-direction: column;
         justify-content: inherit; } }
   .hentry .entry-footer .entry-meta {

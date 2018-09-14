@@ -79,12 +79,12 @@ $wide_width: calc( 12 * ( 80px + 25px ) - 25px );
 }
 
 @mixin grid_column_width( $columns: 6 ) {
-	width: ( $columns * ( #{map-get($grid, width-column)} + #{map-get($grid, width-gutter)} ) - #{map-get($grid, width-gutter)} );
+	width: ( $columns * ( #{map-get($grid, column)} + #{map-get($grid, gutter)} ) - #{map-get($grid, gutter)} );
 }
 
 @mixin grid_column_width_margins( $columns: 6 ) {
-	//	width: calc( #{$width-column-2} - #{map-get($space_vars, space-sm)} - #{map-get($space_vars, space-sm)} );
-	width: calc( var(--width-column-#{$columns} ) - ( #{map-get($space, space-sm)} * 2 ) );
+	//	width: calc( #{$width-column-2} - #{map-get($space_vars, sm)} - #{map-get($space_vars, sm)} );
+	width: calc( var(--width-column-#{$columns} ) - ( #{map-get($space, sm)} * 2 ) );
 }
 
 // Rounded Corners

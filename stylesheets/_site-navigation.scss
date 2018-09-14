@@ -35,7 +35,7 @@
 			> a {
 				@include globalvar(color, primary-base);
 				@include globalvar(font-size, xs);
-				@include globalvar(padding, space-xs);
+				@include globalvar(padding, xs);
 				@include link-transition;
 				text-decoration: none;
 				font-weight: 400;
