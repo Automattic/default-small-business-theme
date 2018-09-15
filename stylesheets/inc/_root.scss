@@ -1,6 +1,7 @@
-// Custom Sass functions.
 
-// setup the css4 variable definitions
+// Root variables
+
+// Print the css4 variable definitions
 :root {
 	// for each variable map
 	@each $var-map-name, $var-map in $var-maps {

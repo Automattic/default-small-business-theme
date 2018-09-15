@@ -24,9 +24,10 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 @import "bourbon";
 
 // !Root CSS variables.
-@import "stylesheets/variables/root";
+@import "stylesheets/variables/base";
 
 // !Includes.
+@import "stylesheets/inc/root";
 @import "stylesheets/inc/animations";
 @import "stylesheets/inc/mixins";
 @import "stylesheets/inc/functions";

@@ -106,10 +106,6 @@
 
 			justify-content: space-between;
 
-			a:link {
-				@include globalvar(color, words-subtle);
-			}
-
 			a:hover {
 				@include globalvar(color, secondary-base);
 			}

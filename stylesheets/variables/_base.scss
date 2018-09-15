@@ -88,34 +88,11 @@ $props: (
 	#{$prop}: $var-output;
 }
 
-// setup the css4 variable definitions
-:root {
-	// for each variable map
-	@each $var-map-name, $var-map in $var-maps {
-		// for each variable in the variable map
-		@each $var, $val in $var-map {
-			// if it is a map, go another level deep
-			@if type-of($val) == map {
-				// each in the map
-				@each $var-n, $val-n in $val {
-					// do the definition
-					$prop: --#{$var-map-name}-#{$var}-#{$var-n};
-					#{$prop}: $val-n;
-				}
-			} @else {
-				// do the definition
-				$prop: --#{$var-map-name}-#{$var};
-				#{$prop}: $val;
-			}
-		}
-	}
-}
-
 // using it is magical
 
 /*
 body {
-  @include globalvar(font-size, body);
+  @include globalvar(font-size, base);
   @include globalvar(font-family, body);
   @include globalvar(line-height, body);
   @include globalvar(background-color, background);

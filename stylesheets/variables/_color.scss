@@ -1,20 +1,24 @@
 
 // Color Palette
 
+// The only two colors that matter ;-)
+$primary-color:   #008000;
+$secondary-color: #f5414f;
+
 $color: (
 
 	primary: (
-		base: #008000,
-		light: tint( #008000, 20% ), // 'color-mod( var(--color-primary) tint('15%') )',
-		dark: shade( #008000, 20% ), // 'color-mod( var(--color-primary) shade('15%') )',
-		bg: tint( #008000, 80% ), // 'color-mod( var(--color-primary) alpha('20%') )',
+		base: $primary-color,
+		light: tint( $primary-color, 20% ), // 'color-mod( var(--color-primary) tint('15%') )',
+		dark: shade( $primary-color, 20% ), // 'color-mod( var(--color-primary) shade('15%') )',
+		bg: tint( $primary-color, 80% ), // 'color-mod( var(--color-primary) alpha('20%') )',
 	),
 
 	secondary: (
-		base: #f5414f,
-		light: tint( #f5414f, 20% ), // 'color-mod( var(--color-primary) tint('15%') )',
-		dark: shade( #f5414f, 20% ), // 'color-mod( var(--color-primary) shade('10%') )',
-		bg: tint( #f5414f, 80% ), // 'color-mod( var(--color-primary) alpha('20%') )',
+		base: $secondary-color,
+		light: tint( $secondary-color, 20% ), // 'color-mod( var(--color-primary) tint('15%') )',
+		dark: shade( $secondary-color, 20% ), // 'color-mod( var(--color-primary) shade('10%') )',
+		bg: tint( $secondary-color, 80% ), // 'color-mod( var(--color-primary) alpha('20%') )',
 	),
 
 	// shades - generated using chroma.js - 12 steps

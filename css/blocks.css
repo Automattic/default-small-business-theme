@@ -3,6 +3,30 @@
  * CSS4 Variables with Fallbacks Using Sass
  * src: https://codepen.io/jakealbaugh/post/css4-variables-with-fallbacks-using-sass
  */
+/*
+body {
+  @include globalvar(font-size, base);
+  @include globalvar(font-family, body);
+  @include globalvar(line-height, body);
+  @include globalvar(background-color, background);
+
+  // color it red if no CSS4 variables
+  color: red;
+  // override "show standard" with "null" which means no CSS4 support will still be red
+  // if we didn't do this, it would create the fallback.
+  @include globalvar(color, text, null);
+}
+
+h1, h2, h3, h4 {
+  @include globalvar(line-height, heading);
+  @include globalvar(font-family, heading);
+}
+
+h1 { @include globalvar(font-size, h1); }
+h2 { @include globalvar(font-size, h2); }
+h3 { @include globalvar(font-size, h3); }
+h4 { @include globalvar(font-size, h4); }
+*/
 :root {
   --space-unit: 1.5rem;
   --space-xxs: calc(0.25 * var(--space-unit));
@@ -48,7 +72,6 @@
   --font-family-code: Menlo, monaco, Consolas, Lucida Console, monospace;
   --font-size-base: 18px;
   --font-size-ratio: 1.2;
-  --font-size-body: 18px;
   --font-size-xxs: calc(1em / (var(--font-size-ratio) * var(--font-size-ratio) * var(--font-size-ratio)));
   --font-size-xs: calc(1em / (var(--font-size-ratio) * var(--font-size-ratio)));
   --font-size-sm: calc(1em / var(--font-size-ratio));
@@ -99,30 +122,6 @@
   --color-button-secondary-active: var(--color-secondary-dark);
   --color-button-secondary-label: var(--color-white); }
 
-/*
-body {
-  @include globalvar(font-size, body);
-  @include globalvar(font-family, body);
-  @include globalvar(line-height, body);
-  @include globalvar(background-color, background);
-
-  // color it red if no CSS4 variables
-  color: red;
-  // override "show standard" with "null" which means no CSS4 support will still be red
-  // if we didn't do this, it would create the fallback.
-  @include globalvar(color, text, null);
-}
-
-h1, h2, h3, h4 {
-  @include globalvar(line-height, heading);
-  @include globalvar(font-family, heading);
-}
-
-h1 { @include globalvar(font-size, h1); }
-h2 { @include globalvar(font-size, h2); }
-h3 { @include globalvar(font-size, h3); }
-h4 { @include globalvar(font-size, h4); }
-*/
 .entry-content > * {
   margin-top: calc(0.75 * var(--space-unit));
   margin-top: var(--space-sm);

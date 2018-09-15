@@ -151,7 +151,7 @@
 		color: inherit;
 		&:hover {
 			text-decoration: none;
-			@include globalvar(color, primary-base);
+			@include globalvar(color, primary-bg);
 		}
 	}
 
