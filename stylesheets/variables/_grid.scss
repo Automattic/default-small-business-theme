@@ -1,12 +1,17 @@
 
 // !Widths (grid-based)
 
+$grid-column: 80px;
+$grid-gutter: 25px;
+$grid-column-count: 12;
+
 $grid: (
 
-	column: 80px,
-	gutter: 25px,
-	column-count: 12,
+	column: $grid-column,
+	gutter: $grid-gutter,
+	column-count: $grid-column-count,
 
+	// This should be foreach loop so it can be repeated more easily in _space.scss
 	column-1: calc( 1 * ( var(--grid-column) + var(--grid-gutter) ) - var(--grid-gutter) ),
 	column-2: calc( 2 * ( var(--grid-column) + var(--grid-gutter) ) - var(--grid-gutter) ),
 	column-3: calc( 3 * ( var(--grid-column) + var(--grid-gutter) ) - var(--grid-gutter) ),
@@ -21,3 +26,12 @@ $grid: (
 	column-12: calc( 12 * ( var(--grid-column) + var(--grid-gutter) ) - var(--grid-gutter) ),
 
 );
+
+// https://bamboolab.eu/blog/improve-your-development-with-powerful-sass-lists-and-maps
+// @function list_grid_column_counts( $count: $grid-column-count ) {
+//	@for $i from 1 through $grid-column-count {
+//		$new-column: unquote( 'column-#{$i}: 12' ); // unquote( 'column-#{$i}: calc( #{$i} * ( var(--grid-column) + var(--grid-gutter) ) - var(--grid-gutter) )' );
+//		$grid: append( $grid, $new-column, 'comma' );
+//	}
+//	@return $result;
+// }
