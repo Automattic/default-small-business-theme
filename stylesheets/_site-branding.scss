@@ -19,10 +19,10 @@
 .site-branding {
 
 	@include globalvar(color, words-subtle);
-	@include block-space( sm, 0 );
+	@include block-margin( sm, 0 );
 
 	& > * {
-		@include block-space( 0, sm );
+		@include block-margin( 0, sm );
 	}
 
 	@include media( tablet ) {
@@ -54,15 +54,15 @@
 		}
 
 		@include media( tablet ) {
-			@include block-space( 0, 0 );
+			@include block-margin( 0, 0 );
 			&:first-child {
-				@include block-space( 0, sm );
+				@include block-margin( 0, sm );
 			}
 		}
 	}
 
 	.site-description {
-		@include block-space( 0, sm );
+		@include block-margin( 0, sm );
 		@include globalvar(font-size, base);
 		@include globalvar(color, words-subtle);
 		font-weight: normal;

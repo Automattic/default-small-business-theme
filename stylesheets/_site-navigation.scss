@@ -48,7 +48,7 @@
 	}
 
 	@include media( tablet ) {
-		@include block-space( sm, 0 );
+		@include block-margin( sm, 0 );
 		display: inherit;
 	}
 }
@@ -62,7 +62,7 @@
 
 .post-navigation {
 
-	@include block-space( lg, 0 );
+	@include block-margin( lg, 0 );
 	border-top: 1px solid green;
 	@include globalvar( border-top-color, primary-base );
 	border-bottom: 1px solid grey;
@@ -86,7 +86,7 @@
 
 		.post-excerpt {
 			@include globalvar( color, words-base );
-			@include block-space( xs, 0 );
+			@include block-margin( xs, 0 );
 		}
 
 		a:hover {
@@ -98,12 +98,12 @@
 		}
 
 		& > div {
-			@include block-space();
+			@include block-margin();
 		}
 	}
 
 	@include media( tablet ) {
-		@include block-space( sm, 0 );
+		@include block-margin( sm, 0 );
 		display: inherit;
 		.nav-links {
 			flex-direction: row;
@@ -111,7 +111,7 @@
 			align-content: center;
 
 			& > div {
-				@include block-space( lg, sm );
+				@include block-margin( lg, sm );
 				@include globalvar( max-width, column-5);
 			}
 		}

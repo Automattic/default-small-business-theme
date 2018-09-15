@@ -1,5 +1,5 @@
 
-// Spacing
+// !Spacing
 
 $space: (
 
@@ -13,10 +13,10 @@ $space: (
 	xl:   calc(3.25 * var(--space-unit)),
 	xxl:  calc(5.25 * var(--space-unit)),
 
- 	// components padding
+ 	// !components padding
 	base: var(--space-sm),
 
-	// columns (needs to sync with: grid.scss)
+	// !columns (needs to sync with: grid.scss)
 	column: 80px,
 	gutter: 25px,
 	column-count: 12,

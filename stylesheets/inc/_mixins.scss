@@ -64,7 +64,7 @@ $wide_width: calc( 12 * ( 80px + 25px ) - 25px );
 	}
 }
 
-@mixin block-space( $v-space: sm, $h-space: sm ) {
+@mixin block-margin( $v-space: sm, $h-space: sm ) {
 	@include globalvar( margin-top, $v-space );
 	@include globalvar( margin-bottom, $v-space );
 	@include globalvar( margin-left, $h-space );

@@ -172,6 +172,7 @@ blockquote.is-large {
 
 	p {
 		@include block-padding( xs, 0 );
+		word-break: break-word;
 	}
 
 	cite {

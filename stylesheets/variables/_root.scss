@@ -17,32 +17,32 @@ $var-maps: (
 );
 
 // which property uses which var map
-// you would edit this for each property you want to use variables for
+// edit this for each property you want to use variables for
 $props: (
-  font-family:         (font, family),
-  font-size:           (font, size),
-  line-height:         (font, leading),
-  background-color:    color,
-  color:               color, // (color, (primary, secondary, shade)),
-  border-color:        color,
-  border-top-color:    color,
-  border-right-color:  color,
-  border-bottom-color: color,
-  border-left-color:   color,
-  fill:                color,
-  margin:              space,
-  margin-top:          space,
-  margin-right:        space,
-  margin-bottom:       space,
-  margin-left:         space,
-  padding:             space,
-  padding-top:         space,
-  padding-right:       space,
-  padding-bottom:      space,
-  padding-left:        space,
-  width:               grid,
-  max-width:           grid,
-  min-width:           grid,
+	font-family:         (font, family),
+	font-size:           (font, size),
+	line-height:         (font, leading),
+	background-color:    color,
+	color:               color, // (color, (primary, secondary, shade)),
+	border-color:        color,
+	border-top-color:    color,
+	border-right-color:  color,
+	border-bottom-color: color,
+	border-left-color:   color,
+	fill:                color,
+	margin:              space,
+	margin-top:          space,
+	margin-right:        space,
+	margin-bottom:       space,
+	margin-left:         space,
+	padding:             space,
+	padding-top:         space,
+	padding-right:       space,
+	padding-bottom:      space,
+	padding-left:        space,
+	width:               grid,
+	max-width:           grid,
+	min-width:           grid,
 );
 
 // the variable mixin takes a property and variable name
@@ -90,27 +90,25 @@ $props: (
 
 // setup the css4 variable definitions
 :root {
-  // for each variable map
-  @each $var-map-name, $var-map in $var-maps {
-    // for each variable in the variable map
-    @each $var, $val in $var-map {
-      // if it is a map, go another level deep
-      @if type-of($val) == map {
-        // each in the map
-        @each $var-n, $val-n in $val {
-          // do the definition
-          // #{--$var-map-name}-#{$var}-#{$var-n}: $val-n;
-          $prop: --#{$var-map-name}-#{$var}-#{$var-n};
-		  #{$prop}: $val-n;
-        }
-      } @else {
-        // do the definition
-        // #{--$var-map-name}-#{$var}: $val;
-        $prop: --#{$var-map-name}-#{$var};
-		#{$prop}: $val;
-      }
-    }
-  }
+	// for each variable map
+	@each $var-map-name, $var-map in $var-maps {
+		// for each variable in the variable map
+		@each $var, $val in $var-map {
+			// if it is a map, go another level deep
+			@if type-of($val) == map {
+				// each in the map
+				@each $var-n, $val-n in $val {
+					// do the definition
+					$prop: --#{$var-map-name}-#{$var}-#{$var-n};
+					#{$prop}: $val-n;
+				}
+			} @else {
+				// do the definition
+				$prop: --#{$var-map-name}-#{$var};
+				#{$prop}: $val;
+			}
+		}
+	}
 }
 
 // using it is magical

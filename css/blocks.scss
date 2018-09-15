@@ -8,16 +8,15 @@
 @import "../stylesheets/variables/root";
 
 // Includes.
+@import "../stylesheets/inc/animations";
 @import "../stylesheets/inc/mixins";
-@import "../stylesheets/inc/variables";
-@import "../stylesheets/inc/grid";
 @import "../stylesheets/inc/functions";
 
 // !Block sizing & positioning
 
 .entry-content > * {
 
-	@include block-space;
+	@include block-margin();
 	max-width: calc( 100% - ( #{map-get($space, sm)} * 2 ) );
 
 	&:first-child {

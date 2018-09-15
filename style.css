@@ -144,24 +144,6 @@ h2 { @include globalvar(font-size, h2); }
 h3 { @include globalvar(font-size, h3); }
 h4 { @include globalvar(font-size, h4); }
 */
-/*
-// Here's where we use the grid mixins
-
-.container {
-
-	@include grid;
-	grid-auto-rows: 120px;
-
-	@media only screen and (min-width: 600px) {
-		@include gridLayout(
-			(7, 2),
-			(5, 1),
-			(5, 1),
-			(12, 1)
-		);
-	}
-}
-*/
 /*! normalize.css v8.0.0 | MIT License | github.com/necolas/normalize.css */
 html {
   -webkit-text-size-adjust: 100%; }
@@ -565,7 +547,8 @@ blockquote.is-large {
     padding-bottom: calc(0.5 * var(--space-unit));
     padding-bottom: var(--space-xs);
     padding-left: var(--space-0);
-    padding-right: var(--space-0); }
+    padding-right: var(--space-0);
+    word-break: break-word; }
   blockquote cite,
   blockquote.is-large cite {
     color: var(--color-words-subtle); }
@@ -645,7 +628,7 @@ input[type="datetime-local"],
 input[type="color"],
 textarea {
   border: 1px solid gray;
-  border-color: var(--color-form-element-border); }
+  border-color: var(--color-border-form); }
 
 input[type="text"]:focus,
 input[type="email"]:focus,
@@ -664,7 +647,7 @@ input[type="datetime-local"]:focus,
 input[type="color"]:focus,
 textarea:focus {
   border: 1px solid gray;
-  border-color: var(--color-form-element-border-focus); }
+  border-color: var(--color-border-form-focus); }
 
 textarea {
   width: 100%; }

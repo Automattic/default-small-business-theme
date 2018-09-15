@@ -20,19 +20,18 @@ Normalizing styles have been helped along thanks to the fine work of
 Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 */
 
-// External.
+// !External.
 @import "bourbon";
 
-// Root CSS variables.
+// !Root CSS variables.
 @import "stylesheets/variables/root";
 
-// Includes.
+// !Includes.
+@import "stylesheets/inc/animations";
 @import "stylesheets/inc/mixins";
-@import "stylesheets/inc/variables";
-@import "stylesheets/inc/grid";
 @import "stylesheets/inc/functions";
 
-// Stylesheets.
+// !Stylesheets.
 @import "stylesheets/normalize";
 @import "stylesheets/typography";
 @import "stylesheets/elements";

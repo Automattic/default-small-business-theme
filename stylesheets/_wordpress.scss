@@ -24,7 +24,7 @@
 
 .comments-area {
 
-	@include block-space( lg, 0 );
+	@include block-margin( lg, 0 );
 
 	@include media( tablet ) {
 		@include globalvar(max-width, column-12);
@@ -39,14 +39,14 @@
 }
 
 .comments-title {
-	@include block-space( sm, 0 );
+	@include block-margin( sm, 0 );
 	flex: 1 1 auto;
 	@include globalvar(max-width, column-4);
 	//width: 100%;
 }
 
 .comment-respond {
-	@include block-space;
+	@include block-margin();
 
 	@include media( tablet ) {
 		@include globalvar(max-width, column-6);
@@ -62,7 +62,7 @@
 .comment-list {
 
 	list-style: none;
-	@include block-space;
+	@include block-margin();
 
 	li {
 		padding-left: inherit;
@@ -75,7 +75,7 @@
 
 	.comment {
 		list-style: none;
-		@include block-space( md, 0 );
+		@include block-margin( md, 0 );
 	}
 
 	.comment-content {
@@ -94,7 +94,7 @@
 
 	@include media( tablet ) {
 		@include globalvar(max-width, column-7);
-		@include block-space( sm, 0 );
+		@include block-margin( sm, 0 );
 		@include globalvar(margin-right, column-2);
 	}
 }
@@ -106,14 +106,14 @@
 	min-height: 9rem;
 
 	> * {
-		@include block-space( sm, 0 );
+		@include block-margin( sm, 0 );
 		&:first-of-type {
 			margin-top: 0;
 		}
 	}
 
 	.reply {
-		@include block-space( sm, 0 );
+		@include block-margin( sm, 0 );
 		@include globalvar(font-family, heading);
 		@include globalvar(font-size, xs);
 		text-transform: uppercase;

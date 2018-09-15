@@ -3,7 +3,7 @@
 
 .hentry {
 
-	@include block-space( lg, 0 );
+	@include block-margin( lg, 0 );
 
 	&:first-of-type {
 		margin-top: 0;
@@ -25,7 +25,7 @@
 	}
 
 	.entry-title {
-		@include block-space();
+		@include block-margin();
 		@include globalvar(color, primary-base);
 		@include globalvar(font-family, heading);
 		@include globalvar(font-size, xl);
@@ -44,7 +44,7 @@
 		}
 
 		@include media( tablet ) {
-			@include block-space( sm, 0 );
+			@include block-margin( sm, 0 );
 			@include globalvar(max-width, column-6);
 			width: 100%;
 
@@ -59,7 +59,7 @@
 
 	.entry-meta {
 
-		@include block-space;
+		@include block-margin();
 		@include globalvar(color, words-subtle);
 		@include globalvar(font-size, xs);
 		@include globalvar(font-family, heading);
