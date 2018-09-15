@@ -3,18 +3,17 @@
 
 .main-navigation {
 
-	display: none;
-
 	> div > ul {
 
 		@include globalvar(font-family, heading);
-		display: inline;
+		display: none;
 		margin: 0;
 		padding: 0;
 
-		> li {
+		li {
 			display: inline-block;
 			list-style: none;
+			padding-left: 0;
 
 			&:before {
 				content: "";
@@ -22,9 +21,14 @@
 			}
 
 			> a {
+				@include globalvar(color, primary-base);
+				@include globalvar(font-size, xs);
+				@include globalvar(padding, xs);
 				@include link-transition;
-				font-weight: 200;
+				display: block;
+				font-weight: 400;
 				letter-spacing: .125em;
+				text-decoration: none;
 				text-transform: uppercase;
 
 				&:hover {
@@ -32,24 +36,93 @@
 				}
 			}
 
-			> a {
-				@include globalvar(color, primary-base);
-				@include globalvar(font-size, xs);
-				@include globalvar(padding, xs);
-				@include link-transition;
-				text-decoration: none;
-				font-weight: 400;
+			ul li a:before {
+				content: "\2014\00a0";
 			}
 		}
 	}
 
-	ul.sub-menu {
-		display: none;
+	&.toggled > div > ul {
+		display: block;
 	}
 
 	@include media( tablet ) {
+
 		@include block-margin( sm, 0 );
-		display: inherit;
+		display: block;
+		width: 100%;
+
+		> div > ul {
+
+			display: block;
+
+			ul {
+				@include globalvar(background-color, shade-white);
+				float: left;
+				position: absolute;
+				left: -999em;
+				z-index: 99999;
+				-webkit-transition: opacity 0.5s ease-in-out;
+				-moz-transition:    opacity 0.5s ease-in-out;
+				transition:         opacity 0.5s ease-in-out;
+
+				li {
+					display: block;
+					clear: both;
+					float: none;
+				}
+
+				a {
+					display: block;
+					width: 100%;
+				}
+			}
+
+			li.menu-item-has-children {
+				@include globalvar(padding-right, md);
+				position: relative;
+
+				button {
+					@include globalvar(background-color, 0);
+					@include globalvar(color, primary-base);
+					@include globalvar(padding-top, xs);
+					@include globalvar(padding-right, xs);
+					@include globalvar(padding-bottom, xs);
+					@include globalvar(padding-left, 0);
+					line-height: #{map-get($space, xs)};
+					border: none;
+					box-shadow: inherit;
+					position: absolute;
+					right: 0;
+					top: 0;
+					vertical-align: middle;
+					span {
+						display: inline-block;
+						height: 20px;
+						overflow: hidden;
+					}
+				}
+
+				&#more-menu button {
+					left: inherit;
+					position: relative;
+					right: inherit;
+				}
+			}
+
+			li.toggled-on > ul {
+				@include globalvar(width, column-3);
+				left: inherit;
+				right: 0;
+				width: 150%;
+				opacity: 1;
+
+				> li.toggled-on > ul {
+					position: relative;
+					width: 100%;
+				}
+			}
+		}
 	}
 }
 
