@@ -230,3 +230,11 @@ require get_template_directory() . '/inc/customizer.php';
 if ( defined( 'JETPACK__VERSION' ) ) {
 	require get_template_directory() . '/inc/jetpack.php';
 }
+
+/**
+ * Enqueue Gutenberg editor styles
+ */
+function smallbusinesstheme_editor_styles() {
+	wp_enqueue_style( 'smallbusinesstheme-blocks-style', get_template_directory_uri() . '/editor.css');
+}
+add_action( 'enqueue_block_editor_assets', 'smallbusinesstheme_editor_styles' );
