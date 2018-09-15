@@ -1039,9 +1039,13 @@ textarea {
           position: relative;
           width: 100%; } }
 
-@media only screen and (min-width: calc( 8 * ( 80px + 25px ) - 25px)) {
-  .menu-toggle {
-    display: none; } }
+.menu-toggle {
+  position: fixed;
+  bottom: 0;
+  right: 0; }
+  @media only screen and (min-width: calc( 8 * ( 80px + 25px ) - 25px)) {
+    .menu-toggle {
+      display: none; } }
 
 .post-navigation {
   margin-top: calc(2 * var(--space-unit));
