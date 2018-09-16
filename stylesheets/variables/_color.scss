@@ -2,7 +2,7 @@
 // Color Palette
 
 // The only two colors that matter ;-)
-$primary-color:   teal; // #008000;
+$primary-color:   purple; // #008000;
 $secondary-color: #f5414f;
 
 $color: (
@@ -56,8 +56,9 @@ $color: (
 	// border
 	border: (
 		base: var(--color-shade-gray-2),
+		primary: var(--color-primary-base),
 		form: var(--color-border-base),
-		form-focus: var(--color-primary),
+		form-focus: var(--color-primary-base),
 		form-error: var(--color-error),
 		form-bg: var(--color-white),
 		form-placeholder: var(--color-shade-gray-4),

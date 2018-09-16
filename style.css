@@ -24,6 +24,7 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
  * CSS4 Variables with Fallbacks Using Sass
  * src: https://codepen.io/jakealbaugh/post/css4-variables-with-fallbacks-using-sass
  */
+@import url(https://fonts.googleapis.com/css?family=Space+Mono);
 /*
 body {
   @include globalvar(font-size, base);
@@ -88,8 +89,8 @@ h4 { @include globalvar(font-size, h4); }
   --grid-column-10: calc( 10 * ( var(--grid-column) + var(--grid-gutter) ) - var(--grid-gutter));
   --grid-column-11: calc( 11 * ( var(--grid-column) + var(--grid-gutter) ) - var(--grid-gutter));
   --grid-column-12: calc( 12 * ( var(--grid-column) + var(--grid-gutter) ) - var(--grid-gutter));
-  --font-family-body: Baskerville, Baskerville Old Face, Hoefler Text, Garamond, Times New Roman, serif;
-  --font-family-heading: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+  --font-family-body: Space Mono, sans;
+  --font-family-heading: Space Mono, sans;
   --font-family-code: Menlo, monaco, Consolas, Lucida Console, monospace;
   --font-size-base: 18px;
   --font-size-ratio: 1.2;
@@ -103,10 +104,10 @@ h4 { @include globalvar(font-size, h4); }
   --font-size-xxxl: calc(1em * var(--font-size-ratio) * var(--font-size-ratio) * var(--font-size-ratio) * var(--font-size-ratio) * var(--font-size-ratio));
   --font-leading-body: 1.4;
   --font-leading-heading: 1.2;
-  --color-primary-base: teal;
-  --color-primary-light: #339999;
-  --color-primary-dark: #006666;
-  --color-primary-bg: #cce6e6;
+  --color-primary-base: purple;
+  --color-primary-light: #993399;
+  --color-primary-dark: #660066;
+  --color-primary-bg: #e6cce6;
   --color-secondary-base: #f5414f;
   --color-secondary-light: #f76772;
   --color-secondary-dark: #c4343f;
@@ -128,8 +129,9 @@ h4 { @include globalvar(font-size, h4); }
   --color-link-base: var(--color-primary);
   --color-link-hover: var(--color-primary-dark);
   --color-border-base: var(--color-shade-gray-2);
+  --color-border-primary: var(--color-primary-base);
   --color-border-form: var(--color-border-base);
-  --color-border-form-focus: var(--color-primary);
+  --color-border-form-focus: var(--color-primary-base);
   --color-border-form-error: var(--color-error);
   --color-border-form-bg: var(--color-white);
   --color-border-form-placeholder: var(--color-shade-gray-4);
@@ -183,8 +185,8 @@ h4 { @include globalvar(font-size, h4); }
   --grid-column-10: calc( 10 * ( var(--grid-column) + var(--grid-gutter) ) - var(--grid-gutter));
   --grid-column-11: calc( 11 * ( var(--grid-column) + var(--grid-gutter) ) - var(--grid-gutter));
   --grid-column-12: calc( 12 * ( var(--grid-column) + var(--grid-gutter) ) - var(--grid-gutter));
-  --font-family-body: Baskerville, Baskerville Old Face, Hoefler Text, Garamond, Times New Roman, serif;
-  --font-family-heading: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+  --font-family-body: Space Mono, sans;
+  --font-family-heading: Space Mono, sans;
   --font-family-code: Menlo, monaco, Consolas, Lucida Console, monospace;
   --font-size-base: 18px;
   --font-size-ratio: 1.2;
@@ -198,10 +200,10 @@ h4 { @include globalvar(font-size, h4); }
   --font-size-xxxl: calc(1em * var(--font-size-ratio) * var(--font-size-ratio) * var(--font-size-ratio) * var(--font-size-ratio) * var(--font-size-ratio));
   --font-leading-body: 1.4;
   --font-leading-heading: 1.2;
-  --color-primary-base: teal;
-  --color-primary-light: #339999;
-  --color-primary-dark: #006666;
-  --color-primary-bg: #cce6e6;
+  --color-primary-base: purple;
+  --color-primary-light: #993399;
+  --color-primary-dark: #660066;
+  --color-primary-bg: #e6cce6;
   --color-secondary-base: #f5414f;
   --color-secondary-light: #f76772;
   --color-secondary-dark: #c4343f;
@@ -223,8 +225,9 @@ h4 { @include globalvar(font-size, h4); }
   --color-link-base: var(--color-primary);
   --color-link-hover: var(--color-primary-dark);
   --color-border-base: var(--color-shade-gray-2);
+  --color-border-primary: var(--color-primary-base);
   --color-border-form: var(--color-border-base);
-  --color-border-form-focus: var(--color-primary);
+  --color-border-form-focus: var(--color-primary-base);
   --color-border-form-error: var(--color-error);
   --color-border-form-bg: var(--color-white);
   --color-border-form-placeholder: var(--color-shade-gray-4);
@@ -347,7 +350,7 @@ input,
 select,
 optgroup,
 textarea {
-  font-family: Baskerville, Baskerville Old Face, Hoefler Text, Garamond, Times New Roman, serif;
+  font-family: Space Mono, sans;
   font-family: var(--font-family-body);
   font-size: 18px;
   font-size: var(--font-size-base);
@@ -367,20 +370,20 @@ h1, h2, h3, h4, h5, h6 {
   -moz-osx-font-smoothing: grayscale; }
 
 h2 {
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+  font-family: Space Mono, sans;
   font-family: var(--font-family-heading);
   font-weight: 200;
   letter-spacing: .25rem;
   text-transform: uppercase; }
 
 h5 {
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+  font-family: Space Mono, sans;
   font-family: var(--font-family-heading);
   font-weight: 500;
   text-transform: uppercase; }
 
 h6 {
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+  font-family: Space Mono, sans;
   font-family: var(--font-family-heading);
   font-weight: 200;
   letter-spacing: .125rem;
@@ -437,7 +440,7 @@ blockquote.is-large p {
 
 blockquote cite,
 blockquote.is-large cite {
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+  font-family: Space Mono, sans;
   font-family: var(--font-family-heading);
   font-size: calc(1em / (var(--font-size-ratio) * var(--font-size-ratio)));
   font-size: var(--font-size-xs);
@@ -589,7 +592,7 @@ ol > li {
     top: calc(0.25 * var(--space-unit));
     top: var(--space-xxs);
     color: var(--color-primary-base);
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+    font-family: Space Mono, sans;
     font-family: var(--font-family-heading);
     font-size: calc(1em / (var(--font-size-ratio) * var(--font-size-ratio)));
     font-size: var(--font-size-xs);
@@ -675,7 +678,7 @@ input[type="submit"] {
   padding-left: var(--space-sm);
   padding-right: calc(0.75 * var(--space-unit));
   padding-right: var(--space-sm);
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+  font-family: Space Mono, sans;
   font-family: var(--font-family-heading);
   font-size: calc(1em / var(--font-size-ratio));
   font-size: var(--font-size-sm);
@@ -769,7 +772,7 @@ textarea {
   word-wrap: normal !important; }
 
 .screen-reader-text:focus {
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+  font-family: Space Mono, sans;
   font-family: var(--font-family-heading);
   background-color: #f1f1f1;
   border-radius: 3px;
@@ -832,7 +835,7 @@ textarea {
       align-items: center;
       width: 100%; } }
   .site-branding .site-title {
-    font-family: Baskerville, Baskerville Old Face, Hoefler Text, Garamond, Times New Roman, serif;
+    font-family: Space Mono, sans;
     font-family: var(--font-family-body);
     font-size: calc(1em * var(--font-size-ratio) * var(--font-size-ratio));
     font-size: var(--font-size-lg);
@@ -944,7 +947,7 @@ textarea {
 
 /** === Site Branding === */
 .main-navigation > div > ul {
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+  font-family: Space Mono, sans;
   font-family: var(--font-family-heading);
   display: none;
   margin: 0;
@@ -1246,7 +1249,7 @@ textarea {
     margin-bottom: var(--space-sm);
     margin-left: var(--space-0);
     margin-right: var(--space-0);
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+    font-family: Space Mono, sans;
     font-family: var(--font-family-heading);
     font-size: calc(1em / (var(--font-size-ratio) * var(--font-size-ratio)));
     font-size: var(--font-size-xs);
@@ -1268,7 +1271,7 @@ textarea {
     padding-top: var(--space-sm);
     padding-bottom: calc(0.75 * var(--space-unit));
     padding-bottom: var(--space-sm);
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+    font-family: Space Mono, sans;
     font-family: var(--font-family-heading);
     font-size: calc(1em / var(--font-size-ratio));
     font-size: var(--font-size-sm);
@@ -1288,7 +1291,7 @@ textarea {
         margin-right: var(--space-gutter); } }
 
 .comment-meta {
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+  font-family: Space Mono, sans;
   font-family: var(--font-family-heading);
   font-size: calc(1em / (var(--font-size-ratio) * var(--font-size-ratio)));
   font-size: var(--font-size-xs);
@@ -1464,7 +1467,7 @@ object {
     margin-right: calc(0.75 * var(--space-unit));
     margin-right: var(--space-sm);
     color: var(--color-primary-base);
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+    font-family: Space Mono, sans;
     font-family: var(--font-family-heading);
     font-size: calc(1em * var(--font-size-ratio) * var(--font-size-ratio) * var(--font-size-ratio));
     font-size: var(--font-size-xl);
@@ -1507,7 +1510,7 @@ object {
     color: var(--color-words-subtle);
     font-size: calc(1em / (var(--font-size-ratio) * var(--font-size-ratio)));
     font-size: var(--font-size-xs);
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+    font-family: Space Mono, sans;
     font-family: var(--font-family-heading);
     display: flex;
     justify-content: space-between; }

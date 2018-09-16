@@ -278,6 +278,7 @@
 
 	&.has-4-columns .wp-block-column {
 		width: calc( 25% - ( #{map-get($grid, gutter)} * .25 ) );
+		@include globalvar(font-size, sm);
 	}
 
 	@include media( tablet ) {
@@ -389,6 +390,7 @@ table.wp-block-table {
 	@include globalvar( margin-left, sm);
 	@include globalvar( margin-right, sm);
 	border-top: 1px solid green;
+	@include globalvar( border-top-color, border-primary );
 
 	p {
 		@include block-padding( xs, 0 );
@@ -438,8 +440,8 @@ table.wp-block-table {
 		& > cite {
 
 			@include media( tablet ) {
-				@include globalvar(padding-left, column-1);
-				@include globalvar(padding-right, column-1);
+				@include globalvar(padding-left, gutter);
+				@include globalvar(padding-right, gutter);
 			}
 		}
 	}
