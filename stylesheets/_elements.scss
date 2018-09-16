@@ -83,10 +83,12 @@ ul > li {
 
 	&:before {
 		content: "\25CF\00a0";
+		display: block;
 		left: 0;
 		position: absolute;
+		@include globalvar(top, xxs);
 		@include globalvar(color, primary-base);
-		@include globalvar( line-height, md );
+		@include globalvar(line-height, md);
 		@include globalvar(font-size, xs);
 	}
 
@@ -118,10 +120,11 @@ ol > li {
 		content: counter(sans-counter, decimal-leading-zero) "\00a0";
 		left: 0;
 		position: absolute;
+		@include globalvar(top, xxs);
 		@include globalvar(color, primary-base);
 		@include globalvar(font-family, heading);
 		@include globalvar(font-size, xs);
-		@include globalvar( line-height, md );
+		@include globalvar(line-height, md);
 	}
 }
 
