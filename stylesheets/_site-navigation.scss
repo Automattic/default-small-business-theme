@@ -39,6 +39,38 @@
 			ul li a:before {
 				content: "\2014\00a0";
 			}
+
+			&.menu-item-has-children {
+				@include globalvar(padding-right, md);
+				position: relative;
+
+				button {
+					@include globalvar(background-color, transparent);
+					@include globalvar(color, primary-base);
+					@include globalvar(padding-top, xs);
+					@include globalvar(padding-right, xs);
+					@include globalvar(padding-bottom, xs);
+					@include globalvar(padding-left, 0);
+					line-height: #{map-get($space, xs)};
+					border: none;
+					box-shadow: inherit;
+					position: absolute;
+					right: 0;
+					top: 0;
+					vertical-align: middle;
+					span {
+						display: inline-block;
+						height: 20px;
+						overflow: hidden;
+					}
+				}
+
+				&#more-menu button {
+					left: inherit;
+					position: relative;
+					right: inherit;
+				}
+			}
 		}
 	}
 
@@ -75,38 +107,6 @@
 				a {
 					display: block;
 					width: 100%;
-				}
-			}
-
-			li.menu-item-has-children {
-				@include globalvar(padding-right, md);
-				position: relative;
-
-				button {
-					@include globalvar(background-color, 0);
-					@include globalvar(color, primary-base);
-					@include globalvar(padding-top, xs);
-					@include globalvar(padding-right, xs);
-					@include globalvar(padding-bottom, xs);
-					@include globalvar(padding-left, 0);
-					line-height: #{map-get($space, xs)};
-					border: none;
-					box-shadow: inherit;
-					position: absolute;
-					right: 0;
-					top: 0;
-					vertical-align: middle;
-					span {
-						display: inline-block;
-						height: 20px;
-						overflow: hidden;
-					}
-				}
-
-				&#more-menu button {
-					left: inherit;
-					position: relative;
-					right: inherit;
 				}
 			}
 

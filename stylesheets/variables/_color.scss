@@ -65,8 +65,9 @@ $color: (
 	),
 
 	// body
-	body: (
-		background: var(--color-shade-white),
+	background: (
+		body: var(--color-shade-white),
+		tranparent: transparent,
 	),
 
 	// buttons

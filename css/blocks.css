@@ -114,7 +114,8 @@ h4 { @include globalvar(font-size, h4); }
   --color-border-form-error: var(--color-error);
   --color-border-form-bg: var(--color-white);
   --color-border-form-placeholder: var(--color-shade-gray-4);
-  --color-body-background: var(--color-shade-white);
+  --color-background-body: var(--color-shade-white);
+  --color-background-tranparent: transparent;
   --color-button-primary-bg: var(--color-primary-bg);
   --color-button-primary-hover: var(--color-primary-light);
   --color-button-primary-active: var(--color-primary-dark);
@@ -255,11 +256,11 @@ h4 { @include globalvar(font-size, h4); }
     .wp-block-cover-image {
       width: 100%; } }
   .wp-block-cover-image.alignleft {
-    margin-top: var(--space-0);
+    margin-top: 0;
     margin-right: calc(0.75 * var(--space-unit));
     margin-right: var(--space-sm); }
   .wp-block-cover-image.alignright {
-    margin-top: var(--space-0);
+    margin-top: 0;
     margin-left: calc(0.75 * var(--space-unit));
     margin-left: var(--space-sm); }
 
@@ -323,8 +324,8 @@ h4 { @include globalvar(font-size, h4); }
   padding-top: var(--space-xxs);
   padding-bottom: calc(0.25 * var(--space-unit));
   padding-bottom: var(--space-xxs);
-  padding-left: var(--space-0);
-  padding-right: var(--space-0);
+  padding-left: 0;
+  padding-right: 0;
   font-size: calc(1em / (var(--font-size-ratio) * var(--font-size-ratio)));
   font-size: var(--font-size-xs);
   font-family: Space Mono, sans;
@@ -395,7 +396,7 @@ ul.wp-block-latest-posts.is-grid {
   ul.wp-block-categories.is-grid li,
   ul.wp-block-archives.is-grid li,
   ul.wp-block-latest-posts.is-grid li {
-    margin-right: var(--space-0);
+    margin-right: 0;
     margin-bottom: calc(0.75 * var(--space-unit));
     margin-bottom: var(--space-sm); }
 
@@ -453,8 +454,8 @@ table.wp-block-table {
   padding-top: var(--space-sm);
   padding-bottom: calc(0.75 * var(--space-unit));
   padding-bottom: var(--space-sm);
-  padding-left: var(--space-0);
-  padding-right: var(--space-0);
+  padding-left: 0;
+  padding-right: 0;
   margin-top: calc(2 * var(--space-unit));
   margin-top: var(--space-lg);
   margin-bottom: calc(2 * var(--space-unit));
@@ -472,8 +473,8 @@ table.wp-block-table {
     padding-top: var(--space-xs);
     padding-bottom: calc(0.5 * var(--space-unit));
     padding-bottom: var(--space-xs);
-    padding-left: var(--space-0);
-    padding-right: var(--space-0);
+    padding-left: 0;
+    padding-right: 0;
     font-size: calc(1em * var(--font-size-ratio) * var(--font-size-ratio));
     font-size: var(--font-size-lg);
     font-style: normal; }

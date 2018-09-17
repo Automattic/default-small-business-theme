@@ -114,7 +114,8 @@ h4 { @include globalvar(font-size, h4); }
   --color-border-form-error: var(--color-error);
   --color-border-form-bg: var(--color-white);
   --color-border-form-placeholder: var(--color-shade-gray-4);
-  --color-body-background: var(--color-shade-white);
+  --color-background-body: var(--color-shade-white);
+  --color-background-tranparent: transparent;
   --color-button-primary-bg: var(--color-primary-bg);
   --color-button-primary-hover: var(--color-primary-light);
   --color-button-primary-active: var(--color-primary-dark);
@@ -269,19 +270,22 @@ blockquote.is-large {
   padding-top: var(--space-sm);
   padding-bottom: calc(0.75 * var(--space-unit));
   padding-bottom: var(--space-sm);
-  padding-left: var(--space-0);
-  padding-right: var(--space-0);
+  padding-left: calc(0.75 * var(--space-unit));
+  padding-left: var(--space-sm);
+  padding-right: calc(0.75 * var(--space-unit));
+  padding-right: var(--space-sm);
   margin-left: 0;
   margin-right: 0;
-  border-top: 1px solid green; }
+  border-top: 1px solid green;
+  border-top-color: var(--color-border-primary); }
   blockquote p,
   blockquote.is-large p {
     padding-top: calc(0.5 * var(--space-unit));
     padding-top: var(--space-xs);
     padding-bottom: calc(0.5 * var(--space-unit));
     padding-bottom: var(--space-xs);
-    padding-left: var(--space-0);
-    padding-right: var(--space-0);
+    padding-left: 0;
+    padding-right: 0;
     word-break: break-word; }
   blockquote cite,
   blockquote.is-large cite {

@@ -172,10 +172,11 @@ table {
 
 blockquote,
 blockquote.is-large {
-	@include block-padding( sm, 0 );
+	@include block-padding( sm, sm );
 	margin-left: 0;
 	margin-right: 0;
 	border-top: 1px solid green;
+	@include globalvar( border-top-color, border-primary );
 
 	p {
 		@include block-padding( xs, 0 );
@@ -183,7 +184,7 @@ blockquote.is-large {
 	}
 
 	cite {
-		@include globalvar(color, words-subtle);
+		@include globalvar( color, words-subtle );
 	}
 }
 

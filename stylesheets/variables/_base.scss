@@ -73,15 +73,23 @@ $props: (
 		$map: map-get($var-maps, $nest-name);
 		// get the nested map
 		$nest-map: map-get($map, $nest-map-name);
-		// get the var value fro mthe nested map
+		// get the var value from the nested map
 		$var-fall: map-get($nest-map, $var);
-		$var-output: var(--#{$nest-name}-#{$nest-map-name}-#{$var});
+		@if $var == 0 {
+			$var-output: 0;
+		} @else {
+			$var-output: var(--#{$nest-name}-#{$nest-map-name}-#{$var});
+		}
 	} @else {
 		// get the map from map name
 		$map: map-get($var-maps, $map-name);
 		// fallback, grab the variable's value from the map
 		$var-fall: map-get($map, $var);
-		$var-output: var(--#{$map-name}-#{$var});
+		@if $var == 0 {
+			$var-output: 0;
+		} @else {
+			$var-output: var(--#{$map-name}-#{$var});
+		}
 	}
 
 	// if show standard is not overridden to be null
