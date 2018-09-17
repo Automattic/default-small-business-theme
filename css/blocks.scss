@@ -28,58 +28,60 @@
 		@include globalvar(margin-right, column-2);
 		margin-left: auto;
 	}
-}
 
-.entry-content > .alignwide {
+	&.alignwide {
 
-	margin-left: auto;
-	margin-right: auto;
+		margin-left: auto;
+		margin-right: auto;
 
-	@include media( tablet ) {
-		@include globalvar(max-width, column-8);
-		@include globalvar(margin-right, column-1);
+		@include media( tablet ) {
+			@include globalvar(max-width, column-8);
+			@include globalvar(margin-right, column-1);
+		}
+
+		@include media( wide ) {
+			@include globalvar(margin-right, column-2);
+		}
 	}
 
-	@include media( wide ) {
-		@include globalvar(margin-right, column-2);
-	}
-}
-
-.entry-content > .alignfull {
-	margin-left: 0;
-	margin-right: 0;
-	max-width: 100%;
-}
-
-.entry-content > .alignleft {
-	float: left;
-	max-width: 285px;
-
-	@include media( tablet ) {
-		@include globalvar( margin-left, column-4 );
-		@include globalvar( margin-right, sm);
-		margin-left: calc( 100vw - ( #{map-get($grid, column-8)} - #{map-get($grid, gutter)} ) );
-		max-width: #{map-get($grid, column-3)};
+	&.alignfull {
+		margin-left: 0;
+		margin-right: 0;
+		max-width: 100%;
 	}
 
-	@include media( wide ) {
-		margin-left: calc( #{map-get($grid, column-12)} - ( #{map-get($grid, column-8)} - #{map-get($grid, gutter)} ) );
-	}
-}
+	&.alignleft {
+		float: left;
+		max-width: 285px;
 
-.entry-content > .alignright {
-	float: right;
-	max-width: 285px;
+		@include media( tablet ) {
+			@include globalvar( margin-left, column-4 );
+			@include globalvar( margin-right, sm);
+			margin-left: calc( 100vw - ( #{map-get($grid, column-8)} - #{map-get($grid, gutter)} ) );
+			max-width: #{map-get($grid, column-3)};
+		}
 
-	@include media( tablet ) {
-		@include globalvar( margin-left, sm);
-		max-width: #{map-get($grid, column-3)};
+		@include media( wide ) {
+			margin-left: calc( #{map-get($grid, column-12)} - ( #{map-get($grid, column-8)} - #{map-get($grid, gutter)} ) );
+		}
 	}
+
+	&.alignright {
+		float: right;
+		max-width: 285px;
+
+		@include media( tablet ) {
+			@include globalvar( margin-left, sm);
+			max-width: #{map-get($grid, column-3)};
+		}
+	}
+
 }
 
 // !Buttons
 
 .wp-block-button .wp-block-button__link{
+
 	@include globalvar(background-color, primary-base);
 	@include globalvar(color, shade-white);
 	@include globalvar(padding, xs);
@@ -97,33 +99,37 @@
 	font-weight: 600;
 	text-decoration: none;
 	text-transform: uppercase;
-}
 
-.wp-block-button .wp-block-button__link:hover {
-	@include globalvar(border-color, primary-base);
-	@include globalvar(background-color, shade-white);
-	@include globalvar(color, primary-base);
-}
+	&:hover {
+		@include globalvar(border-color, primary-base);
+		@include globalvar(background-color, shade-white);
+		@include globalvar(color, primary-base);
+	}
 
-.wp-block-button .wp-block-button__link:active,
-.wp-block-button .wp-block-button__link:focus {
-	@include globalvar(border-color, words-subtle);
-	@include globalvar(background-color, shade-white);
-	@include globalvar(color, words-subtle);
+	&:active,
+	&:focus {
+		@include globalvar(border-color, words-subtle);
+		@include globalvar(background-color, shade-white);
+		@include globalvar(color, words-subtle);
+	}
 }
 
 // !Audio
 
-.wp-block-audio audio {
-	width: 100%;
-}
+.wp-block-audio {
 
-.wp-block-audio.alignleft audio,
-.wp-block-audio.alignright audio {
-	width: 285px;
+	audio {
+		width: 100%;
+	}
 
-	@include media( tablet ) {
-		width: #{map-get($grid, column-3)};
+	&.alignleft audio,
+	&.alignright audio {
+
+		width: 285px; // replace with css-variable
+
+		@include media( tablet ) {
+			width: #{map-get($grid, column-3)};
+		}
 	}
 }
 
@@ -136,23 +142,26 @@
 // !Image
 
 .wp-block-image img {
-	display: block;
-}
 
-.wp-block-image.alignleft,
-.wp-block-image.alignright {
+	display: block;
+
+	&.alignleft,
+	&.alignright {
 	max-width: 100%;
 }
 
-.wp-block-image.alignfull img {
+	&.alignfull img {
 	width: 100vw;
 	margin-left: auto;
 	margin-right: auto;
 }
 
+}
+
 // !Cover image
 
 .wp-block-cover-image {
+
 	width: inherit;
 
 	@include media( tablet ) {
@@ -161,11 +170,26 @@
 
 	&.alignleft {
 		@include globalvar( margin-top, 0 );
-		@include globalvar( margin-right, sm);
+		@include globalvar( margin-right, sm );
 	}
 	&.alignright {
 		@include globalvar( margin-top, 0 );
-		@include globalvar( margin-left, sm);
+		@include globalvar( margin-left, sm );
+	}
+
+	.wp-block-cover-image-text,
+	h2 {
+		font-weight: 400;
+		@include globalvar( padding, xs );
+		@include globalvar( font-family, body );
+		@include globalvar( line-height, heading );
+		letter-spacing: normal;
+		text-transform: none;
+		margin: 0;
+	}
+
+	&.has-background-dim:before {
+		// Not yet
 	}
 }
 
@@ -177,20 +201,6 @@
 	@include media( tablet ) {
 		max-width: #{map-get($grid, column-3)};
 	}
-}
-
-.wp-block-cover-image.has-background-dim:before {
-}
-
-.wp-block-cover-image .wp-block-cover-image-text,
-.wp-block-cover-image h2 {
-	font-weight: 400;
-	@include globalvar( padding, xs );
-	@include globalvar(font-family, body);
-	@include globalvar(line-height, heading);
-	letter-spacing: normal;
-	text-transform: none;
-	margin: 0;
 }
 
 // !Gallery
@@ -221,6 +231,10 @@
 			background: transparent;
 		}
 	}
+
+	&:not(.components-placeholder) {
+		// Not yet
+	}
 }
 
 [data-align=left] .wp-block-gallery,
@@ -230,9 +244,6 @@
 	@include media( tablet ) {
 		max-width: #{map-get($grid, column-3)};
 	}
-}
-
-.wp-block-gallery:not(.components-placeholder) {
 }
 
 // !Block Captions
@@ -262,6 +273,7 @@
 
 .wp-block-text-columns,
 .wp-block-columns {
+
 	justify-content: space-between;
 
 	.wp-block-column {
@@ -328,6 +340,11 @@ ul.wp-block-latest-posts {
 
 	overflow-x: auto;
 
+	td,
+	th {
+		padding: .5em;
+	}
+
 	tr:nth-child(even) {
 		@include globalvar(background-color, shade-gray-1);
 	}
@@ -348,10 +365,6 @@ table.wp-block-table {
 	}
 }
 
-.wp-block-table td, .wp-block-table th {
-  padding: .5em;
-}
-
 // !Embeds
 
 .wp-block-embed > *,
@@ -362,20 +375,20 @@ table.wp-block-table {
 }
 
 .wp-block-embed.type-video > .wp-block-embed__wrapper {
-  position: relative;
-  width: 100%;
-  height: 0;
-  padding-top: 56.25%;
+	position: relative;
+	width: 100%;
+	height: 0;
+	padding-top: 56.25%;
 }
 
 .wp-block-embed.type-video > .wp-block-embed__wrapper > iframe {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  right: 0;
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	right: 0;
 }
 
 // !Blockquotes & Pull quotes
