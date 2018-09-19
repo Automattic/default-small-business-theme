@@ -1,0 +1,38 @@
+
+/** === Layout === */
+
+#page {
+	width: 100%;
+}
+
+#page-wrapper {
+
+	padding-top: 20px;
+	border: solid transparent;
+	max-width: 425px;
+	margin: 0 auto;
+	width: 100%;
+
+	@include media( tablet ) {
+		display: flex;
+		flex-wrap: nowrap;
+		justify-content: flex-start;
+		align-items: stretch;
+		max-width: $tablet_width;
+		padding-top: 40px;
+	}
+
+	@include media( desktop ) {
+		max-width: $desktop_width;
+		padding-top: 80px;
+	}
+
+	@include media( wide ) {
+		max-width: $wide_width;
+	}
+}
+
+#content {
+	box-sizing: content-box;
+
+}

@@ -1,0 +1,166 @@
+
+/** === Site Branding === */
+
+.site-header {
+
+	border-bottom: 1px solid gray;
+	@include globalvar(border-bottom-color, border-base);
+
+	@include media( desktop ) {
+		@include globalvar(max-width, column-12);
+		border-bottom: none;
+		display: flex;
+		align-items: center;
+		margin-left: auto;
+		margin-right: auto;
+	}
+}
+
+.site-branding {
+
+	@include globalvar(color, words-subtle);
+	@include block-margin( sm, 0 );
+
+	& > * {
+		@include block-margin( 0, sm );
+	}
+
+	@include media( tablet ) {
+		@include globalvar(max-width, column-5);
+		display: flex;
+		align-content: stretch;
+		align-items: center;
+		width: 100%;
+	}
+
+	.site-title {
+		@include globalvar(font-family, body);
+		@include globalvar(font-size, lg);
+		@include globalvar(color, words-base);
+		/* When there is no description set, make sure navigation appears below title. */
+		+ .main-navigation {
+			display: block;
+		}
+
+		a {
+			@include link-transition;
+			display: block;
+			text-decoration: none;
+			color: inherit;
+
+			&:hover {
+				@include globalvar(color, secondary-base);
+			}
+		}
+
+		@include media( tablet ) {
+			@include block-margin( 0, 0 );
+			&:first-child {
+				@include block-margin( 0, sm );
+			}
+		}
+	}
+
+	.site-description {
+		@include block-margin( 0, sm );
+		@include globalvar(font-size, base);
+		@include globalvar(color, words-subtle);
+		font-weight: normal;
+	}
+
+	.custom-logo-link {
+		display: block;
+		line-height: 0;
+	}
+}
+
+.social-navigation {
+
+	margin-top: 0.6em;
+	text-align: center;
+
+	@include media( tablet ) {
+		margin-top: 1em;
+		text-align: left;
+	}
+
+	@include media( desktop ) {
+		margin-top: 1.3em;
+	}
+
+	ul.social-links-menu {
+
+		display: inline-block;
+		margin: 0;
+		padding: 0;
+
+		li {
+			display: inline-block;
+			list-style: none;
+
+			&:nth-child(n+2) {
+				@include media( desktop ) {
+					margin-left: 0.2em;
+				}
+			}
+
+			a {
+				display: inline-block;
+				line-height: 1;
+
+				svg {
+					@include svg-transition;
+					display: block;
+					line-height: 1;
+
+					&:hover {
+						@include globalvar(fill, primary-base);
+					}
+
+					@include media( tablet ) {
+						width: 35px;
+						height: 35px;
+					}
+
+					@include media( desktop ) {
+						width: 46px;
+						height: 46px;
+					}
+				}
+			}
+		}
+
+	}
+
+}
+
+.site-footer {
+	@include globalvar(background-color, primary-base);
+}
+
+.site-info {
+
+	@include globalvar(font-size, sm);
+	@include globalvar(font-family, headings);
+	@include globalvar(padding, lg);
+	@include globalvar(padding-left, sm);
+	@include globalvar(padding-right, sm);
+	@include globalvar(color, shade-white);
+
+	a {
+		color: inherit;
+		&:hover {
+			text-decoration: none;
+			@include globalvar(color, primary-bg);
+		}
+	}
+
+	@include media( desktop ) {
+		@include globalvar(max-width, column-12);
+		border-bottom: none;
+		display: flex;
+		align-items: center;
+		margin-left: auto;
+		margin-right: auto;
+	}
+}

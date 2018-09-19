@@ -1,0 +1,179 @@
+// External.
+@import "bourbon";
+
+// Root CSS variables.
+@import "stylesheets/variables/base";
+
+// Includes.
+@import "stylesheets/inc/animations";
+@import "stylesheets/inc/mixins";
+@import "stylesheets/inc/functions";
+
+.edit-post-visual-editor{
+	// for each variable map
+	@each $var-map-name, $var-map in $var-maps {
+		// for each variable in the variable map
+		@each $var, $val in $var-map {
+			// if it is a map, go another level deep
+			@if type-of($val) == map {
+				// each in the map
+				@each $var-n, $val-n in $val {
+					// do the definition
+					$prop: --#{$var-map-name}-#{$var}-#{$var-n};
+					#{$prop}: $val-n;
+				}
+			} @else {
+				// do the definition
+				$prop: --#{$var-map-name}-#{$var};
+				#{$prop}: $val;
+			}
+		}
+	}
+}
+
+// Responsive fonts
+.edit-post-visual-editor .editor-block-list__block,
+.editor-default-block-appender input[type="text"].editor-default-block-appender__content,
+.editor-post-title .editor-post-title__input,
+.edit-post-visual-editor,
+.edit-post-visual-editor p {
+	@include globalvar(font-family, body);
+}
+
+.edit-post-visual-editor,
+.edit-post-visual-editor p {
+	@include globalvar(font-size, base);
+}
+
+// Add theme styles.
+.edit-post-visual-editor {
+
+	@import "stylesheets/elements.scss";
+	@import "stylesheets/typography.scss";
+	// @import "css/blocks.scss";
+
+	// Responsive font-size
+	.editor-block-list__block,
+	.editor-block-list__block p {
+
+		@include globalvar(font-size, base);
+
+		@include media(tablet) {
+
+			// you can manage typography editing only these 2 variables
+			--font-size-base: calc( #{$font-size-base} * #{$font-size-responsive-ratio} ); // 1 1/6
+		}
+	}
+
+	// Override font top-level editor styles to match front end
+	.editor-rich-text__tinymce.mce-content-body {
+		@include globalvar(line-height, body);
+		@include globalvar(color, words-base);
+	}
+
+	// Button
+	.wp-block-button .wp-block-button__link {
+		@include globalvar(background-color, primary-base);
+		@include globalvar(color, shade-white);
+		@include globalvar(padding, xs);
+		@include globalvar(padding-left, sm);
+		@include globalvar(padding-right, sm);
+		@include globalvar(font-family, heading);
+		@include globalvar(font-size, sm);
+		@include globalvar(line-height, body);
+		@include rounded( 3px );
+		border: 2px solid green;
+		@include globalvar(border-color, primary-base);
+		box-shadow: 1px 1px 5px 1px rgba(0,0,0,0.33);
+		cursor: pointer;
+		display: inline-block;
+		font-weight: 600;
+		text-decoration: none;
+		text-transform: uppercase;
+	}
+
+	// Image
+	.wp-block-image .block-library-image__resizer img,
+	[data-type="core/image"][data-align=full] figure img,
+	[data-type="core/image"][data-align=wide] figure img {
+		line-height: 0;
+		display: block;
+	}
+
+	// Gallery
+	.wp-block-gallery {
+
+		list-style: none;
+
+		.blocks-gallery-item,
+		.blocks-gallery-image {
+			margin: 0;
+			padding-left: 0;
+
+			&:before {
+				content: "";
+				display: none;
+			}
+
+			figure {
+				display: flex;
+				flex-direction: column;
+			}
+
+			figcaption {
+				position: relative;
+				padding: 0;
+				max-height: inherit;
+				background: transparent;
+			}
+
+			.editor-rich-text {
+				position: inherit;
+			}
+		}
+
+		&:not(.components-placeholder) {
+			// Not yet
+		}
+	}
+
+	// Captions
+	.wp-block-audio figcaption,
+	.wp-block-video figcaption,
+	.wp-block-image figcaption,
+	.wp-block-gallery .blocks-gallery-image figcaption,
+	.wp-block-gallery .blocks-gallery-item figcaption {
+		@include globalvar(color, words-subtle);
+		@include globalvar(font-family, heading);
+		@include block-padding( xxs, 0 );
+		text-align: left;
+		margin: 0;
+	}
+
+	.wp-block-audio.alignfull figcaption,
+	.wp-block-video.alignfull figcaption,
+	.wp-block-image.alignfull figcaption,
+	.wp-block-gallery.alignfull .blocks-gallery-image figcaption,
+	.wp-block-gallery.alignfull .blocks-gallery-item figcaption,
+	[data-type="core/image"][data-align=full] figcaption {
+		@include block-padding( xs, sm);
+		position: inherit;
+	}
+
+	// Blockquote
+	.wp-block-quote {
+
+		&:not(.is-large):not(.is-style-large) {
+
+			border-left: none;
+		}
+
+		.wp-block-quote__citation {
+			@include globalvar(font-family, heading);
+			@include globalvar(font-size, xs);
+			@include globalvar(color, words-subtle);
+			font-style: normal;
+			font-weight: 500;
+		}
+	}
+}

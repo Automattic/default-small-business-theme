@@ -1,0 +1,165 @@
+
+/** === Typography === */
+body {
+
+	@include globalvar(font-size, base);
+
+	@include media(tablet) {
+
+		// you can manage typography editing only these 2 variables
+		--font-size-base: calc( #{$font-size-base} * #{$font-size-responsive-ratio} ); // 1 1/6
+	}
+}
+
+body,
+button,
+input,
+select,
+optgroup,
+textarea {
+	@include globalvar(font-family, body);
+	@include globalvar(line-height, body);
+	@include globalvar(color, words-base);
+	@include font-smoothing;
+	font-weight: 400;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	clear: both;
+	font-weight: 400;
+	@include globalvar(line-height, heading);
+	@include font-smoothing;
+}
+
+h2 {
+	@include globalvar(font-family, heading);
+	font-weight: 200;
+	letter-spacing: .25rem;
+	text-transform: uppercase;
+}
+
+h5 {
+	@include globalvar(font-family, heading);
+	font-weight: 500;
+	text-transform: uppercase;
+}
+
+h6 {
+	@include globalvar(font-family, heading);
+	font-weight: 200;
+	letter-spacing: .125rem;
+	text-transform: uppercase;
+}
+
+/* text size */
+.text--xxxl,
+p.has-drop-cap:not(:focus):first-letter { // Drop cap font-size
+	@include globalvar(font-size, xxxl);
+}
+
+h1,
+.text--xxl,
+big {
+	@include globalvar(font-size, xxl);
+}
+
+h2,
+.text--xl,
+.has-larger-font-size {
+	@include globalvar(font-size, xl);
+}
+
+h3,
+.text--lg,
+.has-large-font-size {
+	@include globalvar(font-size, lg);
+}
+
+h4,
+.text--md,
+.has-regular-font-size {
+	@include globalvar(font-size, md);
+}
+
+.text--sm,
+small,
+.has-small-font-size {
+	@include globalvar(font-size, sm);
+}
+
+.text--xs {
+	@include globalvar(font-size, xs);
+}
+
+dfn, em, i {
+	font-style: italic;
+}
+
+blockquote,
+blockquote.is-large {
+
+	p {
+		@include globalvar(font-size, lg);
+		font-style: normal;
+	}
+
+	cite {
+		@include globalvar(font-family, heading);
+		@include globalvar(font-size, xs);
+		font-style: normal;
+		font-weight: 500;
+	}
+}
+
+pre {
+	@include globalvar(font-family, code);
+	@include globalvar(font-size, sm);
+	line-height: 1.6;
+	@include font-smoothing;
+}
+
+code, kbd, tt, var, samp {
+	@include globalvar(font-size, md);
+	@include globalvar(font-family, code);
+	@include font-smoothing;
+}
+
+mark, ins {
+	text-decoration: none;
+}
+
+a {
+	background-color: transparent;
+	text-decoration: none;
+
+	&:hover {
+		text-decoration: underline;
+	}
+}
+
+abbr[title] {
+  border-bottom: none;
+  text-decoration: underline;
+  text-decoration: underline dotted;
+}
+
+b,
+strong {
+  font-weight: bolder;
+}
+
+sub,
+sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+
+sub {
+  bottom: -0.25em;
+}
+
+sup {
+  top: -0.5em;
+}

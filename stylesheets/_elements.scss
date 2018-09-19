@@ -1,0 +1,202 @@
+
+/** === Elements === */
+
+html {
+	box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+	box-sizing: inherit;
+}
+
+body {
+	@include globalvar(background-color, shade-white);
+}
+
+a {
+	@include globalvar(color, primary-base);
+}
+
+a:visited {
+
+}
+
+a:hover, a:focus, a:active {
+
+}
+
+a:focus {
+
+}
+
+a:hover,
+a:active {
+	outline: 0;
+}
+
+p {
+	margin: 0;
+}
+
+hr {
+	@include globalvar( background-color, shade-gray-3 );
+	border: 0;
+	height: 1px;
+	margin-bottom: 1.5em;
+}
+
+abbr,
+acronym {
+	border-bottom: 1px dotted inherit;
+	@include globalvar( border-bottom-color, border-base);
+	cursor: help;
+}
+
+pre {
+	@include globalvar( background-color, shade-gray-1);
+	@include globalvar( margin-bottom, sm );
+	max-width: 100%;
+	overflow: auto;
+	@include globalvar( padding, sm );
+}
+
+ul,
+ol {
+	margin-top: 0;
+	margin-right: 0;
+	@include globalvar( margin-bottom, xs );
+	@include globalvar( margin-left, xs );
+	padding: 0;
+}
+
+li {
+	list-style: none;
+}
+
+ul {
+	list-style: none;
+	list-style-position: inside;
+}
+
+ul > li {
+
+	position: relative;
+	@include globalvar( padding-left, sm );
+
+	&:before {
+		content: "\25CF\00a0";
+		display: block;
+		left: 0;
+		position: absolute;
+		@include globalvar(top, xxs);
+		@include globalvar(color, primary-base);
+		@include globalvar(line-height, md);
+		@include globalvar(font-size, xs);
+	}
+
+	li:before {
+		content: "\2B58\00a0";
+	}
+}
+
+ol {
+	list-style: none;
+	counter-reset: sans-counter;
+}
+
+ol > li {
+
+	counter-increment: sans-counter;
+	position: relative;
+	@include globalvar( padding-left, md );
+
+	ol li {
+		@include globalvar( padding-left, md );
+	}
+
+	ul li {
+		@include globalvar( padding-left, sm );
+	}
+
+	&:before {
+		content: counter(sans-counter, decimal-leading-zero) "\00a0";
+		left: 0;
+		position: absolute;
+		@include globalvar(top, xxs);
+		@include globalvar(color, primary-base);
+		@include globalvar(font-family, heading);
+		@include globalvar(font-size, xs);
+		@include globalvar(line-height, md);
+	}
+}
+
+li > ol,
+li > ul {
+	margin-left: 0;
+	margin-bottom: 0;
+}
+
+li > ol ol,
+li > ul ul,
+li > ol ul,
+li > ul ol {
+	margin-bottom: 0;
+}
+
+dt {
+	font-weight: bold;
+}
+
+dd {
+	margin-top: 0;
+	margin-right: 0;
+	@include globalvar( margin-bottom, xs );
+	@include globalvar( margin-left, xs );
+}
+
+img {
+	height: auto;
+	max-width: 100%;
+}
+
+svg {
+	fill: currentColor;
+}
+
+figure {
+	margin: 0;
+}
+
+table {
+	margin: 0 0 1.5em;
+	width: 100%;
+}
+
+blockquote,
+blockquote.is-large {
+	@include block-padding( sm, sm );
+	margin-left: 0;
+	margin-right: 0;
+	border-top: 1px solid green;
+	@include globalvar( border-top-color, border-primary );
+
+	p {
+		@include block-padding( xs, 0 );
+		word-break: break-word;
+	}
+
+	cite {
+		@include globalvar( color, words-subtle );
+	}
+}
+
+address {
+	margin: 0 0 1.5em;
+}
+
+mark,
+ins {
+	@include globalvar( background-color, feedback-warning );
+}

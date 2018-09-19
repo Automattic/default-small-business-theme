@@ -1,0 +1,47 @@
+/*!
+Theme Name: Default Small Business Theme
+Theme URI: https://github.com/Automattic/default-small-business-theme
+Author: Automattic
+Author URI: https://automattic.com
+Description: Gutenberg-ready small business theme for WordPress.com
+Version: 1.0.0
+License: GNU General Public License v2 or later
+License URI: https://www.gnu.org/licenses/gpl-2.0.html
+Text Domain: smallbusinesstheme
+Tags: custom-background, custom-logo, custom-menu, featured-images, threaded-comments, translation-ready
+
+This theme, like WordPress, is licensed under the GPL.
+Use it to make something cool, have fun, and share what you've learned with others.
+
+Default Small Business Theme is based on Underscores https://underscores.me/, (C) 2012-2018 Automattic, Inc.
+Underscores is distributed under the terms of the GNU GPL v2 or later.
+
+Normalizing styles have been helped along thanks to the fine work of
+Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
+*/
+
+// !External.
+@import "bourbon";
+
+// !Root CSS variables.
+@import "stylesheets/variables/base";
+
+// !Includes.
+@import "stylesheets/inc/root";
+@import "stylesheets/inc/animations";
+@import "stylesheets/inc/mixins";
+@import "stylesheets/inc/functions";
+
+// !Stylesheets.
+@import "stylesheets/normalize";
+@import "stylesheets/typography";
+@import "stylesheets/elements";
+@import "stylesheets/forms";
+@import "stylesheets/accessibility";
+@import "stylesheets/site-branding";
+@import "stylesheets/site-navigation";
+@import "stylesheets/wordpress";
+@import "stylesheets/layout";
+@import "stylesheets/entries";
+@import "stylesheets/effects";
+@import "stylesheets/dev";

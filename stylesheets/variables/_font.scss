@@ -1,0 +1,40 @@
+
+// Typography variables
+
+// @import url(https://fonts.googleapis.com/css?family=Space+Mono);
+$body-font: (Baskerville, Baskerville Old Face, Hoefler Text, Garamond, Times New Roman, serif); // (Space Mono, sans);
+$heading-font: (-apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif); // (Space Mono, sans);
+$code-font: (Menlo, monaco, Consolas, Lucida Console, monospace);
+
+$font-size-base: 1.1em;
+$font-size-ratio: 1.2;
+$font-size-responsive-ratio: 1.167; // 1 1/6
+
+$font: (
+
+  family: (
+    body: $body-font,
+    heading: $heading-font,
+    code: $code-font,
+  ),
+
+  size: (
+	base: $font-size-base,
+	ratio: $font-size-ratio,
+    xxs: calc(1em / (var(--font-size-ratio) * var(--font-size-ratio) * var(--font-size-ratio))),
+    xs: calc(1em / (var(--font-size-ratio) * var(--font-size-ratio))),
+    sm: calc(1em / var(--font-size-ratio)),
+    md: calc(1em * var(--font-size-ratio)),
+    lg: calc(1em * var(--font-size-ratio) * var(--font-size-ratio)),
+    xl: calc(1em * var(--font-size-ratio) * var(--font-size-ratio) * var(--font-size-ratio)),
+    xxl: calc(1em * var(--font-size-ratio) * var(--font-size-ratio) * var(--font-size-ratio) * var(--font-size-ratio)),
+    xxxl: calc(1em * var(--font-size-ratio) * var(--font-size-ratio) * var(--font-size-ratio) * var(--font-size-ratio) * var(--font-size-ratio)),
+  ),
+
+  leading: (
+    body: 1.4,
+    heading: 1.2,
+  )
+
+);
+

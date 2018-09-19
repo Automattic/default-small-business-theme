@@ -1,0 +1,531 @@
+
+/** === !Blocks === */
+
+// External.
+@import "bourbon";
+
+// Root CSS variables.
+@import "../stylesheets/variables/base";
+
+// Includes.
+@import "../stylesheets/inc/animations";
+@import "../stylesheets/inc/mixins";
+@import "../stylesheets/inc/functions";
+
+// !Block sizing & positioning
+
+.entry-content > *,
+.entry-summary > * {
+
+	&.alignwide {
+
+		margin-left: auto;
+		margin-right: auto;
+
+		@include media( tablet ) {
+			@include globalvar(max-width, column-8);
+			@include globalvar(margin-right, column-1);
+		}
+
+		@include media( wide ) {
+			@include globalvar(margin-right, column-2);
+		}
+	}
+
+	&.alignfull {
+		margin-left: 0;
+		margin-right: 0;
+		max-width: 100%;
+	}
+
+	&.alignleft {
+		float: left;
+		max-width: 285px;
+
+		@include media( tablet ) {
+			@include globalvar( margin-left, column-4 );
+			@include globalvar( margin-right, sm);
+			margin-left: calc( 100vw - ( #{map-get($grid, column-8)} - #{map-get($grid, gutter)} ) );
+			max-width: #{map-get($grid, column-3)};
+		}
+
+		@include media( wide ) {
+			margin-left: calc( #{map-get($grid, column-12)} - ( #{map-get($grid, column-8)} - #{map-get($grid, gutter)} ) );
+		}
+	}
+
+	&.alignright {
+		float: right;
+		max-width: 285px;
+
+		@include media( tablet ) {
+			@include globalvar( margin-left, sm);
+			max-width: #{map-get($grid, column-3)};
+		}
+	}
+
+}
+
+// !Buttons
+
+.wp-block-button .wp-block-button__link{
+
+	@include globalvar(background-color, primary-base);
+	@include globalvar(color, shade-white);
+	@include globalvar(padding, xs);
+	@include globalvar(padding-left, sm);
+	@include globalvar(padding-right, sm);
+	@include globalvar(font-family, heading);
+	@include globalvar(font-size, sm);
+	@include globalvar(line-height, body);
+	@include rounded( 3px );
+	border: 2px solid green;
+	@include globalvar(border-color, primary-base);
+	box-shadow: 1px 1px 5px 1px rgba(0,0,0,0.33);
+	cursor: pointer;
+	display: inline-block;
+	font-weight: 600;
+	text-decoration: none;
+	text-transform: uppercase;
+
+	&:hover {
+		@include globalvar(border-color, primary-base);
+		@include globalvar(background-color, shade-white);
+		@include globalvar(color, primary-base);
+	}
+
+	&:active,
+	&:focus {
+		@include globalvar(border-color, words-subtle);
+		@include globalvar(background-color, shade-white);
+		@include globalvar(color, words-subtle);
+	}
+}
+
+// !Audio
+
+.wp-block-audio {
+
+	audio {
+		width: 100%;
+	}
+
+	&.alignleft audio,
+	&.alignright audio {
+
+		width: 285px; // replace with css-variable
+
+		@include media( tablet ) {
+			width: #{map-get($grid, column-3)};
+		}
+	}
+}
+
+// !Video
+
+.wp-block-video video {
+//  max-width: 636px;
+}
+
+// !Image
+
+.wp-block-image img {
+
+	display: block;
+
+	&.alignleft,
+	&.alignright {
+	max-width: 100%;
+}
+
+	&.alignfull img {
+	width: 100vw;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+}
+
+// !Cover image
+
+.wp-block-cover-image {
+
+	width: inherit;
+
+	@include media( tablet ) {
+		width: 100%;
+	}
+
+	&.alignleft {
+		@include globalvar( margin-top, 0 );
+		@include globalvar( margin-right, sm );
+	}
+	&.alignright {
+		@include globalvar( margin-top, 0 );
+		@include globalvar( margin-left, sm );
+	}
+
+	.wp-block-cover-image-text,
+	h2 {
+		font-weight: 400;
+		@include globalvar( padding, xs );
+		@include globalvar( font-family, body );
+		@include globalvar( line-height, heading );
+		letter-spacing: normal;
+		text-transform: none;
+		margin: 0;
+	}
+
+	&.has-background-dim:before {
+		// Not yet
+	}
+}
+
+[data-align=left] .wp-block-cover-image,
+[data-align=right] .wp-block-cover-image {
+
+	max-width: 285px;
+
+	@include media( tablet ) {
+		max-width: #{map-get($grid, column-3)};
+	}
+}
+
+// !Gallery
+
+.wp-block-gallery {
+
+	list-style: none;
+
+	.blocks-gallery-item,
+	.blocks-gallery-image {
+		margin: 0;
+		padding-left: 0;
+
+		&:before {
+			content: "";
+			display: none;
+		}
+
+		figure {
+			display: flex;
+			flex-direction: column;
+		}
+
+		figcaption {
+			position: relative;
+			padding: 0;
+			max-height: inherit;
+			background: transparent;
+		}
+	}
+
+	&:not(.components-placeholder) {
+		// Not yet
+	}
+}
+
+[data-align=left] .wp-block-gallery,
+[data-align=right] .wp-block-gallery {
+	max-width: 285px;
+
+	@include media( tablet ) {
+		max-width: #{map-get($grid, column-3)};
+	}
+}
+
+// !Block Captions
+
+.wp-block-audio figcaption,
+.wp-block-video figcaption,
+.wp-block-image figcaption,
+.wp-block-gallery .blocks-gallery-image figcaption,
+.wp-block-gallery .blocks-gallery-item figcaption {
+	@include globalvar(color, words-subtle);
+	@include block-padding( xxs, 0 );
+	@include globalvar(font-size, xs);
+	@include globalvar(font-family, heading);
+	text-align: left;
+	margin: 0;
+}
+
+.wp-block-audio.alignfull figcaption,
+.wp-block-video.alignfull figcaption,
+.wp-block-image.alignfull figcaption,
+.wp-block-gallery.alignfull .blocks-gallery-image figcaption,
+.wp-block-gallery.alignfull .blocks-gallery-item figcaption {
+	@include block-padding( xs, sm);
+}
+
+// !Columns
+
+.wp-block-text-columns,
+.wp-block-columns {
+
+	justify-content: space-between;
+
+	.wp-block-column {
+		flex: 0 1 auto;
+	}
+
+	&.has-2-columns .wp-block-column {
+		width: calc( 50% - ( #{map-get($grid, gutter)} * .5 ) );
+	}
+
+	&.has-3-columns .wp-block-column {
+		width: calc( 33% - ( #{map-get($grid, gutter)} * .33 ) );
+	}
+
+	&.has-4-columns .wp-block-column {
+		width: calc( 25% - ( #{map-get($grid, gutter)} * .25 ) );
+		@include globalvar(font-size, sm);
+	}
+
+	@include media( tablet ) {
+		@include globalvar(margin-right, column-1);
+		@include globalvar(max-width, column-7);
+	}
+}
+
+// !Categories & Archives
+
+ul.wp-block-categories,
+ul.wp-block-archives,
+ul.wp-block-latest-posts {
+
+	li {
+		@include globalvar(font-size, md);
+
+		&:before {
+			@include globalvar(font-size, xxs);
+			line-height: 2.4em;
+		}
+	}
+
+	li li {
+		font-size: 1em;
+	}
+
+	&.is-grid {
+		justify-content: space-between;
+
+		li {
+			@include globalvar( margin-right, 0 );
+			@include globalvar( margin-bottom, sm);
+		}
+	}
+
+	@include media( tablet ) {
+		&.columns-2 li {
+			width: calc( 50% - ( #{map-get($grid, width-gutter)} * .5) );
+		}
+	}
+}
+
+// !Tables
+
+.wp-block-table {
+
+	overflow-x: auto;
+
+	td,
+	th {
+		padding: .5em;
+	}
+
+	tr:nth-child(even) {
+		@include globalvar(background-color, shade-gray-1);
+	}
+
+	thead tr:nth-child(odd) {
+		@include globalvar(background-color, primary-bg);
+	}
+}
+
+.wp-block-table table,
+table.wp-block-table {
+
+	border-collapse: collapse;
+	max-width: calc( 100% - ( #{map-get($space, sm)} * 2 ) );
+
+	@include media( tablet ) {
+		@include globalvar(max-width, column-6);
+	}
+}
+
+// !Embeds
+
+.wp-block-embed > *,
+.wp-block-embed > .jetpack-video-wrapper > * {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.wp-block-embed.type-video > .wp-block-embed__wrapper {
+	position: relative;
+	width: 100%;
+	height: 0;
+	padding-top: 56.25%;
+}
+
+.wp-block-embed.type-video > .wp-block-embed__wrapper > iframe {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	right: 0;
+}
+
+// !Blockquotes & Pull quotes
+
+.wp-block-quote,
+.wp-block-quote.is-large,
+.wp-block-quote.is-style-large {
+
+	@include block-padding( sm, 0 );
+	@include globalvar( margin-top, lg );
+	@include globalvar( margin-bottom, lg );
+	@include globalvar( margin-left, sm);
+	@include globalvar( margin-right, sm);
+	border-top: 1px solid green;
+	@include globalvar( border-top-color, border-primary );
+
+	p {
+		@include block-padding( xs, 0 );
+		@include globalvar(font-size, lg);
+		font-style: normal;
+	}
+
+	cite {
+		@include globalvar(font-family, heading);
+		@include globalvar(font-size, xs);
+		@include globalvar(color, words-subtle);
+		font-style: normal;
+		font-weight: 500;
+	}
+
+	@include media( tablet ) {
+		@include globalvar(max-width, column-6);
+		@include globalvar(margin-right, column-2);
+		margin-left: auto;
+	}
+}
+
+.wp-block-pullquote {
+
+	@include globalvar(margin-top, lg);
+	@include globalvar(margin-bottom, lg);
+	text-align: inherit;
+	padding: 0;
+
+	& > p {
+		@include globalvar(font-size, lg);
+		font-style: normal;
+	}
+
+	blockquote,
+	& > p,
+	& > cite {
+		@include globalvar(padding-left, sm);
+		@include globalvar(padding-right, sm);
+	}
+
+	&.alignwide,
+	&.alignfull {
+
+		blockquote,
+		& > p,
+		& > cite {
+
+			@include media( tablet ) {
+				@include globalvar(padding-left, gutter);
+				@include globalvar(padding-right, gutter);
+			}
+		}
+	}
+
+	&.alignleft,
+	&.alignright {
+		margin-top: 0;
+		@include globalvar(margin-bottom, sm);
+
+		blockquote {
+			margin-top: 0;
+			margin-bottom: 0;
+			p {
+				@include globalvar(font-size, md);
+				padding-top: 0;
+			}
+		}
+	}
+
+	& > p:first-child {
+		margin-top: 0;
+	}
+}
+
+// !Separators
+
+.wp-block-separator {
+	@include globalvar( margin-top, md );
+	@include globalvar( margin-bottom, md );
+	padding: 0;
+
+	&.is-style-dots {
+
+		@include globalvar( background-color, white );
+
+		&:before {
+			content: "\00b7 \00b7 \00b7 \00b7 \00b7";
+			@include globalvar( color, shade-gray-4 );
+			@include globalvar(font-family, body);
+			@include globalvar(font-size, lg);
+			letter-spacing: 1em;
+			padding-left: 1em;
+		}
+	}
+
+	@include media( tablet ) {
+		&.is-style-dots {
+			@include globalvar(max-width, column-6);
+		}
+	}
+}
+
+/*--------------------------------------------------------------
+// !Block Color Palette Colors
+--------------------------------------------------------------*/
+.has-strong-blue-color {
+  color: #0073aa;
+}
+
+.has-strong-blue-background-color {
+  background-color: #0073aa;
+}
+
+.has-lighter-blue-color {
+  color: #229fd8;
+}
+
+.has-lighter-blue-background-color {
+  background-color: #229fd8;
+}
+
+.has-very-light-gray-color {
+  color: #eee;
+}
+
+.has-very-light-gray-background-color {
+  background-color: #eee;
+}
+
+.has-very-dark-gray-color {
+  color: #444;
+}
+
+.has-very-dark-gray-background-color {
+  background-color: #444;
+}

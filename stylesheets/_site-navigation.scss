@@ -1,0 +1,196 @@
+
+/** === Site Branding === */
+
+.main-navigation {
+
+	> div > ul {
+
+		@include globalvar(font-family, heading);
+		display: none;
+		margin: 0;
+		padding: 0;
+
+		li {
+			display: inline-block;
+			list-style: none;
+			padding-left: 0;
+
+			&:before {
+				content: "";
+				display: none;
+			}
+
+			> a {
+				@include globalvar(color, primary-base);
+				@include globalvar(font-size, xs);
+				@include globalvar(padding, xs);
+				@include link-transition;
+				display: block;
+				font-weight: 400;
+				letter-spacing: .125em;
+				text-decoration: none;
+				text-transform: uppercase;
+
+				&:hover {
+					@include globalvar(color, primary-dark);
+				}
+			}
+
+			ul li a:before {
+				content: "\2014\00a0";
+			}
+
+			&.menu-item-has-children {
+				@include globalvar(padding-right, md);
+				position: relative;
+
+				button {
+					@include globalvar(background-color, transparent);
+					@include globalvar(color, primary-base);
+					@include globalvar(padding-top, xs);
+					@include globalvar(padding-right, xs);
+					@include globalvar(padding-bottom, xs);
+					@include globalvar(padding-left, 0);
+					line-height: #{map-get($space, xs)};
+					border: none;
+					box-shadow: inherit;
+					position: absolute;
+					right: 0;
+					top: 0;
+					vertical-align: middle;
+					span {
+						display: inline-block;
+						height: 20px;
+						overflow: hidden;
+					}
+				}
+
+				&#more-menu button {
+					left: inherit;
+					position: relative;
+					right: inherit;
+				}
+			}
+		}
+	}
+
+	&.toggled > div > ul {
+		display: block;
+	}
+
+	@include media( tablet ) {
+
+		@include block-margin( sm, 0 );
+		display: block;
+		width: 100%;
+
+		> div > ul {
+
+			display: block;
+
+			ul {
+				@include globalvar(background-color, shade-white);
+				float: left;
+				position: absolute;
+				left: -999em;
+				z-index: 99999;
+				-webkit-transition: opacity 0.5s ease-in-out;
+				-moz-transition:    opacity 0.5s ease-in-out;
+				transition:         opacity 0.5s ease-in-out;
+
+				li {
+					display: block;
+					clear: both;
+					float: none;
+				}
+
+				a {
+					display: block;
+					width: 100%;
+				}
+			}
+
+			li.toggled-on > ul {
+				@include globalvar(width, column-3);
+				left: inherit;
+				right: 0;
+				width: 150%;
+				opacity: 1;
+
+				> li.toggled-on > ul {
+					position: relative;
+					width: 100%;
+				}
+			}
+		}
+	}
+}
+
+.menu-toggle {
+
+	position: fixed;
+	bottom: 0;
+	right: 0;
+
+	@include media( tablet ) {
+		display: none;
+	}
+}
+
+.post-navigation {
+
+	@include block-margin( lg, 0 );
+	border-top: 1px solid green;
+	@include globalvar( border-top-color, primary-base );
+	border-bottom: 1px solid grey;
+	@include globalvar( border-bottom-color, border-base);
+
+	&:last-child {
+		@include globalvar(margin-bottom, 0);
+		border-bottom: none;
+	}
+
+	.nav-links {
+
+		display: flex;
+		flex-direction: column;
+
+		.post-title {
+			@include globalvar( font-size, md);
+			font-weight: 300;
+			margin: 0;
+		}
+
+		.post-excerpt {
+			@include globalvar( color, words-base );
+			@include block-margin( xs, 0 );
+		}
+
+		a:hover {
+			text-decoration: none;
+			.post-excerpt {
+				@include globalvar( color, words-base );
+				text-decoration: none;
+			}
+		}
+
+		& > div {
+			@include block-margin();
+		}
+	}
+
+	@include media( tablet ) {
+		@include block-margin( sm, 0 );
+		display: inherit;
+		.nav-links {
+			flex-direction: row;
+			justify-content: center;
+			align-content: center;
+
+			& > div {
+				@include block-margin( lg, sm );
+				@include globalvar( max-width, column-5);
+			}
+		}
+	}
+}
