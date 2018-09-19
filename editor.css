@@ -3,7 +3,6 @@
  * CSS4 Variables with Fallbacks Using Sass
  * src: https://codepen.io/jakealbaugh/post/css4-variables-with-fallbacks-using-sass
  */
-@import url(https://fonts.googleapis.com/css?family=Space+Mono);
 /*
 body {
   @include globalvar(font-size, base);
@@ -28,187 +27,504 @@ h2 { @include globalvar(font-size, h2); }
 h3 { @include globalvar(font-size, h3); }
 h4 { @include globalvar(font-size, h4); }
 */
-/** === Elements === */
-html {
-  box-sizing: border-box; }
+.edit-post-visual-editor {
+  --space-unit: 1.5rem;
+  --space-xxs: calc(0.25 * var(--space-unit));
+  --space-xs: calc(0.5 * var(--space-unit));
+  --space-sm: calc(0.75 * var(--space-unit));
+  --space-md: calc(1.25 * var(--space-unit));
+  --space-lg: calc(2 * var(--space-unit));
+  --space-xl: calc(3.25 * var(--space-unit));
+  --space-xxl: calc(5.25 * var(--space-unit));
+  --space-base: var(--space-sm);
+  --space-column: 80px;
+  --space-gutter: 25px;
+  --space-column-count: 12;
+  --space-column-1: calc( 1 * ( var(--grid-column) + var(--grid-gutter) ) - var(--grid-gutter));
+  --space-column-2: calc( 2 * ( var(--grid-column) + var(--grid-gutter) ) - var(--grid-gutter));
+  --space-column-3: calc( 3 * ( var(--grid-column) + var(--grid-gutter) ) - var(--grid-gutter));
+  --space-column-4: calc( 4 * ( var(--grid-column) + var(--grid-gutter) ) - var(--grid-gutter));
+  --space-column-5: calc( 5 * ( var(--grid-column) + var(--grid-gutter) ) - var(--grid-gutter));
+  --space-column-6: calc( 6 * ( var(--grid-column) + var(--grid-gutter) ) - var(--grid-gutter));
+  --space-column-7: calc( 7 * ( var(--grid-column) + var(--grid-gutter) ) - var(--grid-gutter));
+  --space-column-8: calc( 8 * ( var(--grid-column) + var(--grid-gutter) ) - var(--grid-gutter));
+  --space-column-9: calc( 9 * ( var(--grid-column) + var(--grid-gutter) ) - var(--grid-gutter));
+  --space-column-10: calc( 10 * ( var(--grid-column) + var(--grid-gutter) ) - var(--grid-gutter));
+  --space-column-11: calc( 11 * ( var(--grid-column) + var(--grid-gutter) ) - var(--grid-gutter));
+  --space-column-12: calc( 12 * ( var(--grid-column) + var(--grid-gutter) ) - var(--grid-gutter));
+  --grid-column: 80px;
+  --grid-gutter: 25px;
+  --grid-column-count: 12;
+  --grid-column-1: calc( 1 * ( var(--grid-column) + var(--grid-gutter) ) - var(--grid-gutter));
+  --grid-column-2: calc( 2 * ( var(--grid-column) + var(--grid-gutter) ) - var(--grid-gutter));
+  --grid-column-3: calc( 3 * ( var(--grid-column) + var(--grid-gutter) ) - var(--grid-gutter));
+  --grid-column-4: calc( 4 * ( var(--grid-column) + var(--grid-gutter) ) - var(--grid-gutter));
+  --grid-column-5: calc( 5 * ( var(--grid-column) + var(--grid-gutter) ) - var(--grid-gutter));
+  --grid-column-6: calc( 6 * ( var(--grid-column) + var(--grid-gutter) ) - var(--grid-gutter));
+  --grid-column-7: calc( 7 * ( var(--grid-column) + var(--grid-gutter) ) - var(--grid-gutter));
+  --grid-column-8: calc( 8 * ( var(--grid-column) + var(--grid-gutter) ) - var(--grid-gutter));
+  --grid-column-9: calc( 9 * ( var(--grid-column) + var(--grid-gutter) ) - var(--grid-gutter));
+  --grid-column-10: calc( 10 * ( var(--grid-column) + var(--grid-gutter) ) - var(--grid-gutter));
+  --grid-column-11: calc( 11 * ( var(--grid-column) + var(--grid-gutter) ) - var(--grid-gutter));
+  --grid-column-12: calc( 12 * ( var(--grid-column) + var(--grid-gutter) ) - var(--grid-gutter));
+  --font-family-body: Baskerville, Baskerville Old Face, Hoefler Text, Garamond, Times New Roman, serif;
+  --font-family-heading: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+  --font-family-code: Menlo, monaco, Consolas, Lucida Console, monospace;
+  --font-size-base: 1.1em;
+  --font-size-ratio: 1.2;
+  --font-size-xxs: calc(1em / (var(--font-size-ratio) * var(--font-size-ratio) * var(--font-size-ratio)));
+  --font-size-xs: calc(1em / (var(--font-size-ratio) * var(--font-size-ratio)));
+  --font-size-sm: calc(1em / var(--font-size-ratio));
+  --font-size-md: calc(1em * var(--font-size-ratio));
+  --font-size-lg: calc(1em * var(--font-size-ratio) * var(--font-size-ratio));
+  --font-size-xl: calc(1em * var(--font-size-ratio) * var(--font-size-ratio) * var(--font-size-ratio));
+  --font-size-xxl: calc(1em * var(--font-size-ratio) * var(--font-size-ratio) * var(--font-size-ratio) * var(--font-size-ratio));
+  --font-size-xxxl: calc(1em * var(--font-size-ratio) * var(--font-size-ratio) * var(--font-size-ratio) * var(--font-size-ratio) * var(--font-size-ratio));
+  --font-leading-body: 1.4;
+  --font-leading-heading: 1.2;
+  --color-primary-base: #008000;
+  --color-primary-light: #339933;
+  --color-primary-dark: #006600;
+  --color-primary-bg: #cce6cc;
+  --color-secondary-base: #f5414f;
+  --color-secondary-light: #f76772;
+  --color-secondary-dark: #c4343f;
+  --color-secondary-bg: #fdd9dc;
+  --color-shade-black: #1d1d21;
+  --color-shade-gray-10: #2e2e31;
+  --color-shade-gray-6: #7b7a7d;
+  --color-shade-gray-4: #a5a5a6;
+  --color-shade-gray-3: #bbbbbc;
+  --color-shade-gray-2: #d1d0d2;
+  --color-shade-gray-1: #e8e7e8;
+  --color-shade-white: #ffffff;
+  --color-feedback-success: #88c459;
+  --color-feedback-error: #f5414f;
+  --color-feedback-warning: #ffd137;
+  --color-words-base: var(--color-shade-gray-10);
+  --color-words-heading: var(--color-shade-black);
+  --color-words-subtle: var(--color-shade-gray-6);
+  --color-link-base: var(--color-primary);
+  --color-link-hover: var(--color-primary-dark);
+  --color-border-base: var(--color-shade-gray-2);
+  --color-border-primary: var(--color-primary-base);
+  --color-border-form: var(--color-border-base);
+  --color-border-form-focus: var(--color-primary-base);
+  --color-border-form-error: var(--color-error);
+  --color-border-form-bg: var(--color-white);
+  --color-border-form-placeholder: var(--color-shade-gray-4);
+  --color-background-body: var(--color-shade-white);
+  --color-background-tranparent: transparent;
+  --color-button-primary-bg: var(--color-primary-bg);
+  --color-button-primary-hover: var(--color-primary-light);
+  --color-button-primary-active: var(--color-primary-dark);
+  --color-button-primary-label: var(--color-white);
+  --color-button-secondary-bg: var(--color-secondary-bg);
+  --color-button-secondary-hover: var(--color-secondary-light);
+  --color-button-secondary-active: var(--color-secondary-dark);
+  --color-button-secondary-label: var(--color-white); }
 
-*,
-*:before,
-*:after {
-  box-sizing: inherit; }
-
-body {
-  background-color: var(--color-shade-white); }
-
-a {
-  color: var(--color-primary-base); }
-
-a:hover,
-a:active {
-  outline: 0; }
-
-p {
-  margin: 0; }
-
-hr {
-  background-color: var(--color-shade-gray-3);
-  border: 0;
-  height: 1px;
-  margin-bottom: 1.5em; }
-
-abbr,
-acronym {
-  border-bottom: 1px dotted inherit;
-  border-bottom-color: var(--color-border-base);
-  cursor: help; }
-
-pre {
-  background-color: var(--color-shade-gray-1);
-  margin-bottom: calc(0.75 * var(--space-unit));
-  margin-bottom: var(--space-sm);
-  max-width: 100%;
-  overflow: auto;
-  padding: calc(0.75 * var(--space-unit));
-  padding: var(--space-sm); }
-
-ul,
-ol {
-  margin-top: 0;
-  margin-right: 0;
-  margin-bottom: calc(0.5 * var(--space-unit));
-  margin-bottom: var(--space-xs);
-  margin-left: calc(0.5 * var(--space-unit));
-  margin-left: var(--space-xs);
-  padding: 0; }
-
-ul {
-  list-style: none;
-  list-style-position: inside; }
-
-ul > li {
-  position: relative;
-  padding-left: calc(0.75 * var(--space-unit));
-  padding-left: var(--space-sm); }
-  ul > li:before {
-    content: "\25CF\00a0";
-    display: block;
-    left: 0;
-    position: absolute;
-    top: calc(0.25 * var(--space-unit));
-    top: var(--space-xxs);
-    color: var(--color-primary-base);
-    line-height: var(--font-leading-md);
-    font-size: calc(1em / (var(--font-size-ratio) * var(--font-size-ratio)));
-    font-size: var(--font-size-xs); }
-  ul > li li:before {
-    content: "\2B58\00a0"; }
-
-ol {
-  list-style: none;
-  counter-reset: sans-counter; }
-
-ol > li {
-  counter-increment: sans-counter;
-  position: relative;
-  padding-left: calc(1.25 * var(--space-unit));
-  padding-left: var(--space-md); }
-  ol > li ol li {
-    padding-left: calc(1.25 * var(--space-unit));
-    padding-left: var(--space-md); }
-  ol > li ul li {
-    padding-left: calc(0.75 * var(--space-unit));
-    padding-left: var(--space-sm); }
-  ol > li:before {
-    content: counter(sans-counter, decimal-leading-zero) " ";
-    left: 0;
-    position: absolute;
-    top: calc(0.25 * var(--space-unit));
-    top: var(--space-xxs);
-    color: var(--color-primary-base);
-    font-family: Space Mono, sans;
-    font-family: var(--font-family-heading);
-    font-size: calc(1em / (var(--font-size-ratio) * var(--font-size-ratio)));
-    font-size: var(--font-size-xs);
-    line-height: var(--font-leading-md); }
-
-li > ol,
-li > ul {
-  margin-left: 0;
-  margin-bottom: 0; }
-
-li > ol ol,
-li > ul ul,
-li > ol ul,
-li > ul ol {
-  margin-bottom: 0; }
-
-dt {
-  font-weight: bold; }
-
-dd {
-  margin-top: 0;
-  margin-right: 0;
-  margin-bottom: calc(0.5 * var(--space-unit));
-  margin-bottom: var(--space-xs);
-  margin-left: calc(0.5 * var(--space-unit));
-  margin-left: var(--space-xs); }
-
-img {
-  height: auto;
-  max-width: 100%; }
-
-svg {
-  fill: currentColor; }
-
-figure {
-  margin: 0; }
-
-table {
-  margin: 0 0 1.5em;
-  width: 100%; }
-
-blockquote,
-blockquote.is-large {
-  padding-top: calc(0.75 * var(--space-unit));
-  padding-top: var(--space-sm);
-  padding-bottom: calc(0.75 * var(--space-unit));
-  padding-bottom: var(--space-sm);
-  padding-left: calc(0.75 * var(--space-unit));
-  padding-left: var(--space-sm);
-  padding-right: calc(0.75 * var(--space-unit));
-  padding-right: var(--space-sm);
-  margin-left: 0;
-  margin-right: 0;
-  border-top: 1px solid green;
-  border-top-color: var(--color-border-primary); }
-  blockquote p,
-  blockquote.is-large p {
-    padding-top: calc(0.5 * var(--space-unit));
-    padding-top: var(--space-xs);
-    padding-bottom: calc(0.5 * var(--space-unit));
-    padding-bottom: var(--space-xs);
-    padding-left: 0;
-    padding-right: 0;
-    word-break: break-word; }
-  blockquote cite,
-  blockquote.is-large cite {
-    color: var(--color-words-subtle); }
-
-address {
-  margin: 0 0 1.5em; }
-
-mark,
-ins {
-  background-color: var(--color-feedback-warning); }
-
+.edit-post-visual-editor .editor-block-list__block,
 .editor-default-block-appender input[type="text"].editor-default-block-appender__content,
 .editor-post-title .editor-post-title__input,
 .edit-post-visual-editor,
 .edit-post-visual-editor p {
-  font-family: Space Mono, sans;
+  font-family: Baskerville, Baskerville Old Face, Hoefler Text, Garamond, Times New Roman, serif;
   font-family: var(--font-family-body); }
 
 .edit-post-visual-editor,
 .edit-post-visual-editor p {
-  font-size: 18px;
+  font-size: 1.1em;
   font-size: var(--font-size-base); }
+
+.edit-post-visual-editor {
+  /** === Elements === */
+  /** === Typography === */
+  /* text size */ }
+  .edit-post-visual-editor html {
+    box-sizing: border-box; }
+  .edit-post-visual-editor *,
+  .edit-post-visual-editor *:before,
+  .edit-post-visual-editor *:after {
+    box-sizing: inherit; }
+  .edit-post-visual-editor body {
+    background-color: var(--color-shade-white); }
+  .edit-post-visual-editor a {
+    color: var(--color-primary-base); }
+  .edit-post-visual-editor a:hover,
+  .edit-post-visual-editor a:active {
+    outline: 0; }
+  .edit-post-visual-editor p {
+    margin: 0; }
+  .edit-post-visual-editor hr {
+    background-color: var(--color-shade-gray-3);
+    border: 0;
+    height: 1px;
+    margin-bottom: 1.5em; }
+  .edit-post-visual-editor abbr,
+  .edit-post-visual-editor acronym {
+    border-bottom: 1px dotted inherit;
+    border-bottom-color: var(--color-border-base);
+    cursor: help; }
+  .edit-post-visual-editor pre {
+    background-color: var(--color-shade-gray-1);
+    margin-bottom: calc(0.75 * var(--space-unit));
+    margin-bottom: var(--space-sm);
+    max-width: 100%;
+    overflow: auto;
+    padding: calc(0.75 * var(--space-unit));
+    padding: var(--space-sm); }
+  .edit-post-visual-editor ul,
+  .edit-post-visual-editor ol {
+    margin-top: 0;
+    margin-right: 0;
+    margin-bottom: calc(0.5 * var(--space-unit));
+    margin-bottom: var(--space-xs);
+    margin-left: calc(0.5 * var(--space-unit));
+    margin-left: var(--space-xs);
+    padding: 0; }
+  .edit-post-visual-editor li {
+    list-style: none; }
+  .edit-post-visual-editor ul {
+    list-style: none;
+    list-style-position: inside; }
+  .edit-post-visual-editor ul > li {
+    position: relative;
+    padding-left: calc(0.75 * var(--space-unit));
+    padding-left: var(--space-sm); }
+    .edit-post-visual-editor ul > li:before {
+      content: "\25CF\00a0";
+      display: block;
+      left: 0;
+      position: absolute;
+      top: calc(0.25 * var(--space-unit));
+      top: var(--space-xxs);
+      color: var(--color-primary-base);
+      line-height: var(--font-leading-md);
+      font-size: calc(1em / (var(--font-size-ratio) * var(--font-size-ratio)));
+      font-size: var(--font-size-xs); }
+    .edit-post-visual-editor ul > li li:before {
+      content: "\2B58\00a0"; }
+  .edit-post-visual-editor ol {
+    list-style: none;
+    counter-reset: sans-counter; }
+  .edit-post-visual-editor ol > li {
+    counter-increment: sans-counter;
+    position: relative;
+    padding-left: calc(1.25 * var(--space-unit));
+    padding-left: var(--space-md); }
+    .edit-post-visual-editor ol > li ol li {
+      padding-left: calc(1.25 * var(--space-unit));
+      padding-left: var(--space-md); }
+    .edit-post-visual-editor ol > li ul li {
+      padding-left: calc(0.75 * var(--space-unit));
+      padding-left: var(--space-sm); }
+    .edit-post-visual-editor ol > li:before {
+      content: counter(sans-counter, decimal-leading-zero) " ";
+      left: 0;
+      position: absolute;
+      top: calc(0.25 * var(--space-unit));
+      top: var(--space-xxs);
+      color: var(--color-primary-base);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+      font-family: var(--font-family-heading);
+      font-size: calc(1em / (var(--font-size-ratio) * var(--font-size-ratio)));
+      font-size: var(--font-size-xs);
+      line-height: var(--font-leading-md); }
+  .edit-post-visual-editor li > ol,
+  .edit-post-visual-editor li > ul {
+    margin-left: 0;
+    margin-bottom: 0; }
+  .edit-post-visual-editor li > ol ol,
+  .edit-post-visual-editor li > ul ul,
+  .edit-post-visual-editor li > ol ul,
+  .edit-post-visual-editor li > ul ol {
+    margin-bottom: 0; }
+  .edit-post-visual-editor dt {
+    font-weight: bold; }
+  .edit-post-visual-editor dd {
+    margin-top: 0;
+    margin-right: 0;
+    margin-bottom: calc(0.5 * var(--space-unit));
+    margin-bottom: var(--space-xs);
+    margin-left: calc(0.5 * var(--space-unit));
+    margin-left: var(--space-xs); }
+  .edit-post-visual-editor img {
+    height: auto;
+    max-width: 100%; }
+  .edit-post-visual-editor svg {
+    fill: currentColor; }
+  .edit-post-visual-editor figure {
+    margin: 0; }
+  .edit-post-visual-editor table {
+    margin: 0 0 1.5em;
+    width: 100%; }
+  .edit-post-visual-editor blockquote,
+  .edit-post-visual-editor blockquote.is-large {
+    padding-top: calc(0.75 * var(--space-unit));
+    padding-top: var(--space-sm);
+    padding-bottom: calc(0.75 * var(--space-unit));
+    padding-bottom: var(--space-sm);
+    padding-left: calc(0.75 * var(--space-unit));
+    padding-left: var(--space-sm);
+    padding-right: calc(0.75 * var(--space-unit));
+    padding-right: var(--space-sm);
+    margin-left: 0;
+    margin-right: 0;
+    border-top: 1px solid green;
+    border-top-color: var(--color-border-primary); }
+    .edit-post-visual-editor blockquote p,
+    .edit-post-visual-editor blockquote.is-large p {
+      padding-top: calc(0.5 * var(--space-unit));
+      padding-top: var(--space-xs);
+      padding-bottom: calc(0.5 * var(--space-unit));
+      padding-bottom: var(--space-xs);
+      padding-left: 0;
+      padding-right: 0;
+      word-break: break-word; }
+    .edit-post-visual-editor blockquote cite,
+    .edit-post-visual-editor blockquote.is-large cite {
+      color: var(--color-words-subtle); }
+  .edit-post-visual-editor address {
+    margin: 0 0 1.5em; }
+  .edit-post-visual-editor mark,
+  .edit-post-visual-editor ins {
+    background-color: var(--color-feedback-warning); }
+  .edit-post-visual-editor body {
+    font-size: 1.1em;
+    font-size: var(--font-size-base); }
+    @media only screen and (min-width: calc( 8 * ( 80px + 25px ) - 25px)) {
+      .edit-post-visual-editor body {
+        --font-size-base: calc( 1.1em * 1.167); } }
+  .edit-post-visual-editor body,
+  .edit-post-visual-editor button,
+  .edit-post-visual-editor input,
+  .edit-post-visual-editor select,
+  .edit-post-visual-editor optgroup,
+  .edit-post-visual-editor textarea {
+    font-family: Baskerville, Baskerville Old Face, Hoefler Text, Garamond, Times New Roman, serif;
+    font-family: var(--font-family-body);
+    line-height: 1.4;
+    line-height: var(--font-leading-body);
+    color: var(--color-words-base);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-weight: 400; }
+  .edit-post-visual-editor h1, .edit-post-visual-editor h2, .edit-post-visual-editor h3, .edit-post-visual-editor h4, .edit-post-visual-editor h5, .edit-post-visual-editor h6 {
+    clear: both;
+    font-weight: 400;
+    line-height: 1.2;
+    line-height: var(--font-leading-heading);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale; }
+  .edit-post-visual-editor h2 {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+    font-family: var(--font-family-heading);
+    font-weight: 200;
+    letter-spacing: .25rem;
+    text-transform: uppercase; }
+  .edit-post-visual-editor h5 {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+    font-family: var(--font-family-heading);
+    font-weight: 500;
+    text-transform: uppercase; }
+  .edit-post-visual-editor h6 {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+    font-family: var(--font-family-heading);
+    font-weight: 200;
+    letter-spacing: .125rem;
+    text-transform: uppercase; }
+  .edit-post-visual-editor .text--xxxl,
+  .edit-post-visual-editor p.has-drop-cap:not(:focus):first-letter {
+    font-size: calc(1em * var(--font-size-ratio) * var(--font-size-ratio) * var(--font-size-ratio) * var(--font-size-ratio) * var(--font-size-ratio));
+    font-size: var(--font-size-xxxl); }
+  .edit-post-visual-editor h1,
+  .edit-post-visual-editor .text--xxl,
+  .edit-post-visual-editor big {
+    font-size: calc(1em * var(--font-size-ratio) * var(--font-size-ratio) * var(--font-size-ratio) * var(--font-size-ratio));
+    font-size: var(--font-size-xxl); }
+  .edit-post-visual-editor h2,
+  .edit-post-visual-editor .text--xl,
+  .edit-post-visual-editor .has-larger-font-size {
+    font-size: calc(1em * var(--font-size-ratio) * var(--font-size-ratio) * var(--font-size-ratio));
+    font-size: var(--font-size-xl); }
+  .edit-post-visual-editor h3,
+  .edit-post-visual-editor .text--lg,
+  .edit-post-visual-editor .has-large-font-size {
+    font-size: calc(1em * var(--font-size-ratio) * var(--font-size-ratio));
+    font-size: var(--font-size-lg); }
+  .edit-post-visual-editor h4,
+  .edit-post-visual-editor .text--md,
+  .edit-post-visual-editor .has-regular-font-size {
+    font-size: calc(1em * var(--font-size-ratio));
+    font-size: var(--font-size-md); }
+  .edit-post-visual-editor .text--sm,
+  .edit-post-visual-editor small,
+  .edit-post-visual-editor .has-small-font-size {
+    font-size: calc(1em / var(--font-size-ratio));
+    font-size: var(--font-size-sm); }
+  .edit-post-visual-editor .text--xs {
+    font-size: calc(1em / (var(--font-size-ratio) * var(--font-size-ratio)));
+    font-size: var(--font-size-xs); }
+  .edit-post-visual-editor dfn, .edit-post-visual-editor em, .edit-post-visual-editor i {
+    font-style: italic; }
+  .edit-post-visual-editor blockquote p,
+  .edit-post-visual-editor blockquote.is-large p {
+    font-size: calc(1em * var(--font-size-ratio) * var(--font-size-ratio));
+    font-size: var(--font-size-lg);
+    font-style: normal; }
+  .edit-post-visual-editor blockquote cite,
+  .edit-post-visual-editor blockquote.is-large cite {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+    font-family: var(--font-family-heading);
+    font-size: calc(1em / (var(--font-size-ratio) * var(--font-size-ratio)));
+    font-size: var(--font-size-xs);
+    font-style: normal;
+    font-weight: 500; }
+  .edit-post-visual-editor pre {
+    font-family: Menlo, monaco, Consolas, Lucida Console, monospace;
+    font-family: var(--font-family-code);
+    font-size: calc(1em / var(--font-size-ratio));
+    font-size: var(--font-size-sm);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale; }
+  .edit-post-visual-editor code, .edit-post-visual-editor kbd, .edit-post-visual-editor tt, .edit-post-visual-editor var, .edit-post-visual-editor samp {
+    font-size: calc(1em * var(--font-size-ratio));
+    font-size: var(--font-size-md);
+    font-family: Menlo, monaco, Consolas, Lucida Console, monospace;
+    font-family: var(--font-family-code);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale; }
+  .edit-post-visual-editor mark, .edit-post-visual-editor ins {
+    text-decoration: none; }
+  .edit-post-visual-editor a {
+    background-color: transparent;
+    text-decoration: none; }
+    .edit-post-visual-editor a:hover {
+      text-decoration: underline; }
+  .edit-post-visual-editor abbr[title] {
+    border-bottom: none;
+    text-decoration: underline;
+    text-decoration: underline dotted; }
+  .edit-post-visual-editor b,
+  .edit-post-visual-editor strong {
+    font-weight: bolder; }
+  .edit-post-visual-editor sub,
+  .edit-post-visual-editor sup {
+    font-size: 75%;
+    line-height: 0;
+    position: relative;
+    vertical-align: baseline; }
+  .edit-post-visual-editor sub {
+    bottom: -0.25em; }
+  .edit-post-visual-editor sup {
+    top: -0.5em; }
+  .edit-post-visual-editor .editor-block-list__block,
+  .edit-post-visual-editor .editor-block-list__block p {
+    font-size: 1.1em;
+    font-size: var(--font-size-base); }
+    @media only screen and (min-width: calc( 8 * ( 80px + 25px ) - 25px)) {
+      .edit-post-visual-editor .editor-block-list__block,
+      .edit-post-visual-editor .editor-block-list__block p {
+        --font-size-base: calc( 1.1em * 1.167); } }
+  .edit-post-visual-editor .editor-rich-text__tinymce.mce-content-body {
+    line-height: 1.4;
+    line-height: var(--font-leading-body);
+    color: var(--color-words-base); }
+  .edit-post-visual-editor .wp-block-button .wp-block-button__link {
+    background-color: var(--color-primary-base);
+    color: var(--color-shade-white);
+    padding: calc(0.5 * var(--space-unit));
+    padding: var(--space-xs);
+    padding-left: calc(0.75 * var(--space-unit));
+    padding-left: var(--space-sm);
+    padding-right: calc(0.75 * var(--space-unit));
+    padding-right: var(--space-sm);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+    font-family: var(--font-family-heading);
+    font-size: calc(1em / var(--font-size-ratio));
+    font-size: var(--font-size-sm);
+    line-height: 1.4;
+    line-height: var(--font-leading-body);
+    overflow: hidden;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+    border: 2px solid green;
+    border-color: var(--color-primary-base);
+    box-shadow: 1px 1px 5px 1px rgba(0, 0, 0, 0.33);
+    cursor: pointer;
+    display: inline-block;
+    font-weight: 600;
+    text-decoration: none;
+    text-transform: uppercase; }
+  .edit-post-visual-editor .wp-block-image .block-library-image__resizer img,
+  .edit-post-visual-editor [data-type="core/image"][data-align=full] figure img,
+  .edit-post-visual-editor [data-type="core/image"][data-align=wide] figure img {
+    line-height: 0;
+    display: block; }
+  .edit-post-visual-editor .wp-block-gallery {
+    list-style: none; }
+    .edit-post-visual-editor .wp-block-gallery .blocks-gallery-item,
+    .edit-post-visual-editor .wp-block-gallery .blocks-gallery-image {
+      margin: 0;
+      padding-left: 0; }
+      .edit-post-visual-editor .wp-block-gallery .blocks-gallery-item:before,
+      .edit-post-visual-editor .wp-block-gallery .blocks-gallery-image:before {
+        content: "";
+        display: none; }
+      .edit-post-visual-editor .wp-block-gallery .blocks-gallery-item figure,
+      .edit-post-visual-editor .wp-block-gallery .blocks-gallery-image figure {
+        display: flex;
+        flex-direction: column; }
+      .edit-post-visual-editor .wp-block-gallery .blocks-gallery-item figcaption,
+      .edit-post-visual-editor .wp-block-gallery .blocks-gallery-image figcaption {
+        position: relative;
+        padding: 0;
+        max-height: inherit;
+        background: transparent; }
+      .edit-post-visual-editor .wp-block-gallery .blocks-gallery-item .editor-rich-text,
+      .edit-post-visual-editor .wp-block-gallery .blocks-gallery-image .editor-rich-text {
+        position: inherit; }
+  .edit-post-visual-editor .wp-block-audio figcaption,
+  .edit-post-visual-editor .wp-block-video figcaption,
+  .edit-post-visual-editor .wp-block-image figcaption,
+  .edit-post-visual-editor .wp-block-gallery .blocks-gallery-image figcaption,
+  .edit-post-visual-editor .wp-block-gallery .blocks-gallery-item figcaption {
+    color: var(--color-words-subtle);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+    font-family: var(--font-family-heading);
+    padding-top: calc(0.25 * var(--space-unit));
+    padding-top: var(--space-xxs);
+    padding-bottom: calc(0.25 * var(--space-unit));
+    padding-bottom: var(--space-xxs);
+    padding-left: 0;
+    padding-right: 0;
+    text-align: left;
+    margin: 0; }
+  .edit-post-visual-editor .wp-block-audio.alignfull figcaption,
+  .edit-post-visual-editor .wp-block-video.alignfull figcaption,
+  .edit-post-visual-editor .wp-block-image.alignfull figcaption,
+  .edit-post-visual-editor .wp-block-gallery.alignfull .blocks-gallery-image figcaption,
+  .edit-post-visual-editor .wp-block-gallery.alignfull .blocks-gallery-item figcaption,
+  .edit-post-visual-editor [data-type="core/image"][data-align=full] figcaption {
+    padding-top: calc(0.5 * var(--space-unit));
+    padding-top: var(--space-xs);
+    padding-bottom: calc(0.5 * var(--space-unit));
+    padding-bottom: var(--space-xs);
+    padding-left: calc(0.75 * var(--space-unit));
+    padding-left: var(--space-sm);
+    padding-right: calc(0.75 * var(--space-unit));
+    padding-right: var(--space-sm);
+    position: inherit; }
+  .edit-post-visual-editor .wp-block-quote:not(.is-large):not(.is-style-large) {
+    border-left: none; }
+  .edit-post-visual-editor .wp-block-quote .wp-block-quote__citation {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+    font-family: var(--font-family-heading);
+    font-size: calc(1em / (var(--font-size-ratio) * var(--font-size-ratio)));
+    font-size: var(--font-size-xs);
+    color: var(--color-words-subtle);
+    font-style: normal;
+    font-weight: 500; }

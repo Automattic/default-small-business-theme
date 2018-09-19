@@ -77,11 +77,14 @@ if ( ! function_exists( 'smallbusinesstheme_setup' ) ) :
 			'header-text' => array( 'site-title', 'site-description' ),
 		) );
 
+		// Add support for full and wide align images.
+		add_theme_support( 'align-wide' );
+
 		// Adding support for core block visual styles.
 		// add_theme_support( 'wp-block-styles' );
 
 		// Add support for full and wide align images.
-		add_theme_support( 'align-wide' );
+		// add_theme_support( 'editor-styles' );
 
 		// Add support for custom color scheme.
 		add_theme_support( 'editor-color-palette', array(
@@ -158,7 +161,7 @@ function smallbusinesstheme_scripts() {
 
 	wp_enqueue_style( 'gutenbergbase-style', get_stylesheet_uri() );
 
-	wp_enqueue_style( 'smallbusinessthemeblocks-style', get_template_directory_uri() . '/css/blocks.css' );
+	wp_enqueue_style( 'smallbusinesstheme-blocks-style', get_template_directory_uri() . '/css/blocks.css' );
 
 	wp_enqueue_style( 'smallbusinesstheme-fonts', smallbusinesstheme_fonts_url() );
 
@@ -185,6 +188,14 @@ function smallbusinesstheme_scripts() {
 
 }
 add_action( 'wp_enqueue_scripts', 'smallbusinesstheme_scripts' );
+
+/**
+ * Enqueue Gutenberg editor styles
+ */
+function smallbusinesstheme_editor_styles() {
+	wp_enqueue_style( 'smallbusinesstheme-editor-style', get_template_directory_uri() . '/editor.css' );
+}
+add_action( 'enqueue_block_editor_assets', 'smallbusinesstheme_editor_styles' );
 
 /**
  * Check whether the browser supports JavaScript
@@ -230,11 +241,3 @@ require get_template_directory() . '/inc/customizer.php';
 if ( defined( 'JETPACK__VERSION' ) ) {
 	require get_template_directory() . '/inc/jetpack.php';
 }
-
-/**
- * Enqueue Gutenberg editor styles
- */
-function smallbusinesstheme_editor_styles() {
-	wp_enqueue_style( 'smallbusinesstheme-blocks-style', get_template_directory_uri() . '/editor.css');
-}
-add_action( 'enqueue_block_editor_assets', 'smallbusinesstheme_editor_styles' );
