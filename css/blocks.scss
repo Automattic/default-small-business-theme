@@ -14,20 +14,8 @@
 
 // !Block sizing & positioning
 
-.entry-content > * {
-
-	@include block-margin();
-	max-width: calc( 100% - ( #{map-get($space, sm)} * 2 ) );
-
-	&:first-child {
-		margin-top: 0;
-	}
-
-	@include media( tablet ) {
-		@include globalvar(max-width, column-6);
-		@include globalvar(margin-right, column-2);
-		margin-left: auto;
-	}
+.entry-content > *,
+.entry-summary > * {
 
 	&.alignwide {
 

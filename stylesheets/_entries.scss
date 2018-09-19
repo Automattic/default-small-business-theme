@@ -14,6 +14,7 @@
 	}
 
 	.entry-header {
+
 		@include media( tablet ) {
 			@include globalvar(max-width, column-12);
 			align-items: flex-start;
@@ -27,11 +28,6 @@
 	.entry-title {
 		@include block-margin();
 		@include globalvar(color, primary-base);
-		@include globalvar(font-family, heading);
-		@include globalvar(font-size, xl);
-		font-weight: 200;
-		letter-spacing: .25rem;
-		text-transform: uppercase;
 
 		a {
 			@include globalvar(color, primary-base);
@@ -214,7 +210,24 @@
 
 	}
 
-	.entry-content {
+	.entry-content,
+	.entry-summary {
+
+		// Style all elemnts first
+		> * {
+			@include block-margin();
+			max-width: calc( 100% - ( #{map-get($space, sm)} * 2 ) );
+
+			&:first-child {
+				margin-top: 0;
+			}
+
+			@include media( tablet ) {
+				@include globalvar(max-width, column-6);
+				@include globalvar(margin-right, column-2);
+				margin-left: auto;
+			}
+		}
 
 		span[id^=more] {
 			display: block;
@@ -241,5 +254,12 @@
 			margin-left: auto;
 			margin-right: auto;
 		}
+	}
+
+	// Archives
+	.blog &,
+	.archive &,
+	.search & {
+
 	}
 }
