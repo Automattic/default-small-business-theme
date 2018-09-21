@@ -183,6 +183,9 @@
 		@include block-margin( sm, 0 );
 		display: inherit;
 		.nav-links {
+			@include globalvar(max-width, column-10);
+			margin-left: auto;
+			margin-right: auto;
 			flex-direction: row;
 			justify-content: center;
 			align-content: center;

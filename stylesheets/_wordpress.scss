@@ -58,7 +58,7 @@
 	@include block-margin( lg, 0 );
 
 	@include media( tablet ) {
-		@include globalvar(max-width, column-12);
+		@include globalvar(max-width, column-10);
 		display: flex;
 		justify-content: flex-end;
 		flex-direction: row;
@@ -70,23 +70,40 @@
 }
 
 .comments-title {
-	@include block-margin( sm, 0 );
-	flex: 1 1 auto;
-	@include globalvar(max-width, column-4);
+
+	@include block-margin();
+	@include globalvar(max-width, column-3);
 	//width: 100%;
+
+	@include media( tablet ) {
+		flex: 1 1 20%;
+	}
 }
 
 .comment-respond {
+
 	@include block-margin();
 
 	@include media( tablet ) {
-		@include globalvar(max-width, column-6);
-		@include globalvar(margin-right, column-2);
-		width: 100%;
+		@include globalvar(max-width, column-7);
+		flex: 1 1 70%;
 	}
 
 	h3 {
-		margin: 0;
+		margin-top: 0;
+	}
+
+	form {
+		> p {
+			@include globalvar(margin-bottom, sm);
+
+			&:not(.form-submit) {
+
+				input {
+					width: 100%;
+				}
+			}
+		}
 	}
 }
 
@@ -125,14 +142,14 @@
 
 	@include media( tablet ) {
 		@include globalvar(max-width, column-7);
-		@include block-margin( sm, 0 );
-		@include globalvar(margin-right, column-2);
+		@include globalvar(margin-right, column-1);
+		margin-left: 0;
 	}
 }
 
 .comment-body {
 
-	@include globalvar(max-width, column-7);
+	// @include globalvar(max-width, column-7);
 	position: relative;
 	min-height: 9rem;
 
@@ -159,6 +176,7 @@
 }
 
 .comment-author {
+
 	@include globalvar(margin-bottom, xxs);
 	display: flex;
 	align-items: center;
@@ -183,11 +201,12 @@
 	}
 
 	@include media( tablet ) {
+
 		justify-content: flex-end;
 
 		.avatar {
-			margin-left: 20px;
-			@include globalvar( margin-right, gutter );
+			@include globalvar( margin-left, gutter );
+			margin-right: 20px;
 		}
 	}
 }

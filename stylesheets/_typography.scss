@@ -1,12 +1,14 @@
 
 /** === Typography === */
-body {
+body,
+input {
 
+	// font-size base for mobile
 	@include globalvar(font-size, base);
 
 	@include media(tablet) {
 
-		// you can manage typography editing only these 2 variables
+		// font-size base for tablet and up
 		--font-size-base: calc( #{$font-size-base} * #{$font-size-responsive-ratio} ); // 1 1/6
 	}
 }

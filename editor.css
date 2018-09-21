@@ -290,11 +290,13 @@ h4 { @include globalvar(font-size, h4); }
   .edit-post-visual-editor mark,
   .edit-post-visual-editor ins {
     background-color: var(--color-feedback-warning); }
-  .edit-post-visual-editor body {
+  .edit-post-visual-editor body,
+  .edit-post-visual-editor input {
     font-size: 1.1em;
     font-size: var(--font-size-base); }
     @media only screen and (min-width: calc( 8 * ( 80px + 25px ) - 25px)) {
-      .edit-post-visual-editor body {
+      .edit-post-visual-editor body,
+      .edit-post-visual-editor input {
         --font-size-base: calc( 1.1em * 1.167); } }
   .edit-post-visual-editor body,
   .edit-post-visual-editor button,

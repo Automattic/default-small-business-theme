@@ -135,7 +135,8 @@
 }
 
 .site-footer {
-	@include globalvar(background-color, primary-base);
+	border-top: 1px solid grey;
+	@include globalvar(border-color, border-base);
 }
 
 .site-info {
@@ -145,13 +146,12 @@
 	@include globalvar(padding, lg);
 	@include globalvar(padding-left, sm);
 	@include globalvar(padding-right, sm);
-	@include globalvar(color, shade-white);
 
 	a {
 		color: inherit;
 		&:hover {
 			text-decoration: none;
-			@include globalvar(color, primary-bg);
+			@include globalvar(color, primary-base);
 		}
 	}
 
