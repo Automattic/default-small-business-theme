@@ -307,8 +307,8 @@ table.wp-block-table {
   @media only screen and (min-width: calc( 8 * ( 80px + 25px ) - 25px)) {
     .wp-block-table table,
     table.wp-block-table {
-      max-width: calc( 6 * ( var(--grid-column) + var(--grid-gutter) ) - var(--grid-gutter));
-      max-width: var(--grid-column-6); } }
+      max-width: calc( 7 * ( var(--grid-column) + var(--grid-gutter) ) - var(--grid-gutter));
+      max-width: var(--grid-column-7); } }
 
 .wp-block-embed > *,
 .wp-block-embed > .jetpack-video-wrapper > * {

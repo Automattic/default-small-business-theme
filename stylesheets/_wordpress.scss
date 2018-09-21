@@ -24,7 +24,7 @@
 	margin-right: auto;
 
 	> * {
-		@include block-padding(sm, 0);
+		@include block-padding();
 	}
 
 	> *:last-child {

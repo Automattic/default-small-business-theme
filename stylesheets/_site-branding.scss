@@ -142,7 +142,7 @@
 .site-info {
 
 	@include globalvar(font-size, sm);
-	@include globalvar(font-family, headings);
+	@include globalvar(font-family, body);
 	@include globalvar(padding, lg);
 	@include globalvar(padding-left, sm);
 	@include globalvar(padding-right, sm);
@@ -156,7 +156,7 @@
 	}
 
 	@include media( desktop ) {
-		@include globalvar(max-width, column-12);
+		@include globalvar(max-width, column-10);
 		border-bottom: none;
 		display: flex;
 		align-items: center;

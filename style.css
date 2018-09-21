@@ -836,7 +836,8 @@ textarea {
 .site-info {
   font-size: calc(1em / var(--font-size-ratio));
   font-size: var(--font-size-sm);
-  font-family: var(--font-family-headings);
+  font-family: Baskerville, Baskerville Old Face, Hoefler Text, Garamond, Times New Roman, serif;
+  font-family: var(--font-family-body);
   padding: calc(2 * var(--space-unit));
   padding: var(--space-lg);
   padding-left: calc(0.75 * var(--space-unit));
@@ -850,8 +851,8 @@ textarea {
       color: var(--color-primary-base); }
   @media only screen and (min-width: calc( 10 * ( 80px + 25px ) - 25px)) {
     .site-info {
-      max-width: calc( 12 * ( var(--grid-column) + var(--grid-gutter) ) - var(--grid-gutter));
-      max-width: var(--grid-column-12);
+      max-width: calc( 10 * ( var(--grid-column) + var(--grid-gutter) ) - var(--grid-gutter));
+      max-width: var(--grid-column-10);
       border-bottom: none;
       display: flex;
       align-items: center;
@@ -1064,8 +1065,10 @@ textarea {
     padding-top: var(--space-sm);
     padding-bottom: calc(0.75 * var(--space-unit));
     padding-bottom: var(--space-sm);
-    padding-left: 0;
-    padding-right: 0; }
+    padding-left: calc(0.75 * var(--space-unit));
+    padding-left: var(--space-sm);
+    padding-right: calc(0.75 * var(--space-unit));
+    padding-right: var(--space-sm); }
   @media only screen and (min-width: calc( 10 * ( 80px + 25px ) - 25px)) {
     .page-header {
       display: flex;
@@ -1404,6 +1407,24 @@ object {
   margin-bottom: var(--space-lg);
   margin-left: 0;
   margin-right: 0; }
+  @media only screen and (min-width: calc( 8 * ( 80px + 25px ) - 25px)) {
+    .hentry {
+      margin-top: calc(2 * var(--space-unit));
+      margin-top: var(--space-lg);
+      margin-bottom: calc(2 * var(--space-unit));
+      margin-bottom: var(--space-lg);
+      margin-left: calc(0.75 * var(--space-unit));
+      margin-left: var(--space-sm);
+      margin-right: calc(0.75 * var(--space-unit));
+      margin-right: var(--space-sm); } }
+  @media only screen and (min-width: calc( 10 * ( 80px + 25px ) - 25px)) {
+    .hentry {
+      margin-top: calc(2 * var(--space-unit));
+      margin-top: var(--space-lg);
+      margin-bottom: calc(2 * var(--space-unit));
+      margin-bottom: var(--space-lg);
+      margin-left: 0;
+      margin-right: 0; } }
   .hentry .entry-featured-image {
     text-align: center; }
   @media only screen and (min-width: calc( 8 * ( 80px + 25px ) - 25px)) {
@@ -1583,6 +1604,10 @@ object {
       max-width: var(--grid-column-12);
       margin-left: auto;
       margin-right: auto; } }
+  .blog .hentry .entry-summary p,
+  .archive .hentry .entry-summary p,
+  .search .hentry .entry-summary p {
+    word-break: break-word; }
   .blog .hentry .entry-footer .entry-meta > span:last-child,
   .archive .hentry .entry-footer .entry-meta > span:last-child,
   .search .hentry .entry-footer .entry-meta > span:last-child {
@@ -1590,18 +1615,31 @@ object {
     padding-bottom: var(--space-sm);
     border-bottom: 1px solid grey;
     border-bottom-color: var(--color-border-base); }
+  .blog .hentry:last-of-type .entry-footer .entry-meta > span:last-child,
+  .archive .hentry:last-of-type .entry-footer .entry-meta > span:last-child,
+  .search .hentry:last-of-type .entry-footer .entry-meta > span:last-child {
+    border-bottom: none; }
   @media only screen and (min-width: calc( 8 * ( 80px + 25px ) - 25px)) {
     .blog .hentry .entry-footer .entry-meta,
     .archive .hentry .entry-footer .entry-meta,
     .search .hentry .entry-footer .entry-meta {
       border-bottom: 1px solid grey;
       border-bottom-color: var(--color-border-base); }
-      .blog .hentry .entry-footer .entry-meta > span:last-child,
-      .archive .hentry .entry-footer .entry-meta > span:last-child,
-      .search .hentry .entry-footer .entry-meta > span:last-child {
-        padding-bottom: 0;
-        border-bottom: none;
-        margin-right: 0; } }
+      .blog .hentry .entry-footer .entry-meta > span,
+      .archive .hentry .entry-footer .entry-meta > span,
+      .search .hentry .entry-footer .entry-meta > span {
+        margin-right: calc(0.75 * var(--space-unit));
+        margin-right: var(--space-sm); }
+        .blog .hentry .entry-footer .entry-meta > span:last-child,
+        .archive .hentry .entry-footer .entry-meta > span:last-child,
+        .search .hentry .entry-footer .entry-meta > span:last-child {
+          padding-bottom: 0;
+          border-bottom: none;
+          margin-right: 0; }
+    .blog .hentry:last-of-type .entry-footer .entry-meta,
+    .archive .hentry:last-of-type .entry-footer .entry-meta,
+    .search .hentry:last-of-type .entry-footer .entry-meta {
+      border-bottom: none; } }
   @media only screen and (min-width: calc( 10 * ( 80px + 25px ) - 25px)) {
     .blog .hentry,
     .archive .hentry,
@@ -1663,8 +1701,6 @@ object {
           .blog .hentry .entry-footer .entry-meta > span,
           .archive .hentry .entry-footer .entry-meta > span,
           .search .hentry .entry-footer .entry-meta > span {
-            margin-right: calc(0.75 * var(--space-unit));
-            margin-right: var(--space-sm);
             flex: 1 1 20%; } }
 
 /** === CSS Effects === */

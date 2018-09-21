@@ -349,7 +349,7 @@ table.wp-block-table {
 	max-width: calc( 100% - ( #{map-get($space, sm)} * 2 ) );
 
 	@include media( tablet ) {
-		@include globalvar(max-width, column-6);
+		@include globalvar(max-width, column-7);
 	}
 }
 

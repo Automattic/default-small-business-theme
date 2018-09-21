@@ -26,6 +26,14 @@
 
 	@include block-margin( lg, 0 );
 
+	@include media( tablet ) {
+		@include block-margin( lg, sm );
+	}
+
+	@include media( desktop ) {
+		@include block-margin( lg, 0 );
+	}
+
 	.entry-featured-image {
 		text-align: center;
 	}
@@ -265,19 +273,27 @@
 	.archive &,
 	.search & {
 
+		.entry-summary p {
+			word-break: break-word;
+		}
+
 		.entry-footer {
 
 			.entry-meta {
 				> span {
 
 					&:last-child {
-
 						@include globalvar(padding-bottom, sm);
 						border-bottom: 1px solid grey;
 						@include globalvar(border-bottom-color, border-base);
 					}
 				}
 			}
+		}
+
+		// remove the last bottom border on archives
+		&:last-of-type .entry-footer .entry-meta > span:last-child {
+			border-bottom: none;
 		}
 
 		@include media( tablet ) {
@@ -288,6 +304,7 @@
 				@include globalvar(border-bottom-color, border-base);
 
 				> span {
+					@include globalvar(margin-right, sm);
 
 					&:last-child {
 						@include globalvar(padding-bottom, 0);
@@ -295,6 +312,11 @@
 						margin-right: 0;
 					}
 				}
+			}
+
+			// remove the last bottom border on archives
+			&:last-of-type .entry-footer .entry-meta {
+				border-bottom: none;
 			}
 		}
 
@@ -329,7 +351,7 @@
 				flex: 1 1 60%;
 
 				> * {
-				//	margin-left: 0;
+
 					@include globalvar(margin-left, sm);
 					@include globalvar(margin-right, sm);
 				}
@@ -342,14 +364,11 @@
 
 				.entry-meta {
 
-				//	margin-left: 0;
 					@include globalvar(margin-left, sm);
 					@include globalvar(margin-right, sm);
 
 					> span {
-						@include globalvar(margin-right, sm);
 						flex: 1 1 20%;
-
 					}
 				}
 			}
