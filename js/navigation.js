@@ -5,14 +5,16 @@
  * navigation support for dropdown menus.
  */
 
-/* global smallBusinessThemeScreenReaderText, smallBusinessThemeIcons */
+/* global smallBusinessThemeScreenReaderText, smallBusinessThemeIcons, smallBusinessThemeMenuToggleText */
+
 ( function( $ ) {
 
 	var body,
 		siteMenu       = $( '.main-navigation' ),
 		siteHeader     = $( '.site-header' ),
 		siteNavigation = siteMenu.find( '.main-navigation > div' ),
-		siteWrap       = siteHeader.parents( '.site' );
+		siteWrap       = siteHeader.parents( '.site' ),
+		menuToggle     = siteMenu.find( '.menu-toggle' );
 
 	/**
 	 * Initialize the main navigation
@@ -99,6 +101,27 @@
 		} );
 	}
 
+	// Enable menuToggle.
+	function initMenuToggle() {
+
+		// Return early if menuToggle is missing.
+		if ( ! menuToggle.length ) {
+			return;
+		}
+
+		// Add an initial values for the attribute.
+		menuToggle.add( siteNavigation ).attr( 'aria-expanded', 'false' );
+
+		menuToggle.on( 'click.smallbusinesstheme', function() {
+			var _this = $( this );
+			_this.add( siteMenu ).add( siteNavigation ).toggleClass( 'toggled-on' );
+			// jscs:disable
+			_this.add( siteMenu ).add( siteNavigation ).attr( 'aria-expanded', _this.add( siteNavigation ).attr( 'aria-expanded' ) === 'false' ? 'true' : 'false' );
+			// jscs:enable
+			_this.text( _this.text() === smallBusinessThemeMenuToggleText.menu ? smallBusinessThemeMenuToggleText.close : smallBusinessThemeMenuToggleText.menu );
+		} );
+	};
+
 	/**
 	 * Fix sub-menus for touch devices and better focus for hidden submenu items for accessibility
 	 */
@@ -115,9 +138,9 @@
 			//	if ( window.innerWidth >= 896 ) {
 			$( document.body ).on( 'touchstart.smallbusinesstheme', function( e ) {
 
-				if ( ! $( e.target ).closest( '.top-navigation li' ).length ) {
+				if ( ! $( e.target ).closest( '.main-navigation li' ).length ) {
 
-					$( '.top-navigation li' ).removeClass( 'focus' );
+					$( '.main-navigation li' ).removeClass( 'focus' );
 				}
 			} );
 
@@ -180,6 +203,7 @@
 	 */
 	$( document )
 		.ready( initMainNavigation( siteMenu ) )
+		.ready( initMenuToggle() )
 		.ready( addTouchSupport )
 		.ready( function() {
 

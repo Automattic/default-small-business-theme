@@ -74,8 +74,27 @@
 		}
 	}
 
-	&.toggled > div > ul {
+	&.toggled-on > div > ul {
+		@include globalvar( background-color, shade-white );
+		bottom: 0;
 		display: block;
+		left: 0;
+		position: fixed;
+		width: 100%;
+		z-index: 999;
+
+		li.toggled-on > ul {
+			@include globalvar(width, column-3);
+			left: inherit;
+			right: 0;
+			width: 150%;
+			opacity: 1;
+
+			> li.toggled-on > ul {
+				position: relative;
+				width: 100%;
+			}
+		}
 	}
 
 	@include media( tablet ) {
@@ -129,8 +148,9 @@
 .menu-toggle {
 
 	position: fixed;
-	bottom: 0;
-	right: 0;
+	@include globalvar(bottom, sm);
+	@include globalvar(right, sm);
+	z-index: 9999;
 
 	@include media( tablet ) {
 		display: none;

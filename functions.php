@@ -186,6 +186,13 @@ function smallbusinesstheme_scripts() {
 		'dropdown' => smallbusinesstheme_get_icon_svg( 'expand_more' )
 	) );
 
+	// Menu toggle text
+	wp_localize_script( 'smallbusinesstheme-navigation', 'smallBusinessThemeMenuToggleText', array(
+		'menu'  => esc_html__( 'Menu', 'smallbusinesstheme' ),
+		'close' => esc_html__( 'Close', 'smallbusinesstheme' ),
+	) );
+
+
 }
 add_action( 'wp_enqueue_scripts', 'smallbusinesstheme_scripts' );
 

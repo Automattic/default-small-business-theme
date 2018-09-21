@@ -920,8 +920,24 @@ textarea {
         position: relative;
         right: inherit; }
 
-.main-navigation.toggled > div > ul {
-  display: block; }
+.main-navigation.toggled-on > div > ul {
+  background-color: var(--color-shade-white);
+  bottom: 0;
+  display: block;
+  left: 0;
+  position: fixed;
+  width: 100%;
+  z-index: 999; }
+  .main-navigation.toggled-on > div > ul li.toggled-on > ul {
+    width: calc( 3 * ( var(--grid-column) + var(--grid-gutter) ) - var(--grid-gutter));
+    width: var(--grid-column-3);
+    left: inherit;
+    right: 0;
+    width: 150%;
+    opacity: 1; }
+    .main-navigation.toggled-on > div > ul li.toggled-on > ul > li.toggled-on > ul {
+      position: relative;
+      width: 100%; }
 
 @media only screen and (min-width: calc( 8 * ( 80px + 25px ) - 25px)) {
   .main-navigation {
@@ -964,8 +980,11 @@ textarea {
 
 .menu-toggle {
   position: fixed;
-  bottom: 0;
-  right: 0; }
+  bottom: calc(0.75 * var(--space-unit));
+  bottom: var(--space-sm);
+  right: calc(0.75 * var(--space-unit));
+  right: var(--space-sm);
+  z-index: 9999; }
   @media only screen and (min-width: calc( 8 * ( 80px + 25px ) - 25px)) {
     .menu-toggle {
       display: none; } }
