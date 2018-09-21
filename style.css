@@ -102,6 +102,7 @@ h4 { @include globalvar(font-size, h4); }
   --font-size-xxl: calc(1em * var(--font-size-ratio) * var(--font-size-ratio) * var(--font-size-ratio) * var(--font-size-ratio));
   --font-size-xxxl: calc(1em * var(--font-size-ratio) * var(--font-size-ratio) * var(--font-size-ratio) * var(--font-size-ratio) * var(--font-size-ratio));
   --font-leading-body: 1.4;
+  --font-leading-double: calc( var(--font-leading-heading) * 2);
   --font-leading-heading: 1.2;
   --color-primary-base: #008000;
   --color-primary-light: #339933;
@@ -1069,6 +1070,8 @@ textarea {
     padding-left: var(--space-sm);
     padding-right: calc(0.75 * var(--space-unit));
     padding-right: var(--space-sm); }
+  .page-header .page-title {
+    color: var(--color-words-subtle); }
   @media only screen and (min-width: calc( 10 * ( 80px + 25px ) - 25px)) {
     .page-header {
       display: flex;
@@ -1507,8 +1510,6 @@ object {
   .hentry .entry-footer .entry-meta {
     flex-direction: column;
     justify-content: space-between; }
-    .hentry .entry-footer .entry-meta a:hover {
-      color: var(--color-secondary-base); }
     @media only screen and (min-width: calc( 8 * ( 80px + 25px ) - 25px)) {
       .hentry .entry-footer .entry-meta {
         max-width: calc( 7 * ( var(--grid-column) + var(--grid-gutter) ) - var(--grid-gutter));
@@ -1524,13 +1525,6 @@ object {
           flex: 1 1 20%; }
           .hentry .entry-footer .entry-meta > span:last-child {
             margin-right: 0; } }
-  .hentry .entry-footer .svg-icon {
-    position: relative;
-    display: inline-block;
-    vertical-align: middle;
-    fill: var(--color-words-subtle);
-    margin-right: 0.3em;
-    top: -0.1em; }
   @media only screen and (min-width: calc( 8 * ( 80px + 25px ) - 25px)) {
     .hentry .entry-footer {
       max-width: calc( 12 * ( var(--grid-column) + var(--grid-gutter) ) - var(--grid-gutter));
@@ -1608,13 +1602,18 @@ object {
   .archive .hentry .entry-summary p,
   .search .hentry .entry-summary p {
     word-break: break-word; }
-  .blog .hentry .entry-footer .entry-meta > span:last-child,
-  .archive .hentry .entry-footer .entry-meta > span:last-child,
-  .search .hentry .entry-footer .entry-meta > span:last-child {
-    padding-bottom: calc(0.75 * var(--space-unit));
-    padding-bottom: var(--space-sm);
-    border-bottom: 1px solid grey;
-    border-bottom-color: var(--color-border-base); }
+  .blog .hentry .entry-footer .entry-meta,
+  .archive .hentry .entry-footer .entry-meta,
+  .search .hentry .entry-footer .entry-meta {
+    line-height: calc( var(--font-leading-heading) * 2);
+    line-height: var(--font-leading-double); }
+    .blog .hentry .entry-footer .entry-meta > span:last-child,
+    .archive .hentry .entry-footer .entry-meta > span:last-child,
+    .search .hentry .entry-footer .entry-meta > span:last-child {
+      padding-bottom: calc(0.75 * var(--space-unit));
+      padding-bottom: var(--space-sm);
+      border-bottom: 1px solid grey;
+      border-bottom-color: var(--color-border-base); }
   .blog .hentry:last-of-type .entry-footer .entry-meta > span:last-child,
   .archive .hentry:last-of-type .entry-footer .entry-meta > span:last-child,
   .search .hentry:last-of-type .entry-footer .entry-meta > span:last-child {

@@ -128,10 +128,6 @@
 			flex-direction: column;
 			justify-content: space-between;
 
-			a:hover {
-				@include globalvar(color, secondary-base);
-			}
-
 			@include media( tablet ) {
 
 				@include globalvar( max-width, column-7 );
@@ -149,15 +145,6 @@
 					}
 				}
 			}
-		}
-
-		.svg-icon {
-			position: relative;
-			display: inline-block;
-			vertical-align: middle;
-			@include globalvar(fill, words-subtle);
-			margin-right: 0.3em;
-			top: -0.1em;
 		}
 
 		@include media( tablet ) {
@@ -280,6 +267,9 @@
 		.entry-footer {
 
 			.entry-meta {
+
+				@include globalvar(line-height, double);
+
 				> span {
 
 					&:last-child {

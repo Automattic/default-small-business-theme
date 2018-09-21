@@ -81,6 +81,7 @@ h4 { @include globalvar(font-size, h4); }
   --font-size-xxl: calc(1em * var(--font-size-ratio) * var(--font-size-ratio) * var(--font-size-ratio) * var(--font-size-ratio));
   --font-size-xxxl: calc(1em * var(--font-size-ratio) * var(--font-size-ratio) * var(--font-size-ratio) * var(--font-size-ratio) * var(--font-size-ratio));
   --font-leading-body: 1.4;
+  --font-leading-double: calc( var(--font-leading-heading) * 2);
   --font-leading-heading: 1.2;
   --color-primary-base: #008000;
   --color-primary-light: #339933;

@@ -31,6 +31,10 @@
 
 	}
 
+	.page-title {
+		@include globalvar(color, words-subtle);
+	}
+
 	@include media( desktop ) {
 
 		display: flex;

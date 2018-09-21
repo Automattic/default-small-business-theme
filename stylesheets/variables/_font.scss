@@ -33,6 +33,7 @@ $font: (
 
   leading: (
     body: 1.4,
+    double: calc( var(--font-leading-heading) * 2 ),
     heading: 1.2,
   )
 
