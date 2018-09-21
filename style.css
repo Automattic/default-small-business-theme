@@ -1049,8 +1049,7 @@ textarea {
   display: none; }
 
 .page-links {
-  clear: both;
-  margin: 0 0 1.5em; }
+  clear: both; }
 
 /** === Page header == */
 .page-header {
@@ -1346,7 +1345,7 @@ object {
   width: 100%; }
 
 .site-main > *:first-child:not(.hentry),
-.site-main > .hentry.has-post-thumbnail {
+.site-main > .hentry.has-post-thumbnail:first-child {
   margin-top: 0; }
 
 #page-wrapper {
