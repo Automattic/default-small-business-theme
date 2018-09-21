@@ -5,10 +5,6 @@
 
 	@include block-margin( lg, 0 );
 
-	&:first-of-type {
-		margin-top: 0;
-	}
-
 	.entry-featured-image {
 		text-align: center;
 	}
@@ -100,26 +96,29 @@
 
 		.entry-meta {
 
+			flex-direction: column;
 			justify-content: space-between;
 
 			a:hover {
 				@include globalvar(color, secondary-base);
 			}
 
-			> span {
-				@include globalvar(margin-right, sm);
-
-				&:last-child {
-					margin-right: 0;
-				}
-			}
-
 			@include media( tablet ) {
+
 				@include globalvar( max-width, column-6 );
 				@include globalvar( margin-right, column-2 );
+				@include globalvar( padding-bottom, sm );
 				flex-direction: row;
 				margin-left: auto;
 				width: 100%;
+
+				> span {
+					flex: 1 1 20%;
+
+					&:last-child {
+						margin-right: 0;
+					}
+				}
 			}
 		}
 
@@ -261,5 +260,81 @@
 	.archive &,
 	.search & {
 
+		.entry-footer {
+
+			.entry-meta {
+				> span {
+
+					&:last-child {
+
+						@include globalvar(padding-bottom, sm);
+						border-bottom: 1px solid grey;
+						@include globalvar(border-bottom-color, border-base);
+					}
+				}
+			}
+		}
+
+		@include media( tablet ) {
+
+			.entry-footer .entry-meta {
+
+				border-bottom: 1px solid grey;
+				@include globalvar(border-bottom-color, border-base);
+
+				> span {
+
+					&:last-child {
+						@include globalvar(padding-bottom, 0);
+						border-bottom: none;
+						margin-right: 0;
+					}
+				}
+			}
+		}
+
+		@include media( desktop ) {
+
+			@include globalvar(max-width, column-12);
+			display: flex;
+			justify-content: flex-end;
+			flex-direction: row;
+			flex-wrap: wrap;
+			margin-left: auto;
+			margin-right: auto;
+			width: 100%;
+
+			.entry-header {
+				@include globalvar(max-width, column-4);
+				display: block;
+				flex: 1 1 40%;
+				margin: 0;
+			}
+
+			.entry-title {
+				@include block-margin();
+				margin-top: 0;
+				width: auto;
+			}
+
+			.entry-summary {
+				flex: 1 1 60%;
+			}
+
+			.entry-footer {
+
+				@include globalvar(margin-left, column-4);
+				flex: 1 0 60%;
+
+				.entry-meta {
+
+					> span {
+						@include globalvar(margin-right, sm);
+						flex: 1 1 20%;
+
+					}
+				}
+			}
+		}
 	}
 }

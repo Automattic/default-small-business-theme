@@ -79,7 +79,7 @@ $wide_width: calc( 12 * ( 80px + 25px ) - 25px );
 }
 
 @mixin grid_column_width( $columns: 6 ) {
-	width: ( $columns * ( #{map-get($grid, column)} + #{map-get($grid, gutter)} ) - #{map-get($grid, gutter)} );
+	width: $columns * ( #{map-get($grid, column)} + #{map-get($grid, gutter)} ) - #{map-get($grid, gutter)};
 }
 
 @mixin grid_column_width_margins( $columns: 6 ) {

@@ -5,6 +5,13 @@
 	width: 100%;
 }
 
+.site-main {
+
+	> *:first-child:not(.hentry) {
+		margin-top: 0;
+	}
+}
+
 #page-wrapper {
 
 	padding-top: 20px;

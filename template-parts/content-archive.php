@@ -21,6 +21,15 @@
 	</header><!-- .entry-header -->
 
 	<div class="entry-summary">
+		<?php
+		if ( has_post_thumbnail() ) : ?>
+		<figure class="entry-featured-image">
+			<a href="<?php echo esc_url( get_permalink() ) ?>" rel="bookmark">
+				<?php the_post_thumbnail(); ?>
+			</a>
+		</figure>
+		<?php
+		endif; ?>
 		<?php the_excerpt(); ?>
 	</div><!-- .entry-summary -->
 

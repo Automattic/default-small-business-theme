@@ -20,6 +20,36 @@
 	margin: 0 0 1.5em;
 }
 
+/** === Page header == */
+
+.page-header {
+
+	@include globalvar(max-width, column-12);
+	border-bottom: 1px solid grey;
+	@include globalvar(border-bottom-color, border-base);
+	margin-left: auto;
+	margin-right: auto;
+
+	> * {
+		@include block-padding(sm, 0);
+	}
+
+	> *:last-child {
+
+	}
+
+	@include media( desktop ) {
+
+		display: flex;
+		justify-content: flex-end;
+
+		> * {
+			@include globalvar(max-width, column-9);
+			width: 100%;
+		}
+	}
+}
+
 /** === Comments == */
 
 .comments-area {

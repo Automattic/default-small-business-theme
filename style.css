@@ -1046,6 +1046,30 @@ textarea {
   clear: both;
   margin: 0 0 1.5em; }
 
+/** === Page header == */
+.page-header {
+  max-width: calc( 12 * ( var(--grid-column) + var(--grid-gutter) ) - var(--grid-gutter));
+  max-width: var(--grid-column-12);
+  border-bottom: 1px solid grey;
+  border-bottom-color: var(--color-border-base);
+  margin-left: auto;
+  margin-right: auto; }
+  .page-header > * {
+    padding-top: calc(0.75 * var(--space-unit));
+    padding-top: var(--space-sm);
+    padding-bottom: calc(0.75 * var(--space-unit));
+    padding-bottom: var(--space-sm);
+    padding-left: 0;
+    padding-right: 0; }
+  @media only screen and (min-width: calc( 10 * ( 80px + 25px ) - 25px)) {
+    .page-header {
+      display: flex;
+      justify-content: flex-end; }
+      .page-header > * {
+        max-width: calc( 9 * ( var(--grid-column) + var(--grid-gutter) ) - var(--grid-gutter));
+        max-width: var(--grid-column-9);
+        width: 100%; } }
+
 /** === Comments == */
 .comments-area {
   margin-top: calc(2 * var(--space-unit));
@@ -1313,6 +1337,9 @@ object {
 #page {
   width: 100%; }
 
+.site-main > *:first-child:not(.hentry) {
+  margin-top: 0; }
+
 #page-wrapper {
   padding-top: 20px;
   border: solid transparent;
@@ -1346,8 +1373,6 @@ object {
   margin-bottom: var(--space-lg);
   margin-left: 0;
   margin-right: 0; }
-  .hentry:first-of-type {
-    margin-top: 0; }
   .hentry .entry-featured-image {
     text-align: center; }
   @media only screen and (min-width: calc( 8 * ( 80px + 25px ) - 25px)) {
@@ -1428,23 +1453,25 @@ object {
         flex-direction: column;
         justify-content: inherit; } }
   .hentry .entry-footer .entry-meta {
+    flex-direction: column;
     justify-content: space-between; }
     .hentry .entry-footer .entry-meta a:hover {
       color: var(--color-secondary-base); }
-    .hentry .entry-footer .entry-meta > span {
-      margin-right: calc(0.75 * var(--space-unit));
-      margin-right: var(--space-sm); }
-      .hentry .entry-footer .entry-meta > span:last-child {
-        margin-right: 0; }
     @media only screen and (min-width: calc( 8 * ( 80px + 25px ) - 25px)) {
       .hentry .entry-footer .entry-meta {
         max-width: calc( 6 * ( var(--grid-column) + var(--grid-gutter) ) - var(--grid-gutter));
         max-width: var(--grid-column-6);
         margin-right: calc( 2 * ( var(--grid-column) + var(--grid-gutter) ) - var(--grid-gutter));
         margin-right: var(--space-column-2);
+        padding-bottom: calc(0.75 * var(--space-unit));
+        padding-bottom: var(--space-sm);
         flex-direction: row;
         margin-left: auto;
-        width: 100%; } }
+        width: 100%; }
+        .hentry .entry-footer .entry-meta > span {
+          flex: 1 1 20%; }
+          .hentry .entry-footer .entry-meta > span:last-child {
+            margin-right: 0; } }
   .hentry .entry-footer .svg-icon {
     position: relative;
     display: inline-block;
@@ -1547,5 +1574,74 @@ object {
       max-width: var(--grid-column-12);
       margin-left: auto;
       margin-right: auto; } }
+  .blog .hentry .entry-footer .entry-meta > span:last-child,
+  .archive .hentry .entry-footer .entry-meta > span:last-child,
+  .search .hentry .entry-footer .entry-meta > span:last-child {
+    padding-bottom: calc(0.75 * var(--space-unit));
+    padding-bottom: var(--space-sm);
+    border-bottom: 1px solid grey;
+    border-bottom-color: var(--color-border-base); }
+  @media only screen and (min-width: calc( 8 * ( 80px + 25px ) - 25px)) {
+    .blog .hentry .entry-footer .entry-meta,
+    .archive .hentry .entry-footer .entry-meta,
+    .search .hentry .entry-footer .entry-meta {
+      border-bottom: 1px solid grey;
+      border-bottom-color: var(--color-border-base); }
+      .blog .hentry .entry-footer .entry-meta > span:last-child,
+      .archive .hentry .entry-footer .entry-meta > span:last-child,
+      .search .hentry .entry-footer .entry-meta > span:last-child {
+        padding-bottom: 0;
+        border-bottom: none;
+        margin-right: 0; } }
+  @media only screen and (min-width: calc( 10 * ( 80px + 25px ) - 25px)) {
+    .blog .hentry,
+    .archive .hentry,
+    .search .hentry {
+      max-width: calc( 12 * ( var(--grid-column) + var(--grid-gutter) ) - var(--grid-gutter));
+      max-width: var(--grid-column-12);
+      display: flex;
+      justify-content: flex-end;
+      flex-direction: row;
+      flex-wrap: wrap;
+      margin-left: auto;
+      margin-right: auto;
+      width: 100%; }
+      .blog .hentry .entry-header,
+      .archive .hentry .entry-header,
+      .search .hentry .entry-header {
+        max-width: calc( 4 * ( var(--grid-column) + var(--grid-gutter) ) - var(--grid-gutter));
+        max-width: var(--grid-column-4);
+        display: block;
+        flex: 1 1 40%;
+        margin: 0; }
+      .blog .hentry .entry-title,
+      .archive .hentry .entry-title,
+      .search .hentry .entry-title {
+        margin-top: calc(0.75 * var(--space-unit));
+        margin-top: var(--space-sm);
+        margin-bottom: calc(0.75 * var(--space-unit));
+        margin-bottom: var(--space-sm);
+        margin-left: calc(0.75 * var(--space-unit));
+        margin-left: var(--space-sm);
+        margin-right: calc(0.75 * var(--space-unit));
+        margin-right: var(--space-sm);
+        margin-top: 0;
+        width: auto; }
+      .blog .hentry .entry-summary,
+      .archive .hentry .entry-summary,
+      .search .hentry .entry-summary {
+        flex: 1 1 60%; }
+      .blog .hentry .entry-footer,
+      .archive .hentry .entry-footer,
+      .search .hentry .entry-footer {
+        margin-left: calc( 4 * ( var(--grid-column) + var(--grid-gutter) ) - var(--grid-gutter));
+        margin-left: var(--space-column-4);
+        flex: 1 0 60%; }
+        .blog .hentry .entry-footer .entry-meta > span,
+        .archive .hentry .entry-footer .entry-meta > span,
+        .search .hentry .entry-footer .entry-meta > span {
+          margin-right: calc(0.75 * var(--space-unit));
+          margin-right: var(--space-sm);
+          flex: 1 1 20%; } }
 
 /** === CSS Effects === */
