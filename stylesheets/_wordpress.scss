@@ -17,7 +17,7 @@
 
 .page-header {
 
-	@include globalvar(max-width, column-12);
+	@include globalvar(max-width, column-10);
 	border-bottom: 1px solid grey;
 	@include globalvar(border-bottom-color, border-base);
 	margin-left: auto;
@@ -37,8 +37,9 @@
 		justify-content: flex-end;
 
 		> * {
-			@include globalvar(max-width, column-9);
-			@include globalvar(padding-left, sm);
+			@include globalvar(max-width, column-7);
+			padding-left: 0;
+			padding-right: 0;
 			width: 100%;
 		}
 	}

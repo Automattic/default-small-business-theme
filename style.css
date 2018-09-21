@@ -1054,8 +1054,8 @@ textarea {
 
 /** === Page header == */
 .page-header {
-  max-width: calc( 12 * ( var(--grid-column) + var(--grid-gutter) ) - var(--grid-gutter));
-  max-width: var(--grid-column-12);
+  max-width: calc( 10 * ( var(--grid-column) + var(--grid-gutter) ) - var(--grid-gutter));
+  max-width: var(--grid-column-10);
   border-bottom: 1px solid grey;
   border-bottom-color: var(--color-border-base);
   margin-left: auto;
@@ -1074,10 +1074,10 @@ textarea {
       display: flex;
       justify-content: flex-end; }
       .page-header > * {
-        max-width: calc( 9 * ( var(--grid-column) + var(--grid-gutter) ) - var(--grid-gutter));
-        max-width: var(--grid-column-9);
-        padding-left: calc(0.75 * var(--space-unit));
-        padding-left: var(--space-sm);
+        max-width: calc( 7 * ( var(--grid-column) + var(--grid-gutter) ) - var(--grid-gutter));
+        max-width: var(--grid-column-7);
+        padding-left: 0;
+        padding-right: 0;
         width: 100%; } }
 
 /** === Comments == */
@@ -1348,7 +1348,7 @@ object {
   width: 100%; }
 
 .site-main > *:first-child:not(.hentry),
-.site-main > .hentry.has-post-thumbnail:first-child {
+.single .site-main > .hentry.has-post-thumbnail:first-child {
   margin-top: 0; }
 
 #page-wrapper {

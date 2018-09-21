@@ -8,7 +8,7 @@
 .site-main {
 
 	> *:first-child:not(.hentry),
-	> .hentry.has-post-thumbnail:first-child {
+	.single & > .hentry.has-post-thumbnail:first-child {
 		margin-top: 0;
 	}
 }
