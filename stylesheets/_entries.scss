@@ -1,6 +1,27 @@
 
 /** === Entries === */
 
+// This is outside of the .hentry wrapper so it does’t override selectors in blocks.css
+.entry-content,
+.entry-summary {
+
+	// Style all elemnts first
+	> * {
+		@include block-margin();
+		max-width: calc( 100% - ( #{map-get($space, sm)} * 2 ) );
+
+		&:first-child {
+			margin-top: 0;
+		}
+
+		@include media( tablet ) {
+			@include globalvar(max-width, column-7);
+			@include globalvar(margin-right, column-3);
+			margin-left: auto;
+		}
+	}
+}
+
 .hentry {
 
 	@include block-margin( lg, 0 );
@@ -37,13 +58,13 @@
 
 		@include media( tablet ) {
 			@include block-margin( sm, 0 );
-			@include globalvar(max-width, column-6);
+			@include globalvar(max-width, column-7);
 			width: 100%;
 
 			// Single Page
 			&:first-child:last-child {
-				@include globalvar(max-width, column-6);
-				@include globalvar(margin-right, column-2);
+				@include globalvar(max-width, column-7);
+				@include globalvar(margin-right, column-3);
 			 	margin-left: auto;
 			}
 		}
@@ -85,7 +106,7 @@
 		}
 
 		@include media( tablet ) {
-			@include grid_column_width_margins(2);
+			@include grid_column_width_margins(3);
 			flex-direction: column;
 			justify-content: inherit;
 
@@ -105,8 +126,8 @@
 
 			@include media( tablet ) {
 
-				@include globalvar( max-width, column-6 );
-				@include globalvar( margin-right, column-2 );
+				@include globalvar( max-width, column-7 );
+				@include globalvar( margin-right, column-3 );
 				@include globalvar( padding-bottom, sm );
 				flex-direction: row;
 				margin-left: auto;
@@ -212,22 +233,6 @@
 	.entry-content,
 	.entry-summary {
 
-		// Style all elemnts first
-		> * {
-			@include block-margin();
-			max-width: calc( 100% - ( #{map-get($space, sm)} * 2 ) );
-
-			&:first-child {
-				margin-top: 0;
-			}
-
-			@include media( tablet ) {
-				@include globalvar(max-width, column-6);
-				@include globalvar(margin-right, column-2);
-				margin-left: auto;
-			}
-		}
-
 		span[id^=more] {
 			display: block;
 		}
@@ -295,7 +300,7 @@
 
 		@include media( desktop ) {
 
-			@include globalvar(max-width, column-12);
+			@include globalvar(max-width, column-10);
 			display: flex;
 			justify-content: flex-end;
 			flex-direction: row;
@@ -305,28 +310,41 @@
 			width: 100%;
 
 			.entry-header {
-				@include globalvar(max-width, column-4);
+
+				@include globalvar(max-width, column-3);
 				display: block;
 				flex: 1 1 40%;
 				margin: 0;
 			}
 
 			.entry-title {
+
 				@include block-margin();
 				margin-top: 0;
 				width: auto;
 			}
 
 			.entry-summary {
+
 				flex: 1 1 60%;
+
+				> * {
+				//	margin-left: 0;
+					@include globalvar(margin-left, sm);
+					@include globalvar(margin-right, sm);
+				}
 			}
 
 			.entry-footer {
 
-				@include globalvar(margin-left, column-4);
+				@include globalvar(margin-left, column-3);
 				flex: 1 0 60%;
 
 				.entry-meta {
+
+				//	margin-left: 0;
+					@include globalvar(margin-left, sm);
+					@include globalvar(margin-right, sm);
 
 					> span {
 						@include globalvar(margin-right, sm);

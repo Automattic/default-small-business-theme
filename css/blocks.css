@@ -34,10 +34,10 @@ h4 { @include globalvar(font-size, h4); }
   @media only screen and (min-width: calc( 8 * ( 80px + 25px ) - 25px)) {
     .entry-content > *.alignwide,
     .entry-summary > *.alignwide {
-      max-width: calc( 8 * ( var(--grid-column) + var(--grid-gutter) ) - var(--grid-gutter));
-      max-width: var(--grid-column-8);
-      margin-right: calc( 1 * ( var(--grid-column) + var(--grid-gutter) ) - var(--grid-gutter));
-      margin-right: var(--space-column-1); } }
+      max-width: calc( 9 * ( var(--grid-column) + var(--grid-gutter) ) - var(--grid-gutter));
+      max-width: var(--grid-column-9);
+      margin-right: calc( 2 * ( var(--grid-column) + var(--grid-gutter) ) - var(--grid-gutter));
+      margin-right: var(--space-column-2); } }
   @media only screen and (min-width: calc( 12 * ( 80px + 25px ) - 25px)) {
     .entry-content > *.alignwide,
     .entry-summary > *.alignwide {
@@ -66,7 +66,7 @@ h4 { @include globalvar(font-size, h4); }
   @media only screen and (min-width: calc( 12 * ( 80px + 25px ) - 25px)) {
     .entry-content > *.alignleft,
     .entry-summary > *.alignleft {
-      margin-left: calc( calc( 12 * ( var(--grid-column) + var(--grid-gutter) ) - var(--grid-gutter)) - ( calc( 8 * ( var(--grid-column) + var(--grid-gutter) ) - var(--grid-gutter)) - 25px )); } }
+      margin-left: calc( calc( 12 * ( var(--grid-column) + var(--grid-gutter) ) - var(--grid-gutter)) - ( calc( 10 * ( var(--grid-column) + var(--grid-gutter) ) - var(--grid-gutter)) - 25px )); } }
 
 .entry-content > *.alignright,
 .entry-summary > *.alignright {
@@ -251,10 +251,10 @@ h4 { @include globalvar(font-size, h4); }
   @media only screen and (min-width: calc( 8 * ( 80px + 25px ) - 25px)) {
     .wp-block-text-columns,
     .wp-block-columns {
-      margin-right: calc( 1 * ( var(--grid-column) + var(--grid-gutter) ) - var(--grid-gutter));
-      margin-right: var(--space-column-1);
-      max-width: calc( 7 * ( var(--grid-column) + var(--grid-gutter) ) - var(--grid-gutter));
-      max-width: var(--grid-column-7); } }
+      margin-right: calc( 2 * ( var(--grid-column) + var(--grid-gutter) ) - var(--grid-gutter));
+      margin-right: var(--space-column-2);
+      max-width: calc( 8 * ( var(--grid-column) + var(--grid-gutter) ) - var(--grid-gutter));
+      max-width: var(--grid-column-8); } }
 
 ul.wp-block-categories li,
 ul.wp-block-archives li,
@@ -376,10 +376,10 @@ table.wp-block-table {
     .wp-block-quote,
     .wp-block-quote.is-large,
     .wp-block-quote.is-style-large {
-      max-width: calc( 6 * ( var(--grid-column) + var(--grid-gutter) ) - var(--grid-gutter));
-      max-width: var(--grid-column-6);
-      margin-right: calc( 2 * ( var(--grid-column) + var(--grid-gutter) ) - var(--grid-gutter));
-      margin-right: var(--space-column-2);
+      max-width: calc( 7 * ( var(--grid-column) + var(--grid-gutter) ) - var(--grid-gutter));
+      max-width: var(--grid-column-7);
+      margin-right: calc( 3 * ( var(--grid-column) + var(--grid-gutter) ) - var(--grid-gutter));
+      margin-right: var(--space-column-3);
       margin-left: auto; } }
 
 .wp-block-pullquote {

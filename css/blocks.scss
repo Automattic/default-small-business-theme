@@ -23,8 +23,8 @@
 		margin-right: auto;
 
 		@include media( tablet ) {
-			@include globalvar(max-width, column-8);
-			@include globalvar(margin-right, column-1);
+			@include globalvar(max-width, column-9);
+			@include globalvar(margin-right, column-2);
 		}
 
 		@include media( wide ) {
@@ -50,7 +50,7 @@
 		}
 
 		@include media( wide ) {
-			margin-left: calc( #{map-get($grid, column-12)} - ( #{map-get($grid, column-8)} - #{map-get($grid, gutter)} ) );
+			margin-left: calc( #{map-get($grid, column-12)} - ( #{map-get($grid, column-10)} - #{map-get($grid, gutter)} ) );
 		}
 	}
 
@@ -282,8 +282,8 @@
 	}
 
 	@include media( tablet ) {
-		@include globalvar(margin-right, column-1);
-		@include globalvar(max-width, column-7);
+		@include globalvar(margin-right, column-2);
+		@include globalvar(max-width, column-8);
 	}
 }
 
@@ -408,8 +408,8 @@ table.wp-block-table {
 	}
 
 	@include media( tablet ) {
-		@include globalvar(max-width, column-6);
-		@include globalvar(margin-right, column-2);
+		@include globalvar(max-width, column-7);
+		@include globalvar(margin-right, column-3);
 		margin-left: auto;
 	}
 }

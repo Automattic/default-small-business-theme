@@ -45,6 +45,7 @@
 
 		> * {
 			@include globalvar(max-width, column-9);
+			@include globalvar(padding-left, sm);
 			width: 100%;
 		}
 	}
