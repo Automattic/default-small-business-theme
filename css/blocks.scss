@@ -45,7 +45,7 @@
 		@include media( tablet ) {
 			@include globalvar( margin-left, column-4 );
 			@include globalvar( margin-right, sm);
-			margin-left: calc( 100vw - ( #{map-get($grid, column-8)} - #{map-get($grid, gutter)} ) );
+			margin-left: calc( 100vw - ( #{map-get($grid, column-10)} - #{map-get($grid, gutter)} ) );
 			max-width: #{map-get($grid, column-3)};
 		}
 
