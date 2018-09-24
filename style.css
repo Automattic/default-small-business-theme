@@ -835,84 +835,117 @@ textarea {
   margin: 0;
   padding: 0; }
   .main-navigation > div > ul li {
+    display: block;
     list-style: none;
     padding-left: 0; }
+    .main-navigation > div > ul li a {
+      display: block; }
     .main-navigation > div > ul li:before {
       content: "";
       display: none; }
-    .main-navigation > div > ul li > a {
+  .main-navigation > div > ul > li > a {
+    color: var(--color-primary-base);
+    font-size: calc(1em / (var(--font-size-ratio) * var(--font-size-ratio)));
+    font-size: var(--font-size-xs);
+    padding-top: calc(0.5 * var(--space-unit));
+    padding-top: var(--space-xs);
+    padding-bottom: calc(0.5 * var(--space-unit));
+    padding-bottom: var(--space-xs);
+    padding-left: calc(0.5 * var(--space-unit));
+    padding-left: var(--space-xs);
+    padding-right: calc(0.5 * var(--space-unit));
+    padding-right: var(--space-xs);
+    transition: color 110ms ease-in-out;
+    clear: both;
+    display: block;
+    font-weight: 400;
+    letter-spacing: .125em;
+    text-decoration: none;
+    text-transform: uppercase;
+    width: 100%; }
+    .main-navigation > div > ul > li > a:hover {
+      color: var(--color-primary-dark); }
+  .main-navigation > div > ul > li#more-menu {
+    display: none; }
+  .main-navigation > div > ul .menu-item-has-children {
+    position: relative; }
+    .main-navigation > div > ul .menu-item-has-children > a {
+      padding-right: calc(2 * var(--space-unit));
+      padding-right: var(--space-lg); }
+    .main-navigation > div > ul .menu-item-has-children ul {
+      background-color: var(--color-shade-white);
+      position: absolute;
+      left: -999em;
+      z-index: 99999;
+      -webkit-transition: opacity 0.5s ease-in-out;
+      -moz-transition: opacity 0.5s ease-in-out;
+      transition: opacity 0.5s ease-in-out; }
+      .main-navigation > div > ul .menu-item-has-children ul li a:before {
+        content: "\2014\00a0"; }
+    .main-navigation > div > ul .menu-item-has-children button {
+      background-color: var(--color-transparent);
       color: var(--color-primary-base);
-      font-size: calc(1em / (var(--font-size-ratio) * var(--font-size-ratio)));
-      font-size: var(--font-size-xs);
       padding: calc(0.5 * var(--space-unit));
       padding: var(--space-xs);
-      transition: color 110ms ease-in-out;
-      display: block;
-      font-weight: 400;
-      letter-spacing: .125em;
-      text-decoration: none;
-      text-transform: uppercase; }
-      .main-navigation > div > ul li > a:hover {
-        color: var(--color-primary-dark); }
-    .main-navigation > div > ul li ul li a:before {
-      content: "\2014\00a0"; }
-    .main-navigation > div > ul li.menu-item-has-children {
-      padding-right: calc(1.25 * var(--space-unit));
-      padding-right: var(--space-md);
-      position: relative; }
-      .main-navigation > div > ul li.menu-item-has-children ul {
-        background-color: var(--color-shade-white);
-        float: left;
-        position: absolute;
-        left: -999em;
-        z-index: 99999;
-        -webkit-transition: opacity 0.5s ease-in-out;
-        -moz-transition: opacity 0.5s ease-in-out;
-        transition: opacity 0.5s ease-in-out; }
-      .main-navigation > div > ul li.menu-item-has-children button {
-        background-color: var(--color-transparent);
-        color: var(--color-primary-base);
-        padding-top: calc(0.5 * var(--space-unit));
-        padding-top: var(--space-xs);
-        padding-right: calc(0.5 * var(--space-unit));
-        padding-right: var(--space-xs);
-        padding-bottom: calc(0.5 * var(--space-unit));
-        padding-bottom: var(--space-xs);
-        padding-left: 0;
-        line-height: calc(0.5 * var(--space-unit));
-        border: none;
-        box-shadow: inherit;
-        position: absolute;
-        right: 0;
-        top: 0;
-        vertical-align: middle; }
-        .main-navigation > div > ul li.menu-item-has-children button span {
-          display: inline-block;
-          height: 20px;
-          overflow: hidden; }
-      .main-navigation > div > ul li.menu-item-has-children#more-menu button {
-        left: inherit;
-        position: relative;
-        right: inherit; }
+      line-height: calc(0.5 * var(--space-unit));
+      border: none;
+      box-shadow: inherit;
+      position: absolute;
+      right: 0;
+      top: 0;
+      vertical-align: middle; }
+      .main-navigation > div > ul .menu-item-has-children button span {
+        display: inline-block;
+        height: 20px;
+        overflow: hidden; }
 
-.main-navigation.toggled-on > div > ul {
-  background-color: var(--color-shade-white);
-  bottom: 0;
-  display: block;
-  left: 0;
-  position: fixed;
-  width: 100%;
-  z-index: 999; }
-  .main-navigation.toggled-on > div > ul li.toggled-on > ul {
-    width: calc( 3 * ( var(--grid-column) + var(--grid-gutter) ) - var(--grid-gutter));
-    width: var(--grid-column-3);
-    left: inherit;
-    right: 0;
-    width: 150%;
-    opacity: 1; }
-    .main-navigation.toggled-on > div > ul li.toggled-on > ul > li.toggled-on > ul {
+@media only screen and (max-width: calc( 8 * ( 80px + 25px ) - 25px)) {
+  .main-navigation.toggled-on > div > ul {
+    border-top: 1px solid grey;
+    border-color: var(--color-border-base);
+    background-color: var(--color-shade-white);
+    padding-top: calc(0.5 * var(--space-unit));
+    padding-top: var(--space-xs);
+    padding-bottom: calc(3.25 * var(--space-unit));
+    padding-bottom: var(--space-xl);
+    bottom: 0;
+    display: block;
+    left: 0;
+    position: fixed;
+    width: 100%;
+    z-index: 500; }
+    .main-navigation.toggled-on > div > ul li > a {
+      font-size: calc(1em / var(--font-size-ratio));
+      font-size: var(--font-size-sm);
+      padding-top: calc(0.25 * var(--space-unit));
+      padding-top: var(--space-xxs);
+      padding-bottom: calc(0.25 * var(--space-unit));
+      padding-bottom: var(--space-xxs);
+      padding-left: calc(0.5 * var(--space-unit));
+      padding-left: var(--space-xs);
+      padding-right: calc(0.5 * var(--space-unit));
+      padding-right: var(--space-xs); }
+    .main-navigation.toggled-on > div > ul .menu-item-has-children > a {
+      padding-right: calc(2 * var(--space-unit));
+      padding-right: var(--space-lg); }
+    .main-navigation.toggled-on > div > ul .menu-item-has-children > button {
+      padding-top: calc(0.25 * var(--space-unit));
+      padding-top: var(--space-xxs);
+      padding-bottom: calc(0.25 * var(--space-unit));
+      padding-bottom: var(--space-xxs); }
+    .main-navigation.toggled-on > div > ul li.toggled-on > ul {
+      width: calc( 3 * ( var(--grid-column) + var(--grid-gutter) ) - var(--grid-gutter));
+      width: var(--grid-column-3);
+      padding-left: calc(0.75 * var(--space-unit));
+      padding-left: var(--space-sm);
       position: relative;
-      width: 100%; }
+      left: inherit;
+      right: 0;
+      width: 100%;
+      opacity: 1; }
+      .main-navigation.toggled-on > div > ul li.toggled-on > ul > li.toggled-on > ul {
+        position: relative;
+        width: 100%; } }
 
 @media only screen and (min-width: calc( 8 * ( 80px + 25px ) - 25px)) {
   .main-navigation {
@@ -926,34 +959,53 @@ textarea {
     width: 100%; }
     .main-navigation > div > ul {
       display: block; }
-      .main-navigation > div > ul li {
+      .main-navigation > div > ul > li {
         display: inline-block; }
-      .main-navigation > div > ul ul {
-        background-color: var(--color-shade-white);
-        float: left;
-        position: absolute;
-        left: -999em;
-        z-index: 99999;
-        -webkit-transition: opacity 0.5s ease-in-out;
-        -moz-transition: opacity 0.5s ease-in-out;
-        transition: opacity 0.5s ease-in-out; }
-        .main-navigation > div > ul ul li {
-          display: block;
-          clear: both;
-          float: none; }
-        .main-navigation > div > ul ul a {
-          display: block;
-          width: 100%; }
-      .main-navigation > div > ul li.toggled-on > ul {
-        width: calc( 3 * ( var(--grid-column) + var(--grid-gutter) ) - var(--grid-gutter));
-        width: var(--grid-column-3);
-        left: inherit;
-        right: 0;
-        width: 150%;
-        opacity: 1; }
-        .main-navigation > div > ul li.toggled-on > ul > li.toggled-on > ul {
-          position: relative;
-          width: 100%; } }
+        .main-navigation > div > ul > li a {
+          font-size: calc(1em / (var(--font-size-ratio) * var(--font-size-ratio)));
+          font-size: var(--font-size-xs);
+          padding-top: calc(0.5 * var(--space-unit));
+          padding-top: var(--space-xs);
+          padding-bottom: calc(0.5 * var(--space-unit));
+          padding-bottom: var(--space-xs);
+          padding-left: calc(0.5 * var(--space-unit));
+          padding-left: var(--space-xs);
+          padding-right: calc(0.5 * var(--space-unit));
+          padding-right: var(--space-xs); }
+        .main-navigation > div > ul > li > ul {
+          border: 1px solid grey;
+          border-color: var(--color-border-base); }
+          .main-navigation > div > ul > li > ul li {
+            display: block; }
+            .main-navigation > div > ul > li > ul li a {
+              padding-top: calc(0.25 * var(--space-unit));
+              padding-top: var(--space-xxs);
+              padding-bottom: calc(0.25 * var(--space-unit));
+              padding-bottom: var(--space-xxs); }
+            .main-navigation > div > ul > li > ul li.menu-item-has-children > button {
+              padding-top: calc(0.25 * var(--space-unit));
+              padding-top: var(--space-xxs);
+              padding-bottom: calc(0.25 * var(--space-unit));
+              padding-bottom: var(--space-xxs); }
+        .main-navigation > div > ul > li.toggled-on > ul {
+          width: calc( 3 * ( var(--grid-column) + var(--grid-gutter) ) - var(--grid-gutter));
+          width: var(--grid-column-3);
+          left: inherit;
+          right: 0;
+          opacity: 1; }
+          .main-navigation > div > ul > li.toggled-on > ul > li.toggled-on > ul {
+            padding-left: calc(0.75 * var(--space-unit));
+            padding-left: var(--space-sm);
+            left: inherit;
+            position: relative;
+            right: 0;
+            width: 100%; }
+        .main-navigation > div > ul > li#more-menu {
+          display: inline-block; }
+          .main-navigation > div > ul > li#more-menu button {
+            left: inherit;
+            position: relative;
+            right: inherit; } }
 
 .menu-toggle {
   position: fixed;
@@ -984,7 +1036,8 @@ textarea {
     bottom: 0;
     left: 0;
     position: fixed;
-    width: 100%; }
+    width: 100%;
+    z-index: 600; }
     .social-navigation > div {
       padding-right: 100px; } }
 
