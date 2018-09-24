@@ -172,6 +172,69 @@
 	}
 }
 
+.social-navigation {
+
+	@include media( mobile ) {
+		@include block-padding( sm, sm );
+		@include globalvar( background-color, shade-white );
+		@include globalvar( height, xl );
+		border-top: 1px solid grey;
+		@include globalvar( border-color, border-base );
+		bottom: 0;
+		left: 0;
+		position: fixed;
+		width: 100%;
+
+		& > div {
+			padding-right: 100px;
+		}
+	}
+
+	@include media( tablet ) {
+		text-align: left;
+	}
+
+	@include media( desktop ) {
+	}
+
+	ul.social-links-menu {
+
+		margin: 0;
+		line-height: .6em;
+
+		li {
+			display: inline-block;
+			list-style: none;
+			padding: 0;
+
+			&:before {
+				content: none;
+				display: none;
+			}
+
+			a {
+				display: inline-block;
+				line-height: 1;
+
+				svg {
+					@include svg-transition;
+					display: block;
+					line-height: 1;
+
+					&:hover {
+						@include globalvar(fill, primary-base);
+					}
+
+					@include media( mobile ) {
+						width: 35px;
+						height: 35px;
+					}
+				}
+			}
+		}
+	}
+}
+
 .post-navigation {
 
 	@include block-margin( lg, 0 );
