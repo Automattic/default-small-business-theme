@@ -61,7 +61,7 @@ h4 { @include globalvar(font-size, h4); }
       margin-left: var(--space-column-4);
       margin-right: calc(0.75 * var(--space-unit));
       margin-right: var(--space-sm);
-      margin-left: calc( 100vw - ( calc( 8 * ( var(--grid-column) + var(--grid-gutter) ) - var(--grid-gutter)) - 25px ));
+      margin-left: calc( 100vw - ( calc( 10 * ( var(--grid-column) + var(--grid-gutter) ) - var(--grid-gutter)) - 25px ));
       max-width: calc( 3 * ( var(--grid-column) + var(--grid-gutter) ) - var(--grid-gutter)); } }
   @media only screen and (min-width: calc( 12 * ( 80px + 25px ) - 25px)) {
     .entry-content > *.alignleft,
