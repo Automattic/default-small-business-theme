@@ -780,9 +780,7 @@ textarea {
     font-size: calc(1em * var(--font-size-ratio) * var(--font-size-ratio));
     font-size: var(--font-size-lg);
     color: var(--color-words-base);
-    /* When there is no description set, make sure navigation appears below title. */ }
-    .site-identity .site-title + .main-navigation {
-      display: block; }
+    margin: 0; }
     .site-identity .site-title a {
       transition: color 110ms ease-in-out;
       display: block;

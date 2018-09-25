@@ -56,13 +56,11 @@
 	}
 
 	.site-title {
+
 		@include globalvar(font-family, body);
 		@include globalvar(font-size, lg);
 		@include globalvar(color, words-base);
-		/* When there is no description set, make sure navigation appears below title. */
-		+ .main-navigation {
-			display: block;
-		}
+		@include globalvar(margin, 0);
 
 		a {
 			@include link-transition;
