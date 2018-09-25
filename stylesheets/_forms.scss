@@ -1,6 +1,7 @@
 
 /** === Forms === */
 
+.button,
 button,
 input[type="button"],
 input[type="reset"],
@@ -26,6 +27,7 @@ input[type="submit"] {
 	}
 }
 
+.button:hover,
 button:hover,
 input[type="button"]:hover,
 input[type="reset"]:hover,
@@ -33,8 +35,10 @@ input[type="submit"]:hover {
 	@include globalvar(border-color, primary-base);
 	@include globalvar(background-color, shade-white);
 	@include globalvar(color, primary-base);
+	text-decoration: none;
 }
 
+.button:active, .button:focus,
 button:active, button:focus,
 input[type="button"]:active,
 input[type="button"]:focus,
@@ -45,6 +49,7 @@ input[type="submit"]:focus {
 	@include globalvar(border-color, words-subtle);
 	@include globalvar(background-color, shade-white);
 	@include globalvar(color, words-subtle);
+	text-decoration: none;
 }
 
 input[type="text"],
@@ -92,5 +97,6 @@ select {
 }
 
 textarea {
+	@include globalvar(font-size, sm);
 	width: 100%;
 }

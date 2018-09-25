@@ -10,9 +10,12 @@
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+
+	<?php if ( get_the_title() ) { ?>
 	<header class="entry-header">
 		<?php the_title( '<h2 class="entry-title">', '</h2>' ); ?>
 	</header><!-- .entry-header -->
+	<?php } ?>
 
 	<div class="entry-content">
 		<?php

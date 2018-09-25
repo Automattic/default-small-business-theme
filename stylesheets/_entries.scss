@@ -134,6 +134,7 @@
 				@include globalvar( max-width, column-7 );
 				@include globalvar( margin-right, column-3 );
 				@include globalvar( padding-bottom, sm );
+				@include globalvar(line-height, body);
 				flex-direction: row;
 				margin-left: auto;
 				width: 100%;
