@@ -16,7 +16,7 @@
 	}
 }
 
-.site-branding {
+.site-identity {
 
 	@include globalvar(color, words-subtle);
 	@include block-margin( sm, 0 );
@@ -46,6 +46,15 @@
 		}
 	}
 
+	.site-brand {
+		@include media( tablet ) {
+			@include block-margin( 0, 0 );
+			&:first-child {
+				@include block-margin( 0, sm );
+			}
+		}
+	}
+
 	.site-title {
 		@include globalvar(font-family, body);
 		@include globalvar(font-size, lg);
@@ -65,18 +74,11 @@
 				@include globalvar(color, secondary-base);
 			}
 		}
-
-		@include media( tablet ) {
-			@include block-margin( 0, 0 );
-			&:first-child {
-				@include block-margin( 0, sm );
-			}
-		}
 	}
 
 	.site-description {
-		@include block-margin( 0, sm );
-		@include globalvar(font-size, base);
+		@include globalvar(font-family, heading);
+		@include globalvar(font-size, xs);
 		@include globalvar(color, words-subtle);
 		font-weight: normal;
 	}
