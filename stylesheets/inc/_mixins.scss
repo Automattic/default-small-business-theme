@@ -2,8 +2,11 @@
 // Mixins
 
 $mobile_width: 4 * ( 80px + 25px ) - 25px;
+
 $tablet_width: 8 * ( 80px + 25px ) - 25px;
+
 $desktop_width: 10 * ( 80px + 25px ) - 25px;
+
 $wide_width: 12 * ( 80px + 25px ) - 25px;
 
 @mixin media( $res ) {
@@ -22,7 +25,6 @@ $wide_width: 12 * ( 80px + 25px ) - 25px;
 			@content;
 		}
 	}
-
 	@if wide == $res {
 		@media only screen and (min-width: $wide_width) {
 			@content;
@@ -86,9 +88,9 @@ $wide_width: 12 * ( 80px + 25px ) - 25px;
 }
 
 @mixin rounded($radius: 0.5em) {
-	overflow: hidden;
 	-webkit-border-radius: $radius;
 	-moz-border-radius: $radius;
 	border-radius: $radius;
+	overflow: hidden;
 }
 
