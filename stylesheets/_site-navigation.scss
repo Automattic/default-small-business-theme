@@ -11,71 +11,137 @@
 		padding: 0;
 
 		li {
-			display: inline-block;
+			display: block;
 			list-style: none;
 			padding-left: 0;
+
+			a {
+				display: block;
+			}
 
 			&:before {
 				content: "";
 				display: none;
 			}
+		}
+
+		> li {
 
 			> a {
 				@include globalvar(color, primary-base);
 				@include globalvar(font-size, xs);
-				@include globalvar(padding, xs);
+				@include block-padding( xs, xs )
 				@include link-transition;
+				clear: both;
 				display: block;
 				font-weight: 400;
 				letter-spacing: .125em;
 				text-decoration: none;
 				text-transform: uppercase;
+				width: 100%;
 
 				&:hover {
 					@include globalvar(color, primary-dark);
 				}
 			}
 
-			ul li a:before {
-				content: "\2014\00a0";
+			&#more-menu {
+				display: none;
+			}
+		}
+
+		.menu-item-has-children {
+
+			position: relative;
+
+			> a {
+				@include globalvar(padding-right, lg);
 			}
 
-			&.menu-item-has-children {
-				@include globalvar(padding-right, md);
-				position: relative;
+			ul {
+				@include globalvar(background-color, shade-white);
+				position: absolute;
+				left: -999em;
+				z-index: 99999;
+				-webkit-transition: opacity 0.5s ease-in-out;
+				-moz-transition:    opacity 0.5s ease-in-out;
+				transition:         opacity 0.5s ease-in-out;
 
-				button {
-					@include globalvar(background-color, transparent);
-					@include globalvar(color, primary-base);
-					@include globalvar(padding-top, xs);
-					@include globalvar(padding-right, xs);
-					@include globalvar(padding-bottom, xs);
-					@include globalvar(padding-left, 0);
-					line-height: #{map-get($space, xs)};
-					border: none;
-					box-shadow: inherit;
-					position: absolute;
-					right: 0;
-					top: 0;
-					vertical-align: middle;
-					span {
-						display: inline-block;
-						height: 20px;
-						overflow: hidden;
-					}
+				li a:before {
+					content: "\2014\00a0";
+				}
+			}
+
+			button {
+				@include globalvar(background-color, transparent);
+				@include globalvar(color, primary-base);
+				@include globalvar(padding, xs);
+				line-height: #{map-get($space, xs)};
+				border: none;
+				box-shadow: inherit;
+				position: absolute;
+				right: 0;
+				top: 0;
+				vertical-align: middle;
+
+				span {
+					display: inline-block;
+					height: 20px;
+					overflow: hidden;
+				}
+			}
+
+		}
+
+	}
+
+	// Mobile Menu
+	@include media( mobile ) { // prevents unneccesary overrides on larger breakpoints
+
+		&.toggled-on > div > ul {
+
+			border-top: 1px solid grey;
+			@include globalvar( border-color, border-base );
+			@include globalvar( background-color, shade-white );
+			@include globalvar( padding-top, xs );
+			@include globalvar( padding-bottom, xl );
+			bottom: 0;
+			display: block;
+			left: 0;
+			position: fixed;
+			width: 100%;
+			z-index: 500;
+
+			li > a {
+				@include globalvar(font-size, sm);
+				@include block-padding(xxs, xs);
+			}
+			.menu-item-has-children {
+				> a {
+					@include globalvar(padding-right, lg);
 				}
 
-				&#more-menu button {
-					left: inherit;
+				> button {
+					@include globalvar(padding-top, xxs);
+					@include globalvar(padding-bottom, xxs);
+				}
+			}
+
+			li.toggled-on > ul {
+				@include globalvar(width, column-3);
+				@include globalvar(padding-left, sm);
+				position: relative;
+				left: inherit;
+				right: 0;
+				width: 100%;
+				opacity: 1;
+
+				> li.toggled-on > ul {
 					position: relative;
-					right: inherit;
+					width: 100%;
 				}
 			}
 		}
-	}
-
-	&.toggled > div > ul {
-		display: block;
 	}
 
 	@include media( tablet ) {
@@ -88,52 +154,138 @@
 
 			display: block;
 
-			ul {
-				@include globalvar(background-color, shade-white);
-				float: left;
-				position: absolute;
-				left: -999em;
-				z-index: 99999;
-				-webkit-transition: opacity 0.5s ease-in-out;
-				-moz-transition:    opacity 0.5s ease-in-out;
-				transition:         opacity 0.5s ease-in-out;
-
-				li {
-					display: block;
-					clear: both;
-					float: none;
-				}
+			> li {
+				display: inline-block;
 
 				a {
-					display: block;
-					width: 100%;
+					@include globalvar(font-size, xs);
+					@include block-padding( xs, xs );
+				}
+
+				> ul {
+					border: 1px solid grey;
+					@include globalvar( border-color, border-base );
+
+					li {
+						display: block;
+
+						a {
+							@include globalvar(padding-top, xxs);
+							@include globalvar(padding-bottom, xxs);
+						}
+
+						&.menu-item-has-children > button {
+							@include globalvar(padding-top, xxs);
+							@include globalvar(padding-bottom, xxs);
+						}
+					}
+				}
+
+				&.toggled-on > ul {
+					@include globalvar(width, column-3);
+					left: inherit;
+					right: 0;
+					opacity: 1;
+
+					> li.toggled-on > ul {
+						@include globalvar(padding-left, sm);
+						left: inherit;
+						position: relative;
+						right: 0;
+						width: 100%;
+					}
+				}
+
+				&#more-menu {
+
+					display: inline-block;
+
+					button {
+						left: inherit;
+						position: relative;
+						right: inherit;
+					}
 				}
 			}
 
-			li.toggled-on > ul {
-				@include globalvar(width, column-3);
-				left: inherit;
-				right: 0;
-				width: 150%;
-				opacity: 1;
-
-				> li.toggled-on > ul {
-					position: relative;
-					width: 100%;
-				}
-			}
 		}
 	}
+
 }
 
 .menu-toggle {
 
 	position: fixed;
-	bottom: 0;
-	right: 0;
+	@include globalvar(bottom, sm);
+	@include globalvar(right, sm);
+	z-index: 9999;
 
 	@include media( tablet ) {
 		display: none;
+	}
+}
+
+.social-navigation {
+
+	@include media( mobile ) {
+		@include block-padding( sm, sm );
+		@include globalvar( background-color, shade-white );
+		@include globalvar( height, xl );
+		border-top: 1px solid grey;
+		@include globalvar( border-color, border-base );
+		bottom: 0;
+		left: 0;
+		position: fixed;
+		width: 100%;
+		z-index: 600;
+
+		& > div {
+			padding-right: 100px;
+		}
+	}
+
+	@include media( tablet ) {
+		text-align: left;
+	}
+
+	@include media( desktop ) {
+	}
+
+	ul.social-links-menu {
+
+		margin: 0;
+		line-height: .6em;
+
+		li {
+			display: inline-block;
+			list-style: none;
+			padding: 0;
+
+			&:before {
+				content: none;
+				display: none;
+			}
+
+			a {
+				display: inline-block;
+				line-height: 1;
+
+				svg {
+					@include svg-transition;
+					display: block;
+					line-height: 1;
+
+					&:hover {
+						@include globalvar(fill, primary-base);
+					}
+
+					@include media( mobile ) {
+						width: 35px;
+						height: 35px;
+					}
+				}
+			}
+		}
 	}
 }
 

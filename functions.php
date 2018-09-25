@@ -44,7 +44,8 @@ if ( ! function_exists( 'smallbusinesstheme_setup' ) ) :
 
 		// This theme uses wp_nav_menu() in one location.
 		register_nav_menus( array(
-			'menu-1' => esc_html__( 'Primary', 'smallbusinesstheme' ),
+			'menu-1' => __( 'Primary', 'smallbusinesstheme' ),
+			'social' => __( 'Social Links', 'smallbusinesstheme' ),
 		) );
 
 		/*
@@ -185,6 +186,13 @@ function smallbusinesstheme_scripts() {
 	wp_localize_script( 'smallbusinesstheme-navigation', 'smallBusinessThemeIcons', array(
 		'dropdown' => smallbusinesstheme_get_icon_svg( 'expand_more' )
 	) );
+
+	// Menu toggle text
+	wp_localize_script( 'smallbusinesstheme-navigation', 'smallBusinessThemeMenuToggleText', array(
+		'menu'  => esc_html__( 'Menu', 'smallbusinesstheme' ),
+		'close' => esc_html__( 'Close', 'smallbusinesstheme' ),
+	) );
+
 
 }
 add_action( 'wp_enqueue_scripts', 'smallbusinesstheme_scripts' );
