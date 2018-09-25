@@ -22,7 +22,15 @@
 	@include block-margin( sm, 0 );
 
 	& > * {
-		@include block-margin( 0, sm );
+		@include block-margin( sm, sm );
+
+		&:first-child {
+			@include globalvar(margin-top, 0);
+		}
+
+		&:last-child {
+			@include globalvar(margin-bottom, 0);
+		}
 	}
 
 	@include media( tablet ) {

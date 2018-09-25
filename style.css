@@ -734,12 +734,18 @@ textarea {
   margin-left: 0;
   margin-right: 0; }
   .site-branding > * {
-    margin-top: 0;
-    margin-bottom: 0;
+    margin-top: calc(0.75 * var(--space-unit));
+    margin-top: var(--space-sm);
+    margin-bottom: calc(0.75 * var(--space-unit));
+    margin-bottom: var(--space-sm);
     margin-left: calc(0.75 * var(--space-unit));
     margin-left: var(--space-sm);
     margin-right: calc(0.75 * var(--space-unit));
     margin-right: var(--space-sm); }
+    .site-branding > *:first-child {
+      margin-top: 0; }
+    .site-branding > *:last-child {
+      margin-bottom: 0; }
   @media only screen and (min-width: calc( 8 * ( 80px + 25px ) - 25px)) {
     .site-branding {
       max-width: calc( 5 * ( var(--grid-column) + var(--grid-gutter) ) - var(--grid-gutter));
