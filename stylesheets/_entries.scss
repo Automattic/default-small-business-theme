@@ -125,6 +125,7 @@
 
 		.entry-meta {
 
+			@include globalvar(line-height, double);
 			flex-direction: column;
 			justify-content: space-between;
 
@@ -267,8 +268,6 @@
 		.entry-footer {
 
 			.entry-meta {
-
-				@include globalvar(line-height, double);
 
 				> span {
 

@@ -72,9 +72,7 @@
 
 	@include globalvar(background-color, primary-base);
 	@include globalvar(color, shade-white);
-	@include globalvar(padding, xs);
-	@include globalvar(padding-left, sm);
-	@include globalvar(padding-right, sm);
+	@include block-padding( xxs, xs );
 	@include globalvar(font-family, heading);
 	@include globalvar(font-size, sm);
 	@include globalvar(line-height, body);
@@ -99,6 +97,10 @@
 		@include globalvar(border-color, words-subtle);
 		@include globalvar(background-color, shade-white);
 		@include globalvar(color, words-subtle);
+	}
+
+	@include media( tablet ) {
+		@include block-padding( xs, sm );
 	}
 }
 

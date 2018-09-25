@@ -5,11 +5,9 @@ button,
 input[type="button"],
 input[type="reset"],
 input[type="submit"] {
+	@include block-padding( xxs, xs );
 	@include globalvar(background-color, primary-base);
 	@include globalvar(color, shade-white);
-	@include globalvar(padding, xs);
-	@include globalvar(padding-left, sm);
-	@include globalvar(padding-right, sm);
 	@include globalvar(font-family, heading);
 	@include globalvar(font-size, sm);
 	@include globalvar(line-height, body);
@@ -22,6 +20,10 @@ input[type="submit"] {
 	font-weight: 600;
 	text-decoration: none;
 	text-transform: uppercase;
+
+	@include media( tablet ) {
+		@include block-padding( xs, sm );
+	}
 }
 
 button:hover,

@@ -82,12 +82,14 @@ h4 { @include globalvar(font-size, h4); }
 .wp-block-button .wp-block-button__link {
   background-color: var(--color-primary-base);
   color: var(--color-shade-white);
-  padding: calc(0.5 * var(--space-unit));
-  padding: var(--space-xs);
-  padding-left: calc(0.75 * var(--space-unit));
-  padding-left: var(--space-sm);
-  padding-right: calc(0.75 * var(--space-unit));
-  padding-right: var(--space-sm);
+  padding-top: calc(0.25 * var(--space-unit));
+  padding-top: var(--space-xxs);
+  padding-bottom: calc(0.25 * var(--space-unit));
+  padding-bottom: var(--space-xxs);
+  padding-left: calc(0.5 * var(--space-unit));
+  padding-left: var(--space-xs);
+  padding-right: calc(0.5 * var(--space-unit));
+  padding-right: var(--space-xs);
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
   font-family: var(--font-family-heading);
   font-size: calc(1em / var(--font-size-ratio));
@@ -114,6 +116,16 @@ h4 { @include globalvar(font-size, h4); }
     border-color: var(--color-words-subtle);
     background-color: var(--color-shade-white);
     color: var(--color-words-subtle); }
+  @media only screen and (min-width: calc( 8 * ( 80px + 25px ) - 25px)) {
+    .wp-block-button .wp-block-button__link {
+      padding-top: calc(0.5 * var(--space-unit));
+      padding-top: var(--space-xs);
+      padding-bottom: calc(0.5 * var(--space-unit));
+      padding-bottom: var(--space-xs);
+      padding-left: calc(0.75 * var(--space-unit));
+      padding-left: var(--space-sm);
+      padding-right: calc(0.75 * var(--space-unit));
+      padding-right: var(--space-sm); } }
 
 .wp-block-audio audio {
   width: 100%; }

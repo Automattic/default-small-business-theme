@@ -584,14 +584,16 @@ button,
 input[type="button"],
 input[type="reset"],
 input[type="submit"] {
+  padding-top: calc(0.25 * var(--space-unit));
+  padding-top: var(--space-xxs);
+  padding-bottom: calc(0.25 * var(--space-unit));
+  padding-bottom: var(--space-xxs);
+  padding-left: calc(0.5 * var(--space-unit));
+  padding-left: var(--space-xs);
+  padding-right: calc(0.5 * var(--space-unit));
+  padding-right: var(--space-xs);
   background-color: var(--color-primary-base);
   color: var(--color-shade-white);
-  padding: calc(0.5 * var(--space-unit));
-  padding: var(--space-xs);
-  padding-left: calc(0.75 * var(--space-unit));
-  padding-left: var(--space-sm);
-  padding-right: calc(0.75 * var(--space-unit));
-  padding-right: var(--space-sm);
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
   font-family: var(--font-family-heading);
   font-size: calc(1em / var(--font-size-ratio));
@@ -610,6 +612,19 @@ input[type="submit"] {
   font-weight: 600;
   text-decoration: none;
   text-transform: uppercase; }
+  @media only screen and (min-width: calc( 8 * ( 80px + 25px ) - 25px)) {
+    button,
+    input[type="button"],
+    input[type="reset"],
+    input[type="submit"] {
+      padding-top: calc(0.5 * var(--space-unit));
+      padding-top: var(--space-xs);
+      padding-bottom: calc(0.5 * var(--space-unit));
+      padding-bottom: var(--space-xs);
+      padding-left: calc(0.75 * var(--space-unit));
+      padding-left: var(--space-sm);
+      padding-right: calc(0.75 * var(--space-unit));
+      padding-right: var(--space-sm); } }
 
 button:hover,
 input[type="button"]:hover,
@@ -1614,6 +1629,8 @@ object {
         flex-direction: column;
         justify-content: inherit; } }
   .hentry .entry-footer .entry-meta {
+    line-height: calc( var(--font-leading-heading) * 2);
+    line-height: var(--font-leading-double);
     flex-direction: column;
     justify-content: space-between; }
     @media only screen and (min-width: calc( 8 * ( 80px + 25px ) - 25px)) {
@@ -1708,18 +1725,13 @@ object {
   .archive .hentry .entry-summary p,
   .search .hentry .entry-summary p {
     word-break: break-word; }
-  .blog .hentry .entry-footer .entry-meta,
-  .archive .hentry .entry-footer .entry-meta,
-  .search .hentry .entry-footer .entry-meta {
-    line-height: calc( var(--font-leading-heading) * 2);
-    line-height: var(--font-leading-double); }
-    .blog .hentry .entry-footer .entry-meta > span:last-child,
-    .archive .hentry .entry-footer .entry-meta > span:last-child,
-    .search .hentry .entry-footer .entry-meta > span:last-child {
-      padding-bottom: calc(0.75 * var(--space-unit));
-      padding-bottom: var(--space-sm);
-      border-bottom: 1px solid grey;
-      border-bottom-color: var(--color-border-base); }
+  .blog .hentry .entry-footer .entry-meta > span:last-child,
+  .archive .hentry .entry-footer .entry-meta > span:last-child,
+  .search .hentry .entry-footer .entry-meta > span:last-child {
+    padding-bottom: calc(0.75 * var(--space-unit));
+    padding-bottom: var(--space-sm);
+    border-bottom: 1px solid grey;
+    border-bottom-color: var(--color-border-base); }
   .blog .hentry:last-of-type .entry-footer .entry-meta > span:last-child,
   .archive .hentry:last-of-type .entry-footer .entry-meta > span:last-child,
   .search .hentry:last-of-type .entry-footer .entry-meta > span:last-child {
