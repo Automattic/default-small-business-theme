@@ -1,12 +1,10 @@
 
-// Screen widths.
-
-$mobile_width: calc( 4 * ( 80px + 25px ) - 25px );
-$tablet_width: calc( 8 * ( 80px + 25px ) - 25px );
-$desktop_width: calc( 10 * ( 80px + 25px ) - 25px );
-$wide_width: calc( 12 * ( 80px + 25px ) - 25px );
-
 // Mixins
+
+$mobile_width: 4 * ( 80px + 25px ) - 25px;
+$tablet_width: 8 * ( 80px + 25px ) - 25px;
+$desktop_width: 10 * ( 80px + 25px ) - 25px;
+$wide_width: 12 * ( 80px + 25px ) - 25px;
 
 @mixin media( $res ) {
 	@if mobile == $res {
