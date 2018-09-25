@@ -753,7 +753,14 @@ textarea {
       display: flex;
       align-content: stretch;
       align-items: center;
-      width: 100%; } }
+      width: 100%; }
+      .site-branding > * {
+        margin-top: 0;
+        margin-bottom: 0;
+        margin-left: calc(0.75 * var(--space-unit));
+        margin-left: var(--space-sm);
+        margin-right: calc(0.75 * var(--space-unit));
+        margin-right: var(--space-sm); } }
   .site-branding .site-title {
     font-family: Baskerville, Baskerville Old Face, Hoefler Text, Garamond, Times New Roman, serif;
     font-family: var(--font-family-body);

@@ -34,11 +34,16 @@
 	}
 
 	@include media( tablet ) {
+
 		@include globalvar(max-width, column-5);
 		display: flex;
 		align-content: stretch;
 		align-items: center;
 		width: 100%;
+
+		& > * {
+			@include block-margin( 0, sm );
+		}
 	}
 
 	.site-title {
