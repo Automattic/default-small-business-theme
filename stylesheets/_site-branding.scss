@@ -19,10 +19,11 @@
 .site-identity {
 
 	@include globalvar(color, words-subtle);
-	@include block-margin( sm, 0 );
+	@include block-margin( sm, sm );
 
 	& > * {
-		@include block-margin( sm, sm );
+		// @include block-margin( sm, sm );
+		@include globalvar(margin-bottom, sm);
 
 		&:first-child {
 			@include globalvar(margin-top, 0);
@@ -42,15 +43,11 @@
 		width: 100%;
 
 		& > * {
-			@include block-margin( 0, sm );
-		}
-	}
+			@include globalvar(margin-bottom, 0);
+			@include globalvar(margin-right, sm);
 
-	.site-brand {
-		@include media( tablet ) {
-			@include block-margin( 0, 0 );
-			&:first-child {
-				@include block-margin( 0, sm );
+			&:last-child {
+				@include globalvar(margin-right, 0);
 			}
 		}
 	}
