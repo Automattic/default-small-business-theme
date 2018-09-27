@@ -63,7 +63,6 @@
 			max-width: #{map-get($grid, column-3)};
 		}
 	}
-
 }
 
 // !Buttons
@@ -137,15 +136,14 @@
 
 	&.alignleft,
 	&.alignright {
-	max-width: 100%;
-}
+		max-width: 100%;
+	}
 
-	&.alignfull img {
-	width: 100vw;
-	margin-left: auto;
-	margin-right: auto;
-}
-
+		&.alignfull img {
+		width: 100vw;
+		margin-left: auto;
+		margin-right: auto;
+	}
 }
 
 // !Cover image
@@ -401,6 +399,12 @@ table.wp-block-table {
 		font-style: normal;
 	}
 
+	&.is-large p,
+	&.is-style-large p {
+		@include globalvar(font-size, xl);
+		@include globalvar(line-height, heading);
+	}
+
 	cite {
 		@include globalvar(font-family, heading);
 		@include globalvar(font-size, xs);
@@ -427,6 +431,12 @@ table.wp-block-table {
 	& > p {
 		@include globalvar(font-size, lg);
 		font-style: normal;
+	}
+
+	&.is-large p,
+	&.is-style-large p {
+		@include globalvar(font-size, xl);
+		@include globalvar(line-height, heading);
 	}
 
 	blockquote,

@@ -376,6 +376,16 @@ table.wp-block-table {
     font-size: calc(1em * var(--font-size-ratio) * var(--font-size-ratio));
     font-size: var(--font-size-lg);
     font-style: normal; }
+  .wp-block-quote.is-large p,
+  .wp-block-quote.is-style-large p,
+  .wp-block-quote.is-large.is-large p,
+  .wp-block-quote.is-large.is-style-large p,
+  .wp-block-quote.is-style-large.is-large p,
+  .wp-block-quote.is-style-large.is-style-large p {
+    font-size: calc(1em * var(--font-size-ratio) * var(--font-size-ratio) * var(--font-size-ratio));
+    font-size: var(--font-size-xl);
+    line-height: 1.2;
+    line-height: var(--font-leading-heading); }
   .wp-block-quote cite,
   .wp-block-quote.is-large cite,
   .wp-block-quote.is-style-large cite {
@@ -413,6 +423,12 @@ table.wp-block-table {
     font-size: calc(1em * var(--font-size-ratio) * var(--font-size-ratio));
     font-size: var(--font-size-lg);
     font-style: normal; }
+  .wp-block-pullquote.is-large p,
+  .wp-block-pullquote.is-style-large p {
+    font-size: calc(1em * var(--font-size-ratio) * var(--font-size-ratio) * var(--font-size-ratio));
+    font-size: var(--font-size-xl);
+    line-height: 1.2;
+    line-height: var(--font-leading-heading); }
   .wp-block-pullquote blockquote,
   .wp-block-pullquote > p,
   .wp-block-pullquote > cite {
