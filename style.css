@@ -343,19 +343,19 @@ small,
   font-size: calc(1em / (var(--font-size-ratio) * var(--font-size-ratio)));
   font-size: var(--font-size-xs); }
 
-.main-navigation li,
+.main-navigation,
 .hentry .entry-meta > span {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
   font-family: var(--font-family-heading);
   font-size: calc(1em / (var(--font-size-ratio) * var(--font-size-ratio)));
   font-size: var(--font-size-xs); }
   @media only screen and (max-width: calc( 8 * ( 80px + 25px ) - 25px)) {
-    .main-navigation li,
+    .main-navigation,
     .hentry .entry-meta > span {
       font-size: calc(1em / var(--font-size-ratio));
       font-size: var(--font-size-sm); } }
 
-.main-navigation li a,
+.main-navigation > div > ul > li > a,
 .hentry .entry-meta .posted-on {
   font-weight: 400;
   letter-spacing: .125em;
