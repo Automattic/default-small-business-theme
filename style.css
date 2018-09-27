@@ -765,13 +765,11 @@ textarea {
         .site-identity > *:last-child {
           margin-right: 0; } }
   .site-identity .site-title {
-    color: var(--color-words-base);
     margin: 0; }
     .site-identity .site-title a {
       transition: color 110ms ease-in-out;
-      color: inherit;
+      color: var(--color-words-base);
       display: block;
-      font-weight: normal;
       text-decoration: none; }
       .site-identity .site-title a:hover {
         color: var(--color-secondary-base); }
