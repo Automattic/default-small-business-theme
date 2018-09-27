@@ -784,6 +784,8 @@ textarea {
     font-family: var(--font-family-body);
     font-size: calc(1em * var(--font-size-ratio) * var(--font-size-ratio));
     font-size: var(--font-size-lg);
+    line-height: 1.2;
+    line-height: var(--font-leading-heading);
     color: var(--color-words-base);
     margin: 0; }
     .site-identity .site-title a {
