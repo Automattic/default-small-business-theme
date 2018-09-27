@@ -1320,6 +1320,7 @@ textarea {
       max-width: var(--grid-column-7);
       margin-right: calc( 1 * ( var(--grid-column) + var(--grid-gutter) ) - var(--grid-gutter));
       margin-right: var(--space-column-1);
+      margin-right: calc( 80px + 25px);
       margin-left: 0; } }
 
 .comment-body {

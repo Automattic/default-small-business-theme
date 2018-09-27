@@ -141,6 +141,7 @@
 	@include media( tablet ) {
 		@include globalvar(max-width, column-7);
 		@include globalvar(margin-right, column-1);
+		margin-right: calc( #{map-get($space, column)} + #{map-get($space, gutter)} );
 		margin-left: 0;
 	}
 }
