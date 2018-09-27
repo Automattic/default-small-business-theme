@@ -3,6 +3,7 @@
  * CSS4 Variables with Fallbacks Using Sass
  * src: https://codepen.io/jakealbaugh/post/css4-variables-with-fallbacks-using-sass
  */
+@import url(https://fonts.googleapis.com/css?family=Space+Mono);
 /*
 body {
   @include globalvar(font-size, base);
@@ -67,9 +68,9 @@ h4 { @include globalvar(font-size, h4); }
   --grid-column-10: calc( 10 * ( var(--grid-column) + var(--grid-gutter) ) - var(--grid-gutter));
   --grid-column-11: calc( 11 * ( var(--grid-column) + var(--grid-gutter) ) - var(--grid-gutter));
   --grid-column-12: calc( 12 * ( var(--grid-column) + var(--grid-gutter) ) - var(--grid-gutter));
-  --font-family-body: "Hoefler Text", "Baskerville Old Face", Garamond, "Times New Roman", serif;
+  --font-family-body: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
   --font-family-heading: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
-  --font-family-code: Menlo, monaco, Consolas, Lucida Console, monospace;
+  --font-family-code: Space Mono, sans;
   --font-size-base: 1.125em;
   --font-size-ratio: 1.2;
   --font-size-xxs: calc(1em / (var(--font-size-ratio) * var(--font-size-ratio) * var(--font-size-ratio)));
@@ -130,7 +131,7 @@ h4 { @include globalvar(font-size, h4); }
 .editor-post-title .editor-post-title__input,
 .edit-post-visual-editor,
 .edit-post-visual-editor p {
-  font-family: "Hoefler Text", "Baskerville Old Face", Garamond, "Times New Roman", serif;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
   font-family: var(--font-family-body); }
 
 .edit-post-visual-editor,
@@ -305,7 +306,7 @@ h4 { @include globalvar(font-size, h4); }
   .edit-post-visual-editor select,
   .edit-post-visual-editor optgroup,
   .edit-post-visual-editor textarea {
-    font-family: "Hoefler Text", "Baskerville Old Face", Garamond, "Times New Roman", serif;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
     font-family: var(--font-family-body);
     line-height: 1.4;
     line-height: var(--font-leading-body);
@@ -370,7 +371,7 @@ h4 { @include globalvar(font-size, h4); }
     font-style: normal;
     font-weight: 500; }
   .edit-post-visual-editor pre {
-    font-family: Menlo, monaco, Consolas, Lucida Console, monospace;
+    font-family: Space Mono, sans;
     font-family: var(--font-family-code);
     font-size: calc(1em / var(--font-size-ratio));
     font-size: var(--font-size-sm);
@@ -380,7 +381,7 @@ h4 { @include globalvar(font-size, h4); }
   .edit-post-visual-editor code, .edit-post-visual-editor kbd, .edit-post-visual-editor tt, .edit-post-visual-editor var, .edit-post-visual-editor samp {
     font-size: calc(1em * var(--font-size-ratio));
     font-size: var(--font-size-md);
-    font-family: Menlo, monaco, Consolas, Lucida Console, monospace;
+    font-family: Space Mono, sans;
     font-family: var(--font-family-code);
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale; }
