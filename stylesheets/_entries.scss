@@ -82,8 +82,6 @@
 
 		@include block-margin();
 		@include globalvar(color, subtle);
-		@include globalvar(font-size, xs);
-		@include globalvar(font-family, heading);
 		display: flex;
 		justify-content: space-between;
 

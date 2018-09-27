@@ -5,7 +5,6 @@
 
 	> div > ul {
 
-		@include globalvar(font-family, heading);
 		display: none;
 		margin: 0;
 		padding: 0;
@@ -34,15 +33,10 @@
 
 			> a {
 				@include globalvar(color, primary);
-				@include globalvar(font-size, xs);
 				@include block-padding( xs, xs )
 				@include link-transition;
 				clear: both;
 				display: block;
-				font-weight: 400;
-				letter-spacing: .125em;
-				text-decoration: none;
-				text-transform: uppercase;
 				width: 100%;
 			}
 
@@ -114,7 +108,6 @@
 			z-index: 500;
 
 			li > a {
-				@include globalvar(font-size, sm);
 				@include block-padding(xxs, xs);
 			}
 			.menu-item-has-children {
@@ -159,7 +152,6 @@
 				display: inline-block;
 
 				a {
-					@include globalvar(font-size, xs);
 					@include block-padding( xs, xs );
 				}
 

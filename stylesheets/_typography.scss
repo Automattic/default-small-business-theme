@@ -77,6 +77,26 @@ small,
 	@include globalvar(font-size, xs);
 }
 
+.main-navigation li,
+.hentry .entry-meta > span {
+
+	@include globalvar(font-family, heading);
+	@include globalvar(font-size, xs);
+
+	@include media( mobile ) {
+		@include globalvar(font-size, sm);
+	}
+}
+
+.main-navigation li a,
+.hentry .entry-meta .posted-on {
+
+	font-weight: 400;
+	letter-spacing: .125em;
+	text-decoration: none;
+	text-transform: uppercase;
+}
+
 dfn, em, i {
 	font-style: italic;
 }

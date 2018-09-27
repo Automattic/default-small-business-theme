@@ -326,6 +326,25 @@ small,
   font-size: calc(1em / (var(--font-size-ratio) * var(--font-size-ratio)));
   font-size: var(--font-size-xs); }
 
+.main-navigation li,
+.hentry .entry-meta > span {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+  font-family: var(--font-family-heading);
+  font-size: calc(1em / (var(--font-size-ratio) * var(--font-size-ratio)));
+  font-size: var(--font-size-xs); }
+  @media only screen and (max-width: calc( 8 * ( 80px + 25px ) - 25px)) {
+    .main-navigation li,
+    .hentry .entry-meta > span {
+      font-size: calc(1em / var(--font-size-ratio));
+      font-size: var(--font-size-sm); } }
+
+.main-navigation li a,
+.hentry .entry-meta .posted-on {
+  font-weight: 400;
+  letter-spacing: .125em;
+  text-decoration: none;
+  text-transform: uppercase; }
+
 dfn, em, i {
   font-style: italic; }
 
@@ -845,8 +864,6 @@ textarea {
 
 /** === Site Branding === */
 .main-navigation > div > ul {
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
-  font-family: var(--font-family-heading);
   display: none;
   margin: 0;
   padding: 0; }
@@ -866,8 +883,6 @@ textarea {
   .main-navigation > div > ul > li > a {
     color: var(--color-primary-base);
     color: var(--color-words-primary);
-    font-size: calc(1em / (var(--font-size-ratio) * var(--font-size-ratio)));
-    font-size: var(--font-size-xs);
     padding-top: calc(0.5 * var(--space-unit));
     padding-top: var(--space-xs);
     padding-bottom: calc(0.5 * var(--space-unit));
@@ -879,10 +894,6 @@ textarea {
     transition: color 110ms ease-in-out;
     clear: both;
     display: block;
-    font-weight: 400;
-    letter-spacing: .125em;
-    text-decoration: none;
-    text-transform: uppercase;
     width: 100%; }
   .main-navigation > div > ul > li#more-menu {
     display: none; }
@@ -936,8 +947,6 @@ textarea {
     width: 100%;
     z-index: 500; }
     .main-navigation.toggled-on > div > ul li > a {
-      font-size: calc(1em / var(--font-size-ratio));
-      font-size: var(--font-size-sm);
       padding-top: calc(0.25 * var(--space-unit));
       padding-top: var(--space-xxs);
       padding-bottom: calc(0.25 * var(--space-unit));
@@ -983,8 +992,6 @@ textarea {
       .main-navigation > div > ul > li {
         display: inline-block; }
         .main-navigation > div > ul > li a {
-          font-size: calc(1em / (var(--font-size-ratio) * var(--font-size-ratio)));
-          font-size: var(--font-size-xs);
           padding-top: calc(0.5 * var(--space-unit));
           padding-top: var(--space-xs);
           padding-bottom: calc(0.5 * var(--space-unit));
@@ -1616,10 +1623,6 @@ object {
     margin-right: var(--space-sm);
     color: var(--color-shade-gray-6);
     color: var(--color-words-subtle);
-    font-size: calc(1em / (var(--font-size-ratio) * var(--font-size-ratio)));
-    font-size: var(--font-size-xs);
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
-    font-family: var(--font-family-heading);
     display: flex;
     justify-content: space-between; }
     .hentry .entry-meta a {
