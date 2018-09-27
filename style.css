@@ -838,6 +838,8 @@ textarea {
     padding-left: 0; }
     .main-navigation > div > ul li a {
       display: block; }
+      .main-navigation > div > ul li a:hover {
+        color: var(--color-secondary-base); }
     .main-navigation > div > ul li:before {
       content: "";
       display: none; }
@@ -861,8 +863,6 @@ textarea {
     text-decoration: none;
     text-transform: uppercase;
     width: 100%; }
-    .main-navigation > div > ul > li > a:hover {
-      color: var(--color-primary-dark); }
   .main-navigation > div > ul > li#more-menu {
     display: none; }
   .main-navigation > div > ul .menu-item-has-children {
