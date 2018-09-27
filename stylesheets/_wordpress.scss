@@ -19,7 +19,7 @@
 
 	@include globalvar(max-width, column-10);
 	border-bottom: 1px solid grey;
-	@include globalvar(border-bottom-color, border-base);
+	@include globalvar(border-bottom-color, base);
 	margin-left: auto;
 	margin-right: auto;
 
@@ -32,7 +32,7 @@
 	}
 
 	.page-title {
-		@include globalvar(color, words-subtle);
+		@include globalvar(color, subtle);
 	}
 
 	@include media( desktop ) {
@@ -189,7 +189,7 @@
 		@include globalvar( font-family, heading);
 		@include globalvar( font-size, sm);
 		border-top: 1px solid grey;
-		@include globalvar( border-top-color, border-base);
+		@include globalvar( border-top-color, base);
 		font-weight: 500;
 		font-style: normal;
 		letter-spacing: .125rem;

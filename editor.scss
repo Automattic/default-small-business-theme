@@ -68,13 +68,13 @@
 	// Override font top-level editor styles to match front end
 	.editor-rich-text__tinymce.mce-content-body {
 		@include globalvar(line-height, body);
-		@include globalvar(color, words-base);
+		@include globalvar(color, base);
 	}
 
 	// Button
 	.wp-block-button .wp-block-button__link {
 		@include globalvar(background-color, primary-base);
-		@include globalvar(color, shade-white);
+		@include globalvar(color, background);
 		@include globalvar(padding, xs);
 		@include globalvar(padding-left, sm);
 		@include globalvar(padding-right, sm);
@@ -83,7 +83,7 @@
 		@include globalvar(line-height, body);
 		@include rounded( 3px );
 		border: 2px solid green;
-		@include globalvar(border-color, primary-base);
+		@include globalvar(border-color, primary);
 		box-shadow: 1px 1px 5px 1px rgba(0,0,0,0.33);
 		cursor: pointer;
 		display: inline-block;
@@ -143,7 +143,7 @@
 	.wp-block-image figcaption,
 	.wp-block-gallery .blocks-gallery-image figcaption,
 	.wp-block-gallery .blocks-gallery-item figcaption {
-		@include globalvar(color, words-subtle);
+		@include globalvar(color, subtle);
 		@include globalvar(font-family, heading);
 		@include block-padding( xxs, 0 );
 		text-align: left;
@@ -171,7 +171,7 @@
 		.wp-block-quote__citation {
 			@include globalvar(font-family, heading);
 			@include globalvar(font-size, xs);
-			@include globalvar(color, words-subtle);
+			@include globalvar(color, subtle);
 			font-style: normal;
 			font-weight: 500;
 		}

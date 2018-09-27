@@ -4,7 +4,7 @@
 .site-header {
 
 	border-bottom: 1px solid gray;
-	@include globalvar(border-bottom-color, border-base);
+	@include globalvar(border-bottom-color, base);
 
 	@include media( desktop ) {
 		@include globalvar(max-width, column-12);
@@ -18,7 +18,7 @@
 
 .site-identity {
 
-	@include globalvar(color, words-subtle);
+	@include globalvar(color, subtle);
 	@include block-margin( sm, sm );
 
 	& > * {
@@ -58,12 +58,12 @@
 
 		a {
 			@include link-transition;
-			@include globalvar(color, words-base);
+			@include globalvar(color, heading);
 			display: block;
 			text-decoration: none;
 
 			&:hover {
-				@include globalvar(color, secondary-base);
+				@include globalvar(color, secondary);
 			}
 		}
 	}
@@ -71,7 +71,7 @@
 	.site-description {
 		@include globalvar(font-family, heading);
 		@include globalvar(font-size, xs);
-		@include globalvar(color, words-subtle);
+		@include globalvar(color, subtle);
 		font-weight: normal;
 	}
 
@@ -84,7 +84,7 @@
 .site-footer {
 
 	border-top: 1px solid grey;
-	@include globalvar(border-color, border-base);
+	@include globalvar(border-color, base);
 
 	@include media( mobile ) {
 		@include globalvar( padding-bottom, xl );
@@ -103,7 +103,7 @@
 		color: inherit;
 		&:hover {
 			text-decoration: none;
-			@include globalvar(color, primary-base);
+			@include globalvar(color, primary);
 		}
 	}
 

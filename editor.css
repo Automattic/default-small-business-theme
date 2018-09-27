@@ -103,10 +103,13 @@ h4 { @include globalvar(font-size, h4); }
   --color-feedback-error: #f5414f;
   --color-feedback-warning: #ffd137;
   --color-words-base: var(--color-shade-gray-10);
+  --color-words-primary: var(--color-primary-base);
+  --color-words-secondary: var(--color-secondary-base);
+  --color-words-background: var(--color-shade-white);
   --color-words-heading: var(--color-shade-black);
   --color-words-subtle: var(--color-shade-gray-6);
-  --color-link-base: var(--color-primary);
-  --color-link-hover: var(--color-primary-dark);
+  --color-words-link: var(--color-primary-base);
+  --color-words-hover: var(--color-primary-dark);
   --color-border-base: var(--color-shade-gray-2);
   --color-border-primary: var(--color-primary-base);
   --color-border-form: var(--color-border-base);
@@ -151,7 +154,8 @@ h4 { @include globalvar(font-size, h4); }
   .edit-post-visual-editor body {
     background-color: var(--color-shade-white); }
   .edit-post-visual-editor a {
-    color: var(--color-primary-base); }
+    color: var(--color-primary-base);
+    color: var(--color-words-primary); }
   .edit-post-visual-editor a:hover,
   .edit-post-visual-editor a:active {
     outline: 0; }
@@ -165,6 +169,7 @@ h4 { @include globalvar(font-size, h4); }
   .edit-post-visual-editor abbr,
   .edit-post-visual-editor acronym {
     border-bottom: 1px dotted inherit;
+    border-bottom-color: var(--color-shade-gray-2);
     border-bottom-color: var(--color-border-base);
     cursor: help; }
   .edit-post-visual-editor pre {
@@ -201,6 +206,7 @@ h4 { @include globalvar(font-size, h4); }
       top: calc(0.25 * var(--space-unit));
       top: var(--space-xxs);
       color: var(--color-primary-base);
+      color: var(--color-words-primary);
       line-height: var(--font-leading-md);
       font-size: calc(1em / (var(--font-size-ratio) * var(--font-size-ratio)));
       font-size: var(--font-size-xs); }
@@ -227,6 +233,7 @@ h4 { @include globalvar(font-size, h4); }
       top: calc(0.25 * var(--space-unit));
       top: var(--space-xxs);
       color: var(--color-primary-base);
+      color: var(--color-words-primary);
       font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
       font-family: var(--font-family-heading);
       font-size: calc(1em / (var(--font-size-ratio) * var(--font-size-ratio)));
@@ -273,6 +280,7 @@ h4 { @include globalvar(font-size, h4); }
     margin-left: 0;
     margin-right: 0;
     border-top: 1px solid green;
+    border-top-color: var(--color-primary-base);
     border-top-color: var(--color-border-primary); }
     .edit-post-visual-editor blockquote p,
     .edit-post-visual-editor blockquote.is-large p {
@@ -285,7 +293,7 @@ h4 { @include globalvar(font-size, h4); }
       word-break: break-word; }
     .edit-post-visual-editor blockquote cite,
     .edit-post-visual-editor blockquote.is-large cite {
-      color: var(--color-words-subtle); }
+      color: var(--color-words-words-subtle); }
   .edit-post-visual-editor address {
     margin: 0 0 1.5em; }
   .edit-post-visual-editor mark,
@@ -309,6 +317,7 @@ h4 { @include globalvar(font-size, h4); }
     font-family: var(--font-family-body);
     line-height: 1.4;
     line-height: var(--font-leading-body);
+    color: var(--color-shade-gray-10);
     color: var(--color-words-base);
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
@@ -436,10 +445,12 @@ h4 { @include globalvar(font-size, h4); }
   .edit-post-visual-editor .editor-rich-text__tinymce.mce-content-body {
     line-height: 1.4;
     line-height: var(--font-leading-body);
+    color: var(--color-shade-gray-10);
     color: var(--color-words-base); }
   .edit-post-visual-editor .wp-block-button .wp-block-button__link {
     background-color: var(--color-primary-base);
     color: var(--color-shade-white);
+    color: var(--color-words-background);
     padding: calc(0.5 * var(--space-unit));
     padding: var(--space-xs);
     padding-left: calc(0.75 * var(--space-unit));
@@ -458,6 +469,7 @@ h4 { @include globalvar(font-size, h4); }
     border-radius: 3px;
     border: 2px solid green;
     border-color: var(--color-primary-base);
+    border-color: var(--color-border-primary);
     box-shadow: 1px 1px 5px 1px rgba(0, 0, 0, 0.33);
     cursor: pointer;
     display: inline-block;
@@ -497,6 +509,7 @@ h4 { @include globalvar(font-size, h4); }
   .edit-post-visual-editor .wp-block-image figcaption,
   .edit-post-visual-editor .wp-block-gallery .blocks-gallery-image figcaption,
   .edit-post-visual-editor .wp-block-gallery .blocks-gallery-item figcaption {
+    color: var(--color-shade-gray-6);
     color: var(--color-words-subtle);
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
     font-family: var(--font-family-heading);
@@ -530,6 +543,7 @@ h4 { @include globalvar(font-size, h4); }
     font-family: var(--font-family-heading);
     font-size: calc(1em / (var(--font-size-ratio) * var(--font-size-ratio)));
     font-size: var(--font-size-xs);
+    color: var(--color-shade-gray-6);
     color: var(--color-words-subtle);
     font-style: normal;
     font-weight: 500; }

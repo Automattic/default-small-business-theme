@@ -16,7 +16,7 @@ body {
 }
 
 a {
-	@include globalvar(color, primary-base);
+	@include globalvar(color, primary);
 }
 
 a:visited {
@@ -50,7 +50,7 @@ hr {
 abbr,
 acronym {
 	border-bottom: 1px dotted inherit;
-	@include globalvar( border-bottom-color, border-base);
+	@include globalvar( border-bottom-color, base);
 	cursor: help;
 }
 
@@ -91,7 +91,7 @@ ul > li {
 		left: 0;
 		position: absolute;
 		@include globalvar(top, xxs);
-		@include globalvar(color, primary-base);
+		@include globalvar(color, primary);
 		@include globalvar(line-height, md);
 		@include globalvar(font-size, xs);
 	}
@@ -125,7 +125,7 @@ ol > li {
 		left: 0;
 		position: absolute;
 		@include globalvar(top, xxs);
-		@include globalvar(color, primary-base);
+		@include globalvar(color, primary);
 		@include globalvar(font-family, heading);
 		@include globalvar(font-size, xs);
 		@include globalvar(line-height, md);
@@ -180,7 +180,7 @@ blockquote.is-large {
 	margin-left: 0;
 	margin-right: 0;
 	border-top: 1px solid green;
-	@include globalvar( border-top-color, border-primary );
+	@include globalvar( border-top-color, primary );
 
 	p {
 		@include block-padding( xs, 0 );
