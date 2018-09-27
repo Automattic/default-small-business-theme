@@ -3,7 +3,7 @@
 
 // The only two colors that matter ;-)
 $primary-color:   #0999d4; // #008000; // purple
-$secondary-color: #f5414f;
+$secondary-color: purple; // #f5414f;
 
 $color: (
 
@@ -23,14 +23,14 @@ $color: (
 
 	// shades - generated using chroma.js - 12 steps
 	shade: (
-		black: #1d1d21, // black
-		gray-10: #2e2e31,
-		gray-6: #7b7a7d,
-		gray-4: #a5a5a6,
-		gray-3: #bbbbbc,
-		gray-2: #d1d0d2,
-		gray-1: #e8e7e8,
-		white: #efefef, // white
+		black: #fff, // black
+		gray-10: #e8e7e8,
+		gray-6: #d1d0d2,
+		gray-4: #bbbbbc,
+		gray-3: #a5a5a6,
+		gray-2: #7b7a7d,
+		gray-1: #2e2e31,
+		white: #000, // white
 	),
 
 	// feedback
