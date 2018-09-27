@@ -54,14 +54,12 @@
 
 	.site-title {
 
-		@include globalvar(color, words-base);
 		@include globalvar(margin, 0);
 
 		a {
 			@include link-transition;
-			color: inherit;
+			@include globalvar(color, words-base);
 			display: block;
-			font-weight: normal;
 			text-decoration: none;
 
 			&:hover {
