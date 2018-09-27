@@ -98,7 +98,7 @@ h4 { @include globalvar(font-size, h4); }
   --color-shade-gray-3: #bbbbbc;
   --color-shade-gray-2: #d1d0d2;
   --color-shade-gray-1: #e8e7e8;
-  --color-shade-white: #ffffff;
+  --color-shade-white: #efefef;
   --color-feedback-success: #88c459;
   --color-feedback-error: #f5414f;
   --color-feedback-warning: #ffd137;
