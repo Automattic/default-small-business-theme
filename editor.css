@@ -366,18 +366,18 @@ h4 { @include globalvar(font-size, h4); }
   .edit-post-visual-editor .text--xs {
     font-size: calc(1em / (var(--font-size-ratio) * var(--font-size-ratio)));
     font-size: var(--font-size-xs); }
-  .edit-post-visual-editor .main-navigation li,
+  .edit-post-visual-editor .main-navigation,
   .edit-post-visual-editor .hentry .entry-meta > span {
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
     font-family: var(--font-family-heading);
     font-size: calc(1em / (var(--font-size-ratio) * var(--font-size-ratio)));
     font-size: var(--font-size-xs); }
     @media only screen and (max-width: calc( 8 * ( 80px + 25px ) - 25px)) {
-      .edit-post-visual-editor .main-navigation li,
+      .edit-post-visual-editor .main-navigation,
       .edit-post-visual-editor .hentry .entry-meta > span {
         font-size: calc(1em / var(--font-size-ratio));
         font-size: var(--font-size-sm); } }
-  .edit-post-visual-editor .main-navigation li a,
+  .edit-post-visual-editor .main-navigation > div > ul > li > a,
   .edit-post-visual-editor .hentry .entry-meta .posted-on {
     font-weight: 400;
     letter-spacing: .125em;

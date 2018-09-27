@@ -77,7 +77,7 @@ small,
 	@include globalvar(font-size, xs);
 }
 
-.main-navigation li,
+.main-navigation,
 .hentry .entry-meta > span {
 
 	@include globalvar(font-family, heading);
@@ -88,7 +88,7 @@ small,
 	}
 }
 
-.main-navigation li a,
+.main-navigation > div > ul > li > a,
 .hentry .entry-meta .posted-on {
 
 	font-weight: 400;
