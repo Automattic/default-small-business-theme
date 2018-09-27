@@ -270,6 +270,7 @@ textarea {
   -moz-osx-font-smoothing: grayscale;
   font-weight: 400; }
 
+.site-title,
 h1, h2, h3, h4, h5, h6 {
   clear: both;
   font-weight: bold;
@@ -298,6 +299,7 @@ h2,
   font-size: calc(1em * var(--font-size-ratio) * var(--font-size-ratio) * var(--font-size-ratio));
   font-size: var(--font-size-xl); }
 
+.site-title,
 h3,
 .text--lg,
 .has-large-font-size {
@@ -763,12 +765,6 @@ textarea {
         .site-identity > *:last-child {
           margin-right: 0; } }
   .site-identity .site-title {
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
-    font-family: var(--font-family-body);
-    font-size: calc(1em * var(--font-size-ratio) * var(--font-size-ratio));
-    font-size: var(--font-size-lg);
-    line-height: 1.2;
-    line-height: var(--font-leading-heading);
     color: var(--color-words-base);
     margin: 0; }
     .site-identity .site-title a {
