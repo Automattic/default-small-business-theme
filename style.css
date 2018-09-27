@@ -856,7 +856,8 @@ textarea {
     .main-navigation > div > ul li a {
       display: block; }
       .main-navigation > div > ul li a:hover {
-        color: var(--color-secondary-base); }
+        color: var(--color-secondary-base);
+        text-decoration: none; }
     .main-navigation > div > ul li:before {
       content: "";
       display: none; }
