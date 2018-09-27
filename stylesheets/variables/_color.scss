@@ -43,13 +43,12 @@ $color: (
 	// text keyword doesn’t work
 	words: (
 		base: var(--color-shade-gray-10),
+		primary: var(--color-primary-base),
+		secondary: var(--color-secondary-base),
+		background: var(--color-shade-white),
 		heading: var(--color-shade-black),
 		subtle: var(--color-shade-gray-6),
-	),
-
-	// link
-	link: (
-		base: var(--color-primary),
+		link: var(--color-primary-base),
 		hover: var(--color-primary-dark),
 	),
 

@@ -22,7 +22,7 @@ optgroup,
 textarea {
 	@include globalvar(font-family, body);
 	@include globalvar(line-height, body);
-	@include globalvar(color, words-base);
+	@include globalvar(color, base);
 	@include font-smoothing;
 	font-weight: 400;
 }

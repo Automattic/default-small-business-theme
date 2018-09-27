@@ -19,7 +19,7 @@
 				display: block;
 
 				&:hover {
-					@include globalvar(color, secondary-base);
+					@include globalvar(color, secondary);
 					text-decoration: none;
 				}
 			}
@@ -33,7 +33,7 @@
 		> li {
 
 			> a {
-				@include globalvar(color, primary-base);
+				@include globalvar(color, primary);
 				@include globalvar(font-size, xs);
 				@include block-padding( xs, xs )
 				@include link-transition;
@@ -75,7 +75,7 @@
 
 			button {
 				@include globalvar(background-color, transparent);
-				@include globalvar(color, primary-base);
+				@include globalvar(color, primary);
 				@include globalvar(padding, xs);
 				line-height: #{map-get($space, xs)};
 				border: none;
@@ -102,7 +102,7 @@
 		&.toggled-on > div > ul {
 
 			border-top: 1px solid grey;
-			@include globalvar( border-color, border-base );
+			@include globalvar( border-color, base );
 			@include globalvar( background-color, shade-white );
 			@include globalvar( padding-top, xs );
 			@include globalvar( padding-bottom, xl );
@@ -165,7 +165,7 @@
 
 				> ul {
 					border: 1px solid grey;
-					@include globalvar( border-color, border-base );
+					@include globalvar( border-color, base );
 
 					li {
 						display: block;
@@ -233,7 +233,7 @@
 		@include globalvar( background-color, shade-white );
 		@include globalvar( height, xl );
 		border-top: 1px solid grey;
-		@include globalvar( border-color, border-base );
+		@include globalvar( border-color, base );
 		bottom: 0;
 		left: 0;
 		position: fixed;
@@ -294,9 +294,9 @@
 
 	@include block-margin( lg, 0 );
 	border-top: 1px solid green;
-	@include globalvar( border-top-color, primary-base );
+	@include globalvar( border-top-color, primary );
 	border-bottom: 1px solid grey;
-	@include globalvar( border-bottom-color, border-base);
+	@include globalvar( border-bottom-color, base);
 
 	&:last-child {
 		@include globalvar(margin-bottom, 0);

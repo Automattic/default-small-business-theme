@@ -70,14 +70,14 @@
 .wp-block-button .wp-block-button__link{
 
 	@include globalvar(background-color, primary-base);
-	@include globalvar(color, shade-white);
+	@include globalvar(color, background);
 	@include block-padding( xxs, xs );
 	@include globalvar(font-family, heading);
 	@include globalvar(font-size, sm);
 	@include globalvar(line-height, body);
 	@include rounded( 3px );
 	border: 2px solid green;
-	@include globalvar(border-color, primary-base);
+	@include globalvar(border-color, primary);
 	box-shadow: 1px 1px 5px 1px rgba(0,0,0,0.33);
 	cursor: pointer;
 	display: inline-block;
@@ -86,16 +86,16 @@
 	text-transform: uppercase;
 
 	&:hover {
-		@include globalvar(border-color, primary-base);
+		@include globalvar(border-color, primary);
 		@include globalvar(background-color, shade-white);
-		@include globalvar(color, primary-base);
+		@include globalvar(color, primary);
 	}
 
 	&:active,
 	&:focus {
-		@include globalvar(border-color, words-subtle);
+		@include globalvar(border-color, base);
 		@include globalvar(background-color, shade-white);
-		@include globalvar(color, words-subtle);
+		@include globalvar(color, subtle);
 	}
 
 	@include media( tablet ) {
@@ -241,7 +241,7 @@
 .wp-block-image figcaption,
 .wp-block-gallery .blocks-gallery-image figcaption,
 .wp-block-gallery .blocks-gallery-item figcaption {
-	@include globalvar(color, words-subtle);
+	@include globalvar(color, subtle);
 	@include block-padding( xxs, 0 );
 	@include globalvar(font-size, xs);
 	@include globalvar(font-family, heading);
@@ -391,7 +391,7 @@ table.wp-block-table {
 	@include globalvar( margin-left, sm);
 	@include globalvar( margin-right, sm);
 	border-top: 1px solid green;
-	@include globalvar( border-top-color, border-primary );
+	@include globalvar( border-top-color, primary );
 
 	p {
 		@include block-padding( xs, sm );
@@ -408,7 +408,7 @@ table.wp-block-table {
 	cite {
 		@include globalvar(font-family, heading);
 		@include globalvar(font-size, xs);
-		@include globalvar(color, words-subtle);
+		@include globalvar(color, subtle);
 		@include block-padding( 0, sm );
 		font-style: normal;
 		font-weight: 500;

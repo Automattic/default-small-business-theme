@@ -52,14 +52,14 @@
 
 	.entry-title {
 		@include block-margin();
-		@include globalvar(color, primary-base);
+		@include globalvar(color, primary);
 
 		a {
-			@include globalvar(color, primary-base);
+			@include globalvar(color, primary);
 			@include link-transition;
 			color: inherit;
 			&:hover {
-				@include globalvar(color, secondary-base);
+				@include globalvar(color, secondary);
 				text-decoration: none;
 			}
 		}
@@ -81,20 +81,20 @@
 	.entry-meta {
 
 		@include block-margin();
-		@include globalvar(color, words-subtle);
+		@include globalvar(color, subtle);
 		@include globalvar(font-size, xs);
 		@include globalvar(font-family, heading);
 		display: flex;
 		justify-content: space-between;
 
 		a {
-			@include globalvar(color, words-heading);
+			@include globalvar(color, heading);
 			@include link-transition;
 			font-weight: 600;
 
 			&:hover {
 				text-decoration: none;
-				@include globalvar(color, secondary-primary);
+				@include globalvar(color, secondary);
 			}
 		}
 
@@ -167,7 +167,7 @@
 		.post-thumbnail-inner {
 			display: block;
 			border: solid 10px inherit;
-			@include globalvar(border-color, secondary-base);
+			@include globalvar(border-color, secondary);
 			margin-bottom: 1.5em;
 
 			img {
@@ -245,7 +245,7 @@
 			}
 
 			&:hover {
-				@include globalvar(color, primary-base);
+				@include globalvar(color, primary);
 				text-decoration: none;
 			}
 		}
@@ -275,7 +275,7 @@
 					&:last-child {
 						@include globalvar(padding-bottom, sm);
 						border-bottom: 1px solid grey;
-						@include globalvar(border-bottom-color, border-base);
+						@include globalvar(border-bottom-color, base);
 					}
 				}
 			}
@@ -291,7 +291,7 @@
 			.entry-footer .entry-meta {
 
 				border-bottom: 1px solid grey;
-				@include globalvar(border-bottom-color, border-base);
+				@include globalvar(border-bottom-color, base);
 
 				> span {
 					@include globalvar(margin-right, sm);
