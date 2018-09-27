@@ -1133,7 +1133,8 @@ textarea {
       font-size: var(--font-size-md);
       margin: 0; }
     .post-navigation .nav-links .post-excerpt {
-      color: var(--color-words-words-base);
+      color: var(--color-shade-gray-10);
+      color: var(--color-words-base);
       margin-top: calc(0.5 * var(--space-unit));
       margin-top: var(--space-xs);
       margin-bottom: calc(0.5 * var(--space-unit));
@@ -1143,7 +1144,8 @@ textarea {
     .post-navigation .nav-links a:hover {
       text-decoration: none; }
       .post-navigation .nav-links a:hover .post-excerpt {
-        color: var(--color-words-words-base);
+        color: var(--color-shade-gray-10);
+        color: var(--color-words-base);
         text-decoration: none; }
     .post-navigation .nav-links > div {
       margin-top: calc(0.75 * var(--space-unit));

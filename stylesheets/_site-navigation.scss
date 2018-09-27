@@ -314,14 +314,14 @@
 		}
 
 		.post-excerpt {
-			@include globalvar( color, words-base );
+			@include globalvar( color, base );
 			@include block-margin( xs, 0 );
 		}
 
 		a:hover {
 			text-decoration: none;
 			.post-excerpt {
-				@include globalvar( color, words-base );
+				@include globalvar( color, base );
 				text-decoration: none;
 			}
 		}
