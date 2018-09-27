@@ -61,9 +61,10 @@
 
 		a {
 			@include link-transition;
-			display: block;
-			text-decoration: none;
 			color: inherit;
+			display: block;
+			font-weight: normal;
+			text-decoration: none;
 
 			&:hover {
 				@include globalvar(color, secondary-base);

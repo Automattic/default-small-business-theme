@@ -788,9 +788,10 @@ textarea {
     margin: 0; }
     .site-identity .site-title a {
       transition: color 110ms ease-in-out;
+      color: inherit;
       display: block;
-      text-decoration: none;
-      color: inherit; }
+      font-weight: normal;
+      text-decoration: none; }
       .site-identity .site-title a:hover {
         color: var(--color-secondary-base); }
   .site-identity .site-description {
@@ -1101,7 +1102,6 @@ textarea {
     .post-navigation .nav-links .post-title {
       font-size: calc(1em * var(--font-size-ratio));
       font-size: var(--font-size-md);
-      font-weight: 300;
       margin: 0; }
     .post-navigation .nav-links .post-excerpt {
       color: var(--color-words-base);
