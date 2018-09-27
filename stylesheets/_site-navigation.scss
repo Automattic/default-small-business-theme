@@ -17,6 +17,10 @@
 
 			a {
 				display: block;
+
+				&:hover {
+					@include globalvar(color, secondary-base);
+				}
 			}
 
 			&:before {
@@ -39,10 +43,6 @@
 				text-decoration: none;
 				text-transform: uppercase;
 				width: 100%;
-
-				&:hover {
-					@include globalvar(color, primary-dark);
-				}
 			}
 
 			&#more-menu {
