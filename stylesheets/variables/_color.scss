@@ -54,7 +54,7 @@ $color: (
 
 	// border
 	border: (
-		base: var(--color-shade-gray-2),
+		base: transparent, // var(--color-shade-gray-2),
 		primary: var(--color-primary-base),
 		form: var(--color-border-base),
 		form-focus: var(--color-primary-base),

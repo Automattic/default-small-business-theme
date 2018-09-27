@@ -132,7 +132,7 @@ h4 { @include globalvar(font-size, h4); }
   --color-words-subtle: var(--color-shade-gray-6);
   --color-words-link: var(--color-primary-base);
   --color-words-hover: var(--color-primary-dark);
-  --color-border-base: var(--color-shade-gray-2);
+  --color-border-base: transparent;
   --color-border-primary: var(--color-primary-base);
   --color-border-form: var(--color-border-base);
   --color-border-form-focus: var(--color-primary-base);
@@ -424,7 +424,7 @@ hr {
 abbr,
 acronym {
   border-bottom: 1px dotted inherit;
-  border-bottom-color: var(--color-shade-gray-2);
+  border-bottom-color: transparent;
   border-bottom-color: var(--color-border-base);
   cursor: help; }
 
@@ -644,7 +644,7 @@ input[type="reset"]:active,
 input[type="reset"]:focus,
 input[type="submit"]:active,
 input[type="submit"]:focus {
-  border-color: var(--color-shade-gray-2);
+  border-color: transparent;
   border-color: var(--color-border-base);
   background-color: var(--color-shade-white);
   color: var(--color-shade-gray-6);
@@ -739,7 +739,7 @@ textarea {
 /** === Site Branding === */
 .site-header {
   border-bottom: 1px solid gray;
-  border-bottom-color: var(--color-shade-gray-2);
+  border-bottom-color: transparent;
   border-bottom-color: var(--color-border-base); }
   @media only screen and (min-width: calc( 10 * ( 80px + 25px ) - 25px)) {
     .site-header {
@@ -808,7 +808,7 @@ textarea {
 
 .site-footer {
   border-top: 1px solid grey;
-  border-color: var(--color-shade-gray-2);
+  border-color: transparent;
   border-color: var(--color-border-base); }
   @media only screen and (max-width: calc( 8 * ( 80px + 25px ) - 25px)) {
     .site-footer {
@@ -922,7 +922,7 @@ textarea {
 @media only screen and (max-width: calc( 8 * ( 80px + 25px ) - 25px)) {
   .main-navigation.toggled-on > div > ul {
     border-top: 1px solid grey;
-    border-color: var(--color-shade-gray-2);
+    border-color: transparent;
     border-color: var(--color-border-base);
     background-color: var(--color-shade-white);
     padding-top: calc(0.5 * var(--space-unit));
@@ -995,7 +995,7 @@ textarea {
           padding-right: var(--space-xs); }
         .main-navigation > div > ul > li > ul {
           border: 1px solid grey;
-          border-color: var(--color-shade-gray-2);
+          border-color: transparent;
           border-color: var(--color-border-base); }
           .main-navigation > div > ul > li > ul li {
             display: block; }
@@ -1054,7 +1054,7 @@ textarea {
     height: calc(3.25 * var(--space-unit));
     height: var(--space-xl);
     border-top: 1px solid grey;
-    border-color: var(--color-shade-gray-2);
+    border-color: transparent;
     border-color: var(--color-border-base);
     bottom: 0;
     left: 0;
@@ -1103,7 +1103,7 @@ textarea {
   border-top-color: var(--color-primary-base);
   border-top-color: var(--color-border-primary);
   border-bottom: 1px solid grey;
-  border-bottom-color: var(--color-shade-gray-2);
+  border-bottom-color: transparent;
   border-bottom-color: var(--color-border-base); }
   .post-navigation:last-child {
     margin-bottom: 0;
@@ -1183,7 +1183,7 @@ textarea {
   max-width: calc( 10 * ( var(--grid-column) + var(--grid-gutter) ) - var(--grid-gutter));
   max-width: var(--grid-column-10);
   border-bottom: 1px solid grey;
-  border-bottom-color: var(--color-shade-gray-2);
+  border-bottom-color: transparent;
   border-bottom-color: var(--color-border-base);
   margin-left: auto;
   margin-right: auto; }
@@ -1352,7 +1352,7 @@ textarea {
     font-size: calc(1em / var(--font-size-ratio));
     font-size: var(--font-size-sm);
     border-top: 1px solid grey;
-    border-top-color: var(--color-shade-gray-2);
+    border-top-color: transparent;
     border-top-color: var(--color-border-base);
     font-weight: 500;
     font-style: normal;
@@ -1748,7 +1748,7 @@ object {
     padding-bottom: calc(0.75 * var(--space-unit));
     padding-bottom: var(--space-sm);
     border-bottom: 1px solid grey;
-    border-bottom-color: var(--color-shade-gray-2);
+    border-bottom-color: transparent;
     border-bottom-color: var(--color-border-base); }
   .blog .hentry:last-of-type .entry-footer .entry-meta > span:last-child,
   .archive .hentry:last-of-type .entry-footer .entry-meta > span:last-child,
@@ -1759,7 +1759,7 @@ object {
     .archive .hentry .entry-footer .entry-meta,
     .search .hentry .entry-footer .entry-meta {
       border-bottom: 1px solid grey;
-      border-bottom-color: var(--color-shade-gray-2);
+      border-bottom-color: transparent;
       border-bottom-color: var(--color-border-base); }
       .blog .hentry .entry-footer .entry-meta > span,
       .archive .hentry .entry-footer .entry-meta > span,

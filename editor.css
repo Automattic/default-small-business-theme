@@ -111,7 +111,7 @@ h4 { @include globalvar(font-size, h4); }
   --color-words-subtle: var(--color-shade-gray-6);
   --color-words-link: var(--color-primary-base);
   --color-words-hover: var(--color-primary-dark);
-  --color-border-base: var(--color-shade-gray-2);
+  --color-border-base: transparent;
   --color-border-primary: var(--color-primary-base);
   --color-border-form: var(--color-border-base);
   --color-border-form-focus: var(--color-primary-base);
@@ -170,7 +170,7 @@ h4 { @include globalvar(font-size, h4); }
   .edit-post-visual-editor abbr,
   .edit-post-visual-editor acronym {
     border-bottom: 1px dotted inherit;
-    border-bottom-color: var(--color-shade-gray-2);
+    border-bottom-color: transparent;
     border-bottom-color: var(--color-border-base);
     cursor: help; }
   .edit-post-visual-editor pre {
