@@ -248,13 +248,11 @@ template {
   display: none; }
 
 /** === Typography === */
-body,
-input {
+body {
   font-size: 1.1em;
   font-size: var(--font-size-base); }
   @media only screen and (min-width: calc( 8 * ( 80px + 25px ) - 25px)) {
-    body,
-    input {
+    body {
       --font-size-base: calc( 1.1em * 1.167); } }
 
 body,

@@ -27,7 +27,7 @@ h2 { @include globalvar(font-size, h2); }
 h3 { @include globalvar(font-size, h3); }
 h4 { @include globalvar(font-size, h4); }
 */
-.edit-post-visual-editor {
+body {
   --space-unit: 1.5rem;
   --space-xxs: calc(0.25 * var(--space-unit));
   --space-xs: calc(0.5 * var(--space-unit));
@@ -84,13 +84,13 @@ h4 { @include globalvar(font-size, h4); }
   --font-leading-double: calc( var(--font-leading-heading) * 2);
   --font-leading-heading: 1.2;
   --color-primary-base: #008000;
-  --color-primary-light: #339933;
-  --color-primary-dark: #006600;
-  --color-primary-bg: #cce6cc;
+  --color-primary-light: tint(#008000, 20%);
+  --color-primary-dark: shade(#008000, 20%);
+  --color-primary-bg: tint(#008000, 80%);
   --color-secondary-base: #f5414f;
-  --color-secondary-light: #f76772;
-  --color-secondary-dark: #c4343f;
-  --color-secondary-bg: #fdd9dc;
+  --color-secondary-light: tint(#f5414f, 20%);
+  --color-secondary-dark: shade(#f5414f, 20%);
+  --color-secondary-bg: tint(#f5414f, 80%);
   --color-shade-black: #1d1d21;
   --color-shade-gray-10: #2e2e31;
   --color-shade-gray-6: #7b7a7d;
@@ -128,422 +128,741 @@ h4 { @include globalvar(font-size, h4); }
   --color-button-secondary-active: var(--color-secondary-dark);
   --color-button-secondary-label: var(--color-white); }
 
-.edit-post-visual-editor .editor-block-list__block,
-.editor-default-block-appender input[type="text"].editor-default-block-appender__content,
-.editor-post-title .editor-post-title__input,
-.edit-post-visual-editor,
-.edit-post-visual-editor p {
-  font-family: Baskerville, Baskerville Old Face, Hoefler Text, Garamond, Times New Roman, serif;
-  font-family: var(--font-family-body); }
-
-.edit-post-visual-editor,
-.edit-post-visual-editor p {
+/** === Typography === */
+body {
   font-size: 1.1em;
   font-size: var(--font-size-base); }
+  @media only screen and (min-width: calc( 8 * ( 80px + 25px ) - 25px)) {
+    body {
+      --font-size-base: calc( 1.1em * 1.167); } }
 
-.edit-post-visual-editor {
-  /** === Elements === */
-  /** === Typography === */
-  /* text size */ }
-  .edit-post-visual-editor html {
-    box-sizing: border-box; }
-  .edit-post-visual-editor *,
-  .edit-post-visual-editor *:before,
-  .edit-post-visual-editor *:after {
-    box-sizing: inherit; }
-  .edit-post-visual-editor body {
-    background-color: var(--color-shade-white); }
-  .edit-post-visual-editor a {
+body,
+button,
+input,
+select,
+optgroup,
+textarea {
+  font-family: Baskerville, Baskerville Old Face, Hoefler Text, Garamond, Times New Roman, serif;
+  font-family: var(--font-family-body);
+  line-height: 1.4;
+  line-height: var(--font-leading-body);
+  color: var(--color-shade-gray-10);
+  color: var(--color-words-base);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-weight: 400; }
+
+.site-title,
+h1, h2, h3, h4, h5, h6 {
+  clear: both;
+  font-weight: 400;
+  line-height: 1.2;
+  line-height: var(--font-leading-heading);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale; }
+
+h2 {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+  font-family: var(--font-family-heading);
+  font-weight: 200;
+  letter-spacing: .25rem;
+  text-transform: uppercase; }
+
+h5 {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+  font-family: var(--font-family-heading);
+  font-weight: 500;
+  text-transform: uppercase; }
+
+h6 {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+  font-family: var(--font-family-heading);
+  font-weight: 200;
+  letter-spacing: .125rem;
+  text-transform: uppercase; }
+
+/* text size */
+.text--xxxl,
+p.has-drop-cap:not(:focus):first-letter {
+  font-size: calc(1em * var(--font-size-ratio) * var(--font-size-ratio) * var(--font-size-ratio) * var(--font-size-ratio) * var(--font-size-ratio));
+  font-size: var(--font-size-xxxl); }
+
+h1,
+.text--xxl,
+big {
+  font-size: calc(1em * var(--font-size-ratio) * var(--font-size-ratio) * var(--font-size-ratio) * var(--font-size-ratio));
+  font-size: var(--font-size-xxl); }
+
+h2,
+.text--xl,
+.has-larger-font-size {
+  font-size: calc(1em * var(--font-size-ratio) * var(--font-size-ratio) * var(--font-size-ratio));
+  font-size: var(--font-size-xl); }
+
+.site-title,
+h3,
+.text--lg,
+.has-large-font-size {
+  font-size: calc(1em * var(--font-size-ratio) * var(--font-size-ratio));
+  font-size: var(--font-size-lg); }
+
+h4,
+.text--md,
+.has-regular-font-size {
+  font-size: calc(1em * var(--font-size-ratio));
+  font-size: var(--font-size-md); }
+
+.text--sm,
+small,
+.has-small-font-size {
+  font-size: calc(1em / var(--font-size-ratio));
+  font-size: var(--font-size-sm); }
+
+.text--xs {
+  font-size: calc(1em / (var(--font-size-ratio) * var(--font-size-ratio)));
+  font-size: var(--font-size-xs); }
+
+.main-navigation,
+.hentry .entry-meta > span {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+  font-family: var(--font-family-heading);
+  font-size: calc(1em / (var(--font-size-ratio) * var(--font-size-ratio)));
+  font-size: var(--font-size-xs); }
+  @media only screen and (max-width: calc( 8 * ( 80px + 25px ) - 25px)) {
+    .main-navigation,
+    .hentry .entry-meta > span {
+      font-size: calc(1em / var(--font-size-ratio));
+      font-size: var(--font-size-sm); } }
+
+.main-navigation > div > ul > li > a,
+.hentry .entry-meta .posted-on {
+  font-weight: 400;
+  letter-spacing: .125em;
+  text-decoration: none;
+  text-transform: uppercase; }
+
+dfn, em, i {
+  font-style: italic; }
+
+blockquote p,
+blockquote.is-large p {
+  font-size: calc(1em * var(--font-size-ratio) * var(--font-size-ratio));
+  font-size: var(--font-size-lg);
+  font-style: normal; }
+
+blockquote cite,
+blockquote.is-large cite {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+  font-family: var(--font-family-heading);
+  font-size: calc(1em / (var(--font-size-ratio) * var(--font-size-ratio)));
+  font-size: var(--font-size-xs);
+  font-style: normal;
+  font-weight: 500; }
+
+pre {
+  font-family: Menlo, monaco, Consolas, Lucida Console, monospace;
+  font-family: var(--font-family-code);
+  font-size: calc(1em / var(--font-size-ratio));
+  font-size: var(--font-size-sm);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale; }
+
+code, kbd, tt, var, samp {
+  font-size: calc(1em * var(--font-size-ratio));
+  font-size: var(--font-size-md);
+  font-family: Menlo, monaco, Consolas, Lucida Console, monospace;
+  font-family: var(--font-family-code);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale; }
+
+mark, ins {
+  text-decoration: none; }
+
+a {
+  background-color: transparent;
+  text-decoration: none; }
+  a:hover {
+    text-decoration: underline; }
+
+abbr[title] {
+  border-bottom: none;
+  text-decoration: underline;
+  text-decoration: underline dotted; }
+
+b,
+strong {
+  font-weight: bolder; }
+
+sub,
+sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline; }
+
+sub {
+  bottom: -0.25em; }
+
+sup {
+  top: -0.5em; }
+
+/** === Elements === */
+html {
+  box-sizing: border-box; }
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit; }
+
+body {
+  background-color: var(--color-shade-white); }
+
+a {
+  color: var(--color-primary-base);
+  color: var(--color-words-primary); }
+
+a:hover,
+a:active {
+  outline: 0; }
+
+p {
+  margin: 0; }
+
+hr {
+  background-color: var(--color-shade-gray-3);
+  border: 0;
+  height: 1px;
+  margin-bottom: 1.5em; }
+
+abbr,
+acronym {
+  border-bottom: 1px dotted inherit;
+  border-bottom-color: var(--color-shade-gray-2);
+  border-bottom-color: var(--color-border-base);
+  cursor: help; }
+
+pre {
+  background-color: var(--color-shade-gray-1);
+  margin-bottom: calc(0.75 * var(--space-unit));
+  margin-bottom: var(--space-sm);
+  max-width: 100%;
+  overflow: auto;
+  padding: calc(0.75 * var(--space-unit));
+  padding: var(--space-sm); }
+
+ul,
+ol {
+  margin-top: 0;
+  margin-right: 0;
+  margin-bottom: calc(0.5 * var(--space-unit));
+  margin-bottom: var(--space-xs);
+  margin-left: calc(0.5 * var(--space-unit));
+  margin-left: var(--space-xs);
+  padding: 0; }
+
+li {
+  list-style: none; }
+
+ul {
+  list-style: none;
+  list-style-position: inside; }
+
+ul > li {
+  position: relative;
+  padding-left: calc(0.75 * var(--space-unit));
+  padding-left: var(--space-sm); }
+  ul > li:before {
+    content: "\25CF\00a0";
+    display: block;
+    left: 0;
+    position: absolute;
+    top: calc(0.25 * var(--space-unit));
+    top: var(--space-xxs);
     color: var(--color-primary-base);
-    color: var(--color-words-primary); }
-  .edit-post-visual-editor a:hover,
-  .edit-post-visual-editor a:active {
-    outline: 0; }
-  .edit-post-visual-editor p {
-    margin: 0; }
-  .edit-post-visual-editor hr {
-    background-color: var(--color-shade-gray-3);
-    border: 0;
-    height: 1px;
-    margin-bottom: 1.5em; }
-  .edit-post-visual-editor abbr,
-  .edit-post-visual-editor acronym {
-    border-bottom: 1px dotted inherit;
-    border-bottom-color: var(--color-shade-gray-2);
-    border-bottom-color: var(--color-border-base);
-    cursor: help; }
-  .edit-post-visual-editor pre {
-    background-color: var(--color-shade-gray-1);
-    margin-bottom: calc(0.75 * var(--space-unit));
-    margin-bottom: var(--space-sm);
-    max-width: 100%;
-    overflow: auto;
-    padding: calc(0.75 * var(--space-unit));
-    padding: var(--space-sm); }
-  .edit-post-visual-editor ul,
-  .edit-post-visual-editor ol {
-    margin-top: 0;
-    margin-right: 0;
-    margin-bottom: calc(0.5 * var(--space-unit));
-    margin-bottom: var(--space-xs);
-    margin-left: calc(0.5 * var(--space-unit));
-    margin-left: var(--space-xs);
-    padding: 0; }
-  .edit-post-visual-editor li {
-    list-style: none; }
-  .edit-post-visual-editor ul {
-    list-style: none;
-    list-style-position: inside; }
-  .edit-post-visual-editor ul > li {
-    position: relative;
-    padding-left: calc(0.75 * var(--space-unit));
-    padding-left: var(--space-sm); }
-    .edit-post-visual-editor ul > li:before {
-      content: "\25CF\00a0";
-      display: block;
-      left: 0;
-      position: absolute;
-      top: calc(0.25 * var(--space-unit));
-      top: var(--space-xxs);
-      color: var(--color-primary-base);
-      color: var(--color-words-primary);
-      line-height: var(--font-leading-md);
-      font-size: calc(1em / (var(--font-size-ratio) * var(--font-size-ratio)));
-      font-size: var(--font-size-xs); }
-    .edit-post-visual-editor ul > li li:before {
-      content: "\2B58\00a0"; }
-  .edit-post-visual-editor ol {
-    list-style: none;
-    counter-reset: sans-counter; }
-  .edit-post-visual-editor ol > li {
-    counter-increment: sans-counter;
-    position: relative;
+    color: var(--color-words-primary);
+    line-height: var(--font-leading-md);
+    font-size: calc(1em / (var(--font-size-ratio) * var(--font-size-ratio)));
+    font-size: var(--font-size-xs); }
+  ul > li li:before {
+    content: "\2B58\00a0"; }
+
+ol {
+  list-style: none;
+  counter-reset: sans-counter; }
+
+ol > li {
+  counter-increment: sans-counter;
+  position: relative;
+  padding-left: calc(1.25 * var(--space-unit));
+  padding-left: var(--space-md); }
+  ol > li ol li {
     padding-left: calc(1.25 * var(--space-unit));
     padding-left: var(--space-md); }
-    .edit-post-visual-editor ol > li ol li {
-      padding-left: calc(1.25 * var(--space-unit));
-      padding-left: var(--space-md); }
-    .edit-post-visual-editor ol > li ul li {
-      padding-left: calc(0.75 * var(--space-unit));
-      padding-left: var(--space-sm); }
-    .edit-post-visual-editor ol > li:before {
-      content: counter(sans-counter, decimal-leading-zero) " ";
-      left: 0;
-      position: absolute;
-      top: calc(0.25 * var(--space-unit));
-      top: var(--space-xxs);
-      color: var(--color-primary-base);
-      color: var(--color-words-primary);
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
-      font-family: var(--font-family-heading);
-      font-size: calc(1em / (var(--font-size-ratio) * var(--font-size-ratio)));
-      font-size: var(--font-size-xs);
-      line-height: var(--font-leading-md); }
-  .edit-post-visual-editor li > ol,
-  .edit-post-visual-editor li > ul {
-    margin-left: 0;
-    margin-bottom: 0; }
-  .edit-post-visual-editor li > ol ol,
-  .edit-post-visual-editor li > ul ul,
-  .edit-post-visual-editor li > ol ul,
-  .edit-post-visual-editor li > ul ol {
-    margin-bottom: 0; }
-  .edit-post-visual-editor dt {
-    font-weight: bold; }
-  .edit-post-visual-editor dd {
-    margin-top: 0;
-    margin-right: 0;
-    margin-bottom: calc(0.5 * var(--space-unit));
-    margin-bottom: var(--space-xs);
-    margin-left: calc(0.5 * var(--space-unit));
-    margin-left: var(--space-xs); }
-  .edit-post-visual-editor img {
-    height: auto;
-    max-width: 100%; }
-  .edit-post-visual-editor svg {
-    fill: currentColor; }
-  .edit-post-visual-editor figure {
-    margin: 0; }
-  .edit-post-visual-editor table {
-    margin: 0 0 1.5em;
-    width: 100%; }
-  .edit-post-visual-editor blockquote,
-  .edit-post-visual-editor blockquote.is-large {
-    padding-top: calc(0.75 * var(--space-unit));
-    padding-top: var(--space-sm);
-    padding-bottom: calc(0.75 * var(--space-unit));
-    padding-bottom: var(--space-sm);
+  ol > li ul li {
     padding-left: calc(0.75 * var(--space-unit));
-    padding-left: var(--space-sm);
-    padding-right: calc(0.75 * var(--space-unit));
-    padding-right: var(--space-sm);
-    margin-left: 0;
-    margin-right: 0;
-    border-top: 1px solid green;
-    border-top-color: var(--color-primary-base);
-    border-top-color: var(--color-border-primary); }
-    .edit-post-visual-editor blockquote p,
-    .edit-post-visual-editor blockquote.is-large p {
-      padding-top: calc(0.5 * var(--space-unit));
-      padding-top: var(--space-xs);
-      padding-bottom: calc(0.5 * var(--space-unit));
-      padding-bottom: var(--space-xs);
-      padding-left: 0;
-      padding-right: 0;
-      word-break: break-word; }
-    .edit-post-visual-editor blockquote cite,
-    .edit-post-visual-editor blockquote.is-large cite {
-      color: var(--color-words-words-subtle); }
-  .edit-post-visual-editor address {
-    margin: 0 0 1.5em; }
-  .edit-post-visual-editor mark,
-  .edit-post-visual-editor ins {
-    background-color: var(--color-feedback-warning); }
-  .edit-post-visual-editor body,
-  .edit-post-visual-editor input {
-    font-size: 1.1em;
-    font-size: var(--font-size-base); }
-    @media only screen and (min-width: calc( 8 * ( 80px + 25px ) - 25px)) {
-      .edit-post-visual-editor body,
-      .edit-post-visual-editor input {
-        --font-size-base: calc( 1.1em * 1.167); } }
-  .edit-post-visual-editor body,
-  .edit-post-visual-editor button,
-  .edit-post-visual-editor input,
-  .edit-post-visual-editor select,
-  .edit-post-visual-editor optgroup,
-  .edit-post-visual-editor textarea {
-    font-family: Baskerville, Baskerville Old Face, Hoefler Text, Garamond, Times New Roman, serif;
-    font-family: var(--font-family-body);
-    line-height: 1.4;
-    line-height: var(--font-leading-body);
-    color: var(--color-shade-gray-10);
-    color: var(--color-words-base);
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    font-weight: 400; }
-  .edit-post-visual-editor .site-title,
-  .edit-post-visual-editor h1, .edit-post-visual-editor h2, .edit-post-visual-editor h3, .edit-post-visual-editor h4, .edit-post-visual-editor h5, .edit-post-visual-editor h6 {
-    clear: both;
-    font-weight: 400;
-    line-height: 1.2;
-    line-height: var(--font-leading-heading);
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale; }
-  .edit-post-visual-editor h2 {
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
-    font-family: var(--font-family-heading);
-    font-weight: 200;
-    letter-spacing: .25rem;
-    text-transform: uppercase; }
-  .edit-post-visual-editor h5 {
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
-    font-family: var(--font-family-heading);
-    font-weight: 500;
-    text-transform: uppercase; }
-  .edit-post-visual-editor h6 {
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
-    font-family: var(--font-family-heading);
-    font-weight: 200;
-    letter-spacing: .125rem;
-    text-transform: uppercase; }
-  .edit-post-visual-editor .text--xxxl,
-  .edit-post-visual-editor p.has-drop-cap:not(:focus):first-letter {
-    font-size: calc(1em * var(--font-size-ratio) * var(--font-size-ratio) * var(--font-size-ratio) * var(--font-size-ratio) * var(--font-size-ratio));
-    font-size: var(--font-size-xxxl); }
-  .edit-post-visual-editor h1,
-  .edit-post-visual-editor .text--xxl,
-  .edit-post-visual-editor big {
-    font-size: calc(1em * var(--font-size-ratio) * var(--font-size-ratio) * var(--font-size-ratio) * var(--font-size-ratio));
-    font-size: var(--font-size-xxl); }
-  .edit-post-visual-editor h2,
-  .edit-post-visual-editor .text--xl,
-  .edit-post-visual-editor .has-larger-font-size {
-    font-size: calc(1em * var(--font-size-ratio) * var(--font-size-ratio) * var(--font-size-ratio));
-    font-size: var(--font-size-xl); }
-  .edit-post-visual-editor .site-title,
-  .edit-post-visual-editor h3,
-  .edit-post-visual-editor .text--lg,
-  .edit-post-visual-editor .has-large-font-size {
-    font-size: calc(1em * var(--font-size-ratio) * var(--font-size-ratio));
-    font-size: var(--font-size-lg); }
-  .edit-post-visual-editor h4,
-  .edit-post-visual-editor .text--md,
-  .edit-post-visual-editor .has-regular-font-size {
-    font-size: calc(1em * var(--font-size-ratio));
-    font-size: var(--font-size-md); }
-  .edit-post-visual-editor .text--sm,
-  .edit-post-visual-editor small,
-  .edit-post-visual-editor .has-small-font-size {
-    font-size: calc(1em / var(--font-size-ratio));
-    font-size: var(--font-size-sm); }
-  .edit-post-visual-editor .text--xs {
-    font-size: calc(1em / (var(--font-size-ratio) * var(--font-size-ratio)));
-    font-size: var(--font-size-xs); }
-  .edit-post-visual-editor .main-navigation,
-  .edit-post-visual-editor .hentry .entry-meta > span {
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
-    font-family: var(--font-family-heading);
-    font-size: calc(1em / (var(--font-size-ratio) * var(--font-size-ratio)));
-    font-size: var(--font-size-xs); }
-    @media only screen and (max-width: calc( 8 * ( 80px + 25px ) - 25px)) {
-      .edit-post-visual-editor .main-navigation,
-      .edit-post-visual-editor .hentry .entry-meta > span {
-        font-size: calc(1em / var(--font-size-ratio));
-        font-size: var(--font-size-sm); } }
-  .edit-post-visual-editor .main-navigation > div > ul > li > a,
-  .edit-post-visual-editor .hentry .entry-meta .posted-on {
-    font-weight: 400;
-    letter-spacing: .125em;
-    text-decoration: none;
-    text-transform: uppercase; }
-  .edit-post-visual-editor dfn, .edit-post-visual-editor em, .edit-post-visual-editor i {
-    font-style: italic; }
-  .edit-post-visual-editor blockquote p,
-  .edit-post-visual-editor blockquote.is-large p {
-    font-size: calc(1em * var(--font-size-ratio) * var(--font-size-ratio));
-    font-size: var(--font-size-lg);
-    font-style: normal; }
-  .edit-post-visual-editor blockquote cite,
-  .edit-post-visual-editor blockquote.is-large cite {
+    padding-left: var(--space-sm); }
+  ol > li:before {
+    content: counter(sans-counter, decimal-leading-zero) " ";
+    left: 0;
+    position: absolute;
+    top: calc(0.25 * var(--space-unit));
+    top: var(--space-xxs);
+    color: var(--color-primary-base);
+    color: var(--color-words-primary);
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
     font-family: var(--font-family-heading);
     font-size: calc(1em / (var(--font-size-ratio) * var(--font-size-ratio)));
     font-size: var(--font-size-xs);
-    font-style: normal;
-    font-weight: 500; }
-  .edit-post-visual-editor pre {
-    font-family: Menlo, monaco, Consolas, Lucida Console, monospace;
-    font-family: var(--font-family-code);
-    font-size: calc(1em / var(--font-size-ratio));
-    font-size: var(--font-size-sm);
-    line-height: 1.6;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale; }
-  .edit-post-visual-editor code, .edit-post-visual-editor kbd, .edit-post-visual-editor tt, .edit-post-visual-editor var, .edit-post-visual-editor samp {
-    font-size: calc(1em * var(--font-size-ratio));
-    font-size: var(--font-size-md);
-    font-family: Menlo, monaco, Consolas, Lucida Console, monospace;
-    font-family: var(--font-family-code);
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale; }
-  .edit-post-visual-editor mark, .edit-post-visual-editor ins {
-    text-decoration: none; }
-  .edit-post-visual-editor a {
-    background-color: transparent;
-    text-decoration: none; }
-    .edit-post-visual-editor a:hover {
-      text-decoration: underline; }
-  .edit-post-visual-editor abbr[title] {
-    border-bottom: none;
-    text-decoration: underline;
-    text-decoration: underline dotted; }
-  .edit-post-visual-editor b,
-  .edit-post-visual-editor strong {
-    font-weight: bolder; }
-  .edit-post-visual-editor sub,
-  .edit-post-visual-editor sup {
-    font-size: 75%;
-    line-height: 0;
-    position: relative;
-    vertical-align: baseline; }
-  .edit-post-visual-editor sub {
-    bottom: -0.25em; }
-  .edit-post-visual-editor sup {
-    top: -0.5em; }
-  .edit-post-visual-editor .editor-block-list__block,
-  .edit-post-visual-editor .editor-block-list__block p {
-    font-size: 1.1em;
-    font-size: var(--font-size-base); }
-    @media only screen and (min-width: calc( 8 * ( 80px + 25px ) - 25px)) {
-      .edit-post-visual-editor .editor-block-list__block,
-      .edit-post-visual-editor .editor-block-list__block p {
-        --font-size-base: calc( 1.1em * 1.167); } }
-  .edit-post-visual-editor .editor-rich-text__tinymce.mce-content-body {
-    line-height: 1.4;
-    line-height: var(--font-leading-body);
-    color: var(--color-shade-gray-10);
-    color: var(--color-words-base); }
-  .edit-post-visual-editor .wp-block-button .wp-block-button__link {
-    background-color: var(--color-primary-base);
-    color: var(--color-shade-white);
-    color: var(--color-words-background);
-    padding: calc(0.5 * var(--space-unit));
-    padding: var(--space-xs);
-    padding-left: calc(0.75 * var(--space-unit));
-    padding-left: var(--space-sm);
-    padding-right: calc(0.75 * var(--space-unit));
-    padding-right: var(--space-sm);
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
-    font-family: var(--font-family-heading);
-    font-size: calc(1em / var(--font-size-ratio));
-    font-size: var(--font-size-sm);
-    line-height: 1.4;
-    line-height: var(--font-leading-body);
-    overflow: hidden;
-    -webkit-border-radius: 3px;
-    -moz-border-radius: 3px;
-    border-radius: 3px;
-    border: 2px solid green;
-    border-color: var(--color-primary-base);
-    border-color: var(--color-border-primary);
-    box-shadow: 1px 1px 5px 1px rgba(0, 0, 0, 0.33);
-    cursor: pointer;
-    display: inline-block;
-    font-weight: 600;
-    text-decoration: none;
-    text-transform: uppercase; }
-  .edit-post-visual-editor .wp-block-image .block-library-image__resizer img,
-  .edit-post-visual-editor [data-type="core/image"][data-align=full] figure img,
-  .edit-post-visual-editor [data-type="core/image"][data-align=wide] figure img {
-    line-height: 0;
-    display: block; }
-  .edit-post-visual-editor .wp-block-gallery {
-    list-style: none; }
-    .edit-post-visual-editor .wp-block-gallery .blocks-gallery-item,
-    .edit-post-visual-editor .wp-block-gallery .blocks-gallery-image {
-      margin: 0;
-      padding-left: 0; }
-      .edit-post-visual-editor .wp-block-gallery .blocks-gallery-item:before,
-      .edit-post-visual-editor .wp-block-gallery .blocks-gallery-image:before {
-        content: "";
-        display: none; }
-      .edit-post-visual-editor .wp-block-gallery .blocks-gallery-item figure,
-      .edit-post-visual-editor .wp-block-gallery .blocks-gallery-image figure {
-        display: flex;
-        flex-direction: column; }
-      .edit-post-visual-editor .wp-block-gallery .blocks-gallery-item figcaption,
-      .edit-post-visual-editor .wp-block-gallery .blocks-gallery-image figcaption {
-        position: relative;
-        padding: 0;
-        max-height: inherit;
-        background: transparent; }
-      .edit-post-visual-editor .wp-block-gallery .blocks-gallery-item .editor-rich-text,
-      .edit-post-visual-editor .wp-block-gallery .blocks-gallery-image .editor-rich-text {
-        position: inherit; }
-  .edit-post-visual-editor .wp-block-audio figcaption,
-  .edit-post-visual-editor .wp-block-video figcaption,
-  .edit-post-visual-editor .wp-block-image figcaption,
-  .edit-post-visual-editor .wp-block-gallery .blocks-gallery-image figcaption,
-  .edit-post-visual-editor .wp-block-gallery .blocks-gallery-item figcaption {
-    color: var(--color-shade-gray-6);
-    color: var(--color-words-subtle);
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
-    font-family: var(--font-family-heading);
-    padding-top: calc(0.25 * var(--space-unit));
-    padding-top: var(--space-xxs);
-    padding-bottom: calc(0.25 * var(--space-unit));
-    padding-bottom: var(--space-xxs);
+    line-height: var(--font-leading-md); }
+
+li > ol,
+li > ul {
+  margin-left: 0;
+  margin-bottom: 0; }
+
+li > ol ol,
+li > ul ul,
+li > ol ul,
+li > ul ol {
+  margin-bottom: 0; }
+
+dt {
+  font-weight: bold; }
+
+dd {
+  margin-top: 0;
+  margin-right: 0;
+  margin-bottom: calc(0.5 * var(--space-unit));
+  margin-bottom: var(--space-xs);
+  margin-left: calc(0.5 * var(--space-unit));
+  margin-left: var(--space-xs); }
+
+img {
+  height: auto;
+  max-width: 100%; }
+
+svg {
+  fill: currentColor; }
+
+figure {
+  margin: 0; }
+
+table {
+  margin: 0 0 1.5em;
+  width: 100%; }
+
+blockquote,
+blockquote.is-large {
+  padding-top: calc(0.75 * var(--space-unit));
+  padding-top: var(--space-sm);
+  padding-bottom: calc(0.75 * var(--space-unit));
+  padding-bottom: var(--space-sm);
+  padding-left: calc(0.75 * var(--space-unit));
+  padding-left: var(--space-sm);
+  padding-right: calc(0.75 * var(--space-unit));
+  padding-right: var(--space-sm);
+  margin-left: 0;
+  margin-right: 0;
+  border-top: 1px solid green;
+  border-top-color: var(--color-primary-base);
+  border-top-color: var(--color-border-primary); }
+  blockquote p,
+  blockquote.is-large p {
+    padding-top: calc(0.5 * var(--space-unit));
+    padding-top: var(--space-xs);
+    padding-bottom: calc(0.5 * var(--space-unit));
+    padding-bottom: var(--space-xs);
     padding-left: 0;
     padding-right: 0;
-    text-align: left;
+    word-break: break-word; }
+  blockquote cite,
+  blockquote.is-large cite {
+    color: var(--color-words-words-subtle); }
+
+address {
+  margin: 0 0 1.5em; }
+
+mark,
+ins {
+  background-color: var(--color-feedback-warning); }
+
+/** === !Blocks === */
+/*
+ * CSS4 Variables with Fallbacks Using Sass
+ * src: https://codepen.io/jakealbaugh/post/css4-variables-with-fallbacks-using-sass
+ */
+/*
+body {
+  @include globalvar(font-size, base);
+  @include globalvar(font-family, body);
+  @include globalvar(line-height, body);
+  @include globalvar(background-color, background);
+
+  // color it red if no CSS4 variables
+  color: red;
+  // override "show standard" with "null" which means no CSS4 support will still be red
+  // if we didn't do this, it would create the fallback.
+  @include globalvar(color, text, null);
+}
+
+h1, h2, h3, h4 {
+  @include globalvar(line-height, heading);
+  @include globalvar(font-family, heading);
+}
+
+h1 { @include globalvar(font-size, h1); }
+h2 { @include globalvar(font-size, h2); }
+h3 { @include globalvar(font-size, h3); }
+h4 { @include globalvar(font-size, h4); }
+*/
+.entry-content > *.alignwide,
+.entry-summary > *.alignwide {
+  margin-left: auto;
+  margin-right: auto; }
+  @media only screen and (min-width: calc( 8 * ( 80px + 25px ) - 25px)) {
+    .entry-content > *.alignwide,
+    .entry-summary > *.alignwide {
+      max-width: calc( 9 * ( var(--grid-column) + var(--grid-gutter) ) - var(--grid-gutter));
+      max-width: var(--grid-column-9);
+      margin-right: calc( 2 * ( var(--grid-column) + var(--grid-gutter) ) - var(--grid-gutter));
+      margin-right: var(--space-column-2); } }
+  @media only screen and (min-width: calc( 12 * ( 80px + 25px ) - 25px)) {
+    .entry-content > *.alignwide,
+    .entry-summary > *.alignwide {
+      margin-right: calc( 2 * ( var(--grid-column) + var(--grid-gutter) ) - var(--grid-gutter));
+      margin-right: var(--space-column-2); } }
+
+.entry-content > *.alignfull,
+.entry-summary > *.alignfull {
+  margin-left: 0;
+  margin-right: 0;
+  max-width: 100%; }
+
+.entry-content > *.alignleft,
+.entry-summary > *.alignleft {
+  float: left;
+  max-width: 285px; }
+  @media only screen and (min-width: calc( 8 * ( 80px + 25px ) - 25px)) {
+    .entry-content > *.alignleft,
+    .entry-summary > *.alignleft {
+      margin-left: calc( 4 * ( var(--grid-column) + var(--grid-gutter) ) - var(--grid-gutter));
+      margin-left: var(--space-column-4);
+      margin-right: calc(0.75 * var(--space-unit));
+      margin-right: var(--space-sm);
+      margin-left: calc( 100vw - ( calc( 10 * ( var(--grid-column) + var(--grid-gutter) ) - var(--grid-gutter)) - 25px ));
+      max-width: calc( 3 * ( var(--grid-column) + var(--grid-gutter) ) - var(--grid-gutter)); } }
+  @media only screen and (min-width: calc( 12 * ( 80px + 25px ) - 25px)) {
+    .entry-content > *.alignleft,
+    .entry-summary > *.alignleft {
+      margin-left: calc( calc( 12 * ( var(--grid-column) + var(--grid-gutter) ) - var(--grid-gutter)) - ( calc( 10 * ( var(--grid-column) + var(--grid-gutter) ) - var(--grid-gutter)) - 25px )); } }
+
+.entry-content > *.alignright,
+.entry-summary > *.alignright {
+  float: right;
+  max-width: 285px; }
+  @media only screen and (min-width: calc( 8 * ( 80px + 25px ) - 25px)) {
+    .entry-content > *.alignright,
+    .entry-summary > *.alignright {
+      margin-left: calc(0.75 * var(--space-unit));
+      margin-left: var(--space-sm);
+      max-width: calc( 3 * ( var(--grid-column) + var(--grid-gutter) ) - var(--grid-gutter)); } }
+
+.wp-block-button .wp-block-button__link {
+  background-color: var(--color-primary-base);
+  color: var(--color-shade-white);
+  color: var(--color-words-background);
+  padding-top: calc(0.25 * var(--space-unit));
+  padding-top: var(--space-xxs);
+  padding-bottom: calc(0.25 * var(--space-unit));
+  padding-bottom: var(--space-xxs);
+  padding-left: calc(0.5 * var(--space-unit));
+  padding-left: var(--space-xs);
+  padding-right: calc(0.5 * var(--space-unit));
+  padding-right: var(--space-xs);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+  font-family: var(--font-family-heading);
+  font-size: calc(1em / var(--font-size-ratio));
+  font-size: var(--font-size-sm);
+  line-height: 1.4;
+  line-height: var(--font-leading-body);
+  overflow: hidden;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+  border: 2px solid green;
+  border-color: var(--color-primary-base);
+  border-color: var(--color-border-primary);
+  box-shadow: 1px 1px 5px 1px rgba(0, 0, 0, 0.33);
+  cursor: pointer;
+  display: inline-block;
+  font-weight: 600;
+  text-decoration: none;
+  text-transform: uppercase; }
+  .wp-block-button .wp-block-button__link:hover {
+    border-color: var(--color-primary-base);
+    border-color: var(--color-border-primary);
+    background-color: var(--color-shade-white);
+    color: var(--color-primary-base);
+    color: var(--color-words-primary); }
+  .wp-block-button .wp-block-button__link:active, .wp-block-button .wp-block-button__link:focus {
+    border-color: var(--color-shade-gray-2);
+    border-color: var(--color-border-base);
+    background-color: var(--color-shade-white);
+    color: var(--color-shade-gray-6);
+    color: var(--color-words-subtle); }
+  @media only screen and (min-width: calc( 8 * ( 80px + 25px ) - 25px)) {
+    .wp-block-button .wp-block-button__link {
+      padding-top: calc(0.5 * var(--space-unit));
+      padding-top: var(--space-xs);
+      padding-bottom: calc(0.5 * var(--space-unit));
+      padding-bottom: var(--space-xs);
+      padding-left: calc(0.75 * var(--space-unit));
+      padding-left: var(--space-sm);
+      padding-right: calc(0.75 * var(--space-unit));
+      padding-right: var(--space-sm); } }
+
+.wp-block-audio audio {
+  width: 100%; }
+
+.wp-block-audio.alignleft audio,
+.wp-block-audio.alignright audio {
+  width: 285px; }
+  @media only screen and (min-width: calc( 8 * ( 80px + 25px ) - 25px)) {
+    .wp-block-audio.alignleft audio,
+    .wp-block-audio.alignright audio {
+      width: calc( 3 * ( var(--grid-column) + var(--grid-gutter) ) - var(--grid-gutter)); } }
+
+.wp-block-image img {
+  display: block; }
+  .wp-block-image img.alignleft, .wp-block-image img.alignright {
+    max-width: 100%; }
+  .wp-block-image img.alignfull img {
+    width: 100vw;
+    margin-left: auto;
+    margin-right: auto; }
+
+.wp-block-cover-image {
+  width: inherit; }
+  @media only screen and (min-width: calc( 8 * ( 80px + 25px ) - 25px)) {
+    .wp-block-cover-image {
+      width: 100%; } }
+  .wp-block-cover-image.alignleft {
+    margin-top: 0;
+    margin-right: calc(0.75 * var(--space-unit));
+    margin-right: var(--space-sm); }
+  .wp-block-cover-image.alignright {
+    margin-top: 0;
+    margin-left: calc(0.75 * var(--space-unit));
+    margin-left: var(--space-sm); }
+  .wp-block-cover-image .wp-block-cover-image-text,
+  .wp-block-cover-image h2 {
+    font-weight: 400;
+    padding: calc(0.5 * var(--space-unit));
+    padding: var(--space-xs);
+    font-family: Baskerville, Baskerville Old Face, Hoefler Text, Garamond, Times New Roman, serif;
+    font-family: var(--font-family-body);
+    line-height: 1.2;
+    line-height: var(--font-leading-heading);
+    letter-spacing: normal;
+    text-transform: none;
     margin: 0; }
-  .edit-post-visual-editor .wp-block-audio.alignfull figcaption,
-  .edit-post-visual-editor .wp-block-video.alignfull figcaption,
-  .edit-post-visual-editor .wp-block-image.alignfull figcaption,
-  .edit-post-visual-editor .wp-block-gallery.alignfull .blocks-gallery-image figcaption,
-  .edit-post-visual-editor .wp-block-gallery.alignfull .blocks-gallery-item figcaption,
-  .edit-post-visual-editor [data-type="core/image"][data-align=full] figcaption {
+
+[data-align=left] .wp-block-cover-image,
+[data-align=right] .wp-block-cover-image {
+  max-width: 285px; }
+  @media only screen and (min-width: calc( 8 * ( 80px + 25px ) - 25px)) {
+    [data-align=left] .wp-block-cover-image,
+    [data-align=right] .wp-block-cover-image {
+      max-width: calc( 3 * ( var(--grid-column) + var(--grid-gutter) ) - var(--grid-gutter)); } }
+
+.wp-block-gallery {
+  list-style: none; }
+  .wp-block-gallery .blocks-gallery-item,
+  .wp-block-gallery .blocks-gallery-image {
+    margin: 0;
+    padding-left: 0; }
+    .wp-block-gallery .blocks-gallery-item:before,
+    .wp-block-gallery .blocks-gallery-image:before {
+      content: "";
+      display: none; }
+    .wp-block-gallery .blocks-gallery-item figure,
+    .wp-block-gallery .blocks-gallery-image figure {
+      display: flex;
+      flex-direction: column; }
+    .wp-block-gallery .blocks-gallery-item figcaption,
+    .wp-block-gallery .blocks-gallery-image figcaption {
+      position: relative;
+      padding: 0;
+      max-height: inherit;
+      background: transparent; }
+
+[data-align=left] .wp-block-gallery,
+[data-align=right] .wp-block-gallery {
+  max-width: 285px; }
+  @media only screen and (min-width: calc( 8 * ( 80px + 25px ) - 25px)) {
+    [data-align=left] .wp-block-gallery,
+    [data-align=right] .wp-block-gallery {
+      max-width: calc( 3 * ( var(--grid-column) + var(--grid-gutter) ) - var(--grid-gutter)); } }
+
+.wp-block-audio figcaption,
+.wp-block-video figcaption,
+.wp-block-image figcaption,
+.wp-block-gallery .blocks-gallery-image figcaption,
+.wp-block-gallery .blocks-gallery-item figcaption {
+  color: var(--color-shade-gray-6);
+  color: var(--color-words-subtle);
+  padding-top: calc(0.25 * var(--space-unit));
+  padding-top: var(--space-xxs);
+  padding-bottom: calc(0.25 * var(--space-unit));
+  padding-bottom: var(--space-xxs);
+  padding-left: 0;
+  padding-right: 0;
+  font-size: calc(1em / (var(--font-size-ratio) * var(--font-size-ratio)));
+  font-size: var(--font-size-xs);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+  font-family: var(--font-family-heading);
+  text-align: left;
+  margin: 0; }
+
+.wp-block-audio.alignfull figcaption,
+.wp-block-video.alignfull figcaption,
+.wp-block-image.alignfull figcaption,
+.wp-block-gallery.alignfull .blocks-gallery-image figcaption,
+.wp-block-gallery.alignfull .blocks-gallery-item figcaption {
+  padding-top: calc(0.5 * var(--space-unit));
+  padding-top: var(--space-xs);
+  padding-bottom: calc(0.5 * var(--space-unit));
+  padding-bottom: var(--space-xs);
+  padding-left: calc(0.75 * var(--space-unit));
+  padding-left: var(--space-sm);
+  padding-right: calc(0.75 * var(--space-unit));
+  padding-right: var(--space-sm); }
+
+.wp-block-text-columns,
+.wp-block-columns {
+  justify-content: space-between; }
+  .wp-block-text-columns .wp-block-column,
+  .wp-block-columns .wp-block-column {
+    flex: 0 1 auto; }
+  .wp-block-text-columns.has-2-columns .wp-block-column,
+  .wp-block-columns.has-2-columns .wp-block-column {
+    width: calc( 50% - ( 25px * .5 )); }
+  .wp-block-text-columns.has-3-columns .wp-block-column,
+  .wp-block-columns.has-3-columns .wp-block-column {
+    width: calc( 33% - ( 25px * .33 )); }
+  .wp-block-text-columns.has-4-columns .wp-block-column,
+  .wp-block-columns.has-4-columns .wp-block-column {
+    width: calc( 25% - ( 25px * .25 ));
+    font-size: calc(1em / var(--font-size-ratio));
+    font-size: var(--font-size-sm); }
+  @media only screen and (min-width: calc( 8 * ( 80px + 25px ) - 25px)) {
+    .wp-block-text-columns,
+    .wp-block-columns {
+      margin-right: calc( 2 * ( var(--grid-column) + var(--grid-gutter) ) - var(--grid-gutter));
+      margin-right: var(--space-column-2);
+      max-width: calc( 8 * ( var(--grid-column) + var(--grid-gutter) ) - var(--grid-gutter));
+      max-width: var(--grid-column-8); } }
+
+ul.wp-block-categories li,
+ul.wp-block-archives li,
+ul.wp-block-latest-posts li {
+  font-size: calc(1em * var(--font-size-ratio));
+  font-size: var(--font-size-md); }
+  ul.wp-block-categories li:before,
+  ul.wp-block-archives li:before,
+  ul.wp-block-latest-posts li:before {
+    font-size: calc(1em / (var(--font-size-ratio) * var(--font-size-ratio) * var(--font-size-ratio)));
+    font-size: var(--font-size-xxs);
+    line-height: 2.4em; }
+
+ul.wp-block-categories li li,
+ul.wp-block-archives li li,
+ul.wp-block-latest-posts li li {
+  font-size: 1em; }
+
+ul.wp-block-categories.is-grid,
+ul.wp-block-archives.is-grid,
+ul.wp-block-latest-posts.is-grid {
+  justify-content: space-between; }
+  ul.wp-block-categories.is-grid li,
+  ul.wp-block-archives.is-grid li,
+  ul.wp-block-latest-posts.is-grid li {
+    margin-right: 0;
+    margin-bottom: calc(0.75 * var(--space-unit));
+    margin-bottom: var(--space-sm); }
+
+@media only screen and (min-width: calc( 8 * ( 80px + 25px ) - 25px)) {
+  ul.wp-block-categories.columns-2 li,
+  ul.wp-block-archives.columns-2 li,
+  ul.wp-block-latest-posts.columns-2 li {
+    width: calc( 50% - (  * .5)); } }
+
+.wp-block-table {
+  overflow-x: auto; }
+  .wp-block-table td,
+  .wp-block-table th {
+    padding: .5em; }
+  .wp-block-table tr:nth-child(even) {
+    background-color: var(--color-shade-gray-1); }
+  .wp-block-table thead tr:nth-child(odd) {
+    background-color: var(--color-primary-bg); }
+
+.wp-block-table table,
+table.wp-block-table {
+  border-collapse: collapse;
+  max-width: calc( 100% - ( calc(0.75 * var(--space-unit)) * 2 )); }
+  @media only screen and (min-width: calc( 8 * ( 80px + 25px ) - 25px)) {
+    .wp-block-table table,
+    table.wp-block-table {
+      max-width: calc( 7 * ( var(--grid-column) + var(--grid-gutter) ) - var(--grid-gutter));
+      max-width: var(--grid-column-7); } }
+
+.wp-block-embed > *,
+.wp-block-embed > .jetpack-video-wrapper > * {
+  display: block;
+  margin-left: auto;
+  margin-right: auto; }
+
+.wp-block-embed.type-video > .wp-block-embed__wrapper {
+  position: relative;
+  width: 100%;
+  height: 0;
+  padding-top: 56.25%; }
+
+.wp-block-embed.type-video > .wp-block-embed__wrapper > iframe {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0; }
+
+.wp-block-quote,
+.wp-block-quote.is-large,
+.wp-block-quote.is-style-large {
+  padding-top: calc(0.75 * var(--space-unit));
+  padding-top: var(--space-sm);
+  padding-bottom: calc(0.75 * var(--space-unit));
+  padding-bottom: var(--space-sm);
+  padding-left: 0;
+  padding-right: 0;
+  margin-top: calc(2 * var(--space-unit));
+  margin-top: var(--space-lg);
+  margin-bottom: calc(2 * var(--space-unit));
+  margin-bottom: var(--space-lg);
+  margin-left: calc(0.75 * var(--space-unit));
+  margin-left: var(--space-sm);
+  margin-right: calc(0.75 * var(--space-unit));
+  margin-right: var(--space-sm);
+  border-top: 1px solid green;
+  border-top-color: var(--color-primary-base);
+  border-top-color: var(--color-border-primary); }
+  .wp-block-quote p,
+  .wp-block-quote.is-large p,
+  .wp-block-quote.is-style-large p {
     padding-top: calc(0.5 * var(--space-unit));
     padding-top: var(--space-xs);
     padding-bottom: calc(0.5 * var(--space-unit));
@@ -552,15 +871,169 @@ h4 { @include globalvar(font-size, h4); }
     padding-left: var(--space-sm);
     padding-right: calc(0.75 * var(--space-unit));
     padding-right: var(--space-sm);
-    position: inherit; }
-  .edit-post-visual-editor .wp-block-quote:not(.is-large):not(.is-style-large) {
-    border-left: none; }
-  .edit-post-visual-editor .wp-block-quote .wp-block-quote__citation {
+    font-size: calc(1em * var(--font-size-ratio) * var(--font-size-ratio));
+    font-size: var(--font-size-lg);
+    font-style: normal; }
+  .wp-block-quote.is-large p,
+  .wp-block-quote.is-style-large p,
+  .wp-block-quote.is-large.is-large p,
+  .wp-block-quote.is-large.is-style-large p,
+  .wp-block-quote.is-style-large.is-large p,
+  .wp-block-quote.is-style-large.is-style-large p {
+    font-size: calc(1em * var(--font-size-ratio) * var(--font-size-ratio) * var(--font-size-ratio));
+    font-size: var(--font-size-xl);
+    line-height: 1.2;
+    line-height: var(--font-leading-heading); }
+  .wp-block-quote cite,
+  .wp-block-quote.is-large cite,
+  .wp-block-quote.is-style-large cite {
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
     font-family: var(--font-family-heading);
     font-size: calc(1em / (var(--font-size-ratio) * var(--font-size-ratio)));
     font-size: var(--font-size-xs);
     color: var(--color-shade-gray-6);
     color: var(--color-words-subtle);
+    padding-top: 0;
+    padding-bottom: 0;
+    padding-left: calc(0.75 * var(--space-unit));
+    padding-left: var(--space-sm);
+    padding-right: calc(0.75 * var(--space-unit));
+    padding-right: var(--space-sm);
     font-style: normal;
     font-weight: 500; }
+  @media only screen and (min-width: calc( 8 * ( 80px + 25px ) - 25px)) {
+    .wp-block-quote,
+    .wp-block-quote.is-large,
+    .wp-block-quote.is-style-large {
+      max-width: calc( 7 * ( var(--grid-column) + var(--grid-gutter) ) - var(--grid-gutter));
+      max-width: var(--grid-column-7);
+      margin-right: calc( 3 * ( var(--grid-column) + var(--grid-gutter) ) - var(--grid-gutter));
+      margin-right: var(--space-column-3);
+      margin-left: auto; } }
+
+.wp-block-pullquote {
+  margin-top: calc(2 * var(--space-unit));
+  margin-top: var(--space-lg);
+  margin-bottom: calc(2 * var(--space-unit));
+  margin-bottom: var(--space-lg);
+  text-align: inherit;
+  padding: 0; }
+  .wp-block-pullquote > p {
+    font-size: calc(1em * var(--font-size-ratio) * var(--font-size-ratio));
+    font-size: var(--font-size-lg);
+    font-style: normal; }
+  .wp-block-pullquote.is-large p,
+  .wp-block-pullquote.is-style-large p {
+    font-size: calc(1em * var(--font-size-ratio) * var(--font-size-ratio) * var(--font-size-ratio));
+    font-size: var(--font-size-xl);
+    line-height: 1.2;
+    line-height: var(--font-leading-heading); }
+  .wp-block-pullquote blockquote,
+  .wp-block-pullquote > p,
+  .wp-block-pullquote > cite {
+    padding-left: calc(0.75 * var(--space-unit));
+    padding-left: var(--space-sm);
+    padding-right: calc(0.75 * var(--space-unit));
+    padding-right: var(--space-sm); }
+  @media only screen and (min-width: calc( 8 * ( 80px + 25px ) - 25px)) {
+    .wp-block-pullquote.alignwide blockquote,
+    .wp-block-pullquote.alignwide > p,
+    .wp-block-pullquote.alignwide > cite, .wp-block-pullquote.alignfull blockquote,
+    .wp-block-pullquote.alignfull > p,
+    .wp-block-pullquote.alignfull > cite {
+      padding-left: 25px;
+      padding-left: var(--space-gutter);
+      padding-right: 25px;
+      padding-right: var(--space-gutter); } }
+  .wp-block-pullquote.alignleft, .wp-block-pullquote.alignright {
+    margin-top: 0;
+    margin-bottom: calc(0.75 * var(--space-unit));
+    margin-bottom: var(--space-sm); }
+    .wp-block-pullquote.alignleft blockquote, .wp-block-pullquote.alignright blockquote {
+      margin-top: 0;
+      margin-bottom: 0; }
+      .wp-block-pullquote.alignleft blockquote p, .wp-block-pullquote.alignright blockquote p {
+        font-size: calc(1em * var(--font-size-ratio));
+        font-size: var(--font-size-md);
+        padding-top: 0; }
+  .wp-block-pullquote > p:first-child {
+    margin-top: 0; }
+
+.wp-block-separator {
+  margin-top: calc(1.25 * var(--space-unit));
+  margin-top: var(--space-md);
+  margin-bottom: calc(1.25 * var(--space-unit));
+  margin-bottom: var(--space-md);
+  padding: 0; }
+  .wp-block-separator.is-style-dots {
+    background-color: var(--color-white); }
+    .wp-block-separator.is-style-dots:before {
+      content: "\00b7 \00b7 \00b7 \00b7 \00b7";
+      color: var(--color-words-shade-gray-4);
+      font-family: Baskerville, Baskerville Old Face, Hoefler Text, Garamond, Times New Roman, serif;
+      font-family: var(--font-family-body);
+      font-size: calc(1em * var(--font-size-ratio) * var(--font-size-ratio));
+      font-size: var(--font-size-lg);
+      letter-spacing: 1em;
+      padding-left: 1em; }
+  @media only screen and (min-width: calc( 8 * ( 80px + 25px ) - 25px)) {
+    .wp-block-separator.is-style-dots {
+      max-width: calc( 6 * ( var(--grid-column) + var(--grid-gutter) ) - var(--grid-gutter));
+      max-width: var(--grid-column-6); } }
+
+/*--------------------------------------------------------------
+// !Block Color Palette Colors
+--------------------------------------------------------------*/
+.has-strong-blue-color {
+  color: #0073aa; }
+
+.has-strong-blue-background-color {
+  background-color: #0073aa; }
+
+.has-lighter-blue-color {
+  color: #229fd8; }
+
+.has-lighter-blue-background-color {
+  background-color: #229fd8; }
+
+.has-very-light-gray-color {
+  color: #eee; }
+
+.has-very-light-gray-background-color {
+  background-color: #eee; }
+
+.has-very-dark-gray-color {
+  color: #444; }
+
+.has-very-dark-gray-background-color {
+  background-color: #444; }
+
+.editor-rich-text__tinymce.mce-content-body {
+  line-height: 1.4;
+  line-height: var(--font-leading-body); }
+
+body,
+p {
+  font-size: 21px; }
+  @media only screen and (min-width: calc( 8 * ( 80px + 25px ) - 25px)) {
+    body,
+    p {
+      --font-size-base: calc( 21px * 1.167); } }
+
+@media only screen and (min-width: calc( 8 * ( 80px + 25px ) - 25px)) {
+  blockquote.wp-block-quote, blockquote.wp-block-quote.is-large, blockquote.wp-block-quote.is-style-large {
+    margin-right: 0; } }
+
+blockquote:not(.is-large):not(.is-style-large) {
+  border-left: none;
+  margin-right: 0;
+  padding-left: 0; }
+
+blockquote .wp-block-quote__citation {
+  padding-left: calc(0.75 * var(--space-unit));
+  padding-left: var(--space-sm); }
+
+@media only screen and (min-width: calc( 8 * ( 80px + 25px ) - 25px)) {
+  .wp-block-text-columns,
+  .wp-block-columns {
+    margin-right: 0; } }

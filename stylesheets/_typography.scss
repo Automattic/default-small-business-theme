@@ -1,8 +1,7 @@
 
 /** === Typography === */
 
-body,
-input {
+body {
 
 	// font-size base for mobile
 	@include globalvar(font-size, base);
@@ -56,6 +55,7 @@ h6 {
 }
 
 /* text size */
+
 .text--xxxl,
 p.has-drop-cap:not(:focus):first-letter { // Drop cap font-size
 	@include globalvar(font-size, xxxl);

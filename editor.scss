@@ -1,5 +1,3 @@
-// External.
-@import "bourbon";
 
 // Root CSS variables.
 @import "stylesheets/variables/base";
@@ -9,7 +7,8 @@
 @import "stylesheets/inc/mixins";
 @import "stylesheets/inc/functions";
 
-.edit-post-visual-editor{
+// Root css-variables
+body {
 	// for each variable map
 	@each $var-map-name, $var-map in $var-maps {
 		// for each variable in the variable map
@@ -31,149 +30,58 @@
 	}
 }
 
-// Responsive fonts
-.edit-post-visual-editor .editor-block-list__block,
-.editor-default-block-appender input[type="text"].editor-default-block-appender__content,
-.editor-post-title .editor-post-title__input,
-.edit-post-visual-editor,
-.edit-post-visual-editor p {
-	@include globalvar(font-family, body);
+@import "stylesheets/typography.scss";
+@import "stylesheets/elements.scss";
+@import "css/blocks.scss";
+
+// Fix line heights in forms
+.editor-rich-text__tinymce.mce-content-body {
+	@include globalvar(line-height, body);
 }
 
-.edit-post-visual-editor,
-.edit-post-visual-editor p {
-	@include globalvar(font-size, base);
+// Reset font scale to pixels for the editor
+body,
+p {
+	// font-size base for mobile
+	font-size: 21px;
+
+	@include media(tablet) {
+
+		// font-size base for tablet and up
+		--font-size-base: calc( 21px * #{$font-size-responsive-ratio} ); // 1 1/6
+	}
 }
 
-// Add theme styles.
-.edit-post-visual-editor {
+// Block Overrides
 
-	@import "stylesheets/elements.scss";
-	@import "stylesheets/typography.scss";
-	// @import "css/blocks.scss";
+blockquote {
 
-	// Responsive font-size
-	.editor-block-list__block,
-	.editor-block-list__block p {
-
-		@include globalvar(font-size, base);
+	&.wp-block-quote,
+	&.wp-block-quote.is-large,
+	&.wp-block-quote.is-style-large {
 
 		@include media(tablet) {
-
-			// you can manage typography editing only these 2 variables
-			--font-size-base: calc( #{$font-size-base} * #{$font-size-responsive-ratio} ); // 1 1/6
+			@include globalvar( margin-right, 0 );
 		}
 	}
 
-	// Override font top-level editor styles to match front end
-	.editor-rich-text__tinymce.mce-content-body {
-		@include globalvar(line-height, body);
-		@include globalvar(color, base);
+	&:not(.is-large):not(.is-style-large) {
+		border-left: none;
+		margin-right: 0;
+		padding-left: 0;
 	}
 
-	// Button
-	.wp-block-button .wp-block-button__link {
-		@include globalvar(background-color, primary-base);
-		@include globalvar(color, background);
-		@include globalvar(padding, xs);
-		@include globalvar(padding-left, sm);
-		@include globalvar(padding-right, sm);
-		@include globalvar(font-family, heading);
-		@include globalvar(font-size, sm);
-		@include globalvar(line-height, body);
-		@include rounded( 3px );
-		border: 2px solid green;
-		@include globalvar(border-color, primary);
-		box-shadow: 1px 1px 5px 1px rgba(0,0,0,0.33);
-		cursor: pointer;
-		display: inline-block;
-		font-weight: 600;
-		text-decoration: none;
-		text-transform: uppercase;
+	.wp-block-quote__citation {
+		@include globalvar( padding-left, sm );
 	}
+}
 
-	// Image
-	.wp-block-image .block-library-image__resizer img,
-	[data-type="core/image"][data-align=full] figure img,
-	[data-type="core/image"][data-align=wide] figure img {
-		line-height: 0;
-		display: block;
-	}
+// Columns
 
-	// Gallery
-	.wp-block-gallery {
+.wp-block-text-columns,
+.wp-block-columns {
 
-		list-style: none;
-
-		.blocks-gallery-item,
-		.blocks-gallery-image {
-			margin: 0;
-			padding-left: 0;
-
-			&:before {
-				content: "";
-				display: none;
-			}
-
-			figure {
-				display: flex;
-				flex-direction: column;
-			}
-
-			figcaption {
-				position: relative;
-				padding: 0;
-				max-height: inherit;
-				background: transparent;
-			}
-
-			.editor-rich-text {
-				position: inherit;
-			}
-		}
-
-		&:not(.components-placeholder) {
-			// Not yet
-		}
-	}
-
-	// Captions
-	.wp-block-audio figcaption,
-	.wp-block-video figcaption,
-	.wp-block-image figcaption,
-	.wp-block-gallery .blocks-gallery-image figcaption,
-	.wp-block-gallery .blocks-gallery-item figcaption {
-		@include globalvar(color, subtle);
-		@include globalvar(font-family, heading);
-		@include block-padding( xxs, 0 );
-		text-align: left;
-		margin: 0;
-	}
-
-	.wp-block-audio.alignfull figcaption,
-	.wp-block-video.alignfull figcaption,
-	.wp-block-image.alignfull figcaption,
-	.wp-block-gallery.alignfull .blocks-gallery-image figcaption,
-	.wp-block-gallery.alignfull .blocks-gallery-item figcaption,
-	[data-type="core/image"][data-align=full] figcaption {
-		@include block-padding( xs, sm);
-		position: inherit;
-	}
-
-	// Blockquote
-	.wp-block-quote {
-
-		&:not(.is-large):not(.is-style-large) {
-
-			border-left: none;
-		}
-
-		.wp-block-quote__citation {
-			@include globalvar(font-family, heading);
-			@include globalvar(font-size, xs);
-			@include globalvar(color, subtle);
-			font-style: normal;
-			font-weight: 500;
-		}
+	@include media(tablet) {
+		margin-right: 0;
 	}
 }
