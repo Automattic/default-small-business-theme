@@ -598,7 +598,8 @@ blockquote.is-large {
     word-break: break-word; }
   blockquote cite,
   blockquote.is-large cite {
-    color: var(--color-words-words-subtle); }
+    color: var(--color-shade-gray-6);
+    color: var(--color-words-subtle); }
 
 address {
   margin: 0 0 1.5em; }

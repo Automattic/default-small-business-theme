@@ -1,9 +1,6 @@
 
 /** === !Blocks === */
 
-// External.
-@import "bourbon";
-
 // Root CSS variables.
 @import "../stylesheets/variables/base";
 
@@ -15,7 +12,8 @@
 // !Block sizing & positioning
 
 .entry-content > *,
-.entry-summary > * {
+.entry-summary > *,
+body > * {
 
 	&.alignwide {
 
@@ -240,12 +238,16 @@
 .wp-block-video figcaption,
 .wp-block-image figcaption,
 .wp-block-gallery .blocks-gallery-image figcaption,
-.wp-block-gallery .blocks-gallery-item figcaption {
+.wp-block-gallery .blocks-gallery-item figcaption,
+.wp-block-quote .wp-block-quote__citation,
+.wp-block-pullquote .wp-block-pullquote__citation {
 	@include globalvar(color, subtle);
-	@include block-padding( xxs, 0 );
 	@include globalvar(font-size, xs);
 	@include globalvar(font-family, heading);
+	@include block-padding( xxs, 0 );
+	font-style: normal;
 	text-align: left;
+	text-transform: none;
 	margin: 0;
 }
 

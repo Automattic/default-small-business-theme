@@ -188,7 +188,7 @@ blockquote.is-large {
 	}
 
 	cite {
-		@include globalvar( color, words-subtle );
+		@include globalvar( color, subtle );
 	}
 }
 

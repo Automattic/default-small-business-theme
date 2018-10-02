@@ -42,6 +42,10 @@ body {
 // Reset font scale to pixels for the editor
 body,
 p {
+
+	// override elements.scss block-level background color
+	background-color: transparent;
+
 	// font-size base for mobile
 	font-size: 21px;
 
@@ -53,6 +57,8 @@ p {
 }
 
 // Block Overrides
+
+// Blockquote
 
 blockquote {
 
@@ -67,12 +73,23 @@ blockquote {
 
 	&:not(.is-large):not(.is-style-large) {
 		border-left: none;
-		margin-right: 0;
-		padding-left: 0;
+		@include globalvar( margin-right, 0 );
+		@include globalvar( padding-left, 0 );
 	}
 
 	.wp-block-quote__citation {
 		@include globalvar( padding-left, sm );
+	}
+}
+
+// Pull quote
+
+.wp-block-pullquote {
+	border-bottom: none;
+	border-top: none;
+
+	.wp-block-pullquote__citation {
+
 	}
 }
 
