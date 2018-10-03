@@ -89,7 +89,7 @@ h4 { @include globalvar(font-size, h4); }
   --grid-column-10: calc( 10 * ( var(--grid-column) + var(--grid-gutter) ) - var(--grid-gutter));
   --grid-column-11: calc( 11 * ( var(--grid-column) + var(--grid-gutter) ) - var(--grid-gutter));
   --grid-column-12: calc( 12 * ( var(--grid-column) + var(--grid-gutter) ) - var(--grid-gutter));
-  --font-family-body: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+  --font-family-body: "Hoefler Text", "Baskerville Old Face", Garamond, "Times New Roman", serif;
   --font-family-heading: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
   --font-family-code: Space Mono, sans;
   --font-size-base: 1.125em;
@@ -132,9 +132,9 @@ h4 { @include globalvar(font-size, h4); }
   --color-words-subtle: var(--color-shade-gray-6);
   --color-words-link: var(--color-primary-base);
   --color-words-hover: var(--color-primary-dark);
-  --color-border-base: transparent;
+  --color-border-base: var(--color-shade-gray-2);
   --color-border-primary: var(--color-primary-base);
-  --color-border-form: var(--color-border-base);
+  --color-border-form: var(--color-shade-gray-2);
   --color-border-form-focus: var(--color-primary-base);
   --color-border-form-error: var(--color-error);
   --color-border-form-bg: var(--color-white);
@@ -264,7 +264,7 @@ input,
 select,
 optgroup,
 textarea {
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+  font-family: "Hoefler Text", "Baskerville Old Face", Garamond, "Times New Roman", serif;
   font-family: var(--font-family-body);
   line-height: 1.4;
   line-height: var(--font-leading-body);
@@ -443,7 +443,7 @@ hr {
 abbr,
 acronym {
   border-bottom: 1px dotted inherit;
-  border-bottom-color: transparent;
+  border-bottom-color: var(--color-shade-gray-2);
   border-bottom-color: var(--color-border-base);
   cursor: help; }
 
@@ -663,7 +663,7 @@ input[type="reset"]:active,
 input[type="reset"]:focus,
 input[type="submit"]:active,
 input[type="submit"]:focus {
-  border-color: transparent;
+  border-color: var(--color-shade-gray-2);
   border-color: var(--color-border-base);
   background-color: var(--color-shade-white);
   color: var(--color-shade-gray-6);
@@ -687,7 +687,7 @@ input[type="datetime-local"],
 input[type="color"],
 textarea {
   border: 1px solid gray;
-  border-color: var(--color-border-base);
+  border-color: var(--color-shade-gray-2);
   border-color: var(--color-border-form); }
 
 input[type="text"]:focus,
@@ -758,7 +758,7 @@ textarea {
 /** === Site Branding === */
 .site-header {
   border-bottom: 1px solid gray;
-  border-bottom-color: transparent;
+  border-bottom-color: var(--color-shade-gray-2);
   border-bottom-color: var(--color-border-base); }
   @media only screen and (min-width: calc( 10 * ( 80px + 25px ) - 25px)) {
     .site-header {
@@ -827,7 +827,7 @@ textarea {
 
 .site-footer {
   border-top: 1px solid grey;
-  border-color: transparent;
+  border-color: var(--color-shade-gray-2);
   border-color: var(--color-border-base); }
   @media only screen and (max-width: calc( 8 * ( 80px + 25px ) - 25px)) {
     .site-footer {
@@ -837,7 +837,7 @@ textarea {
 .site-info {
   font-size: calc(1em / var(--font-size-ratio));
   font-size: var(--font-size-sm);
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+  font-family: "Hoefler Text", "Baskerville Old Face", Garamond, "Times New Roman", serif;
   font-family: var(--font-family-body);
   padding: calc(2 * var(--space-unit));
   padding: var(--space-lg);
@@ -933,7 +933,7 @@ textarea {
 @media only screen and (max-width: calc( 8 * ( 80px + 25px ) - 25px)) {
   .main-navigation.toggled-on > div > ul {
     border-top: 1px solid grey;
-    border-color: transparent;
+    border-color: var(--color-shade-gray-2);
     border-color: var(--color-border-base);
     background-color: var(--color-shade-white);
     padding-top: calc(0.5 * var(--space-unit));
@@ -1002,7 +1002,7 @@ textarea {
           padding-right: var(--space-xs); }
         .main-navigation > div > ul > li > ul {
           border: 1px solid grey;
-          border-color: transparent;
+          border-color: var(--color-shade-gray-2);
           border-color: var(--color-border-base); }
           .main-navigation > div > ul > li > ul li {
             display: block; }
@@ -1061,7 +1061,7 @@ textarea {
     height: calc(3.25 * var(--space-unit));
     height: var(--space-xl);
     border-top: 1px solid grey;
-    border-color: transparent;
+    border-color: var(--color-shade-gray-2);
     border-color: var(--color-border-base);
     bottom: 0;
     left: 0;
@@ -1110,7 +1110,7 @@ textarea {
   border-top-color: var(--color-primary-base);
   border-top-color: var(--color-border-primary);
   border-bottom: 1px solid grey;
-  border-bottom-color: transparent;
+  border-bottom-color: var(--color-shade-gray-2);
   border-bottom-color: var(--color-border-base); }
   .post-navigation:last-child {
     margin-bottom: 0;
@@ -1190,7 +1190,7 @@ textarea {
   max-width: calc( 10 * ( var(--grid-column) + var(--grid-gutter) ) - var(--grid-gutter));
   max-width: var(--grid-column-10);
   border-bottom: 1px solid grey;
-  border-bottom-color: transparent;
+  border-bottom-color: var(--color-shade-gray-2);
   border-bottom-color: var(--color-border-base);
   margin-left: auto;
   margin-right: auto; }
@@ -1359,7 +1359,7 @@ textarea {
     font-size: calc(1em / var(--font-size-ratio));
     font-size: var(--font-size-sm);
     border-top: 1px solid grey;
-    border-top-color: transparent;
+    border-top-color: var(--color-shade-gray-2);
     border-top-color: var(--color-border-base);
     font-weight: 500;
     font-style: normal;
@@ -1751,7 +1751,7 @@ object {
     padding-bottom: calc(0.75 * var(--space-unit));
     padding-bottom: var(--space-sm);
     border-bottom: 1px solid grey;
-    border-bottom-color: transparent;
+    border-bottom-color: var(--color-shade-gray-2);
     border-bottom-color: var(--color-border-base); }
   .blog .hentry:last-of-type .entry-footer .entry-meta > span:last-child,
   .archive .hentry:last-of-type .entry-footer .entry-meta > span:last-child,
@@ -1762,7 +1762,7 @@ object {
     .archive .hentry .entry-footer .entry-meta,
     .search .hentry .entry-footer .entry-meta {
       border-bottom: 1px solid grey;
-      border-bottom-color: transparent;
+      border-bottom-color: var(--color-shade-gray-2);
       border-bottom-color: var(--color-border-base); }
       .blog .hentry .entry-footer .entry-meta > span,
       .archive .hentry .entry-footer .entry-meta > span,

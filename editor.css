@@ -68,7 +68,7 @@ h4 { @include globalvar(font-size, h4); }
   --grid-column-10: calc( 10 * ( var(--grid-column) + var(--grid-gutter) ) - var(--grid-gutter));
   --grid-column-11: calc( 11 * ( var(--grid-column) + var(--grid-gutter) ) - var(--grid-gutter));
   --grid-column-12: calc( 12 * ( var(--grid-column) + var(--grid-gutter) ) - var(--grid-gutter));
-  --font-family-body: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+  --font-family-body: "Hoefler Text", "Baskerville Old Face", Garamond, "Times New Roman", serif;
   --font-family-heading: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
   --font-family-code: Space Mono, sans;
   --font-size-base: 1.125em;
@@ -111,9 +111,9 @@ h4 { @include globalvar(font-size, h4); }
   --color-words-subtle: var(--color-shade-gray-6);
   --color-words-link: var(--color-primary-base);
   --color-words-hover: var(--color-primary-dark);
-  --color-border-base: transparent;
+  --color-border-base: var(--color-shade-gray-2);
   --color-border-primary: var(--color-primary-base);
-  --color-border-form: var(--color-border-base);
+  --color-border-form: var(--color-shade-gray-2);
   --color-border-form-focus: var(--color-primary-base);
   --color-border-form-error: var(--color-error);
   --color-border-form-bg: var(--color-white);
@@ -134,7 +134,7 @@ h4 { @include globalvar(font-size, h4); }
 .editor-post-title .editor-post-title__input,
 .edit-post-visual-editor,
 .edit-post-visual-editor p {
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+  font-family: "Hoefler Text", "Baskerville Old Face", Garamond, "Times New Roman", serif;
   font-family: var(--font-family-body); }
 
 .edit-post-visual-editor,
@@ -170,7 +170,7 @@ h4 { @include globalvar(font-size, h4); }
   .edit-post-visual-editor abbr,
   .edit-post-visual-editor acronym {
     border-bottom: 1px dotted inherit;
-    border-bottom-color: transparent;
+    border-bottom-color: var(--color-shade-gray-2);
     border-bottom-color: var(--color-border-base);
     cursor: help; }
   .edit-post-visual-editor pre {
@@ -314,7 +314,7 @@ h4 { @include globalvar(font-size, h4); }
   .edit-post-visual-editor select,
   .edit-post-visual-editor optgroup,
   .edit-post-visual-editor textarea {
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+    font-family: "Hoefler Text", "Baskerville Old Face", Garamond, "Times New Roman", serif;
     font-family: var(--font-family-body);
     line-height: 1.4;
     line-height: var(--font-leading-body);
