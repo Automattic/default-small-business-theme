@@ -92,7 +92,7 @@ h4 { @include globalvar(font-size, h4); }
   --font-family-body: "Hoefler Text", "Baskerville Old Face", Garamond, "Times New Roman", serif;
   --font-family-heading: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
   --font-family-code: Space Mono, sans;
-  --font-size-base: 1.125em;
+  --font-size-base: 1.1em;
   --font-size-ratio: 1.2;
   --font-size-xxs: calc(1em / (var(--font-size-ratio) * var(--font-size-ratio) * var(--font-size-ratio)));
   --font-size-xs: calc(1em / (var(--font-size-ratio) * var(--font-size-ratio)));
@@ -251,12 +251,12 @@ template {
 /** === Typography === */
 body,
 input {
-  font-size: 1.125em;
+  font-size: 1.1em;
   font-size: var(--font-size-base); }
   @media only screen and (min-width: calc( 8 * ( 80px + 25px ) - 25px)) {
     body,
     input {
-      --font-size-base: calc( 1.125em * 1.25); } }
+      --font-size-base: calc( 1.1em * 1.167); } }
 
 body,
 button,
