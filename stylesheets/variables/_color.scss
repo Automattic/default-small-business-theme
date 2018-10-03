@@ -23,20 +23,20 @@ $color: (
 
 	// shades - generated using chroma.js - 12 steps
 	shade: (
-		black: #fff, // black
-		gray-10: #e8e7e8,
-		gray-6: #d1d0d2,
-		gray-4: #bbbbbc,
-		gray-3: #a5a5a6,
-		gray-2: #7b7a7d,
-		gray-1: #2e2e31,
-		white: #000, // white
+		black:   #1d1d21, // black
+		gray-10: #2e2e31,
+		gray-6:  #7b7a7d,
+		gray-4:  #a5a5a6,
+		gray-3:  #bbbbbc,
+		gray-2:  #d1d0d2,
+		gray-1:  #e8e7e8,
+		white:   #ffffff, // white
 	),
 
 	// feedback
 	feedback: (
 		success: #88c459,
-		error: #f5414f,
+		error:   #f5414f,
 		warning: #ffd137,
 	),
 
@@ -80,5 +80,4 @@ $color: (
 		secondary-active: var(--color-secondary-dark),
 		secondary-label: var(--color-white),
 	),
-
 );
