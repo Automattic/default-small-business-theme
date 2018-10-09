@@ -300,13 +300,11 @@ h4 { @include globalvar(font-size, h4); }
   .edit-post-visual-editor mark,
   .edit-post-visual-editor ins {
     background-color: var(--color-feedback-warning); }
-  .edit-post-visual-editor body,
-  .edit-post-visual-editor input {
+  .edit-post-visual-editor body {
     font-size: 1.1em;
     font-size: var(--font-size-base); }
     @media only screen and (min-width: calc( 8 * ( 80px + 25px ) - 25px)) {
-      .edit-post-visual-editor body,
-      .edit-post-visual-editor input {
+      .edit-post-visual-editor body {
         --font-size-base: calc( 1.1em * 1.167); } }
   .edit-post-visual-editor body,
   .edit-post-visual-editor button,
@@ -326,13 +324,28 @@ h4 { @include globalvar(font-size, h4); }
   .edit-post-visual-editor .site-title,
   .edit-post-visual-editor h1, .edit-post-visual-editor h2, .edit-post-visual-editor h3, .edit-post-visual-editor h4, .edit-post-visual-editor h5, .edit-post-visual-editor h6 {
     clear: both;
-    font-weight: bold;
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
-    font-family: var(--font-family-heading);
+    font-weight: 400;
     line-height: 1.2;
     line-height: var(--font-leading-heading);
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale; }
+  .edit-post-visual-editor h2 {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+    font-family: var(--font-family-heading);
+    font-weight: 200;
+    letter-spacing: .25rem;
+    text-transform: uppercase; }
+  .edit-post-visual-editor h5 {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+    font-family: var(--font-family-heading);
+    font-weight: 500;
+    text-transform: uppercase; }
+  .edit-post-visual-editor h6 {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+    font-family: var(--font-family-heading);
+    font-weight: 200;
+    letter-spacing: .125rem;
+    text-transform: uppercase; }
   .edit-post-visual-editor .text--xxxl,
   .edit-post-visual-editor p.has-drop-cap:not(:focus):first-letter {
     font-size: calc(1em * var(--font-size-ratio) * var(--font-size-ratio) * var(--font-size-ratio) * var(--font-size-ratio) * var(--font-size-ratio));
