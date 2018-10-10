@@ -24,7 +24,7 @@
 	margin-right: auto;
 
 	> * {
-		padding: $x-space-sm; // @include block-padding();
+		padding: $x-space-sm;
 	}
 
 	> *:last-child {
@@ -53,7 +53,7 @@
 
 .comments-area {
 
-	margin: $x-space-lg 0; // @include block-margin( lg, 0 );
+	margin: $x-space-lg 0;
 
 	@include media( tablet ) {
 		max-width: $x-grid-column-10;
@@ -69,7 +69,7 @@
 
 .comments-title {
 
-	margin: $x-space-sm; // @include block-margin();
+	margin: $x-space-sm;
 	max-width: $x-grid-column-3;
 	//width: 100%;
 
@@ -80,7 +80,7 @@
 
 .comment-respond {
 
-	margin: $x-space-sm; // @include block-margin();
+	margin: $x-space-sm;
 
 	@include media( tablet ) {
 		max-width: $x-grid-column-7;
@@ -108,7 +108,7 @@
 .comment-list {
 
 	list-style: none;
-	margin: $x-space-sm; // @include block-margin();
+	margin: $x-space-sm;
 
 	li {
 		padding-left: inherit;
@@ -121,7 +121,7 @@
 
 	.comment {
 		list-style: none;
-		margin: $x-space-md 0; // @include block-margin( md, 0 );
+		margin: $x-space-md 0;
 	}
 
 	.comment-content {
@@ -152,14 +152,14 @@
 	min-height: 9rem;
 
 	> * {
-		margin: $x-space-sm 0; // @include block-margin( sm, 0 );
+		margin: $x-space-sm 0;
 		&:first-of-type {
 			margin-top: 0;
 		}
 	}
 
 	.reply {
-		margin: $x-space-sm 0; // @include block-margin( sm, 0 );
+		margin: $x-space-sm 0;
 		font-family: $x-font-family-heading;
 		font-size: $x-font-size-xs;
 		text-transform: uppercase;

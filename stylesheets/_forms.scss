@@ -21,10 +21,10 @@ input[type="submit"] {
 	text-decoration: none;
 	text-transform: uppercase;
 	
-	padding: $x-space-xxs $x-space-xs; // @include block-padding( xxs, xs );
+	padding: $x-space-xxs $x-space-xs;
 
 	@include media( tablet ) {
-		padding: $x-space-xs $x-space-sm; // @include block-padding( xs, sm );
+		padding: $x-space-xs $x-space-sm;
 	}
 }
 

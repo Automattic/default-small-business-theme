@@ -19,7 +19,7 @@
 .site-identity {
 
 	color: $x-color-words-subtle;
-	margin: $x-space-sm; // @include block-margin( sm, sm );
+	margin: $x-space-sm;
 
 	& > * {
 		margin-bottom: $x-space-sm;

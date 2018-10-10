@@ -180,12 +180,12 @@ blockquote.is-large {
 	margin-right: 0;
 	border-top: 1px solid green;
 	
-	padding: $x-space-sm; // @include block-padding( sm, sm );
+	padding: $x-space-sm;
 	
 	border-top-color: $x-color-border-primary;
 
 	p {
-		padding: $x-space-xs 0; // @include block-padding( xs, 0 );
+		padding: $x-space-xs 0;
 		word-break: break-word;
 	}
 

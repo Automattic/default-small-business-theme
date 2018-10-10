@@ -7,7 +7,7 @@
 
 	// Style all elemnts first
 	> * {
-		margin: $x-space-sm; // @include block-margin();
+		margin: $x-space-sm;
 		max-width: calc( 100% - ( #{$x-space-sm} * 2 ) );
 
 		&:first-child {
@@ -23,14 +23,14 @@
 }
 
 .hentry {
-	margin: $x-space-lg 0; // @include block-margin( lg, 0 );
+	margin: $x-space-lg 0;
 
 	@include media( tablet ) {
-		margin: $x-space-lg, $x-space-sm; // @include block-margin( lg, sm );
+		margin: $x-space-lg, $x-space-sm;
 	}
 
 	@include media( desktop ) {
-		margin: $x-space-lg 0; // @include block-margin( lg, 0 );
+		margin: $x-space-lg 0;
 	}
 
 	.entry-featured-image {
@@ -50,7 +50,7 @@
 	}
 
 	.entry-title {
-		margin: $x-space-sm; // @include block-margin();
+		margin: $x-space-sm;
 		color: $x-color-primary-base;
 
 		a {
@@ -64,7 +64,7 @@
 		}
 
 		@include media( tablet ) {
-			margin: $x-space-sm 0; // @include block-margin( sm, 0 );
+			margin: $x-space-sm 0;
 			max-width: $x-grid-column-7;
 			width: 100%;
 
@@ -79,7 +79,7 @@
 
 	.entry-meta {
 
-		margin: $x-space-sm; // @include block-margin();
+		margin: $x-space-sm;
 		color: $x-color-words-subtle;
 		display: flex;
 		justify-content: space-between;
@@ -328,7 +328,7 @@
 
 			.entry-title {
 
-				margin: $x-space-sm; // @include block-margin();
+				margin: $x-space-sm;
 				margin-top: 0;
 				width: auto;
 			}

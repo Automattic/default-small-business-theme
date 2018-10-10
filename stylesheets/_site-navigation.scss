@@ -38,7 +38,7 @@
 				display: block;
 				width: 100%;
 				
-				padding: $x-space-xs; // @include block-padding( xs, xs );
+				padding: $x-space-xs;
 			}
 
 			&#more-menu {
@@ -110,7 +110,7 @@
 
 			li > a {
 				font-size: $x-font-size-sm;
-				padding: $x-space-xxs $x-space-xs; // @include block-padding(xxs, xs);
+				padding: $x-space-xxs $x-space-xs;
 				
 			}
 			.menu-item-has-children {
@@ -143,7 +143,7 @@
 
 	@include media( tablet ) {
 
-		margin: $x-space-sm 0; // @include block-margin( sm, 0 );
+		margin: $x-space-sm 0;
 		display: block;
 		width: 100%;
 
@@ -156,7 +156,7 @@
 
 				a {
 					font-size: $x-font-size-xs;
-					padding: $x-space-xs; // @include block-padding( xs, xs );
+					padding: $x-space-xs;
 				}
 
 				> ul {
@@ -235,7 +235,7 @@
 		width: 100%;
 		z-index: 600;
 		
-		padding: $x-space-sm; // @include block-padding( sm, sm );
+		padding: $x-space-sm;
 
 		& > div {
 			padding-right: 100px;
@@ -288,7 +288,7 @@
 }
 
 .post-navigation {
-	margin: $x-space-lg 0; // @include block-margin( lg, 0 );
+	margin: $x-space-lg 0;
 	
 	border-top: 1px solid green;
 	border-top-color: $x-color-primary-base;
@@ -313,7 +313,7 @@
 
 		.post-excerpt {
 			color: $x-color-words-base;
-			margin: $x-space-xs 0; // @include block-margin( xs, 0 );
+			margin: $x-space-xs 0;
 		}
 
 		a:hover {
@@ -325,12 +325,12 @@
 		}
 
 		& > div {
-			margin: $x-space-sm; // @include block-margin();
+			margin: $x-space-sm;
 		}
 	}
 
 	@include media( tablet ) {
-		margin: $x-space-sm 0; // @include block-margin( sm, 0 );
+		margin: $x-space-sm 0;
 		display: inherit;
 		.nav-links {
 			max-width: $x-grid-column-10;
@@ -340,7 +340,7 @@
 			justify-content: center;
 			align-content: center;
 			& > div {
-				margin: $x-space-lg $x-space-sm; // @include block-margin( lg, sm );
+				margin: $x-space-lg $x-space-sm;
 				max-width: $x-grid-column-5;
 			}
 		}
