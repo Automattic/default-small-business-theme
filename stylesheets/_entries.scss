@@ -81,8 +81,6 @@
 
 		margin: $x-space-sm; // @include block-margin();
 		color: $x-color-words-subtle;
-		font-size: $x-font-size-xs;
-		font-family: $x-font-family-heading;
 		display: flex;
 		justify-content: space-between;
 
@@ -133,6 +131,7 @@
 				max-width: $x-grid-column-7;
 				margin-right: $x-space-column-3;
 				padding-bottom: $x-space-sm;
+				line-height: $x-font-leading-body;
 				flex-direction: row;
 				margin-left: auto;
 				width: 100%;
