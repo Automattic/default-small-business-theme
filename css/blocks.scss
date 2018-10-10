@@ -2,12 +2,13 @@
 /** === !Blocks === */
 
 // Root CSS variables.
-@import "../stylesheets/variables/base";
+@import "../stylesheets/variables/_colors";
+@import "../stylesheets/variables/_fonts";
+@import "../stylesheets/variables/_grid";
+@import "../stylesheets/variables/_space";
 
 // Includes.
-@import "../stylesheets/inc/animations";
-@import "../stylesheets/inc/mixins";
-@import "../stylesheets/inc/functions";
+@import "../stylesheets/inc/index";
 
 // !Block sizing & positioning
 
@@ -43,7 +44,7 @@
 			margin-left: $x-grid-column-4;	/* @include globalvar( margin-left, column-4 ); */
 			margin-right: $x-space-sm; /* @include globalvar( margin-right, sm);*/
 			margin-left: calc( 100vw - ( $x-grid-column-10 - $x-grid-gutter ) );
-			max-width: $x-grid-column-3; /* #{map-get($grid, column-3)} */
+			max-width: $x-grid-column-3;
 		}
 
 		@include media( wide ) {
@@ -57,7 +58,7 @@
 
 		@include media( tablet ) {
 			margin-left: $x-space-sm; /* @include globalvar( margin-left, sm); */
-			max-width: $x-grid-column-3; /* #{map-get($grid, column-3)}; */
+			max-width: $x-grid-column-3;
 		}
 	}
 }
@@ -68,7 +69,7 @@
 
 	background-color: $x-color-primary-base; /* @include globalvar(background-color, primary-base); */
 	color: $x-color-background-body; /* @include globalvar(color, background); */
-	@include block-padding( xxs, xs );
+	padding: ($x-space-xxs, $x-space-xs); /* @include block-padding( xxs, xs );*/
 	font-family: $heading-font; /* @include globalvar(font-family, heading); */
 	font-size: $x-font-size-sm; /* @include globalvar(font-size, sm); */
 	line-height: $x-font-leading-body; /* @include globalvar(line-height, body); */
@@ -96,7 +97,7 @@
 	}
 
 	@include media( tablet ) {
-		@include block-padding( xs, sm );
+		padding: ($x-space-xs, $x-space-sm); /* @include block-padding( xs, sm ); */
 	}
 }
 
@@ -114,7 +115,7 @@
 		width: 285px; // replace with css-variable
 
 		@include media( tablet ) {
-			width: $x-grid-column-3; /* #{map-get($grid, column-3)} */
+			width: $x-grid-column-3;
 		}
 	}
 }
@@ -184,7 +185,7 @@
 	max-width: 285px;
 
 	@include media( tablet ) {
-		max-width: $x-grid-column-3; /* #{map-get($grid, column-3)}; */
+		max-width: $x-grid-column-3;
 	}
 }
 
@@ -227,7 +228,7 @@
 	max-width: 285px;
 
 	@include media( tablet ) {
-		max-width: $x-grid-column-3; /* #{map-get($grid, column-3)}; */
+		max-width: $x-grid-column-3;
 	}
 }
 
@@ -243,7 +244,7 @@
 	color: $x-color-words-subtle; /* @include globalvar(color, subtle); */
 	font-size: $x-font-size-xs; /* @include globalvar(font-size, xs); */
 	font-family: $heading-font; /* @include globalvar(font-family, heading); */
-	@include block-padding( xxs, 0 );
+	padding: $x-space-xxs, 0; /* @include block-padding( xxs, 0 ); */
 	font-style: normal;
 	text-align: left;
 	text-transform: none;
@@ -255,7 +256,7 @@
 .wp-block-image.alignfull figcaption,
 .wp-block-gallery.alignfull .blocks-gallery-image figcaption,
 .wp-block-gallery.alignfull .blocks-gallery-item figcaption {
-	@include block-padding( xs, sm);
+	padding: $x-space-xs, $x-space-sm; /* @include block-padding( xs, sm); */
 }
 
 // !Columns
@@ -386,7 +387,7 @@ table.wp-block-table {
 .wp-block-quote.is-large,
 .wp-block-quote.is-style-large {
 
-	@include block-padding( sm, 0 );
+	padding: $x-space-sm, 0; /* @include block-padding( sm, 0 ); */
 	margin-top: $x-space-lg; /* @include globalvar( margin-top, lg ); */
 	margin-bottom: $x-space-lg; /* @include globalvar( margin-bottom, lg ); */
 	margin-left: $x-space-sm;  /* @include globalvar( margin-left, sm); */
@@ -395,7 +396,7 @@ table.wp-block-table {
 	border-top-color: $primary-color; /* @include globalvar( border-top-color, primary ); */
 
 	p {
-		@include block-padding( xs, sm );
+		padding: $x-space-xs, $x-space-sm; /* @include block-padding( xs, sm ); */
 		font-size: $x-font-size-lg; /* @include globalvar(font-size, lg); */
 		font-style: normal;
 	}
@@ -410,7 +411,7 @@ table.wp-block-table {
 		font-family: $x-font-family-heading; /* @include globalvar(font-family, heading); */
 		font-size: $x-font-size-xs; /* @include globalvar(font-size, xs); */
 		color: $x-color-words-subtle; /* @include globalvar(color, subtle); */
-		@include block-padding( 0, sm );
+		padding: 0, $x-space-sm; /* @include block-padding( 0, sm ); */
 		font-style: normal;
 		font-weight: 500;
 	}
