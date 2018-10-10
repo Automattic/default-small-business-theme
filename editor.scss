@@ -3,9 +3,12 @@
 @import "stylesheets/variables/index";
 @import "stylesheets/inc/index";
 
-@import "stylesheets/typography.scss";
-@import "stylesheets/elements.scss";
-@import "css/blocks.scss";
+:root {}
+
+@import "stylesheets/typography";
+@import "stylesheets/elements";
+
+@import "css/blocks";
 
 // Fix line heights in forms
 .editor-rich-text__tinymce.mce-content-body {
