@@ -1,15 +1,3 @@
-# Theme Development Boilerplate
-
-Use this build system to develop themes.
-
-> This project is under active development. Things may change in the future.
-
-## What's all this?
-
-All the files in this repository are needed for your build system and asset compilation & automation. There are no theme-specific PHP files contained.
-
-The intended use for this is to add these files to your theme. Replacing the `style.css` with the one the build system provides.
-
 ## Directory structure
 
 - **build/** » The build files are placed here.
@@ -25,10 +13,6 @@ The intended use for this is to add these files to your theme. Replacing the `st
 - **readme.txt** » Readme for the theme.
 - **rtl.scss** » RTL Stylesheet.
 - **style.scss** » Theme Stylesheet. Main entry point for Sass styles.
-
-## Integration
-
-Copy over all of the files from this project into your theme's directory.
 
 ## Usage & Installation
 
