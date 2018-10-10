@@ -1,16 +1,13 @@
 
 /** === !Blocks === */
 
-// !External.
-@import "bourbon";
+// Root CSS variables.
+@import "../stylesheets/variables/base";
 
-// !Includes.
-@import "../stylesheets/variables/grid";
-@import "../stylesheets/variables/space";
-@import "../stylesheets/variables/fonts";
-@import "../stylesheets/variables/colors";
+// Includes.
 @import "../stylesheets/inc/animations";
 @import "../stylesheets/inc/mixins";
+@import "../stylesheets/inc/functions";
 
 // !Block sizing & positioning
 
@@ -23,12 +20,12 @@
 		margin-right: auto;
 
 		@include media( tablet ) {
-			max-width: $x-grid-column-9;
-			margin-right: $x-space-column-2;
+			max-width: $x-grid-column-9; /* @include globalvar(max-width, column-9); */
+			margin-right: $x-grid-column-2; /* @include globalvar(margin-right, column-2); */
 		}
 
 		@include media( wide ) {
-			margin-right: $x-space-column-2;
+			margin-right: $x-grid-column-2; /* 			@include globalvar(margin-right, column-2); */
 		}
 	}
 
@@ -43,14 +40,14 @@
 		max-width: 285px;
 
 		@include media( tablet ) {
-			margin-left: $x-space-column-4;
-			margin-right: $x-space-sm;
-			margin-left: calc( 100vw - ( #{$x-grid-column-10} - #{$x-grid-gutter} ) );
-			max-width: $x-grid-column-3;
+			margin-left: $x-grid-column-4;	/* @include globalvar( margin-left, column-4 ); */
+			margin-right: $x-space-sm; /* @include globalvar( margin-right, sm);*/
+			margin-left: calc( 100vw - ( $x-grid-column-10 - $x-grid-gutter ) );
+			max-width: $x-grid-column-3; /* #{map-get($grid, column-3)} */
 		}
 
 		@include media( wide ) {
-			margin-left: calc( #{$x-grid-column-12} - ( #{$x-grid-column-10} - #{$x-grid-gutter} ) );
+			margin-left: calc( $x-grid-column-12 - ( $x-grid-column-10 - $x-grid-gutter ) );
 		}
 	}
 
@@ -59,29 +56,25 @@
 		max-width: 285px;
 
 		@include media( tablet ) {
-			margin-left: $x-space-sm;
-			max-width: $x-grid-column-3;
+			margin-left: $x-space-sm; /* @include globalvar( margin-left, sm); */
+			max-width: $x-grid-column-3; /* #{map-get($grid, column-3)}; */
 		}
 	}
-
 }
 
 // !Buttons
 
 .wp-block-button .wp-block-button__link{
 
-	background-color: $x-color-primary-base;
-	color: $x-color-shade-white;
-	
-	font-family: $x-font-family-heading;
-	font-size: $x-font-size-sm;
-	line-height: $x-font-leading-body;
+	background-color: $x-color-primary-base; /* @include globalvar(background-color, primary-base); */
+	color: $x-color-background-body; /* @include globalvar(color, background); */
+	@include block-padding( xxs, xs );
+	font-family: $heading-font; /* @include globalvar(font-family, heading); */
+	font-size: $x-font-size-sm; /* @include globalvar(font-size, sm); */
+	line-height: $x-font-leading-body; /* @include globalvar(line-height, body); */
 	@include rounded( 3px );
-	
-	padding: $x-space-xxs $x-space-xs; // @include block-padding( xxs, xs );
-	
 	border: 2px solid green;
-	border-color: $x-color-primary-base;
+	border-color: $primary-color; /* @include globalvar(border-color, primary); */
 	box-shadow: 1px 1px 5px 1px rgba(0,0,0,0.33);
 	cursor: pointer;
 	display: inline-block;
@@ -90,20 +83,20 @@
 	text-transform: uppercase;
 
 	&:hover {
-		border-color: $x-color-primary-base;
-		background-color: $x-color-shade-white;
-		color: $x-color-primary-base;
+		border-color: $primary-color; /* @include globalvar(border-color, primary); */
+		background-color: $x-color-shade-white; /* @include globalvar(background-color, shade-white); */
+		color: $primary-color; /* @include globalvar(color, primary); */
 	}
 
 	&:active,
 	&:focus {
-		border-color: $x-color-words-subtle;
-		background-color: $x-color-shade-white;
-		color: $x-color-words-subtle;
+		border-color: $x-color-border-base; /* @include globalvar(border-color, base); */
+		background-color: $x-color-shade-white; /* @include globalvar(background-color, shade-white); */
+		color: $x-color-words-subtle; /* @include globalvar(color, subtle); */
 	}
 
 	@include media( tablet ) {
-		padding: $x-space-xs, $x-space-sm; // @include block-padding( xs, sm );
+		@include block-padding( xs, sm );
 	}
 }
 
@@ -121,7 +114,7 @@
 		width: 285px; // replace with css-variable
 
 		@include media( tablet ) {
-			width: $x-grid-column-3;
+			width: $x-grid-column-3; /* #{map-get($grid, column-3)} */
 		}
 	}
 }
@@ -140,15 +133,14 @@
 
 	&.alignleft,
 	&.alignright {
-	max-width: 100%;
-}
+		max-width: 100%;
+	}
 
-	&.alignfull img {
-	width: 100vw;
-	margin-left: auto;
-	margin-right: auto;
-}
-
+		&.alignfull img {
+		width: 100vw;
+		margin-left: auto;
+		margin-right: auto;
+	}
 }
 
 // !Cover image
@@ -162,20 +154,20 @@
 	}
 
 	&.alignleft {
-		margin-top: 0;
-		margin-right: $x-space-sm;
+		margin-top: 0; /* @include globalvar( margin-top, 0 ); */
+		margin-right: $x-space-sm; /* @include globalvar( margin-right, sm ); */
 	}
 	&.alignright {
-		margin-top: 0;
-		margin-left: $x-space-sm;
+		margin-top: 0; /* @include globalvar( margin-top, 0 ); */
+		margin-left: $x-space-sm; /* @include globalvar( margin-left, sm ); */
 	}
 
 	.wp-block-cover-image-text,
 	h2 {
 		font-weight: 400;
-		padding: $x-space-xs;
-		font-family: $x-font-family-body;
-		line-height: $x-font-leading-heading;
+		padding: $x-space-sm; /* @include globalvar( padding, xs ); */
+		font-family: $body-font; /* @include globalvar( font-family, body ); */
+		line-height: $x-font-leading-heading; /* @include globalvar( line-height, heading ); */
 		letter-spacing: normal;
 		text-transform: none;
 		margin: 0;
@@ -192,7 +184,7 @@
 	max-width: 285px;
 
 	@include media( tablet ) {
-		max-width: $x-grid-column-3;
+		max-width: $x-grid-column-3; /* #{map-get($grid, column-3)}; */
 	}
 }
 
@@ -235,7 +227,7 @@
 	max-width: 285px;
 
 	@include media( tablet ) {
-		max-width: #{$x-grid-column-3};
+		max-width: $x-grid-column-3; /* #{map-get($grid, column-3)}; */
 	}
 }
 
@@ -245,14 +237,16 @@
 .wp-block-video figcaption,
 .wp-block-image figcaption,
 .wp-block-gallery .blocks-gallery-image figcaption,
-.wp-block-gallery .blocks-gallery-item figcaption {
-	color: $x-color-words-subtle;
-	font-size: $x-font-size-xs;
-	font-family: $x-font-family-heading;
-	
-	padding: $x-space-xxs 0; // @include block-padding( xxs, 0 );
-
+.wp-block-gallery .blocks-gallery-item figcaption,
+.wp-block-quote .wp-block-quote__citation,
+.wp-block-pullquote .wp-block-pullquote__citation {
+	color: $x-color-words-subtle; /* @include globalvar(color, subtle); */
+	font-size: $x-font-size-xs; /* @include globalvar(font-size, xs); */
+	font-family: $heading-font; /* @include globalvar(font-family, heading); */
+	@include block-padding( xxs, 0 );
+	font-style: normal;
 	text-align: left;
+	text-transform: none;
 	margin: 0;
 }
 
@@ -261,7 +255,7 @@
 .wp-block-image.alignfull figcaption,
 .wp-block-gallery.alignfull .blocks-gallery-image figcaption,
 .wp-block-gallery.alignfull .blocks-gallery-item figcaption {
-	padding: $x-space-xs $x-space-sm; // @include block-padding( xs, sm);
+	@include block-padding( xs, sm);
 }
 
 // !Columns
@@ -276,21 +270,21 @@
 	}
 
 	&.has-2-columns .wp-block-column {
-		width: calc( 50% - ( #{$x-grid-gutter} * .5 ) );
+		width: calc( 50% - ( $x-grid-gutter * .5 ) );
 	}
 
 	&.has-3-columns .wp-block-column {
-		width: calc( 33% - ( #{$x-grid-gutter} * .33 ) );
+		width: calc( 33% - ( $x-grid-gutter * .33 ) );
 	}
 
 	&.has-4-columns .wp-block-column {
-		width: calc( 25% - ( #{$x-grid-gutter} * .25 ) );
-		font-size: $x-font-size-sm;
+		width: calc( 25% - ( $x-grid-gutter * .25 ) );
+		font-size: $x-font-size-sm; /* @include globalvar(font-size, sm); */
 	}
 
 	@include media( tablet ) {
-		margin-right: $x-space-column-2;
-		max-width: $x-grid-column-8;
+		margin-right: $x-grid-column-2; /* @include globalvar(margin-right, column-2); */
+		max-width: $x-grid-column-8; /* @include globalvar(max-width, column-8); */
 	}
 }
 
@@ -301,10 +295,10 @@ ul.wp-block-archives,
 ul.wp-block-latest-posts {
 
 	li {
-		font-size: $x-font-size-md;
+		font-size: $x-font-size-md; /* @include globalvar(font-size, md); */
 
 		&:before {
-			font-size: $x-font-size-xxs;
+			font-size: $x-font-size-xxs; /* @include globalvar(font-size, xxs); */
 			line-height: 2.4em;
 		}
 	}
@@ -317,14 +311,14 @@ ul.wp-block-latest-posts {
 		justify-content: space-between;
 
 		li {
-			margin-right: 0;
-			margin-bottom: $x-space-sm;
+			margin-right: 0; /* @include globalvar( margin-right, 0 ); */
+			margin-bottom: $x-space-sm; /* @include globalvar( margin-bottom, sm); */
 		}
 	}
 
 	@include media( tablet ) {
 		&.columns-2 li {
-			width: calc( 50% - ( #{$x-grid-gutter} * .5) );
+			width: calc( 50% - ( $x-grid-gutter * .5) );
 		}
 	}
 }
@@ -341,11 +335,11 @@ ul.wp-block-latest-posts {
 	}
 
 	tr:nth-child(even) {
-		background-color: $x-color-shade-gray-1;
+		background-color: $x-color-shade-gray-1; /* @include globalvar(background-color, shade-gray-1); */
 	}
 
 	thead tr:nth-child(odd) {
-		background-color: $x-color-primary-bg;
+		background-color: $x-color-primary-bg; /* @include globalvar(background-color, primary-bg); */
 	}
 }
 
@@ -353,10 +347,10 @@ ul.wp-block-latest-posts {
 table.wp-block-table {
 
 	border-collapse: collapse;
-	max-width: calc( 100% - ( #{$x-space-sm} * 2 ) );
+	max-width: calc( 100% - ( $x-space-sm * 2 ) );
 
 	@include media( tablet ) {
-		max-width: $x-grid-column-7;
+		max-width: $x-grid-column-7; /* @include globalvar(max-width, column-7); */
 	}
 }
 
@@ -392,59 +386,65 @@ table.wp-block-table {
 .wp-block-quote.is-large,
 .wp-block-quote.is-style-large {
 
-	
-	margin-top: $x-space-lg;
-	margin-bottom: $x-space-lg;
-	margin-left: $x-space-sm;
-	margin-right: $x-space-sm;
-	
-	padding: $x-space-sm 0; // @include block-padding( sm, 0 );
-	
+	@include block-padding( sm, 0 );
+	margin-top: $x-space-lg; /* @include globalvar( margin-top, lg ); */
+	margin-bottom: $x-space-lg; /* @include globalvar( margin-bottom, lg ); */
+	margin-left: $x-space-sm;  /* @include globalvar( margin-left, sm); */
+	margin-right: $x-space-sm; /* @include globalvar( margin-right, sm); */
 	border-top: 1px solid green;
-	
-	border-top-color: $x-color-border-primary;
+	border-top-color: $primary-color; /* @include globalvar( border-top-color, primary ); */
 
 	p {
-		font-size: $x-font-size-lg;
-		padding: $x-space-xs $x-space-sm; // @include block-padding( xs, sm );
+		@include block-padding( xs, sm );
+		font-size: $x-font-size-lg; /* @include globalvar(font-size, lg); */
 		font-style: normal;
 	}
 
-	cite {
-		font-family: $x-font-family-heading;
-		font-size: $x-font-size-xs;
-		color: $x-color-words-subtle;
-		
-		padding: 0 $x-space-sm; // @include block-padding( 0, sm );
+	&.is-large p,
+	&.is-style-large p {
+		font-size: $x-font-size-xl; /* @include globalvar(font-size, xl); */
+		line-height: $x-font-family-heading; /* @include globalvar(line-height, heading); */
+	}
 
+	cite {
+		font-family: $x-font-family-heading; /* @include globalvar(font-family, heading); */
+		font-size: $x-font-size-xs; /* @include globalvar(font-size, xs); */
+		color: $x-color-words-subtle; /* @include globalvar(color, subtle); */
+		@include block-padding( 0, sm );
 		font-style: normal;
 		font-weight: 500;
 	}
 
 	@include media( tablet ) {
-		max-width: $x-grid-column-7;
-		margin-right: $x-space-column-3;
+		max-width: $x-grid-column-7; /* @include globalvar(max-width, column-7); */
+		margin-right: $x-grid-column-3; /* @include globalvar(margin-right, column-3); */
 		margin-left: auto;
 	}
 }
 
 .wp-block-pullquote {
 
-	margin-top: $x-space-lg;
-	margin-bottom: $x-space-lg;
+	margin-top: $x-space-lg; /* @include globalvar(margin-top, lg); */
+	margin-bottom: $x-space-lg; /* @include globalvar(margin-bottom, lg); */
 	text-align: inherit;
 	padding: 0;
 
 	& > p {
-		font-size: $x-font-size-lg;
+		font-size: $x-font-size-lg; /* @include globalvar(font-size, lg); */
 		font-style: normal;
+	}
+
+	&.is-large p,
+	&.is-style-large p {
+		font-size: $x-font-size-xl; /* @include globalvar(font-size, xl); */
+		line-height: $x-font-leading-heading; /* @include globalvar(line-height, heading); */
 	}
 
 	blockquote,
 	& > p,
 	& > cite {
-		padding-left: $x-space-sm;
-		padding-right: $x-space-sm;
+		padding-left: $x-space-sm; /* @include globalvar(padding-left, sm); */
+		padding-right: $x-space-sm; /* @include globalvar(padding-right, sm); */
 	}
 
 	&.alignwide,
@@ -455,8 +455,8 @@ table.wp-block-table {
 		& > cite {
 
 			@include media( tablet ) {
-				padding-left: $x-space-gutter;
-				padding-right: $x-space-gutter;
+				padding-left: $grid-gutter; /* @include globalvar(padding-left, gutter); */
+				padding-right: $grid-gutter; /* @include globalvar(padding-right, gutter); */
 			}
 		}
 	}
@@ -464,13 +464,13 @@ table.wp-block-table {
 	&.alignleft,
 	&.alignright {
 		margin-top: 0;
-		margin-bottom: $x-space-sm;
+		margin-bottom: $x-space-sm; /* @include globalvar(margin-bottom, sm); */
 
 		blockquote {
 			margin-top: 0;
 			margin-bottom: 0;
 			p {
-				font-size: $x-font-size-md;
+				font-size: $x-font-size-md; /* @include globalvar(font-size, md); */
 				padding-top: 0;
 			}
 		}
@@ -484,19 +484,19 @@ table.wp-block-table {
 // !Separators
 
 .wp-block-separator {
-	margin-top: $x-space-md;
-	margin-bottom: $x-space-md;
+	margin-top: $x-space-md; /* @include globalvar( margin-top, md ); */
+	margin-bottom: $x-space-md; /* @include globalvar( margin-bottom, md ); */
 	padding: 0;
 
 	&.is-style-dots {
 
-		background-color: $x-color-shade-white;
+		background-color: $x-color-shade-white; /* @include globalvar( background-color, white ); */
 
 		&:before {
 			content: "\00b7 \00b7 \00b7 \00b7 \00b7";
-			color: $x-color-shade-gray-4;
-			font-family: $x-font-family-body;
-			font-size: $x-font-size-lg;
+			color: $x-color-shade-gray-4; /* @include globalvar( color, shade-gray-4 ); */
+			font-family: $body-font; /* family@include globalvar(font-family, body); */
+			font-size: $x-font-size-lg; /* @include globalvar(font-size, lg); */
 			letter-spacing: 1em;
 			padding-left: 1em;
 		}
@@ -504,7 +504,7 @@ table.wp-block-table {
 
 	@include media( tablet ) {
 		&.is-style-dots {
-			max-width: $x-grid-column-6;
+			max-width: $x-grid-column-6; /* @include globalvar(max-width, column-6); */
 		}
 	}
 }
