@@ -84,8 +84,11 @@ if ( ! function_exists( 'smallbusinesstheme_setup' ) ) :
 		// Adding support for core block visual styles.
 		// add_theme_support( 'wp-block-styles' );
 
-		// Add support for full and wide align images.
-		// add_theme_support( 'editor-styles' );
+		// Add support for core editor styles
+		add_theme_support( 'editor-styles' );
+
+		// Add support for custom editor styles
+		add_editor_style( 'editor.css' );
 
 		// Add support for custom color scheme.
 		add_theme_support( 'editor-color-palette', array(
@@ -203,7 +206,7 @@ add_action( 'wp_enqueue_scripts', 'smallbusinesstheme_scripts' );
 function smallbusinesstheme_editor_styles() {
 	wp_enqueue_style( 'smallbusinesstheme-editor-style', get_template_directory_uri() . '/editor.css' );
 }
-add_action( 'enqueue_block_editor_assets', 'smallbusinesstheme_editor_styles' );
+// add_action( 'enqueue_block_editor_assets', 'smallbusinesstheme_editor_styles' );
 
 /**
  * Check whether the browser supports JavaScript
