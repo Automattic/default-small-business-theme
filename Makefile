@@ -21,7 +21,7 @@ clean-vars:
 build: clean check-for-grunt
 	@grunt build
 	
-dev: clean check-for-grunt
+dev: clean clean-vars check-for-grunt
 	@grunt build && grunt watch
 	
 css-vars: clean-vars
