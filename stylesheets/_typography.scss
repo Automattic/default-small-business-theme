@@ -96,10 +96,10 @@ small,
 
 .main-navigation,
 .hentry .entry-meta > span {
- 	font-family: $heading-font; /* @include globalvar(font-family, heading); */
-	font-size: $x-font-size-xs; /* @include globalvar(font-size, xs); */
+ 	font-family: $x-font-family-heading;
+	font-size: $x-font-size-xs;
  	@include media( mobile ) {
-		font-size: $x-font-size-sm; /* @include globalvar(font-size, sm); */
+		font-size: $x-font-size-sm;
 	}
 }
  .main-navigation > div > ul > li > a,

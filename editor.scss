@@ -9,7 +9,7 @@
 
 // Fix line heights in forms
 .editor-rich-text__tinymce.mce-content-body {
-	line-height: $x-font-leading-body; /* @include globalvar(line-height, body); */
+	line-height: $x-font-leading-body;
 }
 
 // Reset font scale to pixels for the editor
@@ -40,18 +40,18 @@ blockquote {
 	&.wp-block-quote.is-style-large {
 
 		@include media(tablet) {
-			margin-right: 0; /*@include globalvar( margin-right, 0 );*/
+			margin-right: 0;
 		}
 	}
 
 	&:not(.is-large):not(.is-style-large) {
 		border-left: none;
-		margin-right: 0; /*@include globalvar( margin-right, 0 );*/
-		padding-left: 0; /*@include globalvar( padding-left, 0 );*/
+		margin-right: 0;
+		padding-left: 0;
 	}
 
 	.wp-block-quote__citation {
-		padding-left: $x-space-sm; /*@include globalvar( padding-left, sm );*/
+		padding-left: $x-space-sm;
 	}
 }
 
