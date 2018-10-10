@@ -1,7 +1,6 @@
 ## Directory structure
 
 - **build/** » The build files are placed here.
-- **docs** » Documentation on how to use the build system.
 - **stylesheets** » Contains all the Sass stylesheets.
 - **tools** » Contains build system scripts.
 - **excludes.rsync** » Files to exclude from build.
@@ -9,7 +8,6 @@
 - **Makefile** » Build makefile.
 - **package-lock.json** » Node.js dependency lock file.
 - **package.json** » Node.js dependencies.
-- **readme.md** » The document you are currently reading.
 - **readme.txt** » Readme for the theme.
 - **rtl.scss** » RTL Stylesheet.
 - **style.scss** » Theme Stylesheet. Main entry point for Sass styles.
