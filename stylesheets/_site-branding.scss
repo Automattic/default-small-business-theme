@@ -62,7 +62,7 @@
 			@include link-transition;
 			display: block;
 			text-decoration: none;
-			color: inherit;
+			color: $x-color-words-heading;
 
 			&:hover {
 				color: $x-color-secondary-base;
