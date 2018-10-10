@@ -1,7 +1,6 @@
 
 /** === Typography === */
-body,
-input {
+body {
 
 	// font-size base for mobile
 	font-size: $x-font-size-base;
@@ -26,6 +25,7 @@ textarea {
 	font-weight: 400;
 }
 
+.site-title,
 h1, h2, h3, h4, h5, h6 {
 	clear: both;
 	font-weight: 400;
@@ -71,6 +71,7 @@ h2,
 	font-size: $x-font-size-xl;
 }
 
+.site-title,
 h3,
 .text--lg,
 .has-large-font-size {
@@ -91,6 +92,22 @@ small,
 
 .text--xs {
 	font-size: $x-font-size-xs;
+}
+
+.main-navigation,
+.hentry .entry-meta > span {
+ 	font-family: $heading-font; /* @include globalvar(font-family, heading); */
+	font-size: $x-font-size-xs; /* @include globalvar(font-size, xs); */
+ 	@include media( mobile ) {
+		font-size: $x-font-size-sm; /* @include globalvar(font-size, sm); */
+	}
+}
+ .main-navigation > div > ul > li > a,
+.hentry .entry-meta .posted-on {
+ 	font-weight: 400;
+	letter-spacing: .125em;
+	text-decoration: none;
+	text-transform: uppercase;
 }
 
 dfn, em, i {
