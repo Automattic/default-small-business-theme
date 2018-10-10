@@ -1,0 +1,26 @@
+{
+  "name": "default-small-business-theme",
+  "title": "Default Small Business Theme",
+  "description": "Gutenberg-ready small business theme for WordPress.com",
+  "version": "1.0.0",
+  "license": "GPL-2.0+",
+  "main": "Gruntfile.js",
+  "devDependencies": {
+    "colors": "~1.3.2",
+    "file": "~0.2.2",
+    "grunt": "^1.0.3",
+    "grunt-contrib-copy": "~0.8.0",
+    "grunt-contrib-less": "^2.0.0",
+    "grunt-contrib-watch": "^1.1.0",
+    "grunt-sass": "~1.0.0",
+    "minimist": "~1.2.0",
+    "node-bourbon": "~4.2.3",
+    "node-sass": "~4.5.0",
+    "susy": "~2.2.5",
+    "underscore": "~1.9.1"
+  },
+  "engines": {
+    "node": ">=0.8.0",
+    "npm": ">=1.1.0"
+  }
+}

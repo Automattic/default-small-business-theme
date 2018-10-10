@@ -5,24 +5,25 @@ button,
 input[type="button"],
 input[type="reset"],
 input[type="submit"] {
-	@include block-padding( xxs, xs );
-	@include globalvar(background-color, primary-base);
-	@include globalvar(color, shade-white);
-	@include globalvar(font-family, heading);
-	@include globalvar(font-size, sm);
-	@include globalvar(line-height, body);
+	background-color: $x-color-primary-base;
+	color: $x-color-shade-white;
+	font-family: $x-font-family-heading;
+	font-size: $x-font-size-sm;
+	line-height: $x-font-leading-body;
 	@include rounded( 3px );
 	border: 2px solid green;
-	@include globalvar(border-color, primary-base);
+	border-color: $x-color-primary-base;
 	box-shadow: 1px 1px 5px 1px rgba(0,0,0,0.33);
 	cursor: pointer;
 	display: inline-block;
 	font-weight: 600;
 	text-decoration: none;
 	text-transform: uppercase;
+	
+	padding: $x-space-xxs $x-space-xs; // @include block-padding( xxs, xs );
 
 	@include media( tablet ) {
-		@include block-padding( xs, sm );
+		padding: $x-space-xs $x-space-sm; // @include block-padding( xs, sm );
 	}
 }
 
@@ -30,9 +31,9 @@ button:hover,
 input[type="button"]:hover,
 input[type="reset"]:hover,
 input[type="submit"]:hover {
-	@include globalvar(border-color, primary-base);
-	@include globalvar(background-color, shade-white);
-	@include globalvar(color, primary-base);
+	border-color: $x-color-primary-base;
+	background-color: $x-color-shade-white;
+	color: $x-color-primary-base;
 }
 
 button:active, button:focus,
@@ -42,9 +43,9 @@ input[type="reset"]:active,
 input[type="reset"]:focus,
 input[type="submit"]:active,
 input[type="submit"]:focus {
-	@include globalvar(border-color, words-subtle);
-	@include globalvar(background-color, shade-white);
-	@include globalvar(color, words-subtle);
+	border-color: $x-color-words-subtle;
+	background-color: $x-color-shade-white;
+	color: $x-color-words-subtle;
 }
 
 input[type="text"],
@@ -64,7 +65,7 @@ input[type="datetime-local"],
 input[type="color"],
 textarea {
 	border: 1px solid gray;
-	@include globalvar(border-color, border-form);
+	border-color: $x-color-border-form;
 }
 
 input[type="text"]:focus,
@@ -84,7 +85,7 @@ input[type="datetime-local"]:focus,
 input[type="color"]:focus,
 textarea:focus {
 	border: 1px solid gray;
-	@include globalvar(border-color, border-form-focus);
+	border-color: $x-color-border-form-focus;
 }
 
 select {

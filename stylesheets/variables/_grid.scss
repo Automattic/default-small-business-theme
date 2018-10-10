@@ -1,37 +1,21 @@
 
-// !Widths (grid-based)
-
 $grid-column: 80px;
 $grid-gutter: 25px;
 $grid-column-count: 12;
 
-$grid: (
+$x-grid-column: $grid-column;
+$x-grid-gutter: $grid-gutter;
+$x-grid-column-count: $grid-column-count;
 
-	column: $grid-column,
-	gutter: $grid-gutter,
-	column-count: $grid-column-count,
-
-	// This should be foreach loop so it can be repeated more easily in _space.scss
-	column-1: calc( 1 * ( var(--grid-column) + var(--grid-gutter) ) - var(--grid-gutter) ),
-	column-2: calc( 2 * ( var(--grid-column) + var(--grid-gutter) ) - var(--grid-gutter) ),
-	column-3: calc( 3 * ( var(--grid-column) + var(--grid-gutter) ) - var(--grid-gutter) ),
-	column-4: calc( 4 * ( var(--grid-column) + var(--grid-gutter) ) - var(--grid-gutter) ),
-	column-5: calc( 5 * ( var(--grid-column) + var(--grid-gutter) ) - var(--grid-gutter) ),
-	column-6: calc( 6 * ( var(--grid-column) + var(--grid-gutter) ) - var(--grid-gutter) ),
-	column-7: calc( 7 * ( var(--grid-column) + var(--grid-gutter) ) - var(--grid-gutter) ),
-	column-8: calc( 8 * ( var(--grid-column) + var(--grid-gutter) ) - var(--grid-gutter) ),
-	column-9: calc( 9 * ( var(--grid-column) + var(--grid-gutter) ) - var(--grid-gutter) ),
-	column-10: calc( 10 * ( var(--grid-column) + var(--grid-gutter) ) - var(--grid-gutter) ),
-	column-11: calc( 11 * ( var(--grid-column) + var(--grid-gutter) ) - var(--grid-gutter) ),
-	column-12: calc( 12 * ( var(--grid-column) + var(--grid-gutter) ) - var(--grid-gutter) ),
-
-);
-
-// https://bamboolab.eu/blog/improve-your-development-with-powerful-sass-lists-and-maps
-// @function list_grid_column_counts( $count: $grid-column-count ) {
-//	@for $i from 1 through $grid-column-count {
-//		$new-column: unquote( 'column-#{$i}: 12' ); // unquote( 'column-#{$i}: calc( #{$i} * ( var(--grid-column) + var(--grid-gutter) ) - var(--grid-gutter) )' );
-//		$grid: append( $grid, $new-column, 'comma' );
-//	}
-//	@return $result;
-// }
+$x-grid-column-1: calc( 1 * ( #{$x-grid-column} + #{$x-grid-gutter} ) - #{$x-grid-gutter} );
+$x-grid-column-2: calc( 2 * ( #{$x-grid-column} + #{$x-grid-gutter} ) - #{$x-grid-gutter} );
+$x-grid-column-3: calc( 3 * ( #{$x-grid-column} + #{$x-grid-gutter} ) - #{$x-grid-gutter} );
+$x-grid-column-4: calc( 4 * ( #{$x-grid-column} + #{$x-grid-gutter} ) - #{$x-grid-gutter} );
+$x-grid-column-5: calc( 5 * ( #{$x-grid-column} + #{$x-grid-gutter} ) - #{$x-grid-gutter} );
+$x-grid-column-6: calc( 6 * ( #{$x-grid-column} + #{$x-grid-gutter} ) - #{$x-grid-gutter} );
+$x-grid-column-7: calc( 7 * ( #{$x-grid-column} + #{$x-grid-gutter} ) - #{$x-grid-gutter} );
+$x-grid-column-8: calc( 8 * ( #{$x-grid-column} + #{$x-grid-gutter} ) - #{$x-grid-gutter} );
+$x-grid-column-9: calc( 9 * ( #{$x-grid-column} + #{$x-grid-gutter} ) - #{$x-grid-gutter} );
+$x-grid-column-10: calc( 10 * ( #{$x-grid-column} + #{$x-grid-gutter} ) - #{$x-grid-gutter} );
+$x-grid-column-11: calc( 11 * ( #{$x-grid-column} + #{$x-grid-gutter} ) - #{$x-grid-gutter} );
+$x-grid-column-12: calc( 12 * ( #{$x-grid-column} + #{$x-grid-gutter} ) - #{$x-grid-gutter} );

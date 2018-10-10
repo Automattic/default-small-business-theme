@@ -17,14 +17,14 @@
 
 .page-header {
 
-	@include globalvar(max-width, column-10);
+	max-width: $x-grid-column-10;
 	border-bottom: 1px solid grey;
-	@include globalvar(border-bottom-color, border-base);
+	border-bottom-color: $x-color-border-base;
 	margin-left: auto;
 	margin-right: auto;
 
 	> * {
-		@include block-padding();
+		padding: $x-space-sm; // @include block-padding();
 	}
 
 	> *:last-child {
@@ -32,7 +32,7 @@
 	}
 
 	.page-title {
-		@include globalvar(color, words-subtle);
+		color: $x-color-words-subtle;
 	}
 
 	@include media( desktop ) {
@@ -41,7 +41,7 @@
 		justify-content: flex-end;
 
 		> * {
-			@include globalvar(max-width, column-7);
+			max-width: $x-grid-column-7;
 			padding-left: 0;
 			padding-right: 0;
 			width: 100%;
@@ -53,10 +53,10 @@
 
 .comments-area {
 
-	@include block-margin( lg, 0 );
+	margin: $x-space-lg 0; // @include block-margin( lg, 0 );
 
 	@include media( tablet ) {
-		@include globalvar(max-width, column-10);
+		max-width: $x-grid-column-10;
 		display: flex;
 		justify-content: flex-end;
 		flex-direction: row;
@@ -69,8 +69,8 @@
 
 .comments-title {
 
-	@include block-margin();
-	@include globalvar(max-width, column-3);
+	margin: $x-space-sm; // @include block-margin();
+	max-width: $x-grid-column-3;
 	//width: 100%;
 
 	@include media( tablet ) {
@@ -80,10 +80,10 @@
 
 .comment-respond {
 
-	@include block-margin();
+	margin: $x-space-sm; // @include block-margin();
 
 	@include media( tablet ) {
-		@include globalvar(max-width, column-7);
+		max-width: $x-grid-column-7;
 		flex: 1 1 70%;
 	}
 
@@ -93,7 +93,7 @@
 
 	form {
 		> p {
-			@include globalvar(margin-bottom, sm);
+			margin-bottom: $x-space-sm;
 
 			&:not(.form-submit) {
 
@@ -108,7 +108,7 @@
 .comment-list {
 
 	list-style: none;
-	@include block-margin();
+	margin: $x-space-sm; // @include block-margin();
 
 	li {
 		padding-left: inherit;
@@ -121,7 +121,7 @@
 
 	.comment {
 		list-style: none;
-		@include block-margin( md, 0 );
+		margin: $x-space-md 0; // @include block-margin( md, 0 );
 	}
 
 	.comment-content {
@@ -131,7 +131,7 @@
 	}
 
 	.children {
-		@include globalvar(margin-left, md);
+		margin-left: $x-space-md;
 
 		.comment {
 			width: 100%;
@@ -139,57 +139,57 @@
 	}
 
 	@include media( tablet ) {
-		@include globalvar(max-width, column-7);
-		@include globalvar(margin-right, column-1);
+		max-width: $x-grid-column-7;
+		margin-right: $x-space-column-1;
 		margin-left: 0;
 	}
 }
 
 .comment-body {
 
-	// @include globalvar(max-width, column-7);
+	// max-width: $x-grid-column-7;
 	position: relative;
 	min-height: 9rem;
 
 	> * {
-		@include block-margin( sm, 0 );
+		margin: $x-space-sm 0; // @include block-margin( sm, 0 );
 		&:first-of-type {
 			margin-top: 0;
 		}
 	}
 
 	.reply {
-		@include block-margin( sm, 0 );
-		@include globalvar(font-family, heading);
-		@include globalvar(font-size, xs);
+		margin: $x-space-sm 0; // @include block-margin( sm, 0 );
+		font-family: $x-font-family-heading;
+		font-size: $x-font-size-xs;
 		text-transform: uppercase;
 	}
 
 	@include media( tablet ) {
 		& > *:not(.comment-author):not(.comment-meta) {
-			margin-left: calc( #{map-get($grid, column)} + #{map-get($grid, gutter)} );
-		//	@include globalvar(margin-left, width-column-1);
+			margin-left: calc( #{$x-grid-column} + #{$x-grid-gutter} );
+		//	margin-left: $x-space-width-column-1;
 		}
 	}
 }
 
 .comment-author {
 
-	@include globalvar(margin-bottom, xxs);
+	margin-bottom: $x-space-xxs;
 	display: flex;
 	align-items: center;
 
 	.avatar {
-		@include globalvar( margin-right, sm);
+		margin-right: $x-space-sm;
 	}
 
 	cite {
-		@include globalvar( padding-top, sm);
-		@include globalvar( padding-bottom, sm);
-		@include globalvar( font-family, heading);
-		@include globalvar( font-size, sm);
+		padding-top: $x-space-sm;
+		padding-bottom: $x-space-sm;
+		font-family: $x-font-family-heading;
+		font-size: $x-font-size-sm;
 		border-top: 1px solid grey;
-		@include globalvar( border-top-color, border-base);
+		border-top-color: $x-color-border-base;
 		font-weight: 500;
 		font-style: normal;
 		letter-spacing: .125rem;
@@ -203,26 +203,26 @@
 		justify-content: flex-end;
 
 		.avatar {
-			@include globalvar( margin-left, gutter );
+			margin-left: $x-space-gutter;
 			margin-right: 20px;
 		}
 	}
 }
 
 .comment-meta {
-	@include globalvar(font-family, heading);
-	@include globalvar(font-size, xs);
+	font-family: $x-font-family-heading;
+	font-size: $x-font-size-xs;
 	position: absolute;
 	left: calc( 60px + 1rem );
 	margin-top: -1.4rem;
 
 	a {
-		@include globalvar( color, words-subtle );
+		color: $x-color-words-subtle;
 	}
 
 	@include media( tablet ) {
-		@include globalvar(width, column-1);
-		left: calc( 100% + #{map-get($grid, gutter)} );
+		width: $x-grid-column-1;
+		left: calc( 100% + #{$x-grid-gutter} );
 		margin-top: inherit;
 	}
 }

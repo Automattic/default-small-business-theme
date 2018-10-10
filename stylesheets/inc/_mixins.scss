@@ -64,27 +64,8 @@ $wide_width: 12 * ( 80px + 25px ) - 25px;
 	}
 }
 
-@mixin block-margin( $v-space: sm, $h-space: sm ) {
-	@include globalvar( margin-top, $v-space );
-	@include globalvar( margin-bottom, $v-space );
-	@include globalvar( margin-left, $h-space );
-	@include globalvar( margin-right, $h-space );
-}
-
-@mixin block-padding( $v-space: sm, $h-space: sm ) {
-	@include globalvar( padding-top, $v-space );
-	@include globalvar( padding-bottom, $v-space );
-	@include globalvar( padding-left, $h-space );
-	@include globalvar( padding-right, $h-space );
-}
-
 @mixin grid_column_width( $columns: 6 ) {
-	width: $columns * ( #{map-get($grid, column)} + #{map-get($grid, gutter)} ) - #{map-get($grid, gutter)};
-}
-
-@mixin grid_column_width_margins( $columns: 6 ) {
-	//	width: calc( #{$width-column-2} - #{map-get($space_vars, sm)} - #{map-get($space_vars, sm)} );
-	width: calc( var(--grid-column-#{$columns} ) - ( #{map-get($space, sm)} * 2 ) );
+	width: $columns * ( #{$x-grid-column} + #{$x-grid-gutter} ) - #{$x-grid-gutter};
 }
 
 @mixin rounded($radius: 0.5em) {

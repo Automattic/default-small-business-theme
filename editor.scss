@@ -1,34 +1,16 @@
-// External.
+
+// !External.
 @import "bourbon";
 
-// Root CSS variables.
-@import "stylesheets/variables/base";
-
-// Includes.
+// !Includes.
+@import "stylesheets/variables/grid";
+@import "stylesheets/variables/space";
+@import "stylesheets/variables/fonts";
+@import "stylesheets/variables/colors";
 @import "stylesheets/inc/animations";
 @import "stylesheets/inc/mixins";
 
-.edit-post-visual-editor{
-	// for each variable map
-	@each $var-map-name, $var-map in $var-maps {
-		// for each variable in the variable map
-		@each $var, $val in $var-map {
-			// if it is a map, go another level deep
-			@if type-of($val) == map {
-				// each in the map
-				@each $var-n, $val-n in $val {
-					// do the definition
-					$prop: --#{$var-map-name}-#{$var}-#{$var-n};
-					#{$prop}: $val-n;
-				}
-			} @else {
-				// do the definition
-				$prop: --#{$var-map-name}-#{$var};
-				#{$prop}: $val;
-			}
-		}
-	}
-}
+:root {} // .edit-post-visual-editor
 
 // Responsive fonts
 .edit-post-visual-editor .editor-block-list__block,
@@ -36,29 +18,26 @@
 .editor-post-title .editor-post-title__input,
 .edit-post-visual-editor,
 .edit-post-visual-editor p {
-	@include globalvar(font-family, body);
+	font-family: $x-font-family-body;
 }
 
 .edit-post-visual-editor,
 .edit-post-visual-editor p {
-	@include globalvar(font-size, base);
+	font-size: $x-font-size-base;
 }
 
 // Add theme styles.
 .edit-post-visual-editor {
 
-	@import "stylesheets/elements.scss";
-	@import "stylesheets/typography.scss";
-	// @import "css/blocks.scss";
+	@import "stylesheets/elements";
+	@import "stylesheets/typography";
 
 	// Responsive font-size
 	.editor-block-list__block,
 	.editor-block-list__block p {
-
-		@include globalvar(font-size, base);
+		font-size: $x-font-size-base;
 
 		@include media(tablet) {
-
 			// you can manage typography editing only these 2 variables
 			--font-size-base: calc( #{$font-size-base} * #{$font-size-responsive-ratio} ); // 1 1/6
 		}
@@ -66,23 +45,24 @@
 
 	// Override font top-level editor styles to match front end
 	.editor-rich-text__tinymce.mce-content-body {
-		@include globalvar(line-height, body);
-		@include globalvar(color, words-base);
+		line-height: $x-font-leading-body;
+		color: $x-color-words-base;
 	}
 
 	// Button
 	.wp-block-button .wp-block-button__link {
-		@include globalvar(background-color, primary-base);
-		@include globalvar(color, shade-white);
-		@include globalvar(padding, xs);
-		@include globalvar(padding-left, sm);
-		@include globalvar(padding-right, sm);
-		@include globalvar(font-family, heading);
-		@include globalvar(font-size, sm);
-		@include globalvar(line-height, body);
 		@include rounded( 3px );
+
+		background-color: $x-color-primary-base;
+		color: $x-color-shade-white;
+		padding: $x-space-xs;
+		padding-left: $x-space-sm;
+		padding-right: $x-space-sm;
+		font-family: $x-font-family-heading;
+		font-size: $x-font-size-sm;
+		line-height: $x-font-leading-body;
 		border: 2px solid green;
-		@include globalvar(border-color, primary-base);
+		border-color: $x-color-primary-base;
 		box-shadow: 1px 1px 5px 1px rgba(0,0,0,0.33);
 		cursor: pointer;
 		display: inline-block;
@@ -142,9 +122,9 @@
 	.wp-block-image figcaption,
 	.wp-block-gallery .blocks-gallery-image figcaption,
 	.wp-block-gallery .blocks-gallery-item figcaption {
-		@include globalvar(color, words-subtle);
-		@include globalvar(font-family, heading);
-		@include block-padding( xxs, 0 );
+		color: $x-color-words-subtle;
+		font-family: $x-font-family-heading;
+		padding: $x-space-xxs 0; // @include block-padding( xxs, 0 );
 		text-align: left;
 		margin: 0;
 	}
@@ -155,7 +135,7 @@
 	.wp-block-gallery.alignfull .blocks-gallery-image figcaption,
 	.wp-block-gallery.alignfull .blocks-gallery-item figcaption,
 	[data-type="core/image"][data-align=full] figcaption {
-		@include block-padding( xs, sm);
+		padding: $x-space-xs $x-space-sm; // @include block-padding( xs, sm);
 		position: inherit;
 	}
 
@@ -168,9 +148,9 @@
 		}
 
 		.wp-block-quote__citation {
-			@include globalvar(font-family, heading);
-			@include globalvar(font-size, xs);
-			@include globalvar(color, words-subtle);
+			font-family: $x-font-family-heading;
+			font-size: $x-font-size-xs;
+			color: $x-color-words-subtle;
 			font-style: normal;
 			font-weight: 500;
 		}
