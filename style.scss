@@ -24,12 +24,8 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 @import "bourbon";
 
 // !Includes.
-@import "stylesheets/variables/grid";
-@import "stylesheets/variables/space";
-@import "stylesheets/variables/fonts";
-@import "stylesheets/variables/colors";
-@import "stylesheets/inc/animations";
-@import "stylesheets/inc/mixins";
+@import "stylesheets/variables/index";
+@import "stylesheets/inc/index";
 
 // !Root.
 :root {}

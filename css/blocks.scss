@@ -1,13 +1,8 @@
 
 /** === !Blocks === */
 
-// Root CSS variables.
-@import "../stylesheets/variables/_colors";
-@import "../stylesheets/variables/_fonts";
-@import "../stylesheets/variables/_grid";
-@import "../stylesheets/variables/_space";
-
-// Includes.
+// !Includes
+@import "../stylesheets/variables/index";
 @import "../stylesheets/inc/index";
 
 // !Block sizing & positioning
