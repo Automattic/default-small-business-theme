@@ -1,34 +1,7 @@
 
-// Root CSS variables.
-@import "stylesheets/variables/base";
-
-// Includes.
-@import "stylesheets/inc/animations";
-@import "stylesheets/inc/mixins";
-@import "stylesheets/inc/functions";
-
-// Root css-variables
-body {
-	// for each variable map
-	@each $var-map-name, $var-map in $var-maps {
-		// for each variable in the variable map
-		@each $var, $val in $var-map {
-			// if it is a map, go another level deep
-			@if type-of($val) == map {
-				// each in the map
-				@each $var-n, $val-n in $val {
-					// do the definition
-					$prop: --#{$var-map-name}-#{$var}-#{$var-n};
-					#{$prop}: $val-n;
-				}
-			} @else {
-				// do the definition
-				$prop: --#{$var-map-name}-#{$var};
-				#{$prop}: $val;
-			}
-		}
-	}
-}
+// !Includes.
+@import "stylesheets/variables/index";
+@import "stylesheets/inc/index";
 
 @import "stylesheets/typography.scss";
 @import "stylesheets/elements.scss";
@@ -36,7 +9,7 @@ body {
 
 // Fix line heights in forms
 .editor-rich-text__tinymce.mce-content-body {
-	@include globalvar(line-height, body);
+	line-height: $x-font-leading-body;
 }
 
 // Reset font scale to pixels for the editor
@@ -67,18 +40,18 @@ blockquote {
 	&.wp-block-quote.is-style-large {
 
 		@include media(tablet) {
-			@include globalvar( margin-right, 0 );
+			margin-right: 0;
 		}
 	}
 
 	&:not(.is-large):not(.is-style-large) {
 		border-left: none;
-		@include globalvar( margin-right, 0 );
-		@include globalvar( padding-left, 0 );
+		margin-right: 0;
+		padding-left: 0;
 	}
 
 	.wp-block-quote__citation {
-		@include globalvar( padding-left, sm );
+		padding-left: $x-space-sm;
 	}
 }
 

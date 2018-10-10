@@ -1,37 +1,29 @@
 
-// !Spacing
+$x-space-unit: 1.5rem;
 
-$space: (
+$x-space-xxs: calc(0.25 * #{$x-space-unit});
+$x-space-xs: calc(0.5 * #{$x-space-unit});
+$x-space-sm: calc(0.75 * #{$x-space-unit});
+$x-space-md: calc(1.25 * #{$x-space-unit});
+$x-space-lg: calc(2 * #{$x-space-unit});
+$x-space-xl: calc(3.25 * #{$x-space-unit});
+$x-space-xxl: calc(5.25 * #{$x-space-unit});
 
-	unit: 1.5rem,
+$x-space-base: $x-space-sm;
 
-	xxs:  calc(0.25 * var(--space-unit)),
-	xs:   calc(0.5 * var(--space-unit)),
-	sm:   calc(0.75 * var(--space-unit)),
-	md:   calc(1.25 * var(--space-unit)),
-	lg:   calc(2 * var(--space-unit)),
-	xl:   calc(3.25 * var(--space-unit)),
-	xxl:  calc(5.25 * var(--space-unit)),
+$x-space-column: 80px;
+$x-space-gutter: 25px;
+$x-space-column-count: 12;
 
- 	// !components padding
-	base: var(--space-sm),
-
-	// !columns (needs to sync with: grid.scss)
-	column: 80px,
-	gutter: 25px,
-	column-count: 12,
-
-	column-1: calc( 1 * ( var(--grid-column) + var(--grid-gutter) ) - var(--grid-gutter) ),
-	column-2: calc( 2 * ( var(--grid-column) + var(--grid-gutter) ) - var(--grid-gutter) ),
-	column-3: calc( 3 * ( var(--grid-column) + var(--grid-gutter) ) - var(--grid-gutter) ),
-	column-4: calc( 4 * ( var(--grid-column) + var(--grid-gutter) ) - var(--grid-gutter) ),
-	column-5: calc( 5 * ( var(--grid-column) + var(--grid-gutter) ) - var(--grid-gutter) ),
-	column-6: calc( 6 * ( var(--grid-column) + var(--grid-gutter) ) - var(--grid-gutter) ),
-	column-7: calc( 7 * ( var(--grid-column) + var(--grid-gutter) ) - var(--grid-gutter) ),
-	column-8: calc( 8 * ( var(--grid-column) + var(--grid-gutter) ) - var(--grid-gutter) ),
-	column-9: calc( 9 * ( var(--grid-column) + var(--grid-gutter) ) - var(--grid-gutter) ),
-	column-10: calc( 10 * ( var(--grid-column) + var(--grid-gutter) ) - var(--grid-gutter) ),
-	column-11: calc( 11 * ( var(--grid-column) + var(--grid-gutter) ) - var(--grid-gutter) ),
-	column-12: calc( 12 * ( var(--grid-column) + var(--grid-gutter) ) - var(--grid-gutter) ),
-
-);
+$x-space-column-1: calc( 1 * ( #{$x-grid-column} + #{$x-grid-gutter} ) - #{$x-grid-gutter} );
+$x-space-column-2: calc( 2 * ( #{$x-grid-column} + #{$x-grid-gutter} ) - #{$x-grid-gutter} );
+$x-space-column-3: calc( 3 * ( #{$x-grid-column} + #{$x-grid-gutter} ) - #{$x-grid-gutter} );
+$x-space-column-4: calc( 4 * ( #{$x-grid-column} + #{$x-grid-gutter} ) - #{$x-grid-gutter} );
+$x-space-column-5: calc( 5 * ( #{$x-grid-column} + #{$x-grid-gutter} ) - #{$x-grid-gutter} );
+$x-space-column-6: calc( 6 * ( #{$x-grid-column} + #{$x-grid-gutter} ) - #{$x-grid-gutter} );
+$x-space-column-7: calc( 7 * ( #{$x-grid-column} + #{$x-grid-gutter} ) - #{$x-grid-gutter} );
+$x-space-column-8: calc( 8 * ( #{$x-grid-column} + #{$x-grid-gutter} ) - #{$x-grid-gutter} );
+$x-space-column-9: calc( 9 * ( #{$x-grid-column} + #{$x-grid-gutter} ) - #{$x-grid-gutter} );
+$x-space-column-10: calc( 10 * ( #{$x-grid-column} + #{$x-grid-gutter} ) - #{$x-grid-gutter} );
+$x-space-column-11: calc( 11 * ( #{$x-grid-column} + #{$x-grid-gutter} ) - #{$x-grid-gutter} );
+$x-space-column-12: calc( 12 * ( #{$x-grid-column} + #{$x-grid-gutter} ) - #{$x-grid-gutter} );

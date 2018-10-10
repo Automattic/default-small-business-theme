@@ -23,14 +23,12 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 // !External.
 @import "bourbon";
 
-// !Root CSS variables.
-@import "stylesheets/variables/base";
-
 // !Includes.
-@import "stylesheets/inc/root";
-@import "stylesheets/inc/animations";
-@import "stylesheets/inc/mixins";
-@import "stylesheets/inc/functions";
+@import "stylesheets/variables/index";
+@import "stylesheets/inc/index";
+
+// !Root.
+:root {}
 
 // !Stylesheets.
 @import "stylesheets/normalize";
@@ -43,5 +41,3 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 @import "stylesheets/wordpress";
 @import "stylesheets/layout";
 @import "stylesheets/entries";
-@import "stylesheets/effects";
-@import "stylesheets/dev";

@@ -4,10 +4,10 @@
 .site-header {
 
 	border-bottom: 1px solid gray;
-	@include globalvar(border-bottom-color, base);
+	border-bottom-color: $x-color-border-base;
 
 	@include media( desktop ) {
-		@include globalvar(max-width, column-12);
+		max-width: $x-grid-column-12;
 		border-bottom: none;
 		display: flex;
 		align-items: center;
@@ -18,60 +18,62 @@
 
 .site-identity {
 
-	@include globalvar(color, subtle);
-	@include block-margin( sm, sm );
+	color: $x-color-words-subtle;
+	margin: $x-space-sm;
 
 	& > * {
-		// @include block-margin( sm, sm );
-		@include globalvar(margin-bottom, sm);
+		margin-bottom: $x-space-sm;
 
 		&:first-child {
-			@include globalvar(margin-top, 0);
+			margin-top: 0;
 		}
 
 		&:last-child {
-			@include globalvar(margin-bottom, 0);
+			margin-bottom: 0;
 		}
 	}
 
 	@include media( tablet ) {
 
-		@include globalvar(max-width, column-5);
+		max-width: $x-grid-column-5;
 		display: flex;
 		align-content: stretch;
 		align-items: center;
 		width: 100%;
 
 		& > * {
-			@include globalvar(margin-bottom, 0);
-			@include globalvar(margin-right, sm);
+			margin-bottom: 0;
+			margin-right: $x-space-sm;
 
 			&:last-child {
-				@include globalvar(margin-right, 0);
+				margin-right: 0;
 			}
 		}
 	}
 
 	.site-title {
 
-		@include globalvar(margin, 0);
+		font-family: $x-font-family-body;
+		font-size: $x-font-size-lg;
+		color: $x-color-words-base;
+		margin: 0;
 
 		a {
 			@include link-transition;
-			@include globalvar(color, heading);
 			display: block;
 			text-decoration: none;
+			color: $x-color-words-heading;
 
 			&:hover {
-				@include globalvar(color, secondary);
+				color: $x-color-secondary-base;
 			}
 		}
 	}
 
 	.site-description {
-		@include globalvar(font-family, heading);
-		@include globalvar(font-size, xs);
-		@include globalvar(color, subtle);
+		font-family: $x-font-family-heading;
+		font-size: $x-font-size-xs;
+		color: $x-color-words-subtle;
 		font-weight: normal;
 	}
 
@@ -84,31 +86,31 @@
 .site-footer {
 
 	border-top: 1px solid grey;
-	@include globalvar(border-color, base);
+	border-color: $x-color-border-base;
 
 	@include media( mobile ) {
-		@include globalvar( padding-bottom, xl );
+		padding-bottom: $x-space-xl;
 	}
 }
 
 .site-info {
 
-	@include globalvar(font-size, sm);
-	@include globalvar(font-family, body);
-	@include globalvar(padding, lg);
-	@include globalvar(padding-left, sm);
-	@include globalvar(padding-right, sm);
+	font-size: $x-font-size-sm;
+	font-family: $x-font-family-body;
+	padding: $x-space-lg;
+	padding-left: $x-space-sm;
+	padding-right: $x-space-sm;
 
 	a {
 		color: inherit;
 		&:hover {
 			text-decoration: none;
-			@include globalvar(color, primary);
+			color: $x-color-primary-base;
 		}
 	}
 
 	@include media( tablet ) {
-		@include globalvar(max-width, column-10);
+		max-width: $x-grid-column-10;
 		border-bottom: none;
 		display: flex;
 		align-items: center;

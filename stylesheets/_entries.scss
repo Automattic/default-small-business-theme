@@ -7,31 +7,30 @@
 
 	// Style all elemnts first
 	> * {
-		@include block-margin();
-		max-width: calc( 100% - ( #{map-get($space, sm)} * 2 ) );
+		margin: $x-space-sm;
+		max-width: calc( 100% - ( #{$x-space-sm} * 2 ) );
 
 		&:first-child {
 			margin-top: 0;
 		}
 
 		@include media( tablet ) {
-			@include globalvar(max-width, column-7);
-			@include globalvar(margin-right, column-3);
+			max-width: $x-grid-column-7;
+			margin-right: $x-space-column-3;
 			margin-left: auto;
 		}
 	}
 }
 
 .hentry {
-
-	@include block-margin( lg, 0 );
+	margin: $x-space-lg 0;
 
 	@include media( tablet ) {
-		@include block-margin( lg, sm );
+		margin: $x-space-lg, $x-space-sm;
 	}
 
 	@include media( desktop ) {
-		@include block-margin( lg, 0 );
+		margin: $x-space-lg 0;
 	}
 
 	.entry-featured-image {
@@ -41,7 +40,7 @@
 	.entry-header {
 
 		@include media( tablet ) {
-			@include globalvar(max-width, column-12);
+			max-width: $x-grid-column-12;
 			align-items: flex-start;
 			display: flex;
 			justify-content: flex-end;
@@ -51,28 +50,28 @@
 	}
 
 	.entry-title {
-		@include block-margin();
-		@include globalvar(color, primary);
+		margin: $x-space-sm;
+		color: $x-color-primary-base;
 
 		a {
-			@include globalvar(color, primary);
+			color: $x-color-primary-base;
 			@include link-transition;
 			color: inherit;
 			&:hover {
-				@include globalvar(color, secondary);
+				color: $x-color-secondary-base;
 				text-decoration: none;
 			}
 		}
 
 		@include media( tablet ) {
-			@include block-margin( sm, 0 );
-			@include globalvar(max-width, column-7);
+			margin: $x-space-sm 0;
+			max-width: $x-grid-column-7;
 			width: 100%;
 
 			// Single Page
 			&:first-child:last-child {
-				@include globalvar(max-width, column-7);
-				@include globalvar(margin-right, column-3);
+				max-width: $x-grid-column-7;
+				margin-right: $x-space-column-3;
 			 	margin-left: auto;
 			}
 		}
@@ -80,19 +79,19 @@
 
 	.entry-meta {
 
-		@include block-margin();
-		@include globalvar(color, subtle);
+		margin: $x-space-sm;
+		color: $x-color-words-subtle;
 		display: flex;
 		justify-content: space-between;
 
 		a {
-			@include globalvar(color, heading);
+			color: $x-color-words-heading;
 			@include link-transition;
 			font-weight: 600;
 
 			&:hover {
 				text-decoration: none;
-				@include globalvar(color, secondary);
+				color: $x-color-secondary-base;
 			}
 		}
 
@@ -112,7 +111,7 @@
 		}
 
 		@include media( tablet ) {
-			@include grid_column_width_margins(3);
+			width: calc( #{$x-grid-column-3} - ( #{$x-space-sm} * 2 ) );
 			flex-direction: column;
 			justify-content: inherit;
 
@@ -123,16 +122,16 @@
 
 		.entry-meta {
 
-			@include globalvar(line-height, double);
+			line-height: $x-font-leading-double;
 			flex-direction: column;
 			justify-content: space-between;
 
 			@include media( tablet ) {
 
-				@include globalvar( max-width, column-7 );
-				@include globalvar( margin-right, column-3 );
-				@include globalvar( padding-bottom, sm );
-				@include globalvar(line-height, body);
+				max-width: $x-grid-column-7;
+				margin-right: $x-space-column-3;
+				padding-bottom: $x-space-sm;
+				line-height: $x-font-leading-body;
 				flex-direction: row;
 				margin-left: auto;
 				width: 100%;
@@ -148,7 +147,7 @@
 		}
 
 		@include media( tablet ) {
-			@include globalvar( max-width, column-12);
+			max-width: $x-grid-column-12;
 			display: flex;
 			justify-content: flex-end;
 			margin-left: auto;
@@ -165,7 +164,7 @@
 		.post-thumbnail-inner {
 			display: block;
 			border: solid 10px inherit;
-			@include globalvar(border-color, secondary);
+			border-color: $x-color-secondary-base;
 			margin-bottom: 1.5em;
 
 			img {
@@ -208,14 +207,14 @@
 			}
 
 			&:before {
-				@include globalvar(background-color, primary-base);
+				background-color: $x-color-primary-base;
 				mix-blend-mode: screen;
 				opacity: 0.1;
 				z-index: 2;
 			}
 
 			&:after {
-				@include globalvar(background-color, primary-base);
+				background-color: $x-color-primary-base;
 				mix-blend-mode: multiply;
 				opacity: 1;
 				z-index: 3;
@@ -243,13 +242,13 @@
 			}
 
 			&:hover {
-				@include globalvar(color, primary);
+				color: $x-color-primary-base;
 				text-decoration: none;
 			}
 		}
 
 		@include media( tablet ) {
-			@include globalvar( max-width, column-12);
+			max-width: $x-grid-column-12;
 			margin-left: auto;
 			margin-right: auto;
 		}
@@ -271,9 +270,9 @@
 				> span {
 
 					&:last-child {
-						@include globalvar(padding-bottom, sm);
+						padding-bottom: $x-space-sm;
 						border-bottom: 1px solid grey;
-						@include globalvar(border-bottom-color, base);
+						border-bottom-color: $x-color-border-base;
 					}
 				}
 			}
@@ -289,13 +288,13 @@
 			.entry-footer .entry-meta {
 
 				border-bottom: 1px solid grey;
-				@include globalvar(border-bottom-color, base);
+				border-bottom-color: $x-color-border-base;
 
 				> span {
-					@include globalvar(margin-right, sm);
+					margin-right: $x-space-sm;
 
 					&:last-child {
-						@include globalvar(padding-bottom, 0);
+						padding-bottom: 0;
 						border-bottom: none;
 						margin-right: 0;
 					}
@@ -310,7 +309,7 @@
 
 		@include media( desktop ) {
 
-			@include globalvar(max-width, column-10);
+			max-width: $x-grid-column-10;
 			display: flex;
 			justify-content: flex-end;
 			flex-direction: row;
@@ -321,7 +320,7 @@
 
 			.entry-header {
 
-				@include globalvar(max-width, column-3);
+				max-width: $x-grid-column-3;
 				display: block;
 				flex: 1 1 40%;
 				margin: 0;
@@ -329,7 +328,7 @@
 
 			.entry-title {
 
-				@include block-margin();
+				margin: $x-space-sm;
 				margin-top: 0;
 				width: auto;
 			}
@@ -340,20 +339,20 @@
 
 				> * {
 
-					@include globalvar(margin-left, sm);
-					@include globalvar(margin-right, sm);
+					margin-left: $x-space-sm;
+					margin-right: $x-space-sm;
 				}
 			}
 
 			.entry-footer {
 
-				@include globalvar(margin-left, column-3);
+				margin-left: $x-space-column-3;
 				flex: 1 0 60%;
 
 				.entry-meta {
 
-					@include globalvar(margin-left, sm);
-					@include globalvar(margin-right, sm);
+					margin-left: $x-space-sm;
+					margin-right: $x-space-sm;
 
 					> span {
 						flex: 1 1 20%;

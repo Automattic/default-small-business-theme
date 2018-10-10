@@ -18,7 +18,7 @@
 				display: block;
 
 				&:hover {
-					@include globalvar(color, secondary);
+					color: $x-color-secondary-base;
 					text-decoration: none;
 				}
 			}
@@ -32,12 +32,13 @@
 		> li {
 
 			> a {
-				@include globalvar(color, primary);
-				@include block-padding( xs, xs )
+				color: $x-color-primary-base;
 				@include link-transition;
 				clear: both;
 				display: block;
 				width: 100%;
+				
+				padding: $x-space-xs;
 			}
 
 			&#more-menu {
@@ -50,11 +51,11 @@
 			position: relative;
 
 			> a {
-				@include globalvar(padding-right, lg);
+				padding-right: $x-space-lg;
 			}
 
 			ul {
-				@include globalvar(background-color, shade-white);
+				background-color: $x-color-shade-white;
 				position: absolute;
 				left: -999em;
 				z-index: 99999;
@@ -68,10 +69,10 @@
 			}
 
 			button {
-				@include globalvar(background-color, transparent);
-				@include globalvar(color, primary);
-				@include globalvar(padding, xs);
-				line-height: #{map-get($space, xs)};
+				background-color: $x-color-background-transparent;
+				color: $x-color-primary-base;
+				padding: $x-space-xs;
+				line-height: $x-space-xs;
 				border: none;
 				box-shadow: inherit;
 				position: absolute;
@@ -96,10 +97,10 @@
 		&.toggled-on > div > ul {
 
 			border-top: 1px solid grey;
-			@include globalvar( border-color, base );
-			@include globalvar( background-color, shade-white );
-			@include globalvar( padding-top, xs );
-			@include globalvar( padding-bottom, xl );
+			border-color: $x-color-border-base;
+			background-color: $x-color-shade-white;
+			padding-top: $x-space-xs;
+			padding-bottom: $x-space-xl;
 			bottom: 0;
 			display: block;
 			left: 0;
@@ -108,22 +109,24 @@
 			z-index: 500;
 
 			li > a {
-				@include block-padding(xxs, xs);
+				font-size: $x-font-size-sm;
+				padding: $x-space-xxs $x-space-xs;
+				
 			}
 			.menu-item-has-children {
 				> a {
-					@include globalvar(padding-right, lg);
+					padding-right: $x-space-lg;
 				}
 
 				> button {
-					@include globalvar(padding-top, xxs);
-					@include globalvar(padding-bottom, xxs);
+					padding-top: $x-space-xxs;
+					padding-bottom: $x-space-xxs;
 				}
 			}
 
 			li.toggled-on > ul {
-				@include globalvar(width, column-3);
-				@include globalvar(padding-left, sm);
+				width: $x-grid-column-3;
+				padding-left: $x-space-sm;
 				position: relative;
 				left: inherit;
 				right: 0;
@@ -140,7 +143,7 @@
 
 	@include media( tablet ) {
 
-		@include block-margin( sm, 0 );
+		margin: $x-space-sm 0;
 		display: block;
 		width: 100%;
 
@@ -152,36 +155,37 @@
 				display: inline-block;
 
 				a {
-					@include block-padding( xs, xs );
+					font-size: $x-font-size-xs;
+					padding: $x-space-xs;
 				}
 
 				> ul {
 					border: 1px solid grey;
-					@include globalvar( border-color, base );
+					border-color: $x-color-border-base;
 
 					li {
 						display: block;
 
 						a {
-							@include globalvar(padding-top, xxs);
-							@include globalvar(padding-bottom, xxs);
+							padding-top: $x-space-xxs;
+							padding-bottom: $x-space-xxs;
 						}
 
 						&.menu-item-has-children > button {
-							@include globalvar(padding-top, xxs);
-							@include globalvar(padding-bottom, xxs);
+							padding-top: $x-space-xxs;
+							padding-bottom: $x-space-xxs;
 						}
 					}
 				}
 
 				&.toggled-on > ul {
-					@include globalvar(width, column-3);
+					width: $x-grid-column-3;
 					left: inherit;
 					right: 0;
 					opacity: 1;
 
 					> li.toggled-on > ul {
-						@include globalvar(padding-left, sm);
+						padding-left: $x-space-sm;
 						left: inherit;
 						position: relative;
 						right: 0;
@@ -209,8 +213,8 @@
 .menu-toggle {
 
 	position: fixed;
-	@include globalvar(bottom, sm);
-	@include globalvar(right, sm);
+	bottom: $x-space-sm;
+	right: $x-space-sm;
 	z-index: 9999;
 
 	@include media( tablet ) {
@@ -221,16 +225,17 @@
 .social-navigation {
 
 	@include media( mobile ) {
-		@include block-padding( sm, sm );
-		@include globalvar( background-color, shade-white );
-		@include globalvar( height, xl );
+		background-color: $x-color-shade-white;
+		height: $x-space-xl;
 		border-top: 1px solid grey;
-		@include globalvar( border-color, base );
+		border-color: $x-color-border-base;
 		bottom: 0;
 		left: 0;
 		position: fixed;
 		width: 100%;
 		z-index: 600;
+		
+		padding: $x-space-sm;
 
 		& > div {
 			padding-right: 100px;
@@ -269,7 +274,7 @@
 					line-height: 1;
 
 					&:hover {
-						@include globalvar(fill, primary-base);
+						fill: $x-color-primary-base;
 					}
 
 					@include media( mobile ) {
@@ -283,15 +288,15 @@
 }
 
 .post-navigation {
-
-	@include block-margin( lg, 0 );
+	margin: $x-space-lg 0;
+	
 	border-top: 1px solid green;
-	@include globalvar( border-top-color, primary );
+	border-top-color: $x-color-primary-base;
 	border-bottom: 1px solid grey;
-	@include globalvar( border-bottom-color, base);
+	border-bottom-color: $x-color-border-base;
 
 	&:last-child {
-		@include globalvar(margin-bottom, 0);
+		margin-bottom: 0;
 		border-bottom: none;
 	}
 
@@ -301,42 +306,42 @@
 		flex-direction: column;
 
 		.post-title {
-			@include globalvar( font-size, md);
+			font-size: $x-font-size-md;
+			font-weight: 300;
 			margin: 0;
 		}
 
 		.post-excerpt {
-			@include globalvar( color, base );
-			@include block-margin( xs, 0 );
+			color: $x-color-words-base;
+			margin: $x-space-xs 0;
 		}
 
 		a:hover {
 			text-decoration: none;
 			.post-excerpt {
-				@include globalvar( color, base );
+				color: $x-color-words-base;
 				text-decoration: none;
 			}
 		}
 
 		& > div {
-			@include block-margin();
+			margin: $x-space-sm;
 		}
 	}
 
 	@include media( tablet ) {
-		@include block-margin( sm, 0 );
+		margin: $x-space-sm 0;
 		display: inherit;
 		.nav-links {
-			@include globalvar(max-width, column-10);
+			max-width: $x-grid-column-10;
 			margin-left: auto;
 			margin-right: auto;
 			flex-direction: row;
 			justify-content: center;
 			align-content: center;
-
 			& > div {
-				@include block-margin( lg, sm );
-				@include globalvar( max-width, column-5);
+				margin: $x-space-lg $x-space-sm;
+				max-width: $x-grid-column-5;
 			}
 		}
 	}

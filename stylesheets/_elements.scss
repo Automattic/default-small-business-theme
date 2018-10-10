@@ -12,11 +12,11 @@ html {
 }
 
 body {
-	@include globalvar(background-color, shade-white);
+	background-color: $x-color-shade-white;
 }
 
 a {
-	@include globalvar(color, primary);
+	color: $x-color-primary-base;
 }
 
 a:visited {
@@ -41,7 +41,7 @@ p {
 }
 
 hr {
-	@include globalvar( background-color, shade-gray-3 );
+	background-color: $x-color-shade-gray-3;
 	border: 0;
 	height: 1px;
 	margin-bottom: 1.5em;
@@ -50,24 +50,24 @@ hr {
 abbr,
 acronym {
 	border-bottom: 1px dotted inherit;
-	@include globalvar( border-bottom-color, base);
+	border-bottom-color: $x-color-border-base;
 	cursor: help;
 }
 
 pre {
-	@include globalvar( background-color, shade-gray-1);
-	@include globalvar( margin-bottom, sm );
+	background-color: $x-color-shade-gray-1;
+	margin-bottom: $x-space-sm;
 	max-width: 100%;
 	overflow: auto;
-	@include globalvar( padding, sm );
+	padding: $x-space-sm;
 }
 
 ul,
 ol {
 	margin-top: 0;
 	margin-right: 0;
-	@include globalvar( margin-bottom, xs );
-	@include globalvar( margin-left, xs );
+	margin-bottom: $x-space-xs;
+	margin-left: $x-space-xs;
 	padding: 0;
 }
 
@@ -83,17 +83,17 @@ ul {
 ul > li {
 
 	position: relative;
-	@include globalvar( padding-left, sm );
+	padding-left: $x-space-sm;
 
 	&:before {
 		content: "\25CF\00a0";
 		display: block;
 		left: 0;
 		position: absolute;
-		@include globalvar(top, xxs);
-		@include globalvar(color, primary);
-		@include globalvar(line-height, md);
-		@include globalvar(font-size, xs);
+		top: $x-space-xxs;
+		color: $x-color-primary-base;
+		line-height: $x-font-leading-md;
+		font-size: $x-font-size-xs;
 	}
 
 	li:before {
@@ -110,25 +110,25 @@ ol > li {
 
 	counter-increment: sans-counter;
 	position: relative;
-	@include globalvar( padding-left, md );
+	padding-left: $x-space-md;
 
 	ol li {
-		@include globalvar( padding-left, md );
+		padding-left: $x-space-md;
 	}
 
 	ul li {
-		@include globalvar( padding-left, sm );
+		padding-left: $x-space-sm;
 	}
 
 	&:before {
 		content: counter(sans-counter, decimal-leading-zero) "\00a0";
 		left: 0;
 		position: absolute;
-		@include globalvar(top, xxs);
-		@include globalvar(color, primary);
-		@include globalvar(font-family, heading);
-		@include globalvar(font-size, xs);
-		@include globalvar(line-height, md);
+		top: $x-space-xxs;
+		color: $x-color-primary-base;
+		font-family: $x-font-family-heading;
+		font-size: $x-font-size-xs;
+		line-height: $x-font-leading-md;
 	}
 }
 
@@ -152,8 +152,8 @@ dt {
 dd {
 	margin-top: 0;
 	margin-right: 0;
-	@include globalvar( margin-bottom, xs );
-	@include globalvar( margin-left, xs );
+	margin-bottom: $x-space-xs;
+	margin-left: $x-space-xs;
 }
 
 img {
@@ -176,19 +176,21 @@ table {
 
 blockquote,
 blockquote.is-large {
-	@include block-padding( sm, sm );
 	margin-left: 0;
 	margin-right: 0;
 	border-top: 1px solid green;
-	@include globalvar( border-top-color, primary );
+	
+	padding: $x-space-sm;
+	
+	border-top-color: $x-color-border-primary;
 
 	p {
-		@include block-padding( xs, 0 );
+		padding: $x-space-xs 0;
 		word-break: break-word;
 	}
 
 	cite {
-		@include globalvar( color, subtle );
+		color: $x-color-words-subtle;
 	}
 }
 
@@ -198,5 +200,5 @@ address {
 
 mark,
 ins {
-	@include globalvar( background-color, feedback-warning );
+	background-color: $x-color-feedback-warning;
 }
