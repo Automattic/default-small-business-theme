@@ -1,158 +1,82 @@
 
-// !External.
-@import "bourbon";
+// Root CSS variables.
+@import "stylesheets/variables/_colors";
+@import "stylesheets/variables/_fonts";
+@import "stylesheets/variables/_grid";
+@import "stylesheets/variables/_space";
 
-// !Includes.
-@import "stylesheets/variables/grid";
-@import "stylesheets/variables/space";
-@import "stylesheets/variables/fonts";
-@import "stylesheets/variables/colors";
-@import "stylesheets/inc/animations";
-@import "stylesheets/inc/mixins";
+// Includes.
+@import "stylesheets/inc/index";
 
-:root {} // .edit-post-visual-editor
+@import "stylesheets/typography.scss";
+@import "stylesheets/elements.scss";
+@import "css/blocks.scss";
 
-// Responsive fonts
-.edit-post-visual-editor .editor-block-list__block,
-.editor-default-block-appender input[type="text"].editor-default-block-appender__content,
-.editor-post-title .editor-post-title__input,
-.edit-post-visual-editor,
-.edit-post-visual-editor p {
-	font-family: $x-font-family-body;
+// Fix line heights in forms
+.editor-rich-text__tinymce.mce-content-body {
+	line-height: $x-font-leading-body; /* @include globalvar(line-height, body); */
 }
 
-.edit-post-visual-editor,
-.edit-post-visual-editor p {
-	font-size: $x-font-size-base;
+// Reset font scale to pixels for the editor
+body,
+p {
+
+	// override elements.scss block-level background color
+	background-color: transparent;
+
+	// font-size base for mobile
+	font-size: 21px;
+
+	@include media(tablet) {
+
+		// font-size base for tablet and up
+		--font-size-base: calc( 21px * #{$font-size-responsive-ratio} ); // 1 1/6
+	}
 }
 
-// Add theme styles.
-.edit-post-visual-editor {
+// Block Overrides
 
-	@import "stylesheets/elements";
-	@import "stylesheets/typography";
+// Blockquote
 
-	// Responsive font-size
-	.editor-block-list__block,
-	.editor-block-list__block p {
-		font-size: $x-font-size-base;
+blockquote {
+
+	&.wp-block-quote,
+	&.wp-block-quote.is-large,
+	&.wp-block-quote.is-style-large {
 
 		@include media(tablet) {
-			// you can manage typography editing only these 2 variables
-			--font-size-base: calc( #{$font-size-base} * #{$font-size-responsive-ratio} ); // 1 1/6
+			margin-right: 0; /*@include globalvar( margin-right, 0 );*/
 		}
 	}
 
-	// Override font top-level editor styles to match front end
-	.editor-rich-text__tinymce.mce-content-body {
-		line-height: $x-font-leading-body;
-		color: $x-color-words-base;
+	&:not(.is-large):not(.is-style-large) {
+		border-left: none;
+		margin-right: 0; /*@include globalvar( margin-right, 0 );*/
+		padding-left: 0; /*@include globalvar( padding-left, 0 );*/
 	}
 
-	// Button
-	.wp-block-button .wp-block-button__link {
-		@include rounded( 3px );
-
-		background-color: $x-color-primary-base;
-		color: $x-color-shade-white;
-		padding: $x-space-xs;
-		padding-left: $x-space-sm;
-		padding-right: $x-space-sm;
-		font-family: $x-font-family-heading;
-		font-size: $x-font-size-sm;
-		line-height: $x-font-leading-body;
-		border: 2px solid green;
-		border-color: $x-color-primary-base;
-		box-shadow: 1px 1px 5px 1px rgba(0,0,0,0.33);
-		cursor: pointer;
-		display: inline-block;
-		font-weight: 600;
-		text-decoration: none;
-		text-transform: uppercase;
+	.wp-block-quote__citation {
+		padding-left: $x-space-sm; /*@include globalvar( padding-left, sm );*/
 	}
+}
 
-	// Image
-	.wp-block-image .block-library-image__resizer img,
-	[data-type="core/image"][data-align=full] figure img,
-	[data-type="core/image"][data-align=wide] figure img {
-		line-height: 0;
-		display: block;
+// Pull quote
+
+.wp-block-pullquote {
+	border-bottom: none;
+	border-top: none;
+
+	.wp-block-pullquote__citation {
+
 	}
+}
 
-	// Gallery
-	.wp-block-gallery {
+// Columns
 
-		list-style: none;
+.wp-block-text-columns,
+.wp-block-columns {
 
-		.blocks-gallery-item,
-		.blocks-gallery-image {
-			margin: 0;
-			padding-left: 0;
-
-			&:before {
-				content: "";
-				display: none;
-			}
-
-			figure {
-				display: flex;
-				flex-direction: column;
-			}
-
-			figcaption {
-				position: relative;
-				padding: 0;
-				max-height: inherit;
-				background: transparent;
-			}
-
-			.editor-rich-text {
-				position: inherit;
-			}
-		}
-
-		&:not(.components-placeholder) {
-			// Not yet
-		}
-	}
-
-	// Captions
-	.wp-block-audio figcaption,
-	.wp-block-video figcaption,
-	.wp-block-image figcaption,
-	.wp-block-gallery .blocks-gallery-image figcaption,
-	.wp-block-gallery .blocks-gallery-item figcaption {
-		color: $x-color-words-subtle;
-		font-family: $x-font-family-heading;
-		padding: $x-space-xxs 0; // @include block-padding( xxs, 0 );
-		text-align: left;
-		margin: 0;
-	}
-
-	.wp-block-audio.alignfull figcaption,
-	.wp-block-video.alignfull figcaption,
-	.wp-block-image.alignfull figcaption,
-	.wp-block-gallery.alignfull .blocks-gallery-image figcaption,
-	.wp-block-gallery.alignfull .blocks-gallery-item figcaption,
-	[data-type="core/image"][data-align=full] figcaption {
-		padding: $x-space-xs $x-space-sm; // @include block-padding( xs, sm);
-		position: inherit;
-	}
-
-	// Blockquote
-	.wp-block-quote {
-
-		&:not(.is-large):not(.is-style-large) {
-
-			border-left: none;
-		}
-
-		.wp-block-quote__citation {
-			font-family: $x-font-family-heading;
-			font-size: $x-font-size-xs;
-			color: $x-color-words-subtle;
-			font-style: normal;
-			font-weight: 500;
-		}
+	@include media(tablet) {
+		margin-right: 0;
 	}
 }
