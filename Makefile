@@ -11,7 +11,7 @@ check-for-grunt:
 deps: check-for-grunt
 	@npm install
 
-clean:
+clean: clean-vars
 	@rm -Rf build vars-build.*
 	@rm -f style.css editor.css rtl.css css/blocks.css
 	
@@ -20,13 +20,13 @@ clean-vars:
 
 build: clean check-for-grunt
 	@grunt build
-	
-dev: clean clean-vars check-for-grunt
+
+dev: clean check-for-grunt
 	@grunt build && grunt watch
 	
-css-vars: clean-vars
+css-vars: clean
 	@node tools/sass-variables.js --prefix=${CSS_VAR_PREFIX} style.scss --output style-css-vars.scss
-	@node tools/sass-variables.js --prefix=${CSS_VAR_PREFIX} --root-selector=".edit-post-visual-editor" --ignore "css/blocks" editor.scss --output editor-css-vars.scss
+	@node tools/sass-variables.js --prefix=${CSS_VAR_PREFIX} --root-selector=".edit-post-visual-editor" --ignore "css/blocks.scss" editor.scss --output editor-css-vars.scss
 	@node tools/sass-variables.js --prefix=${CSS_VAR_PREFIX} --skip-root css/blocks.scss --output css/blocks-css-vars.scss
 	@grunt build > /dev/null
 	@make clean-vars
