@@ -7,8 +7,8 @@ body {
 
 	@include media(tablet) {
 
-		// font-size base for tablet and up
-		--font-size-base: calc( #{$font-size-base} * #{$font-size-responsive-ratio} ); // 1 1/6
+		// font-size for tablet and up
+		font-size: calc( #{$x-font-size-base} * #{$x-font-size-responsive-ratio} ); // 1 1/6
 	}
 }
 

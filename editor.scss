@@ -28,7 +28,7 @@ p {
 	@include media(tablet) {
 
 		// font-size base for tablet and up
-		--font-size-base: calc( 21px * #{$font-size-responsive-ratio} ); // 1 1/6
+		font-size: calc( 21px * #{$x-font-size-responsive-ratio} ); // 1 1/6
 	}
 }
 
