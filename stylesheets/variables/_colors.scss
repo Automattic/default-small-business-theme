@@ -6,14 +6,14 @@ $secondary-color: #121733; // headings #2a4858
 $accent-color: #5f4bb6; // experimental 
 
 $x-color-primary-base:  $primary-color;
-/*$x-color-primary-light: tint( $primary-color, 20% );
-$x-color-primary-dark:  shade( $primary-color, 20% );*/
+$x-color-primary-dark:  shade( $primary-color, 20% );
+$x-color-primary-light: tint( $primary-color, 20% );
 $x-color-primary-bg:    tint( $primary-color, 80% );
 
 $x-color-secondary-base:  $secondary-color;
-/*$x-color-secondary-light: tint( $secondary-color, 20% );
+$x-color-secondary-bg:    tint( $secondary-color, 80% );
+$x-color-secondary-light: tint( $secondary-color, 20% );
 $x-color-secondary-dark:  shade( $secondary-color, 20% );
-$x-color-secondary-bg:    tint( $secondary-color, 80% );*/
 
 $x-color-accent-base:  $accent-color;
 $x-color-accent-light: tint( $accent-color, 20% );
@@ -21,7 +21,8 @@ $x-color-accent-light: tint( $accent-color, 20% );
 /*$x-color-shade-black:   #1d1d21;
 $x-color-shade-gray-10: #2e2e31;*/
 $x-color-shade-gray-6:  #91a3b0; // #7b7a7d;
-/*$x-color-shade-gray-4:  #8b949d;
+$x-color-shade-gray-4:  #8b949d;
+/*
 $x-color-shade-gray-3:  #a8b1b8;
 */$x-color-shade-gray-2:  #e8ecf1; // #e8e8e8
 /*$x-color-shade-gray-1:  #e8ecf1;*/
