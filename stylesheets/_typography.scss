@@ -149,10 +149,11 @@ mark, ins {
 
 a {
 	background-color: transparent;
+	color: $x-color-secondary-base;
 	text-decoration: none;
-
+	
 	&:hover {
-		text-decoration: underline;
+		color: $x-color-primary-base;
 	}
 }
 

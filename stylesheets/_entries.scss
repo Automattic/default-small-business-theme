@@ -91,7 +91,7 @@
 
 			&:hover {
 				text-decoration: none;
-				color: $x-color-secondary-base;
+				color: $x-color-words-subtle;
 			}
 		}
 
@@ -231,19 +231,23 @@
 			display: block;
 		}
 
-		.more-link {
-			@include link-transition;
-			display: inline;
-			color: inherit;
-
-			&:after {
-				content: "»";
-				margin-left: 0.5em;
-			}
+		a {
+			text-decoration: underline;
 
 			&:hover {
-				color: $x-color-primary-base;
 				text-decoration: none;
+			}
+		}
+
+		.more-link {
+			@include link-transition;
+			color: $x-color-secondary-base;
+			display: block;
+			font-weight: 600;
+			margin: $x-space-xs 0;
+
+			&:hover {
+				color: $x-color-accent-base;
 			}
 		}
 
