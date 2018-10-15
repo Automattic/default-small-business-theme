@@ -62,16 +62,14 @@
 
 .wp-block-button .wp-block-button__link{
 
-	background-color: $x-color-primary-base;
-	color: $x-color-background-body;
+	background-color: $x-color-accent-base;
+	color: $x-color-shade-white;
 	padding: $x-space-xxs, $x-space-xs;
-	font-family: $x-font-family-heading;
 	font-size: $x-font-size-sm;
 	line-height: $x-font-leading-body;
+	letter-spacing: $x-font-letter-spacing;
 	@include rounded( 3px );
-	border: 2px solid green;
-	border-color: $x-color-primary-base;
-	box-shadow: 1px 1px 5px 1px rgba(0,0,0,0.33);
+	border: 0;
 	cursor: pointer;
 	display: inline-block;
 	font-weight: 600;
@@ -79,14 +77,11 @@
 	text-transform: uppercase;
 
 	&:hover {
-		border-color: $x-color-primary-base;
-		background-color: $x-color-shade-white;
-		color: $x-color-primary-base;
+		background-color: $x-color-accent-light;
 	}
 
 	&:active,
 	&:focus {
-		border-color: $x-color-border-base;
 		background-color: $x-color-shade-white;
 		color: $x-color-words-subtle;
 	}
@@ -237,7 +232,7 @@
 .wp-block-quote .wp-block-quote__citation,
 .wp-block-pullquote .wp-block-pullquote__citation {
 	color: $x-color-words-subtle;
-	font-size: $x-font-size-xs;
+	font-size: $x-font-size-sm;
 	font-family: $x-font-family-heading;
 	padding: $x-space-xxs, 0;
 	font-style: normal;
@@ -291,7 +286,7 @@ ul.wp-block-archives,
 ul.wp-block-latest-posts {
 
 	li {
-		font-size: $x-font-size-md;
+		font-size: $x-font-size-base;
 
 		&:before {
 			font-size: $x-font-size-xxs;
@@ -331,7 +326,7 @@ ul.wp-block-latest-posts {
 	}
 
 	tr:nth-child(even) {
-		background-color: $x-color-shade-gray-1;
+		background-color: $x-color-shade-gray-2;
 	}
 
 	thead tr:nth-child(odd) {
@@ -378,33 +373,30 @@ table.wp-block-table {
 
 // !Blockquotes & Pull quotes
 
-.wp-block-quote,
-.wp-block-quote.is-large,
-.wp-block-quote.is-style-large {
+.wp-block-quote {
 
 	padding: $x-space-sm, 0;
 	margin-top: $x-space-lg;
 	margin-bottom: $x-space-lg;
 	margin-left: $x-space-sm;
 	margin-right: $x-space-sm;
-	border-top: 1px solid green;
-	border-top-color: $primary-color;
+	border-top: 4px solid grey;
+	border-top-color: $x-color-shade-gray-2;
 
 	p {
 		padding: $x-space-xs, $x-space-sm;
-		font-size: $x-font-size-lg;
-		font-style: normal;
+		font-size: $x-font-size-base;
 	}
 
 	&.is-large p,
 	&.is-style-large p {
-		font-size: $x-font-size-xl;
+		font-size: $x-font-size-lg;
 		line-height: $x-font-family-heading;
 	}
 
 	cite {
 		font-family: $x-font-family-heading;
-		font-size: $x-font-size-xs;
+		font-size: $x-font-size-sm;
 		color: $x-color-words-subtle;
 		padding: 0, $x-space-sm;
 		font-style: normal;
@@ -427,12 +419,11 @@ table.wp-block-table {
 
 	& > p {
 		font-size: $x-font-size-lg;
-		font-style: normal;
 	}
 
 	&.is-large p,
 	&.is-style-large p {
-		font-size: $x-font-size-xl;
+		font-size: $x-font-size-lg;
 		line-height: $x-font-leading-heading;
 	}
 
@@ -490,7 +481,7 @@ table.wp-block-table {
 
 		&:before {
 			content: "\00b7 \00b7 \00b7 \00b7 \00b7";
-			color: $x-color-shade-gray-4;
+			color: $x-color-shade-gray-2;
 			font-family: $body-font; /* family@include globalvar(font-family, body); */
 			font-size: $x-font-size-lg;
 			letter-spacing: 1em;
