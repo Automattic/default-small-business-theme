@@ -1,9 +1,9 @@
 
-$body-font: "Baskerville", "Baskerville Old Face", "Hoefler Text", Garamond, "Times New Roman", serif;
-$heading-font: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+$body-font: "Lato", -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+$heading-font: "Lato", -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
 $code-font: Menlo, monaco, Consolas, Lucida Console, monospace;
 
-$font-size-base: 1.1em;
+$font-size-base: 1em;
 $font-size-ratio: 1.2;
 $font-size-responsive-ratio: 1.167;
 
@@ -26,8 +26,10 @@ $x-font-family-body: $body-font;
 $x-font-family-heading: $heading-font;
 $x-font-family-code: $code-font;
 
-$x-font-leading-body: 1.4;
+$x-font-leading-body: 1.6;
 $x-font-leading-heading: 1.2;
 $x-font-leading-double: calc( #{$x-font-leading-heading} * 2 );
 
 $x-font-leading-md: 1.4;
+
+$x-font-letter-spacing: .125em;
