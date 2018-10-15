@@ -73,7 +73,7 @@
 			}
 
 			button {
-				background-color: $x-color-background-transparent;
+				background-color: transparent;
 				color: $x-color-primary-base;
 				padding: $x-space-xs;
 				line-height: $x-space-xs;
@@ -295,8 +295,8 @@
 .post-navigation {
 	margin: $x-space-lg 0;
 	
-	border-top: 1px solid green;
-	border-top-color: $x-color-primary-base;
+	border-top: 1px solid grey;
+	border-top-color: $x-color-border-base;
 	border-bottom: 1px solid grey;
 	border-bottom-color: $x-color-border-base;
 
