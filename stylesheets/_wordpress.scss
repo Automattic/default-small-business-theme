@@ -38,12 +38,49 @@
 	@include media( desktop ) {
 
 		display: flex;
-		justify-content: flex-end;
+		align-items: center;
+		margin-top: $x-space-lg;
+		margin-bottom: $x-space-md;
 
 		> * {
 			max-width: $x-grid-column-7;
 			padding-left: 0;
 			padding-right: 0;
+			width: 100%;
+		}
+
+		@at-root body.archive .page-header .page-title:not(:last-child) {
+			max-width: $x-grid-column-3;			
+		}
+
+		.archive-description {
+			font-size: $x-font-size-sm;
+			max-width: $x-grid-column-7;
+			width: 100%;
+		}
+
+	}
+
+}
+
+/** === 404 page === */
+.error404,
+.search-no-results {
+	.page-header {
+		display: block;
+
+		.page-title {
+			margin-left: auto;
+			margin-right: auto;
+		}
+	}
+
+	.page-content {
+
+		@include media( desktop ) {
+
+			max-width: $x-grid-column-10;
+			margin: $x-space-lg auto;
 			width: 100%;
 		}
 	}

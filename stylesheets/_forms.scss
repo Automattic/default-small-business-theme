@@ -63,6 +63,8 @@ input[type="color"],
 textarea {
 	border: 1px solid gray;
 	border-color: $x-color-border-base;
+	font-size: $x-font-size-base;
+	padding: 3px;
 }
 
 input[type="text"]:focus,
