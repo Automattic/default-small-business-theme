@@ -4,7 +4,7 @@
  *
  * @link https://codex.wordpress.org/Template_Hierarchy
  *
- * @package Smallbusinesstheme
+ * @package Business
  */
 
 ?>
@@ -15,7 +15,7 @@
 
 		<?php if ( 'post' === get_post_type() ) : ?>
 		<div class="entry-meta">
-			<?php smallbusinesstheme_posted_on(); ?>
+			<?php business_theme_posted_on(); ?>
 		</div><!-- .entry-meta -->
 		<?php endif; ?>
 	</header><!-- .entry-header -->
@@ -35,7 +35,7 @@
 
 	<footer class="entry-footer">
 		<div class="entry-meta">
-			<?php smallbusinesstheme_entry_footer(); ?>
+			<?php business_theme_entry_footer(); ?>
 		</div>
 	</footer><!-- .entry-footer -->
 </article><!-- #post-<?php the_ID(); ?> -->

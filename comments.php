@@ -7,7 +7,7 @@
  *
  * @link https://codex.wordpress.org/Template_Hierarchy
  *
- * @package Smallbusinesstheme
+ * @package Business
  */
 
 /*
@@ -31,13 +31,13 @@ if ( post_password_required() ) {
 			if ( 1 === $comment_count ) {
 				printf(
 					/* translators: 1: title. */
-					esc_html_e( 'One thought on &ldquo;%1$s&rdquo;', 'smallbusinesstheme' ),
+					esc_html_e( 'One thought on &ldquo;%1$s&rdquo;', 'business_theme' ),
 					'<span>' . get_the_title() . '</span>'
 				);
 			} else {
 				printf( // WPCS: XSS OK.
 					/* translators: 1: comment count number, 2: title. */
-					esc_html( _nx( '%1$s thought on &ldquo;%2$s&rdquo;', '%1$s thoughts on &ldquo;%2$s&rdquo;', $comment_count, 'comments title', 'smallbusinesstheme' ) ),
+					esc_html( _nx( '%1$s thought on &ldquo;%2$s&rdquo;', '%1$s thoughts on &ldquo;%2$s&rdquo;', $comment_count, 'comments title', 'business_theme' ) ),
 					number_format_i18n( $comment_count ),
 					'<span>' . get_the_title() . '</span>'
 				);
@@ -51,7 +51,7 @@ if ( post_password_required() ) {
 					'style'       => 'ol',
 					'short_ping'  => true,
 					'avatar_size' => 60,
-					'callback'    => 'smallbusinesstheme_comment'
+					'callback'    => 'business_theme_comment'
 				) );
 			?>
 		</ol><!-- .comment-list -->
@@ -60,7 +60,7 @@ if ( post_password_required() ) {
 
 		// If comments are closed and there are comments, let's leave a little note, shall we?
 		if ( ! comments_open() ) : ?>
-			<p class="no-comments"><?php esc_html_e( 'Comments are closed.', 'smallbusinesstheme' ); ?></p>
+			<p class="no-comments"><?php esc_html_e( 'Comments are closed.', 'business_theme' ); ?></p>
 		<?php
 		endif;
 

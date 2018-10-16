@@ -4,7 +4,7 @@
  *
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/#single-post
  *
- * @package Smallbusinesstheme
+ * @package Business
  */
 
 get_header(); ?>
@@ -23,7 +23,7 @@ get_header(); ?>
 		) );
 */
 
-		smallbusinesstheme_the_post_navigation();
+		business_theme_the_post_navigation();
 
 		// If comments are open or we have at least one comment, load up the comment template.
 		if ( comments_open() || get_comments_number() ) :

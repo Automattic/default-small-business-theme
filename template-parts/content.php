@@ -4,7 +4,7 @@
  *
  * @link https://codex.wordpress.org/Template_Hierarchy
  *
- * @package Smallbusinesstheme
+ * @package Business
  */
 
 ?>
@@ -31,7 +31,7 @@
 
 		if ( 'post' === get_post_type() ) : ?>
 		<div class="entry-meta">
-			<?php smallbusinesstheme_posted_on(); ?>
+			<?php business_theme_posted_on(); ?>
 		</div><!-- .entry-meta -->
 		<?php
 		endif; ?>
@@ -42,7 +42,7 @@
 			the_content( sprintf(
 				wp_kses(
 					/* translators: %s: Name of current post. Only visible to screen readers */
-					__( 'Continue reading<span class="screen-reader-text"> "%s"</span>', 'smallbusinesstheme' ),
+					__( 'Continue reading<span class="screen-reader-text"> "%s"</span>', 'business_theme' ),
 					array(
 						'span' => array(
 							'class' => array(),
@@ -53,7 +53,7 @@
 			) );
 
 			wp_link_pages( array(
-				'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'smallbusinesstheme' ),
+				'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'business_theme' ),
 				'after'  => '</div>',
 			) );
 		?>
@@ -61,7 +61,7 @@
 
 	<footer class="entry-footer">
 		<div class="entry-meta">
-			<?php smallbusinesstheme_entry_footer(); ?>
+			<?php business_theme_entry_footer(); ?>
 		</div>
 	</footer><!-- .entry-footer -->
 

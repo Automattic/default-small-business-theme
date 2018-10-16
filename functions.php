@@ -4,10 +4,10 @@
  *
  * @link https://developer.wordpress.org/themes/basics/theme-functions/
  *
- * @package Gutenbergtheme
+ * @package Business
  */
 
-if ( ! function_exists( 'smallbusinesstheme_setup' ) ) :
+if ( ! function_exists( 'business_theme_setup' ) ) :
 	/**
 	 * Sets up theme defaults and registers support for various WordPress features.
 	 *
@@ -15,14 +15,14 @@ if ( ! function_exists( 'smallbusinesstheme_setup' ) ) :
 	 * runs before the init hook. The init hook is too late for some features, such
 	 * as indicating support for post thumbnails.
 	 */
-	function smallbusinesstheme_setup() {
+	function business_theme_setup() {
 		/*
 		 * Make theme available for translation.
 		 * Translations can be filed in the /languages/ directory.
-		 * If you're building a theme based on smallbusinesstheme, use a find and replace
-		 * to change 'smallbusinesstheme' to the name of your theme in all the template files.
+		 * If you're building a theme based on business_theme, use a find and replace
+		 * to change 'business_theme' to the name of your theme in all the template files.
 		 */
-		load_theme_textdomain( 'smallbusinesstheme', get_template_directory() . '/languages' );
+		load_theme_textdomain( 'business_theme', get_template_directory() . '/languages' );
 
 		// Add default posts and comments RSS feed links to head.
 		add_theme_support( 'automatic-feed-links' );
@@ -44,8 +44,8 @@ if ( ! function_exists( 'smallbusinesstheme_setup' ) ) :
 
 		// This theme uses wp_nav_menu() in one location.
 		register_nav_menus( array(
-			'menu-1' => __( 'Primary', 'smallbusinesstheme' ),
-			'social' => __( 'Social Links', 'smallbusinesstheme' ),
+			'menu-1' => __( 'Primary', 'business_theme' ),
+			'social' => __( 'Social Links', 'business_theme' ),
 		) );
 
 		/*
@@ -93,29 +93,29 @@ if ( ! function_exists( 'smallbusinesstheme_setup' ) ) :
 		// Add support for custom color scheme.
 		add_theme_support( 'editor-color-palette', array(
 			array(
-				'name'  => __( 'Strong Blue', 'smallbusinesstheme' ),
+				'name'  => __( 'Strong Blue', 'business_theme' ),
 				'slug'  => 'strong-blue',
 				'color' => '#0073aa',
 			),
 			array(
-				'name'  => __( 'Lighter Blue', 'smallbusinesstheme' ),
+				'name'  => __( 'Lighter Blue', 'business_theme' ),
 				'slug'  => 'lighter-blue',
 				'color' => '#229fd8',
 			),
 			array(
-				'name'  => __( 'Very Light Gray', 'smallbusinesstheme' ),
+				'name'  => __( 'Very Light Gray', 'business_theme' ),
 				'slug'  => 'very-light-gray',
 				'color' => '#eee',
 			),
 			array(
-				'name'  => __( 'Very Dark Gray', 'smallbusinesstheme' ),
+				'name'  => __( 'Very Dark Gray', 'business_theme' ),
 				'slug'  => 'very-dark-gray',
 				'color' => '#444',
 			),
 		) );
 	}
 endif;
-add_action( 'after_setup_theme', 'smallbusinesstheme_setup' );
+add_action( 'after_setup_theme', 'business_theme_setup' );
 
 /**
  * Set the content width in pixels, based on the theme's design and stylesheet.
@@ -124,15 +124,15 @@ add_action( 'after_setup_theme', 'smallbusinesstheme_setup' );
  *
  * @global int $content_width
  */
-function smallbusinesstheme_content_width() {
-	$GLOBALS['content_width'] = apply_filters( 'smallbusinesstheme_content_width', 640 );
+function business_theme_content_width() {
+	$GLOBALS['content_width'] = apply_filters( 'business_theme_content_width', 640 );
 }
-add_action( 'after_setup_theme', 'smallbusinesstheme_content_width', 0 );
+add_action( 'after_setup_theme', 'business_theme_content_width', 0 );
 
 /**
  * Register Google Fonts
  */
-function smallbusinesstheme_fonts_url() {
+function business_theme_fonts_url() {
 	$fonts_url = '';
 
 	/*
@@ -140,7 +140,7 @@ function smallbusinesstheme_fonts_url() {
 	 * supported by Noto Serif, translate this to 'off'. Do not translate
 	 * into your own language.
 	 */
-	$notoserif = esc_html_x( 'on', 'Noto Serif font: on or off', 'smallbusinesstheme' );
+	$notoserif = esc_html_x( 'on', 'Noto Serif font: on or off', 'business_theme' );
 
 	if ( 'off' !== $notoserif ) {
 		$font_families = array();
@@ -161,60 +161,60 @@ function smallbusinesstheme_fonts_url() {
 /**
  * Enqueue scripts and styles.
  */
-function smallbusinesstheme_scripts() {
+function business_theme_scripts() {
 
 	wp_enqueue_style( 'gutenbergbase-style', get_stylesheet_uri() );
 
-	wp_enqueue_style( 'smallbusinesstheme-blocks-style', get_template_directory_uri() . '/css/blocks.css' );
+	wp_enqueue_style( 'business_theme-blocks-style', get_template_directory_uri() . '/css/blocks.css' );
 
-	wp_enqueue_style( 'smallbusinesstheme-fonts', smallbusinesstheme_fonts_url() );
+	wp_enqueue_style( 'business_theme-fonts', business_theme_fonts_url() );
 
-	wp_enqueue_script( 'smallbusinesstheme-navigation', get_template_directory_uri() . '/js/navigation.js', array( 'jquery' ), '20151215', true );
+	wp_enqueue_script( 'business_theme-navigation', get_template_directory_uri() . '/js/navigation.js', array( 'jquery' ), '20151215', true );
 
-	wp_enqueue_script( 'smallbusinesstheme-priority-navigation', get_template_directory_uri() . '/js/priority-navigation.js', array( 'jquery' ), '20151215', true );
+	wp_enqueue_script( 'business_theme-priority-navigation', get_template_directory_uri() . '/js/priority-navigation.js', array( 'jquery' ), '20151215', true );
 
-	wp_enqueue_script( 'smallbusinesstheme-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20151215', true );
+	wp_enqueue_script( 'business_theme-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20151215', true );
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
 	}
 
 	// Screenreader text
-	wp_localize_script( 'smallbusinesstheme-navigation', 'smallBusinessThemeScreenReaderText', array(
-		'expand'   => esc_html__( 'expand child menu', 'smallbusinesstheme' ),
-		'collapse' => esc_html__( 'collapse child menu', 'smallbusinesstheme' ),
+	wp_localize_script( 'business_theme-navigation', 'smallBusinessThemeScreenReaderText', array(
+		'expand'   => esc_html__( 'expand child menu', 'business_theme' ),
+		'collapse' => esc_html__( 'collapse child menu', 'business_theme' ),
 	) );
 
 	// Icons
-	wp_localize_script( 'smallbusinesstheme-navigation', 'smallBusinessThemeIcons', array(
-		'dropdown' => smallbusinesstheme_get_icon_svg( 'expand_more' )
+	wp_localize_script( 'business_theme-navigation', 'smallBusinessThemeIcons', array(
+		'dropdown' => business_theme_get_icon_svg( 'expand_more' )
 	) );
 
 	// Menu toggle text
-	wp_localize_script( 'smallbusinesstheme-navigation', 'smallBusinessThemeMenuToggleText', array(
-		'menu'  => esc_html__( 'Menu', 'smallbusinesstheme' ),
-		'close' => esc_html__( 'Close', 'smallbusinesstheme' ),
+	wp_localize_script( 'business_theme-navigation', 'smallBusinessThemeMenuToggleText', array(
+		'menu'  => esc_html__( 'Menu', 'business_theme' ),
+		'close' => esc_html__( 'Close', 'business_theme' ),
 	) );
 
 
 }
-add_action( 'wp_enqueue_scripts', 'smallbusinesstheme_scripts' );
+add_action( 'wp_enqueue_scripts', 'business_theme_scripts' );
 
 /**
  * Enqueue Gutenberg editor styles
  */
-function smallbusinesstheme_editor_styles() {
-	wp_enqueue_style( 'smallbusinesstheme-editor-style', get_template_directory_uri() . '/editor.css' );
+function business_theme_editor_styles() {
+	wp_enqueue_style( 'business_theme-editor-style', get_template_directory_uri() . '/editor.css' );
 }
-// add_action( 'enqueue_block_editor_assets', 'smallbusinesstheme_editor_styles' );
+// add_action( 'enqueue_block_editor_assets', 'business_theme_editor_styles' );
 
 /**
  * Check whether the browser supports JavaScript
  */
-function smallbusinesstheme_html_js_class() {
+function business_theme_html_js_class() {
 	echo '<script>document.documentElement.className = document.documentElement.className.replace("no-js","js");</script>'. "\n";
 }
-add_action( 'wp_head', 'smallbusinesstheme_html_js_class', 1 );
+add_action( 'wp_head', 'business_theme_html_js_class', 1 );
 
 /**
  * SVG Icons class.

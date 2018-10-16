@@ -6,7 +6,7 @@
  *
  * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
  *
- * @package Smallbusinesstheme
+ * @package Business
  */
 ?>
 <!doctype html>
@@ -20,7 +20,7 @@
 
 <body <?php body_class(); ?>>
 <div id="page" class="site">
-	<a class="skip-link screen-reader-text" href="#primary"><?php esc_html_e( 'Skip to content', 'smallbusinesstheme' ); ?></a>
+	<a class="skip-link screen-reader-text" href="#primary"><?php esc_html_e( 'Skip to content', 'business_theme' ); ?></a>
 		<header id="masthead" class="site-header">
 			<div class="site-identity">
 				<?php the_custom_logo(); ?>
@@ -44,7 +44,7 @@
 
 			<?php if ( has_nav_menu( 'menu-1' ) ) : ?>
 			<nav id="site-navigation" class="main-navigation">
-				<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'Menu', 'smallbusinesstheme' ); ?></button>
+				<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'Menu', 'business_theme' ); ?></button>
 				<?php
 					wp_nav_menu( array(
 						'theme_location' => 'menu-1',
