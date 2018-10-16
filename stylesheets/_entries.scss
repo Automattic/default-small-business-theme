@@ -16,7 +16,7 @@
 
 		@include media( tablet ) {
 			max-width: $x-grid-column-7;
-			margin-right: $x-space-column-3;
+			margin-right: auto; //$x-space-column-3;
 			margin-left: auto;
 		}
 	}
@@ -40,17 +40,17 @@
 	.entry-header {
 
 		@include media( tablet ) {
-			max-width: $x-grid-column-12;
+			max-width: $x-grid-column-10;
 			align-items: flex-start;
-			display: flex;
-			justify-content: flex-end;
+/*			display: flex;
+			justify-content: flex-end;*/
 			margin-left: auto;
 			margin-right: auto;
 		}
 	}
 
 	.entry-title {
-		margin: $x-space-sm;
+		margin: $x-space-sm auto;
 		font-weight: 800;
 
 		a {
@@ -72,17 +72,16 @@
 			// Single Page
 			&:first-child:last-child {
 				max-width: $x-grid-column-7;
-				margin-right: $x-space-column-3;
+				margin-right: auto; //$x-space-column-3;
 			 	margin-left: auto;
 			}
 		}
 	}
 
 	@at-root .single .entry-title {
-		font-size: $x-font-size-xxxl;
-
 		@include media( tablet ) { 
-			margin: $x-space-lg 0;
+			font-size: $x-font-size-xxxl;
+			margin: $x-space-lg auto $x-space-md;
 		}
 	}
 
@@ -120,7 +119,8 @@
 		}
 
 		@include media( tablet ) {
-			width: calc( #{$x-grid-column-3} - ( #{$x-space-sm} * 2 ) );
+			width: $x-grid-column-7; //calc( #{$x-grid-column-3} - ( #{$x-space-sm} * 2 ) );
+			margin: $x-space-sm auto;
 			flex-direction: column;
 			justify-content: inherit;
 
@@ -138,7 +138,7 @@
 			@include media( tablet ) {
 
 				max-width: $x-grid-column-7;
-				margin-right: $x-space-column-3;
+				margin-right: auto; //$x-space-column-3;
 				padding-bottom: $x-space-sm;
 				line-height: $x-font-leading-body;
 				flex-direction: row;
@@ -341,7 +341,7 @@
 
 			.entry-title {
 
-				margin: $x-space-sm;
+				margin: $x-space-sm auto;
 				margin-top: 0;
 				width: auto;
 			}

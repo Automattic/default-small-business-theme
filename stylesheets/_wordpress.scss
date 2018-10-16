@@ -56,12 +56,12 @@
 	margin: $x-space-lg 0;
 
 	@include media( tablet ) {
-		max-width: $x-grid-column-10;
-		display: flex;
+		max-width: $x-grid-column-12;
+/*		display: flex;
 		justify-content: flex-end;
 		flex-direction: row;
 		flex-wrap: wrap;
-		margin-left: auto;
+*/		margin-left: auto;
 		margin-right: auto;
 		width: 100%;
 	}
@@ -69,26 +69,33 @@
 
 .comments-title {
 
-	margin: $x-space-sm;
-	max-width: $x-grid-column-3;
+	margin: $x-space-sm auto;
+	max-width: $x-grid-column-7;
 	//width: 100%;
-
-	@include media( tablet ) {
-		flex: 1 1 20%;
-	}
 }
 
 .comment-respond {
 
-	margin: $x-space-sm;
+	margin: $x-space-lg auto $x-space-sm;
 
 	@include media( tablet ) {
 		max-width: $x-grid-column-7;
-		flex: 1 1 70%;
+		/*flex: 1 1 70%;*/
 	}
 
 	h3 {
 		margin-top: 0;
+
+		small {
+			display: block;
+			font-size: $x-font-size-xs;
+			margin: $x-space-xs 0;
+
+			a {
+				display: inline;
+				text-decoration: underline;
+			}
+		}
 	}
 
 	form {
@@ -112,6 +119,8 @@
 
 	li {
 		padding-left: inherit;
+		border-bottom: 1px solid grey;
+		border-bottom-color: $x-color-border-base;
 
 		&:before {
 			content: "";
@@ -131,18 +140,31 @@
 	}
 
 	.children {
-		margin-left: $x-space-md;
+		margin-left: $x-space-lg;
 
 		.comment {
 			width: 100%;
+
+			&:last-child {
+				border-bottom: 0;
+			}
 		}
 	}
 
 	@include media( tablet ) {
 		max-width: $x-grid-column-7;
-		margin-right: $x-space-column-1;
-		margin-left: 0;
+		margin-right: auto;
+		margin-left: auto;
 	}
+}
+
+.comment-navigation {
+	
+	@include media( tablet ) {
+		max-width: $x-grid-column-7;
+		margin-right: auto;
+		margin-left: auto;
+	}	
 }
 
 .comment-body {
@@ -167,7 +189,7 @@
 
 	@include media( tablet ) {
 		& > *:not(.comment-author):not(.comment-meta) {
-			margin-left: calc( #{$x-grid-column} + #{$x-grid-gutter} );
+		//	margin-left: calc( #{$x-grid-column} + #{$x-grid-gutter} );
 		//	margin-left: $x-space-width-column-1;
 		}
 	}
@@ -179,20 +201,15 @@
 	display: flex;
 	align-items: center;
 
-	.avatar {
+/*	.avatar {
 		margin-right: $x-space-sm;
 	}
-
+*/
 	cite {
-		padding-top: $x-space-sm;
-		padding-bottom: $x-space-sm;
+		margin-bottom: $x-space-xs;
 		font-family: $x-font-family-heading;
 		font-size: $x-font-size-sm;
-		border-top: 1px solid grey;
-		border-top-color: $x-color-border-base;
-		font-weight: 500;
 		font-style: normal;
-		letter-spacing: $x-font-letter-spacing;
 		text-transform: uppercase;
 		width: 100%;
 
@@ -203,36 +220,37 @@
 		justify-content: flex-end;
 
 		.avatar {
-			margin-left: $x-space-gutter;
-			margin-right: 20px;
+			/*margin-left: $x-space-gutter;*/
+			margin-right: $x-space-xs;
 		}
 	}
 }
 
 .comment-meta {
-	font-family: $x-font-family-heading;
-	font-size: $x-font-size-xs;
-	position: absolute;
-	left: calc( 60px + 1rem );
+	font-size: $x-font-size-sm;
+/*	position: absolute;
+	left: calc( 60px + 1rem );*/
 	margin-top: -1.4rem;
+	margin-left: 65px;
 
 	a {
 		color: $x-color-words-subtle;
 	}
 
 	@include media( tablet ) {
-		width: $x-grid-column-1;
+/*		width: $x-grid-column-1;
 		left: calc( 100% + #{$x-grid-gutter} );
-		margin-top: inherit;
+		margin-top: inherit;*/
 	}
 }
 
 .avatar {
 	@include rounded(100%);
 	display: block;
-	flex: 0 0 auto;
+	float: left;
+/*	flex: 0 0 auto;*/
 	width: 60px;
-	height: 60px;
+/*	height: 60px;*/
 }
 
 .bypostauthor {
