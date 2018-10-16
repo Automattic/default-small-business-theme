@@ -206,7 +206,6 @@
 
 .comment-body {
 
-	// max-width: $x-grid-column-7;
 	position: relative;
 	min-height: 9rem;
 
@@ -223,13 +222,6 @@
 		font-size: $x-font-size-xs;
 		text-transform: uppercase;
 	}
-
-	@include media( tablet ) {
-		& > *:not(.comment-author):not(.comment-meta) {
-		//	margin-left: calc( #{$x-grid-column} + #{$x-grid-gutter} );
-		//	margin-left: $x-space-width-column-1;
-		}
-	}
 }
 
 .comment-author {
@@ -238,10 +230,10 @@
 	display: flex;
 	align-items: center;
 
-/*	.avatar {
-		margin-right: $x-space-sm;
+	.avatar {
+		margin-right: $x-space-xs;
 	}
-*/
+
 	cite {
 		margin-bottom: $x-space-xs;
 		font-family: $x-font-family-heading;
@@ -253,31 +245,17 @@
 	}
 
 	@include media( tablet ) {
-
 		justify-content: flex-end;
-
-		.avatar {
-			// margin-left: $x-space-gutter;
-			margin-right: $x-space-xs;
-		}
 	}
 }
 
 .comment-meta {
 	font-size: $x-font-size-sm;
-/*	position: absolute;
-	left: calc( 60px + 1rem );*/
 	margin-top: -1.4rem;
 	margin-left: 65px;
 
 	a {
 		color: $x-color-words-subtle;
-	}
-
-	@include media( tablet ) {
-/*		width: $x-grid-column-1;
-		left: calc( 100% + #{$x-grid-gutter} );
-		margin-top: inherit;*/
 	}
 }
 
@@ -285,9 +263,7 @@
 	@include rounded(100%);
 	display: block;
 	float: left;
-/*	flex: 0 0 auto;*/
 	width: 60px;
-/*	height: 60px;*/
 }
 
 .bypostauthor {
