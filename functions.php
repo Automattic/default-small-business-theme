@@ -136,15 +136,15 @@ function business_theme_fonts_url() {
 	$fonts_url = '';
 
 	/*
-	 *Translators: If there are characters in your language that are not
-	 * supported by Noto Serif, translate this to 'off'. Do not translate
+	 * Translators: If there are characters in your language that are not
+	 * supported by Lato, translate this to 'off'. Do not translate
 	 * into your own language.
 	 */
-	$notoserif = esc_html_x( 'on', 'Noto Serif font: on or off', 'business_theme' );
+	$lato = esc_html_x( 'on', 'Lato font: on or off', 'business_theme' );
 
-	if ( 'off' !== $notoserif ) {
+	if ( 'off' !== $lato ) {
 		$font_families = array();
-		$font_families[] = 'Noto Serif:400,400italic,700,700italic';
+		$font_families[] = 'Lato:400,400italic,700,700italic,900,900italic';
 
 		$query_args = array(
 			'family' => urlencode( implode( '|', $font_families ) ),
