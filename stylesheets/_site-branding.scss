@@ -6,23 +6,25 @@
 	border-bottom: 1px solid gray;
 	border-bottom-color: $x-color-border-base;
 
-	@include media( desktop ) {
-		max-width: $x-grid-column-12;
-		border-bottom: none;
-		display: flex;
-		align-items: center;
-		margin-left: auto;
-		margin-right: auto;
+	.site-header-wrapper {
+		@include media( desktop ) {
+			max-width: $x-grid-column-12;
+	/*		border-bottom: none;
+	*/		display: flex;
+			align-items: center;
+			margin-left: auto;
+			margin-right: auto;
+		}		
 	}
 }
 
 .site-identity {
 
 	color: $x-color-words-subtle;
-	margin: $x-space-sm;
+	margin: $x-space-md;
 
 	& > * {
-		margin-bottom: $x-space-sm;
+		margin-bottom: $x-space-md;
 
 		&:first-child {
 			margin-top: 0;
