@@ -23,15 +23,19 @@
 	}
 }
 
+.has-post-thumbnail.hentry {
+	margin-top: 0;
+}
+
 .hentry {
 	margin: $x-space-lg 0;
 
 	@include media( tablet ) {
-		margin: $x-space-lg, $x-space-sm;
+		margin: $x-space-xl, $x-space-sm;
 	}
 
 	@include media( desktop ) {
-		margin: $x-space-lg 0;
+		margin: $x-space-xl 0;
 	}
 
 	.entry-featured-image {
@@ -43,8 +47,6 @@
 		@include media( tablet ) {
 			max-width: $x-grid-column-10;
 			align-items: flex-start;
-/*			display: flex;
-			justify-content: flex-end;*/
 			margin-left: auto;
 			margin-right: auto;
 		}
