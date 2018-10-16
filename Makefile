@@ -1,7 +1,7 @@
 
 CSS_VAR_PREFIX="x"
 
-PKG="default-small-business-theme"
+PKG="business"
 
 default: build
 
