@@ -65,4 +65,6 @@
 		</div>
 	</footer><!-- .entry-footer -->
 
+	<?php business_theme_photos_author_bio(); ?>
+
 </article><!-- #post-<?php the_ID(); ?> -->

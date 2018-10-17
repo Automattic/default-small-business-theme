@@ -163,7 +163,7 @@ function business_theme_fonts_url() {
  */
 function business_theme_scripts() {
 
-	wp_enqueue_style( 'gutenbergbase-style', get_stylesheet_uri() );
+	wp_enqueue_style( 'business_theme-style', get_stylesheet_uri() );
 
 	wp_enqueue_style( 'business_theme-blocks-style', get_template_directory_uri() . '/css/blocks.css' );
 
