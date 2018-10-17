@@ -93,24 +93,24 @@ if ( ! function_exists( 'business_theme_setup' ) ) :
 		// Add support for custom color scheme.
 		add_theme_support( 'editor-color-palette', array(
 			array(
-				'name'  => __( 'Strong Blue', 'business_theme' ),
-				'slug'  => 'strong-blue',
-				'color' => '#0073aa',
+				'name'  => __( 'Purple', 'business_theme' ),
+				'slug'  => 'purple',
+				'color' => '#5f4bb6',
 			),
 			array(
-				'name'  => __( 'Lighter Blue', 'business_theme' ),
-				'slug'  => 'lighter-blue',
-				'color' => '#229fd8',
+				'name'  => __( 'Light Gray', 'business_theme' ),
+				'slug'  => 'light-gray',
+				'color' => '#e8ecf1',
 			),
 			array(
-				'name'  => __( 'Very Light Gray', 'business_theme' ),
-				'slug'  => 'very-light-gray',
-				'color' => '#eee',
+				'name'  => __( 'Medium Gray', 'business_theme' ),
+				'slug'  => 'medium-gray',
+				'color' => '#6e7381',
 			),
 			array(
-				'name'  => __( 'Very Dark Gray', 'business_theme' ),
-				'slug'  => 'very-dark-gray',
-				'color' => '#444',
+				'name'  => __( 'Dark Gray', 'business_theme' ),
+				'slug'  => 'dark-gray',
+				'color' => '#121733',
 			),
 		) );
 	}
