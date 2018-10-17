@@ -39,7 +39,10 @@ get_header(); ?>
 
 		endwhile;
 
-		the_posts_navigation();
+		the_posts_navigation( array(
+			'prev_text'          => business_theme_get_icon_svg( 'chevron_left' ) . __( 'Older posts', 'business_theme' ),
+ 			'next_text'          => __( 'Newer posts', 'business_theme' ) . business_theme_get_icon_svg( 'chevron_right' ),
+		) ) ;
 
 	else :
 
