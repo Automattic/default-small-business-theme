@@ -163,6 +163,10 @@
 			content: "";
 			display: none;
 		}
+
+		&:last-child {
+			border-bottom: 0;
+		}
 	}
 
 	.comment {

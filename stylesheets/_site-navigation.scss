@@ -310,23 +310,30 @@
 		display: flex;
 		flex-direction: column;
 
-		.post-title {
+		a {
+			display: block;
+			padding: $x-space-sm;
 			font-size: $x-font-size-md;
-			font-weight: 300;
-			margin: 0;
-		}
+			font-weight: 700;
 
-		.post-excerpt {
-			color: $x-color-words-base;
-			margin: $x-space-xs 0;
-		}
-
-		a:hover {
-			text-decoration: none;
-			.post-excerpt {
-				color: $x-color-words-base;
+			&:focus .post-title,
+			&:hover .post-title {
+				color: $x-color-accent-base;
 				text-decoration: none;
 			}
+
+			.meta-nav {
+				color: $x-color-words-subtle;
+				display: block;
+				padding: $x-space-xxs 0;
+				text-transform: uppercase;
+				font-weight: 400;
+				font-size: $x-font-size-xxs;
+			}
+		}
+
+		.nav-next {
+			text-align: right;
 		}
 
 		& > div {
@@ -337,6 +344,7 @@
 	@include media( tablet ) {
 		margin: $x-space-sm 0;
 		display: inherit;
+
 		.nav-links {
 			max-width: $x-grid-column-10;
 			margin-left: auto;
@@ -344,10 +352,87 @@
 			flex-direction: row;
 			justify-content: center;
 			align-content: center;
+
 			& > div {
 				margin: $x-space-lg $x-space-sm;
 				max-width: $x-grid-column-5;
+				width: 50%;
+
+				&:only-child {
+					width: 100%;
+					max-width: 100%;
+				}
 			}
 		}
 	}
+}
+
+.posts-navigation {
+	@include media( tablet ) {
+
+		.nav-links {
+			max-width: $x-grid-column-10;
+			margin-left: auto;
+			margin-right: auto;
+			flex-direction: row;
+			justify-content: center;
+			align-content: center;
+
+			& > div {
+				margin: $x-space-lg $x-space-sm;
+				max-width: $x-grid-column-5;
+				width: 50%;
+			}
+		}
+	}
+}
+
+.comment-navigation,
+.posts-navigation {
+	border-top: 1px solid grey;
+	border-color: $x-color-border-base;
+
+	a {
+		border: 0;
+		display: block;
+		font-weight: 700;
+		padding: $x-space-sm 0;
+	}
+
+	.nav-links {
+		display: flex;
+		flex-direction: column;
+
+		@include media( tablet ) {
+			flex-direction: row;
+		}
+	}
+	
+	.nav-previous,
+	.nav-next {
+		width: 50%;
+
+		&:only-child {
+			max-width: 100%;
+			width: 100%;
+		}
+
+		svg {
+			fill: $x-color-accent-base;
+			vertical-align: middle;
+		}
+	}
+
+	.nav-next {
+		text-align: right;
+	}
+}
+
+.comment-navigation a:focus,
+.comment-navigation a:hover,
+.post-navigation a:focus,
+.post-navigation a:hover,
+.posts-navigation a:focus,
+.posts-navigation a:hover {
+	color: $x-color-accent-base;
 }
