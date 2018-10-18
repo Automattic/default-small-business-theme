@@ -90,22 +90,6 @@ small,
 	font-size: $x-font-size-xs;
 }
 
-/*.main-navigation,*/
-.hentry .entry-meta > span {
- 	font-family: $x-font-family-heading;
-	font-size: $x-font-size-xs;
- 	@include media( mobile ) {
-		font-size: $x-font-size-sm;
-	}
-}
-/* .main-navigation > div > ul > li > a,*/
-.hentry .entry-meta .posted-on {
- 	font-weight: 400;
-	letter-spacing: $x-font-letter-spacing;
-	text-decoration: none;
-	text-transform: uppercase;
-}
-
 dfn, em, i {
 	font-style: italic;
 }
@@ -151,7 +135,6 @@ mark, ins {
 }
 
 a {
-	background-color: transparent;
 	color: $x-color-secondary-base;
 	text-decoration: none;
 	

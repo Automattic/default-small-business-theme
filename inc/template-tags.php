@@ -24,11 +24,17 @@ if ( ! function_exists( 'business_theme_posted_on' ) ) :
 			esc_html( get_the_modified_date() )
 		);
 
-		$posted_on = sprintf(
-			/* translators: %s: post date. */
-			esc_html_x( '%s', 'post date', 'business_theme' ),
-			'<a href="' . esc_url( get_permalink() ) . '" rel="bookmark">' . $time_string . '</a>'
-		);
+		if ( is_single() ) {
+			$posted_on = sprintf( esc_attr__( 'Posted on %1$s', 'business_theme' ),
+							'<a href="' . esc_url( get_permalink() ) . '" rel="bookmark">' . $time_string . '</a>'
+						);
+		}
+		elseif ( is_sticky() ) {
+			$posted_on = '<a href="' . esc_url( get_permalink() ) . '" rel="bookmark">' . esc_html__( 'Featured', 'business_theme' ) . '</a>';
+		}
+		else {
+			$posted_on = '<a href="' . esc_url( get_permalink() ) . '" rel="bookmark">' . $time_string . '</a>';
+		}
 
 		$byline = sprintf(
 			/* translators: %s: post author. */
