@@ -192,49 +192,6 @@
 	}
 }
 
-// !Gallery
-
-.wp-block-gallery {
-
-	list-style: none;
-
-	.blocks-gallery-item,
-	.blocks-gallery-image {
-		margin: 0;
-		padding-left: 0;
-
-		&:before {
-			content: "";
-			display: none;
-		}
-
-		figure {
-			display: flex;
-			flex-direction: column;
-		}
-
-		figcaption {
-			position: relative;
-			padding: 0;
-			max-height: inherit;
-			background: transparent;
-		}
-	}
-
-	&:not(.components-placeholder) {
-		// Not yet
-	}
-}
-
-[data-align=left] .wp-block-gallery,
-[data-align=right] .wp-block-gallery {
-	max-width: 285px;
-
-	@include media( tablet ) {
-		max-width: $x-grid-column-3;
-	}
-}
-
 // !Block Captions
 
 .wp-block-audio figcaption,

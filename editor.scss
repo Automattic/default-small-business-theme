@@ -37,14 +37,6 @@ body, p {
 
 }
 
-.editor-post-title__block {
-	font-family: courier;
-}
-
-.editor-block-list__layout {
-	background: green !important;
-}
-
 // Blockquote
 
 blockquote {
@@ -88,4 +80,14 @@ blockquote {
 	@include media(tablet) {
 		margin-right: 0;
 	}
+}
+
+// Images
+
+.wp-block-image {
+	
+	figcaption {
+		margin-top: 0.8em;
+	}
+	
 }
