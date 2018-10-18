@@ -35,7 +35,12 @@
 	}
 
 	@include media( desktop ) {
-		margin: $x-space-xl 0;
+		margin: $x-space-lg 0;
+
+		&:first-child {
+			margin-top: $x-space-xxl;
+		}
+
 	}
 
 	.entry-featured-image {
@@ -248,9 +253,9 @@
 		.more-link {
 			@include link-transition;
 			color: $x-color-secondary-base;
-			display: block;
 			font-weight: 600;
 			margin: $x-space-xs 0;
+			white-space: nowrap;
 
 			&:hover {
 				color: $x-color-accent-base;
@@ -331,8 +336,15 @@
 	.archive &,
 	.search & {
 
-		.entry-summary p {
-			word-break: break-word;
+		.entry-featured-image {
+			min-height: auto;
+		}
+
+		.entry-summary {
+			
+			p {
+				word-break: break-word;
+			}
 		}
 
 		.entry-meta {
