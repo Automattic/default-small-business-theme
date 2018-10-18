@@ -73,3 +73,17 @@ if ( ! function_exists( 'business_theme_excerpt_more' ) ) :
     }
     add_filter( 'excerpt_more', 'business_theme_excerpt_more' );
 endif;
+
+/**
+ * Add featured image as background image.
+ */
+function business_theme_background_image() {
+
+	$image = business_theme_get_attachment_image_src( get_the_ID(), get_post_thumbnail_id( get_the_ID() ), 'business_theme-featured-image' );
+
+	if ( ! $image ) {
+		return;
+	}
+
+	printf( ' style="background-image: url(\'%s\');"', esc_url( $image ) );
+}

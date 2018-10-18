@@ -11,15 +11,9 @@
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 
-	<figure class="entry-featured-image">
-		<a href="<?php echo esc_url( get_permalink() ) ?>" rel="bookmark">
-		<?php
-		if ( has_post_thumbnail() ) :
-			the_post_thumbnail();
-		endif;
-		?>
-		</a>
-	</figure>
+	<?php if ( has_post_thumbnail() ) : ?>
+		<div class="entry-featured-image" <?php business_theme_background_image(); ?>></div>
+	<?php endif; ?>
 
 	<header class="entry-header">
 		<?php

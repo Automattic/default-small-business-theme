@@ -71,3 +71,17 @@ function business_theme_photos_author_bio_avatar_size() {
 	return 60; // in px
 }
 add_filter( 'jetpack_author_bio_avatar_size', 'business_theme_photos_author_bio_avatar_size' );
+
+/**
+* Custom function to get the URL of a post thumbnail;
+* If Jetpack is not available, fall back to wp_get_attachment_image_src()
+*/
+function business_theme_get_attachment_image_src( $post_id, $post_thumbnail_id, $size ) {
+	if ( function_exists( 'jetpack_featured_images_fallback_get_image_src' ) ) {
+		return jetpack_featured_images_fallback_get_image_src( $post_id, $post_thumbnail_id, $size );
+	} else {
+		$attachment = wp_get_attachment_image_src( $post_thumbnail_id, $size ); // Attachment array
+		$url = $attachment[0]; // Attachment URL
+		return $url;
+	}
+}

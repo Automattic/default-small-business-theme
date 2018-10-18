@@ -17,7 +17,7 @@
 
 		@include media( tablet ) {
 			max-width: $x-grid-column-7;
-			margin-right: auto; //$x-space-column-3;
+			margin-right: auto;
 			margin-left: auto;
 		}
 	}
@@ -39,7 +39,14 @@
 	}
 
 	.entry-featured-image {
-		text-align: center;
+		background-size: cover;
+		background-position: 50% 50%;
+		display: block;
+		min-height: 270px;
+		max-height: 684px;
+		overflow: hidden;
+		position: relative;
+		width: 100%;
 	}
 
 	.entry-header {
@@ -306,7 +313,7 @@
 		.author-title {
 			color: $x-color-words-subtle;
 			font-size: $x-font-size-xs;
-		    font-weight: 400;
+			font-weight: 400;
 			margin-top: 0;
 			text-transform: uppercase;
 		}
