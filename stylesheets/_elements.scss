@@ -170,14 +170,12 @@ table {
 
 blockquote,
 blockquote.is-large {
+	color: $x-color-secondary-base;
 	margin-left: 0;
 	margin-right: 0;
-	border-top: 1px solid green;
 	
-	padding: $x-space-sm;
+	padding: 0 $x-space-sm;
 	
-	border-top-color: $x-color-border-base;
-
 	p {
 		padding: $x-space-xs 0;
 		word-break: break-word;

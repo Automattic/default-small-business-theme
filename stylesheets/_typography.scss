@@ -35,9 +35,6 @@ h1, h2, h3, h4, h5, h6 {
 
 h2 {
 	font-family: $x-font-family-heading;
-/*	font-weight: 200;*/
-/*	letter-spacing: .25rem;*/
-/*	text-transform: uppercase;*/
 }
 
 h5 {
@@ -116,9 +113,12 @@ dfn, em, i {
 blockquote,
 blockquote.is-large {
 
+	border-left: 4px solid grey;
+	border-left-color: $x-color-accent-base;
+
 	p {
-		font-size: $x-font-size-md;
-		/*font-style: normal;*/
+		font-size: $x-font-size-base;
+		font-style: italic;
 	}
 
 	cite {
@@ -129,18 +129,22 @@ blockquote.is-large {
 	}
 }
 
+blockquote.is-large {
+	p {
+		font-size: $x-font-size-md;
+	}
+}
+
 pre {
 	font-family: $x-font-family-code;
 	font-size: $x-font-size-sm;
 	line-height: $x-font-leading-body;
-/*	@include font-smoothing;
-*/}
+}
 
 code, kbd, tt, var, samp {
 	font-size: $x-font-size-sm;
 	font-family: $x-font-family-code;
-/*	@include font-smoothing;
-*/}
+}
 
 mark, ins {
 	text-decoration: none;
