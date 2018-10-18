@@ -10,33 +10,48 @@
 
 @import "css/blocks.scss";
 
-// Fix line heights in forms
+// Fix line height in forms
 .editor-rich-text__tinymce.mce-content-body {
 	line-height: $x-font-leading-body;
 }
 
-// Reset font scale to pixels for the editor
-body,
-p {
-
-	// override elements.scss block-level background color
-	background-color: transparent;
-
-	// font-size base for mobile
-	font-size: 21px;
-
-	@include media(tablet) {
-
-		// font-size base for tablet and up
-		font-size: calc( 21px * #{$x-font-size-responsive-ratio} ); // 1 1/6
-	}
+// Remove left margin of list blocks
+.block-library-list .editor-rich-text__tinymce.mce-content-body {
+	padding-left: 0;
+	margin-left: 0;
 }
 
-// Block Overrides
+body, p {
+	
+	// Override elements.scss block-level background color
+	background-color: transparent;
+
+	// Font size base for mobile
+	font-size: $x-font-size-base;
+
+	@include media(tablet) {
+		// Font size for tablet and up
+		/* boom */
+		font-size: calc( #{$x-font-size-base} * #{$x-font-size-responsive-ratio} ); // 1 1/6
+	}
+
+}
+
+.editor-post-title__block {
+	font-family: courier;
+}
+
+.editor-block-list__layout {
+	background: green !important;
+}
 
 // Blockquote
 
 blockquote {
+	
+	max-width: 1100px;
+	margin: 0 auto;
+	border-left-color: $x-color-accent-base !important;
 
 	&.wp-block-quote,
 	&.wp-block-quote.is-large,
@@ -48,9 +63,9 @@ blockquote {
 	}
 
 	&:not(.is-large):not(.is-style-large) {
-		border-left: none;
-		margin-right: 0;
-		padding-left: 0;
+//		border-left: none;
+//		margin-right: 0;
+//		padding-left: 0;
 	}
 
 	.wp-block-quote__citation {
@@ -63,10 +78,6 @@ blockquote {
 .wp-block-pullquote {
 	border-bottom: none;
 	border-top: none;
-
-	.wp-block-pullquote__citation {
-
-	}
 }
 
 // Columns

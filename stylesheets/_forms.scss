@@ -8,7 +8,7 @@ input[type="reset"],
 input[type="submit"] {
 	background-color: $x-color-accent-base;
 	color: $x-color-shade-white;
-	padding: $x-space-xxs, $x-space-xs;
+	padding: $x-space-xxs $x-space-xs;
 	font-size: $x-font-size-xs;
 	line-height: $x-font-leading-body;
 	letter-spacing: $x-font-letter-spacing;

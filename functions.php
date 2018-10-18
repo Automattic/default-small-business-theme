@@ -82,9 +82,6 @@ if ( ! function_exists( 'business_theme_setup' ) ) :
 		// Add support for full and wide align images.
 		add_theme_support( 'align-wide' );
 
-		// Adding support for core block visual styles.
-		// add_theme_support( 'wp-block-styles' );
-
 		// Add support for core editor styles
 		add_theme_support( 'editor-styles' );
 

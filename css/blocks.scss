@@ -64,7 +64,7 @@
 
 	background-color: $x-color-accent-base;
 	color: $x-color-shade-white;
-	padding: $x-space-xxs, $x-space-xs;
+	padding: $x-space-xxs $x-space-xs;
 	font-size: $x-font-size-sm;
 	line-height: $x-font-leading-body;
 	letter-spacing: $x-font-letter-spacing;
@@ -118,20 +118,32 @@
 
 // !Image
 
-.wp-block-image img {
+.wp-block-image {
+	
+	img {
 
-	display: block;
+		display: block;
 
-	&.alignleft,
-	&.alignright {
-		max-width: 100%;
+		&.alignleft,
+		&.alignright {
+			max-width: 100%;
+		}
+
+			&.alignfull img {
+			width: 100vw;
+			margin-left: auto;
+			margin-right: auto;
+		}
 	}
-
-		&.alignfull img {
-		width: 100vw;
-		margin-left: auto;
-		margin-right: auto;
+	
+	.alignleft,
+	.aligncenter,
+	.alignright {
+		figcaption {
+			margin-top: 0.8em;
+		}
 	}
+	
 }
 
 // !Cover image
@@ -148,6 +160,7 @@
 		margin-top: 0;
 		margin-right: $x-space-sm;
 	}
+
 	&.alignright {
 		margin-top: 0;
 		margin-left: $x-space-sm;
@@ -246,7 +259,7 @@
 .wp-block-image.alignfull figcaption,
 .wp-block-gallery.alignfull .blocks-gallery-image figcaption,
 .wp-block-gallery.alignfull .blocks-gallery-item figcaption {
-	padding: $x-space-xs, $x-space-sm;
+	padding: $x-space-xs $x-space-sm;
 }
 
 // !Columns
@@ -375,7 +388,7 @@ table.wp-block-table {
 
 .wp-block-quote {
 
-	padding: $x-space-sm, 0;
+	padding: $x-space-sm 0 !important;
 	margin-top: $x-space-lg;
 	margin-bottom: $x-space-lg;
 	margin-left: $x-space-sm;
@@ -384,7 +397,7 @@ table.wp-block-table {
 	border-top-color: $x-color-shade-gray-2;
 
 	p {
-		padding: $x-space-xs, $x-space-sm;
+		padding: $x-space-xs $x-space-sm;
 		font-size: $x-font-size-base;
 	}
 
@@ -398,7 +411,7 @@ table.wp-block-table {
 		font-family: $x-font-family-heading;
 		font-size: $x-font-size-sm;
 		color: $x-color-words-subtle;
-		padding: 0, $x-space-sm;
+		padding: 0 $x-space-sm;
 		font-style: normal;
 		font-weight: 500;
 	}
