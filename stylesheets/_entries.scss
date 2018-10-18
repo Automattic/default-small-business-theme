@@ -1,26 +1,15 @@
 
 /** === Entries === */
 
+#page {
+	padding: 0 1em;
+}
+
 // This is outside of the .hentry wrapper so it does’t override selectors in blocks.css
 .entry-content,
 .entry-summary,
 .page-content {
 
-	// Style all elemnts first
-	> * {
-		margin: $x-space-md;
-		max-width: calc( 100% - ( #{$x-space-sm} * 2 ) );
-
-		&:first-child {
-			margin-top: 0;
-		}
-
-		@include media( tablet ) {
-			max-width: $x-grid-column-7;
-			margin-right: auto;
-			margin-left: auto;
-		}
-	}
 }
 
 .has-post-thumbnail.hentry {
@@ -28,17 +17,22 @@
 }
 
 .hentry {
-	margin: $x-space-lg 0;
-
+	max-width: $x-grid-column-8;
+	
+	#page & {
+		margin-left: auto;
+		margin-right: auto;
+	}
+	
 	@include media( tablet ) {
-		margin: $x-space-xl, $x-space-sm;
+		margin: $x-space-xl auto;
 	}
 
 	@include media( desktop ) {
-		margin: $x-space-lg 0;
+		margin: $x-space-lg auto;
 
 		&:first-child {
-			margin-top: $x-space-xxl;
+			margin-top: $x-space-xl;
 		}
 
 	}

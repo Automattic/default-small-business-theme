@@ -21,7 +21,11 @@
 .site-identity {
 
 	color: $x-color-words-subtle;
-	margin: $x-space-md;
+	margin: $x-space-md 0;
+	
+	@include media( tablet ) {
+		margin: $x-space-md;
+	}
 
 	& > * {
 		margin-bottom: $x-space-md;
@@ -76,6 +80,7 @@
 		font-family: $x-font-family-heading;
 		font-size: $x-font-size-xs;
 		color: $x-color-words-subtle;
+		margin: 0.5em 0 0;
 		font-weight: normal;
 	}
 
@@ -120,4 +125,8 @@
 		margin-left: auto;
 		margin-right: auto;
 	}
+}
+
+#primary-menu {
+//	display: none;
 }
