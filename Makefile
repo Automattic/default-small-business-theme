@@ -26,7 +26,7 @@ dev: clean check-for-grunt
 	
 css-vars: clean
 	@node tools/sass-variables.js --prefix=${CSS_VAR_PREFIX} style.scss --output style-css-vars.scss
-	@node tools/sass-variables.js --prefix=${CSS_VAR_PREFIX} --root-selector=".edit-post-visual-editor" --ignore "css/blocks.scss" editor.scss --output editor-css-vars.scss
+	@node tools/sass-variables.js --prefix=${CSS_VAR_PREFIX} --root-selector="body" --ignore "css/blocks.scss" editor.scss --output editor-css-vars.scss
 	@node tools/sass-variables.js --prefix=${CSS_VAR_PREFIX} --skip-root css/blocks.scss --output css/blocks-css-vars.scss
 	@echo && grunt build && echo
 	@make clean-vars
