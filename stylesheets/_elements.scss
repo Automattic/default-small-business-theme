@@ -65,34 +65,12 @@ ol {
 	padding: 0;
 }
 
-li {
-	list-style: none;
-}
-
 ul {
-	list-style: none;
 	list-style-position: inside;
 }
 
 ul > li {
 
-	position: relative;
-	padding-left: $x-space-sm;
-
-	&:before {
-		content: "\25CF\00a0";
-		display: block;
-		left: 0;
-		position: absolute;
-		top: $x-space-xxs;
-		color: $x-color-primary-base;
-		line-height: $x-font-leading-md;
-		font-size: $x-font-size-xs;
-	}
-
-	li:before {
-		content: "\2B58\00a0";
-	}
 }
 
 ol {
