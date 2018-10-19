@@ -115,7 +115,7 @@
 
 .comment-respond {
 
-	margin: $x-space-lg auto $x-space-sm;
+	margin: $x-space-lg auto $x-space-sm !important;
 
 	@include media( tablet ) {
 		max-width: $x-grid-column-7;
