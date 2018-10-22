@@ -156,6 +156,7 @@ blockquote.is-large {
 	padding: 0 $x-space-sm;
 	
 	p {
+		margin: 0;
 		padding: $x-space-xs 0;
 		word-break: break-word;
 	}
