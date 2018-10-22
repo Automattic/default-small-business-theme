@@ -469,41 +469,45 @@ table.wp-block-table {
 	}
 }
 
-.wp-block-gallery {
+/*.wp-block-gallery {
 	margin-left: 0;
-}
+}*/
 
 /*--------------------------------------------------------------
 // !Block Color Palette Colors
 --------------------------------------------------------------*/
-.has-strong-blue-color {
-  color: #0073aa;
+p.has-background {
+	padding: $x-space-sm;
 }
 
-.has-strong-blue-background-color {
-  background-color: #0073aa;
+.has-purple-color {
+	color: $x-color-accent-base;
 }
 
-.has-lighter-blue-color {
-  color: #229fd8;
+.has-purple-background-color {
+	background-color: $x-color-accent-base;
 }
 
-.has-lighter-blue-background-color {
-  background-color: #229fd8;
+.has-light-gray-color {
+	color: $x-color-border-base;
 }
 
-.has-very-light-gray-color {
-  color: #eee;
+.has-light-gray-background-color {
+	background-color: $x-color-border-base;
 }
 
-.has-very-light-gray-background-color {
-  background-color: #eee;
+.has-medium-gray-color {
+	color: $x-color-primary-base;
 }
 
-.has-very-dark-gray-color {
-  color: #444;
+.has-medium-gray-background-color {
+	background-color: $x-color-primary-base;
 }
 
-.has-very-dark-gray-background-color {
-  background-color: #444;
+.has-dark-gray-color {
+	color: $x-color-secondary-base;
+}
+
+.has-dark-gray-background-color {
+	background-color: $x-color-secondary-base;
 }
