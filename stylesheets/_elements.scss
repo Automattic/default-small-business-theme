@@ -106,8 +106,15 @@ ol > li {
 
 li > ol,
 li > ul {
-	margin-left: 0;
 	margin-bottom: 0;
+}
+
+li > ul {
+	padding-left: $x-space-sm;
+}
+
+li > ol {
+	margin-left: 0;
 }
 
 li > ol ol,
