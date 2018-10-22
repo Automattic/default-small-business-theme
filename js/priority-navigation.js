@@ -4,13 +4,15 @@
 
 ( function( $ ) {
 	var menu = $( '#primary-menu' );
-	var more = $( '#more-menu' );
+	var more = $( '#more-menu' ).hide();
 	var hidden = more.find( 'ul.sub-menu' );
 
 	function adjustMenu() {
+		if ( window.innerWidth < 815 ) return;
 		hideItems() || showItems();
+		hidden.children( 'li' ).length > 0 ? more.show() : more.hide();
 	}
-	
+
 	function hideItems() {
 		var w = 0, width = menu.outerWidth() - more.outerWidth(), didHide = false;
 		var itemsHidden = hidden.children( 'li' ).length > 0;
@@ -18,7 +20,7 @@
 			var item = $( node );
 			w += item.outerWidth();
 			if ( w > width ) {
-				itemsHidden ? item.prependTo( hidden ) : item.appendTo( hidden );;
+				itemsHidden ? item.prependTo( hidden ) : item.appendTo( hidden );
 				didHide = true;
 			}
 		} );
@@ -39,11 +41,7 @@
 		} );
 	}
 	
-	function adjustMenuHandler() {
-		if ( window.innerWidth >= 815 ) adjustMenu();
-	}
-	
-	$( window ).resize( adjustMenuHandler );
+	$( window ).resize( adjustMenu );
 
-	adjustMenuHandler();
+	adjustMenu();
 } ).call( this, jQuery );
