@@ -17,7 +17,7 @@
 function business_theme_jetpack_setup() {
 	// Add theme support for Infinite Scroll.
 	add_theme_support( 'infinite-scroll', array(
-		'container' => 'main',
+		'container' => 'primary',
 		'render'    => 'business_theme_infinite_scroll_render',
 		'footer'    => 'page',
 	) );
