@@ -24,12 +24,9 @@
 	margin-right: auto;
 
 	> * {
-		padding: $x-space-sm;
+		padding: 0 $x-space-sm;
 	}
 
-	> *:last-child {
-
-	}
 
 	.page-title {
 		color: $x-color-words-subtle;
@@ -40,7 +37,7 @@
 		display: flex;
 		align-items: center;
 		margin-top: $x-space-lg;
-		margin-bottom: $x-space-md;
+		margin-bottom: $x-space-lg;
 
 		> * {
 			max-width: $x-grid-column-7;
@@ -96,30 +93,31 @@
 
 	@include media( tablet ) {
 		max-width: $x-grid-column-12;
-/*		display: flex;
-		justify-content: flex-end;
-		flex-direction: row;
-		flex-wrap: wrap;
-*/		margin-left: auto;
+		margin-left: auto;
 		margin-right: auto;
 		width: 100%;
 	}
 }
 
-.comments-title {
+.comments-title,
+.no-comments {
 
-	margin: $x-space-sm auto;
+	margin: $x-space-sm;
 	max-width: $x-grid-column-7;
-	//width: 100%;
+
+	@include media( tablet ) {
+		margin: $x-space-sm auto;
+	}
+
 }
 
 .comment-respond {
 
-	margin: $x-space-lg auto $x-space-sm !important;
+	margin: $x-space-lg $x-space-sm $x-space-sm !important;
 
 	@include media( tablet ) {
 		max-width: $x-grid-column-7;
-		/*flex: 1 1 70%;*/
+		margin: $x-space-lg auto $x-space-sm !important;
 	}
 
 	h3 {
@@ -260,10 +258,14 @@
 .comment-meta {
 	font-size: $x-font-size-sm;
 	margin-top: -1.4rem;
-	margin-left: 65px;
+	margin-left: 60px;
 
 	a {
 		color: $x-color-words-subtle;
+	}
+
+	@include media( tablet ) {	
+		margin-left: 65px;
 	}
 }
 
