@@ -2,6 +2,8 @@
 /** === Site Branding === */
 
 .main-navigation {
+	
+	text-align: right;
 
 	> div > ul {
 
@@ -13,6 +15,10 @@
 			display: block;
 			list-style: none;
 			padding-left: 0;
+			
+			ul {
+				text-align: left;
+			}
 
 			a {
 				display: block;
@@ -157,7 +163,8 @@
 
 			> li {
 				display: inline-block;
-
+				margin-left: -4px;
+				
 				a {
 					font-size: $x-font-size-sm;
 					font-weight: 600;
