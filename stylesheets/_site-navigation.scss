@@ -39,7 +39,7 @@
 			}
 
 			&.current-menu-item a {
-				color: $x-color-accent-base;				
+				color: $x-color-accent-base;
 			}
 		}
 
@@ -133,50 +133,93 @@
 	// Mobile Menu
 	@include media( mobile ) { // prevents unneccesary overrides on larger breakpoints
 
-		&.toggled-on > div > ul {
-
-			border-top: 1px solid grey;
-			border-color: $x-color-border-base;
-			background-color: $x-color-shade-white;
-			padding-top: $x-space-xs;
-			padding-bottom: $x-space-xl;
-			bottom: 0;
-			display: block;
-			left: 0;
-			position: fixed;
-			width: 100%;
-			z-index: 500;
-
-			li > a {
-				font-size: $x-font-size-sm;
-				padding: $x-space-xxs $x-space-xs;
-				
+		#primary-menu {
+			
+			overflow: hidden;
+			
+			> li:first-child:before {
+				display: none;
 			}
-			.menu-item-has-children {
-				> a {
-					padding-right: $x-space-lg;
-				}
-
-				> button {
-					padding-top: $x-space-xxs;
-					padding-bottom: $x-space-xxs;
-				}
-			}
-
-			li.toggled-on > ul {
-				width: $x-grid-column-3;
-				padding-left: $x-space-sm;
+			
+			
+			li {
 				position: relative;
-				left: inherit;
-				right: 0;
-				width: 100%;
-				opacity: 1;
-
-				> li.toggled-on > ul {
-					position: relative;
-					width: 100%;
+				
+				&:before {
+					display: block;
+					content: "\020";
+					width: 300vw;
+					left: -100vw;
+					border-top: solid 1px $x-color-border-base;
+					position: absolute;
 				}
 			}
+			
+		}
+		
+		.dropdown-toggle {
+			z-index: 999999;
+		}
+
+		&.toggled-on {
+			
+			ul {
+				text-align: left;
+				> li {
+					padding-right: $x-space-md;
+				}
+			}
+			
+			ul.sub-menu {
+//				margin-top: $x-space-xs;
+			}
+			
+			> div > ul {
+
+				border-top: 1px solid grey;
+				border-color: $x-color-border-base;
+				background-color: $x-color-shade-white;
+				padding: $x-space-xs;
+				display: block;
+				width: 100%;
+				z-index: 500;
+			
+				position: absolute;
+				//			bottom: 0;
+				//			left: 0;
+
+				li > a {
+					font-size: $x-font-size-sm;
+					padding: $x-space-xxs $x-space-xs;
+				
+				}
+				.menu-item-has-children {
+					> a {
+						padding-right: $x-space-lg;
+					}
+
+					> button {
+						padding-top: $x-space-xxs;
+						padding-bottom: $x-space-xxs;
+					}
+				}
+
+				li.toggled-on > ul {
+					width: $x-grid-column-3;
+					padding-left: $x-space-sm;
+					position: relative;
+					left: inherit;
+					right: 0;
+					width: 100%;
+					opacity: 1;
+
+					> li.toggled-on > ul {
+						position: relative;
+						width: 100%;
+					}
+				}
+			}
+			
 		}
 	}
 
@@ -257,8 +300,8 @@
 
 .menu-toggle {
 
-	position: fixed;
-	bottom: $x-space-sm;
+	position: absolute;
+	bottom: calc( #{$x-space-sm} + #{$x-space-xxs} );
 	right: $x-space-sm;
 	z-index: 9999;
 
