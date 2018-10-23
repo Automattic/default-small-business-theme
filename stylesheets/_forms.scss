@@ -3,6 +3,9 @@
 
 .button,
 button,
+#infinite-handle span button,
+#infinite-handle span button:focus,
+#infinite-handle span button:hover,
 input[type="button"],
 input[type="reset"],
 input[type="submit"] {
@@ -27,6 +30,7 @@ input[type="submit"] {
 
 .button:hover,
 button:hover,
+#infinite-handle span button:hover,
 input[type="button"]:hover,
 input[type="reset"]:hover,
 input[type="submit"]:hover {
@@ -35,6 +39,8 @@ input[type="submit"]:hover {
 
 .button:active, .button:focus,
 button:active, button:focus,
+#infinite-handle span button:active,
+#infinite-handle span button:focus,
 input[type="button"]:active,
 input[type="button"]:focus,
 input[type="reset"]:active,

@@ -291,6 +291,37 @@
 	display: block;
 }
 
+/* Infinite Handle */
+#infinite-handle {
+	padding: $x-space-lg 0;
+	text-align: center;
+}
+
+#infinite-handle span {
+	background: transparent;
+	border-radius: 0;
+	color: inherit;
+	font-size: inherit;
+	padding: 0;
+}
+
+/* Infinite Loader */
+.site-main .infinite-loader {
+	box-sizing: content-box;
+	padding: $x-space-lg auto;
+}
+
+.infinite-loader .spinner {
+	left: 50% !important;
+	top: 50% !important;
+	z-index: 9998 !important;
+}
+
+.infinite-loader .spinner div {
+	background: currentcolor !important;
+	color: $x-color-border-base;
+}
+
 
 /** === Media === */
 
