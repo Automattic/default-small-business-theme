@@ -1,6 +1,10 @@
 
 /** === Site Branding === */
 
+#site-navigation {
+	margin-right: $x-space-xs;
+}
+
 .main-navigation {
 	
 	text-align: right;
@@ -53,6 +57,10 @@
 
 			&#more-menu {
 				display: none;
+				
+				ul.sub-menu {
+					margin-top: 4px;
+				}
 			}
 		}
 
@@ -69,6 +77,7 @@
 				position: absolute;
 				left: -999em;
 				z-index: 99999;
+				margin-left: 0;
 				-webkit-transition: opacity 0.5s ease-in-out;
 				-moz-transition:    opacity 0.5s ease-in-out;
 				transition:         opacity 0.5s ease-in-out;
@@ -78,7 +87,7 @@
 				}
 			}
 
-			button {
+			button.dropdown-toggle {
 				background-color: transparent;
 				color: $x-color-primary-base;
 				padding: $x-space-xs;
@@ -89,7 +98,18 @@
 				right: 0;
 				top: 0;
 				vertical-align: middle;
-
+				
+				&:focus {
+					svg {
+						fill: $x-color-accent-base;
+					}
+				}
+				
+				svg {
+					position: relative;
+					top: 0.05em;
+				}
+				
 				span {
 					display: inline-block;
 					height: 20px;
@@ -174,6 +194,10 @@
 				> ul {
 					border: 1px solid grey;
 					border-color: $x-color-border-base;
+					
+					#page & button.dropdown-toggle {
+						padding: $x-space-xxs;
+					}
 
 					li {
 						display: block;
@@ -190,21 +214,6 @@
 					}
 				}
 
-				&.toggled-on > ul {
-					width: $x-grid-column-3;
-					left: inherit;
-					right: 0;
-					opacity: 1;
-
-					> li.toggled-on > ul {
-						padding-left: $x-space-sm;
-						left: inherit;
-						position: relative;
-						right: 0;
-						width: 100%;
-					}
-				}
-
 				&#more-menu {
 
 					display: inline-block;
@@ -214,6 +223,21 @@
 						position: relative;
 						right: inherit;
 					}
+				}
+			}
+			
+			.toggled-on > ul {
+				width: $x-grid-column-3;
+				left: inherit;
+				right: 0;
+				opacity: 1;
+
+				> li.toggled-on > ul {
+					padding-left: $x-space-sm;
+					left: inherit;
+					position: relative;
+					right: 0;
+					width: 100%;
 				}
 			}
 
