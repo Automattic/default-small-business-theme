@@ -8,6 +8,14 @@
 .main-navigation {
 	
 	text-align: right;
+	
+	#primary-menu {
+		
+		.toggled-on button.dropdown-toggle.toggled-on svg {
+			transform: scaleY(-1);
+		}
+
+	}
 
 	> div > ul {
 
