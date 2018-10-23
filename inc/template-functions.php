@@ -79,10 +79,20 @@ endif;
  */
 function business_theme_background_image() {
 
-	$image = business_theme_get_attachment_image_src( get_the_ID(), get_post_thumbnail_id( get_the_ID() ), 'business_theme-featured-image' );
+	$size = 'business_theme-featured-image';
+	$image = null;
 
-	if ( ! $image ) {
-		return;
+	if ( function_exists( 'business_theme_get_attachment_image_src' ) ) {
+		$image = business_theme_get_attachment_image_src( get_the_ID(), get_post_thumbnail_id( get_the_ID() ), $size );
+	} else {
+		$attachment = wp_get_attachment_image_src( get_post_thumbnail_id( get_the_ID() ), $size ); // Attachment array
+		if ( ! empty( $attachment ) ) {
+			$image = $attachment[0]; // Attachment URL
+		}
+	}
+	
+	if ( empty( $image ) ) {
+		return $image;
 	}
 
 	printf( ' style="background-image: url(\'%s\');"', esc_url( $image ) );

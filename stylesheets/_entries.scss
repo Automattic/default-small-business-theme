@@ -48,10 +48,15 @@
 		background-size: cover;
 		background-position: 50% 50%;
 		display: block;
-		min-height: 60vh;
 		overflow: hidden;
 		position: relative;
 		width: 100%;
+		
+		min-height: 40vh;
+		
+		@include media( tablet ) {
+			min-height: 60vh;
+		}
 	}
 
 	.entry-header {
