@@ -60,6 +60,15 @@
 				
 				ul.sub-menu {
 					margin-top: 4px;
+
+					li {
+						position: relative;
+					}
+
+					button.dropdown-toggle {
+						position: absolute;
+						right: 0;
+					}
 				}
 			}
 		}
