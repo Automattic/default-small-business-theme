@@ -2,15 +2,21 @@
  * Priority navigation.
  */
 
-( function( $ ) {
+( function( $, mobileBreakpoint ) {
 	var menu = $( '#primary-menu' );
 	var more = $( '#more-menu' ).hide();
 	var hidden = more.find( 'ul.sub-menu' );
-
+	
 	function adjustMenu() {
-		if ( window.innerWidth < 815 ) return;
-		hideItems() || showItems();
-		hidden.children( 'li' ).length > 0 ? more.show() : more.hide();
+		if ( window.innerWidth >= mobileBreakpoint ) {
+			hideItems() || showItems();
+			hidden.children( 'li' ).length > 0 ? more.show() : more.hide();
+		} else {
+			hidden.children( 'li' ).each( function( i, node ) {
+				$( node ).insertBefore( more );
+			} );
+			more.hide();
+		}
 	}
 
 	function hideItems() {
@@ -44,4 +50,4 @@
 	$( window ).resize( adjustMenu );
 
 	adjustMenu();
-} ).call( this, jQuery );
+} ).call( this, jQuery, 815 );
