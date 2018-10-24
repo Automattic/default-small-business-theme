@@ -5,8 +5,11 @@
 .entry-content,
 .entry-summary,
 .page-content {
+	
+	@include media( tablet ) {
+		width: $x-grid-column-7;
+	}
 
-	// Style all elemnts first
 	> * {
 		margin: $x-space-md;
 		max-width: calc( 100% - ( #{$x-space-sm} * 2 ) );
@@ -21,6 +24,7 @@
 			margin-left: auto;
 		}
 	}
+
 }
 
 .infinite-wrap .hentry:first-child,

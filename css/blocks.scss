@@ -9,26 +9,34 @@
 
 #page {
 	
-	.alignwide {
-		position: relative;
-		width: $x-space-column-12;
-		transform: translateX( -50% );
-		max-width: calc( 100vw - 2 * 1em );
-		margin-top: 1em;
-		margin-bottom: 1em;
-		left: 50%;
-	}
-
 	.alignfull {
-		position: relative;
-		transform: translateX( -50% );
-		width: 100vw;
-		max-width: 100vw;
-		margin-top: 1em;
-		margin-bottom: 1em;
-		left: 50%;
+		max-width: $x-grid-column-8;
+		width: 100%;
+		margin: 0;
 	}
+	
+	@include media( tablet ) {
+		.alignwide {
+			position: relative;
+			width: $x-space-column-12;
+			transform: translateX( -50% );
+			max-width: calc( 100vw - 2 * 1em );
+			margin-top: 1em;
+			margin-bottom: 1em;
+			left: 50%;
+		}
 
+		.alignfull {
+			position: relative;
+			transform: translateX( -50% );
+			width: 100vw;
+			max-width: 100vw;
+			margin-top: 1em;
+			margin-bottom: 1em;
+			left: 50%;
+		}
+	}
+	
 	.aligncenter {
 		margin: 1em auto;
 	}
@@ -442,10 +450,15 @@ table.wp-block-table {
 	margin-top: $x-space-md;
 	margin-bottom: $x-space-md;
 	padding: 0;
+	width: 100px;
+	
+	&.is-style-wide {
+		width: 100%;
+	}
 
 	&.is-style-dots {
-
 		background-color: $x-color-shade-white;
+		width: auto;
 
 		&:before {
 			content: "\00b7 \00b7 \00b7 \00b7 \00b7";
@@ -463,10 +476,6 @@ table.wp-block-table {
 		}
 	}
 }
-
-/*.wp-block-gallery {
-	margin-left: 0;
-}*/
 
 /*--------------------------------------------------------------
 // !Block Color Palette Colors
