@@ -1,0 +1,84 @@
+
+p {
+	margin: 1em 0;
+}
+
+hr {
+	background-color: $x-color-shade-gray-2;
+	border: 0;
+	height: 3px;
+	margin-bottom: 1.5em;
+}
+
+abbr,
+acronym {
+	border-bottom: 1px dotted inherit;
+	border-bottom-color: $x-color-border-base;
+	cursor: help;
+}
+
+pre {
+	background-color: $x-color-shade-gray-2;
+	margin-bottom: $x-space-sm;
+	max-width: 100%;
+	overflow: auto;
+	padding: $x-space-sm;
+}
+
+dt {
+	font-weight: bold;
+}
+
+dd {
+	margin-top: 0;
+	margin-right: 0;
+	margin-bottom: $x-space-xs;
+	margin-left: $x-space-xs;
+}
+
+img {
+	height: auto;
+	max-width: 100%;
+	vertical-align: middle;
+}
+
+svg {
+	fill: currentColor;
+}
+
+figure {
+	margin: 0;
+}
+
+table {
+	margin: 0 0 1.5em;
+	width: 100%;
+}
+
+blockquote,
+blockquote.is-large {
+	color: $x-color-secondary-base;
+	margin-left: 0;
+	margin-right: 0;
+	
+	padding: 0 $x-space-sm;
+	
+	p {
+		margin: 0;
+		padding: $x-space-xs 0;
+		word-break: break-word;
+	}
+
+	cite {
+		color: $x-color-words-subtle;
+	}
+}
+
+address {
+	margin: 0 0 1.5em;
+}
+
+mark,
+ins {
+	background-color: $x-color-feedback-warning;
+}
