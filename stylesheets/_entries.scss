@@ -8,7 +8,7 @@
 
 	// Style all elemnts first
 	> * {
-		margin: $x-space-sm;
+		margin: $x-space-md;
 		max-width: calc( 100% - ( #{$x-space-sm} * 2 ) );
 
 		&:first-child {
@@ -32,7 +32,7 @@
 .hentry {
 	margin: $x-space-lg 0;
 
-	@include media( tablet ) {
+/*	@include media( tablet ) {
 		margin: $x-space-xl, $x-space-sm;
 	}
 
@@ -43,7 +43,7 @@
 			margin-top: $x-space-xxl;
 		}
 	}
-
+*/
 	.entry-featured-image {
 		background-size: cover;
 		background-position: 50% 50%;

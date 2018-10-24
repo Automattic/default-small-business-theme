@@ -149,18 +149,18 @@
 
 	&.alignleft {
 		margin-top: 0;
-		margin-right: $x-space-sm;
+		margin-right: $x-space-md;
 	}
 
 	&.alignright {
 		margin-top: 0;
-		margin-left: $x-space-sm;
+		margin-left: $x-space-md;
 	}
 
 	.wp-block-cover-image-text,
 	h2 {
 		font-weight: 400;
-		padding: $x-space-sm;
+		padding: $x-space-md;
 		font-family: $x-font-family-body;
 		line-height: $x-font-leading-heading;
 		letter-spacing: normal;
@@ -217,26 +217,20 @@
 
 	justify-content: space-between;
 
-	.wp-block-column {
-		flex: 0 1 auto;
-	}
-
 	&.has-2-columns .wp-block-column {
-		width: calc( 50% - ( $x-grid-gutter * .5 ) );
+		width: calc( 50% - ( $x-space-gutter * .5 ) );
 	}
 
 	&.has-3-columns .wp-block-column {
-		width: calc( 33% - ( $x-grid-gutter * .33 ) );
+		width: calc( 33% - ( $x-space-gutter * .33 ) );
 	}
 
 	&.has-4-columns .wp-block-column {
-		width: calc( 25% - ( $x-grid-gutter * .25 ) );
-		font-size: $x-font-size-sm;
+		width: calc( 25% - ( $x-space-gutter * .25 ) );
 	}
 
 	@include media( tablet ) {
-//		margin-right: $x-grid-column-2;
-		max-width: $x-grid-column-8;
+		max-width: $x-grid-column-7;
 	}
 }
 
