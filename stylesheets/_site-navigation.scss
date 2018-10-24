@@ -184,7 +184,8 @@
 			
 			> div > ul {
 
-				border-top: 1px solid grey;
+				border-top: solid 1px grey;
+				border-bottom: solid 1px grey;
 				border-color: $x-color-border-base;
 				background-color: $x-color-shade-white;
 				padding: $x-space-xs;
