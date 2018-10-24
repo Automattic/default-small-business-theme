@@ -280,6 +280,19 @@
 	display: block;
 }
 
+/** === Search Form === */
+
+.search-form {
+	input[type="search"] {
+		vertical-align: middle;
+		margin-right: 0.2em;
+		padding: 6px;
+	}
+	input[type="submit"] {
+		padding: $x-space-xs;
+	}
+}
+
 /** === Infinite scroll === */
 
 .infinite-scroll .posts-navigation,
