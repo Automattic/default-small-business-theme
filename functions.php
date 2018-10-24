@@ -204,7 +204,7 @@ add_action( 'wp_enqueue_scripts', 'business_theme_scripts' );
 function business_theme_editor_styles() {
 	wp_enqueue_style( 'business_theme-editor-style', get_template_directory_uri() . '/editor.css' );
 }
-// add_action( 'enqueue_block_editor_assets', 'business_theme_editor_styles' );
+add_action( 'enqueue_block_editor_assets', 'business_theme_editor_styles' );
 
 /**
  * Check whether the browser supports JavaScript
