@@ -344,6 +344,12 @@
 	.blog &,
 	.archive &,
 	.search & {
+		
+		.entry-header {
+			@include media( desktop ) {
+				padding-left: $x-space-md;
+			}
+		}
 
 		.entry-featured-image {
 			min-height: auto;
