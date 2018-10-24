@@ -353,6 +353,10 @@
 
 		.entry-featured-image {
 			min-height: auto;
+
+			@include media( mobile ) {
+				margin-left: $x-space-sm;
+			}
 		}
 
 		.entry-summary {
