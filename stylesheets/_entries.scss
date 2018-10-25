@@ -48,20 +48,6 @@
 		}
 	}
 */
-	.entry-featured-image {
-		background-size: cover;
-		background-position: 50% 50%;
-		display: block;
-		overflow: hidden;
-		position: relative;
-		width: 100%;
-		
-		min-height: 40vh;
-		
-		@include media( tablet ) {
-			min-height: 60vh;
-		}
-	}
 
 	.entry-header {
 
@@ -348,14 +334,6 @@
 		.entry-header {
 			@include media( desktop ) {
 				padding-left: $x-space-md;
-			}
-		}
-
-		.entry-featured-image {
-			min-height: auto;
-
-			@include media( mobile ) {
-				margin-left: $x-space-sm;
 			}
 		}
 
