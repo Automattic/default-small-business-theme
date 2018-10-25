@@ -55,6 +55,10 @@ p.has-drop-cap:not(:focus):first-letter { // Drop cap font-size
 	font-size: $x-font-size-xxxl;
 }
 
+p.has-drop-cap:not(:focus):first-letter {
+	padding: .2em .2em 0 0;
+}
+
 h1,
 .text--xxl,
 big {

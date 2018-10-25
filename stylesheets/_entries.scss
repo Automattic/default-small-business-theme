@@ -429,6 +429,7 @@
 				margin: $x-space-sm auto;
 				margin-top: 0;
 				width: auto;
+				word-wrap: break-word;
 			}
 
 			.entry-footer .entry-meta {
@@ -491,9 +492,6 @@
 				flex: 1 0 60%;
 
 				.entry-meta {
-
-					margin-left: $x-space-sm;
-					margin-right: $x-space-sm;
 
 					> span {
 						flex: 1 1 20%;

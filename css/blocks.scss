@@ -55,6 +55,7 @@
 
 // !Buttons
 
+.wp-block-file .wp-block-file__button,
 .wp-block-button .wp-block-button__link{
 
 	background-color: $x-color-accent-base;
@@ -70,6 +71,7 @@
 	font-weight: 600;
 	text-decoration: none;
 	text-transform: uppercase;
+	vertical-align: middle;
 
 	&:hover {
 		background-color: $x-color-accent-light;
@@ -134,7 +136,8 @@
 	.alignleft,
 	.aligncenter,
 	.alignright {
-		figcaption {
+		figcaption,
+		.wp-caption-text {
 			margin-top: 0.8em;
 		}
 	}
@@ -193,6 +196,7 @@
 
 // !Block Captions
 
+.wp-caption .wp-caption-text,
 .wp-block-audio figcaption,
 .wp-block-video figcaption,
 .wp-block-image figcaption,
@@ -216,6 +220,11 @@
 .wp-block-gallery.alignfull .blocks-gallery-image figcaption,
 .wp-block-gallery.alignfull .blocks-gallery-item figcaption {
 	padding: $x-space-xs $x-space-sm;
+}
+
+.wp-block-gallery .blocks-gallery-image figcaption, 
+.wp-block-gallery .blocks-gallery-item figcaption {
+	color: $x-color-shade-white;
 }
 
 // !Columns
@@ -246,7 +255,8 @@
 
 ul.wp-block-categories,
 ul.wp-block-archives,
-ul.wp-block-latest-posts {
+ul.wp-block-latest-posts,
+ol.wp-block-latest-comments {
 
 	li {
 		font-size: $x-font-size-base;
@@ -274,6 +284,15 @@ ul.wp-block-latest-posts {
 		&.columns-2 li {
 			width: calc( 50% - ( $x-grid-gutter * .5) );
 		}
+	}
+}
+ol.wp-block-latest-comments > li:before {
+	content: '';
+}
+
+.wp-block-latest-comments__comment-excerpt {
+	p {
+		font-size: inherit;
 	}
 }
 
@@ -480,7 +499,7 @@ table.wp-block-table {
 /*--------------------------------------------------------------
 // !Block Color Palette Colors
 --------------------------------------------------------------*/
-p.has-background {
+.has-background {
 	padding: $x-space-sm;
 }
 

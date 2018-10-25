@@ -105,6 +105,12 @@ body, p {
 	}
 }
 
+.gutenberg .wp-block-categories ul,
+.gutenberg .wp-block-latest-posts,
+.gutenberg ul.wp-block-archives {
+	padding-left: .5em;
+}
+
 // Separators
 
 hr {
@@ -174,4 +180,10 @@ blockquote {
 	figcaption {
 		margin-top: 0.8em;
 	}
+}
+
+// Tables
+.wp-block-table td ,
+.wp-block-table th {
+	border-width: 0;
 }
