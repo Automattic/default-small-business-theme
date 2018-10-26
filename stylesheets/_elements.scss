@@ -21,9 +21,7 @@ a:visited {}
 
 a:hover, a:focus, a:active {}
 
-a:focus {
-
-}
+a:focus {}
 
 a:hover,
 a:active {
@@ -32,8 +30,10 @@ a:active {
 
 @import "elements-common";
 
-ul,
+
 ol {
+	list-style: none;
+	counter-reset: sans-counter;
 	margin-top: 0;
 	margin-right: 0;
 	margin-bottom: $x-space-xs;
@@ -42,16 +42,11 @@ ol {
 }
 
 ul {
-	list-style-position: inside;
-}
+	padding-left: $x-space-xs;
 
-ul > li {
-
-}
-
-ol {
-	list-style: none;
-	counter-reset: sans-counter;
+	@include media(tablet) {
+		padding-left: $x-space-sm;
+	}
 }
 
 ol > li {

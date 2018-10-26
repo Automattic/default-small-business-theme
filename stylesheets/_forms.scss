@@ -100,3 +100,9 @@ textarea {
 	font-size: $x-font-size-sm;
 	width: 100%;
 }
+
+@include media(mobile) {
+	.contact-form textarea {
+		width: 100% !important;
+	}
+}

@@ -333,23 +333,17 @@
 		z-index: 600;
 		
 		padding: $x-space-sm;
-
-		& > div {
-			padding-right: 100px;
-		}
 	}
 
 	@include media( tablet ) {
 		text-align: left;
 	}
 
-	@include media( desktop ) {
-	}
-
 	ul.social-links-menu {
 
 		margin: 0;
 		line-height: .6em;
+		padding-left: 0;
 
 		li {
 			display: inline-block;

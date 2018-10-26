@@ -10,8 +10,8 @@
 		width: $x-grid-column-7;
 	}
 
-	> * {
-		margin: $x-space-md;
+	> *:not(.alignfull) {
+		margin: $x-space-sm;
 		max-width: calc( 100% - ( #{$x-space-sm} * 2 ) );
 
 		&:first-child {
@@ -23,6 +23,10 @@
 			margin-right: auto;
 			margin-left: auto;
 		}
+	}
+
+	h1, h2, h3, h4, h5, h6 {
+		margin: $x-space-md auto !important;
 	}
 
 }
