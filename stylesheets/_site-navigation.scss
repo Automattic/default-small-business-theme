@@ -418,11 +418,11 @@
 		}
 
 		.nav-next {
-			text-align: right;
+			border-top: 1px solid $x-color-border-base;
 		}
 
 		& > div {
-			margin: $x-space-sm;
+			padding: $x-space-sm;
 		}
 	}
 
@@ -438,9 +438,15 @@
 			justify-content: center;
 			align-content: center;
 
+			.nav-next {
+				text-align: right;
+			}
+
 			& > div {
+				border-top: 0 !important;
 				margin: $x-space-lg $x-space-sm;
 				max-width: $x-grid-column-5;
+				padding: 0 !important;
 				width: 50%;
 
 				&:only-child {
