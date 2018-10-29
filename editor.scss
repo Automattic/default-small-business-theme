@@ -296,3 +296,8 @@ blockquote {
 .editor-block-list__block[data-type="core/paragraph"] a {
 	@include box-shadow-underline;
 }
+
+.editor-block-list__block[data-type="core/separator"] {
+	margin-top: $x-space-lg;
+	margin-bottom: $x-space-lg;
+}
