@@ -11,6 +11,10 @@
 
 @import "css/blocks.scss";
 
+.edit-post-visual-editor .editor-block-list__block[data-align=wide] {
+	max-width: $x-space-column-12;
+}
+
 .editor-default-block-appender input[type="text"].editor-default-block-appender__content,
 .editor-post-title .editor-post-title__input,
 .edit-post-visual-editor,
@@ -27,6 +31,7 @@
 .editor-post-title .editor-post-title__input {
 	font-size: $x-font-size-xl;
 	font-weight: 900;
+	line-height: 1.2;
 	@include media( tablet ) {
 		font-size: calc( #{$x-font-size-xxxl} * 1.175 );
 	}
@@ -38,7 +43,7 @@ body, p {
 	font-size: $x-font-size-base;
 
 	@include media(tablet) {
-		font-size: 1.05em;
+		font-size: 1.055em;
 	}
 }
 
@@ -54,7 +59,7 @@ body, p {
 	margin: 0 auto;
 	@include media( desktop ) {
 		max-width: $x-grid-column-7;
-		min-width: calc( #{$x-grid-column-7} * 1.03 );
+		min-width: 740px;
 	}
 }
 
