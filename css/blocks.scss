@@ -201,7 +201,8 @@
 .wp-block-gallery .blocks-gallery-image figcaption,
 .wp-block-gallery .blocks-gallery-item figcaption,
 .wp-block-quote .wp-block-quote__citation,
-.wp-block-pullquote .wp-block-pullquote__citation {
+.wp-block-pullquote .wp-block-pullquote__citation,
+.wp-block-pullquote cite {
 	color: $x-color-words-subtle;
 	font-size: $x-font-size-sm;
 	font-family: $x-font-family-heading;
