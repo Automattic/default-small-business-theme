@@ -6,6 +6,8 @@
 .entry-summary,
 .page-content {
 	
+	@include clearfix;
+	
 	@include media( tablet ) {
 		width: $x-grid-column-7;
 	}
@@ -243,13 +245,13 @@
 		}
 
 		a:not(.jp-relatedposts-post-a) {
-			box-shadow: 0 1px 0 0;
+			@include box-shadow-underline;
 
 			&:hover {
 				box-shadow: none;
 			}
 		}
-
+		
 		.more-link {
 			@include link-transition;
 			color: $x-color-secondary-base;
@@ -342,7 +344,6 @@
 		}
 
 		.entry-summary {
-			
 			p {
 				word-break: break-word;
 			}
@@ -458,14 +459,7 @@
 			}
 
 			.entry-summary {
-
 				flex: 1 1 60%;
-
-				> * {
-
-					margin-left: $x-space-sm;
-					margin-right: $x-space-sm;
-				}
 			}
 
 			.entry-footer {
