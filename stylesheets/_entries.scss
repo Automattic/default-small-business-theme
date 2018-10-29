@@ -6,6 +6,8 @@
 .entry-summary,
 .page-content {
 	
+	@include clearfix;
+	
 	@include media( tablet ) {
 		width: $x-grid-column-7;
 	}

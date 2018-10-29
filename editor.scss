@@ -56,6 +56,14 @@ body, p {
 	min-width: auto;
 }
 
+.editor-block-list__block[data-type="core/table"] .wp-block-table {
+	max-width: 100%;
+}
+
+.editor-block-list__block[data-type="core/table"][data-align=center] table {
+	width: 100%;
+}
+
 // Line height.
 
 .editor-rich-text__tinymce.mce-content-body {
