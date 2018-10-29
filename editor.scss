@@ -26,6 +26,11 @@
 	h1, h2, h3, h4, h5, h6 {
 		margin-top: 0.83em;
 	}
+	
+}
+
+.wp-block-columns p {
+	font-size: 0.810em;
 }
 
 .gutenberg .editor-block-list__block blockquote p,
@@ -268,10 +273,6 @@ blockquote {
 
 .edit-post-visual-editor .editor-block-list__block[data-align=full] {
 	padding: 0;
-}
-
-.wp-block-columns {
-	font-size: 0.892em;
 }
 
 .wp-block-quote.is-style-default .wp-block-quote__citation {
