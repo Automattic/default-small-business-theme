@@ -43,14 +43,14 @@
 
 	.alignleft {
 		float: left;
-		margin-right: $x-space-xs !important;
-		margin-bottom: $x-space-xs;;
+		margin-right: $x-space-md;
+		margin-bottom: $x-space-sm;
 	}
 
 	.alignright {
 		float: right;
-		margin-left: $x-space-xs !important;
-		margin-bottom: $x-space-xs;
+		margin-left: $x-space-md;
+		margin-bottom: $x-space-sm;
 	}
 	
 }
@@ -192,6 +192,10 @@
 
 	@include media( tablet ) {
 		width: 100%;
+	}
+	
+	&.alignleft, &.alignright {
+		width: auto;
 	}
 
 	&.alignleft {
@@ -420,28 +424,38 @@ table.wp-block-table {
 
 .wp-block-quote {
 
-	//padding: $x-space-sm 0 !important;
-	margin-top: $x-space-lg;
-	margin-bottom: $x-space-lg;
-	
 	#page & {
-		max-width: 100%;
+		margin-top: $x-space-lg;
+		margin-bottom: $x-space-lg;
 		margin-right: 0;
 		margin-left: 0 ;
-		width: 100%;
 	}
+	
+	max-width: 100%;
+	width: 100%;
 
 	p {	
 		margin: 0; 
 		padding: $x-space-xs $x-space-sm;
-		font-size: $x-font-size-base;
+//		font-size: $x-font-size-base;
 	}
+	
+	&.is-large, &.is-style-large {
+		padding-left: $x-space-md;
+		p {
+			font-size: $x-font-size-lg;
+			padding-left: 1em;
+			line-height: $x-font-family-heading;
+		}
+		
+		p, cite {
+			padding-left: 0;
+		}
+		
+		cite {
+			font-size: calc( #{$x-font-size-md} * 0.92 );
+		}
 
-	&.is-large p,
-	&.is-style-large p {
-		font-size: $x-font-size-lg;
-		padding-left: 1em;
-		line-height: $x-font-family-heading;
 	}
 
 	cite {
@@ -483,6 +497,11 @@ table.wp-block-table {
 	& > cite {
 		padding-left: $x-space-sm;
 		padding-right: $x-space-sm;
+	}
+	
+	
+	&.is-style-solid-color blockquote {
+		max-width: 100%;
 	}
 
 	&.alignwide,
@@ -589,3 +608,4 @@ table.wp-block-table {
 	font-size: $x-font-size-sm;
 	font-style: italic;
 }
+

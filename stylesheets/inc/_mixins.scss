@@ -81,3 +81,13 @@ $wide_width: 12 * ( 80px + 25px ) - 25px;
 		box-shadow: none;
 	}
 }
+
+@mixin typography-base() {
+	// font-size base for mobile
+	font-size: $x-font-size-base;
+
+	@include media(tablet) {
+		// font-size for tablet and up
+		font-size: calc( #{$x-font-size-base} * #{$x-font-size-responsive-ratio} ); // 1 1/6
+	}
+}
