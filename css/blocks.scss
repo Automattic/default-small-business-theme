@@ -301,7 +301,16 @@
 
 // !Categories & Archives
 
-ul.wp-block-categories,
+.wp-block-categories,
+.wp-block-archives,
+.wp-block-latest-posts {
+	@include media( tablet ) {
+		padding-left: $x-space-lg;
+		padding-right: $x-space-lg;
+	}
+}
+
+.wp-block-categories,
 ul.wp-block-archives,
 ul.wp-block-latest-posts,
 ol.wp-block-latest-comments {

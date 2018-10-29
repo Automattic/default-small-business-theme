@@ -92,11 +92,7 @@
 
 // Links.
 .editor-block-list__layout a {
-	box-shadow: 0 1px 0 0;
-
-	&:hover {
-		box-shadow: none;
-	}
+	@include box-shadow-underline;
 }
 
 // Links
@@ -144,7 +140,15 @@
 .gutenberg .wp-block-categories ul,
 .gutenberg .wp-block-latest-posts,
 .gutenberg ul.wp-block-archives {
-	padding-left: .5em;
+	padding-left: 0.5em;
+}
+
+[data-align="full"] {
+	.wp-block-categories ul,
+	.wp-block-latest-posts,
+	ul.wp-block-archives {
+		padding-left: $x-space-lg;
+	}
 }
 
 // Separators
