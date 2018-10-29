@@ -242,7 +242,7 @@
 			display: block;
 		}
 
-		a {
+		a:not(.jp-relatedposts-post-a) {
 			box-shadow: 0 1px 0 0;
 
 			&:hover {

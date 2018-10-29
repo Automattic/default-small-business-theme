@@ -18,10 +18,6 @@
 	font-family: $x-font-family-body;
 }
 
-.edit-post-layout__content .edit-post-visual-editor {
-	overflow-x: hidden;
-}
-
 // Editor title font size.
 
 .editor-post-title .editor-post-title__input {
@@ -62,9 +58,17 @@ body, p {
 	line-height: $x-font-leading-body;
 }
 
-.editor-block-list__block-edit {
-	
+// Links.
+.editor-block-list__layout a {
+	box-shadow: 0 1px 0 0;
+
+	&:hover {
+		box-shadow: none;
+	}
 }
+
+// Links
+.editor-block-list__layout
 
 // List styles.
 
