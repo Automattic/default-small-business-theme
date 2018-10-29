@@ -225,3 +225,17 @@ blockquote {
 .wp-block-pullquote cite {
 	font-size: calc( #{$x-font-size-sm} * 1.05 );
 }
+
+.wp-block-gallery .blocks-gallery-item figcaption {
+	margin-bottom: -10px;
+}
+
+.wp-block-gallery.alignfull {
+	max-width: 100%;
+	width: calc( 100% - 2 * 1em );
+	margin: 0 auto;
+}
+
+.edit-post-visual-editor .editor-block-list__block[data-align=full] {
+	padding: 0;
+}
