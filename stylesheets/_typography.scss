@@ -5,7 +5,7 @@ body:not(.gutenberg-editor-page) {
 	@include typography-base;
 }
 
-body,
+body:not(.gutenberg-editor-page),
 button,
 input,
 select,
