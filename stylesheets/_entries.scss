@@ -340,7 +340,6 @@
 		}
 
 		.entry-summary {
-			
 			p {
 				word-break: break-word;
 			}
@@ -456,14 +455,7 @@
 			}
 
 			.entry-summary {
-
 				flex: 1 1 60%;
-
-				> * {
-
-					margin-left: $x-space-sm;
-					margin-right: $x-space-sm;
-				}
 			}
 
 			.entry-footer {
