@@ -207,3 +207,15 @@ blockquote {
 		@include box-shadow-underline;
 	}
 }
+
+.wp-caption .wp-caption-text,
+.wp-block-audio figcaption,
+.wp-block-video figcaption,
+.wp-block-image figcaption,
+.wp-block-gallery .blocks-gallery-image figcaption,
+.wp-block-gallery .blocks-gallery-item figcaption,
+.wp-block-quote .wp-block-quote__citation,
+.wp-block-pullquote .wp-block-pullquote__citation,
+.wp-block-pullquote cite {
+	font-size: calc( #{$x-font-size-sm} * 1.05 );
+}
