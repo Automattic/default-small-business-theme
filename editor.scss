@@ -195,3 +195,15 @@ blockquote {
 .wp-block-table th {
 	border-width: 0;
 }
+
+// Latest Posts
+
+.wp-block-categories,
+.wp-block-archives,
+.wp-block-latest-posts,
+.wp-block-latest-comments {
+	font-size: calc( #{$x-font-size-md} * 0.86 );
+	li a {
+		@include box-shadow-underline;
+	}
+}

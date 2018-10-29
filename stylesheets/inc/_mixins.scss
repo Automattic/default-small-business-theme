@@ -75,3 +75,9 @@ $wide_width: 12 * ( 80px + 25px ) - 25px;
 	overflow: hidden;
 }
 
+@mixin box-shadow-underline() {
+	box-shadow: 0 1px 0 0;
+	&:hover {
+		box-shadow: none;
+	}
+}

@@ -267,6 +267,9 @@ ol.wp-block-latest-comments {
 
 	li {
 		font-size: $x-font-size-base;
+		&:nth-child(n+2) {
+			margin-top: 0.15em;
+		}
 
 		&:before {
 			font-size: $x-font-size-xxs;
