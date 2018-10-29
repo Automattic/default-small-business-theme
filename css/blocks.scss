@@ -145,12 +145,6 @@
 
 .wp-block-cover-image {
 
-	width: inherit;
-
-	@include media( tablet ) {
-		width: 100%;
-	}
-
 	&.alignleft {
 		margin-top: 0;
 		margin-right: $x-space-md;
@@ -200,7 +194,7 @@
 	color: $x-color-words-subtle;
 	font-size: $x-font-size-sm;
 	font-family: $x-font-family-heading;
-	padding: $x-space-xxs, 0;
+	padding: $x-space-xxs;
 	font-style: normal;
 	text-align: left;
 	text-transform: none;
@@ -493,7 +487,7 @@ table.wp-block-table {
 
 		&:before {
 			content: "\00b7 \00b7 \00b7 \00b7 \00b7";
-			color: $x-color-shade-gray-6;
+			color: $x-color-shade-gray-4;
 			font-family: $body-font; /* family@include globalvar(font-family, body); */
 			font-size: $x-font-size-lg;
 			letter-spacing: 1em;
