@@ -237,7 +237,7 @@
 		width: calc( 25% - ( $x-space-gutter * .25 ) );
 	}
 
-	@include media(mobile) {
+	@include media(tablet) {
 		display: block;
 	}
 
