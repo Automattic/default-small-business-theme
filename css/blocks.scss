@@ -612,3 +612,10 @@ table.wp-block-table {
 	font-style: italic;
 }
 
+.wp-block-embed {
+	&.alignwide, &.alignfull, &.aligncenter {
+		iframe {
+			margin: 0 auto !important;
+		}
+	}
+}
