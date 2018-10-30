@@ -251,7 +251,7 @@
 				box-shadow: none;
 			}
 		}
-		
+
 		.more-link {
 			@include link-transition;
 			color: $x-color-secondary-base;
@@ -336,12 +336,6 @@
 	.blog &,
 	.archive &,
 	.search & {
-		
-		.entry-header {
-			@include media( desktop ) {
-				padding-left: $x-space-md;
-			}
-		}
 
 		.entry-summary {
 			p {
