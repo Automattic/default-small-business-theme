@@ -97,7 +97,7 @@
 
 // Links.
 .editor-block-list__layout a {
-	@include box-shadow-underline;
+	@include link-underline;
 }
 
 // Links
@@ -245,7 +245,7 @@ blockquote {
 .wp-block-latest-comments {
 	font-size: calc( #{$x-font-size-md} * 0.86 );
 	li a {
-		@include box-shadow-underline;
+		@include link-underline;
 	}
 }
 
@@ -294,7 +294,7 @@ blockquote {
 }
 
 .editor-block-list__block[data-type="core/paragraph"] a {
-	@include box-shadow-underline;
+	@include link-underline;
 }
 
 .editor-block-list__block[data-type="core/separator"] {

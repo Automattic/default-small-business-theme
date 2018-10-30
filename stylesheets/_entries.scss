@@ -245,11 +245,7 @@
 		}
 
 		a:not(.jp-relatedposts-post-a) {
-			@include box-shadow-underline;
-
-			&:hover {
-				box-shadow: none;
-			}
+			@include link-underline;
 		}
 
 		.more-link {

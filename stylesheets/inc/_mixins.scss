@@ -75,10 +75,16 @@ $wide_width: 12 * ( 80px + 25px ) - 25px;
 	overflow: hidden;
 }
 
-@mixin box-shadow-underline() {
-	box-shadow: 0 1px 0 0;
-	&:hover {
-		box-shadow: none;
+@mixin link-underline() {
+	background-image: -webkit-linear-gradient(left,currentColor 0%,currentColor 100%);
+    background-image: linear-gradient(to right,currentColor 0%,currentColor 100%);
+    background-position: 0 100%;
+    background-repeat: repeat-x;
+    -webkit-background-size: 100% 1px;
+    background-size: 100% 1px;
+
+    &:hover {
+		background-image: none;
 	}
 }
 
