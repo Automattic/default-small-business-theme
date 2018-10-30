@@ -112,8 +112,13 @@
 		
 		font-size: $x-font-size-xs;
 		margin: $x-space-sm;
-		margin-bottom: 0 !important;
 		color: $x-color-words-subtle;
+		
+		.blog &,
+		.archive &,
+		.search & {
+			margin-bottom: 0 !important;
+		}
 
 		a {
 			color: $x-color-words-heading;
