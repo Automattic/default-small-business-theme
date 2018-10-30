@@ -307,11 +307,15 @@
 
 }
 
-.menu-toggle {
+.site-header-wrapper {
+	position: relative;
+}
 
+.menu-toggle {
 	position: absolute;
-	bottom: calc( #{$x-space-sm} + #{$x-space-xxs} );
 	right: $x-space-sm;
+	transform: translateY(-52%);
+	top: 50%;
 	z-index: 9999;
 
 	@include media( tablet ) {
