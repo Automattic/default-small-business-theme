@@ -526,3 +526,10 @@
 .posts-navigation a:hover {
 	color: $x-color-accent-base;
 }
+
+.page-links {
+	a {
+		display: inline-block;
+		margin: 0 $x-space-xxs;
+	}
+}
