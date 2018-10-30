@@ -98,6 +98,22 @@
 	@include media( mobile ) {
 		padding-bottom: $x-space-xl;
 	}
+	
+	@include media( tablet ) {
+		
+		$credits_width: 60%;
+		
+		.site-credits {
+			box-sizing: border-box;
+			max-width: $credits_width;
+			padding-right: $x-space-md;
+		}
+	
+		.social-navigation {
+			max-width: 100% - $credits_width;
+		}
+	}
+	
 }
 
 .site-info {
