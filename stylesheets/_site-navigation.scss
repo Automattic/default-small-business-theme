@@ -326,16 +326,26 @@
 .social-navigation {
 
 	@include media( mobile ) {
+		position: relative;
 		background-color: $x-color-shade-white;
-		border-top: 1px solid grey;
 		border-color: $x-color-border-base;
+		padding-top: $x-space-sm;
 		bottom: 0;
 		left: 0;
-		position: fixed;
 		width: 100%;
 		z-index: 600;
-		
-		padding: $x-space-sm;
+		padding: $x-space-md 0;
+		order: 1;
+		&:after {
+			display: block;
+			position: absolute;
+			content: "\020";
+			width: calc( 100% + 2 * #{$x-space-sm} );
+			height: 1px;
+			background: $x-color-border-base;
+			bottom: 0;
+			left: calc( -1 * #{$x-space-sm} );
+		}
 	}
 
 	@include media( tablet ) {
