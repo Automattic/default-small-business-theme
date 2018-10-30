@@ -361,7 +361,7 @@ ol.wp-block-latest-comments {
 }
 
 // !Tables
-
+.entry-content table,
 .wp-block-table {
 
 	overflow-x: auto;
@@ -369,6 +369,7 @@ ol.wp-block-latest-comments {
 	td,
 	th {
 		padding: .5em;
+		text-align: left;
 	}
 
 	tr:nth-child(even) {
@@ -380,6 +381,7 @@ ol.wp-block-latest-comments {
 	}
 }
 
+.entry-content table,
 .wp-block-table table,
 table.wp-block-table {
 
