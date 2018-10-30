@@ -280,6 +280,25 @@
 	display: block;
 }
 
+/* Jetpack Cpmments (WordPress.com) */
+.comments-area #respond {
+	font-family: inherit;
+	font-weight: inherit;
+}
+
+.comments-area #respond p.form-submit input#comment-submit {
+	background: $x-color-accent-base !important;
+	border: 0;
+	@include rounded( 3px );
+	color: #fff !important;
+	font-family: $body-font;
+	font-size: inherit !important;
+	font-weight: bold !important;
+	line-height: inherit !important;
+	padding: $x-space-xs $x-space-sm !important;
+	text-shadow: none !important;
+}
+
 /** === Search Form === */
 
 .search-form {
