@@ -2,7 +2,7 @@
 /css/*-css-vars.scss
 /style.css
 /editor.css
-/rtl.css
+/style-rtl.css
 /css/blocks.css
 /build
 node.core
