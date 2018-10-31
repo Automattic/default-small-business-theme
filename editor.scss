@@ -319,3 +319,7 @@ blockquote {
 	margin-top: $x-space-lg;
 	margin-bottom: $x-space-lg;
 }
+
+.gutenberg .editor-block-list__block .wp-block-image .mce-content-body {
+	font-size: $x-font-size-xs !important;
+}
