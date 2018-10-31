@@ -35,6 +35,12 @@
 			left: 50%;
 		}
 	}
+	
+	.alignwide, .aligncenter, .alignfull {
+		img {
+			margin: 0 auto;
+		}
+	}
 
 	.aligncenter {
 		margin: 1em auto;
