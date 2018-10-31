@@ -18,6 +18,8 @@
     "inc/logo-resizer.php",
     "inc/template-functions.php",
     "inc/template-tags.php",
+    "inc/wpcom.php",
+    "inc/headstart/en.json",
     "index.php",
     "js/customizer.js",
     "js/logo/customize-controls.js",
