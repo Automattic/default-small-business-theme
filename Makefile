@@ -30,10 +30,14 @@ css-vars: clean
 	@node tools/sass-variables.js --prefix=${CSS_VAR_PREFIX} --skip-root css/blocks.scss --output css/blocks-css-vars.scss
 	@echo && grunt build && echo
 	@make clean-vars
+	
+rtl:
+	@npm run build:rtl
 
 theme: clean
-	@echo "* Initializing build"; mkdir -p build
+	@echo "* Initializing build"; mkdir -p build; echo
 	@echo "* Building assets"; make css-vars
+	@echo "* Generating RTL styles"; make rtl; echo
 	@echo "* Copying assets"; rsync -a . build/ --exclude-from=excludes.rsync
 	@echo "* Integrity check"; node tools/buildtool.js --check --path build/
 	@echo "* Zipping"; mv build ${PKG}; mkdir build; zip -mqr build/${PKG}.zip ${PKG}; cd build/; unzip -qq ${PKG}.zip
