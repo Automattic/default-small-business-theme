@@ -11,7 +11,6 @@
     "functions.php",
     "header.php",
     "inc/classes/svg-icons.php",
-    "inc/custom-header.php",
     "inc/customizer.php",
     "inc/icon-functions.php",
     "inc/jetpack.php",
