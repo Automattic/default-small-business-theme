@@ -29,6 +29,25 @@
 	
 }
 
+.block-editor-page {
+	@include media( desktop ) {
+		
+		.editor-post-title {
+			margin: 0 auto;
+		}
+		
+		.editor-post-title__block {
+			max-width: 740px !important;
+		}
+	
+		.editor-post-title__input {
+
+		}
+	
+		
+	}
+}
+
 .wp-block-columns p {
 	font-size: 0.810em;
 }
@@ -68,7 +87,6 @@
 }
 
 // Editor width.
-.editor-post-title,
 .editor-block-list__block {
 	margin: 0 auto;
 	@include media( desktop ) {
