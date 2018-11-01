@@ -138,6 +138,10 @@ a {
 	&:hover {
 		color: $x-color-primary-base;
 	}
+
+	&:focus {
+		outline: 2px solid $x-color-border-base;
+	}
 }
 
 abbr[title] {

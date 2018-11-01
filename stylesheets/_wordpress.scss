@@ -290,7 +290,9 @@
 .comments-area #respond p.form-submit input#comment-submit {
 	background: $x-color-accent-base !important;
 	border: 0;
-	@include rounded( 3px );
+	-webkit-border-radius: 3px !important;
+	-moz-border-radius: 3px !important;
+	border-radius: 3px !important;
 	color: #fff !important;
 	font-family: $body-font;
 	font-size: inherit !important;
