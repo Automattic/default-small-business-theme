@@ -46,7 +46,6 @@ if ( ! function_exists( 'business_theme_setup' ) ) :
 		// This theme uses wp_nav_menu() in one location.
 		register_nav_menus( array(
 			'menu-1' => __( 'Primary', 'business_theme' ),
-			'social' => __( 'Social Links', 'business_theme' ),
 		) );
 
 		/*

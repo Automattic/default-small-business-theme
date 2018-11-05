@@ -323,7 +323,7 @@
 	}
 }
 
-.social-navigation {
+.jetpack-social-navigation {
 
 	@include media( mobile ) {
 		position: relative;
@@ -352,7 +352,7 @@
 		text-align: left;
 	}
 
-	ul.social-links-menu {
+	ul.menu {
 
 		margin: 0;
 		line-height: .6em;
@@ -371,11 +371,13 @@
 			a {
 				display: inline-block;
 				line-height: 1;
+				font-size: $x-font-size-xl;
 
 				svg {
 					@include svg-transition;
 					display: block;
 					line-height: 1;
+					fill: inherit;
 
 					&:hover {
 						fill: $x-color-primary-base;

@@ -38,8 +38,21 @@ function business_theme_jetpack_setup() {
 			'comment'    => '.comments-link',
 		),
 	) );
+
+	// Social Menu
+	add_theme_support( 'jetpack-social-menu', 'svg' );
 }
 add_action( 'after_setup_theme', 'business_theme_jetpack_setup' );
+
+/**
+ * Social Menu.
+ */
+function business_theme_social_menu() {
+	if ( function_exists( 'jetpack_social_menu' ) ) {
+		jetpack_social_menu();
+	}
+}
+
 
 /**
  * Custom render function for Infinite Scroll.
