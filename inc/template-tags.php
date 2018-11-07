@@ -163,11 +163,34 @@ if ( ! function_exists( 'business_theme_comment' ) ) :
 endif;
 
 if ( ! function_exists( 'business_theme_social_menu' ) ) :
-
-function business_theme_social_menu() {
-	if ( function_exists( 'jetpack_social_menu' ) ) {
-		jetpack_social_menu();
+	/**
+	 * Jetpack social menu.
+	 */
+	function business_theme_social_menu() {
+		if ( function_exists( 'jetpack_social_menu' ) ) {
+			jetpack_social_menu();
+		}
 	}
-}
-
 endif;
+
+if ( ! function_exists( 'business_theme_author_bio' ) ) :
+	/**
+	 * Return early if Author Bio is not available.
+	 */
+	function business_theme_author_bio() {
+		if ( function_exists( 'jetpack_author_bio' ) ) {
+			jetpack_author_bio();
+		}
+	}
+endif;
+
+if ( ! function_exists( 'business_theme_author_bio_avatar_size' ) ) :
+	/**
+	 * Author Bio Avatar Size.
+	 */
+	function business_theme_author_bio_avatar_size() {
+		return 60; // in px
+	}
+endif;
+
+add_filter( 'jetpack_author_bio_avatar_size', 'business_theme_author_bio_avatar_size' );

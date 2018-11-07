@@ -57,20 +57,3 @@ function business_theme_infinite_scroll_render() {
 		endif;
 	}
 }
-
-/**
- * Return early if Author Bio is not available.
- */
-function business_theme_photos_author_bio() {
-	if ( function_exists( 'jetpack_author_bio' ) ) {
-		jetpack_author_bio();
-	}
-}
-
-/**
- * Author Bio Avatar Size.
- */
-function business_theme_photos_author_bio_avatar_size() {
-	return 60; // in px
-}
-add_filter( 'jetpack_author_bio_avatar_size', 'business_theme_photos_author_bio_avatar_size' );

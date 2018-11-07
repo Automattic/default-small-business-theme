@@ -55,10 +55,6 @@
 		</div>
 	</footer><!-- .entry-footer -->
 
-	<?php
-		if ( function_exists( 'business_theme_photos_author_bio' ) ) {
-			business_theme_photos_author_bio();
-		}
-	?>
+	<?php business_theme_author_bio(); ?>
 
 </article><!-- #post-<?php the_ID(); ?> -->
