@@ -45,16 +45,6 @@ function business_theme_jetpack_setup() {
 add_action( 'after_setup_theme', 'business_theme_jetpack_setup' );
 
 /**
- * Social Menu.
- */
-function business_theme_social_menu() {
-	if ( function_exists( 'jetpack_social_menu' ) ) {
-		jetpack_social_menu();
-	}
-}
-
-
-/**
  * Custom render function for Infinite Scroll.
  */
 function business_theme_infinite_scroll_render() {

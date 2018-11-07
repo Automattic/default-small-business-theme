@@ -161,3 +161,13 @@ if ( ! function_exists( 'business_theme_comment' ) ) :
     endif;
 }
 endif;
+
+if ( ! function_exists( 'business_theme_social_menu' ) ) :
+
+function business_theme_social_menu() {
+	if ( function_exists( 'jetpack_social_menu' ) ) {
+		jetpack_social_menu();
+	}
+}
+
+endif;
