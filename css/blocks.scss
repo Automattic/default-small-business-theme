@@ -226,7 +226,7 @@
 
 // !Cover image
 
-.wp-block-cover-image {
+.wp-block-cover {
 	width: inherit;
 
 	@include media( tablet ) {
@@ -247,11 +247,12 @@
 		margin-left: $x-space-md;
 	}
 
-	.wp-block-cover-image-text,
+	.wp-block-cover-text,
 	h2 {
 		font-weight: 400;
 		padding: $x-space-md;
-		font-family: $x-font-family-body;
+		font-family: $x-font-family-heading;
+		font-style: italic;
 		line-height: $x-font-leading-heading;
 		letter-spacing: normal;
 		text-transform: none;

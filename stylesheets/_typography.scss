@@ -21,7 +21,8 @@ textarea {
 h1, h2, h3, h4, h5, h6 {
 	clear: both;
 	color: $x-color-words-heading;
-	font-weight: 800;
+	font-weight: 400;
+	font-style: italics;
 	font-family: $x-font-family-heading;
 	line-height: $x-font-leading-heading;
 }

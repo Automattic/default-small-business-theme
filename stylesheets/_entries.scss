@@ -67,7 +67,8 @@
 
 	.entry-title {
 		margin: $x-space-sm;
-		font-weight: 800;
+		font-weight: 400;
+		font-style: italic;
 
 		a {
 			color: $x-color-primary-base;
@@ -94,26 +95,12 @@
 		}
 	}
 
-	@at-root .single .entry-title {
-		@include media( tablet ) { 
-			font-size: $x-font-size-xxxl;
-			margin: $x-space-lg auto $x-space-md;
-		}
-	}
-
-	@at-root body.page .entry-title {
-		@include media( tablet ) { 
-			font-size: $x-font-size-xxxl;
-			margin: $x-space-lg auto $x-space-md;
-		}
-	}
-
 	.entry-meta {
 		
 		font-size: $x-font-size-xs;
 		margin: $x-space-sm;
 		color: $x-color-words-subtle;
-		
+
 		a {
 			color: $x-color-words-heading;
 			@include link-transition;
@@ -313,20 +300,36 @@
 		}
 	}
 
-	.author-bio {
-		clear: both;
+		.author-bio {
+			clear: both;
 
-		.author-link {
-			white-space: nowrap;
-			font-weight: 700;
+			.author-link {
+				white-space: nowrap;
+				font-weight: 700;
 
-			&:hover {
-				color: $x-color-accent-base;
+				&:hover {
+					color: $x-color-accent-base;
+				}
+			}
+		}
+
+	}
+
+	// Single post / page
+	body.single,
+	body.page {
+		.hentry {
+			.entry-title,
+			.entry-meta {
+				text-align: center;
+			}
+
+			@include media( tablet ) { 
+				font-size: $x-font-size-xxxl;
+				margin: $x-space-lg auto $x-space-md;
 			}
 		}
 	}
-
-}
 
 	// Archives
 	.blog &,

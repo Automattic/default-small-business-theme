@@ -2,13 +2,14 @@
 /** === Site Branding === */
 
 #site-navigation {
-	margin-right: $x-space-xs;
+	border-top: 1px solid gray;
+	border-bottom: 1px solid gray;
+	border-color: $x-color-border-base;
+	padding: $x-space-sm 0;	
 }
 
 .main-navigation {
-	
-	text-align: right;
-	
+		
 	#primary-menu {
 		
 		.toggled-on button.dropdown-toggle.toggled-on svg {
@@ -248,7 +249,6 @@
 				
 				a {
 					font-size: $x-font-size-sm;
-					font-weight: 600;
 					padding: $x-space-xs;
 				}
 
