@@ -18,9 +18,10 @@
 
 	color: $x-color-words-subtle;
 	margin: $x-space-sm 0;
+	text-align: center;
 	
 	@include media( tablet ) {
-		margin: $x-space-xl 0;
+		margin: $x-space-lg 0;
 	}
 
 	.site-brand {
@@ -32,6 +33,7 @@
 		color: $x-color-words-base;
 		font-size: $x-font-size-xxl;
 		font-style: italic;
+		margin: 0;
 
 		a {
 			@include link-transition;
@@ -45,8 +47,7 @@
 	}
 
 	.site-description {
-		font-family: $x-font-family-heading;
-		font-size: $x-font-size-xs;
+		font-size: $x-font-size-sm;
 		color: $x-color-words-subtle;
 		margin: 0.5em 0 0;
 		font-weight: normal;
@@ -60,23 +61,37 @@
 
 .site-footer {
 
+	background-color: $x-color-secondary-base;
+	text-align: center;
+
 	.site-credits {
 		max-width: $x-grid-column-12;
-		background-color: $x-color-secondary-base;
 		color: $x-color-shade-white;
 		padding: $x-space-sm 0;
 		margin: 0;		
+
+		@include media(tablet) {
+			max-width: $x-grid-column-10;
+			margin: 0 auto;
+		}
 	}
 	
 	.jetpack-social-navigation {
 		background: $x-color-shade-gray-2;
-		padding: $x-space-sm 0;
+
+		.menu-social-container {
+			padding: $x-space-sm 0;
+
+			@include media(tablet) {
+				max-width: $x-grid-column-10;
+				margin: 0 auto;
+			}
+		}
 	}
 	
 }
 
 .site-info {
-
 	font-size: $x-font-size-sm;
 	font-family: $x-font-family-body;
 		
@@ -89,7 +104,6 @@
 	}
 
 	@include media( tablet ) {
-		max-width: $x-grid-column-10;
 		border-bottom: none;
 		margin-left: auto;
 		margin-right: auto;
