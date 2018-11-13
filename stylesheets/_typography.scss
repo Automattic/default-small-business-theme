@@ -99,15 +99,14 @@ blockquote.is-large {
 	border-left-color: $x-color-accent-base;
 
 	p {
-		font-size: $x-font-size-base;
+		font-family: $x-font-family-heading;
+		font-size: $x-font-size-md;
 		font-style: italic;
 	}
 
 	cite {
-		font-family: $x-font-family-heading;
 		font-size: $x-font-size-xs;
 		font-style: normal;
-		font-weight: 500;
 	}
 }
 

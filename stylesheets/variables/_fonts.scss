@@ -1,6 +1,6 @@
 
-$body-font: Karla, -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
-$heading-font: Lora, "Gentium Basic", Georgia, serif;
+$body-font: Lora, Georgia, Times, "Times New Roman", serif;
+$heading-font: Lora, Georgia, Times, "Times New Roman", serif;
 $code-font: Menlo, monaco, Consolas, Lucida Console, monospace;
 
 $font-size-base: .9em;
@@ -26,8 +26,8 @@ $x-font-family-body: $body-font;
 $x-font-family-heading: $heading-font;
 $x-font-family-code: $code-font;
 
-$x-font-leading-body: 1.6;
-$x-font-leading-heading: 1.2;
+$x-font-leading-body: 1.8;
+$x-font-leading-heading: 1.25;
 $x-font-leading-double: calc( #{$x-font-leading-heading} * 2 );
 
 $x-font-leading-md: 1.4;

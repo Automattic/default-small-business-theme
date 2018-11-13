@@ -128,11 +128,11 @@ function business_theme_fonts_url() {
 	 * supported by Lato, translate this to 'off'. Do not translate
 	 * into your own language.
 	 */
-	$lato = esc_html_x( 'on', 'Lato font: on or off', 'business_theme' );
+	$lora = esc_html_x( 'on', 'Lora font: on or off', 'business_theme' );
 
-	if ( 'off' !== $lato ) {
+	if ( 'off' !== $lora ) {
 		$font_families = array();
-		$font_families[] = 'Lato:400,400italic,700,700italic,900,900italic';
+		$font_families[] = 'Lora:400,400italic,700,700italic';
 
 		$query_args = array(
 			'family' => urlencode( implode( '|', $font_families ) ),
