@@ -5,7 +5,8 @@
 	border-top: 1px solid gray;
 	border-bottom: 1px solid gray;
 	border-color: $x-color-border-base;
-	padding: $x-space-sm 0;	
+	padding: $x-space-sm 0;
+	text-align: center;
 }
 
 .main-navigation {
@@ -312,12 +313,6 @@
 }
 
 .menu-toggle {
-	position: absolute;
-	right: $x-space-sm;
-	transform: translateY(-52%);
-	top: 50%;
-	z-index: 9999;
-
 	@include media( tablet ) {
 		display: none;
 	}
@@ -326,26 +321,7 @@
 .jetpack-social-navigation {
 
 	@include media( mobile ) {
-		position: relative;
-		background-color: $x-color-shade-white;
-		border-color: $x-color-border-base;
-		padding-top: $x-space-sm;
-		bottom: 0;
-		left: 0;
 		width: 100%;
-		z-index: 600;
-		padding: $x-space-md 0;
-		order: 1;
-		&:after {
-			display: block;
-			position: absolute;
-			content: "\020";
-			width: calc( 100% + 2 * #{$x-space-sm} );
-			height: 1px;
-			background: $x-color-border-base;
-			bottom: 0;
-			left: calc( -1 * #{$x-space-sm} );
-		}
 	}
 
 	@include media( tablet ) {
@@ -357,6 +333,7 @@
 		margin: 0;
 		line-height: .6em;
 		padding-left: 0;
+		text-align: center;
 
 		li {
 			display: inline-block;
@@ -369,7 +346,6 @@
 			}
 
 			a {
-				display: inline-block;
 				line-height: 1;
 				font-size: $x-font-size-xl;
 
@@ -414,7 +390,8 @@
 		a {
 			display: inline-block;
 			font-size: $x-font-size-md;
-			font-weight: 700;
+			font-family: $x-font-family-heading;
+			font-style: italic;
 
 			&:focus .post-title,
 			&:hover .post-title {
@@ -427,8 +404,9 @@
 				display: block;
 				padding: $x-space-xxs 0;
 				text-transform: uppercase;
-				font-weight: 400;
-				font-size: $x-font-size-xxs;
+				font-family: $x-font-family-body;
+				font-size: $x-font-size-xs;
+				font-style: normal;
 			}
 		}
 
