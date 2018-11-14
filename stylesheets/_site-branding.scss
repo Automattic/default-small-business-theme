@@ -7,9 +7,9 @@
 
 	.site-header-wrapper {
 		@include media( tablet ) {
-			//max-width: $x-grid-column-12;
 			align-items: center;
 			text-align: center;
+			width: 100%;
 		}		
 	}
 }
@@ -79,7 +79,7 @@
 	.jetpack-social-navigation {
 		background: $x-color-shade-gray-2;
 
-		.menu-social-container {
+		> div {
 			padding: $x-space-sm 0;
 
 			@include media(tablet) {

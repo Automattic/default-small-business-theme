@@ -4,9 +4,7 @@ p {
 }
 
 hr {
-	background-color: $x-color-shade-gray-2;
-	border: 0;
-	height: 3px;
+	border-bottom: 3px double $x-color-words-base;
 	margin-bottom: 1.5em;
 }
 
