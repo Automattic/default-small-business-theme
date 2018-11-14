@@ -139,7 +139,7 @@
 
 				> span {
 					margin-right: $x-space-sm;
-					
+
 					&:after {
 						display: block;
 						contnet: '/';
@@ -236,7 +236,7 @@
 			display: block;
 		}
 
-		a:not(.jp-relatedposts-post-a) {
+		a:not([class*="button"]) {
 			@include link-underline;
 		}
 

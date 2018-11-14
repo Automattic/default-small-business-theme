@@ -15,7 +15,7 @@ input[type="submit"] {
 	font-size: $x-font-size-xs;
 	line-height: $x-font-leading-body;
 	letter-spacing: $x-font-letter-spacing;
-	border: 0;
+	border: 4px double $x-color-shade-gray-2;
 	cursor: pointer;
 	display: inline-block;
 	font-weight: 600;

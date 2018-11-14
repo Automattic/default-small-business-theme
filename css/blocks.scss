@@ -130,7 +130,7 @@
 	line-height: $x-font-leading-body;
 	letter-spacing: $x-font-letter-spacing;
 	border-radius: 0;
-	border: 3px double $x-color-words-base;
+	border: 4px double $x-color-shade-gray-2;
 	cursor: pointer;
 	display: inline-block;
 	font-weight: 600;
@@ -139,7 +139,8 @@
 	vertical-align: middle;
 
 	&:hover {
-		background-color: $x-color-accent-light;
+		background-color: $x-color-words-base;
+		border-color: $x-color-shade-white;
 	}
 
 	&:active,
@@ -597,7 +598,7 @@ table.wp-block-table {
 	width: 100px;
 	
 	&.is-style-wide {
-		border-bottom-width: 3px;
+		border-bottom-width: 4px;
 		width: 100%;
 	}
 
