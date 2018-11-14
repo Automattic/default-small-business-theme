@@ -4,14 +4,14 @@
  *
  * Eventually, some of the functionality here could be replaced by core features.
  *
- * @package Business
+ * @package Business Elegant
  */
 
-if ( ! function_exists( 'business_theme_posted_on' ) ) :
+if ( ! function_exists( 'business_elegant_posted_on' ) ) :
 	/**
 	 * Prints HTML with meta information for the current post-date/time and author.
 	 */
-	function business_theme_posted_on() {
+	function business_elegant_posted_on() {
 		$time_string = '<time class="entry-date published updated" datetime="%1$s">%2$s</time>';
 		if ( get_the_time( 'U' ) !== get_the_modified_time( 'U' ) ) {
 			$time_string = '<time class="entry-date published" datetime="%1$s">%2$s</time><time class="updated" datetime="%3$s">%4$s</time>';
@@ -25,12 +25,12 @@ if ( ! function_exists( 'business_theme_posted_on' ) ) :
 		);
 
 		if ( is_single() ) {
-			$posted_on = sprintf( esc_attr__( 'Posted on %1$s', 'business_theme' ),
+			$posted_on = sprintf( esc_attr__( 'Posted on %1$s', 'business_elegant' ),
 							'<a href="' . esc_url( get_permalink() ) . '" rel="bookmark">' . $time_string . '</a>'
 						);
 		}
 		elseif ( is_sticky() ) {
-			$posted_on = '<a href="' . esc_url( get_permalink() ) . '" rel="bookmark">' . esc_html__( 'Featured', 'business_theme' ) . '</a>';
+			$posted_on = '<a href="' . esc_url( get_permalink() ) . '" rel="bookmark">' . esc_html__( 'Featured', 'business_elegant' ) . '</a>';
 		}
 		else {
 			$posted_on = '<a href="' . esc_url( get_permalink() ) . '" rel="bookmark">' . $time_string . '</a>';
@@ -38,7 +38,7 @@ if ( ! function_exists( 'business_theme_posted_on' ) ) :
 
 		$byline = sprintf(
 			/* translators: %s: post author. */
-			esc_html_x( ' by %s', 'post author', 'business_theme' ),
+			esc_html_x( ' by %s', 'post author', 'business_elegant' ),
 			'<span class="author vcard"><a class="url fn n" href="' . esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ) . '">' . esc_html( get_the_author() ) . '</a></span>'
 		);
 
@@ -47,25 +47,25 @@ if ( ! function_exists( 'business_theme_posted_on' ) ) :
 	}
 endif;
 
-if ( ! function_exists( 'business_theme_entry_footer' ) ) :
+if ( ! function_exists( 'business_elegant_entry_footer' ) ) :
 	/**
 	 * Prints HTML with meta information for the categories, tags and comments.
 	 */
-	function business_theme_entry_footer() {
+	function business_elegant_entry_footer() {
 		// Hide category and tag text for pages.
 		if ( 'post' === get_post_type() ) {
 			/* translators: used between list items, there is a space after the comma */
-			$categories_list = get_the_category_list( esc_html__( ', ', 'business_theme' ) );
+			$categories_list = get_the_category_list( esc_html__( ', ', 'business_elegant' ) );
 			if ( $categories_list ) {
 				/* translators: 1: list of categories. */
-				printf( '<span class="cat-links">' . esc_html__( 'Posted in %1$s', 'business_theme' ) . '</span>', $categories_list ); // WPCS: XSS OK.
+				printf( '<span class="cat-links">' . esc_html__( 'Posted in %1$s', 'business_elegant' ) . '</span>', $categories_list ); // WPCS: XSS OK.
 			}
 
 			/* translators: used between list items, there is a space after the comma */
-			$tags_list = get_the_tag_list( '', esc_html_x( ', ', 'list item separator', 'business_theme' ) );
+			$tags_list = get_the_tag_list( '', esc_html_x( ', ', 'list item separator', 'business_elegant' ) );
 			if ( $tags_list ) {
 				/* translators: 1: list of tags. */
-				printf( '<span class="tags-links">' . esc_html__( 'Tagged %1$s', 'business_theme' ) . '</span>', $tags_list ); // WPCS: XSS OK.
+				printf( '<span class="tags-links">' . esc_html__( 'Tagged %1$s', 'business_elegant' ) . '</span>', $tags_list ); // WPCS: XSS OK.
 			}
 		}
 
@@ -75,7 +75,7 @@ if ( ! function_exists( 'business_theme_entry_footer' ) ) :
 				sprintf(
 					wp_kses(
 						/* translators: %s: post title */
-						__( 'Leave a Comment<span class="screen-reader-text"> on %s</span>', 'business_theme' ),
+						__( 'Leave a Comment<span class="screen-reader-text"> on %s</span>', 'business_elegant' ),
 						array(
 							'span' => array(
 								'class' => array(),
@@ -92,7 +92,7 @@ if ( ! function_exists( 'business_theme_entry_footer' ) ) :
 			sprintf(
 				wp_kses(
 					/* translators: %s: Name of current post. Only visible to screen readers */
-					__( 'Edit <span class="screen-reader-text">%s</span>', 'business_theme' ),
+					__( 'Edit <span class="screen-reader-text">%s</span>', 'business_elegant' ),
 					array(
 						'span' => array(
 							'class' => array(),
@@ -107,9 +107,9 @@ if ( ! function_exists( 'business_theme_entry_footer' ) ) :
 	}
 endif;
 
-if ( ! function_exists( 'business_theme_comment' ) ) :
+if ( ! function_exists( 'business_elegant_comment' ) ) :
 
-	function business_theme_comment($comment, $args, $depth) {
+	function business_elegant_comment($comment, $args, $depth) {
     if ( 'div' === $args['style'] ) {
         $tag       = 'div';
         $add_below = 'comment';
@@ -162,35 +162,35 @@ if ( ! function_exists( 'business_theme_comment' ) ) :
 }
 endif;
 
-if ( ! function_exists( 'business_theme_social_menu' ) ) :
+if ( ! function_exists( 'business_elegant_social_menu' ) ) :
 	/**
 	 * Jetpack social menu.
 	 */
-	function business_theme_social_menu() {
+	function business_elegant_social_menu() {
 		if ( function_exists( 'jetpack_social_menu' ) ) {
 			jetpack_social_menu();
 		}
 	}
 endif;
 
-if ( ! function_exists( 'business_theme_author_bio' ) ) :
+if ( ! function_exists( 'business_elegant_author_bio' ) ) :
 	/**
 	 * Return early if Author Bio is not available.
 	 */
-	function business_theme_author_bio() {
+	function business_elegant_author_bio() {
 		if ( function_exists( 'jetpack_author_bio' ) ) {
 			jetpack_author_bio();
 		}
 	}
 endif;
 
-if ( ! function_exists( 'business_theme_author_bio_avatar_size' ) ) :
+if ( ! function_exists( 'business_elegant_author_bio_avatar_size' ) ) :
 	/**
 	 * Author Bio Avatar Size.
 	 */
-	function business_theme_author_bio_avatar_size() {
+	function business_elegant_author_bio_avatar_size() {
 		return 60; // in px
 	}
 endif;
 
-add_filter( 'jetpack_author_bio_avatar_size', 'business_theme_author_bio_avatar_size' );
+add_filter( 'jetpack_author_bio_avatar_size', 'business_elegant_author_bio_avatar_size' );

@@ -4,7 +4,7 @@
  *
  * @link https://jetpack.com/
  *
- * @package Business
+ * @package Business Elegant
  */
 
 /**
@@ -14,11 +14,11 @@
  * See: https://jetpack.com/support/responsive-videos/
  * See: https://jetpack.com/support/content-options/
  */
-function business_theme_jetpack_setup() {
+function business_elegant_jetpack_setup() {
 	// Add theme support for Infinite Scroll.
 	add_theme_support( 'infinite-scroll', array(
 		'container' => 'primary',
-		'render'    => 'business_theme_infinite_scroll_render',
+		'render'    => 'business_elegant_infinite_scroll_render',
 		'footer'    => 'page',
 	) );
 
@@ -30,7 +30,7 @@ function business_theme_jetpack_setup() {
 		'author-bio'         => true,
 		'author-bio-default' => false,
 		'post-details' => array(
-			'stylesheet' => 'business_theme-style',
+			'stylesheet' => 'business_elegant-style',
 			'date'       => '.posted-on',
 			'categories' => '.cat-links',
 			'tags'       => '.tags-links',
@@ -42,12 +42,12 @@ function business_theme_jetpack_setup() {
 	// Social Menu
 	add_theme_support( 'jetpack-social-menu', 'svg' );
 }
-add_action( 'after_setup_theme', 'business_theme_jetpack_setup' );
+add_action( 'after_setup_theme', 'business_elegant_jetpack_setup' );
 
 /**
  * Custom render function for Infinite Scroll.
  */
-function business_theme_infinite_scroll_render() {
+function business_elegant_infinite_scroll_render() {
 	while ( have_posts() ) {
 		the_post();
 		if ( is_search() ) :

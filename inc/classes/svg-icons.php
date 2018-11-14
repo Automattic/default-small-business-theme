@@ -11,10 +11,10 @@
  * All icons are assumed to have equal width and height, hence the option
  * to only specify a `$size` parameter in the svg methods.
  *
- * @package Default_Small_Business_Theme
+ * @package Default_Small_business_elegant
  */
 
-class Default_Small_Business_Theme_SVG_Icons {
+class Default_Small_business_elegant_SVG_Icons {
 
 	/**
 	 * Gets the SVG code for a given icon.

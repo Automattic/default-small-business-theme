@@ -9,7 +9,7 @@
  *
  * @link https://codex.wordpress.org/Template_Hierarchy
  *
- * @package Business
+ * @package Business Elegant
  */
 
 get_header(); ?>
@@ -40,8 +40,8 @@ get_header(); ?>
 		endwhile;
 
 		the_posts_navigation( array(
-			'prev_text'          => business_theme_get_icon_svg( is_rtl() ? 'chevron_right' : 'chevron_left' ) . __( 'Older posts', 'business_theme' ),
-			'next_text'          => __( 'Newer posts', 'business_theme' ) . business_theme_get_icon_svg( is_rtl() ? 'chevron_left' : 'chevron_right' ),
+			'prev_text'          => business_elegant_get_icon_svg( is_rtl() ? 'chevron_right' : 'chevron_left' ) . __( 'Older posts', 'business_elegant' ),
+			'next_text'          => __( 'Newer posts', 'business_elegant' ) . business_elegant_get_icon_svg( is_rtl() ? 'chevron_left' : 'chevron_right' ),
 		) ) ;
 
 	else :

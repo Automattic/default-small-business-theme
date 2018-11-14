@@ -16,7 +16,8 @@
 
 	@include media(tablet) {
 		// font-size for tablet and up
-		font-size: calc( #{$x-font-size-base} * 0.95065 * #{$x-font-size-responsive-ratio} );
+		font-size: calc( #{$x-font-size-base} * #{$x-font-size-responsive-ratio} ); // 1 1/6
+		//font-size: calc( #{$x-font-size-base} * 0.95065 * #{$x-font-size-responsive-ratio} );
 	}
 }
 
@@ -55,7 +56,7 @@
 	}
 	
 	p {
-		font-size: 0.810em;
+		//font-size: 0.810em;
 	}
 	
 }
@@ -70,8 +71,6 @@
 }
 
 .editor-block-list__block .wp-block-columns .editor-block-list__block
-
-
 .gutenberg .editor-block-list__block blockquote p,
 .gutenberg .editor-block-list__block blockquote.is-large p {
 	@include editor-font-base;
