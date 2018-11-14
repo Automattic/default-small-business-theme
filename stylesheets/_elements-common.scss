@@ -5,6 +5,9 @@ p {
 
 hr {
 	border-bottom: 3px double $x-color-words-base;
+	border-top: 0;
+	border-left: 0;
+	border-right: 0;
 	margin-bottom: 1.5em;
 }
 
