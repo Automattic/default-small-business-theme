@@ -126,11 +126,13 @@
 	background-color: $x-color-accent-base;
 	color: $x-color-shade-white;
 	padding: $x-space-xxs $x-space-xs;
+	font-family: $x-font-family-accent;
 	font-size: $x-font-size-sm;
 	line-height: $x-font-leading-body;
 	letter-spacing: $x-font-letter-spacing;
 	border-radius: 0;
-	border: 4px double $x-color-shade-gray-2;
+	border: 1px solid $x-color-shade-white;
+	outline: 3px solid $x-color-accent-base;
 	cursor: pointer;
 	display: inline-block;
 	font-weight: 600;
@@ -140,7 +142,7 @@
 
 	&:hover {
 		background-color: $x-color-words-base;
-		border-color: $x-color-shade-white;
+		outline-color: $x-color-words-base;
 	}
 
 	&:active,
@@ -252,7 +254,8 @@
 	.wp-block-cover-text,
 	h2 {
 		background: $x-color-shade-white;
-		border: 4px double $x-color-words-base;
+		border: 1px solid $x-color-border-base;
+		outline: 3px solid $x-color-shade-white;
 		color: $x-color-words-base;
 		font-weight: 400;
 		padding: $x-space-md;

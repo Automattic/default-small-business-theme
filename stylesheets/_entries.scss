@@ -96,7 +96,8 @@
 	}
 
 	.entry-meta {
-		
+		font-family: $x-font-family-accent;
+		text-transform: uppercase;
 		font-size: $x-font-size-xs;
 		margin: $x-space-sm;
 		color: $x-color-words-subtle;
@@ -104,7 +105,6 @@
 		a {
 			color: $x-color-words-heading;
 			@include link-transition;
-			font-weight: 600;
 
 			&:hover {
 				text-decoration: none;
@@ -121,6 +121,9 @@
 	.entry-footer {
 
 		.entry-meta {
+			font-family: $x-font-family-body;
+			font-size: $x-font-size-sm;
+			text-transform: none;
 			display: flex;
 			line-height: $x-font-leading-double;
 			flex-direction: row;
@@ -129,6 +132,7 @@
 			@include media( tablet ) {
 
 				display: flex;
+				flex-wrap: wrap;
 				max-width: $x-grid-column-7;
 				margin-right: auto;
 				padding-bottom: $x-space-sm;
@@ -139,11 +143,6 @@
 
 				> span {
 					margin-right: $x-space-sm;
-
-					&:after {
-						display: block;
-						contnet: '/';
-					}
 
 					&:last-child {
 						margin-right: 0;
@@ -288,6 +287,7 @@
 
 		.author-title {
 			color: $x-color-words-subtle;
+			font-family: $x-font-family-accent;
 			font-size: $x-font-size-xs;
 			font-weight: 400;
 			margin-top: 0;
@@ -297,9 +297,10 @@
 		.author-name {
 			clear: both;
 			color: $x-color-secondary-base;
+			font-family: $x-font-family-body;
+			font-style: italic;
 			display: block;
 			font-size: $x-font-size-xxl;
-			font-weight: 900;
 			margin: 0 0 $x-space-xs;
 			text-transform: none;
 		}
@@ -324,14 +325,35 @@
 	body.single &,
 	body.page & {
 
-		.entry-title,
+		.entry-content{
+			&:after {
+				@include decorative-symbol(block);
+				text-align: center;
+				margin: $x-space-xs auto;
+			}
+		}
+
+		.entry-title {
+			text-align: center;
+			margin: $x-space-lg auto $x-space-md;
+			font-size: $x-font-size-xxxl;
+		}
+
 		.entry-meta {
 			text-align: center;
 		}
 
-		.entry-title {
-			margin: $x-space-lg auto $x-space-md;
+		.entry-footer {
+			.entry-meta {
+				flex-wrap: wrap;
+				font-style: italic;
+
+				a {
+					font-style: normal;
+				}
+			}
 		}
+
 	}
 
 	// Archives
@@ -349,9 +371,8 @@
 			justify-content: flex-start;
 
 			a {
-				color: $x-color-words-heading;
+				color: $x-color-words-subtle;
 				@include link-transition;
-				font-weight: 600;
 
 				&:hover {
 					text-decoration: none;
@@ -386,11 +407,32 @@
 				flex-direction: column;
 
 				> span {
+					color: $x-color-primary-base;
+					font-style: italic;
+
+					&:after{
+						@include decorative-symbol();
+						font-style: normal;
+						margin-left: 1em;
+					}
 
 					&:last-child {
 						padding-bottom: $x-space-sm;
 						border-bottom: 1px solid grey;
 						border-bottom-color: $x-color-border-base;
+
+						&:after {
+							display:none;
+						}
+					}
+
+
+					a {
+						font-style: normal;
+
+						&:hover {
+							color: $x-color-primary-base;							
+						}
 					}
 				}
 			}

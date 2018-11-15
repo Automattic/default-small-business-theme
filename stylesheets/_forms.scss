@@ -12,10 +12,12 @@ input[type="submit"] {
 	background-color: $x-color-accent-base;
 	color: $x-color-shade-white;
 	padding: $x-space-xxs $x-space-xs;
+	font-family: $x-font-family-accent;
 	font-size: $x-font-size-xs;
 	line-height: $x-font-leading-body;
 	letter-spacing: $x-font-letter-spacing;
-	border: 4px double $x-color-shade-gray-2;
+	border: 1px double $x-color-shade-gray-2;
+	outline: 3px solid $x-color-accent-base;
 	cursor: pointer;
 	display: inline-block;
 	font-weight: 600;
@@ -33,7 +35,8 @@ button:hover,
 input[type="button"]:hover,
 input[type="reset"]:hover,
 input[type="submit"]:hover {
-	background-color: $x-color-accent-light;
+	background-color: $x-color-words-base;
+	outline-color: $x-color-words-base;
 }
 
 .button:active, .button:focus,

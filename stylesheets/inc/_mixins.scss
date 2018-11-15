@@ -97,3 +97,11 @@ $wide_width: 12 * ( 80px + 25px ) - 25px;
 		font-size: calc( #{$x-font-size-base} * #{$x-font-size-responsive-ratio} ); // 1 1/6
 	}
 }
+
+@mixin decorative-symbol( $display: inline-block) {
+	content: "\2666";
+	color: $x-color-words-subtle;
+	opacity: 0.5;
+	display: $display;
+	font-family: Arial,Helvetica,sans-serif;
+}

@@ -2,7 +2,6 @@
 /** === Site Branding === */
 
 #site-navigation {
-	border-top: 1px solid gray;
 	border-bottom: 1px solid gray;
 	border-color: $x-color-border-base;
 	padding: $x-space-sm 0;
@@ -60,6 +59,8 @@
 				@include link-transition;
 				clear: both;
 				display: block;
+				font-family: $x-font-family-accent;
+				text-transform: uppercase;
 				width: 100%;
 				
 				padding: $x-space-xs;
@@ -117,6 +118,7 @@
 				right: 0;
 				top: 0;
 				vertical-align: middle;
+				outline: none;
 				
 				&:focus {
 					svg {
@@ -251,6 +253,11 @@
 				a {
 					font-size: $x-font-size-sm;
 					padding: $x-space-xs;
+
+					&:after {
+						@include decorative-symbol();
+						margin-left: 1em;
+					}
 				}
 
 				> ul {
@@ -403,7 +410,6 @@
 				color: $x-color-words-subtle;
 				display: block;
 				padding: $x-space-xxs 0;
-				text-transform: uppercase;
 				font-family: $x-font-family-body;
 				font-size: $x-font-size-xs;
 				font-style: normal;
@@ -479,7 +485,9 @@
 	a {
 		border: 0;
 		display: block;
-		font-weight: 700;
+		font-family: $x-font-family-accent;
+		font-size: $x-font-size-xs;
+		text-transform: uppercase;
 		padding: $x-space-sm 0;
 	}
 

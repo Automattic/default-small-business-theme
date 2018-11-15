@@ -102,7 +102,8 @@
 
 .comments-title,
 .no-comments {
-
+	text-align: center;
+	font-style: italic;
 	margin: $x-space-sm;
 	max-width: $x-grid-column-7;
 
@@ -223,7 +224,7 @@
 
 	.reply {
 		margin: $x-space-sm 0;
-		font-family: $x-font-family-heading;
+		font-family: $x-font-family-accent;
 		font-size: $x-font-size-xs;
 		text-transform: uppercase;
 	}
@@ -242,7 +243,7 @@
 	cite {
 		color: $x-color-secondary-base;
 		margin-bottom: $x-space-xs;
-		font-family: $x-font-family-heading;
+		font-family: $x-font-family-accent;
 		font-size: $x-font-size-sm;
 		font-style: normal;
 		font-weight: 700;

@@ -1,6 +1,7 @@
 
 $body-font: Lora, Georgia, Times, "Times New Roman", serif;
 $heading-font: Lora, Georgia, Times, "Times New Roman", serif;
+$accent-font: Montserrat, Arial, sans-serif;
 $code-font: Menlo, monaco, Consolas, Lucida Console, monospace;
 
 $font-size-base: .9em;
@@ -24,6 +25,7 @@ $x-font-size-xxxl: unquote( "calc( 1em * ( #{$x-font-size-ratio} * #{$x-font-siz
 
 $x-font-family-body: $body-font;
 $x-font-family-heading: $heading-font;
+$x-font-family-accent: $accent-font;
 $x-font-family-code: $code-font;
 
 $x-font-leading-body: 1.8;
