@@ -1,11 +1,11 @@
 
 /** === Typography === */
 
-body:not(.gutenberg-editor-page) {
+body:not(.gutenberg__editor) {
 	@include typography-base;
 }
 
-body:not(.gutenberg-editor-page),
+body:not(.gutenberg__editor),
 button,
 input,
 select,
@@ -25,22 +25,6 @@ h1, h2, h3, h4, h5, h6 {
 	font-style: italics;
 	font-family: $x-font-family-heading;
 	line-height: $x-font-leading-heading;
-}
-
-h2 {
-	font-family: $x-font-family-heading;
-}
-
-h5 {
-	font-family: $x-font-family-heading;
-	letter-spacing: $x-font-letter-spacing;
-	text-transform: uppercase;
-}
-
-h6 {
-	font-family: $x-font-family-heading;
-	letter-spacing: $x-font-letter-spacing;
-	text-transform: uppercase;
 }
 
 /* text size */

@@ -1,5 +1,5 @@
 
-@import url("https://fonts.googleapis.com/css?family=Lato:400,400italic,700,700italic,900,900italic");
+@import url("https://fonts.googleapis.com/css?family=Lora:400,400italic,700,700italic");
 
 @import "stylesheets/variables/index";
 @import "stylesheets/inc/index";
@@ -21,7 +21,8 @@
 	}
 }
 
-.gutenberg .edit-post-visual-editor, p {
+.edit-post-visual-editor .editor-block-list__block,
+.editor-default-block-appender input[type="text"].editor-default-block-appender__content {
 	@include editor-font-base;
 	
 	h1, h2, h3, h4, h5, h6 {
@@ -97,9 +98,11 @@
 
 .editor-post-title .editor-post-title__input {
 	font-size: $x-font-size-xl;
-	font-weight: 900;
+	font-style: italic;
+	font-weight: 400;
 	line-height: 1.2;
 	margin-bottom: 1.85rem;
+	text-align: center;
 	@include media( tablet ) {
 		font-size: calc( #{$x-font-size-xxxl} * 1.175 );
 	}
@@ -196,9 +199,11 @@
 // Separators
 
 hr {
-	background-color: $x-color-shade-gray-2;
-	border: 0;
-	height: 3px;
+	border-bottom: 4px double $x-color-border-base;
+	border-top: 0;
+	border-left: 0;
+	border-right: 0;
+	height: 4px;
 	margin-bottom: 1.5em;
 }
 
