@@ -4,7 +4,7 @@
  *
  * @link https://codex.wordpress.org/Template_Hierarchy
  *
- * @package Business
+ * @package Business Professional
  */
 
 get_header(); ?>

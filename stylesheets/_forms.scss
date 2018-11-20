@@ -9,9 +9,10 @@ button,
 input[type="button"],
 input[type="reset"],
 input[type="submit"] {
-	background-color: $x-color-accent-base;
+	background-color: $x-color-accent-secondary-base;
 	color: $x-color-shade-white;
 	padding: $x-space-xxs $x-space-xs;
+	font-family: $x-font-family-heading;
 	font-size: $x-font-size-xs;
 	line-height: $x-font-leading-body;
 	letter-spacing: $x-font-letter-spacing;
@@ -34,7 +35,7 @@ button:hover,
 input[type="button"]:hover,
 input[type="reset"]:hover,
 input[type="submit"]:hover {
-	background-color: $x-color-accent-light;
+	background-color: $x-color-shade-gray-10;
 }
 
 .button:active, .button:focus,
@@ -47,7 +48,7 @@ input[type="reset"]:active,
 input[type="reset"]:focus,
 input[type="submit"]:active,
 input[type="submit"]:focus {
-	background-color: $x-color-accent-light;
+	background-color: $x-color-shade-gray-10;
 }
 
 input[type="text"],

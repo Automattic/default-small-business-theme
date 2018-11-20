@@ -4,7 +4,7 @@
  *
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/#single-post
  *
- * @package Business
+ * @package Business Professional
  */
 
 get_header(); ?>
@@ -17,8 +17,8 @@ get_header(); ?>
 		get_template_part( 'template-parts/content', get_post_type() );
 
 		the_post_navigation( array(
-			'next_text' => wp_kses( __( '<span class="meta-nav">Next</span> %title', 'business_theme' ), array( 'span' => array( 'class' => array() ) ) ),
-			'prev_text' => wp_kses( __( '<span class="meta-nav">Previous</span> %title', 'business_theme2' ), array( 'span' => array( 'class' => array() ) ) )
+			'next_text' => wp_kses( __( '<span class="meta-nav">Next</span> %title', 'business_professional' ), array( 'span' => array( 'class' => array() ) ) ),
+			'prev_text' => wp_kses( __( '<span class="meta-nav">Previous</span> %title', 'business_professional2' ), array( 'span' => array( 'class' => array() ) ) )
 		) );
 
 		// If comments are open or we have at least one comment, load up the comment template.

@@ -2,12 +2,14 @@
 /** === Site Branding === */
 
 #site-navigation {
-	margin-right: $x-space-xs;
+	margin-right: $x-space-sm;
 }
 
 .main-navigation {
-	
-	text-align: right;
+	background: $x-color-accent-base;
+	@include rounded(3px);
+	padding: $x-space-xxs $x-space-sm;
+	overflow: visible;
 	
 	#primary-menu {
 		
@@ -33,10 +35,12 @@
 			}
 
 			a {
+				color: $x-color-shade-white;
 				display: block;
+				opacity: .8;
 
 				&:hover {
-					color: $x-color-accent-base;
+					opacity: 1; 
 					text-decoration: none;
 				}
 			}
@@ -47,18 +51,20 @@
 			}
 
 			&.current-menu-item a {
-				color: $x-color-accent-base;
+				opacity: 1;
 			}
 		}
 
 		> li {
 
 			> a {
-				color: $x-color-secondary-base;
+				color: $x-color-shade-white;
+				font-family: $x-font-family-heading;
 				@include link-transition;
 				clear: both;
 				display: block;
 				width: 100%;
+				text-transform: uppercase;
 				
 				padding: $x-space-xs;
 			}
@@ -90,7 +96,8 @@
 			}
 
 			ul {
-				background-color: $x-color-shade-white;
+				background-color: $x-color-accent-base;
+				@include rounded(3px);
 				position: absolute;
 				left: -999em;
 				z-index: 99999;
@@ -102,11 +109,15 @@
 				li a:before {
 					content: "\2014\00a0";
 				}
+
+				a {
+					color: $x-color-shade-white;
+				}
 			}
 
 			button.dropdown-toggle {
 				background-color: transparent;
-				color: $x-color-primary-base;
+				color: $x-color-shade-white;
 				padding: $x-space-xs;
 				line-height: $x-space-xs;
 				border: none;
@@ -118,7 +129,7 @@
 				
 				&:focus {
 					svg {
-						fill: $x-color-accent-base;
+						fill: $x-color-shade-white;
 					}
 				}
 				
@@ -214,8 +225,8 @@
 				}
 
 				li.toggled-on > ul {
-					width: $x-grid-column-3;
-					padding-left: $x-space-sm;
+					width: $x-grid-column-2;
+					padding-left: $x-space-xs;
 					position: relative;
 					left: inherit;
 					right: 0;
@@ -234,9 +245,12 @@
 
 	@include media( tablet ) {
 
-		margin: $x-space-md 0;
+		margin: 0;
 		display: block;
 		width: 100%;
+		position: relative;
+		bottom: -30px;
+		z-index: 10;
 
 		> div > ul {
 
@@ -253,8 +267,6 @@
 				}
 
 				> ul {
-					border: 1px solid grey;
-					border-color: $x-color-border-base;
 					
 					#page & button.dropdown-toggle {
 						padding: $x-space-xxs;
@@ -380,7 +392,7 @@
 					fill: inherit;
 
 					&:hover {
-						fill: $x-color-primary-base;
+						fill: $x-color-accent-base;
 					}
 
 					@include media( mobile ) {
@@ -418,7 +430,7 @@
 
 			&:focus .post-title,
 			&:hover .post-title {
-				color: $x-color-accent-base;
+				color: $x-color-accent-secondary-base;
 				text-decoration: none;
 			}
 
@@ -540,7 +552,7 @@
 .post-navigation a:hover,
 .posts-navigation a:focus,
 .posts-navigation a:hover {
-	color: $x-color-accent-base;
+	color: $x-color-accent-secondary-base;
 }
 
 .page-links {

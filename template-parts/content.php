@@ -4,7 +4,7 @@
  *
  * @link https://codex.wordpress.org/Template_Hierarchy
  *
- * @package Business
+ * @package Business Professional
  */
 
 ?>
@@ -21,7 +21,7 @@
 
 		if ( 'post' === get_post_type() ) : ?>
 		<div class="entry-meta">
-			<?php business_theme_posted_on(); ?>
+			<?php business_professional_posted_on(); ?>
 		</div><!-- .entry-meta -->
 		<?php
 		endif; ?>
@@ -32,7 +32,7 @@
 			the_content( sprintf(
 				wp_kses(
 					/* translators: %s: Name of current post. Only visible to screen readers */
-					__( 'Continue reading<span class="screen-reader-text"> "%s"</span>', 'business_theme' ),
+					__( 'Continue reading<span class="screen-reader-text"> "%s"</span>', 'business_professional' ),
 					array(
 						'span' => array(
 							'class' => array(),
@@ -43,7 +43,7 @@
 			) );
 
 			wp_link_pages( array(
-				'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'business_theme' ),
+				'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'business_professional' ),
 				'after'  => '</div>',
 			) );
 		?>
@@ -51,10 +51,10 @@
 
 	<footer class="entry-footer">
 		<div class="entry-meta">
-			<?php business_theme_entry_footer(); ?>
+			<?php business_professional_entry_footer(); ?>
 		</div>
 	</footer><!-- .entry-footer -->
 
-	<?php business_theme_author_bio(); ?>
+	<?php business_professional_author_bio(); ?>
 
 </article><!-- #post-<?php the_ID(); ?> -->

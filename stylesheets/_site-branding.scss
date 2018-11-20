@@ -2,16 +2,14 @@
 /** === Site Branding === */
 
 .site-header {
-
+	color: $x-color-words-base;
 	position: relative;
-	border-bottom: 1px solid gray;
-	border-bottom-color: $x-color-border-base;
 
 	.site-header-wrapper {
 		@include media( tablet ) {
-			max-width: $x-grid-column-12;
-			display: flex;
-			align-items: center;
+			max-width: $x-grid-column-10;
+/*			display: flex;
+*/			align-items: center;
 			margin-left: auto;
 			margin-right: auto;
 		}		
@@ -20,11 +18,10 @@
 
 .site-identity {
 
-	color: $x-color-words-subtle;
 	margin: $x-space-sm;
 	
 	@include media( tablet ) {
-		margin: $x-space-md;
+		margin: $x-space-md $x-space-md 0;
 	}
 
 	& > * {
@@ -68,7 +65,6 @@
 			@include link-transition;
 			display: block;
 			text-decoration: none;
-			color: $x-color-words-heading;
 
 			&:hover {
 				color: $x-color-secondary-base;
@@ -77,8 +73,7 @@
 	}
 
 	.site-description {
-		font-family: $x-font-family-heading;
-		font-size: $x-font-size-xs;
+		font-size: $x-font-size-sm;
 		color: $x-color-words-subtle;
 		margin: 0.5em 0 0;
 		font-weight: normal;
@@ -92,6 +87,7 @@
 
 .site-footer {
 
+	background-color: $x-color-shade-gray-1;
 	border-top: 1px solid grey;
 	border-color: $x-color-border-base;
 
@@ -127,7 +123,7 @@
 	}
 	
 	a {
-		color: inherit;
+		color: $x-color-secondary-base;
 		&:hover {
 			text-decoration: none;
 			color: $x-color-primary-base;

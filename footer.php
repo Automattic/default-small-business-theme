@@ -6,24 +6,24 @@
  *
  * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
  *
- * @package Business
+ * @package Business Professional
  */
 
 ?>
 
 <footer id="colophon" class="site-footer">
 	<div class="site-info">
-		<?php business_theme_social_menu(); ?>
+		<?php business_professional_social_menu(); ?>
 
 		<p class="site-credits">
 			<a href="<?php echo esc_url( __( 'https://wordpress.org/', '_s' ) ); ?>"><?php
 				/* translators: %s: CMS name, i.e. WordPress. */
-				printf( esc_html__( 'Proudly powered by %s', 'business_theme' ), 'WordPress' );
+				printf( esc_html__( 'Proudly powered by %s', 'business_professional' ), 'WordPress' );
 			?></a>
 			<span class="sep"> | </span>
 			<?php
 				/* translators: 1: Theme name, 2: Theme author. */
-				printf( esc_html__( 'Theme: %s', 'business_theme' ), '<a href="https://github.com/default-small-business-theme/">Business</a>' );
+				printf( esc_html__( 'Theme: %s', 'business_professional' ), '<a href="https://github.com/default-small-business-theme/">Business</a>' );
 			?>
 		</p>
 	</div><!-- .site-info -->

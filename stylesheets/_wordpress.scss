@@ -13,55 +13,6 @@
 	clear: both;
 }
 
-/** === Page header == */
-
-.page-header {
-
-	max-width: $x-grid-column-10;
-	border-bottom: 1px solid grey;
-	border-bottom-color: $x-color-border-base;
-	margin-left: auto;
-	margin-right: auto;
-
-	> * {
-		padding: 0 $x-space-sm;
-	}
-
-
-	.page-title {
-		color: $x-color-words-subtle;
-	}
-
-	@include media( desktop ) {
-
-		display: flex;
-		align-items: center;
-		margin-top: $x-space-lg;
-		margin-bottom: $x-space-lg;
-
-		> * {
-			max-width: $x-grid-column-7;
-			padding-left: 0;
-			padding-right: 0;
-			width: 100%;
-		}
-
-		@at-root body.archive .page-header .page-title:not(:last-child) {
-			max-width: $x-grid-column-3;			
-		}
-
-		.archive-description {
-			font-size: $x-font-size-sm;
-			margin-left: $x-space-sm;
-			margin-right: $x-space-sm;
-			max-width: $x-grid-column-7;
-			width: 100%;
-		}
-
-	}
-
-}
-
 /** === 404 page === */
 .error404,
 .search-no-results,
