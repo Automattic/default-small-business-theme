@@ -8,7 +8,7 @@
 ( function( $ ) {
 
 	var api = wp.customize;
-	var Logo = new RadcliffeLogo();
+	var Logo = new LogoResizer();
 	var initial = null;
 
 	api( 'custom_logo', function( value ) {
@@ -36,7 +36,7 @@
 		initial = to;
 	}
 
-	function RadcliffeLogo() {
+	function LogoResizer() {
 		var intId = 0;
 		var hasLogo = null;
 		var min = 48;
