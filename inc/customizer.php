@@ -25,6 +25,21 @@ function smallbusinesstheme_customize_register( $wp_customize ) {
 			'render_callback' => 'smallbusinesstheme_customize_partial_blogdescription',
 		) );
 	}
+
+	// add setting for hiding the front page title
+	$wp_customize->add_setting( 'hide_front_page_title', array(
+		'default'              => false,
+		'type'                 => 'theme_mod',
+		'transport'            => 'postMessage',
+	) );
+
+	$wp_customize->add_control( 'hide_front_page_title', array(
+		'label'		=> esc_html__( 'Hide Front Page Title' ),
+		'section'	=> 'static_front_page',
+		'priority'	=> 10,
+		'type'		=> 'checkbox',
+		'settings'	=> 'hide_front_page_title',
+	) );
 }
 add_action( 'customize_register', 'smallbusinesstheme_customize_register' );
 
@@ -58,3 +73,27 @@ add_action( 'customize_preview_init', 'smallbusinesstheme_customize_preview_js' 
  * Logo Resizer Awesomeness - Bringing logo resizing to the Customizer since 2017
  */
 require get_template_directory() . '/inc/logo-resizer.php';
+
+/**
+ * Add an option to hide the front page title
+ */
+function smallbusinesstheme_customize_hide_front_page_title() {
+
+	$hide = get_theme_mod( 'hide_front_page_title', false );
+
+	if ( true === $hide ) {
+
+	echo <<< EOT
+<style type="text/css">
+	.home .entry-title {
+		display: none;
+	}
+
+	.home .hentry {
+		margin-top: 0;
+	}
+</style>
+EOT;
+	}
+}
+add_action( 'wp_enqueue_scripts', 'smallbusinesstheme_customize_hide_front_page_title' );

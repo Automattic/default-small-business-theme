@@ -39,4 +39,29 @@
 			}
 		} );
 	} );
+
+	// Hide Front Page Title
+	wp.customize( 'hide_front_page_title', function( value ) {
+		value.bind( function( to ) {
+			if ( true === to ) {
+				console.log( 'change CSS' );
+				$( '.home .entry-title' ).css( {
+					'display': 'none',
+				} );
+
+				$( '.home .hentry' ).css ( {
+					'margin-top': '0',
+				} );
+			} else {
+				$( '.home .entry-title' ).css( {
+					'display': 'initial',
+				} );
+
+				$( '.home .hentry' ).css ( {
+					'margin': 'calc(2 * 1.5rem) 0',
+				} );
+			}
+		} );
+	} );
+
 } )( jQuery );
