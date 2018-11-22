@@ -49,7 +49,7 @@
 		color: $x-color-primary-base;
 		font-family: $x-font-family-heading;
 		font-size: $x-font-size-xs;
-		font-weight: 600;
+		font-weight: 400;
 		text-transform: uppercase;
 
 		span:after {
@@ -159,10 +159,11 @@
 			width: 100%;
 
 			&:after {
-				height: 100px;
+				height: 250px;
 				width: 100%;
 				background: $x-color-secondary-base;
 				content: '';
+				position: absolute;
 			}
 	
 			.entry-title,
@@ -188,6 +189,11 @@
 
 			> *:first-child:not(.wp-block-cover) {
 				margin-top: $x-space-lg;
+			}
+
+			.wp-block-cover:first-child {
+				max-width: 95vw;
+				height: 680px;
 			}
 		}
 	}

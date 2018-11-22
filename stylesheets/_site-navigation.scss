@@ -1,9 +1,5 @@
 
-/** === Site Branding === */
-
-#site-navigation {
-	margin-right: $x-space-xs;
-}
+/** === Site Navigation === */
 
 .main-navigation {
 	
@@ -47,7 +43,7 @@
 			}
 
 			&.current-menu-item a {
-				color: $x-color-accent-base;
+				border-bottom: 3px solid $x-color-shade-white;
 			}
 		}
 
@@ -67,7 +63,7 @@
 				display: none;
 				
 				ul.sub-menu {
-					margin-top: 4px;
+					margin-top: 1px;
 
 					li {
 						position: relative;
@@ -92,6 +88,7 @@
 			ul {
 				background-color: $x-color-shade-white;
 				position: absolute;
+				padding: 0;
 				left: -999em;
 				z-index: 99999;
 				margin-left: 0;
@@ -117,12 +114,11 @@
 				vertical-align: middle;
 				
 				&:focus {
-					svg {
-						fill: $x-color-accent-base;
-					}
+
 				}
 				
 				svg {
+					fill: $x-color-shade-white;
 					position: relative;
 					top: 0.05em;
 				}
@@ -179,7 +175,7 @@
 			}
 			
 			ul.sub-menu {
-//				margin-top: $x-space-xs;
+//				margin-top: 1px;
 			}
 			
 			> div > ul {
@@ -234,7 +230,7 @@
 
 	@include media( tablet ) {
 
-		margin: $x-space-md 0;
+		margin: $x-space-md 0 0;
 		display: block;
 		width: 100%;
 
@@ -252,8 +248,6 @@
 				}
 
 				> ul {
-					border: 1px solid grey;
-					border-color: $x-color-border-base;
 					
 					#page & button.dropdown-toggle {
 						padding: $x-space-xxs;
@@ -261,6 +255,8 @@
 
 					li {
 						display: block;
+						border-bottom: 1px solid grey;
+						border-color: $x-color-border-base;
 
 						a {
 							padding-top: $x-space-xxs;

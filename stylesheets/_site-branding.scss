@@ -23,9 +23,9 @@
 
 	color: $x-color-words-subtle;
 	margin: $x-space-sm;
-	
+
 	@include media( tablet ) {
-		margin: $x-space-md;
+		margin: $x-space-md $x-space-md 0 0;
 	}
 
 	& > * {
