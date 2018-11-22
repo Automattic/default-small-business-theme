@@ -66,8 +66,8 @@
 					'margin': 'calc(2 * 1.5rem) 0',
 				} );
 
-				$( '.hentry .entry-content > :first-child' ).css ( {
-					'margin-top': 'inherit',
+				$( '.hentry .entry-content > *:first-child' ).css ( {
+					'margin-top': '1em',
 				} );
 
 			}
