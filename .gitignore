@@ -5,4 +5,5 @@
 /style-rtl.css
 /css/blocks.css
 /build
+/node_modules/*
 node.core
