@@ -28,6 +28,9 @@ smallbusinesstheme includes support for Infinite Scroll in Jetpack.
 
 == Changelog ==
 
+= 1.1 - November 23 2018 =
+* Add an option to hide page title on the homepage
+
 = 1.0 - November 01 2018 =
 * Initial release
 
