@@ -4,10 +4,11 @@
 .site-header {
 
 	position: relative;
-	border-bottom: 1px solid gray;
-	border-bottom-color: $x-color-border-base;
+	background-color: $x-color-secondary-base;
 
 	.site-header-wrapper {
+
+		border-bottom: 1px solid $x-color-shade-white;
 		@include media( tablet ) {
 			max-width: $x-grid-column-12;
 			display: flex;
@@ -61,18 +62,16 @@
 
 		font-family: $x-font-family-body;
 		font-size: $x-font-size-lg;
-		color: $x-color-words-base;
+		font-weight: 400;
+		color: $x-color-shade-white;
 		margin: 0;
 
 		a {
 			@include link-transition;
 			display: block;
 			text-decoration: none;
-			color: $x-color-words-heading;
+			color: $x-color-shade-white;
 
-			&:hover {
-				color: $x-color-secondary-base;
-			}
 		}
 	}
 

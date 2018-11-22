@@ -36,7 +36,7 @@
 				display: block;
 
 				&:hover {
-					color: $x-color-accent-base;
+					color: $x-color-shade-white;
 					text-decoration: none;
 				}
 			}
@@ -54,7 +54,7 @@
 		> li {
 
 			> a {
-				color: $x-color-secondary-base;
+				color: $x-color-shade-white;
 				@include link-transition;
 				clear: both;
 				display: block;
@@ -248,7 +248,6 @@
 				
 				a {
 					font-size: $x-font-size-sm;
-					font-weight: 600;
 					padding: $x-space-xs;
 				}
 

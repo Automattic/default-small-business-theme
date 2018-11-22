@@ -15,7 +15,7 @@ input[type="submit"] {
 	font-size: $x-font-size-xs;
 	line-height: $x-font-leading-body;
 	letter-spacing: $x-font-letter-spacing;
-	@include rounded( 3px );
+	@include rounded( 25px );
 	border: 0;
 	cursor: pointer;
 	display: inline-block;
