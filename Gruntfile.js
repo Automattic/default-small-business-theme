@@ -36,7 +36,7 @@ module.exports = function( grunt ) {
 		},
 		watch: {
 			sass: {
-				files: [ "stylesheets/inc/*.scss", "stylesheets/variables/*.scss", "stylesheets/*.scss", "*.scss" ], // TODO: Make this automatic.
+				files: [ "stylesheets/inc/*.scss", "stylesheets/variables/*.scss", "stylesheets/*.scss", "css/*.scss", "*.scss" ], // TODO: Make this automatic.
 				tasks: [
 					'sass'
 				]

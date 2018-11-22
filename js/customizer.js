@@ -39,4 +39,42 @@
 			}
 		} );
 	} );
+
+	// Hide Front Page Title
+	wp.customize( 'hide_front_page_title', function( value ) {
+		value.bind( function( to ) {
+			if ( true === to ) {
+				console.log( 'change CSS' );
+				$( '.home .entry-title' ).css( {
+					'display': 'none',
+				} );
+
+				/*
+				$( '.home .hentry' ).css ( {
+					'margin-top': '0',
+				} );
+				*/
+
+				$( '.hentry .entry-content > :first-child' ).css ( {
+					'margin-top': '0',
+				} );
+
+			} else {
+				$( '.home .entry-title' ).css( {
+					'display': 'block',
+				} );
+
+				/*
+				$( '.home .hentry' ).css ( {
+					'margin': 'calc(2 * 1.5rem) 0',
+				} );
+				*/
+
+				$( '.hentry .entry-content > .wp-block-image:first-child' ).css ( {
+					'margin-top': '1em',
+				} );
+
+			}
+		} );
+	} );
 } )( jQuery );

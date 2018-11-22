@@ -4,7 +4,7 @@
  *
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/#single-post
  *
- * @package Smallbusinesstheme
+ * @package Business
  */
 
 get_header(); ?>
@@ -16,14 +16,10 @@ get_header(); ?>
 
 		get_template_part( 'template-parts/content', get_post_type() );
 
-/*
 		the_post_navigation( array(
-			'prev_text' => '← %title',
-			'next_text' => '%title →',
+			'next_text' => wp_kses( __( '<span class="meta-nav">Next</span> %title', 'business_theme' ), array( 'span' => array( 'class' => array() ) ) ),
+			'prev_text' => wp_kses( __( '<span class="meta-nav">Previous</span> %title', 'business_theme2' ), array( 'span' => array( 'class' => array() ) ) )
 		) );
-*/
-
-		smallbusinesstheme_the_post_navigation();
 
 		// If comments are open or we have at least one comment, load up the comment template.
 		if ( comments_open() || get_comments_number() ) :

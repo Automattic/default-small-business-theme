@@ -1,18 +1,11 @@
 
 /** === Typography === */
-body {
 
-	// font-size base for mobile
-	font-size: $x-font-size-base;
-
-	@include media(tablet) {
-
-		// font-size for tablet and up
-		font-size: calc( #{$x-font-size-base} * #{$x-font-size-responsive-ratio} ); // 1 1/6
-	}
+body:not(.gutenberg-editor-page) {
+	@include typography-base;
 }
 
-body,
+body:not(.gutenberg-editor-page),
 button,
 input,
 select,
@@ -21,35 +14,31 @@ textarea {
 	font-family: $x-font-family-body;
 	line-height: $x-font-leading-body;
 	color: $x-color-words-base;
-	@include font-smoothing;
 	font-weight: 400;
 }
 
 .site-title,
 h1, h2, h3, h4, h5, h6 {
 	clear: both;
-	font-weight: 400;
+	color: $x-color-words-heading;
+	font-weight: 800;
+	font-family: $x-font-family-heading;
 	line-height: $x-font-leading-heading;
-	@include font-smoothing;
 }
 
 h2 {
 	font-family: $x-font-family-heading;
-	font-weight: 200;
-	letter-spacing: .25rem;
-	text-transform: uppercase;
 }
 
 h5 {
 	font-family: $x-font-family-heading;
-	font-weight: 500;
+	letter-spacing: $x-font-letter-spacing;
 	text-transform: uppercase;
 }
 
 h6 {
 	font-family: $x-font-family-heading;
-	font-weight: 200;
-	letter-spacing: .125rem;
+	letter-spacing: $x-font-letter-spacing;
 	text-transform: uppercase;
 }
 
@@ -57,6 +46,10 @@ h6 {
 .text--xxxl,
 p.has-drop-cap:not(:focus):first-letter { // Drop cap font-size
 	font-size: $x-font-size-xxxl;
+}
+
+p.has-drop-cap:not(:focus):first-letter {
+	padding: .2em .2em 0 0;
 }
 
 h1,
@@ -94,22 +87,6 @@ small,
 	font-size: $x-font-size-xs;
 }
 
-.main-navigation,
-.hentry .entry-meta > span {
- 	font-family: $x-font-family-heading;
-	font-size: $x-font-size-xs;
- 	@include media( mobile ) {
-		font-size: $x-font-size-sm;
-	}
-}
- .main-navigation > div > ul > li > a,
-.hentry .entry-meta .posted-on {
- 	font-weight: 400;
-	letter-spacing: .125em;
-	text-decoration: none;
-	text-transform: uppercase;
-}
-
 dfn, em, i {
 	font-style: italic;
 }
@@ -117,9 +94,12 @@ dfn, em, i {
 blockquote,
 blockquote.is-large {
 
+	border-left: 4px solid grey;
+	border-left-color: $x-color-accent-base;
+
 	p {
-		font-size: $x-font-size-lg;
-		font-style: normal;
+		font-size: $x-font-size-base;
+		font-style: italic;
 	}
 
 	cite {
@@ -130,17 +110,21 @@ blockquote.is-large {
 	}
 }
 
+blockquote.is-large {
+	p {
+		font-size: $x-font-size-md;
+	}
+}
+
 pre {
 	font-family: $x-font-family-code;
 	font-size: $x-font-size-sm;
-	line-height: 1.6;
-	@include font-smoothing;
+	line-height: $x-font-leading-body;
 }
 
 code, kbd, tt, var, samp {
-	font-size: $x-font-size-md;
+	font-size: $x-font-size-sm;
 	font-family: $x-font-family-code;
-	@include font-smoothing;
 }
 
 mark, ins {
@@ -148,11 +132,15 @@ mark, ins {
 }
 
 a {
-	background-color: transparent;
+	color: $x-color-secondary-base;
 	text-decoration: none;
-
+	
 	&:hover {
-		text-decoration: underline;
+		color: $x-color-primary-base;
+	}
+
+	&:focus {
+		outline: 2px solid $x-color-border-base;
 	}
 }
 

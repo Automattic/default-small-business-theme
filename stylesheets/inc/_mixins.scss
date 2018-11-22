@@ -75,3 +75,25 @@ $wide_width: 12 * ( 80px + 25px ) - 25px;
 	overflow: hidden;
 }
 
+@mixin link-underline() {
+	background-image: -webkit-linear-gradient(left,currentColor 0%,currentColor 100%);
+    background-image: linear-gradient(to right,currentColor 0%,currentColor 100%);
+    background-position: 0 100%;
+    background-repeat: repeat-x;
+    -webkit-background-size: 100% 1px;
+    background-size: 100% 1px;
+
+    &:hover {
+		background-image: none;
+	}
+}
+
+@mixin typography-base() {
+	// font-size base for mobile
+	font-size: $x-font-size-base;
+
+	@include media(tablet) {
+		// font-size for tablet and up
+		font-size: calc( #{$x-font-size-base} * #{$x-font-size-responsive-ratio} ); // 1 1/6
+	}
+}

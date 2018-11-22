@@ -1,0 +1,80 @@
+{
+    "settings": {
+        "options": {
+            "show_on_front": "page",
+            "featured-content": false
+        },
+        "theme_mods": {
+            "0": false,
+            "nav_menu_locations": {
+                "primary": "primary",
+                "social": "social-media"
+            },
+            "custom_css_post_id": -1
+        },
+        "headstart": {
+            "mapped_id_options": [],
+            "mapped_id_theme_mods": [],
+            "keep_submenu_items": true
+        }
+    },
+    "widgets": [],
+    "content": [
+        {
+            "post_title": "Home",
+            "post_content": "<p>For a starter guide to WordPress.com and to learn more about this theme go to:<\/p><p style=\"text-align: center;\"><a href=\"https:\/\/wordpress.com\/theme\/business\">https:\/\/wordpress.com\/theme\/business<\/a><\/p><p>You're now ready to make the text on this page your own. Open the page editor by clicking on the <strong>‘Edit’<\/strong> button below to change the text on this page.<\/p>",
+            "post_excerpt": "",
+            "post_status": "publish",
+            "menu_order": 1,
+            "comment_status": "closed",
+            "ping_status": "closed",
+            "post_type": "page",
+            "hs_custom_meta": "_hs_front_page",
+            "hs_sharing": 0,
+            "hs_like_status": 0,
+            "page_template": "default",
+            "hs_old_id": 100
+        },
+        {
+            "post_title": "Blog",
+            "post_content": "This is the page where users will find your site's blog",
+            "post_excerpt": "",
+            "post_status": "publish",
+            "menu_order": 2,
+            "comment_status": "closed",
+            "ping_status": "closed",
+            "post_type": "page",
+            "hs_custom_meta": "_hs_blog_page",
+            "hs_sharing": 0,
+            "hs_like_status": 0,
+            "hs_old_id": 101
+        }
+    ],
+    "menus": {
+        "social-media": {
+            "name": "Social Media",
+            "items": [
+                {
+                    "menu-item-title": "Facebook",
+                    "menu-item-db-id": 175,
+                    "menu-item-object-id": "175",
+                    "menu-item-object": "custom",
+                    "menu-item-type": "custom",
+                    "menu-item-status": "publish",
+                    "menu-item-position": 0,
+                    "menu-item-parent-id": "0",
+                    "menu-item-description": "",
+                    "menu-item-url": "http:\/\/www.facebook.com"
+                }
+           ]
+        }
+    },
+    "images": [
+        "https:\/\/headstartdata.files.wordpress.com\/2017\/08\/open.jpg",
+        "https:\/\/headstartdata.files.wordpress.com\/2017\/11\/cafe.jpg",
+        "https:\/\/headstartdata.files.wordpress.com\/2017\/11\/architecture.jpg",
+        "https:\/\/headstartdata.files.wordpress.com\/2017\/09\/pattern-stardust.png",
+        "https:\/\/headstartdata.files.wordpress.com\/2017\/09\/pattern-wood1.png",
+        "https:\/\/headstartdata.files.wordpress.com\/2017\/09\/pattern-knit-feathers1.png"
+    ]
+}

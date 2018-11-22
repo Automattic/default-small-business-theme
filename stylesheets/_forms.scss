@@ -3,25 +3,25 @@
 
 .button,
 button,
+#infinite-handle span button,
+#infinite-handle span button:focus,
+#infinite-handle span button:hover,
 input[type="button"],
 input[type="reset"],
 input[type="submit"] {
-	background-color: $x-color-primary-base;
-	color: $x-color-primary-bg;
-	font-family: $x-font-family-heading;
-	font-size: $x-font-size-sm;
+	background-color: $x-color-accent-base;
+	color: $x-color-shade-white;
+	padding: $x-space-xxs $x-space-xs;
+	font-size: $x-font-size-xs;
 	line-height: $x-font-leading-body;
+	letter-spacing: $x-font-letter-spacing;
 	@include rounded( 3px );
-	border: 2px solid green;
-	border-color: $x-color-primary-base;
-	box-shadow: 1px 1px 5px 1px rgba(0,0,0,0.33);
+	border: 0;
 	cursor: pointer;
 	display: inline-block;
 	font-weight: 600;
 	text-decoration: none;
 	text-transform: uppercase;
-	
-	padding: $x-space-xxs $x-space-xs;
 
 	@include media( tablet ) {
 		padding: $x-space-xs $x-space-sm;
@@ -30,25 +30,24 @@ input[type="submit"] {
 
 .button:hover,
 button:hover,
+#infinite-handle span button:hover,
 input[type="button"]:hover,
 input[type="reset"]:hover,
 input[type="submit"]:hover {
-	border-color: $x-color-primary-base;
-	background-color: $x-color-shade-white;
-	color: $x-color-primary-base;
+	background-color: $x-color-accent-light;
 }
 
 .button:active, .button:focus,
 button:active, button:focus,
+#infinite-handle span button:active,
+#infinite-handle span button:focus,
 input[type="button"]:active,
 input[type="button"]:focus,
 input[type="reset"]:active,
 input[type="reset"]:focus,
 input[type="submit"]:active,
 input[type="submit"]:focus {
-	border-color: $x-color-primary-base;
-	background-color: $x-color-shade-white;
-	color: $x-color-words-subtle;
+	background-color: $x-color-accent-light;
 }
 
 input[type="text"],
@@ -68,7 +67,9 @@ input[type="datetime-local"],
 input[type="color"],
 textarea {
 	border: 1px solid gray;
-	border-color: $x-color-border-form-focus;
+	border-color: $x-color-border-base;
+	font-size: $x-font-size-base;
+	padding: 3px;
 }
 
 input[type="text"]:focus,
@@ -98,4 +99,10 @@ select {
 textarea {
 	font-size: $x-font-size-sm;
 	width: 100%;
+}
+
+@include media(mobile) {
+	.contact-form textarea {
+		width: 100% !important;
+	}
 }

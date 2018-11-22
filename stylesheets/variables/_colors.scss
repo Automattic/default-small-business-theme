@@ -1,56 +1,62 @@
 
-$primary-color:   #008000;
+$primary-color:   #6e7381; // body text 
 
-$secondary-color: #f5414f;
+$secondary-color: #121733; // headings #2a4858
+
+$accent-color: #5f4bb6; // experimental 
 
 $x-color-primary-base:  $primary-color;
-$x-color-primary-light: tint( $primary-color, 20% );
 $x-color-primary-dark:  shade( $primary-color, 20% );
+$x-color-primary-light: tint( $primary-color, 20% );
 $x-color-primary-bg:    tint( $primary-color, 80% );
 
 $x-color-secondary-base:  $secondary-color;
+$x-color-secondary-bg:    tint( $secondary-color, 80% );
 $x-color-secondary-light: tint( $secondary-color, 20% );
 $x-color-secondary-dark:  shade( $secondary-color, 20% );
-$x-color-secondary-bg:    tint( $secondary-color, 80% );
 
-$x-color-shade-black:   #1d1d21;
-$x-color-shade-gray-10: #2e2e31;
-$x-color-shade-gray-6:  #7b7a7d;
-$x-color-shade-gray-4:  #a5a5a6;
-$x-color-shade-gray-3:  #bbbbbc;
-$x-color-shade-gray-2:  #d1d0d2;
-$x-color-shade-gray-1:  #e8e7e8;
+$x-color-accent-base:  $accent-color;
+$x-color-accent-light: tint( $accent-color, 20% );
+
+/*$x-color-shade-black:   #1d1d21;
+$x-color-shade-gray-10: #2e2e31;*/
+$x-color-shade-gray-6:  #91a3b0; // #7b7a7d;
+$x-color-shade-gray-4:  #8b949d;
+/*
+$x-color-shade-gray-3:  #a8b1b8;
+*/$x-color-shade-gray-2:  #e8ecf1; // #e8e8e8
+/*$x-color-shade-gray-1:  #e8ecf1;*/
 $x-color-shade-white:   #ffffff;
 
 $x-color-feedback-success: #88c459;
 $x-color-feedback-error:   #f5414f;
 $x-color-feedback-warning: #ffd137;
 
-$x-color-words-base:       $x-color-shade-gray-10;
-$x-color-words-primary:    $x-color-primary-base;
+$x-color-words-base:       $x-color-primary-base;
+$x-color-words-subtle:     $x-color-shade-gray-6;
+$x-color-words-heading:    $x-color-secondary-base;
+/*$x-color-words-primary:    $x-color-primary-base;
 $x-color-words-secondary:  $x-color-secondary-base;
 $x-color-words-background: $x-color-shade-white;
-$x-color-words-heading:    $x-color-shade-black;
-$x-color-words-subtle:     $x-color-shade-gray-6;
 $x-color-words-link:       $x-color-primary-base;
-$x-color-words-hover:      $x-color-primary-dark;
+$x-color-words-hover:      $x-color-primary-dark;*/
 
 $x-color-border-base:             $x-color-shade-gray-2;
-$x-color-border-primary:          $x-color-primary-base;
-$x-color-border-form:             $x-color-border-base;
+/*$x-color-border-primary:          $x-color-primary-base;
+$x-color-border-form:             $x-color-border-base;*/
 $x-color-border-form-focus:       $x-color-primary-base;
-$x-color-border-form-error:       $x-color-feedback-error;
+/*$x-color-border-form-error:       $x-color-feedback-error;
 $x-color-border-form-bg:          $x-color-shade-white;
-$x-color-border-form-placeholder: $x-color-shade-gray-4;
+$x-color-border-form-placeholder: $x-color-shade-gray-4;*/
 
 $x-color-background-body:        $x-color-shade-white;
-$x-color-background-transparent: transparent;
+/*$x-color-background-transparent: transparent;*/
 
-$x-color-button-primary-bg:       $x-color-primary-bg;
+/*$x-color-button-primary-bg:       $x-color-primary-bg;
 $x-color-button-primary-hover:    $x-color-primary-light;
 $x-color-button-primary-active:   $x-color-primary-dark;
 $x-color-button-primary-label:    $x-color-shade-white;
 $x-color-button-secondary-bg:     $x-color-secondary-bg;
 $x-color-button-secondary-hover:  $x-color-secondary-light;
 $x-color-button-secondary-active: $x-color-secondary-dark;
-$x-color-button-secondary-label:  $x-color-shade-white;
+$x-color-button-secondary-label:  $x-color-shade-white;*/

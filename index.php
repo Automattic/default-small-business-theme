@@ -9,7 +9,7 @@
  *
  * @link https://codex.wordpress.org/Template_Hierarchy
  *
- * @package Smallbusinesstheme
+ * @package Business
  */
 
 get_header(); ?>
@@ -35,11 +35,14 @@ get_header(); ?>
 				* If you want to override this in a child theme, then include a file
 				* called content-___.php (where ___ is the Post Format name) and that will be used instead.
 				*/
-			get_template_part( 'template-parts/content', 'archive' ); // , get_post_format() );
+			get_template_part( 'template-parts/content', 'archive' );
 
 		endwhile;
 
-		the_posts_navigation();
+		the_posts_navigation( array(
+			'prev_text'          => business_theme_get_icon_svg( is_rtl() ? 'chevron_right' : 'chevron_left' ) . __( 'Older posts', 'business_theme' ),
+			'next_text'          => __( 'Newer posts', 'business_theme' ) . business_theme_get_icon_svg( is_rtl() ? 'chevron_left' : 'chevron_right' ),
+		) ) ;
 
 	else :
 

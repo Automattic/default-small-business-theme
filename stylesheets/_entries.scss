@@ -3,10 +3,16 @@
 
 // This is outside of the .hentry wrapper so it does’t override selectors in blocks.css
 .entry-content,
-.entry-summary {
+.entry-summary,
+.page-content {
+	
+	@include clearfix;
+	
+	@include media( tablet ) {
+		width: $x-grid-column-7;
+	}
 
-	// Style all elemnts first
-	> * {
+	> *:not(.alignfull) {
 		margin: $x-space-sm;
 		max-width: calc( 100% - ( #{$x-space-sm} * 2 ) );
 
@@ -16,34 +22,44 @@
 
 		@include media( tablet ) {
 			max-width: $x-grid-column-7;
-			margin-right: $x-space-column-3;
+			margin-right: auto;
 			margin-left: auto;
 		}
 	}
+
+	h1, h2, h3, h4, h5, h6 {
+		margin: $x-space-md auto !important;
+	}
+
+}
+
+.infinite-wrap .hentry:first-child,
+.single .has-post-thumbnail:first-child,
+.page .has-post-thumbnail.hentry {
+	margin-top: 0;
 }
 
 .hentry {
 	margin: $x-space-lg 0;
 
-	@include media( tablet ) {
-		margin: $x-space-lg, $x-space-sm;
+/*	@include media( tablet ) {
+		margin: $x-space-xl, $x-space-sm;
 	}
 
 	@include media( desktop ) {
 		margin: $x-space-lg 0;
-	}
 
-	.entry-featured-image {
-		text-align: center;
+		&:first-child {
+			margin-top: $x-space-xxl;
+		}
 	}
+*/
 
 	.entry-header {
 
 		@include media( tablet ) {
-			max-width: $x-grid-column-12;
+			max-width: $x-grid-column-10;
 			align-items: flex-start;
-			display: flex;
-			justify-content: flex-end;
 			margin-left: auto;
 			margin-right: auto;
 		}
@@ -51,14 +67,15 @@
 
 	.entry-title {
 		margin: $x-space-sm;
-		color: $x-color-primary-base;
+		font-weight: 800;
 
 		a {
 			color: $x-color-primary-base;
 			@include link-transition;
 			color: inherit;
+			
 			&:hover {
-				color: $x-color-secondary-base;
+				color: $x-color-accent-base;
 				text-decoration: none;
 			}
 		}
@@ -71,19 +88,32 @@
 			// Single Page
 			&:first-child:last-child {
 				max-width: $x-grid-column-7;
-				margin-right: $x-space-column-3;
-			 	margin-left: auto;
+				margin-left: auto;
+				margin-right: auto;
 			}
 		}
 	}
 
-	.entry-meta {
+	@at-root .single .entry-title {
+		@include media( tablet ) { 
+			font-size: $x-font-size-xxxl;
+			margin: $x-space-lg auto $x-space-md;
+		}
+	}
 
+	@at-root body.page .entry-title {
+		@include media( tablet ) { 
+			font-size: $x-font-size-xxxl;
+			margin: $x-space-lg auto $x-space-md;
+		}
+	}
+
+	.entry-meta {
+		
+		font-size: $x-font-size-xs;
 		margin: $x-space-sm;
 		color: $x-color-words-subtle;
-		display: flex;
-		justify-content: space-between;
-
+		
 		a {
 			color: $x-color-words-heading;
 			@include link-transition;
@@ -91,45 +121,29 @@
 
 			&:hover {
 				text-decoration: none;
-				color: $x-color-secondary-base;
-			}
-		}
-
-		.posted-on {
-			text-transform: uppercase;
-
-			a {
-				font-weight: normal;
-			}
-		}
-
-		.byline {
-
-			a {
-				font-weight: 600;
+				color: $x-color-words-subtle;
 			}
 		}
 
 		@include media( tablet ) {
-			width: calc( #{$x-grid-column-3} - ( #{$x-space-sm} * 2 ) );
-			flex-direction: column;
-			justify-content: inherit;
-
+			width: $x-grid-column-7;
+			margin: $x-space-sm auto;
 		}
 	}
 
 	.entry-footer {
 
 		.entry-meta {
-
+			display: flex;
 			line-height: $x-font-leading-double;
 			flex-direction: column;
 			justify-content: space-between;
 
 			@include media( tablet ) {
 
+				display: flex;
 				max-width: $x-grid-column-7;
-				margin-right: $x-space-column-3;
+				margin-right: auto;
 				padding-bottom: $x-space-sm;
 				line-height: $x-font-leading-body;
 				flex-direction: row;
@@ -148,7 +162,6 @@
 
 		@include media( tablet ) {
 			max-width: $x-grid-column-12;
-			display: flex;
 			justify-content: flex-end;
 			margin-left: auto;
 			margin-right: auto;
@@ -231,19 +244,19 @@
 			display: block;
 		}
 
+		a:not(.jp-relatedposts-post-a) {
+			@include link-underline;
+		}
+
 		.more-link {
 			@include link-transition;
-			display: inline;
-			color: inherit;
-
-			&:after {
-				content: "»";
-				margin-left: 0.5em;
-			}
+			color: $x-color-secondary-base;
+			font-weight: 600;
+			margin: $x-space-xs 0;
+			white-space: nowrap;
 
 			&:hover {
-				color: $x-color-primary-base;
-				text-decoration: none;
+				color: $x-color-accent-base;
 			}
 		}
 
@@ -254,18 +267,118 @@
 		}
 	}
 
+	.entry-author {
+		border-top: 1px solid grey;
+		border-color: $x-color-border-base;
+		margin: $x-space-sm;
+		padding-top: $x-space-md;
+		max-width: calc( 100% - ( #{$x-space-sm} * 2 ) );
+
+		@include media( tablet ) {
+			max-width: $x-grid-column-7;
+			margin: $x-space-md auto;
+		}
+
+		.author-avatar {
+
+			img {
+				border-radius: 50%;
+				display: block;
+				margin-right: $x-space-xs;
+				height: 60px;
+				width: 60px;
+			}
+		}
+
+	.author-heading {
+		float: left;
+		margin-bottom: $x-space-sm;
+
+		.author-title {
+			color: $x-color-words-subtle;
+			font-size: $x-font-size-xs;
+			font-weight: 400;
+			margin-top: 0;
+			text-transform: uppercase;
+		}
+
+		.author-name {
+			clear: both;
+			color: $x-color-secondary-base;
+			display: block;
+			font-size: $x-font-size-xxl;
+			font-weight: 900;
+			margin: 0 0 $x-space-xs;
+			text-transform: none;
+		}
+	}
+
+	.author-bio {
+		clear: both;
+
+		.author-link {
+			white-space: nowrap;
+			font-weight: 700;
+
+			&:hover {
+				color: $x-color-accent-base;
+			}
+		}
+	}
+
+}
+
 	// Archives
 	.blog &,
 	.archive &,
 	.search & {
 
-		.entry-summary p {
-			word-break: break-word;
+		.entry-summary {
+			p {
+				word-break: break-word;
+			}
+		}
+
+		.entry-meta {
+			justify-content: space-between;
+
+			a {
+				color: $x-color-words-heading;
+				@include link-transition;
+				font-weight: 600;
+
+				&:hover {
+					text-decoration: none;
+					color: $x-color-words-subtle;
+				}
+			}
+
+			@include media( tablet ) {
+				display: flex;
+				width: $x-grid-column-7;
+				margin: $x-space-sm auto;
+				flex-direction: column;
+				justify-content: inherit;
+			}
+
+			.posted-on {
+				text-transform: uppercase;
+
+				a {
+					font-weight: normal;
+				}
+			}
+
+			.byline {
+				font-weight: 600; 
+			}
 		}
 
 		.entry-footer {
 
 			.entry-meta {
+
+				flex-direction: column;
 
 				> span {
 
@@ -285,7 +398,16 @@
 
 		@include media( tablet ) {
 
+			.entry-title {
+				margin: $x-space-sm auto;
+				margin-top: 0;
+				width: auto;
+				word-wrap: break-word;
+			}
+
 			.entry-footer .entry-meta {
+
+				flex-direction: row;
 
 				border-bottom: 1px solid grey;
 				border-bottom-color: $x-color-border-base;
@@ -326,22 +448,8 @@
 				margin: 0;
 			}
 
-			.entry-title {
-
-				margin: $x-space-sm;
-				margin-top: 0;
-				width: auto;
-			}
-
 			.entry-summary {
-
 				flex: 1 1 60%;
-
-				> * {
-
-					margin-left: $x-space-sm;
-					margin-right: $x-space-sm;
-				}
 			}
 
 			.entry-footer {
@@ -350,9 +458,6 @@
 				flex: 1 0 60%;
 
 				.entry-meta {
-
-					margin-left: $x-space-sm;
-					margin-right: $x-space-sm;
 
 					> span {
 						flex: 1 1 20%;

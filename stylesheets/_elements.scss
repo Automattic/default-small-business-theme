@@ -15,55 +15,25 @@ body {
 	background-color: $x-color-shade-white;
 }
 
-a {
-	color: $x-color-primary-base;
-}
+a {}
 
-a:visited {
+a:visited {}
 
-}
+a:hover, a:focus, a:active {}
 
-a:hover, a:focus, a:active {
-
-}
-
-a:focus {
-
-}
+a:focus {}
 
 a:hover,
 a:active {
 	outline: 0;
 }
 
-p {
-	margin: 0;
-}
+@import "elements-common";
 
-hr {
-	background-color: $x-color-shade-gray-3;
-	border: 0;
-	height: 1px;
-	margin-bottom: 1.5em;
-}
 
-abbr,
-acronym {
-	border-bottom: 1px dotted inherit;
-	border-bottom-color: $x-color-border-base;
-	cursor: help;
-}
-
-pre {
-	background-color: $x-color-shade-gray-1;
-	margin-bottom: $x-space-sm;
-	max-width: 100%;
-	overflow: auto;
-	padding: $x-space-sm;
-}
-
-ul,
 ol {
+	list-style: none;
+	counter-reset: sans-counter;
 	margin-top: 0;
 	margin-right: 0;
 	margin-bottom: $x-space-xs;
@@ -71,39 +41,12 @@ ol {
 	padding: 0;
 }
 
-li {
-	list-style: none;
-}
-
 ul {
-	list-style: none;
-	list-style-position: inside;
-}
+	padding-left: $x-space-xs;
 
-ul > li {
-
-	position: relative;
-	padding-left: $x-space-sm;
-
-	&:before {
-		content: "\25CF\00a0";
-		display: block;
-		left: 0;
-		position: absolute;
-		top: $x-space-xxs;
-		color: $x-color-primary-base;
-		line-height: $x-font-leading-md;
-		font-size: $x-font-size-xs;
+	@include media(tablet) {
+		padding-left: $x-space-sm;
 	}
-
-	li:before {
-		content: "\2B58\00a0";
-	}
-}
-
-ol {
-	list-style: none;
-	counter-reset: sans-counter;
 }
 
 ol > li {
@@ -134,8 +77,15 @@ ol > li {
 
 li > ol,
 li > ul {
-	margin-left: 0;
 	margin-bottom: 0;
+}
+
+li > ul {
+	padding-left: $x-space-sm;
+}
+
+li > ol {
+	margin-left: 0;
 }
 
 li > ol ol,
@@ -143,62 +93,4 @@ li > ul ul,
 li > ol ul,
 li > ul ol {
 	margin-bottom: 0;
-}
-
-dt {
-	font-weight: bold;
-}
-
-dd {
-	margin-top: 0;
-	margin-right: 0;
-	margin-bottom: $x-space-xs;
-	margin-left: $x-space-xs;
-}
-
-img {
-	height: auto;
-	max-width: 100%;
-}
-
-svg {
-	fill: currentColor;
-}
-
-figure {
-	margin: 0;
-}
-
-table {
-	margin: 0 0 1.5em;
-	width: 100%;
-}
-
-blockquote,
-blockquote.is-large {
-	margin-left: 0;
-	margin-right: 0;
-	border-top: 1px solid green;
-	
-	padding: $x-space-sm;
-	
-	border-top-color: $x-color-border-primary;
-
-	p {
-		padding: $x-space-xs 0;
-		word-break: break-word;
-	}
-
-	cite {
-		color: $x-color-words-subtle;
-	}
-}
-
-address {
-	margin: 0 0 1.5em;
-}
-
-mark,
-ins {
-	background-color: $x-color-feedback-warning;
 }

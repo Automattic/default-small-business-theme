@@ -4,34 +4,24 @@
  *
  * @link https://codex.wordpress.org/Template_Hierarchy
  *
- * @package Smallbusinesstheme
+ * @package Business
  */
 
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 
-	<figure class="entry-featured-image">
-		<a href="<?php echo esc_url( get_permalink() ) ?>" rel="bookmark">
-		<?php
-		if ( has_post_thumbnail() ) :
-			the_post_thumbnail();
-		endif;
-		?>
-		</a>
-	</figure>
-
 	<header class="entry-header">
 		<?php
 		if ( is_singular() ) :
-			the_title( '<h2 class="entry-title">', '</h2>' );
+			the_title( '<h1 class="entry-title">', '</h1>' );
 		else :
 			the_title( '<h2 class="entry-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' );
 		endif;
 
 		if ( 'post' === get_post_type() ) : ?>
 		<div class="entry-meta">
-			<?php smallbusinesstheme_posted_on(); ?>
+			<?php business_theme_posted_on(); ?>
 		</div><!-- .entry-meta -->
 		<?php
 		endif; ?>
@@ -42,7 +32,7 @@
 			the_content( sprintf(
 				wp_kses(
 					/* translators: %s: Name of current post. Only visible to screen readers */
-					__( 'Continue reading<span class="screen-reader-text"> "%s"</span>', 'smallbusinesstheme' ),
+					__( 'Continue reading<span class="screen-reader-text"> "%s"</span>', 'business_theme' ),
 					array(
 						'span' => array(
 							'class' => array(),
@@ -53,7 +43,7 @@
 			) );
 
 			wp_link_pages( array(
-				'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'smallbusinesstheme' ),
+				'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'business_theme' ),
 				'after'  => '</div>',
 			) );
 		?>
@@ -61,8 +51,10 @@
 
 	<footer class="entry-footer">
 		<div class="entry-meta">
-			<?php smallbusinesstheme_entry_footer(); ?>
+			<?php business_theme_entry_footer(); ?>
 		</div>
 	</footer><!-- .entry-footer -->
+
+	<?php business_theme_author_bio(); ?>
 
 </article><!-- #post-<?php the_ID(); ?> -->

@@ -4,14 +4,14 @@
  *
  * Eventually, some of the functionality here could be replaced by core features.
  *
- * @package Smallbusinesstheme
+ * @package Business
  */
 
-if ( ! function_exists( 'smallbusinesstheme_posted_on' ) ) :
+if ( ! function_exists( 'business_theme_posted_on' ) ) :
 	/**
 	 * Prints HTML with meta information for the current post-date/time and author.
 	 */
-	function smallbusinesstheme_posted_on() {
+	function business_theme_posted_on() {
 		$time_string = '<time class="entry-date published updated" datetime="%1$s">%2$s</time>';
 		if ( get_the_time( 'U' ) !== get_the_modified_time( 'U' ) ) {
 			$time_string = '<time class="entry-date published" datetime="%1$s">%2$s</time><time class="updated" datetime="%3$s">%4$s</time>';
@@ -24,15 +24,21 @@ if ( ! function_exists( 'smallbusinesstheme_posted_on' ) ) :
 			esc_html( get_the_modified_date() )
 		);
 
-		$posted_on = sprintf(
-			/* translators: %s: post date. */
-			esc_html_x( '%s', 'post date', 'smallbusinesstheme' ),
-			'<a href="' . esc_url( get_permalink() ) . '" rel="bookmark">' . $time_string . '</a>'
-		);
+		if ( is_single() ) {
+			$posted_on = sprintf( esc_attr__( 'Posted on %1$s', 'business_theme' ),
+							'<a href="' . esc_url( get_permalink() ) . '" rel="bookmark">' . $time_string . '</a>'
+						);
+		}
+		elseif ( is_sticky() ) {
+			$posted_on = '<a href="' . esc_url( get_permalink() ) . '" rel="bookmark">' . esc_html__( 'Featured', 'business_theme' ) . '</a>';
+		}
+		else {
+			$posted_on = '<a href="' . esc_url( get_permalink() ) . '" rel="bookmark">' . $time_string . '</a>';
+		}
 
 		$byline = sprintf(
 			/* translators: %s: post author. */
-			esc_html_x( 'by %s', 'post author', 'smallbusinesstheme' ),
+			esc_html_x( ' by %s', 'post author', 'business_theme' ),
 			'<span class="author vcard"><a class="url fn n" href="' . esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ) . '">' . esc_html( get_the_author() ) . '</a></span>'
 		);
 
@@ -41,25 +47,25 @@ if ( ! function_exists( 'smallbusinesstheme_posted_on' ) ) :
 	}
 endif;
 
-if ( ! function_exists( 'smallbusinesstheme_entry_footer' ) ) :
+if ( ! function_exists( 'business_theme_entry_footer' ) ) :
 	/**
 	 * Prints HTML with meta information for the categories, tags and comments.
 	 */
-	function smallbusinesstheme_entry_footer() {
+	function business_theme_entry_footer() {
 		// Hide category and tag text for pages.
 		if ( 'post' === get_post_type() ) {
 			/* translators: used between list items, there is a space after the comma */
-			$categories_list = get_the_category_list( esc_html__( ', ', 'smallbusinesstheme' ) );
+			$categories_list = get_the_category_list( esc_html__( ', ', 'business_theme' ) );
 			if ( $categories_list ) {
 				/* translators: 1: list of categories. */
-				printf( '<span class="cat-links">' . esc_html__( 'Posted in %1$s', 'smallbusinesstheme' ) . '</span>', $categories_list ); // WPCS: XSS OK.
+				printf( '<span class="cat-links">' . esc_html__( 'Posted in %1$s', 'business_theme' ) . '</span>', $categories_list ); // WPCS: XSS OK.
 			}
 
 			/* translators: used between list items, there is a space after the comma */
-			$tags_list = get_the_tag_list( '', esc_html_x( ', ', 'list item separator', 'smallbusinesstheme' ) );
+			$tags_list = get_the_tag_list( '', esc_html_x( ', ', 'list item separator', 'business_theme' ) );
 			if ( $tags_list ) {
 				/* translators: 1: list of tags. */
-				printf( '<span class="tags-links">' . esc_html__( 'Tagged %1$s', 'smallbusinesstheme' ) . '</span>', $tags_list ); // WPCS: XSS OK.
+				printf( '<span class="tags-links">' . esc_html__( 'Tagged %1$s', 'business_theme' ) . '</span>', $tags_list ); // WPCS: XSS OK.
 			}
 		}
 
@@ -69,7 +75,7 @@ if ( ! function_exists( 'smallbusinesstheme_entry_footer' ) ) :
 				sprintf(
 					wp_kses(
 						/* translators: %s: post title */
-						__( 'Leave a Comment<span class="screen-reader-text"> on %s</span>', 'smallbusinesstheme' ),
+						__( 'Leave a Comment<span class="screen-reader-text"> on %s</span>', 'business_theme' ),
 						array(
 							'span' => array(
 								'class' => array(),
@@ -86,7 +92,7 @@ if ( ! function_exists( 'smallbusinesstheme_entry_footer' ) ) :
 			sprintf(
 				wp_kses(
 					/* translators: %s: Name of current post. Only visible to screen readers */
-					__( 'Edit <span class="screen-reader-text">%s</span>', 'smallbusinesstheme' ),
+					__( 'Edit <span class="screen-reader-text">%s</span>', 'business_theme' ),
 					array(
 						'span' => array(
 							'class' => array(),
@@ -101,9 +107,9 @@ if ( ! function_exists( 'smallbusinesstheme_entry_footer' ) ) :
 	}
 endif;
 
-if ( ! function_exists( 'smallbusinesstheme_comment' ) ) :
+if ( ! function_exists( 'business_theme_comment' ) ) :
 
-	function smallbusinesstheme_comment($comment, $args, $depth) {
+	function business_theme_comment($comment, $args, $depth) {
     if ( 'div' === $args['style'] ) {
         $tag       = 'div';
         $add_below = 'comment';
@@ -156,25 +162,35 @@ if ( ! function_exists( 'smallbusinesstheme_comment' ) ) :
 }
 endif;
 
-if ( ! function_exists( 'smallbusinesstheme_the_post_navigation' ) ) :
-
-	function smallbusinesstheme_the_post_navigation() {
-
-		// Previous/next post navigation.
-		$next_post = get_next_post();
-		$next_post_content = $next_post ? wp_trim_words( get_post_field( 'post_content', $next_post->ID ), '28' ) : '';
-		$previous_post = get_previous_post();
-		$previous_post_content = $previous_post ? wp_trim_words( get_post_field( 'post_content', $previous_post->ID ), '28' ) : '';
-
-		the_post_navigation( array(
-			'next_text' => '<span class="screen-reader-text">' . __( 'Next post:', 'smallbusinesstheme' ) . '</span> ' .
-			'<h2 class="post-title">%title</h2>' .
-			'<p class="post-excerpt">' . $next_post_content . '</p>' .
-			'<button>' . __( 'Next', 'smallbusinesstheme' ) . '</button>',
-			'prev_text' => '<span class="screen-reader-text">' . __( 'Previous post:', 'smallbusinesstheme' ) . '</span> ' .
-			'<h2 class="post-title">%title</h2>' .
-			'<p class="post-excerpt">' . $previous_post_content . '</p>' .
-			'<button>' . __( 'Previous', 'smallbusinesstheme' ) . '</button>',
-		) );
+if ( ! function_exists( 'business_theme_social_menu' ) ) :
+	/**
+	 * Jetpack social menu.
+	 */
+	function business_theme_social_menu() {
+		if ( function_exists( 'jetpack_social_menu' ) ) {
+			jetpack_social_menu();
+		}
 	}
 endif;
+
+if ( ! function_exists( 'business_theme_author_bio' ) ) :
+	/**
+	 * Return early if Author Bio is not available.
+	 */
+	function business_theme_author_bio() {
+		if ( function_exists( 'jetpack_author_bio' ) ) {
+			jetpack_author_bio();
+		}
+	}
+endif;
+
+if ( ! function_exists( 'business_theme_author_bio_avatar_size' ) ) :
+	/**
+	 * Author Bio Avatar Size.
+	 */
+	function business_theme_author_bio_avatar_size() {
+		return 60; // in px
+	}
+endif;
+
+add_filter( 'jetpack_author_bio_avatar_size', 'business_theme_author_bio_avatar_size' );

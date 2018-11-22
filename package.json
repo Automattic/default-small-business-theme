@@ -16,11 +16,28 @@
     "minimist": "~1.2.0",
     "node-bourbon": "~4.2.3",
     "node-sass": "~4.5.0",
+    "rtlcss": "^2.4.0",
     "susy": "~2.2.5",
     "underscore": "~1.9.1"
   },
   "engines": {
     "node": ">=0.8.0",
     "npm": ">=1.1.0"
+  },
+  "rtlcssConfig": {
+    "options": {
+      "autoRename": false,
+      "autoRenameStrict": false,
+      "blacklist": {},
+      "clean": true,
+      "greedy": false,
+      "processUrls": false,
+      "stringMap": []
+    },
+    "plugins": [],
+    "map": false
+  },
+  "scripts": {
+    "build:rtl": "rtlcss style.css style-rtl.css"
   }
 }

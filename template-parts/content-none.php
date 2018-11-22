@@ -4,14 +4,14 @@
  *
  * @link https://codex.wordpress.org/Template_Hierarchy
  *
- * @package Smallbusinesstheme
+ * @package Business
  */
 
 ?>
 
 <section class="no-results not-found">
 	<header class="page-header">
-		<h1 class="page-title"><?php esc_html_e( 'Nothing Found', 'smallbusinesstheme' ); ?></h1>
+		<h2 class="page-title"><?php esc_html_e( 'Nothing Found', 'business_theme' ); ?></h2>
 	</header><!-- .page-header -->
 
 	<div class="page-content">
@@ -22,7 +22,7 @@
 				printf(
 					wp_kses(
 						/* translators: 1: link to WP admin new post page. */
-						__( 'Ready to publish your first post? <a href="%1$s">Get started here</a>.', 'smallbusinesstheme' ),
+						__( 'Ready to publish your first post? <a href="%1$s">Get started here</a>.', 'business_theme' ),
 						array(
 							'a' => array(
 								'href' => array(),
@@ -35,13 +35,13 @@
 
 		<?php elseif ( is_search() ) : ?>
 
-			<p><?php esc_html_e( 'Sorry, but nothing matched your search terms. Please try again with some different keywords.', 'smallbusinesstheme' ); ?></p>
+			<p><?php esc_html_e( 'Sorry, but nothing matched your search terms. Please try again with some different keywords.', 'business_theme' ); ?></p>
 			<?php
 				get_search_form();
 
 		else : ?>
 
-			<p><?php esc_html_e( 'It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps searching can help.', 'smallbusinesstheme' ); ?></p>
+			<p><?php esc_html_e( 'It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps searching can help.', 'business_theme' ); ?></p>
 			<?php
 				get_search_form();
 

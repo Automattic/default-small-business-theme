@@ -1,7 +1,7 @@
 
 CSS_VAR_PREFIX="x"
 
-PKG="default-small-business-theme"
+PKG="business"
 
 default: build
 
@@ -26,14 +26,18 @@ dev: clean check-for-grunt
 	
 css-vars: clean
 	@node tools/sass-variables.js --prefix=${CSS_VAR_PREFIX} style.scss --output style-css-vars.scss
-	@node tools/sass-variables.js --prefix=${CSS_VAR_PREFIX} --root-selector=".edit-post-visual-editor" --ignore "css/blocks.scss" editor.scss --output editor-css-vars.scss
+	@node tools/sass-variables.js --prefix=${CSS_VAR_PREFIX} --root-selector="body" --ignore "css/blocks.scss" editor.scss --output editor-css-vars.scss
 	@node tools/sass-variables.js --prefix=${CSS_VAR_PREFIX} --skip-root css/blocks.scss --output css/blocks-css-vars.scss
-	@grunt build > /dev/null
+	@echo && grunt build && echo
 	@make clean-vars
+	
+rtl:
+	@npm run build:rtl
 
 theme: clean
-	@echo "* Initializing build"; mkdir -p build
+	@echo "* Initializing build"; mkdir -p build; echo
 	@echo "* Building assets"; make css-vars
+	@echo "* Generating RTL styles"; make rtl; echo
 	@echo "* Copying assets"; rsync -a . build/ --exclude-from=excludes.rsync
 	@echo "* Integrity check"; node tools/buildtool.js --check --path build/
 	@echo "* Zipping"; mv build ${PKG}; mkdir build; zip -mqr build/${PKG}.zip ${PKG}; cd build/; unzip -qq ${PKG}.zip

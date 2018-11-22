@@ -4,7 +4,7 @@
  *
  * @link https://jetpack.com/
  *
- * @package Smallbusinesstheme
+ * @package Business
  */
 
 /**
@@ -14,11 +14,11 @@
  * See: https://jetpack.com/support/responsive-videos/
  * See: https://jetpack.com/support/content-options/
  */
-function smallbusinesstheme_jetpack_setup() {
+function business_theme_jetpack_setup() {
 	// Add theme support for Infinite Scroll.
 	add_theme_support( 'infinite-scroll', array(
-		'container' => 'main',
-		'render'    => 'smallbusinesstheme_infinite_scroll_render',
+		'container' => 'primary',
+		'render'    => 'business_theme_infinite_scroll_render',
 		'footer'    => 'page',
 	) );
 
@@ -27,8 +27,10 @@ function smallbusinesstheme_jetpack_setup() {
 
 	// Add theme support for Content Options.
 	add_theme_support( 'jetpack-content-options', array(
+		'author-bio'         => true,
+		'author-bio-default' => false,
 		'post-details' => array(
-			'stylesheet' => 'smallbusinesstheme-style',
+			'stylesheet' => 'business_theme-style',
 			'date'       => '.posted-on',
 			'categories' => '.cat-links',
 			'tags'       => '.tags-links',
@@ -36,19 +38,22 @@ function smallbusinesstheme_jetpack_setup() {
 			'comment'    => '.comments-link',
 		),
 	) );
+
+	// Social Menu
+	add_theme_support( 'jetpack-social-menu', 'svg' );
 }
-add_action( 'after_setup_theme', 'smallbusinesstheme_jetpack_setup' );
+add_action( 'after_setup_theme', 'business_theme_jetpack_setup' );
 
 /**
  * Custom render function for Infinite Scroll.
  */
-function smallbusinesstheme_infinite_scroll_render() {
+function business_theme_infinite_scroll_render() {
 	while ( have_posts() ) {
 		the_post();
 		if ( is_search() ) :
 			get_template_part( 'template-parts/content', 'search' );
 		else :
-			get_template_part( 'template-parts/content', get_post_format() );
+			get_template_part( 'template-parts/content', 'archive' );
 		endif;
 	}
 }
