@@ -43,29 +43,30 @@
 	.entry-header {
 		background-color: $x-color-secondary-base; 
 		padding: $x-space-lg 0 $x-space-md;	
+
+		.entry-title {
+			font-weight: 400;
+		}
 	}
 
 	.entry-meta {
-		color: $x-color-primary-base;
+		color: $x-color-shade-gray-4;
 		font-family: $x-font-family-heading;
-		font-size: $x-font-size-xs;
-		font-weight: 400;
-		text-transform: uppercase;
+		font-size: $x-font-size-sm;
+
+		a {
+			color: $x-color-words-subtle;
+			@include link_underline();
+		}
 
 		span:after {
-			content: "|";
+			content: "/";
 			display: inline-block;
 			margin: 0 $x-space-xxs;
 		}
 
 		span:last-child:after {
 			display: none;
-		}
-	}
-
-	.entry-footer {
-		.entry-meta {
-			font-weight: 400;
 		}
 	}
 
@@ -124,10 +125,6 @@
 			margin-left: auto;
 			margin-right: auto;
 			width: 100%;
-	
-			&:first-of-type {
-				margin-top: $x-space-xl;
-			}
 		}
 
 		.entry-header {
@@ -158,21 +155,22 @@
 		.entry-header {
 			width: 100%;
 
-			&:after {
-				height: 250px;
-				width: 100%;
-				background: $x-color-secondary-base;
-				content: '';
-				position: absolute;
+			.entry-title {
+				font-size: $x-font-size-xxxl;
+				font-weight: 400;
 			}
 	
 			.entry-title,
 			.entry-meta {
-				color: $x-color-shade-white;
+				color: $x-color-primary-base;
 				max-width: $x-grid-column-7;
 				margin-left: auto;
 				margin-right: auto;
 				text-align: center;	
+
+				a {
+					color: $x-color-primary-base;					
+				}
 			}
 		}
 
@@ -184,9 +182,8 @@
 			margin-right: auto;				
 		}
 
-		.entry-content,
-		.entry-summary {
-
+		.entry-content {
+			
 			> *:first-child:not(.wp-block-cover) {
 				margin-top: $x-space-lg;
 			}
@@ -195,6 +192,18 @@
 				max-width: 95vw;
 				height: 680px;
 			}
+		}
+	}
+}
+
+.home {
+	.hentry {
+		.entry-header:after {
+			height: 250px;
+			width: 100%;
+			background: $x-color-secondary-base;
+			content: '';
+			position: absolute;
 		}
 	}
 }
@@ -236,10 +245,10 @@
 
 		.author-name {
 			clear: both;
-			color: $x-color-secondary-base;
+			color: $x-color-primary-base;
 			display: block;
 			font-size: $x-font-size-xxl;
-			font-weight: 900;
+			font-weight: 400;
 			margin: 0 0 $x-space-xs;
 			text-transform: none;
 		}

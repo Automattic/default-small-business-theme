@@ -51,25 +51,6 @@ table {
 	width: 100%;
 }
 
-blockquote,
-blockquote.is-large {
-	color: $x-color-secondary-base;
-	margin-left: 0;
-	margin-right: 0;
-	
-	padding: 0 $x-space-sm;
-	
-	p {
-		margin: 0;
-		padding: $x-space-xs 0;
-		word-break: break-word;
-	}
-
-	cite {
-		color: $x-color-words-subtle;
-	}
-}
-
 address {
 	margin: 0 0 1.5em;
 }

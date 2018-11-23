@@ -18,8 +18,6 @@
 .page-header {
 
 	max-width: $x-grid-column-10;
-	border-bottom: 1px solid grey;
-	border-bottom-color: $x-color-border-base;
 	margin-left: auto;
 	margin-right: auto;
 
@@ -29,15 +27,12 @@
 
 
 	.page-title {
-		color: $x-color-words-subtle;
+		font-weight: 400;
 	}
 
 	@include media( desktop ) {
-
-		display: flex;
+		max-width: 100%;
 		align-items: center;
-		margin-top: $x-space-lg;
-		margin-bottom: $x-space-lg;
 
 		> * {
 			max-width: $x-grid-column-7;
@@ -46,14 +41,7 @@
 			width: 100%;
 		}
 
-		@at-root body.archive .page-header .page-title:not(:last-child) {
-			max-width: $x-grid-column-3;			
-		}
-
 		.archive-description {
-			font-size: $x-font-size-sm;
-			margin-left: $x-space-sm;
-			margin-right: $x-space-sm;
 			max-width: $x-grid-column-7;
 			width: 100%;
 		}
@@ -105,6 +93,7 @@
 
 	margin: $x-space-sm;
 	max-width: $x-grid-column-7;
+	font-weight: 400;
 
 	@include media( tablet ) {
 		margin: $x-space-sm auto;
@@ -123,6 +112,7 @@
 
 	h3 {
 		margin-top: 0;
+		font-weight: 400;
 
 		small {
 			display: block;
@@ -245,7 +235,7 @@
 		font-family: $x-font-family-heading;
 		font-size: $x-font-size-sm;
 		font-style: normal;
-		font-weight: 700;
+		font-weight: 400;
 		text-transform: uppercase;
 		width: 100%;
 

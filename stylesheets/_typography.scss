@@ -93,20 +93,27 @@ dfn, em, i {
 
 blockquote,
 blockquote.is-large {
+	border-left: 2px solid grey;
+	border-left-color: $x-color-primary-base;
 
-	border-left: 4px solid grey;
-	border-left-color: $x-color-accent-base;
+	margin-left: $x-space-sm;
+	margin-right: 0;
+	padding: $x-space-xs $x-space-sm;
 
 	p {
 		font-size: $x-font-size-base;
-		font-style: italic;
+		font-weight: 400;
+		margin: 0;
+		word-break: break-word;
+
 	}
 
 	cite {
+		color: $x-color-words-subtle;
 		font-family: $x-font-family-heading;
 		font-size: $x-font-size-xs;
 		font-style: normal;
-		font-weight: 500;
+		font-weight: 300;
 	}
 }
 
@@ -132,7 +139,7 @@ mark, ins {
 }
 
 a {
-	color: $x-color-secondary-base;
+	color: $x-color-accent-base;
 	text-decoration: none;
 	
 	&:hover {

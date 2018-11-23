@@ -408,16 +408,9 @@ ol.wp-block-latest-comments {
 
 	td,
 	th {
+		border-top: 1px solid $x-color-border-base;
 		padding: .5em;
 		text-align: left;
-	}
-
-	tr:nth-child(even) {
-		background-color: $x-color-shade-gray-2;
-	}
-
-	thead tr:nth-child(odd) {
-		background-color: $x-color-primary-bg;
 	}
 }
 
@@ -466,20 +459,13 @@ table.wp-block-table {
 // !Blockquotes & Pull quotes
 
 .wp-block-quote {
-
-	#page & {
-		margin-top: $x-space-lg;
-		margin-bottom: $x-space-lg;
-		margin-right: 0;
-		margin-left: 0 ;
-	}
 	
+	padding: $x-space-xs $x-space-sm;
 	max-width: 100%;
 	width: 100%;
 
 	p {	
 		margin: 0; 
-		padding: $x-space-xs $x-space-sm;
 //		font-size: $x-font-size-base;
 	}
 	
@@ -487,7 +473,6 @@ table.wp-block-table {
 		padding-left: $x-space-md;
 		p {
 			font-size: $x-font-size-lg;
-			padding-left: 1em;
 			line-height: $x-font-family-heading;
 		}
 		
@@ -505,9 +490,8 @@ table.wp-block-table {
 		font-family: $x-font-family-heading;
 		font-size: $x-font-size-sm;
 		color: $x-color-words-subtle;
-		padding: 0 $x-space-sm;
 		font-style: normal;
-		font-weight: 500;
+		font-weight: 300;
 	}
 
 	@include media( tablet ) {
@@ -535,10 +519,8 @@ table.wp-block-table {
 		line-height: $x-font-leading-heading;
 	}
 
-	blockquote,
-	& > p,
-	& > cite {
-		padding-left: $x-space-sm;
+	blockquote{
+			padding-left: $x-space-sm;
 		padding-right: $x-space-sm;
 	}
 	
@@ -550,9 +532,8 @@ table.wp-block-table {
 	&.alignwide,
 	&.alignfull {
 		
-		blockquote,
-		& > p,
-		& > cite {
+		blockquote {
+
 
 			@include media( tablet ) {
 				padding-left: $grid-gutter;
@@ -569,6 +550,7 @@ table.wp-block-table {
 		blockquote {
 			margin-top: 0;
 			margin-bottom: 0;
+
 			p {
 				padding-top: 0;
 			}

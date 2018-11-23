@@ -43,14 +43,14 @@
 			}
 
 			&.current-menu-item a {
-				border-bottom: 3px solid $x-color-shade-white;
+				border-bottom: 3px solid $x-color-primary-base;
 			}
 		}
 
 		> li {
 
 			> a {
-				color: $x-color-shade-white;
+				color: $x-color-primary-base;
 				@include link-transition;
 				clear: both;
 				display: block;
@@ -86,7 +86,7 @@
 			}
 
 			ul {
-				background-color: $x-color-shade-white;
+				background-color: $x-color-primary-base;
 				position: absolute;
 				padding: 0;
 				left: -999em;
@@ -96,8 +96,18 @@
 				-moz-transition:    opacity 0.5s ease-in-out;
 				transition:         opacity 0.5s ease-in-out;
 
-				li a:before {
-					content: "\2014\00a0";
+				li {
+					a {
+						color: $x-color-shade-white;
+					}
+
+					&:before {
+						content: "\2014\00a0";
+					}
+
+					.dropdown-toggle svg {
+						fill: $x-color-shade-white;
+					}
 				}
 			}
 
@@ -118,7 +128,7 @@
 				}
 				
 				svg {
-					fill: $x-color-shade-white;
+					fill: $x-color-primary-base;
 					position: relative;
 					top: 0.05em;
 				}
@@ -183,7 +193,7 @@
 				border-top: solid 1px grey;
 				border-bottom: solid 1px grey;
 				border-color: $x-color-border-base;
-				background-color: $x-color-shade-white;
+				background-color: $x-color-primary-base;
 				padding: $x-space-xs;
 				display: block;
 				width: 100%;
@@ -407,9 +417,10 @@
 		flex-direction: column;
 
 		a {
+			color: $x-color-primary-base;
 			display: inline-block;
 			font-size: $x-font-size-md;
-			font-weight: 700;
+			font-weight: 400;
 
 			&:focus .post-title,
 			&:hover .post-title {
@@ -496,7 +507,7 @@
 	a {
 		border: 0;
 		display: block;
-		font-weight: 700;
+		font-weight: 400;
 		padding: $x-space-sm 0;
 	}
 

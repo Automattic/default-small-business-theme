@@ -8,7 +8,7 @@
 
 	.site-header-wrapper {
 
-		border-bottom: 1px solid $x-color-shade-white;
+		border-bottom: 1px solid $x-color-primary-base;
 		@include media( tablet ) {
 			max-width: $x-grid-column-12;
 			display: flex;
@@ -16,6 +16,10 @@
 			margin-left: auto;
 			margin-right: auto;
 		}		
+	}
+
+	.blog & {
+		border-bottom: 50px solid $x-color-secondary-base;
 	}
 }
 
@@ -70,7 +74,7 @@
 			@include link-transition;
 			display: block;
 			text-decoration: none;
-			color: $x-color-shade-white;
+			color: $x-color-primary-base;
 
 		}
 	}
@@ -78,7 +82,7 @@
 	.site-description {
 		font-family: $x-font-family-heading;
 		font-size: $x-font-size-xs;
-		color: $x-color-words-subtle;
+		color: $x-color-primary-base;
 		margin: 0.5em 0 0;
 		font-weight: normal;
 	}
