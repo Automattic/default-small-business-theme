@@ -440,3 +440,9 @@ object {
 .gallery-caption {
 	display: block;
 }
+
+/** === Related Posts === */
+
+.jp-relatedposts-post-title a {
+    word-break: break-word;
+}
