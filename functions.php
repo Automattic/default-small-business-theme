@@ -81,24 +81,29 @@ if ( ! function_exists( 'business_elegant_setup' ) ) :
 		// Add support for custom color scheme.
 		add_theme_support( 'editor-color-palette', array(
 			array(
-				'name'  => __( 'Purple', 'business_elegant' ),
-				'slug'  => 'purple',
-				'color' => '#5f4bb6',
+				'name'  => __( 'Orange', 'business_elegant' ),
+				'slug'  => 'Orange',
+				'color' => '#ea8664',
+			),
+			array(
+				'name'  => __( 'Pink', 'business_elegant' ),
+				'slug'  => 'pink',
+				'color' => '#fff4ee',
 			),
 			array(
 				'name'  => __( 'Light Gray', 'business_elegant' ),
 				'slug'  => 'light-gray',
-				'color' => '#e8ecf1',
+				'color' => '#e5e5e5',
 			),
 			array(
 				'name'  => __( 'Medium Gray', 'business_elegant' ),
 				'slug'  => 'medium-gray',
-				'color' => '#6e7381',
+				'color' => '#777269',
 			),
 			array(
 				'name'  => __( 'Dark Gray', 'business_elegant' ),
 				'slug'  => 'dark-gray',
-				'color' => '#121733',
+				'color' => '#444444',
 			),
 		) );
 	}
