@@ -49,7 +49,8 @@ input[type="reset"]:active,
 input[type="reset"]:focus,
 input[type="submit"]:active,
 input[type="submit"]:focus {
-	background-color: $x-color-accent-light;
+	background-color: $x-color-words-base;
+	outline-color: $x-color-words-base;
 }
 
 input[type="text"],

@@ -273,6 +273,10 @@
 		letter-spacing: normal;
 		text-transform: none;
 		margin: 0;
+
+		@include media(mobile) {
+			max-width: 92%;
+		}
 	}
 
 	&.has-background-dim:before {
