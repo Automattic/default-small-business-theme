@@ -74,6 +74,10 @@
 
 					li {
 						position: relative;
+
+						a:after {
+							display:none;
+						}
 					}
 
 					button.dropdown-toggle {
@@ -254,9 +258,15 @@
 					font-size: $x-font-size-sm;
 					padding: $x-space-xs;
 
-					&:after {
+					&:before {
 						@include decorative-symbol();
-						margin-left: 1em;
+						margin-right: 1em;
+					}
+				}
+
+				&:first-child {
+					a:before {
+						display: none;
 					}
 				}
 
