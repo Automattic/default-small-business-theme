@@ -51,6 +51,7 @@
 
 	<footer class="entry-footer">
 		<div class="entry-meta">
+			<?php business_theme_categories(); ?>
 			<?php business_theme_entry_footer(); ?>
 		</div>
 	</footer><!-- .entry-footer -->

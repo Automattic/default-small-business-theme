@@ -32,7 +32,7 @@
 				display: block;
 
 				&:hover {
-					color: $x-color-words-subtle;
+					color: $x-color-shade-white;
 					text-decoration: none;
 				}
 			}
@@ -43,17 +43,19 @@
 			}
 
 			&.current-menu-item a {
-				border-bottom: 3px solid $x-color-primary-base;
+				border-bottom: 3px solid $x-color-shade-white;
+				opacity: 1;
 			}
 		}
 
 		> li {
 
 			> a {
-				color: $x-color-primary-base;
+				color: $x-color-shade-white;
 				@include link-transition;
 				clear: both;
 				display: block;
+				opacity: 0.75;
 				width: 100%;
 				
 				padding: $x-space-xs;
@@ -86,7 +88,7 @@
 			}
 
 			ul {
-				background-color: $x-color-primary-base;
+				background-color: $x-color-secondary-dark;
 				position: absolute;
 				padding: 0;
 				left: -999em;
@@ -128,7 +130,7 @@
 				}
 				
 				svg {
-					fill: $x-color-primary-base;
+					fill: $x-color-shade-white;
 					position: relative;
 					top: 0.05em;
 				}
@@ -251,10 +253,11 @@
 			> li {
 				display: inline-block;
 				margin-left: -4px;
+				padding: 0 $x-space-xs;
 				
 				a {
 					font-size: $x-font-size-sm;
-					padding: $x-space-xs;
+					padding: $x-space-xxs 0;
 				}
 
 				> ul {
@@ -265,8 +268,7 @@
 
 					li {
 						display: block;
-						border-bottom: 1px solid grey;
-						border-color: $x-color-border-base;
+						border-bottom: 1px solid rgba(255,255,255,0.75);
 
 						a {
 							padding-top: $x-space-xxs;
@@ -332,8 +334,7 @@
 
 	@include media( mobile ) {
 		position: relative;
-		background-color: $x-color-shade-white;
-		border-color: $x-color-border-base;
+		border-color: $x-color-words-subtle;
 		padding-top: $x-space-sm;
 		bottom: 0;
 		left: 0;
@@ -341,6 +342,7 @@
 		z-index: 600;
 		padding: $x-space-md 0;
 		order: 1;
+
 		&:after {
 			display: block;
 			position: absolute;
@@ -382,10 +384,10 @@
 					@include svg-transition;
 					display: block;
 					line-height: 1;
-					fill: inherit;
+					fill: $x-color-words-subtle;
 
 					&:hover {
-						fill: $x-color-primary-base;
+						fill: $x-color-shade-white;
 					}
 
 					@include media( mobile ) {
@@ -401,6 +403,7 @@
 .post-navigation {
 	margin: $x-space-lg 0;
 	
+	background: $x-color-shade-gray-1;
 	border-top: 1px solid grey;
 	border-top-color: $x-color-border-base;
 	border-bottom: 1px solid grey;

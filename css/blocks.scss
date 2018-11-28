@@ -123,6 +123,7 @@
 .wp-block-file .wp-block-file__button,
 .wp-block-button .wp-block-button__link{
 
+	border: 2px solid $x-color-accent-base;
 	background-color: $x-color-accent-base;
 	color: $x-color-shade-white;
 	padding: $x-space-xxs $x-space-xs;
@@ -130,16 +131,16 @@
 	line-height: $x-font-leading-body;
 	letter-spacing: $x-font-letter-spacing;
 	@include rounded( 25px );
-	border: 0;
 	cursor: pointer;
 	display: inline-block;
-	font-weight: 300;
+	font-weight: 600;
 	text-decoration: none;
 	text-transform: uppercase;
 	vertical-align: middle;
 
 	&:hover {
-		background-color: $x-color-accent-light;
+		background-color: transparent;
+		color: $x-color-accent-base !important;
 	}
 
 	&:active,
@@ -226,8 +227,9 @@
 
 // !Cover image
 
-.wp-block-cover-image {
+.wp-block-cover {
 	width: inherit;
+	background-color: $x-color-secondary-base;
 
 	@include media( tablet ) {
 		width: 100%;
@@ -247,19 +249,15 @@
 		margin-left: $x-space-md;
 	}
 
-	.wp-block-cover-image-text,
+	.wp-block-cover-text,
 	h2 {
-		font-weight: 400;
 		padding: $x-space-md;
-		font-family: $x-font-family-body;
+		font-family: $x-font-family-heading;
 		line-height: $x-font-leading-heading;
+		font-size: $x-font-size-xxl;
 		letter-spacing: normal;
 		text-transform: none;
 		margin: 0;
-	}
-
-	&.has-background-dim:before {
-		// Not yet
 	}
 }
 
@@ -604,13 +602,8 @@ table.wp-block-table {
 .wp-block-file {
 	
 	> a:first-child {
-		color: inherit;
-		box-shadow: none;
-		&:hover {
-			text-decoration: underline;
-		}
 	}
-	
+
 	&.aligncenter, &.alignfull, &.alignwide {
 		text-align: center;
 	}

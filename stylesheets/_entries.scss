@@ -41,12 +41,8 @@
 
 .hentry {
 	.entry-header {
-		background-color: $x-color-secondary-base; 
-		padding: $x-space-lg 0 $x-space-md;	
-
-		.entry-title {
-			font-weight: 400;
-		}
+		background: url("shattered-2.png") repeat $x-color-secondary-base;
+		padding: 120px 0 $x-space-md;	
 	}
 
 	.entry-meta {
@@ -54,24 +50,20 @@
 		font-family: $x-font-family-heading;
 		font-size: $x-font-size-sm;
 
+		span {
+			margin-right: $x-space-xxs;
+		}
+
 		a {
 			color: $x-color-words-subtle;
 			@include link_underline();
-		}
-
-		span:after {
-			content: "/";
-			display: inline-block;
-			margin: 0 $x-space-xxs;
-		}
-
-		span:last-child:after {
-			display: none;
 		}
 	}
 
 	.entry-content,
 	.entry-summary {
+
+		margin-bottom: $x-font-size-md;
 
 		span[id^=more] {
 			display: block;
@@ -103,6 +95,20 @@
 			margin-right: auto;
 		}
 	}
+
+	.entry-footer {
+		.tags-links,
+		.cat-links {
+			a {
+				color: $x-color-accent-base;
+				@include rounded(25px);
+				padding: $x-space-xxs;
+				margin-right: $x-space-xxs;
+				background: rgba( 255, 89, 100, .05);
+				font-weight: 600;
+			}
+		}
+	}
 }
 
 /* Archives */
@@ -114,7 +120,7 @@
 	.hentry {
 
 		border-bottom: 1px solid $x-color-border-base;
-		padding-bottom: $x-space-md;
+		padding: $x-space-md 0;
 
 		&:last-child {
 			border-bottom: 0;
@@ -131,8 +137,20 @@
 			background: none;
 			padding-top: 0;
 
-			.entry-title a {
-				color: $x-color-primary-base;
+			.entry-title {
+				font-size: $x-font-size-xxl;
+				margin: $x-space-xs 0;
+
+				a {
+					color: $x-color-shade-black;
+				}
+			}
+
+			.cat-links a {
+				color: $x-color-accent-base;
+				text-transform: uppercase;
+				font-size: $x-font-size-sm;
+				font-weight: 600;
 			}
 		}
 
@@ -157,19 +175,19 @@
 
 			.entry-title {
 				font-size: $x-font-size-xxxl;
-				font-weight: 400;
+				font-weight: 600;
 			}
 	
 			.entry-title,
 			.entry-meta {
-				color: $x-color-primary-base;
+				color: $x-color-shade-white;
 				max-width: $x-grid-column-7;
 				margin-left: auto;
 				margin-right: auto;
 				text-align: center;	
 
 				a {
-					color: $x-color-primary-base;					
+					color: $x-color-shade-white;				
 				}
 			}
 		}
@@ -183,27 +201,20 @@
 		}
 
 		.entry-content {
+
+			.wp-block-cover:first-child {
+				margin-top: 0;
+			}
 			
 			> *:first-child:not(.wp-block-cover) {
 				margin-top: $x-space-lg;
 			}
 
-			.wp-block-cover:first-child {
-				max-width: 95vw;
-				height: 680px;
+			@include media(tablet) {
+				.wp-block-cover:first-child {
+					height: 680px;
+				}
 			}
-		}
-	}
-}
-
-.home {
-	.hentry {
-		.entry-header:after {
-			height: 250px;
-			width: 100%;
-			background: $x-color-secondary-base;
-			content: '';
-			position: absolute;
 		}
 	}
 }
@@ -245,10 +256,9 @@
 
 		.author-name {
 			clear: both;
-			color: $x-color-primary-base;
+			color: $x-color-shade-black;
 			display: block;
 			font-size: $x-font-size-xxl;
-			font-weight: 400;
 			margin: 0 0 $x-space-xs;
 			text-transform: none;
 		}
@@ -276,8 +286,8 @@
 
 .page-header {
 
-	background-color: $x-color-secondary-base; 
-	padding: $x-space-lg 0;	
+	background: url("shattered-2.png") repeat-x; 
+	padding: 120px 0 $x-space-lg;	
 
 	@include media( desktop ) {
 
@@ -285,12 +295,14 @@
 		width: 100%;
 
 		.page-title {
+			color: $x-color-shade-white;
 			max-width: $x-grid-column-7;
 			margin-left: auto;
 			margin-right: auto;
 		}
 
 		.archive-description {
+			color: $x-color-shade-white;
 			font-size: $x-font-size-sm;
 			margin-left: auto;
 			margin-right: auto;

@@ -3,12 +3,10 @@
 
 .site-header {
 
-	position: relative;
-	background-color: $x-color-secondary-base;
-
+	position: absolute;
+	width: 100%;
 	.site-header-wrapper {
 
-		border-bottom: 1px solid $x-color-primary-base;
 		@include media( tablet ) {
 			max-width: $x-grid-column-12;
 			display: flex;
@@ -19,7 +17,9 @@
 	}
 
 	.blog & {
-		border-bottom: 50px solid $x-color-secondary-base;
+		background: url("shattered-2.png") repeat $x-color-secondary-base;
+		position: static;
+		padding-bottom: $x-space-lg;
 	}
 }
 
@@ -64,7 +64,7 @@
 
 	.site-title {
 
-		font-family: $x-font-family-body;
+		font-family: $x-font-family-heading;
 		font-size: $x-font-size-lg;
 		font-weight: 400;
 		color: $x-color-shade-white;
@@ -74,17 +74,18 @@
 			@include link-transition;
 			display: block;
 			text-decoration: none;
-			color: $x-color-primary-base;
+			color: $x-color-shade-white;
 
 		}
 	}
 
 	.site-description {
 		font-family: $x-font-family-heading;
-		font-size: $x-font-size-xs;
-		color: $x-color-primary-base;
+		font-size: $x-font-size-sm;
+		color: $x-color-shade-white;
 		margin: 0.5em 0 0;
 		font-weight: normal;
+		opacity: .75;
 	}
 
 	.custom-logo-link {
@@ -94,9 +95,7 @@
 }
 
 .site-footer {
-
-	border-top: 1px solid grey;
-	border-color: $x-color-border-base;
+	background: #414D60;
 
 	@include media( tablet ) {
 		
@@ -118,6 +117,7 @@
 
 .site-info {
 
+	color: $x-color-words-subtle;
 	font-size: $x-font-size-sm;
 	font-family: $x-font-family-body;
 	padding: $x-space-sm;
@@ -130,10 +130,11 @@
 	}
 	
 	a {
-		color: inherit;
+		color: $x-color-words-subtle;
+
 		&:hover {
 			text-decoration: none;
-			color: $x-color-primary-base;
+			color: $x-color-shade-white;
 		}
 	}
 

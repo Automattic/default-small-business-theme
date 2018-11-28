@@ -10,16 +10,16 @@ input[type="button"],
 input[type="reset"],
 input[type="submit"] {
 	background-color: $x-color-accent-base;
+	border: 2px solid $x-color-accent-base;
 	color: $x-color-shade-white;
 	padding: $x-space-xxs $x-space-xs;
 	font-size: $x-font-size-xs;
+	font-weight: 600;
 	line-height: $x-font-leading-body;
 	letter-spacing: $x-font-letter-spacing;
 	@include rounded( 25px );
-	border: 0;
 	cursor: pointer;
 	display: inline-block;
-	font-weight: 300;
 	text-decoration: none;
 	text-transform: uppercase;
 
@@ -34,7 +34,8 @@ button:hover,
 input[type="button"]:hover,
 input[type="reset"]:hover,
 input[type="submit"]:hover {
-	background-color: $x-color-accent-light;
+	background-color: transparent;
+	color: $x-color-accent-base;
 }
 
 .button:active, .button:focus,

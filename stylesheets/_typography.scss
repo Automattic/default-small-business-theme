@@ -14,14 +14,13 @@ textarea {
 	font-family: $x-font-family-body;
 	line-height: $x-font-leading-body;
 	color: $x-color-words-base;
-	font-weight: 300;
+	font-weight: 400;
 }
 
 .site-title,
 h1, h2, h3, h4, h5, h6 {
 	clear: both;
-	color: $x-color-primary-base;
-	font-weight: 100;
+	color: $x-color-shade-black;
 	font-family: $x-font-family-heading;
 	line-height: $x-font-leading-heading;
 }
@@ -93,12 +92,12 @@ dfn, em, i {
 
 blockquote,
 blockquote.is-large {
-	border-left: 2px solid grey;
-	border-left-color: $x-color-primary-base;
-
+	
+	background: $x-color-shade-gray-2;
 	margin-left: $x-space-sm;
 	margin-right: 0;
-	padding: $x-space-xs $x-space-sm;
+	padding: $x-space-sm;
+	position: relative;
 
 	p {
 		font-size: $x-font-size-base;

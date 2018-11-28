@@ -25,11 +25,6 @@
 		padding: 0 $x-space-sm;
 	}
 
-
-	.page-title {
-		font-weight: 400;
-	}
-
 	@include media( desktop ) {
 		max-width: 100%;
 		align-items: center;
