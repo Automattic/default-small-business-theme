@@ -16,7 +16,7 @@
 		<?php business_elegant_social_menu(); ?>
 
 		<p class="site-credits">
-			<a href="<?php echo esc_url( __( 'https://wordpress.org/', '_s' ) ); ?>"><?php
+			<a href="<?php echo esc_url( __( 'https://wordpress.org/', 'business-elegant' ) ); ?>"><?php
 				/* translators: %s: CMS name, i.e. WordPress. */
 				printf( esc_html__( 'Proudly powered by %s', 'business-elegant' ), 'WordPress' );
 			?></a>

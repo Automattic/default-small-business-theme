@@ -38,7 +38,7 @@ function business_elegant_add_ellipses_to_nav( $items, $args ) {
 	if ( 'menu-1' === $args->theme_location ) :
 		$items .= '<li id="more-menu" class="menu-item menu-item-has-children">';
 		$items .= '<button class="dropdown-toggle" aria-expanded="false">';
-		$items .= '<span class="screen-reader-text">'. esc_html( 'More', 'business-elegant' ) . '</span>';
+		$items .= '<span class="screen-reader-text">'. esc_html__( 'More', 'business-elegant' ) . '</span>';
 		$items .= business_elegant_get_icon_svg( 'more_horiz' );
 		$items .= '</button>';
 		$items .= '<ul class="sub-menu"></ul></li>';
@@ -50,7 +50,7 @@ add_filter( 'wp_nav_menu_items', 'business_elegant_add_ellipses_to_nav', 10, 2 )
 function business_elegant_add_ellipses_to_page_menu( $items, $args ) {
 	$items .= '<li id="more-menu" class="menu-item menu-item-has-children">';
 	$items .= '<button class="dropdown-toggle" aria-expanded="false">';
-	$items .= '<span class="screen-reader-text">'. esc_html( 'More', 'business-elegant' ) . '</span>';
+	$items .= '<span class="screen-reader-text">'. esc_html__( 'More', 'business-elegant' ) . '</span>';
 	$items .= business_elegant_get_icon_svg( 'more_horiz' );
 	$items .= '</button>';
 	$items .= '<ul class="sub-menu"></ul></li>';

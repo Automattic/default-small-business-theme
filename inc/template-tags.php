@@ -25,7 +25,7 @@ if ( ! function_exists( 'business_elegant_posted_on' ) ) :
 		);
 
 		if ( is_single() ) {
-			$posted_on = sprintf( esc_attr__( 'Posted on %1$s', 'business-elegant' ),
+			$posted_on = sprintf( esc_html__( 'Posted on %1$s', 'business-elegant' ),
 							'<a href="' . esc_url( get_permalink() ) . '" rel="bookmark">' . $time_string . '</a>'
 						);
 		}
@@ -124,11 +124,11 @@ if ( ! function_exists( 'business_elegant_comment' ) ) :
         <div class="comment-author vcard"><?php
             if ( $args['avatar_size'] != 0 ) {
                 echo get_avatar( $comment, $args['avatar_size'] );
-            }
-            printf( __( '<cite class="fn">%s</cite>' ), get_comment_author_link() ); ?>
+            } ?>
+            <cite class="fn"><?php echo get_comment_author_link(); ?></cite>
         </div><?php
         if ( $comment->comment_approved == '0' ) { ?>
-            <em class="comment-awaiting-moderation"><?php _e( 'Your comment is awaiting moderation.' ); ?></em><br/><?php
+            <em class="comment-awaiting-moderation"><?php esc_html_e( 'Your comment is awaiting moderation.' ); ?></em><br/><?php
         } ?>
         <div class="comment-meta commentmetadata">
             <a href="<?php echo htmlspecialchars( get_comment_link( $comment->comment_ID ) ); ?>"><?php
@@ -139,7 +139,7 @@ if ( ! function_exists( 'business_elegant_comment' ) ) :
                     get_comment_time()
                 ); ?>
             </a><?php
-            edit_comment_link( __( '(Edit)' ), '  ', '' ); ?>
+            edit_comment_link( esc_html__( 'Edit' ), '  ', '' ); ?>
         </div>
 
         <?php comment_text(); ?>

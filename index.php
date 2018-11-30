@@ -40,8 +40,8 @@ get_header(); ?>
 		endwhile;
 
 		the_posts_navigation( array(
-			'prev_text'          => business_elegant_get_icon_svg( is_rtl() ? 'chevron_right' : 'chevron_left' ) . __( 'Older posts', 'business-elegant' ),
-			'next_text'          => __( 'Newer posts', 'business-elegant' ) . business_elegant_get_icon_svg( is_rtl() ? 'chevron_left' : 'chevron_right' ),
+			'prev_text'          => business_elegant_get_icon_svg( is_rtl() ? 'chevron_right' : 'chevron_left' ) . esc_html__( 'Older posts', 'business-elegant' ),
+			'next_text'          => esc_html__( 'Newer posts', 'business-elegant' ) . business_elegant_get_icon_svg( is_rtl() ? 'chevron_left' : 'chevron_right' ),
 		) ) ;
 
 	else :

@@ -77,14 +77,11 @@ if ( ! function_exists( 'business_elegant_setup' ) ) :
 		// Add support for core editor styles
 		add_theme_support( 'editor-styles' );
 
-		// Add support for custom editor styles
-		add_editor_style( 'editor.css' );
-
 		// Add support for custom color scheme.
 		add_theme_support( 'editor-color-palette', array(
 			array(
 				'name'  => __( 'Orange', 'business-elegant' ),
-				'slug'  => 'Orange',
+				'slug'  => 'orange',
 				'color' => '#ea8664',
 			),
 			array(
@@ -201,6 +198,7 @@ add_action( 'wp_enqueue_scripts', 'business_elegant_scripts' );
  * Enqueue Gutenberg editor styles
  */
 function business_elegant_editor_styles() {
+	wp_enqueue_style( 'business_elegant-fonts', business_elegant_fonts_url() );
 	wp_enqueue_style( 'business_elegant-editor-style', get_template_directory_uri() . '/editor.css' );
 }
 add_action( 'enqueue_block_editor_assets', 'business_elegant_editor_styles' );
