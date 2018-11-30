@@ -114,7 +114,7 @@
 			button.dropdown-toggle {
 				background-color: transparent;
 				color: $x-color-primary-base;
-				padding: $x-space-xs;
+				padding: $x-space-xs $x-space-xxs;
 				line-height: $x-space-xs;
 				border: none;
 				box-shadow: inherit;
@@ -122,9 +122,12 @@
 				right: 0;
 				top: 0;
 				vertical-align: middle;
-				outline: none;
-				
+				outline: 0;
+
 				&:focus {
+					
+					outline: 2px solid $x-color-border-base;
+
 					svg {
 						fill: $x-color-accent-base;
 					}

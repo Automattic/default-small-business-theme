@@ -234,7 +234,7 @@
 			display: block;
 		}
 
-		a:not([class*="button"]) {
+		a:not([class*="button"]):not(.jp-relatedposts-post-a) {
 			@include link-underline;
 		}
 
