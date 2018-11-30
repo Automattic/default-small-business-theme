@@ -25,12 +25,12 @@ if ( ! function_exists( 'business_elegant_posted_on' ) ) :
 		);
 
 		if ( is_single() ) {
-			$posted_on = sprintf( esc_attr__( 'Posted on %1$s', 'business_elegant' ),
+			$posted_on = sprintf( esc_attr__( 'Posted on %1$s', 'business-elegant' ),
 							'<a href="' . esc_url( get_permalink() ) . '" rel="bookmark">' . $time_string . '</a>'
 						);
 		}
 		elseif ( is_sticky() ) {
-			$posted_on = '<a href="' . esc_url( get_permalink() ) . '" rel="bookmark">' . esc_html__( 'Featured', 'business_elegant' ) . '</a>';
+			$posted_on = '<a href="' . esc_url( get_permalink() ) . '" rel="bookmark">' . esc_html__( 'Featured', 'business-elegant' ) . '</a>';
 		}
 		else {
 			$posted_on = '<a href="' . esc_url( get_permalink() ) . '" rel="bookmark">' . $time_string . '</a>';
@@ -38,7 +38,7 @@ if ( ! function_exists( 'business_elegant_posted_on' ) ) :
 
 		$byline = sprintf(
 			/* translators: %s: post author. */
-			esc_html_x( ' by %s', 'post author', 'business_elegant' ),
+			esc_html_x( ' by %s', 'post author', 'business-elegant' ),
 			'<span class="author vcard"><a class="url fn n" href="' . esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ) . '">' . esc_html( get_the_author() ) . '</a></span>'
 		);
 
@@ -55,17 +55,17 @@ if ( ! function_exists( 'business_elegant_entry_footer' ) ) :
 		// Hide category and tag text for pages.
 		if ( 'post' === get_post_type() ) {
 			/* translators: used between list items, there is a space after the comma */
-			$categories_list = get_the_category_list( esc_html__( ', ', 'business_elegant' ) );
+			$categories_list = get_the_category_list( esc_html__( ', ', 'business-elegant' ) );
 			if ( $categories_list ) {
 				/* translators: 1: list of categories. */
-				printf( '<span class="cat-links">' . esc_html__( 'Posted in %1$s', 'business_elegant' ) . '</span>', $categories_list ); // WPCS: XSS OK.
+				printf( '<span class="cat-links">' . esc_html__( 'Posted in %1$s', 'business-elegant' ) . '</span>', $categories_list ); // WPCS: XSS OK.
 			}
 
 			/* translators: used between list items, there is a space after the comma */
-			$tags_list = get_the_tag_list( '', esc_html_x( ', ', 'list item separator', 'business_elegant' ) );
+			$tags_list = get_the_tag_list( '', esc_html_x( ', ', 'list item separator', 'business-elegant' ) );
 			if ( $tags_list ) {
 				/* translators: 1: list of tags. */
-				printf( '<span class="tags-links">' . esc_html__( 'Tagged %1$s', 'business_elegant' ) . '</span>', $tags_list ); // WPCS: XSS OK.
+				printf( '<span class="tags-links">' . esc_html__( 'Tagged %1$s', 'business-elegant' ) . '</span>', $tags_list ); // WPCS: XSS OK.
 			}
 		}
 
@@ -75,7 +75,7 @@ if ( ! function_exists( 'business_elegant_entry_footer' ) ) :
 				sprintf(
 					wp_kses(
 						/* translators: %s: post title */
-						__( 'Leave a Comment<span class="screen-reader-text"> on %s</span>', 'business_elegant' ),
+						__( 'Leave a Comment<span class="screen-reader-text"> on %s</span>', 'business-elegant' ),
 						array(
 							'span' => array(
 								'class' => array(),
@@ -92,7 +92,7 @@ if ( ! function_exists( 'business_elegant_entry_footer' ) ) :
 			sprintf(
 				wp_kses(
 					/* translators: %s: Name of current post. Only visible to screen readers */
-					__( 'Edit <span class="screen-reader-text">%s</span>', 'business_elegant' ),
+					__( 'Edit <span class="screen-reader-text">%s</span>', 'business-elegant' ),
 					array(
 						'span' => array(
 							'class' => array(),

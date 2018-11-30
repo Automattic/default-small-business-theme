@@ -18,12 +18,12 @@
 		<p class="site-credits">
 			<a href="<?php echo esc_url( __( 'https://wordpress.org/', '_s' ) ); ?>"><?php
 				/* translators: %s: CMS name, i.e. WordPress. */
-				printf( esc_html__( 'Proudly powered by %s', 'business_elegant' ), 'WordPress' );
+				printf( esc_html__( 'Proudly powered by %s', 'business-elegant' ), 'WordPress' );
 			?></a>
 			<span class="sep"> | </span>
 			<?php
 				/* translators: 1: Theme name, 2: Theme author. */
-				printf( esc_html__( 'Theme: %s', 'business_elegant' ), '<a href="https://github.com/default-small-business-theme/">Business Elegant</a>' );
+				printf( esc_html__( 'Theme: %s', 'business-elegant' ), '<a href="https://github.com/default-small-business-theme/">Business Elegant</a>' );
 			?>
 		</p>
 	</div><!-- .site-info -->

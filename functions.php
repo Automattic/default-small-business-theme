@@ -20,9 +20,9 @@ if ( ! function_exists( 'business_elegant_setup' ) ) :
 		 * Make theme available for translation.
 		 * Translations can be filed in the /languages/ directory.
 		 * If you're building a theme based on business_elegant, use a find and replace
-		 * to change 'business_elegant' to the name of your theme in all the template files.
+		 * to change 'business-elegant' to the name of your theme in all the template files.
 		 */
-		load_theme_textdomain( 'business_elegant', get_template_directory() . '/languages' );
+		load_theme_textdomain( 'business-elegant', get_template_directory() . '/languages' );
 
 		// Add default posts and comments RSS feed links to head.
 		add_theme_support( 'automatic-feed-links' );
@@ -45,7 +45,7 @@ if ( ! function_exists( 'business_elegant_setup' ) ) :
 
 		// This theme uses wp_nav_menu() in one location.
 		register_nav_menus( array(
-			'menu-1' => __( 'Primary', 'business_elegant' ),
+			'menu-1' => __( 'Primary', 'business-elegant' ),
 		) );
 
 		/*
@@ -69,6 +69,8 @@ if ( ! function_exists( 'business_elegant_setup' ) ) :
 			'header-text' => array( 'site-title', 'site-description' ),
 		) );
 
+		add_theme_support( 'responsive-embeds' );
+
 		// Add support for full and wide align images.
 		add_theme_support( 'align-wide' );
 
@@ -81,27 +83,27 @@ if ( ! function_exists( 'business_elegant_setup' ) ) :
 		// Add support for custom color scheme.
 		add_theme_support( 'editor-color-palette', array(
 			array(
-				'name'  => __( 'Orange', 'business_elegant' ),
+				'name'  => __( 'Orange', 'business-elegant' ),
 				'slug'  => 'Orange',
 				'color' => '#ea8664',
 			),
 			array(
-				'name'  => __( 'Pink', 'business_elegant' ),
+				'name'  => __( 'Pink', 'business-elegant' ),
 				'slug'  => 'pink',
 				'color' => '#fff4ee',
 			),
 			array(
-				'name'  => __( 'Light Gray', 'business_elegant' ),
+				'name'  => __( 'Light Gray', 'business-elegant' ),
 				'slug'  => 'light-gray',
 				'color' => '#e5e5e5',
 			),
 			array(
-				'name'  => __( 'Medium Gray', 'business_elegant' ),
+				'name'  => __( 'Medium Gray', 'business-elegant' ),
 				'slug'  => 'medium-gray',
 				'color' => '#777269',
 			),
 			array(
-				'name'  => __( 'Dark Gray', 'business_elegant' ),
+				'name'  => __( 'Dark Gray', 'business-elegant' ),
 				'slug'  => 'dark-gray',
 				'color' => '#444444',
 			),
@@ -133,7 +135,7 @@ function business_elegant_fonts_url() {
 	 * supported by Lato, translate this to 'off'. Do not translate
 	 * into your own language.
 	 */
-	$lora = esc_html_x( 'on', 'Lora font: on or off', 'business_elegant' );
+	$lora = esc_html_x( 'on', 'Lora font: on or off', 'business-elegant' );
 
 	if ( 'off' !== $lora ) {
 		$font_families = array();
@@ -176,8 +178,8 @@ function business_elegant_scripts() {
 
 	// Screenreader text
 	wp_localize_script( 'business_elegant-navigation', 'smallBusinessThemeScreenReaderText', array(
-		'expand'   => esc_html__( 'expand child menu', 'business_elegant' ),
-		'collapse' => esc_html__( 'collapse child menu', 'business_elegant' ),
+		'expand'   => esc_html__( 'expand child menu', 'business-elegant' ),
+		'collapse' => esc_html__( 'collapse child menu', 'business-elegant' ),
 	) );
 
 	// Icons
@@ -187,8 +189,8 @@ function business_elegant_scripts() {
 
 	// Menu toggle text
 	wp_localize_script( 'business_elegant-navigation', 'smallBusinessThemeMenuToggleText', array(
-		'menu'  => esc_html__( 'Menu', 'business_elegant' ),
-		'close' => esc_html__( 'Close', 'business_elegant' ),
+		'menu'  => esc_html__( 'Menu', 'business-elegant' ),
+		'close' => esc_html__( 'Close', 'business-elegant' ),
 	) );
 
 

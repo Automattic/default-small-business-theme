@@ -31,13 +31,13 @@ if ( post_password_required() ) {
 			if ( 1 === $comment_count ) {
 				printf(
 					/* translators: 1: title. */
-					esc_html_e( 'One thought on &ldquo;%1$s&rdquo;', 'business_elegant' ),
+					esc_html_e( 'One thought on &ldquo;%1$s&rdquo;', 'business-elegant' ),
 					'<span>' . get_the_title() . '</span>'
 				);
 			} else {
 				printf( // WPCS: XSS OK.
 					/* translators: 1: comment count number, 2: title. */
-					esc_html( _nx( '%1$s thought on &ldquo;%2$s&rdquo;', '%1$s thoughts on &ldquo;%2$s&rdquo;', $comment_count, 'comments title', 'business_elegant' ) ),
+					esc_html( _nx( '%1$s thought on &ldquo;%2$s&rdquo;', '%1$s thoughts on &ldquo;%2$s&rdquo;', $comment_count, 'comments title', 'business-elegant' ) ),
 					number_format_i18n( $comment_count ),
 					'<span>' . get_the_title() . '</span>'
 				);
@@ -57,13 +57,13 @@ if ( post_password_required() ) {
 		</ol><!-- .comment-list -->
 
 		<?php the_comments_navigation( array(
-			'prev_text'          => business_elegant_get_icon_svg( is_rtl() ? 'chevron_right' : 'chevron_left' ) . __( 'Older comments', 'business_elegant' ),
- 			'next_text'          => __( 'Newer comments', 'business_elegant' ) . business_elegant_get_icon_svg( is_rtl() ? 'chevron_left' : 'chevron_right' ),
+			'prev_text'          => business_elegant_get_icon_svg( is_rtl() ? 'chevron_right' : 'chevron_left' ) . __( 'Older comments', 'business-elegant' ),
+ 			'next_text'          => __( 'Newer comments', 'business-elegant' ) . business_elegant_get_icon_svg( is_rtl() ? 'chevron_left' : 'chevron_right' ),
 		) ) ;
 
 		// If comments are closed and there are comments, let's leave a little note, shall we?
 		if ( ! comments_open() ) : ?>
-			<p class="no-comments"><?php esc_html_e( 'Comments are closed.', 'business_elegant' ); ?></p>
+			<p class="no-comments"><?php esc_html_e( 'Comments are closed.', 'business-elegant' ); ?></p>
 		<?php
 		endif;
 
