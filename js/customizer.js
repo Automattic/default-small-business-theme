@@ -53,7 +53,7 @@
 					'margin-top': '0',
 				} );
 
-				$( '.hentry .entry-content > :first-child' ).css ( {
+				$( '.hentry .entry-content > .alignfull:first-child' ).css ( {
 					'margin-top': '0',
 				} );
 
