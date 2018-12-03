@@ -33,56 +33,19 @@ a:active {
 
 
 ol {
-	list-style: none;
-	counter-reset: sans-counter;
 	margin-top: 0;
 	margin-right: 0;
 	margin-bottom: $x-space-xs;
 	margin-left: $x-space-xs;
-	padding: 0;
-}
-
-ul {
-	padding-left: $x-space-xs;
-
-	@include media(tablet) {
-		padding-left: $x-space-sm;
-	}
 }
 
 ol > li {
-
-	counter-increment: sans-counter;
 	position: relative;
-	padding-left: $x-space-md;
-
-	ol li {
-		padding-left: $x-space-md;
-	}
-
-	ul li {
-		padding-left: $x-space-sm;
-	}
-
-	&:before {
-		content: counter(sans-counter, decimal-leading-zero) "\00a0";
-		left: 0;
-		position: absolute;
-		top: $x-space-xxs;
-		color: $x-color-primary-base;
-		font-family: $x-font-family-heading;
-		font-size: $x-font-size-xs;
-		line-height: $x-font-leading-md;
-	}
 }
 
 li > ol,
 li > ul {
 	margin-bottom: 0;
-}
-
-li > ul {
-	padding-left: $x-space-sm;
 }
 
 li > ol {
