@@ -1,6 +1,6 @@
-
-@import url("https://fonts.googleapis.com/css?family=Lato:400,400italic,700,700italic,900,900italic");
-
+/*!
+Business theme editor styles
+*/
 @import "stylesheets/variables/index";
 @import "stylesheets/inc/index";
 
@@ -22,51 +22,51 @@
 
 .block-editor .edit-post-visual-editor, p {
 	@include editor-font-base;
-	
+
 	h1, h2, h3, h4, h5, h6 {
 		margin-top: 0.83em;
 	}
-	
+
 }
 
 .block-editor-page {
 	@include media( desktop ) {
-		
+
 		.editor-post-title {
 			margin: 0 auto;
 		}
-		
+
 		.editor-post-title__block {
 			max-width: 740px !important;
 		}
-	
+
 		.editor-post-title__input {
 
 		}
-	
-		
+
+
 	}
 }
 
 .wp-block-columns {
-	
+
 	.editor-block-list__block {
 		margin-top: 1em;
 	}
-	
+
 	p {
 		font-size: 0.810em;
 	}
-	
+
 }
 
 [data-type="core/column"] {
-	
+
 	.editor-block-list__block .wp-block-columns .editor-block-list__block {
 		outline: solid 2px red;
 		max-width: 100%;
 	}
-	
+
 }
 
 .editor-block-list__block .wp-block-columns .editor-block-list__block
@@ -144,11 +144,11 @@
 // List styles.
 
 .block-library-list {
-	
+
 	.editor-rich-text__tinymce {
 		margin-left: 0;
 	}
-	
+
 	ol {
 		list-style: none;
 		padding-left: 0;
@@ -210,7 +210,7 @@ hr {
 		margin-left: 0;
 		margin-right: 0;
 	}
-	
+
 	.wp-block-pullquote blockquote {
 		max-width: calc( 100vw - 2em );
 	}
@@ -226,15 +226,15 @@ blockquote {
 	max-width: 1100px;
 	margin: 0 auto;
 	border-left-color: $x-color-accent-base !important;
-	
+
 	&.wp-block-quote.is-style-large {
 		padding-left: $x-space-xl;
 	}
-	
+
 	&.wp-block-quote,
 	&.wp-block-quote.is-large,
 	&.wp-block-quote.is-style-large {
-		
+
 		@include media(tablet) {
 			margin-right: 0;
 		}
