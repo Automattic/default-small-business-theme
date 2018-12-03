@@ -107,7 +107,7 @@ p.has-drop-cap:not(:focus)::first-letter {
 
 	background-color: $x-color-accent-base;
 	color: $x-color-shade-white;
-	border: 1px solid $x-color-shade-white;
+	border: 4px double $x-color-shade-white;
 	border-radius: 0;
 	cursor: pointer;
 	display: inline-block;
@@ -116,7 +116,6 @@ p.has-drop-cap:not(:focus)::first-letter {
 	font-weight: 600;
 	line-height: $x-font-leading-body;
 	letter-spacing: $x-font-letter-spacing;
-	outline: 3px solid $x-color-accent-base;
 	padding: $x-space-xxs $x-space-xs;
 	text-decoration: none;
 	text-transform: uppercase;
@@ -124,7 +123,6 @@ p.has-drop-cap:not(:focus)::first-letter {
 
 	&:hover {
 		background-color: $x-color-words-base;
-		outline-color: $x-color-words-base;
 	}
 
 	&:active,
@@ -292,7 +290,6 @@ p.has-drop-cap:not(:focus)::first-letter {
 	font-size: $x-font-size-sm;
 	padding: $x-space-xxs 0;
 	font-style: italic;
-	text-align: left;
 	text-transform: none;
 	margin: 0;
 }
@@ -435,7 +432,7 @@ ol.wp-block-latest-comments {
 	}
 
 	tr:nth-child(even) {
-		background-color: $x-color-shade-gray-2;
+		background-color: $x-color-shade-gray-1;
 	}
 
 	thead tr:nth-child(odd) {
@@ -444,14 +441,11 @@ ol.wp-block-latest-comments {
 }
 
 .entry-content table,
-.wp-block-table table,
-table.wp-block-table {
-
+.wp-block-table {
 	border-collapse: collapse;
-//	max-width: calc( 100% - ( $x-space-sm * 2 ) );
 
-	@include media( tablet ) {
-//		max-width: $x-grid-column-7;
+	&.alignfull {
+		width: 96vw;
 	}
 }
 
@@ -618,6 +612,16 @@ table.wp-block-table {
 	font-style: italic;
 }
 
+// !Code
+.wp-block-code {
+	background: $x-color-shade-gray-1;
+	border: none;
+	border-radius: 0;
+	font-family: $code-font;
+	font-size: inherit;
+}
+
+
 // !Separators
 
 .wp-block-separator {
@@ -636,10 +640,10 @@ table.wp-block-table {
 		width: auto;
 
 		&:before {
-			content: "\00b7 \00b7 \00b7 \00b7 \00b7";
-			color: $x-color-words-base;
-			font-family: $body-font; /* family@include globalvar(font-family, body); */
-			font-size: $x-font-size-lg;
+			content: "\2666 \2666 \2666";
+			color: $x-color-words-subtle;
+			opacity: 0.5;
+			font-family: Arial,Helvetica,sans-serif;
 			letter-spacing: 1em;
 			padding-left: 1em;
 		}
