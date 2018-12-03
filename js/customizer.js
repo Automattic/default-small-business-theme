@@ -49,11 +49,9 @@
 					'display': 'none',
 				} );
 
-				/*
 				$( '.home .hentry' ).css ( {
 					'margin-top': '0',
 				} );
-				*/
 
 				$( '.hentry .entry-content > :first-child' ).css ( {
 					'margin-top': '0',
@@ -64,11 +62,9 @@
 					'display': 'block',
 				} );
 
-				/*
 				$( '.home .hentry' ).css ( {
 					'margin': 'calc(2 * 1.5rem) 0',
 				} );
-				*/
 
 				$( '.hentry .entry-content > .wp-block-image:first-child' ).css ( {
 					'margin-top': '1em',

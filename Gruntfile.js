@@ -21,14 +21,14 @@ const sassBuildFiles = sassBuildSpec.reduce( ( acc, file ) => {
 
 module.exports = function( grunt ) {
 	'use strict';
-	
+
 	grunt.initConfig({
 		sass: {
 			build: {
 				options: {
 					outputStyle: 'expanded',
 					require: 'susy',
-					sourcemap: 'none',
+					sourceMap: true,
 					includePaths: require( 'node-bourbon' ).includePaths
 				},
 				files: [ sassBuildFiles ]
@@ -43,7 +43,7 @@ module.exports = function( grunt ) {
 			},
 		}
 	});
-	
+
 	// Load NPM tasks to be used here
 	grunt.loadNpmTasks( 'grunt-sass' );
 	grunt.loadNpmTasks( 'grunt-contrib-watch' );
@@ -60,5 +60,5 @@ module.exports = function( grunt ) {
 	grunt.registerTask( 'build', [
 		'css',
 	]);
-	
+
 };

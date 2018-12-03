@@ -89,6 +89,10 @@ function business_theme_customize_hide_front_page_title() {
 		display: none;
 	}
 
+	.home .hentry {
+		margin-top: 0;
+	}
+
 	.home .hentry .entry-content > .wp-block-image:first-child {
 		margin-top: 0;
 	}

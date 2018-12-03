@@ -3,9 +3,10 @@
 
 .site-header {
 
-	position: relative;
-	border-bottom: 1px solid gray;
+	border-bottom: 2px solid gray;
 	border-bottom-color: $x-color-border-base;
+	box-shadow: 0 0px 16px #000;
+	position: relative;
 
 	.site-header-wrapper {
 		@include media( tablet ) {
@@ -14,7 +15,7 @@
 			align-items: center;
 			margin-left: auto;
 			margin-right: auto;
-		}		
+		}
 	}
 }
 
@@ -22,7 +23,7 @@
 
 	color: $x-color-words-subtle;
 	margin: $x-space-sm;
-	
+
 	@include media( tablet ) {
 		margin: $x-space-md;
 	}
@@ -59,10 +60,11 @@
 
 	.site-title {
 
-		font-family: $x-font-family-body;
-		font-size: $x-font-size-lg;
 		color: $x-color-words-base;
+		font-family: $x-font-family-heading;
+		font-size: $x-font-size-md;
 		margin: 0;
+		text-transform: uppercase;
 
 		a {
 			@include link-transition;
@@ -77,11 +79,11 @@
 	}
 
 	.site-description {
-		font-family: $x-font-family-heading;
-		font-size: $x-font-size-xs;
-		color: $x-color-words-subtle;
-		margin: 0.5em 0 0;
+		color: $x-color-primary-base;
+		font-family: $x-font-family-body;
+		font-size: $x-font-size-sm;
 		font-weight: normal;
+		margin: 0;
 	}
 
 	.custom-logo-link {
@@ -92,25 +94,25 @@
 
 .site-footer {
 
-	border-top: 1px solid grey;
+	border-top: 2px solid gray;
 	border-color: $x-color-border-base;
 
 	@include media( tablet ) {
-		
+
 		$credits_width: 60%;
-		
+
 		.site-credits {
 			box-sizing: border-box;
+			margin: auto;
 			max-width: $credits_width;
-			padding-right: $x-space-md;
+			text-align: center;
 		}
-	
+
 		.jetpack-social-navigation {
 			max-width: 100% - $credits_width;
 			order: 2;
 		}
 	}
-	
 }
 
 .site-info {
@@ -118,14 +120,14 @@
 	font-size: $x-font-size-sm;
 	font-family: $x-font-family-body;
 	padding: $x-space-sm;
-	
+
 	@include media( mobile ) {
 		display: flex;
 		flex-direction: column;
 		padding-top: 0;
 		padding-bottom: 0;
 	}
-	
+
 	a {
 		color: inherit;
 		&:hover {
@@ -147,14 +149,14 @@
 }
 
 .site-credits {
-	
+
 	@include media( mobile ) {
 		margin: 0;
 		padding: $x-space-md 0;
 		width: 100%;
 		order: 2;
 	}
-	
+
 }
 
 #primary-menu {

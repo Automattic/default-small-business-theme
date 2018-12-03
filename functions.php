@@ -125,14 +125,14 @@ function business_theme_fonts_url() {
 
 	/*
 	 * Translators: If there are characters in your language that are not
-	 * supported by Lato, translate this to 'off'. Do not translate
+	 * supported by Exo 2, translate this to 'off'. Do not translate
 	 * into your own language.
 	 */
-	$lato = esc_html_x( 'on', 'Lato font: on or off', 'business_theme' );
+	$font = esc_html_x( 'on', 'Exo 2 font: on or off', 'business_theme' );
 
-	if ( 'off' !== $lato ) {
+	if ( 'off' !== $font ) {
 		$font_families = array();
-		$font_families[] = 'Lato:400,400italic,700,700italic,900,900italic';
+		$font_families[] = 'Exo 2:200,200italic,400,400italic';
 
 		$query_args = array(
 			'family' => urlencode( implode( '|', $font_families ) ),
@@ -152,7 +152,7 @@ function business_theme_fonts_url() {
 function business_theme_scripts() {
 
 	wp_enqueue_style( 'business_theme-style', get_stylesheet_uri() );
-	
+
 	wp_style_add_data( 'business_theme-style', 'rtl', 'replace' );
 
 	wp_enqueue_style( 'business_theme-blocks-style', get_template_directory_uri() . '/css/blocks.css' );

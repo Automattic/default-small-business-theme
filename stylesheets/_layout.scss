@@ -5,16 +5,7 @@
 	width: 100%;
 }
 
-/*.site-main {
-
-	> *:first-child:not(.hentry),
-	.single & > .hentry.has-post-thumbnail:first-child {
-		margin-top: 0;
-	}
-}*/
-
 #page-wrapper {
-
 	padding-top: 20px;
 	border: solid transparent;
 	max-width: 425px;
@@ -42,5 +33,4 @@
 
 #content {
 	box-sizing: content-box;
-
 }

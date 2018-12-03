@@ -4,7 +4,7 @@ p {
 }
 
 hr {
-	background-color: $x-color-shade-gray-2;
+	background-color: $x-color-hr;
 	border: 0;
 	height: 3px;
 	margin-bottom: 1.5em;
@@ -18,7 +18,7 @@ acronym {
 }
 
 pre {
-	background-color: $x-color-shade-gray-2;
+	background-color: $color-c;
 	margin-bottom: $x-space-sm;
 	max-width: 100%;
 	overflow: auto;
@@ -56,9 +56,9 @@ blockquote.is-large {
 	color: $x-color-secondary-base;
 	margin-left: 0;
 	margin-right: 0;
-	
+
 	padding: 0 $x-space-sm;
-	
+
 	p {
 		margin: 0;
 		padding: $x-space-xs 0;

@@ -5,11 +5,11 @@
 .entry-content,
 .entry-summary,
 .page-content {
-	
+
 	@include clearfix;
-	
+
 	@include media( tablet ) {
-		width: $x-grid-column-7;
+		width: $x-grid-column-9;
 	}
 
 	> *:not(.alignfull) {
@@ -21,14 +21,18 @@
 		}
 
 		@include media( tablet ) {
-			max-width: $x-grid-column-7;
+			max-width: $x-grid-column-9;
 			margin-right: auto;
 			margin-left: auto;
 		}
 	}
 
 	h1, h2, h3, h4, h5, h6 {
+		font-weight: 200;
 		margin: $x-space-md auto !important;
+
+		&:after {
+		}
 	}
 
 }
@@ -41,19 +45,6 @@
 
 .hentry {
 	margin: $x-space-lg 0;
-
-/*	@include media( tablet ) {
-		margin: $x-space-xl, $x-space-sm;
-	}
-
-	@include media( desktop ) {
-		margin: $x-space-lg 0;
-
-		&:first-child {
-			margin-top: $x-space-xxl;
-		}
-	}
-*/
 
 	.entry-header {
 
@@ -73,7 +64,7 @@
 			color: $x-color-primary-base;
 			@include link-transition;
 			color: inherit;
-			
+
 			&:hover {
 				color: $x-color-accent-base;
 				text-decoration: none;
@@ -95,25 +86,25 @@
 	}
 
 	@at-root .single .entry-title {
-		@include media( tablet ) { 
+		@include media( tablet ) {
 			font-size: $x-font-size-xxxl;
 			margin: $x-space-lg auto $x-space-md;
 		}
 	}
 
 	@at-root body.page .entry-title {
-		@include media( tablet ) { 
+		@include media( tablet ) {
 			font-size: $x-font-size-xxxl;
 			margin: $x-space-lg auto $x-space-md;
 		}
 	}
 
 	.entry-meta {
-		
+
 		font-size: $x-font-size-xs;
 		margin: $x-space-sm;
 		color: $x-color-words-subtle;
-		
+
 		a {
 			color: $x-color-words-heading;
 			@include link-transition;
@@ -237,6 +228,28 @@
 
 	}
 
+	.entry-content h2 {
+
+		position: relative;
+
+		&:after {
+			border-bottom: 3px solid $x-color-accent-base;
+			content: '';
+			display: block;
+			padding-bottom: 0.125em;
+			width: 0.6em;
+		}
+
+		&:before {
+			border-bottom: 3px solid $x-color-hr;
+			bottom: 0;
+			content: '';
+			left: 0.7em;
+			position: absolute;
+			width: calc( 100% - 0.7em );
+		}
+	}
+
 	.entry-content,
 	.entry-summary {
 
@@ -244,9 +257,11 @@
 			display: block;
 		}
 
+		/*
 		a:not(.jp-relatedposts-post-a) {
 			@include link-underline;
 		}
+		*/
 
 		.more-link {
 			@include link-transition;
@@ -370,7 +385,7 @@
 			}
 
 			.byline {
-				font-weight: 600; 
+				font-weight: 600;
 			}
 		}
 

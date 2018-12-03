@@ -1,6 +1,6 @@
 
-$body-font: "Lato", -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
-$heading-font: "Lato", -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+$body-font: "Helvetica Neue", Helvetica, Arial, sans-serif;
+$heading-font: "Exo 2", -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
 $code-font: Menlo, monaco, Consolas, Lucida Console, monospace;
 
 $font-size-base: 1em;
@@ -16,10 +16,10 @@ $x-font-size-responsive-ratio: $font-size-responsive-ratio;
 $x-font-size-xxs: unquote( "calc( 1em / ( #{$x-font-size-ratio} * #{$x-font-size-ratio} * #{$x-font-size-ratio} ) )" );
 $x-font-size-xs: unquote( "calc( 1em / ( #{$x-font-size-ratio} * #{$x-font-size-ratio} ) )" );
 $x-font-size-sm: unquote( "calc( 1em / #{$x-font-size-ratio} )" );
-$x-font-size-md: unquote( "calc( 1em * #{$x-font-size-ratio} )" );
-$x-font-size-lg: unquote( "calc( 1em * ( #{$x-font-size-ratio} * #{$x-font-size-ratio} ) )" );
-$x-font-size-xl: unquote( "calc( 1em * ( #{$x-font-size-ratio} * #{$x-font-size-ratio} * #{$x-font-size-ratio} ) )" );
-$x-font-size-xxl: unquote( "calc( 1em * ( #{$x-font-size-ratio} * #{$x-font-size-ratio} * #{$x-font-size-ratio} * #{$x-font-size-ratio} ) )" );
+$x-font-size-md: unquote( "calc( 1.5em * #{$x-font-size-ratio} )" );
+$x-font-size-lg: unquote( "calc( 2em * ( #{$x-font-size-ratio} * #{$x-font-size-ratio} ) )" );
+$x-font-size-xl: unquote( "calc( 2em * ( #{$x-font-size-ratio} * #{$x-font-size-ratio} * #{$x-font-size-ratio} ) )" );
+$x-font-size-xxl: unquote( "calc( 2em * ( #{$x-font-size-ratio} * #{$x-font-size-ratio} * #{$x-font-size-ratio} * #{$x-font-size-ratio} ) )" );
 $x-font-size-xxxl: unquote( "calc( 1em * ( #{$x-font-size-ratio} * #{$x-font-size-ratio} * #{$x-font-size-ratio} * #{$x-font-size-ratio} * #{$x-font-size-ratio} ) )" );
 
 $x-font-family-body: $body-font;
