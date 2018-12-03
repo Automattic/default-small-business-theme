@@ -20,7 +20,7 @@
 	}
 }
 
-.gutenberg .edit-post-visual-editor, p {
+.block-editor .edit-post-visual-editor, p {
 	@include editor-font-base;
 	
 	h1, h2, h3, h4, h5, h6 {
@@ -72,8 +72,8 @@
 .editor-block-list__block .wp-block-columns .editor-block-list__block
 
 
-.gutenberg .editor-block-list__block blockquote p,
-.gutenberg .editor-block-list__block blockquote.is-large p {
+.block-editor .editor-block-list__block blockquote p,
+.block-editor .editor-block-list__block blockquote.is-large p {
 	@include editor-font-base;
 	padding-left: 0;
 }
@@ -180,9 +180,9 @@
 	}
 }
 
-.gutenberg .wp-block-categories ul,
-.gutenberg .wp-block-latest-posts,
-.gutenberg ul.wp-block-archives {
+.block-editor .wp-block-categories ul,
+.block-editor .wp-block-latest-posts,
+.block-editor ul.wp-block-archives {
 	padding-left: 0.5em;
 }
 
@@ -321,7 +321,7 @@ blockquote {
 	padding-left: calc( #{$x-space-lg} * 0.75 );
 }
 
-.gutenberg .editor-block-list__block blockquote.wp-block-quote.is-style-large {
+.block-editor .editor-block-list__block blockquote.wp-block-quote.is-style-large {
 	padding-left: $x-space-md;
 	p {
 		font-size: calc( #{$x-font-size-lg} * 1.10 );
@@ -340,7 +340,7 @@ blockquote {
 	margin-bottom: $x-space-lg;
 }
 
-.gutenberg .editor-block-list__block .wp-block-image .components-autocomplete {
+.block-editor .editor-block-list__block .wp-block-image .components-autocomplete {
 	font-size: calc( #{$x-font-size-xs} * 1.1 );
 }
 
