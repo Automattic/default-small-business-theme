@@ -34,7 +34,7 @@ function business_theme_customize_register( $wp_customize ) {
 	) );
 
 	$wp_customize->add_control( 'hide_front_page_title', array(
-		'label'		=> esc_html__( 'Hide Front Page Title' ),
+		'label'		=> esc_html__( 'Hide Homepage Title' ),
 		'section'	=> 'static_front_page',
 		'priority'	=> 10,
 		'type'		=> 'checkbox',
@@ -65,7 +65,7 @@ function business_theme_customize_partial_blogdescription() {
  * Binds JS handlers to make Theme Customizer preview reload changes asynchronously.
  */
 function business_theme_customize_preview_js() {
-	wp_enqueue_script( 'business_theme-customizer', get_template_directory_uri() . '/js/customizer.js', array( 'customize-preview' ), '20181121', true );
+	wp_enqueue_script( 'business_theme-customizer', get_template_directory_uri() . '/js/customizer.js', array( 'customize-preview' ), '20181203', true );
 }
 add_action( 'customize_preview_init', 'business_theme_customize_preview_js' );
 
@@ -89,7 +89,8 @@ function business_theme_customize_hide_front_page_title() {
 		display: none;
 	}
 
-	.home .hentry .entry-content > .wp-block-image:first-child {
+	.home .hentry,
+	.home .hentry .entry-content > .alignfull:first-child {
 		margin-top: 0;
 	}
 </style>
