@@ -1,4 +1,4 @@
-=== Default Smal Business Theme ===
+=== Small Business Theme ===
 
 Contributors: automattic
 Tags: custom-background, custom-logo, custom-menu, featured-images, threaded-comments, translation-ready
@@ -12,7 +12,7 @@ License URI: LICENSE
 
 == Description ==
 
-A theme to demonstrate the power of the WordPress editor.
+A theme to demonstrate the power of the new WordPress editor.
 
 == Installation ==
 
@@ -24,7 +24,7 @@ A theme to demonstrate the power of the WordPress editor.
 
 = Does this theme support any plugins? =
 
-smallbusinesstheme includes support for Infinite Scroll in Jetpack.
+Small Business includes support for Infinite Scroll in Jetpack.
 
 == Changelog ==
 
