@@ -1,11 +1,11 @@
 
 /** === Typography === */
 
-body:not(.gutenberg__editor) {
+body {
 	@include typography-base;
 }
 
-body:not(.gutenberg__editor),
+body,
 button,
 input,
 select,
