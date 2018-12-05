@@ -41,7 +41,7 @@
 
 .hentry {
 	.entry-header {
-		background: url("shattered-2.png") repeat $x-color-secondary-base;
+		background: url("shattered.png") repeat $x-color-secondary-base;
 		padding: 120px 0 $x-space-md;	
 	}
 
@@ -133,6 +133,15 @@
 			width: 100%;
 		}
 
+		.entry-header,
+		.entry-footer {
+			margin: 0 $x-space-sm;
+
+			@include media(tablet) {
+				margin: 0;
+			}
+		}
+
 		.entry-header {
 			background: none;
 			padding-top: 0;
@@ -192,14 +201,6 @@
 			}
 		}
 
-		.entry-content,
-		.entry-footer,
-		.entry-author {
-			max-width: $x-grid-column-7;
-			margin-left: auto;
-			margin-right: auto;				
-		}
-
 		.entry-content {
 
 			.wp-block-cover:first-child {
@@ -214,6 +215,16 @@
 				.wp-block-cover:first-child {
 					height: 680px;
 				}
+			}
+		}
+
+		.entry-footer {
+			margin: 0 $x-space-sm;
+
+			@include media(tablet) {
+				max-width: $x-grid-column-7;
+				margin-left: auto;
+				margin-right: auto;
 			}
 		}
 	}
@@ -286,7 +297,7 @@
 
 .page-header {
 
-	background: url("shattered-2.png") repeat-x; 
+	background: url("shattered.png") repeat-x; 
 	padding: 120px 0 $x-space-lg;	
 
 	@include media( desktop ) {

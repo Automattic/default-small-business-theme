@@ -90,35 +90,21 @@ dfn, em, i {
 	font-style: italic;
 }
 
-blockquote,
-blockquote.is-large {
+blockquote {
 	
 	background: $x-color-shade-gray-2;
-	margin-left: $x-space-sm;
-	margin-right: 0;
-	padding: $x-space-sm;
 	position: relative;
 
 	p {
 		font-size: $x-font-size-base;
-		font-weight: 400;
 		margin: 0;
 		word-break: break-word;
-
 	}
 
 	cite {
 		color: $x-color-words-subtle;
-		font-family: $x-font-family-heading;
 		font-size: $x-font-size-xs;
 		font-style: normal;
-		font-weight: 300;
-	}
-}
-
-blockquote.is-large {
-	p {
-		font-size: $x-font-size-md;
 	}
 }
 

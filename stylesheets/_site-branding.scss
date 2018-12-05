@@ -17,7 +17,7 @@
 	}
 
 	.blog & {
-		background: url("shattered-2.png") repeat $x-color-secondary-base;
+		background: url("shattered.png") repeat $x-color-secondary-base;
 		position: static;
 		padding-bottom: $x-space-lg;
 	}
@@ -95,7 +95,11 @@
 }
 
 .site-footer {
-	background: #414D60;
+	background: $x-color-secondary-base;
+
+	.jetpack-social-navigation {
+		padding-top: $x-space-sm;
+	}
 
 	@include media( tablet ) {
 		
@@ -104,12 +108,13 @@
 		.site-credits {
 			box-sizing: border-box;
 			max-width: $credits_width;
-			padding-right: $x-space-md;
+			padding: $x-space-sm 0;
 		}
 	
 		.jetpack-social-navigation {
 			max-width: 100% - $credits_width;
 			order: 2;
+			padding: 0;
 		}
 	}
 	
@@ -154,7 +159,7 @@
 	
 	@include media( mobile ) {
 		margin: 0;
-		padding: $x-space-md 0;
+		padding: $x-space-sm 0;
 		width: 100%;
 		order: 2;
 	}

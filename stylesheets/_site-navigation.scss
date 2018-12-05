@@ -42,9 +42,12 @@
 				display: none;
 			}
 
-			&.current-menu-item a {
-				border-bottom: 3px solid $x-color-shade-white;
-				opacity: 1;
+			@include media(tablet) {
+
+				&.current-menu-item a {
+					border-bottom: 3px solid $x-color-shade-white;
+					opacity: 1;
+				}
 			}
 		}
 
@@ -84,11 +87,11 @@
 			position: relative;
 
 			> a {
-				padding-right: $x-space-lg;
+				padding-right: $x-space-md;
 			}
 
 			ul {
-				background-color: $x-color-secondary-dark;
+				background-color: $x-color-shade-white;
 				position: absolute;
 				padding: 0;
 				left: -999em;
@@ -99,8 +102,16 @@
 				transition:         opacity 0.5s ease-in-out;
 
 				li {
+					border-bottom: 1px solid $x-color-border-base;
+					padding: $x-space-xxs $x-space-xs;
+
+					&:last-child {
+						border-bottom: 0;
+					}
+
 					a {
-						color: $x-color-shade-white;
+						color: $x-color-primary-base;
+						font-size: $x-font-size-sm;
 					}
 
 					&:before {
@@ -108,7 +119,7 @@
 					}
 
 					.dropdown-toggle svg {
-						fill: $x-color-shade-white;
+						fill: $x-color-primary-base;
 					}
 				}
 			}
@@ -116,7 +127,7 @@
 			button.dropdown-toggle {
 				background-color: transparent;
 				color: $x-color-primary-base;
-				padding: $x-space-xs;
+				padding: $x-space-xxs;
 				line-height: $x-space-xs;
 				border: none;
 				box-shadow: inherit;
@@ -211,6 +222,22 @@
 				
 				}
 				.menu-item-has-children {
+					ul {
+						background: inherit;
+
+						li {
+							border-bottom: 0;
+							padding: 0;
+
+							a {
+								color: $x-color-shade-white;
+								opacity: .75;
+							}
+						}
+					}
+
+					
+
 					> a {
 						padding-right: $x-space-lg;
 					}
@@ -333,26 +360,7 @@
 .jetpack-social-navigation {
 
 	@include media( mobile ) {
-		position: relative;
-		border-color: $x-color-words-subtle;
-		padding-top: $x-space-sm;
-		bottom: 0;
-		left: 0;
 		width: 100%;
-		z-index: 600;
-		padding: $x-space-md 0;
-		order: 1;
-
-		&:after {
-			display: block;
-			position: absolute;
-			content: "\020";
-			width: calc( 100% + 2 * #{$x-space-sm} );
-			height: 1px;
-			background: $x-color-border-base;
-			bottom: 0;
-			left: calc( -1 * #{$x-space-sm} );
-		}
 	}
 
 	@include media( tablet ) {
@@ -364,6 +372,7 @@
 		margin: 0;
 		line-height: .6em;
 		padding-left: 0;
+		text-align: center;
 
 		li {
 			display: inline-block;
@@ -376,7 +385,6 @@
 			}
 
 			a {
-				display: inline-block;
 				line-height: 1;
 				font-size: $x-font-size-xl;
 
