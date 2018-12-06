@@ -38,7 +38,7 @@ function business_professional_add_ellipses_to_nav( $items, $args ) {
 	if ( 'menu-1' === $args->theme_location ) :
 		$items .= '<li id="more-menu" class="menu-item menu-item-has-children">';
 		$items .= '<button class="dropdown-toggle" aria-expanded="false">';
-		$items .= '<span class="screen-reader-text">'. esc_html( 'More', 'business_theme' ) . '</span>';
+		$items .= '<span class="screen-reader-text">'. esc_html( 'More', 'business-professional' ) . '</span>';
 		$items .= business_professional_get_icon_svg( 'more_horiz' );
 		$items .= '</button>';
 		$items .= '<ul class="sub-menu"></ul></li>';
@@ -50,7 +50,7 @@ add_filter( 'wp_nav_menu_items', 'business_professional_add_ellipses_to_nav', 10
 function business_professional_add_ellipses_to_page_menu( $items, $args ) {
 	$items .= '<li id="more-menu" class="menu-item menu-item-has-children">';
 	$items .= '<button class="dropdown-toggle" aria-expanded="false">';
-	$items .= '<span class="screen-reader-text">'. esc_html( 'More', 'business_theme' ) . '</span>';
+	$items .= '<span class="screen-reader-text">'. esc_html( 'More', 'business-professional' ) . '</span>';
 	$items .= business_professional_get_icon_svg( 'more_horiz' );
 	$items .= '</button>';
 	$items .= '<ul class="sub-menu"></ul></li>';
@@ -67,7 +67,7 @@ if ( ! function_exists( 'business_professional_excerpt_more' ) ) :
         $link = sprintf( '<a href="%1$s" class="more-link">%2$s</a>',
             esc_url( get_permalink( get_the_ID() ) ),
             /* translators: %s: Name of current post. */
-            sprintf( esc_html__( 'Continue reading %s', 'business_theme' ), '<span class="screen-reader-text">' . get_the_title( get_the_ID() ) . '</span>' )
+            sprintf( esc_html__( 'Continue reading %s', 'business-professional' ), '<span class="screen-reader-text">' . get_the_title( get_the_ID() ) . '</span>' )
             );
         return ' &hellip; ' . $link;
     }

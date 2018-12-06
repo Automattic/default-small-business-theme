@@ -16,14 +16,14 @@
 		<?php business_professional_social_menu(); ?>
 
 		<p class="site-credits">
-			<a href="<?php echo esc_url( __( 'https://wordpress.org/', '_s' ) ); ?>"><?php
+			<a href="<?php echo esc_url( __( 'https://wordpress.org/', 'business-professional' ) ); ?>"><?php
 				/* translators: %s: CMS name, i.e. WordPress. */
-				printf( esc_html__( 'Proudly powered by %s', 'business_theme' ), 'WordPress' );
+				printf( esc_html__( 'Proudly powered by %s', 'business-professional' ), 'WordPress' );
 			?></a>
 			<span class="sep"> | </span>
 			<?php
 				/* translators: 1: Theme name, 2: Theme author. */
-				printf( esc_html__( 'Theme: %s', 'business_theme' ), '<a href="https://github.com/default-small-business-theme/">Business</a>' );
+				printf( esc_html__( 'Theme: %s', 'business-professional' ), '<a href="https://github.com/default-small-business-theme/">Business Professional</a>' );
 			?>
 		</p>
 	</div><!-- .site-info -->

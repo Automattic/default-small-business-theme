@@ -25,12 +25,12 @@ if ( ! function_exists( 'business_professional_posted_on' ) ) :
 		);
 
 		if ( is_single() ) {
-			$posted_on = sprintf( esc_attr__( 'Posted on %1$s', 'business_theme' ),
+			$posted_on = sprintf( esc_attr__( 'Posted on %1$s', 'business-professional' ),
 							'<a href="' . esc_url( get_permalink() ) . '" rel="bookmark">' . $time_string . '</a>'
 						);
 		}
 		elseif ( is_sticky() ) {
-			$posted_on = '<a href="' . esc_url( get_permalink() ) . '" rel="bookmark">' . esc_html__( 'Featured', 'business_theme' ) . '</a>';
+			$posted_on = '<a href="' . esc_url( get_permalink() ) . '" rel="bookmark">' . esc_html__( 'Featured', 'business-professional' ) . '</a>';
 		}
 		else {
 			$posted_on = '<a href="' . esc_url( get_permalink() ) . '" rel="bookmark">' . $time_string . '</a>';
@@ -38,7 +38,7 @@ if ( ! function_exists( 'business_professional_posted_on' ) ) :
 
 		$byline = sprintf(
 			/* translators: %s: post author. */
-			esc_html_x( 'by %s', 'post author', 'business_theme' ),
+			esc_html_x( 'by %s', 'post author', 'business-professional' ),
 			'<span class="author vcard"><a class="url fn n" href="' . esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ) . '">' . esc_html( get_the_author() ) . '</a></span>'
 		);
 
@@ -53,9 +53,9 @@ if ( ! function_exists( 'business_professional_categories' ) ) :
  */
 function business_professional_categories() {
 	/* translators: used between list items, there is a space after the comma */
-	$categories_list = get_the_category_list( esc_html__( ', ', 'business_theme' ) );
+	$categories_list = get_the_category_list( esc_html__( ', ', 'business-professional' ) );
 	if ( $categories_list ) {
-		echo '<span class="cat-links"><span class="screen-reader-text">' . esc_html__( 'Posted in', 'business_theme' ) . '</span> ' . $categories_list . '</span>'; // WPCS: XSS OK.
+		echo '<span class="cat-links"><span class="screen-reader-text">' . esc_html__( 'Posted in', 'business-professional' ) . '</span> ' . $categories_list . '</span>'; // WPCS: XSS OK.
 	}
 }
 endif;
@@ -72,7 +72,7 @@ if ( ! function_exists( 'business_professional_entry_footer' ) ) :
 			$tags_list = get_the_tag_list();
 			if ( $tags_list ) {
 				/* translators: 1: list of tags. */
-				echo( '<span class="tags-links"><span class="screen-reader-text">' . esc_html__( 'Tagged', 'business_theme' ) . '</span>' . $tags_list ) . '</span>'; // WPCS: XSS OK.
+				echo( '<span class="tags-links"><span class="screen-reader-text">' . esc_html__( 'Tagged', 'business-professional' ) . '</span>' . $tags_list ) . '</span>'; // WPCS: XSS OK.
 			}
 		}
 
@@ -82,7 +82,7 @@ if ( ! function_exists( 'business_professional_entry_footer' ) ) :
 				sprintf(
 					wp_kses(
 						/* translators: %s: post title */
-						__( 'Leave a Comment<span class="screen-reader-text"> on %s</span>', 'business_theme' ),
+						__( 'Leave a Comment<span class="screen-reader-text"> on %s</span>', 'business-professional' ),
 						array(
 							'span' => array(
 								'class' => array(),
@@ -99,7 +99,7 @@ if ( ! function_exists( 'business_professional_entry_footer' ) ) :
 			sprintf(
 				wp_kses(
 					/* translators: %s: Name of current post. Only visible to screen readers */
-					__( 'Edit <span class="screen-reader-text">%s</span>', 'business_theme' ),
+					__( 'Edit <span class="screen-reader-text">%s</span>', 'business-professional' ),
 					array(
 						'span' => array(
 							'class' => array(),

@@ -20,9 +20,9 @@ if ( ! function_exists( 'business_professional_setup' ) ) :
 		 * Make theme available for translation.
 		 * Translations can be filed in the /languages/ directory.
 		 * If you're building a theme based on business_theme, use a find and replace
-		 * to change 'business_theme' to the name of your theme in all the template files.
+		 * to change 'business-professional' to the name of your theme in all the template files.
 		 */
-		load_theme_textdomain( 'business_theme', get_template_directory() . '/languages' );
+		load_theme_textdomain( 'business-professional', get_template_directory() . '/languages' );
 
 		// Add default posts and comments RSS feed links to head.
 		add_theme_support( 'automatic-feed-links' );
@@ -45,7 +45,7 @@ if ( ! function_exists( 'business_professional_setup' ) ) :
 
 		// This theme uses wp_nav_menu() in one location.
 		register_nav_menus( array(
-			'menu-1' => __( 'Primary', 'business_theme' ),
+			'menu-1' => __( 'Primary', 'business-professional' ),
 		) );
 
 		/*
@@ -78,22 +78,22 @@ if ( ! function_exists( 'business_professional_setup' ) ) :
 		// Add support for custom color scheme.
 		add_theme_support( 'editor-color-palette', array(
 			array(
-				'name'  => __( 'Purple', 'business_theme' ),
+				'name'  => __( 'Purple', 'business-professional' ),
 				'slug'  => 'purple',
 				'color' => '#5f4bb6',
 			),
 			array(
-				'name'  => __( 'Light Gray', 'business_theme' ),
+				'name'  => __( 'Light Gray', 'business-professional' ),
 				'slug'  => 'light-gray',
 				'color' => '#e8ecf1',
 			),
 			array(
-				'name'  => __( 'Medium Gray', 'business_theme' ),
+				'name'  => __( 'Medium Gray', 'business-professional' ),
 				'slug'  => 'medium-gray',
 				'color' => '#6e7381',
 			),
 			array(
-				'name'  => __( 'Dark Gray', 'business_theme' ),
+				'name'  => __( 'Dark Gray', 'business-professional' ),
 				'slug'  => 'dark-gray',
 				'color' => '#121733',
 			),
@@ -125,8 +125,8 @@ function business_professional_fonts_url() {
 	 * supported by Lato, translate this to 'off'. Do not translate
 	 * into your own language.
 	 */
-	$open_sans = esc_html_x( 'on', 'Open Sans font: on or off', 'business_theme' );
-	$nunito = esc_html_x( 'on', 'Nunito font: on or off', 'business_theme' );
+	$open_sans = esc_html_x( 'on', 'Open Sans font: on or off', 'business-professional' );
+	$nunito = esc_html_x( 'on', 'Nunito font: on or off', 'business-professional' );
 
 	if ( 'off' !== $open_sans || 'off' !== $nunito ) {
 		
@@ -177,8 +177,8 @@ function business_professional_scripts() {
 
 	// Screenreader text
 	wp_localize_script( 'business_theme-navigation', 'smallBusinessThemeScreenReaderText', array(
-		'expand'   => esc_html__( 'expand child menu', 'business_theme' ),
-		'collapse' => esc_html__( 'collapse child menu', 'business_theme' ),
+		'expand'   => esc_html__( 'expand child menu', 'business-professional' ),
+		'collapse' => esc_html__( 'collapse child menu', 'business-professional' ),
 	) );
 
 	// Icons
@@ -188,8 +188,8 @@ function business_professional_scripts() {
 
 	// Menu toggle text
 	wp_localize_script( 'business_theme-navigation', 'smallBusinessThemeMenuToggleText', array(
-		'menu'  => esc_html__( 'Menu', 'business_theme' ),
-		'close' => esc_html__( 'Close', 'business_theme' ),
+		'menu'  => esc_html__( 'Menu', 'business-professional' ),
+		'close' => esc_html__( 'Close', 'business-professional' ),
 	) );
 
 
