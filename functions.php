@@ -125,11 +125,20 @@ function business_theme_fonts_url() {
 	 * supported by Lato, translate this to 'off'. Do not translate
 	 * into your own language.
 	 */
-	$lato = esc_html_x( 'on', 'Lato font: on or off', 'business_theme' );
+	$open_sans = esc_html_x( 'on', 'Open Sans font: on or off', 'business_theme' );
+	$nunito = esc_html_x( 'on', 'Nunito font: on or off', 'business_theme' );
 
-	if ( 'off' !== $lato ) {
+	if ( 'off' !== $open_sans || 'off' !== $nunito ) {
+		
 		$font_families = array();
-		$font_families[] = 'Lato:400,400italic,700,700italic,900,900italic';
+		
+		if ( 'off' !== $open_sans ) {
+			$font_families[] = 'Open+Sans:400,400italic,700,700italic';
+		}
+
+		if ( 'off' !== $nunito ) {
+			$font_families[] = 'Nunito:400,400italic,700,700italic';
+		}
 
 		$query_args = array(
 			'family' => urlencode( implode( '|', $font_families ) ),
