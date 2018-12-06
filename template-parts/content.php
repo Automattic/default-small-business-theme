@@ -4,7 +4,7 @@
  *
  * @link https://codex.wordpress.org/Template_Hierarchy
  *
- * @package Business
+ * @package Business Professional
  */
 
 ?>
@@ -21,7 +21,7 @@
 
 		if ( 'post' === get_post_type() ) : ?>
 		<div class="entry-meta">
-			<?php business_theme_posted_on(); ?>
+			<?php business_professional_posted_on(); ?>
 		</div><!-- .entry-meta -->
 		<?php
 		endif; ?>
@@ -51,11 +51,11 @@
 
 	<footer class="entry-footer">
 		<div class="entry-meta">
-			<?php business_theme_categories(); ?>
-			<?php business_theme_entry_footer(); ?>
+			<?php business_professional_categories(); ?>
+			<?php business_professional_entry_footer(); ?>
 		</div>
 	</footer><!-- .entry-footer -->
 
-	<?php business_theme_author_bio(); ?>
+	<?php business_professional_author_bio(); ?>
 
 </article><!-- #post-<?php the_ID(); ?> -->

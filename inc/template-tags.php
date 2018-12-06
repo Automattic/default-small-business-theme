@@ -4,14 +4,14 @@
  *
  * Eventually, some of the functionality here could be replaced by core features.
  *
- * @package Business
+ * @package Business Professional
  */
 
-if ( ! function_exists( 'business_theme_posted_on' ) ) :
+if ( ! function_exists( 'business_professional_posted_on' ) ) :
 	/**
 	 * Prints HTML with meta information for the current post-date/time and author.
 	 */
-	function business_theme_posted_on() {
+	function business_professional_posted_on() {
 		$time_string = '<time class="entry-date published updated" datetime="%1$s">%2$s</time>';
 		if ( get_the_time( 'U' ) !== get_the_modified_time( 'U' ) ) {
 			$time_string = '<time class="entry-date published" datetime="%1$s">%2$s</time><time class="updated" datetime="%3$s">%4$s</time>';
@@ -47,11 +47,11 @@ if ( ! function_exists( 'business_theme_posted_on' ) ) :
 	}
 endif;
 
-if ( ! function_exists( 'business_theme_categories' ) ) :
+if ( ! function_exists( 'business_professional_categories' ) ) :
 /**
  * Prints HTML for categories
  */
-function business_theme_categories() {
+function business_professional_categories() {
 	/* translators: used between list items, there is a space after the comma */
 	$categories_list = get_the_category_list( esc_html__( ', ', 'business_theme' ) );
 	if ( $categories_list ) {
@@ -60,11 +60,11 @@ function business_theme_categories() {
 }
 endif;
 
-if ( ! function_exists( 'business_theme_entry_footer' ) ) :
+if ( ! function_exists( 'business_professional_entry_footer' ) ) :
 	/**
 	 * Prints HTML with meta information for the categories, tags and comments.
 	 */
-	function business_theme_entry_footer() {
+	function business_professional_entry_footer() {
 		// Hide category and tag text for pages.
 		if ( 'post' === get_post_type() ) {
 
@@ -114,9 +114,9 @@ if ( ! function_exists( 'business_theme_entry_footer' ) ) :
 	}
 endif;
 
-if ( ! function_exists( 'business_theme_comment' ) ) :
+if ( ! function_exists( 'business_professional_comment' ) ) :
 
-	function business_theme_comment($comment, $args, $depth) {
+	function business_professional_comment($comment, $args, $depth) {
     if ( 'div' === $args['style'] ) {
         $tag       = 'div';
         $add_below = 'comment';
@@ -169,35 +169,35 @@ if ( ! function_exists( 'business_theme_comment' ) ) :
 }
 endif;
 
-if ( ! function_exists( 'business_theme_social_menu' ) ) :
+if ( ! function_exists( 'business_professional_social_menu' ) ) :
 	/**
 	 * Jetpack social menu.
 	 */
-	function business_theme_social_menu() {
+	function business_professional_social_menu() {
 		if ( function_exists( 'jetpack_social_menu' ) ) {
 			jetpack_social_menu();
 		}
 	}
 endif;
 
-if ( ! function_exists( 'business_theme_author_bio' ) ) :
+if ( ! function_exists( 'business_professional_author_bio' ) ) :
 	/**
 	 * Return early if Author Bio is not available.
 	 */
-	function business_theme_author_bio() {
+	function business_professional_author_bio() {
 		if ( function_exists( 'jetpack_author_bio' ) ) {
 			jetpack_author_bio();
 		}
 	}
 endif;
 
-if ( ! function_exists( 'business_theme_author_bio_avatar_size' ) ) :
+if ( ! function_exists( 'business_professional_author_bio_avatar_size' ) ) :
 	/**
 	 * Author Bio Avatar Size.
 	 */
-	function business_theme_author_bio_avatar_size() {
+	function business_professional_author_bio_avatar_size() {
 		return 60; // in px
 	}
 endif;
 
-add_filter( 'jetpack_author_bio_avatar_size', 'business_theme_author_bio_avatar_size' );
+add_filter( 'jetpack_author_bio_avatar_size', 'business_professional_author_bio_avatar_size' );

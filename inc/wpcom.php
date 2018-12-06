@@ -4,7 +4,7 @@
  *
  * This file is centrally included from `wp-content/mu-plugins/wpcom-theme-compat.php`.
  *
- * @package Business
+ * @package Business Professional
  */
 
 /**
@@ -12,7 +12,7 @@
  *
  * @global array $themecolors
  */
-function business_theme_wpcom_setup() {
+function business_professional_wpcom_setup() {
 	global $themecolors;
 
 	// Set theme colors for third party services.
@@ -29,14 +29,14 @@ function business_theme_wpcom_setup() {
 	// Add print stylesheet.
 	add_theme_support( 'print-style' );
 }
-add_action( 'after_setup_theme', 'business_theme_wpcom_setup' );
+add_action( 'after_setup_theme', 'business_professional_wpcom_setup' );
 
 /**
  * Remove the widont filter because of the limited space for post/page title in the design.
  */
-function business_theme_widont() {
+function business_professional_widont() {
 	remove_filter( 'the_title', 'widont' );
 }
-add_action( 'init', 'business_theme_widont' );
+add_action( 'init', 'business_professional_widont' );
 
 

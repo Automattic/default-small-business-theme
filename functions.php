@@ -4,10 +4,10 @@
  *
  * @link https://developer.wordpress.org/themes/basics/theme-functions/
  *
- * @package Business
+ * @package Business Professional
  */
 
-if ( ! function_exists( 'business_theme_setup' ) ) :
+if ( ! function_exists( 'business_professional_setup' ) ) :
 	/**
 	 * Sets up theme defaults and registers support for various WordPress features.
 	 *
@@ -15,7 +15,7 @@ if ( ! function_exists( 'business_theme_setup' ) ) :
 	 * runs before the init hook. The init hook is too late for some features, such
 	 * as indicating support for post thumbnails.
 	 */
-	function business_theme_setup() {
+	function business_professional_setup() {
 		/*
 		 * Make theme available for translation.
 		 * Translations can be filed in the /languages/ directory.
@@ -100,7 +100,7 @@ if ( ! function_exists( 'business_theme_setup' ) ) :
 		) );
 	}
 endif;
-add_action( 'after_setup_theme', 'business_theme_setup' );
+add_action( 'after_setup_theme', 'business_professional_setup' );
 
 /**
  * Set the content width in pixels, based on the theme's design and stylesheet.
@@ -109,15 +109,15 @@ add_action( 'after_setup_theme', 'business_theme_setup' );
  *
  * @global int $content_width
  */
-function business_theme_content_width() {
-	$GLOBALS['content_width'] = apply_filters( 'business_theme_content_width', 710 );
+function business_professional_content_width() {
+	$GLOBALS['content_width'] = apply_filters( 'business_professional_content_width', 710 );
 }
-add_action( 'after_setup_theme', 'business_theme_content_width', 0 );
+add_action( 'after_setup_theme', 'business_professional_content_width', 0 );
 
 /**
  * Register Google Fonts
  */
-function business_theme_fonts_url() {
+function business_professional_fonts_url() {
 	$fonts_url = '';
 
 	/*
@@ -155,7 +155,7 @@ function business_theme_fonts_url() {
 /**
  * Enqueue scripts and styles.
  */
-function business_theme_scripts() {
+function business_professional_scripts() {
 
 	wp_enqueue_style( 'business_theme-style', get_stylesheet_uri() );
 	
@@ -163,7 +163,7 @@ function business_theme_scripts() {
 
 	wp_enqueue_style( 'business_theme-blocks-style', get_template_directory_uri() . '/css/blocks.css' );
 
-	wp_enqueue_style( 'business_theme-fonts', business_theme_fonts_url() );
+	wp_enqueue_style( 'business_theme-fonts', business_professional_fonts_url() );
 
 	wp_enqueue_script( 'business_theme-navigation', get_template_directory_uri() . '/js/navigation.js', array( 'jquery' ), '20151215', true );
 
@@ -183,7 +183,7 @@ function business_theme_scripts() {
 
 	// Icons
 	wp_localize_script( 'business_theme-navigation', 'smallBusinessThemeIcons', array(
-		'dropdown' => business_theme_get_icon_svg( 'expand_more' )
+		'dropdown' => business_professional_get_icon_svg( 'expand_more' )
 	) );
 
 	// Menu toggle text
@@ -194,24 +194,24 @@ function business_theme_scripts() {
 
 
 }
-add_action( 'wp_enqueue_scripts', 'business_theme_scripts' );
+add_action( 'wp_enqueue_scripts', 'business_professional_scripts' );
 
 /**
  * Enqueue Gutenberg editor styles
  */
-function business_theme_editor_styles() {
-	wp_enqueue_style( 'business_elegant-fonts', business_theme_fonts_url() );
+function business_professional_editor_styles() {
+	wp_enqueue_style( 'business_elegant-fonts', business_professional_fonts_url() );
 	wp_enqueue_style( 'business_theme-editor-style', get_template_directory_uri() . '/editor.css' );
 }
-add_action( 'enqueue_block_editor_assets', 'business_theme_editor_styles' );
+add_action( 'enqueue_block_editor_assets', 'business_professional_editor_styles' );
 
 /**
  * Check whether the browser supports JavaScript
  */
-function business_theme_html_js_class() {
+function business_professional_html_js_class() {
 	echo '<script>document.documentElement.className = document.documentElement.className.replace("no-js","js");</script>'. "\n";
 }
-add_action( 'wp_head', 'business_theme_html_js_class', 1 );
+add_action( 'wp_head', 'business_professional_html_js_class', 1 );
 
 /**
  * SVG Icons class.
