@@ -16,7 +16,7 @@ function logo_awesomeness_customize_register( $wp_customize ) {
 	) );
 
 	$wp_customize->add_control( 'logo_size', array(
-		'label'       => esc_html__( 'Logo Size' ),
+		'label'       => esc_html__( 'Logo Size', 'business-professional' ),
 		'section'     => 'title_tagline',
 		'priority'    => 9,
 		'type'        => 'range',

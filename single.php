@@ -18,7 +18,7 @@ get_header(); ?>
 
 		the_post_navigation( array(
 			'next_text' => wp_kses( __( '<span class="meta-nav">Next</span> %title', 'business-professional' ), array( 'span' => array( 'class' => array() ) ) ),
-			'prev_text' => wp_kses( __( '<span class="meta-nav">Previous</span> %title', 'business_theme2' ), array( 'span' => array( 'class' => array() ) ) )
+			'prev_text' => wp_kses( __( '<span class="meta-nav">Previous</span> %title', 'business-professional' ), array( 'span' => array( 'class' => array() ) ) )
 		) );
 
 		// If comments are open or we have at least one comment, load up the comment template.
