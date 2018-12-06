@@ -71,6 +71,9 @@ if ( ! function_exists( 'business_professional_setup' ) ) :
 
 		// Add support for full and wide align images.
 		add_theme_support( 'align-wide' );
+		
+		// Add support for responsive embeds.
+		add_theme_support( 'responsive-embeds' );
 
 		// Add support for core editor styles
 		add_theme_support( 'editor-styles' );

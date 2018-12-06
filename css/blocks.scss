@@ -473,6 +473,11 @@ table.wp-block-table {
 	right: 0;
 }
 
+.wp-block-embed.is-type-video.alignfull iframe {
+	height: 100% !important;
+	width: 100% !important;
+}
+
 // !Blockquotes & Pull quotes
 
 .wp-block-quote {
