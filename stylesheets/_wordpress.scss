@@ -139,6 +139,7 @@
 
 	list-style: none;
 	margin: $x-space-sm;
+	padding: 0;
 
 	li {
 		padding-left: inherit;
@@ -168,6 +169,7 @@
 
 	.children {
 		margin-left: $x-space-lg;
+		padding: 0;
 
 		.comment {
 			width: 100%;
@@ -230,7 +232,7 @@
 		font-family: $x-font-family-heading;
 		font-size: $x-font-size-sm;
 		font-style: normal;
-		font-weight: 400;
+		font-weight: 700;
 		text-transform: uppercase;
 		width: 100%;
 

@@ -1,3 +1,6 @@
+.site-main {
+	overflow: hidden; /* To prevent horizontal scrolling when using full-width blocks */
+}
 
 /** === Entries === */
 
@@ -297,16 +300,20 @@
 
 .page-header {
 
-	background: url("shattered.png") repeat-x; 
-	padding: 120px 0 $x-space-lg;	
+	background: url("shattered.png") repeat $x-color-secondary-base;
+	padding: 100px 0 $x-space-md;
+
+	.page-title,
+	.archive-description {
+		color: $x-color-shade-white;
+	}
 
 	@include media( desktop ) {
-
+		padding: 120px 0 $x-space-lg;
 		margin-bottom: $x-space-lg;
 		width: 100%;
 
 		.page-title {
-			color: $x-color-shade-white;
 			max-width: $x-grid-column-7;
 			margin-left: auto;
 			margin-right: auto;

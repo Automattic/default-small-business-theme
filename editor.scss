@@ -105,7 +105,7 @@ Description: Used to style Gutenberg Blocks in the editor.
 .edit-post-visual-editor a,
 .editor-block-list__block a,
 .wp-block-freeform.block-library-rich-text__tinymce a {
-	color: $x-color-secondary-base;
+	color: $x-color-accent-base;
 	text-decoration: none;
 	@include link-underline();
 	
@@ -213,18 +213,33 @@ p.has-drop-cap:not(:focus)::first-letter {}
 
 /* Quote */
 .wp-block-quote {
-	border-left: 4px solid grey;
-	border-left-color: $x-color-accent-base;
+	background: $x-color-shade-gray-2;
+	border: none;
+	padding: $x-space-sm $x-space-md $x-space-sm $x-space-lg !important;
+	max-width: 100%;
+	width: 100%;
+
+	&:before {
+		content: "\201C";
+		font-family: Georgia,serif;
+		font-weight: 400;
+		position: absolute;
+		left: 12px;
+		top: 0;
+		font-size: 60px;
+	}
 }
 
 .wp-block-quote:not(.is-large):not(.is-style-large) {
-	font-style: italic;
-	border-left: 4px solid grey;
-	border-left-color: $x-color-accent-base;
+	background: $x-color-shade-gray-2;
+	border: none;
+	padding: $x-space-sm $x-space-md $x-space-sm $x-space-lg;
+	max-width: 100%;
+	width: 100%;
 
 	p {
-		font-size: $x-font-size-md;
-		font-style: italic;
+		margin: 0;
+		font-weight: 600;
 	}
 
 	cite {
@@ -232,13 +247,21 @@ p.has-drop-cap:not(:focus)::first-letter {}
 	}
 }
 
-.wp-block-quote .wp-block-quote__citation {}
-
 .wp-block-quote.is-large p,
-.wp-block-quote.is-style-large p {}
+.wp-block-quote.is-style-large p {
+	font-size: $x-font-size-md;
+	font-style: normal;
+	font-weight: 600;
+	margin: 0;
+}
 
+.wp-block-quote .wp-block-quote__citation,
 .wp-block-quote.is-large .wp-block-quote__citation,
-.wp-block-quote.is-style-large .wp-block-quote__citation {}
+.wp-block-quote.is-style-large .wp-block-quote__citation {
+	color: $x-color-words-subtle;
+	font-size: $x-font-size-base;
+	margin-top: 0;
+}
 
 .rtl .editor-styles-wrapper .wp-block-quote,
 .rtl .wp-block-quote:not(.is-large):not(.is-style-large) {}
@@ -348,26 +371,48 @@ p.has-drop-cap:not(:focus)::first-letter {}
 
 .wp-block-pullquote {
 	border: 0;
-	margin-top: 16px;
-	margin-bottom: 16px;
 	text-align: inherit;
 	padding: 0;
+	position: relative;
 
 	blockquote {
-		border-left: 4px solid grey;
-		border-left-color: $x-color-accent-base;
-		padding-left: 1em;
-		margin: auto 0;
+		border-left: none;
+		background: $x-color-shade-gray-2;
+		border: none;
+		padding: $x-space-sm $x-space-md $x-space-sm $x-space-lg !important;
+		margin: 0;
+		max-width: 100%;
+		width: 100%;
+
+		&:before {
+			content: "\201C";
+			font-family: Georgia,serif;
+			font-weight: 400;
+			position: absolute;
+			left: 12px;
+			top: 0;
+			font-size: 60px;
+		}
 
 		> .editor-rich-text p {
 			font-size: $x-font-size-md;
-			font-style: italic;
+			font-style: normal;
+			font-weight: 600;
+			margin-bottom: 0;
 		}
+	}
+
+	&.alignleft {
+		margin-right: $x-space-md;
+	}
+
+	&.alignright {
+		margin-left: $x-space-md;
 	}
 }
 
 .wp-block-pullquote__citation {
-	color: $x-color-words-subtle;
+	color: $x-color-words-subtle !important;
 	font-size: $x-font-size-sm;
 	text-transform: none;
 }
