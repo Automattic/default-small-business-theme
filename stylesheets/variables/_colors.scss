@@ -6,9 +6,11 @@ $secondary-color: #dedde5; // headings
 
 $accent-color: #2c8bcf; // links & stuff
 
-$color-c: #403539;
-$color-d: #74696d;
+// Extras
+$color-c: #403539; // dark gray
+$color-d: #74696d; // medium gray
 
+// Unused?
 $header-background: tint( $body-background, 10% );
 
 $x-color-primary-base:  $primary-color;
@@ -37,9 +39,9 @@ $x-color-words-base:       $x-color-primary-base;
 $x-color-words-subtle:     $x-color-shade-gray-6;
 $x-color-words-heading:    $x-color-secondary-base;
 
-$x-color-border-base: #403539;
+$x-color-border-base: $color-c;
 $x-color-border-form-focus: $x-color-primary-base;
 
-$x-color-background-body: #120c0e;
+$x-color-background-body: $body-background;
 
 $x-color-hr: $color-c;

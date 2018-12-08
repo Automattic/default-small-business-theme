@@ -13,7 +13,7 @@
 	}
 
 	> *:not(.alignfull) {
-		margin: $x-space-sm;
+		/* margin: $x-space-sm; */
 		max-width: calc( 100% - ( #{$x-space-sm} * 2 ) );
 
 		&:first-child {
@@ -29,10 +29,14 @@
 
 	h1, h2, h3, h4, h5, h6 {
 		font-weight: 200;
-		margin: $x-space-md auto !important;
+		margin: $x-space-md auto;
 
 		&:after {
 		}
+	}
+
+	h2 {
+		margin: $x-space-xl auto $x-space-md;
 	}
 
 }

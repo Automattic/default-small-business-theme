@@ -138,14 +138,12 @@
 	transition: 100ms all ease-in-out;
 	vertical-align: middle;
 
-	&:hover {
+	&:hover,
+	&:focus,
+	&:active {
 		border-color: $x-color-secondary-base;
 		color: $x-color-secondary-base;
-	}
-
-	&:active,
-	&:focus {
-		background-color: $x-color-accent-light;
+		outline: none;
 	}
 
 	@include media( tablet ) {
@@ -254,17 +252,21 @@
 	.wp-block-cover-image-text,
 	h2 {
 		font-size: $x-font-size-lg;
-		font-weight: 400;
-		padding: $x-space-md;
 		font-family: $x-font-family-heading;
+		font-weight: 400;
 		line-height: $x-font-leading-heading;
 		letter-spacing: normal;
-		text-transform: none;
 		margin: 0;
 		max-width: 960px;
+		padding: $x-space-md;
+		text-shadow: 0 0 12px rgba(0, 0, 0, 0.25);
+		text-transform: none;
 	}
 
 	&.has-background-dim:before {
+		background: radial-gradient(circle, transparent 65%, #2c8bcf 125%);
+		mix-blend-mode: difference;
+		opacity: 1;
 	}
 }
 
@@ -485,7 +487,6 @@ table.wp-block-table {
 	p {
 		margin: 0;
 		padding: $x-space-xs $x-space-sm;
-//		font-size: $x-font-size-base;
 	}
 
 	&.is-large, &.is-style-large {
@@ -592,10 +593,13 @@ table.wp-block-table {
 // !Separators
 
 .wp-block-separator {
+	background-color: transparent;
+	border-bottom: 7px double #403539;
+	height: 1px;
 	margin-top: $x-space-md !important;
 	margin-bottom: $x-space-md !important;
 	padding: 0;
-	width: 100px;
+	width: 33%;
 
 	&.is-style-wide {
 		width: 100%;

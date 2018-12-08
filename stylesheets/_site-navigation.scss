@@ -1,8 +1,9 @@
 
 /** === Site Branding === */
-
-#site-navigation {
-	margin-right: $x-space-xs;
+@include media(tablet) {
+	#site-navigation {
+		margin-right: $x-space-md;
+	}
 }
 
 .main-navigation {
@@ -34,10 +35,11 @@
 
 			a {
 				display: block;
+				text-decoration: none;
 
 				&:hover {
 					color: $x-color-secondary-base;
-					text-decoration: none;
+					text-decoration: underline;
 				}
 			}
 
@@ -59,9 +61,8 @@
 				@include link-transition;
 				clear: both;
 				display: block;
-				width: 100%;
-
 				padding: $x-space-xs;
+				width: 100%;
 			}
 
 			&#more-menu {
@@ -96,13 +97,16 @@
 				left: -999em;
 				z-index: 99999;
 				margin-left: 0;
+				padding-left: 0;
 				-webkit-transition: opacity 0.5s ease-in-out;
 				-moz-transition:    opacity 0.5s ease-in-out;
 				transition:         opacity 0.5s ease-in-out;
 
+				/*
 				li a:before {
 					content: "\2014\00a0";
 				}
+				*/
 			}
 
 			button.dropdown-toggle {
@@ -117,6 +121,7 @@
 				top: 0;
 				vertical-align: middle;
 
+				&:hover,
 				&:focus {
 					svg {
 						fill: $x-color-secondary-base;
@@ -185,7 +190,6 @@
 
 			> div > ul {
 
-				background-color: $x-color-shade-white;
 				border-bottom: solid 1px grey;
 				border-top: solid 1px grey;
 				border-color: $x-color-border-base;
@@ -245,6 +249,7 @@
 				padding: 0 $x-space-xs;
 
 				a {
+					color: #a8a2a2;
 					font-size: $x-font-size-sm;
 					padding: 0;
 				}
@@ -261,8 +266,13 @@
 						display: block;
 
 						a {
-							padding-top: $x-space-xxs;
-							padding-bottom: $x-space-xxs;
+							padding: $x-space-xxs $x-space-xs;
+
+							&:hover,
+							&:focus,
+							&:active {
+								background-color: $x-color-accent-base;
+							}
 						}
 
 						&.menu-item-has-children > button {
@@ -309,11 +319,7 @@
 }
 
 .menu-toggle {
-	position: absolute;
-	right: $x-space-sm;
-	transform: translateY(-52%);
-	top: 50%;
-	z-index: 9999;
+	margin-bottom: $x-space-unit;
 
 	@include media( tablet ) {
 		display: none;
@@ -367,17 +373,21 @@
 
 			a {
 				display: inline-block;
-				line-height: 1;
 				font-size: $x-font-size-xl;
+				line-height: 1;
+				height: 32px;
+				width: 32px;
 
 				svg {
 					@include svg-transition;
 					display: block;
+					fill: $x-color-accent-base;
+					height: 32px;
 					line-height: 1;
-					fill: inherit;
+					width: 32px;
 
 					&:hover {
-						fill: $x-color-primary-base;
+						fill: $x-color-secondary-base;
 					}
 
 					@include media( mobile ) {

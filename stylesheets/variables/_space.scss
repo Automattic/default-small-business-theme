@@ -1,29 +1,30 @@
+// 1rem = 16px
+$x-space-unit: 1.5rem; // 24px
 
-$x-space-unit: 1.5rem;
+$x-space-xxs: calc(0.25 * #{$x-space-unit}); // 6px
+$x-space-xs: calc(0.5 * #{$x-space-unit}); // 12px
+$x-space-sm: calc(0.75 * #{$x-space-unit}); // 18px
+$x-space-md: calc(1.25 * #{$x-space-unit}); // 30px
+$x-space-lg: calc(2 * #{$x-space-unit}); // 48px
+$x-space-xl: calc(3.25 * #{$x-space-unit}); // 78px
+$x-space-xxl: calc(5.25 * #{$x-space-unit}); // 126px
 
-$x-space-xxs: calc(0.25 * #{$x-space-unit});
-$x-space-xs: calc(0.5 * #{$x-space-unit});
-$x-space-sm: calc(0.75 * #{$x-space-unit});
-$x-space-md: calc(1.25 * #{$x-space-unit});
-$x-space-lg: calc(2 * #{$x-space-unit});
-$x-space-xl: calc(3.25 * #{$x-space-unit});
-$x-space-xxl: calc(5.25 * #{$x-space-unit});
-
-$x-space-base: $x-space-sm;
+$x-space-base: $x-space-sm; // 18px
 
 $x-space-column: 90px;
 $x-space-gutter: 25px;
 $x-space-column-count: 12;
 
-$x-space-column-1: calc( 1 * ( #{$x-grid-column} + #{$x-grid-gutter} ) - #{$x-grid-gutter} );
-$x-space-column-2: calc( 2 * ( #{$x-grid-column} + #{$x-grid-gutter} ) - #{$x-grid-gutter} );
-$x-space-column-3: calc( 3 * ( #{$x-grid-column} + #{$x-grid-gutter} ) - #{$x-grid-gutter} );
-$x-space-column-4: calc( 4 * ( #{$x-grid-column} + #{$x-grid-gutter} ) - #{$x-grid-gutter} );
-$x-space-column-5: calc( 5 * ( #{$x-grid-column} + #{$x-grid-gutter} ) - #{$x-grid-gutter} );
-$x-space-column-6: calc( 6 * ( #{$x-grid-column} + #{$x-grid-gutter} ) - #{$x-grid-gutter} );
-$x-space-column-7: calc( 7 * ( #{$x-grid-column} + #{$x-grid-gutter} ) - #{$x-grid-gutter} );
-$x-space-column-8: calc( 8 * ( #{$x-grid-column} + #{$x-grid-gutter} ) - #{$x-grid-gutter} );
-$x-space-column-9: calc( 9 * ( #{$x-grid-column} + #{$x-grid-gutter} ) - #{$x-grid-gutter} );
-$x-space-column-10: calc( 10 * ( #{$x-grid-column} + #{$x-grid-gutter} ) - #{$x-grid-gutter} );
-$x-space-column-11: calc( 11 * ( #{$x-grid-column} + #{$x-grid-gutter} ) - #{$x-grid-gutter} );
-$x-space-column-12: calc( 12 * ( #{$x-grid-column} + #{$x-grid-gutter} ) - #{$x-grid-gutter} );
+// Check if these are used for breakpoints, would be neat if you could say mobile = 2 columns, tablet = 4, desktop = 6, etc
+$x-space-column-1: calc( 1 * ( #{$x-grid-column} + #{$x-grid-gutter} ) - #{$x-grid-gutter} ); // 90px
+$x-space-column-2: calc( 2 * ( #{$x-grid-column} + #{$x-grid-gutter} ) - #{$x-grid-gutter} ); // 205px
+$x-space-column-3: calc( 3 * ( #{$x-grid-column} + #{$x-grid-gutter} ) - #{$x-grid-gutter} ); // 320px
+$x-space-column-4: calc( 4 * ( #{$x-grid-column} + #{$x-grid-gutter} ) - #{$x-grid-gutter} ); // 435px
+$x-space-column-5: calc( 5 * ( #{$x-grid-column} + #{$x-grid-gutter} ) - #{$x-grid-gutter} ); // 550px
+$x-space-column-6: calc( 6 * ( #{$x-grid-column} + #{$x-grid-gutter} ) - #{$x-grid-gutter} ); // 665px
+$x-space-column-7: calc( 7 * ( #{$x-grid-column} + #{$x-grid-gutter} ) - #{$x-grid-gutter} ); // 780px
+$x-space-column-8: calc( 8 * ( #{$x-grid-column} + #{$x-grid-gutter} ) - #{$x-grid-gutter} ); // 895px
+$x-space-column-9: calc( 9 * ( #{$x-grid-column} + #{$x-grid-gutter} ) - #{$x-grid-gutter} ); // 910px
+$x-space-column-10: calc( 10 * ( #{$x-grid-column} + #{$x-grid-gutter} ) - #{$x-grid-gutter} ); // 1025px
+$x-space-column-11: calc( 11 * ( #{$x-grid-column} + #{$x-grid-gutter} ) - #{$x-grid-gutter} ); // 1140px
+$x-space-column-12: calc( 12 * ( #{$x-grid-column} + #{$x-grid-gutter} ) - #{$x-grid-gutter} ); // 1255px

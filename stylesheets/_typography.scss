@@ -14,7 +14,7 @@ textarea {
 	font-family: $x-font-family-body;
 	line-height: $x-font-leading-body;
 	color: $x-color-words-base;
-	font-weight: 400;
+	font-weight: 300;
 }
 
 .site-title,
@@ -133,15 +133,16 @@ mark, ins {
 
 a {
 	color: $x-color-secondary-base;
-	text-decoration: none;
+	text-decoration: underline;
 
 	&:hover {
 		color: $x-color-accent-base;
 	}
 
+	&:active,
 	&:focus {
-		background-color: $x-color-accent-base;
-		outline: none;
+		color: $x-color-accent-base;
+		outline: 1px dotted $x-color-accent-base;
 	}
 }
 
