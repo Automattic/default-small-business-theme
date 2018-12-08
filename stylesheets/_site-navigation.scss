@@ -35,6 +35,7 @@
 
 			a {
 				display: block;
+				padding: $x-space-xxs;
 				text-decoration: none;
 
 				&:hover {
@@ -101,12 +102,10 @@
 				-webkit-transition: opacity 0.5s ease-in-out;
 				-moz-transition:    opacity 0.5s ease-in-out;
 				transition:         opacity 0.5s ease-in-out;
+			}
 
-				/*
-				li a:before {
-					content: "\2014\00a0";
-				}
-				*/
+			li > a:before {
+				content: "\2014\00a0";
 			}
 
 			button.dropdown-toggle {
@@ -123,6 +122,8 @@
 
 				&:hover,
 				&:focus {
+					outline: 1px dotted $x-color-accent-base;
+
 					svg {
 						fill: $x-color-secondary-base;
 					}
@@ -148,6 +149,10 @@
 	// Mobile Menu
 	@include media( mobile ) { // prevents unneccesary overrides on larger breakpoints
 
+		& {
+			text-align: center;
+		}
+
 		#primary-menu {
 
 			overflow: hidden;
@@ -156,17 +161,20 @@
 				display: none;
 			}
 
-
 			li {
 				position: relative;
 
 				&:before {
-					display: block;
+					border-top: solid 1px $x-color-border-base;
 					content: "\020";
+					display: block;
 					width: 300vw;
 					left: -100vw;
-					border-top: solid 1px $x-color-border-base;
 					position: absolute;
+				}
+
+				li:before {
+					border-top: none;
 				}
 			}
 
@@ -185,12 +193,9 @@
 				}
 			}
 
-			ul.sub-menu {
-			}
-
 			> div > ul {
-
-				border-bottom: solid 1px grey;
+				background-color: $x-color-background-body;
+				border-bottom: solid 3px grey;
 				border-top: solid 1px grey;
 				border-color: $x-color-border-base;
 				display: block;
@@ -201,6 +206,17 @@
 
 				li > a {
 					font-size: $x-font-size-sm;
+				}
+
+				.current-menu-item {
+					a {
+						border-bottom: 0;
+					}
+
+					& > a {
+						border-left: 3px solid gray;
+						border-left-color: $x-color-accent-base;
+					}
 				}
 
 				.menu-item-has-children {
