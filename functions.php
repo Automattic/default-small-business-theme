@@ -75,9 +75,6 @@ if ( ! function_exists( 'business_theme_setup' ) ) :
 		// Add support for core editor styles
 		add_theme_support( 'editor-styles' );
 
-		// Add support for custom editor styles
-		add_editor_style( 'editor.css' );
-
 		// Add support for custom color scheme.
 		add_theme_support( 'editor-color-palette', array(
 			array(
