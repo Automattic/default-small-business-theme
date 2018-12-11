@@ -102,14 +102,27 @@
 	.entry-footer {
 		.tags-links,
 		.cat-links {
+			display: inline-block;
+
 			a {
-				color: $x-color-accent-base;
-				@include rounded(25px);
-				padding: $x-space-xxs;
-				margin-right: $x-space-xxs;
 				background: rgba( 255, 89, 100, .05);
+				color: $x-color-accent-base;
+				display: inline-block;
+				height: 32px;
 				font-weight: 600;
+				padding: $x-space-xxs;
+
+				@include rounded(25px);
 			}
+		}
+
+		.tags-links a {
+			margin-right: $x-space-xxs;			
+		}
+
+		.edit-link,
+		.comments-link {
+			display: block;
 		}
 	}
 }

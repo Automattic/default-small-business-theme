@@ -51,9 +51,14 @@ if ( ! function_exists( 'business_professional_categories' ) ) :
 /**
  * Prints HTML for categories
  */
-function business_professional_categories() {
-	/* translators: used between list items, there is a space after the comma */
-	$categories_list = get_the_category_list( esc_html__( ', ', 'business-professional' ) );
+function business_professional_categories( $separator = true ) {
+	if ( $separator ) {
+		/* translators: used between list items, there is a space after the comma */
+		$categories_list = get_the_category_list( esc_html__( ', ', 'business-professional' ) );
+	} else {
+		$categories_list = get_the_category_list( ' ' );
+	}
+
 	if ( $categories_list ) {
 		echo '<span class="cat-links"><span class="screen-reader-text">' . esc_html__( 'Posted in', 'business-professional' ) . '</span> ' . $categories_list . '</span>'; // WPCS: XSS OK.
 	}

@@ -51,7 +51,7 @@
 
 	<footer class="entry-footer">
 		<div class="entry-meta">
-			<?php business_professional_categories(); ?>
+			<?php business_professional_categories( false ); ?>
 			<?php business_professional_entry_footer(); ?>
 		</div>
 	</footer><!-- .entry-footer -->
