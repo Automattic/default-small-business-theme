@@ -24,13 +24,13 @@ Description: Used to style Gutenberg Blocks in the editor.
 --------------------------------------------------------------*/
 
 .edit-post-visual-editor .editor-block-list__block,
-.editor-default-block-appender input[type="text"].editor-default-block-appender__content {
+.editor-default-block-appender textarea.editor-default-block-appender__content {
 	font-family: $x-font-family-body;
 }
 
 .edit-post-visual-editor .editor-block-list__block,
 .edit-post-visual-editor .editor-block-list__block p,
-.editor-default-block-appender input[type="text"].editor-default-block-appender__content {
+.editor-default-block-appender textarea.editor-default-block-appender__content {
 	line-height: $x-font-leading-body;
 	font-weight: 400;
 }
@@ -108,14 +108,14 @@ Description: Used to style Gutenberg Blocks in the editor.
 	color: $x-color-accent-base;
 	text-decoration: none;
 	@include link-underline();
-	
+
 	&:hover {
 		color: $x-color-primary-base;
 	}
 }
 
-/* 
-* General HTML selectors, used for the Classic Block 
+/*
+* General HTML selectors, used for the Classic Block
 */
 
 /* Table styles */
@@ -126,21 +126,16 @@ Description: Used to style Gutenberg Blocks in the editor.
 	td,
 	th {
 		border: 0;
+		border-top: 1px solid $x-color-border-base;
 		padding: .5em;
 		text-align: left;
-	}
-
-	tr:nth-child(even) {
-		background-color: $x-color-shade-gray-1;
-	}
-	
-	thead tr:nth-child(odd) {
-			background-color: $x-color-shade-gray-2;
 	}
 }
 
 .rtl .wp-block-freeform.block-library-rich-text__tinymce td,
-.rtl .wp-block-freeform.block-library-rich-text__tinymce th {}
+.rtl .wp-block-freeform.block-library-rich-text__tinymce th {
+	text-align: right;
+}
 
 /* Quote styles */
 .wp-block-freeform.block-library-rich-text__tinymce blockquote {
@@ -173,8 +168,8 @@ Description: Used to style Gutenberg Blocks in the editor.
 
 .wp-block-freeform.block-library-rich-text__tinymce code {
 	background: $x-color-shade-gray-1;
-	border: none;
-	border-radius: 0;
+	color: $x-color-words-base;
+	padding: $x-space-sm;
 }
 
 /* Caption styles */
@@ -182,10 +177,15 @@ Description: Used to style Gutenberg Blocks in the editor.
 [class^="wp-block-"] figcaption {
 	color: $x-color-words-subtle;
 	font-size: $x-font-size-sm;
-	font-style: italic;
+	font-style: none;
+	text-align: left;
 }
 
-.wp-block-gallery .blocks-gallery-image figcaption, 
+.rtl [class^="wp-block-"] figcaption {
+	text-align: right;
+}
+
+.wp-block-gallery .blocks-gallery-image figcaption,
 .wp-block-gallery .blocks-gallery-item figcaption {
 	color: $x-color-shade-white;
 }
@@ -211,7 +211,17 @@ Description: Used to style Gutenberg Blocks in the editor.
 
 p.has-drop-cap:not(:focus)::first-letter {}
 
+/* Image */
+
+[data-type="core/image"][data-align="center"] .wp-block-image figcaption {
+	text-align: center;
+}
+[data-type="core/image"][data-align="right"] .wp-block-image figcaption {
+	text-align: right;
+}
+
 /* Quote */
+
 .wp-block-quote {
 	background: $x-color-shade-gray-2;
 	border: none;
@@ -269,11 +279,11 @@ p.has-drop-cap:not(:focus)::first-letter {}
 /* Cover */
 
 .wp-block-cover {
-	background-color: $x-color-secondary-base;
 
 	.wp-block-cover-text {
-		a, a:hover {
-			color: $x-color-accent-base;
+		a,
+		a:hover {
+			color: inherit;
 		}
 	}
 }
@@ -300,7 +310,7 @@ p.has-drop-cap:not(:focus)::first-letter {}
 	color: $x-color-secondary-base;
 	text-decoration: none;
 	@include link-underline();
-	
+
 	&:hover {
 		color: $x-color-primary-base;
 	}
@@ -345,6 +355,7 @@ p.has-drop-cap:not(:focus)::first-letter {}
 }
 
 .wp-block-verse pre {
+	color: $x-color-words-base;
 	padding: 0;
 }
 
@@ -354,10 +365,12 @@ p.has-drop-cap:not(:focus)::first-letter {}
 	background: $x-color-shade-gray-1;
 	border: none;
 	border-radius: 0;
+	padding: $x-space-sm;
 }
 
-.wp-block-code textarea {
+.wp-block-code .editor-plain-text {
 	background: transparent;
+	color: $x-color-words-base;
 }
 
 /* Preformatted */
@@ -429,20 +442,14 @@ p.has-drop-cap:not(:focus)::first-letter {}
 	td,
 	th {
 		border: 0;
-		padding: .5em;
+		border-top: 1px solid $x-color-border-base;
+		padding: 0;
 		text-align: left;
-	}
-	
-	tr:nth-child(even) {
-		background-color: $x-color-shade-gray-1;
-	}
-
-	thead tr:nth-child(odd) {
-		background-color: $x-color-shade-gray-2;
 	}
 }
 
-.rtl .wp-block-table th {
+.rtl .wp-block-table th,
+.rtl .wp-block-table td {
 	text-align: right;
 }
 
@@ -492,7 +499,7 @@ p.has-drop-cap:not(:focus)::first-letter {}
 	margin-bottom: 1.5em;
 	padding: 0;
 	width: 100px;
-	
+
 	&.is-style-wide {
 		width: 100%;
 	}
@@ -503,10 +510,9 @@ p.has-drop-cap:not(:focus)::first-letter {}
 		width: auto;
 
 		&:before {
-			content: "\2666 \2666 \2666";
-			color: $x-color-words-subtle;
-			opacity: 0.5;
-			font-family: Arial,Helvetica,sans-serif;
+			content: "\00b7 \00b7 \00b7 \00b7 \00b7";
+			color: $x-color-shade-gray-4;
+			font-family: $body-font; /* family@include globalvar(font-family, body); */
 			letter-spacing: 1em;
 			padding-left: 1em;
 		}
@@ -534,7 +540,7 @@ p.has-drop-cap:not(:focus)::first-letter {}
 }
 
 .wp-block-latest-comments.aligncenter.has-avatars {
-	
+
 	.wp-block-latest-comments__comment {
 		.wp-block-latest-comments__comment-excerpt,
 		.wp-block-latest-comments__comment-meta {
