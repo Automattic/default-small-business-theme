@@ -28,7 +28,7 @@ Watch files for changes:
 
 Build just the RTL styles:
 
-```$make rtl```
+```$ make rtl```
 
 Build CSS4 Variables:
 
