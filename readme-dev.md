@@ -26,6 +26,10 @@ Watch files for changes:
 
 ```$ make dev```
 
+Build just the RTL styles:
+
+```$make rtl```
+
 Build CSS4 Variables:
 
 ```$ make css-vars```
