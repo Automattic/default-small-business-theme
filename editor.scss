@@ -30,20 +30,14 @@ $font-size-value: 18.672;
 }
 
 @mixin button-style() {
-	@include rounded( 3px );
 	background-color: $x-color-accent-base;
-	color: $x-color-shade-white;
-	font-size: $x-font-size-sm;
-	line-height: $x-font-leading-body;
-	letter-spacing: $x-font-letter-spacing;
-	padding: 0.675em 1.2em;
-	border: 0;
-	cursor: pointer;
-	display: inline-block;
-	font-weight: 600;
-	text-decoration: none;
 	text-transform: uppercase;
-	vertical-align: middle;
+	text-decoration: none;
+	font-weight: 600;
+	letter-spacing: $x-font-letter-spacing;
+	font-size: (15.56em / $font-size-value);
+	padding: 0.68em 1.2em;
+	border-radius: 3px;
 }
 
 /*--------------------------------------------------------------
@@ -279,11 +273,13 @@ p.has-drop-cap:not(:focus)::first-letter {}
 /* File */
 
 .wp-block-file__textlink {
-	/* Same as link styles */
+	text-decoration: underline;
 }
 
 .wp-block-file .wp-block-file__button,
-.wp-block-file .wp-block-file__button:visited {}
+.wp-block-file .wp-block-file__button:visited {
+	@include button-style;
+}
 
 .wp-block-file .wp-block-file__button:hover,
 .wp-block-file .wp-block-file__button:focus,
@@ -372,6 +368,16 @@ p.has-drop-cap:not(:focus)::first-letter {}
 
 .wp-block-button .wp-block-button__link {
 	@include button-style;
+}
+
+.wp-block-button.is-style-squared .wp-block-button__link  {
+	border-radius: 0;
+}
+
+.wp-block-button.is-style-outline .wp-block-button__link {
+	background: transparent;
+	border: solid 2px $x-color-accent-base;
+	color: $x-color-accent-base;
 }
 
 .wp-block-button .wp-block-button__link:hover,

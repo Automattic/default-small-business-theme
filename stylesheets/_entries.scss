@@ -244,7 +244,7 @@
 			display: block;
 		}
 
-		a:not(.jp-relatedposts-post-a) {
+		a:not(.jp-relatedposts-post-a):not(.wp-block-button__link) {
 			@include link-underline;
 		}
 

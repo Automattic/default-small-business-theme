@@ -121,35 +121,18 @@
 // !Buttons
 
 .wp-block-file .wp-block-file__button,
-.wp-block-button .wp-block-button__link{
+.wp-block-button .wp-block-button__link {
+	@include button-style;
+}
 
-	background-color: $x-color-accent-base;
-	color: $x-color-shade-white;
-	padding: $x-space-xxs $x-space-xs;
-	font-size: $x-font-size-sm;
-	line-height: $x-font-leading-body;
-	letter-spacing: $x-font-letter-spacing;
-	@include rounded( 3px );
-	border: 0;
-	cursor: pointer;
-	display: inline-block;
-	font-weight: 600;
-	text-decoration: none;
-	text-transform: uppercase;
-	vertical-align: middle;
+.wp-block-button.is-style-squared .wp-block-button__link  {
+	border-radius: 0;
+}
 
-	&:hover {
-		background-color: $x-color-accent-light;
-	}
-
-	&:active,
-	&:focus {
-		background-color: $x-color-accent-light;
-	}
-
-	@include media( tablet ) {
-		padding: $x-space-xs $x-space-sm;
-	}
+.wp-block-button.is-style-outline .wp-block-button__link {
+	background: transparent;
+	border: solid 2px $x-color-accent-base;
+	color: $x-color-accent-base;
 }
 
 // !Audio
@@ -319,15 +302,15 @@
 	justify-content: space-between;
 
 	&.has-2-columns .wp-block-column {
-		width: calc( 50% - ( $x-space-gutter * .5 ) );
+		width: calc(50% - ( #{$x-space-gutter} * .5 ));
 	}
 
 	&.has-3-columns .wp-block-column {
-		width: calc( 33% - ( $x-space-gutter * .33 ) );
+		width: calc(33% - ( #{$x-space-gutter} * 0.33));
 	}
 
 	&.has-4-columns .wp-block-column {
-		width: calc( 25% - ( $x-space-gutter * .25 ) );
+		width: calc(25% - ( #{$x-space-gutter} * .25 ));
 	}
 
 }

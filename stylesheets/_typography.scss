@@ -59,27 +59,23 @@ big {
 }
 
 h2,
-.text--xl,
-.has-larger-font-size {
+.text--xl {
 	font-size: $x-font-size-xl;
 }
 
 .site-title,
 h3,
-.text--lg,
-.has-large-font-size {
+.text--lg {
 	font-size: $x-font-size-lg;
 }
 
 h4,
-.text--md,
-.has-regular-font-size {
+.text--md,{
 	font-size: $x-font-size-md;
 }
 
 .text--sm,
-small,
-.has-small-font-size {
+small {
 	font-size: $x-font-size-sm;
 }
 
