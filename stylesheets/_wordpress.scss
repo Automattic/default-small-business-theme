@@ -29,7 +29,7 @@
 
 
 	.page-title {
-		color: $x-color-words-subtle;
+		/* color: $x-color-words-subtle; */
 	}
 
 	@include media( desktop ) {
@@ -47,7 +47,7 @@
 		}
 
 		@at-root body.archive .page-header .page-title:not(:last-child) {
-			max-width: $x-grid-column-3;			
+			max-width: $x-grid-column-3;
 		}
 
 		.archive-description {
@@ -201,12 +201,12 @@
 }
 
 .comment-navigation {
-	
+
 	@include media( tablet ) {
 		max-width: $x-grid-column-7;
 		margin-right: auto;
 		margin-left: auto;
-	}	
+	}
 }
 
 .comment-body {
@@ -265,7 +265,7 @@
 		color: $x-color-words-subtle;
 	}
 
-	@include media( tablet ) {	
+	@include media( tablet ) {
 		margin-left: 65px;
 	}
 }
