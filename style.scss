@@ -21,10 +21,12 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 */
 
 // !External.
-@import "bourbon";
+@import "bourbon"; // https://www.bourbon.io/
 
 // !Includes.
+// grid, spacing, fonts, colors
 @import "stylesheets/variables/index";
+// animations and mixins
 @import "stylesheets/inc/index";
 
 // !Root.
