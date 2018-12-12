@@ -257,14 +257,15 @@
 		line-height: $x-font-leading-heading;
 		letter-spacing: normal;
 		margin: 0;
-		max-width: 960px;
+		max-width: 12em;
 		padding: $x-space-md;
 		text-shadow: 0 0 12px rgba(0, 0, 0, 0.25);
 		text-transform: none;
 	}
 
 	&.has-background-dim:before {
-		background: radial-gradient(circle, transparent 65%, #2c8bcf 125%);
+		background: radial-gradient(circle, transparent 80%, #2c8bcf 125%),
+			radial-gradient(ellipse, rgba(44,139,207,0.5) 0%, transparent 55%);
 		mix-blend-mode: difference;
 		opacity: 1;
 	}
