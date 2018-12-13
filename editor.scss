@@ -21,6 +21,16 @@ $font-size-value: 18.672;
 
 :root {}
 
+@mixin alignleft {
+	margin-right: $x-space-md;
+	margin-bottom: $x-space-sm;
+}
+
+@mixin alignright {
+	margin-left: $x-space-md;
+	margin-bottom: $x-space-sm;
+}
+
 @mixin block-quote-citation-style() {
 	color: $x-color-words-subtle !important;
 	font-size: $x-font-size-sm;
@@ -43,6 +53,11 @@ $font-size-value: 18.672;
 /*--------------------------------------------------------------
 1.0 General Typography
 --------------------------------------------------------------*/
+
+/* Links */
+.editor-rich-text__tinymce a {
+	color: $x-color-secondary-base;
+}
 
 /* font-family */
 .edit-post-visual-editor .editor-block-list__block,
@@ -107,12 +122,22 @@ $font-size-value: 18.672;
 }
 
 .edit-post-visual-editor h4,
-.wp-block-freeform.block-library-rich-text__tinymce h4,
+.wp-block-freeform.block-library-rich-text__tinymce h4 {
+	font-size: (22.4064em / $font-size-value );
+}
+
 .edit-post-visual-editor h5,
-.wp-block-freeform.block-library-rich-text__tinymce h5,
+.wp-block-freeform.block-library-rich-text__tinymce h5 {
+	font-size: (15.498em / $font-size-value );
+	letter-spacing: 0.125em;
+	text-transform: uppercase;
+}
+
 .edit-post-visual-editor h6,
 .wp-block-freeform.block-library-rich-text__tinymce h6 {
-	font-size: (22.4064em / $font-size-value );
+	font-size: (12.5102em / $font-size-value );
+	letter-spacing: 0.125em;
+	text-transform: uppercase;
 }
 
 
@@ -249,10 +274,15 @@ p.has-drop-cap:not(:focus)::first-letter {}
 }
 
 .wp-block-quote.is-large p,
-.wp-block-quote.is-style-large p {}
+.wp-block-quote.is-style-large p {
+	font-size: (26.89em/$font-size-value);
+}
 
 .wp-block-quote.is-large .wp-block-quote__citation,
-.wp-block-quote.is-style-large .wp-block-quote__citation {}
+.wp-block-quote.is-style-large .wp-block-quote__citation {
+	font-size: (20.61em/$font-size-value);
+	margin-top: -0.8em;
+}
 
 .rtl .editor-styles-wrapper .wp-block-quote,
 .rtl .wp-block-quote:not(.is-large):not(.is-style-large) {}
@@ -513,4 +543,14 @@ p.has-drop-cap:not(:focus)::first-letter {}
 	list-style: none;
 	margin-left: 0;
 	margin-right: 0;
+}
+
+/* Left aligned block */
+.editor-block-list__layout .editor-block-list__block[data-align=left] .editor-block-list__block-edit {
+	@include alignleft;
+}
+
+/* Right aligned block */
+.editor-block-list__layout .editor-block-list__block[data-align=right] .editor-block-list__block-edit {
+	@include alignright;
 }
