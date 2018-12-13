@@ -289,10 +289,6 @@ p.has-drop-cap:not(:focus)::first-letter {}
 4.0 Blocks - Formatting
 --------------------------------------------------------------*/
 
-/* Verse */
-
-.wp-block-verse {}
-
 .wp-block-verse pre {
 	padding: 0;
 }
@@ -300,17 +296,44 @@ p.has-drop-cap:not(:focus)::first-letter {}
 /* Code */
 
 .wp-block-code {
+	background-color: $x-color-shade-gray-2;
 	border: none;
 	border-radius: 0;
+	
+	.editor-plain-text {
+		color: $x-color-words-base;
+		padding: 0.5em 0.5em 0.2em;
+	}
 }
 
 .wp-block-code textarea {
 	background: transparent;
 }
 
+/* Verse */
+
+.wp-block-verse {
+	font-family: $x-font-family-code;
+	background-color: $x-color-shade-gray-2;
+	padding: 1em 1em;
+	
+	.editor-rich-text__tinymce {
+		color: $x-color-words-base;
+		font-size: (15.56em/$font-size-value);
+		line-height: 1.6 !important;
+	}
+}
+
 /* Preformatted */
 
-.wp-block-preformatted {}
+.wp-block-preformatted {
+	background-color: $x-color-shade-gray-2;
+	padding: 1em 1em;
+	
+	.editor-rich-text__tinymce {
+		color: $x-color-words-base;
+	}
+}
 
 /* Pullquote */
 
@@ -346,14 +369,33 @@ p.has-drop-cap:not(:focus)::first-letter {}
 }
 
 /* Table */
-.wp-block-table {}
+.wp-block-table {
+
+	overflow-x: auto;
+
+	td,
+	th {
+		padding: .5em;
+		text-align: left;
+		border-color: rgba( gray, 0.12 );
+	}
+
+	tr:nth-child(even) {
+		background-color: $x-color-shade-gray-2;
+	}
+
+	thead tr:nth-child(odd) {
+		background-color: $x-color-primary-bg;
+	}
+	
+}
 
 .rtl .wp-block-table th {
 	text-align: right;
 }
 
 .wp-block-table__cell-content {
-	padding: 0.5em; /* removes/adjusts padding in editor per cell */
+	padding: 0; /* removes/adjusts padding in editor per cell */
 }
 
 /*--------------------------------------------------------------
