@@ -138,6 +138,10 @@
 // !Audio
 
 .wp-block-audio {
+	
+	figcaption {
+		text-align: center !important;
+	}
 
 	audio {
 		width: 100%;
