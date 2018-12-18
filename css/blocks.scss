@@ -347,6 +347,10 @@
 	@include media( tablet ) {
 		padding-left: $x-space-lg;
 		padding-right: $x-space-lg;
+		&.alignfull {
+			padding-left: $x-space-sm;
+			padding-right: $x-space-sm;
+		}
 	}
 }
 
@@ -370,6 +374,11 @@ ol.wp-block-latest-comments {
 	li li {
 		font-size: 1em;
 	}
+	
+	&.aligncenter li {
+		text-align: center;
+		list-style-position: inside;
+	}
 
 	&.is-grid {
 		justify-content: space-between;
@@ -386,7 +395,8 @@ ol.wp-block-latest-comments {
 		}
 	}
 }
-ol.wp-block-latest-comments {
+
+.wp-block-latest-comments {
 	
 	> li:before {
 		content: '';
@@ -399,6 +409,7 @@ ol.wp-block-latest-comments {
 			padding-left: $x-space-md;
 		}			
 	}
+	
 }
 
 .wp-block-latest-comments__comment-excerpt {

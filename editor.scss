@@ -534,6 +534,10 @@ p.has-drop-cap:not(:focus)::first-letter {}
 			color: $x-color-secondary-base;
 		}
 	}
+	[data-align="full"] &.is-grid {
+		padding-left: $x-space-sm;
+		padding-right: $x-space-sm;
+	}
 }
 
 /* Categories, Latest Posts & Archives */
@@ -542,6 +546,7 @@ p.has-drop-cap:not(:focus)::first-letter {}
 [data-align="center"] ul.wp-block-latest-posts,
 [data-align="center"] ul.wp-block-archives {
 	list-style-position: inside; /* makes sure bullets are centred with centred lists */
+	padding-left: 0;
 }
 
 /* Latest Comments */
@@ -561,7 +566,9 @@ p.has-drop-cap:not(:focus)::first-letter {}
 }
 
 .wp-block-latest-comments__comment-meta a {
-	/* change comment author name and post title styles */
+	color: $x-color-secondary-base;
+	font-size: $x-font-size-md;
+	text-decoration: underline;
 }
 
 .wp-block-latest-comments__comment-date {
