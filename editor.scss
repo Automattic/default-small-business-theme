@@ -314,6 +314,7 @@ p.has-drop-cap:not(:focus)::first-letter {}
 
 .wp-block-file__textlink {
 	text-decoration: underline;
+	color: $x-color-secondary-base;
 }
 
 .wp-block-file .wp-block-file__button,

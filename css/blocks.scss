@@ -629,10 +629,9 @@ table.wp-block-table {
 .wp-block-file {
 	
 	> a:first-child {
-		color: inherit;
-		box-shadow: none;
+		@include link-underline;
 		&:hover {
-			text-decoration: underline;
+			text-decoration: none;
 		}
 	}
 	

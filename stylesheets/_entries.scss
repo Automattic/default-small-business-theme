@@ -243,8 +243,8 @@
 		span[id^=more] {
 			display: block;
 		}
-
-		a:not(.jp-relatedposts-post-a):not(.wp-block-button__link) {
+		
+		*:not([class^="wp-block"]) a:not(.jp-relatedposts-post-a) {
 			@include link-underline;
 		}
 
