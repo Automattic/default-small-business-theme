@@ -16,13 +16,22 @@
 
 	@include media( tablet ) {
 		.alignwide {
+
+			$width: 1235px;
+			$sep: 18px;
+
+			min-width: $width;
 			position: relative;
-			width: $x-space-column-12;
-			transform: translateX( -50% );
-			max-width: calc( 100vw - 2 * 1em );
 			margin-top: 1em;
 			margin-bottom: 1em;
-			left: 50%;
+			margin-left: calc( -1 * ( #{$width} - #{$x-grid-column-7} ) / 2 );
+			
+			@media only screen and (min-width: $tablet_width) and (max-width: ($width + 2 * $sep ) ) {
+				margin-left: calc( -1 * ( 100vw - #{$x-grid-column-7} ) / 2 + #{$sep} );
+				width: 100vw;
+				min-width: initial;
+				max-width: calc( 100vw - 2 * #{$sep} );
+			}
 		}
 
 		.alignfull {
@@ -222,7 +231,9 @@
 
 // !Cover image
 
-.wp-block-cover-image {
+.wp-block-cover,
+.wp-block-cover-image,
+ {
 	width: inherit;
 
 	@include media( tablet ) {
