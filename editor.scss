@@ -48,6 +48,10 @@ $font-size-value: 18.672;
 	font-size: (15.56em / $font-size-value);
 	padding: 0.68em 1.2em;
 	border-radius: 3px;
+	
+	&:hover {
+		background-color: lighten(  $x-color-accent-base, 6% );
+	}
 }
 
 /*--------------------------------------------------------------
@@ -461,6 +465,11 @@ p.has-drop-cap:not(:focus)::first-letter {}
 	background: transparent;
 	border: solid 2px $x-color-accent-base;
 	color: $x-color-accent-base;
+	
+	&:hover {
+		background: $x-color-accent-base;
+		color: white;
+	}
 }
 
 .wp-block-button .wp-block-button__link:hover,

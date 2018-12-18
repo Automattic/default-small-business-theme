@@ -115,8 +115,8 @@ $wide_width: 12 * ( 80px + 25px ) - 25px;
 	text-transform: uppercase;
 	vertical-align: middle;
 	
-	&:hover {
-		background-color: $x-color-accent-light;
+	&:hover, .wp-block-button__link:hover {
+		background-color: lighten(  $x-color-accent-base, 6% ) ;
 	}
 
 	&:active,

@@ -133,6 +133,11 @@
 	background: transparent;
 	border: solid 2px $x-color-accent-base;
 	color: $x-color-accent-base;
+	
+	&:hover {
+		background: $x-color-accent-base;
+		color: white;
+	}
 }
 
 // !Audio
