@@ -206,7 +206,7 @@ $font-size-value: 18.672;
 
 
 .wp-block-freeform.block-library-rich-text__tinymce ol,
-.editor-styles-wrapper ol {
+.editor-styles-wrapper ol:not([class^="wp-block"]) {
 	counter-reset: sans-counter;
 	margin-left: 0 !important;
 
