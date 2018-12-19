@@ -116,7 +116,7 @@ $wide_width: 12 * ( 80px + 25px ) - 25px;
 	vertical-align: middle;
 	
 	&:hover, .wp-block-button__link:hover {
-		background-color: lighten(  $x-color-accent-base, 6% ) ;
+		background-color: lighten(  $accent-color, 6% ) ;
 	}
 
 	&:active,

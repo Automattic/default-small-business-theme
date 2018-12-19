@@ -50,7 +50,7 @@ $font-size-value: 18.672;
 	border-radius: 3px;
 	
 	&:hover {
-		background-color: lighten(  $x-color-accent-base, 6% );
+		background-color: lighten(  $accent-color, 6% );
 	}
 }
 
