@@ -36,12 +36,9 @@
 
 		.alignfull {
 			position: relative;
-			transform: translateX( -50% );
-			width: 100vw;
-			max-width: 100vw;
-			margin-top: 1em;
-			margin-bottom: 1em;
-			left: 50%;
+			min-width: 100vw;
+			margin-left: 50%;
+			left: -50vw;
 		}
 	}
 	
@@ -347,10 +344,6 @@
 	@include media( tablet ) {
 		padding-left: $x-space-lg;
 		padding-right: $x-space-lg;
-		&.alignfull {
-			padding-left: $x-space-sm;
-			padding-right: $x-space-sm;
-		}
 	}
 }
 
