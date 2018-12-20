@@ -423,6 +423,7 @@ p.has-drop-cap:not(:focus)::first-letter {}
 	th {
 		padding: .5em;
 		text-align: left;
+		border-color: transparent;
 	}
 
 	tr:nth-child(even) {
