@@ -97,3 +97,34 @@ $wide_width: 12 * ( 80px + 25px ) - 25px;
 		font-size: calc( #{$x-font-size-base} * #{$x-font-size-responsive-ratio} ); // 1 1/6
 	}
 }
+
+@mixin button-style {
+	@include rounded( 3px );
+	background: $x-color-accent-base;
+	color: $x-color-shade-white;
+	padding: $x-space-xxs $x-space-xs;
+	font-size: $x-font-size-sm;
+	line-height: $x-font-leading-body;
+	letter-spacing: $x-font-letter-spacing;
+	background-image: none;
+	border: 0;
+	cursor: pointer;
+	display: inline-block;
+	font-weight: 600;
+	text-decoration: none;
+	text-transform: uppercase;
+	vertical-align: middle;
+	
+	&:hover, .wp-block-button__link:hover {
+		background-color: lighten(  $accent-color, 6% ) ;
+	}
+
+	&:active,
+	&:focus {
+		background-color: $x-color-accent-light;
+	}
+
+	@include media( tablet ) {
+		padding: $x-space-xs $x-space-sm;
+	}
+}
