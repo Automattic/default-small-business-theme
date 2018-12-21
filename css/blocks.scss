@@ -344,6 +344,10 @@
 	@include media( tablet ) {
 		padding-left: $x-space-lg;
 		padding-right: $x-space-lg;
+		&.is-grid {
+			padding-left: $x-space-md;
+			padding-right: $x-space-md;
+		}
 	}
 }
 
