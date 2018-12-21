@@ -251,6 +251,7 @@
 	}
 
 	.wp-block-cover-text,
+	.wp-block-cover-image-text,
 	h2 {
 		font-weight: 400;
 		padding: $x-space-md;
@@ -267,7 +268,9 @@
 }
 
 [data-align=left] .wp-block-cover,
-[data-align=right] .wp-block-cover {
+[data-align=left] .wp-block-cover-image,
+[data-align=right] .wp-block-cover,
+[data-align=right] .wp-block-cover-image {
 
 	max-width: 285px;
 
