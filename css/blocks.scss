@@ -226,11 +226,10 @@
 	text-align: right;
 }
 
-// !Cover image
+// !Cover
 
 .wp-block-cover,
-.wp-block-cover-image,
- {
+.wp-block-cover-image {
 	width: inherit;
 
 	@include media( tablet ) {
@@ -251,7 +250,7 @@
 		margin-left: $x-space-md;
 	}
 
-	.wp-block-cover-image-text,
+	.wp-block-cover-text,
 	h2 {
 		font-weight: 400;
 		padding: $x-space-md;
@@ -267,8 +266,8 @@
 	}
 }
 
-[data-align=left] .wp-block-cover-image,
-[data-align=right] .wp-block-cover-image {
+[data-align=left] .wp-block-cover,
+[data-align=right] .wp-block-cover {
 
 	max-width: 285px;
 
