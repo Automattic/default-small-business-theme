@@ -368,6 +368,12 @@
 				display: none;
 			}
 
+			&:nth-child(n+2) {
+				@include media( mobile ) {
+					margin-left: 0.7em;
+				}
+			}
+
 			a {
 				display: inline-block;
 				line-height: 1;
